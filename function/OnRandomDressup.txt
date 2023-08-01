@@ -1,0 +1,153 @@
+//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+//IMPORTANT NOTE: This also contains two functions you might already have - The built in SHIORI event OnNotifyDressupInfo, and my function ASUB. If you already have ASUB, just don't include this ASUB. They're the same. If you already have OnNotifyDressupInfo, you might have to modify it so that they don't conflict!
+
+//This function will remove all the current dressups from a character, then pick random ones based on what categories of dressup are available. If the category is mustselect, it will always pick one. If it's multiple, it has a chance to pick multiple. And any categories that are not mustselect may be skipped over entirely, to increase variety.
+//Note: You have to send it the number of the character you want to be dressed up as reference0! If you're just using this for a sakura, just always send it 0. 1 if you want the kero, 2 for \p[2], etc.
+OnRandomDressup
+{
+	_command = ""
+	foreach currentdressups; _dressup //Gets the data for all current dressups and removes them
+	{
+		if _dressup[0,"|"] != TOSTR(reference0); continue
+		_category = _dressup[1,"|"]
+		_name = _dressup[2,"|"]
+		_command += "\![bind,%(_category),%(_name),0]"
+	}
+	"\p[%(reference0)]%(_command)\![done    removing]" //removes all current dressups - fake sakurascript tag here makes it easier to spot in the script log, for debugging purposes
+	--
+	_currentcategories = IARRAY
+	foreach availabledressups; _dressup //For every dressup that the ghost has - This breaks up the big list of all the dressups into categories
+	{
+		if _dressup[0,"|"] != TOSTR(reference0); continue
+		_category = _dressup[1,"|"] //Gather the name and category of the current dressup
+		_name = _dressup[2,"|"]
+		
+		_index = ASUB("%(_category)|",_currentcategories)
+		if _index == -1 //If the user is not in a submenu AND we haven't logged this category yet
+		{
+			_adding = _category + "|"
+			if _dressup[3,"|"] == "mustselect" || _dressup[4,"|"] == "mustselect"; _adding += "!-!mustselect!-!" + "|" //Add the category to a list
+			if _dressup[3,"|"] == "multiple" || _dressup[4,"|"] == "multiple"; _adding += "!-!multiple!-!" + "|" //Add the category to a list
+			_adding += _name
+			_currentcategories ,= _adding
+			
+		}
+		else
+		{
+			_currentcategories[_index] += "|" + _name
+		}
+		
+	}
+	--
+	_command = ""
+	_skipchance = 3
+	foreach _currentcategories; _category //Picks a random dressup from every category
+	{
+		_temp = REPLACE(_category,"|",",") //Changes to comma delimiter
+		_temp = SPLIT(_temp,",") //Makes _temp into a general purpose array
+		_currentctg = _temp[0] //Gets the name of the category
+		
+		_loops = 1 //Always do the loop at least once, I suppose this is what a do-while loop is for haha
+		_multiple = 0
+		_mustselect = 0
+		
+		if _temp[1] == "!-!multiple!-!" || _temp[2] == "!-!multiple!-!" //If it's a multiple option, mark it as such and up the number of loops to be 1 for every dressup available
+		{
+			_multicheck = 1
+			_loops = ARRAYSIZE(_temp) - 2
+		}
+		if _temp[1] == "!-!mustselect!-!" || _temp[2] == "!-!mustselect!-!" //If it's a mustselect, mark it as such. If it's also a multiple, reduce the number of times the loop is run, because this is taking up a slot of the array and we don't want to count it
+		{
+			_mustselect = 1
+			if _multicheck == 1; _loops--
+		}
+		
+		if _temp[2] == "!-!mustselect!-!" || _temp[2] == "!-!multiple!-!" ; _temp[2] = IARRAY //Erase these flags if they're present
+		if _temp[1] == "!-!mustselect!-!" || _temp[1] == "!-!multiple!-!" ; _temp[1] = IARRAY
+		_temp[0] = IARRAY //Erase the category name
+		
+		for _i = 0; _i < _loops; _i++ //Run the loop as determined above
+		{
+			if RAND(_skipchance) != 0 //If it decides it should skip
+			{
+				if _i == 0 //If it's at the start of the category, skip the whole category
+				{
+					if _mustselect == 0; break
+				}
+				else //Otherwise, skip just this one
+				{
+					continue
+				}
+			}
+			
+			_toadd = ANY(_temp) //If it doesn't skip, set _toadd to any dressup on the array
+			_num = LSO //LSO is a function that gets the element number ANY chose
+			_temp[_num] = IARRAY //Erase the dressup that was chosen
+			
+			if _toadd == ""; continue //If it's empty, skip
+			_command += "\![bind,%(_currentctg),%(_toadd),1]" //Otherwise, add to the command
+		}
+	}
+	"%(_command)"
+}
+
+OnNotifyDressupInfo
+{
+	_reference = reference
+	//IF YOU'RE USING AYA: uncomment the next line and uncomment the MakeReferenceArray function
+	//_reference = MakeReferenceArray
+	
+	availabledressups = IARRAY //This one is to display the dressup menu
+	currentdressups = IARRAY //This one is so we can display which dressups are currently in use
+	
+	foreach _reference; _dressup
+	{
+		//Ok, so here's the deal. When it lists the dressups, the amount of options that can be specified _varies._ It can be empty, 1, 2, or 3. To the best of my knowledge. SO. This inner loop starts at 3 (because elements 0 1 and 2 are static), checks to see if the next element has a keyword, and skips it if it does. Then when it finds the on/off indicator, it breaks the loop. IT DIDNT HAVE TO BE THIS WAY.
+		_onoff = 0
+		_must = 0
+		_mult = 0
+		for _i = 3; _i < ARRAYSIZE(_dressup); _i++
+		{
+			if _dressup[_i] == "default" || _dressup[_i] == ""; continue
+			
+			if _dressup[_i] == "mustselect"; _must = 1
+			elseif _dressup[_i] == "multiple"; _mult = 1
+			else; {_onoff = TOINT(_dressup[_i]); break}
+		}
+		_toadd = _dressup[0] + "|" + _dressup[1] + "|" + _dressup[2]
+		if _must == 1; _toadd += "|mustselect"
+		if _mult == 1; _toadd += "|multiple"
+		availabledressups ,= _toadd
+		if _onoff == 1; currentdressups ,= _toadd
+	}
+}
+
+ASUB //ASEARCH but for substrings
+{
+	_array = _argv //Takes in all the elements of the array
+	_array[0] = IARRAY //erases _argv[0] since that's the string we're searching for
+	for _i = 0; _i < ARRAYSIZE(_array); _i++
+	{
+		if _argv[0] _in_ _array[_i]
+		{
+			_i
+			return
+		}
+	}
+	-1
+}
+
+/*
+//IF YOU'RE USING AYA, UNCOMMENT THIS FUNCTION. If not, you can omit this!
+MakeReferenceArray
+{
+	_output = IARRAY
+	_i = 0
+	while ISVAR("reference%(_i)") == 1
+	{
+		_output ,= NAMETOVALUE("reference%(_i)")
+		_i++
+	}
+	_output
+}
+*/

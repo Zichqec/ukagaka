@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Zi's Ukagaka Space"/>
+    <meta property="og:description" content="Zi's hub for ukagaka"/>
+    <meta property="og:url" content="https://zichqec.github.io/ukagaka/"/>
+    <meta property="og:image" content="https://zichqec.github.io/ukagaka/img/banner.png"/>
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<!-- <article> -->
+
+
+<!-- <div id="item_info"></div> -->
+<!-- </article> -->
+<article>
+	<h1>Advent Calendar 2021 - I've Spent a Ridiculous Amount of Time Thinking About Probabilities: An Ukagaka Developer's Struggle for Probability Perfection</h1>
+
+	<p>This story is for the 12th day of the <a href="https://adventar.org/calendars/7210">Ukagaka Advent Calendar 2021</a>.</p>
+
+	<p>Hello! I would like to share a story that I hope is at least a little funny just for being ridiculous, and also to serve as a reminder that it's ok to ask for things! I've never participated in an advent calendar before, please tell me if I need to change anything!</p>
+
+	<p>I became a ghost developer around April of 2020, releasing my first ghost, <a href="https://zichqec.github.io/s-the-skeleton/s_the_skeleton">S the Skeleton</a>, in May of the same year. Ever since then, I have been very dedicated to this craft, trying to learn everything I can and expand my skillset. But, there has always been one problem that plagued me. Dialogue probabilities.</p>
+
+	<p>I will explain from the start. YAYA is my SHIORI of choice, and it has a feature which is very useful for ghost making. If you have multiple possible returns (called "output candidates") in a function, it will choose between them randomly. This is excellent for creating randomized pools of dialogue! (Though, programmers with experience in other languages sometimes find this maddening!)</p>
+
+	<p>The first signs of trouble appeared when I tried to set up my ghost to have extra dialogue based on your current friendship level with him.</p>
+<pre>
+RandomTalk : nonoverlap
+{
+	if friendship >= 150
+	{
+		"\0\s[102]* (Shaped like a friend.)\e"
+	}
+
+	if friendship >= 75
+	{
+		
+		"\0\s[1070].\w8.\w8.\w8So does this make me a 'computer person' technically?\e"
+		
+		//How many hours the ghost has been booted
+		if passhour >= 20
+		{
+			"\0\s[106]Hey uh,\w4 your %(usersfolder) was a little messy, so I straightened it up.\w8\w8\s[107] I hope that's alright, I'm kind of a compusive cleaner.\e"
+			"\0\s[202]Uh...\w8 %(username)?\w8\w8 I hope you don't mind,\w3 but \s[0]I was wandering around your %(usersfolder) and found some %(ingredients)...\w8\w8 You mind if I keep this..?\e"
+			"\0\s[207]* (He yawns, long and slow...)\e"
+			"\0\s[200]I wonder how the kids are doing...\e"
+			"\0\s[206]* (He's mumbling to himself.)\w8\w8\n\n%(passhour) hours...\e"
+		}
+	}
+
+	"\0\s[200]* (He's carefully taking in your desktop.)\w8\w8\n\nIt's a bit dusty in here, isn't it..?\w8\s[202] Would you mind if I cleaned this place up a bit?\e"
+	"\0\s[0]So uh, what kind of stuff do you get up to out there?\w8\w8\s[106] I can't really tell from this side of the screen.\e"
+}
+</pre>
+	<p>This is a sample of what his RandomTalk looked before his first release. I've only included a few dialogues here, just for demonstration purposes. When I first set this up, I thought that surely, if these if statements are true, the dialogues within them will be added to the pool of possible outputs, and everything will have an equal chance of being chosen, and it'll be great. That's how that should work, right? It would only make sense.</p>
+
+	<p>Hahaha. Haha. Ha. ...Right?</p>
+
+	<p>I could not be more wrong. See, YAYA also has a feature where, if it encounters a set of curly braces {}, it will choose randomly from the possible output candidates inside them, and treat the whole thing as a single output candidate.</p>
+
+	<p>Yes, you read that right. A <i>single</i> output candidate. So that RandomTalk above? Thanks to the nonoverlap modifier, which outputs one of each output candidate before repeating any, I was seeing the dialogue "* (Shaped like a friend.)" every 4 dialogues. That was my first sign that something had gone terribly wrong.</p>
+
+	<p>Let's do some math. We know now that when this function is run, each dialogue that stands on its own and each set of braces has an equal chance of being chosen. So the check for friendship >= 150 has a 1/4 chance of being called, the check for friendship >= 75 has a 1/4 chance of being called, and the two dialogues outside of if checks each have a 1/4 chance of being called. A bit weird, but nothing too crazy. The madness starts when you go into that set of braces for friendship >= 75, though.</p>
+
+	<p>So since we're in a set of braces, we know that YAYA will pick randomly from the candidates in there. First, there's one dialogue on its own, and then... oh no! Another set of braces! This time, it's a check for passhour >= 20. So, the dialogue on its own has a 1/2 chance of being picked, and this new set of braces has a 1/2 chance of being picked.</p>
+
+	<p>Once YAYA enters this nested set of braces, there are an additional 5 dialogues. There are no more sets of braces, so each of these dialogues has a 1/5 chance to be chosen.</p>
+
+	<p>Do you see where this is going? 1/5 doesn't sound too bad, until you realize that you must multiply that with the 1/2 chance that the passhour >= 20 set of braces would be chosen, and the 1/4 chance that the friendship >= 75 set of braces would be chosen.</p>
+
+	<p><b>Each dialogue in the passhour >= 20 if statement has a 1/40 chance of being called every time RandomTalk is called.</b> The nonoverlap modifier isn't doing this any favors, either!</p>
+
+	<p>This. This is madness. When I finally read and understood the section on the AYAYA wiki that explains this, I felt like I was going crazy. No wonder I was seeing the same dialogues over and over! The probabilites were horrifically skewed! In the example above, there are only 9 dialogues, and 5 of them only have a 1/40 chance each of being called every time the function runs! And this problem gets much worse as you write more nested dialogues.</p>
+
+	<p>I didn't know what to do about this when I was first starting out. I wasn't very experienced yet, I had only barely dabbled in coding, and I really wanted to get my ghost released. So my first solution, just to get my ghost out there, was this:</p>
+<pre>
+RandomTalk : nonoverlap
+{
+	if friendship >= 150 //All dialogues available with highest friendship
+	{
+		//Extra dialogue for very high friendship
+		"\0\s[102]* (Shaped like a friend.)\e"
+		
+		//Extra dialogue for mid friendship
+		"\0\s[1070].\w8.\w8.\w8So does this make me a 'computer person' technically?\e"
+		
+		//How many hours the ghost has been booted
+		if passhour >= 20
+		{
+			"\0\s[106]Hey uh,\w4 your %(usersfolder) was a little messy, so I straightened it up.\w8\w8\s[107] I hope that's alright, I'm kind of a compusive cleaner.\e"
+			"\0\s[202]Uh...\w8 %(username)?\w8\w8 I hope you don't mind,\w3 but \s[0]I was wandering around your %(usersfolder) and found some %(ingredients)...\w8\w8 You mind if I keep this..?\e"
+			"\0\s[207]* (He yawns, long and slow...)\e"
+			"\0\s[200]I wonder how the kids are doing...\e"
+			"\0\s[206]* (He's mumbling to himself.)\w8\w8\n\n%(passhour) hours...\e"
+		}
+		
+		"\0\s[200]* (He's carefully taking in your desktop.)\w8\w8\n\nIt's a bit dusty in here, isn't it..?\w8\s[202] Would you mind if I cleaned this place up a bit?\e"
+		"\0\s[0]So uh, what kind of stuff do you get up to out there?\w8\w8\s[106] I can't really tell from this side of the screen.\e"
+	}
+	elseif friendship >= 75 //All dialogues available with mid friendship
+	{
+		//Extra dialogue for mid friendship
+		"\0\s[1070].\w8.\w8.\w8So does this make me a 'computer person' technically?\e"
+		
+		//How many hours the ghost has been booted
+		if passhour >= 20
+		{
+			"\0\s[106]Hey uh,\w4 your %(usersfolder) was a little messy, so I straightened it up.\w8\w8\s[107] I hope that's alright, I'm kind of a compusive cleaner.\e"
+			"\0\s[202]Uh...\w8 %(username)?\w8\w8 I hope you don't mind,\w3 but \s[0]I was wandering around your %(usersfolder) and found some %(ingredients)...\w8\w8 You mind if I keep this..?\e"
+			"\0\s[207]* (He yawns, long and slow...)\e"
+			"\0\s[200]I wonder how the kids are doing...\e"
+			"\0\s[206]* (He's mumbling to himself.)\w8\w8\n\n%(passhour) hours...\e"
+		}
+		
+		"\0\s[200]* (He's carefully taking in your desktop.)\w8\w8\n\nIt's a bit dusty in here, isn't it..?\w8\s[202] Would you mind if I cleaned this place up a bit?\e"
+		"\0\s[0]So uh, what kind of stuff do you get up to out there?\w8\w8\s[106] I can't really tell from this side of the screen.\e"
+	}
+	else //Dialogues available with low friendship
+	{
+		"\0\s[200]* (He's carefully taking in your desktop.)\w8\w8\n\nIt's a bit dusty in here, isn't it..?\w8\s[202] Would you mind if I cleaned this place up a bit?\e"
+		"\0\s[0]So uh, what kind of stuff do you get up to out there?\w8\w8\s[106] I can't really tell from this side of the screen.\e"
+	}
+}
+</pre>
+	<p>As a developer who is primarily focused on the coding aspect of ghosts now... this hurts my soul to look at. It was sort of effective, but not very good. If you were at the highest friendship stage, the dialogues in the passhour >= 20 pool would have a 1/25 chance of being called each. It's not great, but it's way better than 1/40, and I wasn't sure what else to do. Obviously, the big drawback of this was that it made it hard to add more friendship stages, and any time I added new dialogues I would have to copy it into multiple places. Also, doing this made nonoverlap completely ineffective as a modifier, because the big if/else statement that handles the friendship stages is seen as a single output candidate by nonoverlap. All in all, a very crude solution with only minimal results.</p>
+
+	<p>A small thing I found that helped was to group dialogues that didn't have an if check into a set of brackets. This slightly improved the probabilities by giving those dialogues <i>lower</i> probabilities, which evened things out a little bit. So, in my very first update, my RandomTalk changed to look like this.</p>
+<pre>
+RandomTalk : nonoverlap
+{
+	if friendship >= 150
+	{
+		{
+			"\0\s[102]* (Shaped like a friend.)\e"
+			"\0\s[1070].\w8.\w8.\w8So does this make me a 'computer person' technically?\e"
+			"\0\s[200]* (He's carefully taking in your desktop.)\w8\w8\n\nIt's a bit dusty in here, isn't it..?\w8\s[202] Would you mind if I cleaned this place up a bit?\e"
+			"\0\s[0]So uh, what kind of stuff do you get up to out there?\w8\w8\s[106] I can't really tell from this side of the screen.\e"
+		}
+		
+		//How many hours the ghost has been booted
+		if passhour >= 20
+		{
+			"\0\s[106]Hey uh,\w4 your %(usersfolder) was a little messy, so I straightened it up.\w8\w8\s[107] I hope that's alright, I'm kind of a compusive cleaner.\e"
+			"\0\s[202]Uh...\w8 %(username)?\w8\w8 I hope you don't mind,\w3 but \s[0]I was wandering around your %(usersfolder) and found some %(ingredients)...\w8\w8 You mind if I keep this..?\e"
+			"\0\s[207]* (He yawns, long and slow...)\e"
+			"\0\s[200]I wonder how the kids are doing...\e"
+			"\0\s[206]* (He's mumbling to himself.)\w8\w8\n\n%(passhour) hours...\e"
+		}
+	}
+	elseif friendship >= 75
+	{
+		{
+			"\0\s[1070].\w8.\w8.\w8So does this make me a 'computer person' technically?\e"
+			"\0\s[200]* (He's carefully taking in your desktop.)\w8\w8\n\nIt's a bit dusty in here, isn't it..?\w8\s[202] Would you mind if I cleaned this place up a bit?\e"
+			"\0\s[0]So uh, what kind of stuff do you get up to out there?\w8\w8\s[106] I can't really tell from this side of the screen.\e"
+		}
+		
+		//How many hours the ghost has been booted
+		if passhour >= 20
+		{
+			"\0\s[106]Hey uh,\w4 your %(usersfolder) was a little messy, so I straightened it up.\w8\w8\s[107] I hope that's alright, I'm kind of a compusive cleaner.\e"
+			"\0\s[202]Uh...\w8 %(username)?\w8\w8 I hope you don't mind,\w3 but \s[0]I was wandering around your %(usersfolder) and found some %(ingredients)...\w8\w8 You mind if I keep this..?\e"
+			"\0\s[207]* (He yawns, long and slow...)\e"
+			"\0\s[200]I wonder how the kids are doing...\e"
+			"\0\s[206]* (He's mumbling to himself.)\w8\w8\n\n%(passhour) hours...\e"
+		}
+		
+		
+	}
+	else
+	{
+		"\0\s[200]* (He's carefully taking in your desktop.)\w8\w8\n\nIt's a bit dusty in here, isn't it..?\w8\s[202] Would you mind if I cleaned this place up a bit?\e"
+		"\0\s[0]So uh, what kind of stuff do you get up to out there?\w8\w8\s[106] I can't really tell from this side of the screen.\e"
+	}
+}
+</pre>
+	<p>With this, at the highest friendship level, the dialogues without a special check had a 1/8 chance each of appearing, and the ones for passhour >= 20 had a 1/10 chance of appearing. Not bad, but still not ideal.</p>
+
+	<p>Alright, so obviously this wasn't working. It wasn't until I updated my ghost a few more times that I figured out a solution which, while still horrifically messy, made my probabilities much nicer. Enter, semicolons.</p>
+
+	<p>As I learned and grew as a developer, I started browsing the AYAYA wiki more and more. I learned about so many features that I had no idea existed before! Did you know that if you only have one line of code in an if statement, you can write it without braces? And did you also know that if you write a semicolon, that will tell YAYA to continue reading the code on the same line? Combine those two mechanics together, and you have a really clean way to write an if check with a single dialogue!</p>
+
+	<p>At this point, my ghost's dialogue was starting to expand quite a bit. One of the things I wanted the most for him was for him to have a very large pool of dialogue. So, I was very worried about the probabilities of his dialogue getting worse as I kept adding more. I had to move on to something new, even if it was going to be a lot of repeated code. So, this was my new solution.</p>
+<pre>
+RandomTalk : nonoverlap
+{
+	if friendship >= 150; "\0\s[102]* (Shaped like a friend.)\e"
+		
+	if friendship >= 75; "\0\s[1070].\w8.\w8.\w8So does this make me a 'computer person' technically?\e"
+		
+	//How many hours the ghost has been booted
+	if friendship >= 75 && passhour >= 20; "\0\s[106]Hey uh,\w4 your %(usersfolder) was a little messy, so I straightened it up.\w8\w8\s[107] I hope that's alright, I'm kind of a compusive cleaner.\e"
+	if friendship >= 75 && passhour >= 20; "\0\s[202]Uh...\w8 %(username)?\w8\w8 I hope you don't mind,\w3 but \s[0]I was wandering around your %(usersfolder) and found some %(ingredients)...\w8\w8 You mind if I keep this..?\e"
+	if friendship >= 75 && passhour >= 20; "\0\s[207]* (He yawns, long and slow...)\e"
+	if friendship >= 75 && passhour >= 20; "\0\s[200]I wonder how the kids are doing...\e"
+	if friendship >= 75 && passhour >= 20; "\0\s[206]* (He's mumbling to himself.)\w8\w8\n\n%(passhour) hours...\e"
+
+	"\0\s[200]* (He's carefully taking in your desktop.)\w8\w8\n\nIt's a bit dusty in here, isn't it..?\w8\s[202] Would you mind if I cleaned this place up a bit?\e"
+	"\0\s[0]So uh, what kind of stuff do you get up to out there?\w8\w8\s[106] I can't really tell from this side of the screen.\e"
+}
+</pre>
+	<p>This new solution has a few obvious problems. First, and I don't know if you know this, but <b>repeated code like this is very bad.</b> If I decided that I wanted to change the second friendship level from 75 to 100, I would have to make sure I changed the condition for every dialogue that was meant to be unlocked by the second friendship stage. Secondly, this is obviously very inefficient. In my testing, I never noticed any sort of performance impact while my dialogue pools were set up this way. But perhaps if I had a much older computer, I would have. Really, though, it just hurts my soul to look at. I knew there <i>should</i> be some way to improve this. There <i>must</i> be a way to do it, I just hadn't figured it out yet... But, on the plus side, all 9 of the dialogues in this function have a 1/9 chance of appearing! Finally, flat and equal probabilities! No more repeated lines of dialogue to keep track of. The code part might have been hell to manage, but at least the user experience with the ghost was much nicer.</p>
+
+	<p>At this point, I understood how all the function modifiers worked, and I thought to myself, "Gosh, it would be so nice if we could have a modifier called 'pool' or something, which made all the dialogue probabilities equal for you... But that seems like too much to ask for." I kept this thought to myself, mostly. But oh, I dreamed about it a lot.</p>
+
+	<p>I had started work on more ghosts besides my primary one at this point, and I was starting to gain some skills as a programmer. I had learned how to use arrays and loops, and I was experimenting a lot to figure out what I could do with them. Maybe my new knowledge of coding could help me? I'd heard from another programmer that they had managed to code something to fix their dialogue probabilities, while still keeping the properties of nonoverlap, so I wanted to figure out if I could do that too.</p>
+
+	<p>Unfortunately, I did not keep the code that I came up with. As I recall, though, I created array functions for each if check I wanted to have more than a few dialogues in, then I saved the names of those functions to an array, and every time the ghost spoke I had it check each of those functions and create a list of all available dialogues. So long as the number of dialogues in the list did not change, it would pick a new dialogue each time. ...So, basically, I reinvented nonoverlap. But, I also managed to flatten dialogue probabilities while I was at it.</p>
+
+	<p>Still, I was never comfortable with the code I wrote. It seemed too much like it could fall apart, and the ghost might have issues for users. So I never released any ghosts with this system. But I kept thinking about it. Surely, there was something I was missing, still...</p>
+
+	<p>The answer came to me in April of 2021, nearly a year after I had become active as a ghost developer. I learned about YAYA's parallel function, and I finally understood EVAL, and it all came together in one beautiful moment late at night. I wrote out the precursor to this function on my phone as I was starting to fall asleep:</p>
+<pre>
+Pool
+{
+	_output = IARRAY
+	_amt = 1; if _argv[2] != ""; _amt = TOINT(_argv[2])
+	if TOINT(_argv[1])
+	{
+		_targetarray = IARRAY
+		EVAL("_targetarray = %(_argv[0])")
+		foreach _targetarray; _dialogue
+		{
+			for _i = 0; _i < _amt; _i++; {_output ,= _dialogue}
+		}
+	}
+	_output
+}
+</pre>
+	<p>(I realized later that the code could be simplified down to this:)</p>
+<pre>
+Pool
+{
+	if TOINT(_argv[1]); EVAL("%(_argv[0])")
+}
+</pre>
+	<p>Wow. One little function, and eventually just a single line of code, and it solved the problem entirely. How can this possibly fix my probability issues? Well, it required a big structural change to my ghost. Let me demonstrate.</p>
+<pre>
+RandomTalk : nonoverlap
+{
+	if friendship >= 150; "\0\s[102]* (Shaped like a friend.)\e"
+
+	parallel Pool("Pool_Friendship_mid","%(friendship >= 75)")
+
+	"\0\s[200]* (He's carefully taking in your desktop.)\w8\w8\n\nIt's a bit dusty in here, isn't it..?\w8\s[202] Would you mind if I cleaned this place up a bit?\e"
+	"\0\s[0]So uh, what kind of stuff do you get up to out there?\w8\w8\s[106] I can't really tell from this side of the screen.\e"
+	}
+
+	Pool_Friendship_mid : array //friendship >= 75
+	{
+	"\0\s[1070].\w8.\w8.\w8So does this make me a 'computer person' technically?\e"
+
+	parallel Pool("Pool_Friendship_mid_long_time","%(passhour >= 20)")
+	}
+
+	Pool_Friendship_mid_long_time : array //passhour >= 20
+	{
+	"\0\s[106]Hey uh,\w4 your %(usersfolder) was a little messy, so I straightened it up.\w8\w8\s[107] I hope that's alright, I'm kind of a compusive cleaner.\e"
+	"\0\s[202]Uh...\w8 %(username)?\w8\w8 I hope you don't mind,\w3 but \s[0]I was wandering around your %(usersfolder) and found some %(ingredients)...\w8\w8 You mind if I keep this..?\e"
+	"\0\s[207]* (He yawns, long and slow...)\e"
+	"\0\s[200]I wonder how the kids are doing...\e"
+	"\0\s[206]* (He's mumbling to himself.)\w8\w8\n\n%(passhour) hours...\e"
+}
+</pre>
+	<p>This may not look like anything crazy, but let me remind you that this is a very truncated version of his RandomTalk. At this point he had hundreds of dialogues, many of them nested into various if checks. In the version where I first introduced this Pool function, there were at least <b>125 calls to it in his RandomTalk.</b> You can see why dialogue probabilities are a big concern for me.</p>
+
+	<p>Allow me to explain how this function works, because I am still very proud of it as a solution for dialogue probabilities. The big problem is that we need to get dialogues <i>outside</i> of the braces they are trapped in. The braces are the real problem here. parallel is a handy function built into YAYA that, if you give it an array, it will make all the elements of that array into individual output candidates. Neat!</p>
+
+	<p>So, what I've done here is create arrays to hold all of my dialogues. I send the Pool function the name of the array I want to call, and the second argument is the statement that must be true for those dialogues to be available. If it's true, return the array of dialogues, and parallel will make them all into output candidates. Now you've successfully pulled your dialogues from outside the braces! They'll all have the same probabilities as dialogues outside of if checks! You can even nest pools inside of each other, and it still works as expected.</p>
+
+	<p>I can't express how overjoyed I was to finally have a solution that worked well. Yes, I had to spend hours restructuring my ghosts to make use of this, and to set it up properly so that nonoverlap worked for everything, but it <i>worked.</i> The code wasn't super complicated, and even though the pools weren't as nice as just writing if checks, it was a worthwhile compromise to have my ghost outputting dialogues at the right probabilities. I got my ghosts updated, and it felt so good to have it all working.</p>
+
+	<p>Still, I thought to myself, "Gosh, it would be so much simpler if I just had a function modifier to do this for me, so I didn't need to make separate arrays for everything... But no, that's too big of a change to YAYA, and this solution works fine."</p>
+
+	<p>But alas, when I tried to tell my fellow devs about my new function, and the probability enlightenment I had achieved, very few of them wanted to implement this in their own ghosts. It was confusing, or intimidating, or honestly, just too crazy. Who cares this much about dialogue probabilities?</p>
+
+	<p>I care. I probably sounded crazy when I would go on about this subject in great detail, trying to express how much it would improve a ghost to use pools. Some developers were interested, and did get some use from the Pool function! But it was just too convoluted to become widespread.</p>
+
+	<p>I tried to come up with another function that might make this easier. Nobody ever made use of it, but I'll share it here anyways, for posterity. It looked like this:</p>
+<pre>
+#define pool: --; '|POOL|' +
+
+AltPoolTest : array
+{
+	pool: "Dialogue 1"
+	pool: "Dialogue 2"
+	--
+	if hour < 30
+	{
+		pool: "Dialogue 3"
+		pool: "Dialogue 4"
+		--
+		if minute < 70
+		{
+			pool: "Dialogue 5"
+			pool: "Dialogue 6"
+		}
+	}
+}
+
+Pool2
+{
+	SPLIT(REPLACE(EVAL("%(_argv[0])"),"|POOL|","",1),"|POOL|")
+}
+
+AltPoolEX : nonoverlap
+{
+	parallel Pool2("AltPoolTest")
+}
+</pre>
+	<p>Ah, this is so much messier... But, it does allow you to write your pools like normal if checks, more or less. The preprocessor command here changes 'pool:' into a short bit of code that makes this whole array a single string, and appends a special delimiter to each dialogue. Then, the Pool2 function splits up that string into separate array elements. I don't recall exactly, but I think the reason I did this was that array functions do not let you get every dialogue out of a set of braces unless it's a single string. So I just made the whole thing one big string and split it later.</p>
+
+	<p>After that, it's a simple matter of using parallel on it. Tada, you've got yourself a pool with equal probabilities! Still, it's messy to write, and hard to understand for devs who are not primarily coders. And I thought to myself, "Gosh, it sure would be nice if YAYA itself had a simple solution to this one fundamental problem..."</p>
+
+	<p>Have I foreshadowed it enough? On October 28th, 2021, I finally did it. steve02081504 had recently joined the <a href="https://ukagakadreamteam.tumblr.com/discord">Ukagaka Dream Team Discord server</a>, and seemed to be fairly knowledgable about YAYA, even making additions to it sometimes. So, I thought I would just float the idea of my dream feature, the pool modifier... Just to get an idea of if it would be a reasonable request to make on the BTS.</p>
+
+	<p>The very next day, I was sent a preview version of YAYA to test, with the pool modifier added as I had described.</p>
+
+	<p>I was absolutely over the moon when I tried it and it <i>worked.</i> Just like that, all because I finally got up the courage to ask about my crazy idea, my probability problems vanished into the ether. It took a few iterations to work out all the little bugs, but on October 31st, 2021, YAYA Tc563-1 was released and added the pool, nonoverlap_pool, sequential_pool, and array_pool modifiers.</p>
+
+	<p>3 days. It took 3 days for this addition to come out and simplify the way I write my dialogues again. Do you remember where we started? With the simple RandomTalk function with a few if checks in it? Well, my RandomTalk is back to looking like that now, with one little change...</p>
+<pre>
+RandomTalk : nonoverlap_pool
+{
+	if friendship >= 150
+	{
+		"\0\s[102]* (Shaped like a friend.)\e"
+	}
+
+	if friendship >= 75
+	{
+		
+		"\0\s[1070].\w8.\w8.\w8So does this make me a 'computer person' technically?\e"
+		
+		//How many hours the ghost has been booted
+		if passhour >= 20
+		{
+			"\0\s[106]Hey uh,\w4 your %(usersfolder) was a little messy, so I straightened it up.\w8\w8\s[107] I hope that's alright, I'm kind of a compusive cleaner.\e"
+			"\0\s[202]Uh...\w8 %(username)?\w8\w8 I hope you don't mind,\w3 but \s[0]I was wandering around your %(usersfolder) and found some %(ingredients)...\w8\w8 You mind if I keep this..?\e"
+			"\0\s[207]* (He yawns, long and slow...)\e"
+			"\0\s[200]I wonder how the kids are doing...\e"
+			"\0\s[206]* (He's mumbling to himself.)\w8\w8\n\n%(passhour) hours...\e"
+		}
+	}
+
+	"\0\s[200]* (He's carefully taking in your desktop.)\w8\w8\n\nIt's a bit dusty in here, isn't it..?\w8\s[202] Would you mind if I cleaned this place up a bit?\e"
+	"\0\s[0]So uh, what kind of stuff do you get up to out there?\w8\w8\s[106] I can't really tell from this side of the screen.\e"
+}
+</pre>
+	<p>There are 9 dialogues in this function. And because of that little word pool in the modifier, each one has a 1/9 chance of being chosen every time this function is called. No matter how deeply they're nested in braces. At last, a proper solution that fixes the problem at the source, which is easy enough for all developers to understand and implement quickly. Of course, I still need to convince them all that there's a problem in the first place... But I think that now this can easily be implemented into template ghosts, and it will spread naturally to new ghosts that are released.</p>
+
+	<p>(Truthfully, I haven't rolled this change out to most of my ghosts yet, because it's going to take a few hours for me to go through all of them and revert their RandomTalk functions to this setup. But it is work I am glad to do when I have the time for it!)</p>
+
+	<p>It took about a year and a half of struggling with dialogue probabilities before I finally got a solution. I first noticed the issue all the way back towards the end of April 2020, and the pool modifiers were added at the end of October 2021. In the end, all I needed to do was ask nicely! I really should have asked sooner, but I was scared that my idea was too crazy or too difficult to implement.</p>
+
+	<p>I have to thank steve02081504 and Ponapalt so much for taking me seriously when I asked about this, and working with me to implement a solution that was exactly as I had dreamed of it. I know I have a tendency to focus on very small details, or drag on and on before I get to my point (if you can't tell from reading this whole thing)! But you've really made my life as a developer so much easier with this addition to YAYA, and I think it will improve a lot of ghosts going forward. I hope that one day, I will become skilled enough at coding to make contributions to YAYA myself.</p>
+
+	<p>Thank you also to Fine Lagusaz, who was very welcoming when I asked if I could participate in this event despite not speaking any Japanese!</p>
+
+	<p>And to anyone who has read this far, thank you. I hope the story of my journey towards probability perfection was interesting!</p>
+</article>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+<script src="../scripts/credits.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+
+//Main game window
+OnJumble
+{
+	_word = JumbleWords
+	
+	//Scramble the word
+	_temp = TOLOWER(_word)
+	_jumbled = ""
+	while STRLEN(_temp) > 0
+	{
+		_rand = RAND(STRLEN(_temp))
+		_jumbled += SUBSTR(_temp,_rand,1)
+		_temp = ERASE(_temp,_rand,1)
+	}
+
+	"\0\*\![close,inputbox,OnJumbleGuess,-1]\![open,inputbox,OnJumbleGuess,-1,--reference=%(_word)]"
+	--
+	"Unscramble the word:"
+	--
+	"\n\n\f[height,+4]%(_jumbled)\f[default]"
+	--
+	"\_q\n\n\![*]\q[Give up,OnJumbleQuit,%(_word)]\e"
+}
+
+//After the user puts in a guess
+OnJumbleGuess
+{
+	_word = reference2
+	
+	if reference0 == ""; "\![raise,OnJumbleQuit,%(_word)]"
+	elseif TOLOWER(reference0) == TOLOWER(_word) //Win
+	{
+		"That's correct! The word was %(_word)."
+	}
+	else //Lose
+	{
+		//The \_? around the %(reference0) prevents the user from running any sakurascript tags here. Make sure you keep those.
+		"Nope,\w4 not quite.\w8\w8 You put in \_?%(reference0)\_?,\w4 the word was %(_word)."
+	}
+	--
+	"\_q\n\n\![*]\q[Another word,OnJumble]\n\![*]\q[I'm done,cancelnodialogue]\e"
+}
+
+//If the user quits or puts in nothing
+OnJumbleQuit
+{
+	_word = reference0
+	
+	"\![close,inputbox,OnJumbleGuess,-1]"
+	--
+	"Aw,\w4 ok.\w8\w8 The word was %(_word)."
+	--
+	"\_q\n\n\![*]\q[Another word,OnJumble]\n\![*]\q[I'm done,cancelnodialogue]\e"
+}
+
+//Fill with words you want it to use - the more the better! Words themed around your ghost can be especially fun. If you also have my hangman game, you could change it so that they share the same pool of words.
+//Keep in mind that anagrams are mean! Slightly longer words are probably better. You could try using one of those online scrabble helpers to check your words and see if any other words of the same length come up
+JumbleWords
+{
+	"Example"
+	"Nitroglycerin"
+	"Nyctophobia"
+	"Particular"
+	"Agriculture"
+	"Illustrate"
+	"Breakdown"
+	"Bulletin"
+	"Attention"
+	"Chemistry"
+	"Guarantee"
+	"Temperature"
+	"Diagram"
+	"Exploration"
+}

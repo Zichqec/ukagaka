@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Zi's Ukagaka Space"/>
+    <meta property="og:description" content="Zi's hub for ukagaka"/>
+    <meta property="og:url" content="https://zichqec.github.io/ukagaka/"/>
+    <meta property="og:image" content="https://zichqec.github.io/ukagaka/img/banner.png"/>
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<article>
+
+
+<div id="item_info"></div>
+</article>
+<article>
+<h2>Guide</h2>
+<p>A SAORI is an external addon for a ghost that extends its functionality. Most ghost languages are fairly limited, since they're very simplified. So, if you want to do something outside the scope of your ghost coding language, you make a SAORI instead and have the ghost send the SAORI some values.</p>
+
+		<p>What's a SAORI-Basic? You can find some information on the differences between SAORI-Basic and SAORI-Universal <a href="http://emily.shillest.net/ayaya/index.php?cmd=read&page=SAORI%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9">here</a>, but that page is a bit hard to read if you're not super familiar with this stuff. Also, you'll have to run it through a translator if you can't read Japanese, like me.</p>
+
+		<p>The short version is this. If it's a .dll, it's a SAORI-Universal, and can have two returns: the regular return, and an array with extra values. If it's a .exe, it's a SAORI-Basic, can only return one value, and, if you're using YAYA, must be called through a proxy SAORI which you can find <a href="https://github.com/ponapalt/csaori/releases/tag/saori_proxy_ex_v1.0.2">here</a>. I believe ghosts written in Satori can call SAORI-Basic directly, but if you're reading this it's probably unlikely you're writing in Satori.</p>
+
+		<p>At the time of writing, I'm not familiar enough with C++ to write a SAORI-Universal, so everything from this point on will be talking about SAORI-Basic unless otherwise specified.</p>
+
+		<br>
+
+		<p>The really great thing about SAORI-Basic is that there are only a few rules you have to follow. You have to take an input as a command line argument, and if you want an output, you just need to print some sort of output. Python is a very easy way to write a SAORI like this, though you could certainly use other languages to make a SAORI-Basic, so long as you can follow those two rules and compile it as a .exe.</p>
+
+		<p>Here is the simplest possible SAORI in Python, slightly modified from the one on the AYAYA wiki.</p>
+<pre>
+from sys import argv
+#Imports argv so you can use it to take input on the command line
+
+print("Your input was "+str(argv[1]))
+#Output
+</pre>
+		<p>And that's it! You can do anything you want besides the input and the output, so long as it's got both of those.</p>
+
+		<p>Here's another really simple example, this time showing off something that YAYA doesn't do natively, but Python does: string multiplication.</p>
+<pre>
+from sys import argv
+
+word = str(argv[1])
+num = int(argv[2])
+
+print(word*num)
+</pre>
+		<p>This would take two arguments: a word, and the number of times you want to duplicate it. So if the ghost sent 'spam' as the first argument and 3 as the second argument, the result that the SAORI returns would be 'spamspamspam ' (Note the space at the end there; when returning a value in Python with the print function, it always adds a space. Be mindful of that if you're running checks on the output of your SAORI!)</p>
+
+		<br>
+
+		<p>Now, to actually use this SAORI in YAYA, we have to do a couple of things first. Your SAORI must be compiled as a .exe file, which for Python, you can do with something like PyInstaller (or auto-py-to-exe, which also uses PyInstaller but it gives you a gui to work with). Make sure you compile it with the option <b>onefile</b> so that it's a single file with everything in it, otherwise users who don't have a Python environment installed won't be able to use the SAORI. If you're writing in another language, I'm not sure how it'll work exactly for you, but make sure you check this carefully. Once you've compiled the SAORI, stick it in your ghost's files somewhere.</p>
+
+		<p>Next, make certain that the proxy SAORI is in your ghost's files somewhere too. Note that when you call the SAORIs, the relative filepath starts at yaya.dll. Once that's done, you can call it in your ghost with the FUNCTIONEX function like this:</p>
+<pre>
+_i = FUNCTIONEX("proxy_ex.dll","yourSaori.exe","argument 1","argument 2","etc...")
+</pre>
+		<p>With the command set up like this, once your SAORI has run, _i will have the value that your SAORI returned. (Again, if you're using Python, there will be an extra space here!)</p>
+
+		<p>I will note, because this has to run through the proxy, it adds a noticeable amount of wait time. It's unfortunate, but depending on your SAORI this might not be too bad.</p>
+
+		<p>Anyways, not only can you send single arguments this way, you can even send whole general arrays and YAYA will split up the elements of the array into individual arguments for you. If you send a simple array (which is really just a string separated by commas), it will be sent as a single argument.</p>
+
+		<p>I did say before that you can't return an array with a SAORI-Basic, but that's not strictly true. SAORI-Universal have a special array called valueex that they can send values to, but if you need to return an array with a SAORI-Basic, you can send it as a simple array and then use the SPLIT function to split it up by whatever delimiter you want.</p>
+
+		<p>As a note, <a href="http://umeici.onjn.jp/files/tama_v1p1.zip">Tama</a> is really helpful for seeing the requests/resonses going back and forth between your ghost and your SAORI! You'll see it going through the proxy, of course, but you can still glean most of what you need from just that.</p>
+
+		<br>
+
+		<p>A couple words of caution for folks writing in Python, which I unfortunately learned the hard way.</p>
+
+		<p><b>BE EXTREMELY PICKY ABOUT WHAT LIBRARIES YOU IMPORT.</b> Windows flags some of them as viruses when you compile them as a .exe, even though they aren't, which means that it may refuse to let you move your files around, it may delete the .exe on you randomly, and most likely when people try to download your SAORI/ghosts that have your SAORI, it will refuse and tell them it's a virus! If you absolutely NEED the library you're using, I found out that you can submit a false positive report <a href="https://www.microsoft.com/en-us/wdsi/filesubmission">here</a> and it will likely be marked as a false positive. However, the wording on the page implies that it only stays in their database for so long, so <b>BE EXTREMELY CAREFUL.</b> The last thing we want is for users who don't know much about Ukagaka to be scared away from the whole concept by a false positive.</p>
+		
+		<p>One thing you can do to test this is to make a simple SAORI like so:</p>
+<pre>
+from PIL import Image
+print("Hello World")
+</pre>
+		<p>Then compile that as a .exe and upload it somewhere. Then, try to download it. Does your browser let you? If yes, then you're probably good to use that library. In the case of PIL, here, you'll see that it flags it as a virus and won't let you access it easily. If you try this with Pygame instead, it will let you download it with no issue.</p>
+
+		<p>And finally, when you import a big library, it really bloats the size of your SAORI. Most SAORI-Universal that I've seen are under 1mb, but my simple ImageCompositor SAORI pushes 10mb with only two functions imported from the PIL library. As far as ghost sizes go, that's absolutely massive. However, in my case, I deemed 10mb acceptable for the functionality it allowed me to have (at least for now).</p>
+
+		<br>
+
+		<p>And that's it! SAORI are a pretty blank canvas as far as what you can do; you've got the whole of whatever programming language you're using at your fingertips! It's just a matter of taking in the input and sending the right output so that it can be understood by the ghost.</p>
+
+</article>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+<script src="../scripts/credits.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script src="../scripts/guide_details.js"></script>
+<script src="../scripts/guide_maker.js"></script>
+
+</body>
+</html>

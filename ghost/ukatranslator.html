@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Zi's Ukagaka Space"/>
+    <meta property="og:description" content="Zi's hub for ukagaka"/>
+    <meta property="og:url" content="https://zichqec.github.io/ukagaka/"/>
+    <meta property="og:image" content="https://zichqec.github.io/ukagaka/img/banner.png"/>
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<article>
+
+
+<div id="item_info"></div>
+
+
+
+<h2>Features</h2>
+<ul>
+<li>Feature 1</li>
+<li>Feature 2</li>
+<li>Feature 3</li>
+</ul>
+
+<div id="page_index"></div>
+
+<h2>About</h2>
+
+<div class="tab">
+	<button class="tablinks" onclick="pickTab(event, 'English')" id="defaultOpen">English</button>
+	<!-- <button class="tablinks" onclick="pickTab(event, 'Polski')">Polski</button> -->
+	<!--<button class="tablinks" onclick="pickLang(event, 'Français')">Français</button>-->
+	<!-- <button class="tablinks" onclick="pickTab(event, 'Русский')">Русский</button> -->
+	<button class="tablinks" onclick="pickTab(event, 'Deutsch')">Deutsch</button>
+</div>
+
+
+
+<div id="English" class="tabcontent">
+
+	<p>Ukatranslator is a ghost that helps you run other ghosts through machine translation! It does this by listening for the other ghost's dialogue, then removing the sakurascript tags, and allowing you to copy the results or automatically open them in the online versions of DeepL Translator or Google Translate! The translations are nowhere near as good as a real ghost translation, of course, but it can give you a general idea of what the ghost is saying!</p>
+	<!-- <img src="img/ukatranslator_01.gif" alt="Example of Ukatranslator translating some of Emily/Phase 4.5's dialogue" width="991" height="934" class="center"> -->
+	<p>There are a few customization options, such as nicknames for ghosts/characters so you always know who is talking, and which language you want it to translate to if you're using the auto translate option. You can also hide the translator completely from the config menu if you want it out of the way.</p>
+	<p>If you would like to translate Ukatranslator's menus into another language, please check the information in the readme! My hope is that this ghost will help bring Ukagaka to people all over the world, so every translation is greatly appreciated!</p>
+
+</div>
+
+<div id="Deutsch" class="tabcontent">
+
+	<p>Ukatranslator ist ein Ghost, der dabei hilft andere Ghosts mit maschineller Übersetzung zu übersetzen! Er tut das indem er anderen Ghosts zuhört, die Sakuraskript-Tags entfernt und es dann möglich macht den Dialog zu kopieren oder automatisch im Online-Übersetzer von DeepL oder Google Translate zu öffnen! Die Übersetzungen reichen natürlich keineswegs an menschliche Übersetzung heran aber man kann so zumindest einen generellen Eindruck davon bekommen was ein Ghost sagt!</p>
+	<!-- <img src="img/ukatranslator_01.gif" alt="Ein Beispiel davon wie Ukatranslator einige von Emily/Phase 4.5's Dialogen übersetzt" width="991" height="934" class="center"> -->
+	<p>Es gibt einige Personalisierungseinstellungen wie zum Beispiel Spitznamen für Ghosts/Charaktere, damit man immer genau weiß wer gerade spricht, und in welche Sprache übersetzt werden soll, wenn die Option "Automatisch in Übersetzer öffnen" eingeschaltet ist. Man kann Ukatranslator über die Einstellungen auch komplett verstecken, falls man ihn aus dem Weg haben möchte.</p>
+	<pWenn du Ukatranslator's Menus in andere Sprachen übersetzen möchtest sieh dir bitte die Informationen dazu in der Readme an! Meine Hoffnung ist, dass dieser Ghost dabei helfen wird Ukagaka Leuten auf der ganzen Welt näher zu bringen, deshalb schätze ich alle Übersetzungen sehr!</p>
+
+</div>
+
+
+
+</article>
+
+<div id="shells_by_me_index"></div>
+
+<div id="shells_by_others_index"></div>
+
+<div id="history_list"></div>
+
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+<script src="../scripts/credits.js"></script>
+
+<script>
+
+let shells_by_others = [
+
+]
+
+</script>
+
+<script>
+
+
+let version_history = [
+
+{
+	version: "1.1.0",
+	patches:
+	[
+		{
+			version: "1.1.1",
+			released: "June 44th, 2167",
+			changelog:
+			[
+				"Change 1",
+				"Change 2",
+				"Change 3"
+			]
+		},
+		{
+			version: "1.1.2",
+			released: "June 45th, 2167",
+			changelog:
+			[
+				"Change 1",
+				"Change 2",
+				"Change 3"
+			]
+		},
+		{
+			version: "1.1.3",
+			released: "June 46th, 2167",
+			changelog:
+			[
+				"Change 1",
+				"Change 2",
+				"Change 3"
+			]
+		}
+	]
+},
+
+{
+	version: "1.2.0",
+	patches:
+	[
+		{
+			version: "1.2.1",
+			released: "June 444th, 2167",
+			changelog:
+			[
+				"Change 1",
+				"Change 2",
+				"Change 3"
+			]
+		},
+		{
+			version: "1.2.2",
+			released: "June 446th, 2167",
+			changelog:
+			[
+				"Change 1",
+				"Change 2",
+				"Change 3"
+			]
+		},
+		{
+			version: "1.2.3",
+			released: "June 449th, 2167",
+			changelog:
+			[
+				"Change 1",
+				"Change 2",
+				"Change 3"
+			]
+		}
+	]
+}
+
+]
+
+</script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script src="../scripts/ghost_details.js"></script>
+<script src="../scripts/shell_details.js"></script>
+<script src="../scripts/page_maker.js"></script>
+<script src="../scripts/version_history.js"></script>
+<script src="../scripts/tabs.js"></script>
+
+</body>
+</html>

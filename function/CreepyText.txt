@@ -1,0 +1,25 @@
+//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+
+//To call the function, you can either call the function in your code like this:
+//CreepyText("Your dialogue here!")
+//Or in dialogue like this:
+//"%(CreepyText('Your dialogue here!'))"
+//If you want to change the max \w tag value, put the number you want as the second argument. If you want to change the max x and y values, put them as the third and fourth argument, respectively. You can set defaults in the function below.
+
+CreepyText
+{
+	_argv[0] = REPLACE(_argv[0],"##","'") //Replaces ## with an apostrophe, change it if you like
+    _display = ""
+    for _i = 0; _i < STRLEN(_argv[0]); _i++
+    {
+		_w = 0
+		_x = 0
+		_y = 0
+		if _argv[1] != ""; _w = RAND(_argv[1]); else; _w = RAND(10)  //Set this to the maximum pause time you want, or comment it out if you don't want random pauses (Don't put it higher than 10 or you'll call invalid \w commands)
+        if _argv[2] != ""; _x = RAND(_argv[2]); else; _x = RAND(250) //Set this to the maximum X coordinate you want
+        if _argv[3] != ""; _y = RAND(_argv[3]); else; _y = RAND(100) //Set this to the maximum Y coordinate you want
+        
+        _display += ("\_l[%(_x),%(_y)]" + SUBSTR(_argv[0],_i,1) + "\w%(_w)")
+    }
+    _display
+}  

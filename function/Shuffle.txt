@@ -1,0 +1,33 @@
+//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+
+//To call the function, you can either call the function in your code like this:
+//Shuffle("A string!") or Shuffle(SomeArray)
+//Or in dialogue like this:
+//"%(Shuffle('A string!'))" or "%(Shuffle(SomeArray))"
+//It will automatically detect strings vs arrays. General purpose arrays will have their elements shuffled. Anything else is treated as a string, including simple arrays, and will have the characters scrambled.
+//If you send more than 1 argument, it will not work, so don't do that.
+
+Shuffle
+{
+	_output = IARRAY
+	if GETTYPE(_argv) == 4 //If it's an array. General purpose arrays only!
+	{
+		while ARRAYSIZE(_argv) > 0
+		{
+			_rand = RAND(ARRAYSIZE(_argv))
+			_output ,= _argv[_rand]
+			_argv[_rand] = IARRAY
+		}
+	}
+	else //If it's anything else it'll be treated as a string
+	{
+		_argv = TOSTR(_argv)
+		while STRLEN(_argv) > 0
+		{
+			_rand = RAND(STRLEN(_argv))
+			_output += SUBSTR(_argv,_rand,1)
+			_argv = ERASE(_argv,_rand,1)
+		}
+	}
+	_output
+}

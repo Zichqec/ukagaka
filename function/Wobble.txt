@@ -1,0 +1,63 @@
+//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+
+//To call the function, you can either call the function in your code like this:
+//Wobble("Your dialogue here!")
+//Or in dialogue like this:
+//"%(Wobble('Your dialogue here!'))"
+
+//You can also overwrite the default values by sending extra arguments after the dialogue. Argument 0 will always be the dialogue you want to run through the wobble function. Argument 1 is for random upper/lowercase (1 is on and 0 is off), arguments 2 and 3 are X and Y jitter respectively, argument 4 is the amount the font size can vary by per-letter, and argument 5 is if the font size can change up, down, or both (0 is both, 1 is up, and 2 is down).
+
+//You may exclude any of these arguments, but you must include a blank argument where they would be.
+//Example: Wobble("Spooooky","","10","30","2","1")
+//This will skip the upper/lowercase argument.
+//Arguments that are farthest to the right can be ignored entirely if you don't want them.
+//Example: Wobble("Spooooky","1")
+//This will add random upper/lowercase characters, but use default values for everything else. But if you want to add arguments for changing the font size and nothing else you'd have to write it like this:
+//Example: Wobble("Spooooky","","","","2","1")
+
+//If you want to write an apostrophe in dialogue, write ## and it'll be replaced with an apostrophe
+
+Wobble
+{
+	_argv[0] = REPLACE(_argv[0],"##","'") //replaces ## with an apostrophe, you can change this if you want to use something else
+
+	//Default values - Set these to whatever you'd like, you can override them for each individual dialogue if you like
+	_UPlow = 0		//Controls if letters are randomly converted to upper/lowercase. 0 for off, 1 for on.
+	_Xjitter = 5	//Controls how much space can be between each letter. Higher numbers will be more spaced out.
+	_Yjitter = 5	//Controls how much letters can vary up and down. Higher numbers will be more spaced out.
+	_SizeJitter = 0 //Controls how much the font size can change per letter. Higher numbers will have more extreme variance.
+	_SizeUpDown = 1 //Controls if the font size can go up, down, or both. 0 for both, 1 for up, 2 for down.
+	
+	if _argv[1] != ""; _UPlow = _argv[1] //These check if the user has sent special arguments, and if not, uses the default values
+	if _argv[2] != ""; _Xjitter = _argv[2]
+	if _argv[3] != ""; _Yjitter = _argv[3]
+	if _argv[4] != ""; _SizeJitter = _argv[4]
+	if _argv[5] != ""; _SizeUpDown = _argv[5]
+	
+	_word = "" //Initialize display
+	for _i = 0; _i < STRLEN(_argv[0]); _i++
+	{
+		_let = SUBSTR(_argv[0],_i,1) //Get the current letter
+		if TOINT(_UPlow) == 1 //If random upper/lower is on, flip a coin to determine which this letter will be
+		{
+			if RAND(2) == 1; _let = TOUPPER(_let); else; _let = TOLOWER(_let)
+		}
+		_X = RAND(_Xjitter) //Get random values for X, Y, and Size
+		_Y = RAND(_Yjitter)
+		_Sz = RAND(_SizeJitter)
+		if _SizeUpDown == 1 //Size only goes up
+		{
+			_Sz = "+" + _Sz
+		}
+		elseif _SizeUpDown == 2 //Size only goes down
+		{
+			_Sz = "-" + _Sz
+		}
+		else //Flip a coin on if the size should go up or down
+		{
+			if RAND(2) == 1; _Sz = "+" + _Sz; else; _Sz = "-" + _Sz 
+		}
+		_word += "\_l[@%(_X),%(_Y)]\f[height,%(_Sz)]" + _let //Add to the display
+	}
+	_word
+}

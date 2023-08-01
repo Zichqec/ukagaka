@@ -1,0 +1,55 @@
+//I've redone the petting code from the GT template, since some of it didn't actually do what it claimed to, at least in my testing. With this system, we track two stroke values, one for normal petting which resets every time you trigger dialogue, and one for continuous petting that counts up until the mouse leaves the character. For this to work, it's vital that you use either OnMouseLeave or OnMouseLeaveAll to reset the stroke values when the mouse leaves the character. The way the template had this set up doesn't actually work, so it's important you add the new event.
+
+MouseMoveSakura
+{
+    stroke++ //These increase the stroke values by 1 any time the mouse is moved
+    continuousstroke++
+
+    if reference4 == "Head"
+    {
+        if continuousstroke >= 160 //this would happen starting at 4 pets. Adjust as needed, but you should probably keep it as a multiple of whatever your normal stroking dialogue triggers at
+        {
+            if stroke >= 160 //Stroke count is longer so that you have time to read the dialogue here. Adjust as you like.
+            {
+                stroke = 0
+                totalpets++
+                currentpetstreak++ //I haven't used this yet, but if you want to count successful pets for the high score rather than the raw stroke value, use this variable instead. More on this below.
+                "\0\s[0]This is dialogue for petting continuously.\e"
+            }
+        }
+        elseif stroke >= 40
+        {
+            stroke = 0 //Stroke value is reset
+            totalpets++
+            currentpetstreak++
+            "\0\s[0]This is normal petting dialogue\e"
+        }
+    }
+    elseif reference4 == "Face"
+    {
+        if stroke >= 40
+        {
+            stroke = 0
+            "\0\s[0]Face stroking dialogue.\e"
+        }
+    }
+}
+
+OnMouseLeaveAll //Activates when the mouse leaves all hitboxes. You can change to OnMouseLeave if you want it to happen when you leave one hitbox for another
+{
+    if continuousstroke > 160 && continuousstroke > pethighscore //Checks if you're in continuous petting, and if you are, if you got a high score. \C will display the previous balloon again so you can add onto it seamlessly
+    {
+        pethighscore = continuousstroke
+        "\C\n\n(New high score! %(pethighscore)!)\e"
+    }
+    --
+    if currentpetstreak > toppetstreak //Same thing here, but it's counting the number of actual pets you got. You can use this instead of the stroke count if you like.
+    {
+        toppetstreak = currentpetstreak
+        //"\C\n\n(New high score! %(toppetstreak) pets!)\e"
+    }
+    --
+    stroke = 0
+    continuousstroke = 0
+    currentpetstreak = 0
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Zi's Ukagaka Space"/>
+    <meta property="og:description" content="Zi's hub for ukagaka"/>
+    <meta property="og:url" content="https://zichqec.github.io/ukagaka/"/>
+    <meta property="og:image" content="https://zichqec.github.io/ukagaka/img/banner.png"/>
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<article>
+
+
+<div id="item_info"></div>
+</article>
+<article>
+<h2>Guide</h2>
+
+	<p>This guide assumes you were originally working with a version of the GT Template, though it will work even if you are not.</p>
+		
+	<p>When upgrading from old versions of YAYA, there are a few possible versions you might have. You may be able to skip some of these steps. If you have any questions, please do ask.</p>
+	
+	<ol>
+		<li>If you have a folder called <b>system</b> in your <b>ghost/master/</b> folder, delete it</li>
+		<li>If you have a folder called <b>messagetxt</b> in your <b>ghost/master/</b> folder, delete it</li>
+		<li>If you have a file called <b>system_config.txt</b> in your <b>ghost/master/</b>  folder, cut and paste anything in it (except the bits that call dic files) into yaya.txt, and then delete system_config.txt</li>
+		<li>If you have a file called <b>yaya_config.txt</b> in your <b>ghost/master/</b>  folder, open it and check the contents. If you've made any changes in this file before, you will want to make note of them so that you can apply them in the new config file you'll be adding later. In particular, check what value is set for AUTO_DATA_CONVERT. Then, delete the yaya_config.txt file.</li>
+		<li>Download the system dictionary files <a href="https://github.com/ponapalt/yaya-dic">here</a> (you can click Code>Download Zip), extract them, and copy the <b>yaya_base</b> folder into your <b>ghost/master/</b> folder. Not the contents of it, the whole folder. <u>You do not need the other files that you downloaded and can ignore them</u></li>
+		<li>In yaya_base/config.dic, make sure your settings are as they were before. Note that they may have been rearranged. AUTO_DATA_CONVERT and REF_ACCEL in particular are important. If you want to learn more about AUTO_DATA_CONVERT and whether you do or do not need it, you can read about it <a href="https://ukagakadreamteam.com/wiki/guide/aya_yaya/what_is_auto_data_convert_zichqec">here</a>.</li>
+		<li>In yaya.txt, delete <b>include, system_config.txt</b> and replace it with <b>dicdir, yaya_base</b></li>
+		<li>In yaya.txt, run a search for <b>messagetxt</b>. If you find this option, replace the whole line with just <b>msglang,english</b> (or your preferred supported language). If you have neither of these, add <b>msglang,english</b> (or your preferred supported language)</li>
+		<li>Replace your yaya.dll with the latest version of yaya.dll (yaya.dll download <a href="https://github.com/ponapalt/yaya-shiori/releases">here</a> - download the regular yaya.zip of the latest version)</li>
+		<li>In your aitalk.dic, run a search for a function called <b>AiTalk</b>. If it is named <b>AiTalk</b>, rename it to <b>OnAiTalk</b></li>
+		<li>Run a search in your ghost's files for a function called <b>OnChoiceSelect</b>. If it does not exist, add this function into a .dic file somewhere:
+<pre>
+//This bit of code is what makes menu options that don't start with On direct to Select.options instead. Remove or comment it if you prefer!
+OnChoiceSelect
+{
+    EVAL("Select.%(reference0)")
+}
+</pre>
+		</li>
+	</ol>
+	
+	<p>To check and see if the update worked, you can use <b>%(LICENSE[0])</b> to check the version number of your current installation of YAYA.</p>
+	
+	<p>If you are not able to run %(LICENSE[0]) directly through script input and would like to, there's a guide for that <a href="https://zichqec.github.io/s-the-skeleton/envelopes_script_input">here</a>.</p>
+	
+	<p>NOTE: If you're planning to set up network updates with GitHub, or you already use GitHub for your network updates, be very careful. If you're using a github.io homeurl, it will give a 404 error because of the file _loading_order.txt. It does not like file names that start with underscores. Your options are to use the raw.githubusercontent url instead, or, you can copy the contents of _loading_order.txt into yaya.txt and delete _loading_order.txt. See <a href="https://zichqec.github.io/s-the-skeleton/github">my guide on using GitHub for network updates</a> for more info.</p>
+
+</article>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+<script src="../scripts/credits.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script src="../scripts/guide_details.js"></script>
+<script src="../scripts/guide_maker.js"></script>
+
+</body>
+</html>

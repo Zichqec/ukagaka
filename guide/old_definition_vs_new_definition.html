@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Zi's Ukagaka Space"/>
+    <meta property="og:description" content="Zi's hub for ukagaka"/>
+    <meta property="og:url" content="https://zichqec.github.io/ukagaka/"/>
+    <meta property="og:image" content="https://zichqec.github.io/ukagaka/img/banner.png"/>
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<article>
+
+
+<div id="item_info"></div>
+</article>
+<article>
+<h2>Guide</h2>
+
+	<p>So what is all this nonsense about Old Definition and New Definition when it comes to shell coding? Well, according to Ukadoc (translated): "In a late development version of MATERIA (original ukagaka), there was a change in the format of settings related to SERIKO (animation) in surfaces.txt." The Old Definition is the original way that surfaces.txt files were set up, and the New Definition is a newer format. You can read more about it on Ukadoc right <a href="https://ukagakadreamteam.github.io/ukadoc/manual/descript_shell_surfaces.html#caption_seriko-redefine">here.</a>
+
+	<p>So what's different about the newer format, and why should you want to switch to it? Well, since the format change, some new options have been added, such as putting animations in the background, and collisions that only appear when an animation is active. Those options, to my knowledge, don't work in the old definition! There's also much finer timing control, and the new order that the code is written in is a bit cleaner. It's definitely weird to use at first! But after a little while, you get used to it, and you find it's actually a nice change.</p>
+
+	<p>Here's some code in the old definition:</p>
+<pre>
+0interval,random,4
+0pattern0,1000,5,overlay,0,0
+0pattern1,0,0,alternativestart,[1.2.3]
+0option,exclusive
+</pre>
+
+		<p>Don't worry too much about what this code does exactly. I've specifically picked 4 examples that will show you every difference between old and new definition.</p>
+
+		<p>Here's what the same code looks like in the new definition:</p>
+<pre>
+animation0.interval,random,4
+animation0.pattern0,overlay,1000,50,0,0
+animation0.pattern1,alternativestart,(1,2,3)
+animation0.option,exclusive
+</pre>
+
+	<p>At first, this might seem longer and a bit clunkier, but let me break this down for you. First of all, every line starts with the word animation, and the animation number is separated from the pattern number by a .</p>
+
+	<p>That might seem strange, but if you look at it, that actually makes it clearer what is the animation number and what is the pattern number! It gets rid of any ambiguity. So, <b>0pattern0</b> becomes <b>animation0.pattern0</b>, and <b>20interval4</b> becomes <b>animation20.pattern4</b>. This is one of the things that confused me the most about the new definition at first, but now that I'm used to it I never want to go back.</p>
+
+	<p>Second, the <b>drawing method</b> was moved so that it comes right after the pattern number. That helps to make things a bit tidier, if you use only overlay for a whole animation, then all those lines will match each other's length! It also cleans up a bit of clutter. Look at pattern1, the one with alternativestart. You may notice that in the new definition, there is no pause value or surface number at all. That's because, whether you're writing in the new or old definition, those values are actually completely ignored by start/stop, alternativestart/stop, and parallelstart/stop! So, now that the drawing method comes first, you can simply omit the surface number and pause value since they aren't necessary for this drawing method anyways.</p>
+
+	<p>Third, with alternativestart/stop and parallelstart/stop, square brackets [] were changed to parenthesis (), and the periods between numbers were changed to commas. So, [1.2.3] becomes (1,2,3). I'm not certain what the purpose was behind this change, but I'm guessing it's to make it more like the standard in most programming languages for specifying multiple values.</p>
+
+	<p>And finally, the pause time gets multiplied by 10. In the old definition, each 1 value of pause time is 10 milliseconds. In the new definition, you're writing milliseconds directly. So 10 in the old definition is 100 in the new definition. That means you get 10x the fine timing control on your animations! It's also less confusing, because instead of writing in a strange number format, you're just writing milliseconds.</p>
+
+	<p>So, to recap: The writing order for the old definition is this:</p>
+<pre>
+#pattern#,surface,pause,method,X,Y
+</pre>
+		<p>And the new definition's order is this:</p>
+<pre>
+animation#.pattern#,method,surface,pause,X,Y
+</pre>
+		
+	<p>It's worth mentioning that there is no writing order change for the start of an interval or the special options. All you do is change the format of the beginning to <b>animation#.interval#</b>, or <b>animation#.option#</b>.</p>
+	
+	<p>One final note, if you're using the new definition, you have to add <b>version,1</b> at the top of your file. This indicates to SSP that you're using the new definition rather than the old.</p>
+	
+	<p>And that's it! That's every change the new definition makes. That's not so bad, is it? "But wait, Zi!" you say, "I've got lots of animations that I would have to convert, and it would take me hours to do! I don't want to do that!" Believe me, I feel you! And it is for that reason I created a tool to convert your surfaces.txt to the new definition automatically. You can get it <a href="https://zichqec.github.io/s-the-skeleton/saoris_plugins_tools.html#olddef2newdef">here.</a> If you want the new options and the finer control the new definition offers you, give it a shot! The program will attempt to save a backup of your old code, so you can change your mind later if you really want to. But once you spend a few days messing around with the new definition, I think it's likely you'll want to stick with it.</p>
+
+</article>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+<script src="../scripts/credits.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script src="../scripts/guide_details.js"></script>
+<script src="../scripts/guide_maker.js"></script>
+
+</body>
+</html>

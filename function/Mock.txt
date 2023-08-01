@@ -1,0 +1,53 @@
+//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+
+//To call the function, you can either call the function in your code like this:
+//Mock("some text")
+//Or in dialogue like this:
+//"%(Mock('some text'))"
+
+//Note that by default, it will produce a 'perfect' mock case, meaning that it will change between lower and uppercase every character. If you want a 'random' mock case (which is really just randomcase, but some people say mock case is better with some chaos), put a 1 as the second argument. That'd look like this: "%(Mock('some text',1))"
+
+//If you want to write an apostrophe in dialogue, write ## and it'll be replaced with an apostrophe
+
+Mock
+{
+	_argv[0] = REPLACE(_argv[0],"##","'") //Replaces ## with an apostrophe, change it if you like
+	_output = ""
+	if TOINT(_argv[1]) == 1 //Random mock case
+	{
+		for _i = 0; _i < STRLEN(_argv[0]); _i++
+		{
+			_let = SUBSTR(_argv[0],_i,1)
+			if RAND(2) == 1
+			{
+				_output += TOLOWER(_let)
+			}
+			else
+			{
+				_output += TOUPPER(_let)
+			}
+		}
+	}
+	else //Perfect mock case
+	{
+		for _i = 0; _i < STRLEN(_argv[0]); _i++
+		{
+		_let = SUBSTR(_argv[0],_i,1)
+			if _let == " "
+			{
+				_output += _let
+				continue
+			}
+			if _m % 2 == 0
+			{
+				_output += TOLOWER(_let)
+			}
+			else
+			{
+				_output += TOUPPER(_let)
+			}
+			_m++
+		}
+	}
+	_output
+}

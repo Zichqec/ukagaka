@@ -1,0 +1,52 @@
+//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+
+//This function is intended to replace the functionality of an old SAORI that I found and couldn't get working. It lets multiple characters say different things at the same time.
+
+//To call the function, you can either call the function in your code like this:
+//Parallel(0,"Dialogue for the Sakura!",1,"Dialogue for the Kero!")
+//Or in dialogue like this:
+//"%(Parallel(0,'Dialogue for the Sakura!',1,'Dialogue for the Kero!'))"
+
+//You can call any characters, in any order, and in any amount. Every other tag is a character tag, so you should write a number, the dialogue that goes with that number.
+//%(Parallel(5,'Char 5 dialogue',37,'Char 37 dialogue',0,'Sakura dialogue',9,'Char 9 dialogue'))
+
+//Please take care when writing the tags. I think I worked out all the infinite loop problems, but if your ghost ever crashes while using this function, do let me know and I'll see what I can do to fix it!
+
+//You cannot write sakurascript tags within the Parallel tag, and if you want to write an apostrophe, you should write it as ##
+
+Parallel
+{
+	//Initializing variables
+	_output = ""
+	_chararray = IARRAY
+	_textarray = IARRAY
+	
+	_i = 0
+	while _i < _argc //Sorts each argument into characters and dialogue
+	{
+		_chararray ,= _argv[_i]
+		_i++
+		_textarray ,= REPLACE(_argv[_i],"##","'") //Changes ## to an apostrophe, change it if you like
+		_i++
+	}
+	--
+	while ARRAYSIZE(_chararray) > 0 //Repeats until all dialogues have been outputted
+	{
+		_i = 0
+		_output += "\![quicksection,1]"
+		while _i < ARRAYSIZE(_chararray) //Loops through each char and displays a single character of dialogue, erases any dialogues/chars that have become empty
+		{
+			if STRLEN(_textarray[_i]) == 0
+			{
+				_chararray[_i] = IARRAY
+				_textarray[_i] = IARRAY
+				continue
+			}
+			_output += "\p[" + _chararray[_i] + "]" + SUBSTR(_textarray[_i],0,1)
+			_textarray[_i] = ERASE(_textarray[_i],0,1)
+			_i++
+		}
+		_output += "\![quicksection,0]\w1"
+	}
+	_output
+}

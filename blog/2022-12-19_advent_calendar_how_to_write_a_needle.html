@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Zi's Ukagaka Space"/>
+    <meta property="og:description" content="Zi's hub for ukagaka"/>
+    <meta property="og:url" content="https://zichqec.github.io/ukagaka/"/>
+    <meta property="og:image" content="https://zichqec.github.io/ukagaka/img/banner.png"/>
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<!-- <article> -->
+
+
+<!-- <div id="item_info"></div> -->
+<!-- </article> -->
+<article>
+	<h1>Advent Calendar 2022 - How to Write a Needle</h1>
+	
+	<p>This article is for the 19th day of the <a href="https://adventar.org/calendars/8310">伺的 Advent Calendar 2022</a>.</p>
+	<p>On day 9, it was requested to talk about the ghost-making process. I have made several ghosts, but none that I love so dearly as <a href="https://zichqec.github.io/s-the-skeleton/needle">Needle</a>. For those not aware of Needle, you should give it a try. It is certainly an experience.</p>
+	<p>Needle was created for Ghost Jam 2022, a week-long event where new ghosts are created. My friend <a href="https://gallathegalla.github.io/gtg-ghosts/">Galla</a> and I decided to make 3 ghosts together; one in the first 72 hours, one in the second 72 hours, and one in the last 24 hours. Needle was the second of these ghosts, being made in only 72 hours, from scratch, and after we were already a little tired from making our first entry for the jam (which was our ghost <a href="https://zichqec.github.io/s-the-skeleton/balloons_ghost">Balloons</a>).</p>
+	<p>We had a solid plan for all 3 ghosts before going into the jam. The plan for Needle was that it would have almost no artwork (only a single image) because we both find art to be the most tiring part of making a ghost. There would also be minimal coding, because Needle was to focus primarily on writing.</p>
+	<p>We hit the ground running on the first day of the ghost, quickly completing the shell and the balloon. Once that was done, it was my job to start on the code that Needle would need. Needle was created from scratch, and we only wanted a few events; primarily OnAiTalk, OnBoot, and OnClose. So, these were quick to set up. We also wanted a unique nicknaming system, which I had a great deal of fun creating. It's been too long now for me to remember how much time that took me, but I think it was complete at some point during day 2 of production.</p>
+	<p>Once all the coding and art was complete, each of us settled into writing. Writing. <em>Writing.</em></p>
+	<p>So much writing. Needle had 300 random dialogues on its first release. And that number is deceptive, because several of its dialogues have pieces that change each time they are called. We filled functions with literally <em>hundreds</em> of snips of dialogue or words to be placed in dialogue. All of it very uniquely Needle. Try scrolling through Needle's envelopes.dic file sometime, if you're curious.</p>
+	<p>Needle was very fun to write for. We had a blast tossing ideas around, or just chatting and making note of what things we said to each other that seemed funny out of context. I spent some time playing with various strange text effects, and Galla crafted the highest quality dialogues. And at the end of 72 hours, we had made what is my favorite ghost I've ever helped to develop.</p>
+	<p>There is something else I have not mentioned yet. Being that Needle is, well... a needle, it is only right that it be able to poke things. And what should it poke? Other ghosts, of course! One of the features Needle launched with is the ability to poke any ghost it overlaps with. Upon overlapping a ghost, it will send the event <strong>OnNeedlePoke</strong> to that ghost, and say a short dialogue. Any ghost can add the OnNeedlePoke event to have their ghost react to being poked. It is so simple to add, and yet, it is a strangely fun interaction! Below is a sample implementation in AYA/YAYA.</p>
+<pre>
+//Sent by Needle when overlapping this ghost
+//reference0: The ID of the character being overlapped
+//reference1: The name of the current shell
+//If multiple characters are overlapped at once, the event will be sent multiple times, once for each character
+OnNeedlePoke
+{
+	if reference0 == 0 //Sakura
+	{
+		"\0Ow!"
+	}
+	elseif reference0 == 1 //Kero
+	{
+		//An example of an optional check, to have a special comment if Needle is in the Syringe shell
+		if reference1 == "Syringe"
+		{
+			"\1I hate syringes!!"
+		}
+		else
+		{
+			"\1Ow!"
+		}
+	}
+	elseif reference0 == 2 //Third char
+	{
+		"\p[2]Ow!"
+	}
+	//etc...
+}
+</pre>
+	<p>Shortly after the release of the ghost, other ghosts began to add reactions, even before the ghost jam had ended. Our first ghost of the jam, Balloons, was set up with the event before we even made Needle, to help kick things off. I hope other ghosts will explore interactions like this! It's fun to have my ghosts interact on my desktop, without needing to sink hours into a careful communication setup. This event is easy to implement, and other developers can just add it at any time they like without needing anything from us.</p>
+	<p>We've released multiple updates for Needle since the event, mostly adding in new content, but some bug fixes as well. I usually keep Needle's randomtalk file open on the side, and throughout the day if any ideas come to me, I will quickly write them down. Or if I'm feeling bored, I might play around with some text effects just for fun, and see what all I can make SSP do. Sometimes, as before, we make note of things we say to each other that sound like they could be funny. Needle is especially suited to this, since it is supposed to have disjointed and out of context dialogue.</p>
+	<p>I've really grown attached to our little Needle. It's so simple and straightforward, but with a few unique functions, and a big focus on content. And I think that is what has drawn in its fans; Needle may not have the most followers, but the folks that have picked it up seem to really enjoy it. And truly, I think that the reason for that was the focus that was put on the content more than anything else. It's pretty unique amongst English ghosts right now, having abandoned all the usual trappings of the existing English template ghosts. To the point where this ghost has no menus whatsoever. Not a single one. It's broadened my ideas of what ghosts can be, and what kind of ghosts might be fun to use.</p>
+	<p>My advice for anyone who is struggling with ghost development is to try breaking the mold. Your ghost doesn't need to have reactions to all the usual events, or any fancy functions, to be good. Just focus on content! A simple ghost with a lot of dialogues can be really fun and engaging, actually. Don't feel obligated to make your ghost comment about the user having between 10 and 20 emails; if those kinds of events have got you feeling stuck, just remove them! Toss them right out! Abandon them on the side of the road! SSP has default dialogues for those kinds of events, so don't worry about it and viciously remove them from your files! Free yourself from the boring stuff that is holding you back, and <em>go make something cool!</em> That is what a humble little needle taught me.</p>
+	<p>... Well, maybe humble isn't the right word for it.</p>
+</article>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+<script src="../scripts/credits.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+
+</body>
+</html>

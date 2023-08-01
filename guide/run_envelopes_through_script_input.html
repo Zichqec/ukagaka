@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Zi's Ukagaka Space"/>
+    <meta property="og:description" content="Zi's hub for ukagaka"/>
+    <meta property="og:url" content="https://zichqec.github.io/ukagaka/"/>
+    <meta property="og:image" content="https://zichqec.github.io/ukagaka/img/banner.png"/>
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<article>
+
+
+<div id="item_info"></div>
+</article>
+<article>
+<h2>Guide</h2>
+
+	<p>Sometimes you want to display variables or the results of functions in dialogues. In AYA/YAYA, this can be done simply. Write the name of a variable or function, or a formula, surrounded by parenthesis and prefixed with a %. So, %(minute) calls the minute variable, %(MenuRun) calls the MenuRun function, and %(1 + 1) displays the result of the 1 + 1.</p>
+		
+	<p>In other languages, this is known as String Interpolation. On the AYAYA wiki, google translates this as Embedded Elements or String Expansion. In the english community, this is colloquially known as Envelopes (however, the term Envelope is usually used to refer to lists of words called via string interpolation).</p>
+	
+	<p>This is a very handy feature, but it doesn't work in script input automatically! If you would like it to work in script input, you need to add a short snip of code to your OnTranslate function. This code was, as far as I know, originally written by Ponapalt. This is my modified version of it.</p>
+
+<pre>
+OnTranslate
+{
+	_talk = reference0
+	
+	//This is the bit that runs envelopes in script input
+	if reference1 == "" && reference2 == "" //If this is from script input
+	{
+		
+		EVAL('"' + REPLACE(_talk,'"','""') + '"')
+	}
+	else
+	{
+		TOSTR(_talk)
+	}
+}
+</pre>
+
+	<p>If you don't already have OnTranslate, you can just add this whole thing as-is. If you <i>do</i> have OnTranslate, you'll need to be a bit more careful and integrate this into what you already have.</p>
+	
+	<p>If you're working from the GT Template, you'll likely have a setup like this:</p>
+	
+<pre>
+OnTranslate
+	{
+	_talk = reference0
+ 	_talk = REPLACE(_talk, "Anchor 1", "\_a[anchor1]Anchor 1\_a")
+ 	_talk = REPLACE(_talk, "Anchor 2", "\_a[anchor2]Anchor 2\_a")
+ 	_talk = REPLACE(_talk, "Anchor 3", "\_a[anchor3]Anchor 3\_a")
+		{
+		"%(_talk)"
+		}
+	}
+</pre>
+		
+		<p>What you'll want to do is replace this bit:</p>
+<pre>
+		{
+		"%(_talk)"
+		}
+</pre>
+
+		<p>With this bit:</p>
+<pre>
+	//This is the bit that runs envelopes in script input
+	if reference1 == "" && reference2 == "" //If this is from script input
+	{
+		
+		EVAL('"' + REPLACE(_talk,'"','""') + '"')
+	}
+	else
+	{
+		TOSTR(_talk)
+	}
+</pre>
+
+		<p>The final result would look like this:</p>
+
+<pre>
+OnTranslate
+{
+	_talk = reference0
+	_talk = REPLACE(_talk, "Anchor 1", "\_a[anchor1]Anchor 1\_a")
+ 	_talk = REPLACE(_talk, "Anchor 2", "\_a[anchor2]Anchor 2\_a")
+ 	_talk = REPLACE(_talk, "Anchor 3", "\_a[anchor3]Anchor 3\_a")
+	
+	//This is the bit that runs envelopes in script input
+	if reference1 == "" && reference2 == "" //If this is from script input
+	{
+		
+		EVAL('"' + REPLACE(_talk,'"','""') + '"')
+	}
+	else
+	{
+		TOSTR(_talk)
+	}
+}
+</pre>
+
+	<p>And that's it! What this bit of code does is escape any quotes in the string, and then use EVAL to run it, which will make the results of the envelopes be displayed in the script.</p>
+	
+	<p><b>Important note:</b> This code <i>does not</i> work on AYA, and only works on YAYATc569-8 or newer as-is. You can convert from AYA to YAYA by following <a href="../guide/convert_from_aya_to_yaya.html">this guide</a>, upgrade from old YAYA versions to new YAYA versions by following <a href="../guide/upgrade_old_versions_of_yaya.html">this guide</a>, or if you're staying on an older version of YAYA, replace the EVAL command in the code you copied with this original version instead:</p>
+<pre>
+EVAL('"' + REPLACE(_talk,'"','" + CHR(0x22) + "') + '"')
+</pre>
+
+</article>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+<script src="../scripts/credits.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script src="../scripts/guide_details.js"></script>
+<script src="../scripts/guide_maker.js"></script>
+
+</body>
+</html>

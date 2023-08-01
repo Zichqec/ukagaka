@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Zi's Ukagaka Space"/>
+    <meta property="og:description" content="Zi's hub for ukagaka"/>
+    <meta property="og:url" content="https://zichqec.github.io/ukagaka/"/>
+    <meta property="og:image" content="https://zichqec.github.io/ukagaka/img/banner.png"/>
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<article>
+
+
+<div id="item_info"></div>
+</article>
+<article>
+<h2>Guide</h2>
+	<p>If you're reading this page, you've probably completed/nearly completed a ghost and are ready to set up network updates! It can be a bit intimidating at first, but I promise, once you do the initial setup it becomes much easier!</p>
+	<p>The very first step is to create a <a href="https://github.com/">Github account</a> if you don't have one. It will ask you what kind of work you do; your choices shouldn't really change anything, just pick what best fits you.</p>
+	<img src="imgdir/00.png" alt="Picking your work and experience">
+	<p>You'll have to verify your account, and then it will present you with 3 options. You'll want to pick the one that says 'Create a repository'. Your repository will be the folder your ghost files (and possibly website) go in!</p>
+	<img src="imgdir/01.png" alt="Pick what you want to do first">
+	<p>You'll then be presented with some options for your new repository. Fill in the repository name as whatever you'd like, but don't make it your username. It should preferably be something short and memorable. You could just call it 'Ukagaka' if you'd like! If you're planning to host more than just ghosts, I wouldn't call it 'Ghost', just to avoid confusion later.</p>
+	<p>If you want to add a readme to tell people on Github what these files are/what your website is about, feel free to tick the readme box at the bottom. You can also pick a license if you'd like.</p>
+	<img src="imgdir/02.png" alt="Setting up a repository">
+	<p>Once you've set things up, click on <b>Create repository</b>. It will then take you to the online version of the folder you've just made. Next, we're going to clone that folder to your local computer so you can add things to it easily!</p>
+	<p>In theory, you <i>could</i> just upload files through the Github website, but I do not recommend it. Trust me, Github desktop will make your life so much easier.</p>
+	<p>As an aside, if you decided to add a readme, you can edit it from this page. Make sure you click <b>commit changes</b> when you're done!</p>
+	<img src="imgdir/03.png" alt="Dropdown">
+	<p>Next, you'll need to click on that green dropdown in the right corner that says <b>Code</b>. Then you'll click <b>Open with GitHub Desktop</b>, which should take you to a download page for Gitub Desktop if you don't have it. If it doesn't, <a href="https://desktop.github.com/">here's a link.</a></p>
+	<p>It should only take a minute or two to install, and then you should see this screen or one like it.</p>
+	<img src="imgdir/04.png" alt="Github Desktop main screen">
+	<p>This might look a bit confusing, but I promise you only need to learn to do a few key things. First, we need to get your repository onto your computer!</p>
+	<img src="imgdir/05.png" alt="Dropdown to clone repository">
+	<p>In the top left, click <b>File</b> and then click <b>Clone repository</b>. It will ask you to sign in to Github on your computer. Do that, then click <b>File</b> and <b>Clone repository</b> again if it doesn't reopen it automatically. You should see this page.</p>
+	<img src="imgdir/06.png" alt="Clone repository window">
+	<p>Click on the repository you made earlier, and then click <b>Clone</b>. You can pick a different local path if you'd like, but I just leave mine where it is.</p>
+	<p>Now you have a copy of your repository on your computer, and you can make changes to it as you like! To open that folder you can click the <b>Show in Explorer</b> button on Github desktop.</p>
+	<img src="imgdir/07.png" alt="Show in Explorer button">
+	<p>Now we're going to add your ghost's files. First of all, I'd recommend making a folder inside of your repository called Updates. That way, you can keep your update files separate from any other files (like website files) that you may add. Inside of the Updates folder, copy your ghost's entire folder. The file tree should look something like this.</p>
+	<img src="imgdir/08.png" alt="File tree">
+	<p>Inside that folder should be your Shell and Ghost folder, as well as install.txt, readme.txt, your thumbnail, all that. It should be a <b>perfect copy</b> of your ghost's most recent files. All of these files are what your users will be downloading when they ask their ghost to update.</p>
+	<p>Now then, there is a problem with this. Before you create .nar files and update files, you need to remove your own save so that your users don't have their progress erased. This is very simple, but you need to remember to do it each time. Go into <b>YourGhost\ghost\master</b>, which should look a bit like this.</p>
+	<img src="imgdir/09.png" alt="The ghost\master folder">
+	<p>The two highlighted files are the ones you need to delete. <b>yaya_variable.cfg</b> is all the variables that the ghost has set while you've been running it, and the profile folder has to do with things like where you've dragged the ghost on screen, I believe. Since this is a copy of your ghost's files (or it should be), you can just delete them without losing your own save!</p>
+	<p>(Note, this tutorial assumes you're using YAYA. If you're using AYA or any other ghost language, the file you'll have to delete will be different. I'm not sure what it will be called, but you'll need to find out before you move on.)</p>
+	<p>Just one more thing to set up before your ghost is prepared for updates. You need to set up the homeurl in string.dic. When using Github, there are two possible URLs. Sometimes one works and the other doesn't, and I'm not really sure why. I believe the github.io URL only works if you have Github pages set up (see below), but it's been a bit finicky. Give one a try, and if it doesn't work, try the other. The link formats are like so:</p>
+	<div class="wrap">
+	<p><b>Link format A:</b> https://raw.githubusercontent.com/YourUsername/YourRepository/master/Updates/YourGhost/</p>
+	<p><b>Link format B:</b> https://YourUsername.github.io/YourRepository/Updates/YourGhost/</p>
+	</div>
+	<p>Please note, these urls ARE CASE SENSITIVE! Also, yours may 'Main' instead of 'Master'. I'm not sure why that is. Make sure you look at your repository's URL carefully, and if updates aren't working, try changing that! Also, don't forget to change the homeurl in the string.dic that's in your repository so they both match.</p>
+	<p>Additional note: If you're using the github.io link, you <i>cannot</i> have names of files in your repository start with an underscore. <i>This is really important,</i> because it'll cause your updates to throw a 404 error. If you're using newer versions of YAYA, you might have a file called _loading_order.txt in your yaya_base folder. If this is the case and you want to use the github.io link, you'll need to take the contents of the _loading_order.txt file, copy them into your yaya.txt, and then delete the _loading_order.txt file. It may be better to use the raw.githubusercontent link in case more edge cases like this come up in the future.</p>
+	<p>All that being said, your string.dic should now look something like this.</p>
+	<img src="imgdir/10.png" alt="String.dic example">
+	<p>Now that your files are ready, drag and drop the ghost's entire folder onto your ghost (or any ghost)! They should give you a few options. To create a file that other people can use to install your ghost, you'll want to create a .nar file. To create files that will allow users to update, create an update file. The update files will automatically be placed in the appropriate folders.</p>
+	<img src="imgdir/11.gif" alt="Dragging the folder onto your ghost">
+	<p>Once you've made an update file, you're ready to push your update! Changes you make to your repository are <i>not</i> automatically reflected online. Any time you've changed files, you'll see the changes in Github desktop, like so.</p>
+	<img src="imgdir/12.png" alt="Updates ready in Github">
+	<p>In the bottom left you'll see a couple text boxes and a button that says <b>Commit to master</b>. You <i>always</i> have to add a summary message. Something like 'My Ghost v1.0.0' would do fine; it's best to make these messages something clear and concise. Don't stress too much over the message though!</p>
+	<p>Click Commit to master and your changes will be saved to your repository! Github will actually keep backups of every commit you make, so if something breaks later you can roll back.</p>
+	<p>Just one more step, and you'll be home free.</p>
+	<img src="imgdir/13.png" alt="Pushing files">
+	<p>See this button that says <b>Push origin</b>? That button will send your latest files to the online version of your repository. Once you click this button, your changes will be live and users will be able to update. If you're ready, go for it!</p>
+	<p>I will note that in my experience, it's usually best to wait 1-2 minutes after pushing files to attempt an update on the ghost.</p>
+	<br>
+	<p>Congratulations! If you have no interest in creating a website for your ghost, then you're done! To push future updates, all you need to do is follow the last few steps again. I recommend always deleting the old files and copying in the new ones, just to make sure you don't miss anything.</p>
+	<p>Always make sure you test your updates before you announce them! Updating is a VERY finicky thing, and sometimes SSP just messes up. But Github is a solid host, if you can get this set up then your ghost's files should be secure for a long time to come.</p>
+    </article>
+
+    <article>
+	<h2 id="website">Supplement: Setting up a website with Github Pages</h2>
+	<p>Now, let's say you want to set up a little webpage for your ghost to explain what it is and show off its cool features! If you already know how to write in HTML and CSS, this will be very simple for you. If you don't know about those things, don't worry; I've written a template for you!</p>
+	<p>You can download the template files <a href="https://www.mediafire.com/file/yts0rmw7uwd7cwv/website_template_v1.0.2.zip/file">here</a>. Extract the contents of the zip file onto the top level of your repository, like so. If you're making your own files, just create them on the top level.</p>
+	<img src="imgdir/14.png" alt="Extracting the template">
+	<p>Once you have those files set up, go ahead and commit and push the changes in Github. You need to have at least 1 html file before Github will let you turn on Github Pages.</p>
+	<p>Once you've pushed the files, go back to your repository's online page.</p>
+	<img src="imgdir/15.png" alt="Repository front page">
+	<p>You'll need to click on the settings button on the right. Once on the settings page, scroll down until you see this bit about Github pages.</p>
+	<img src="imgdir/16.png" alt="Settings page">
+	<p>Set the branch to <b>master</b> and click save, and it should now look something like this.</p>
+	<img src="imgdir/17.png" alt="Settings saved">
+	<p>Now, if you've done all of this correctly, you can go ahead and click the link it gave you and it should take you to this page.</p>
+	<img src="imgdir/18.png" alt="The html template page">
+	<br>
+	<p>If you're seeing that page, congratulations! All that's left to do now is customize your website how you like!</p>
+	<p>You can open the html and CSS files with any text editor of your choice. Inside the files I've left notes for you explaining what things you need to change. It's up to you what you want to do with it! When you're done customizing your website, make sure you commit and push the new files.</p>
+	<p>Need to see an example of any of the things explained above? <a href="https://github.com/MakingATutorial/UkagakaWebsite ">Here's the repository I made while creating this tutorial</a>. It's all set up the exact way I've instructed you.</p>
+	<br>
+	<p>And that's all! If you've followed all these steps, hopefully you now have a ghost with functioning network updates, and a little webpage for them. If anything in this tutorial has left you confused, or something isn't working as expected, do get in contact with me and I'll try to help you out! Once it's set up the first time, it's much easier to maintain, so take heart!</p>
+</article>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+<script src="../scripts/credits.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script src="../scripts/guide_details.js"></script>
+<script src="../scripts/guide_maker.js"></script>
+
+</body>
+</html>

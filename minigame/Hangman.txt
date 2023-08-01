@@ -1,0 +1,188 @@
+//Written by Zichqec https://zichqec.github.io/s-the-skeleton/index.html
+
+OnStartHangman //Sets up starting variables
+{
+	HMword = hangmanwords //Pulls the word to guess from a pool of words
+	HMlet = IARRAY //HMlet[0] is guessed letters, HMlet[1] is incorrect letters
+	OnHangman
+}
+
+OnHangman //Main game window
+{
+	_maxwrong = 6 //Maximum incorrect guesses - set to whatever you like
+	_word = ""
+	_left = 0
+	for _i = 0; _i < STRLEN(HMword); _i++
+	{
+		_let = TOLOWER(SUBSTR(HMword,_i,1)) //Get the current letter and make it lowercase
+		if _let _in_ HMlet[0] || _let == " "
+		{
+			_word += "%(SUBSTR(HMword,_i,1))"
+		}
+		else
+		{
+			_word += "_ "
+			_left++
+		}
+	}
+	--
+	if (STRLEN(HMlet[1]) / 2) >= _maxwrong //If the number of incorrect letters is equal to or greater than the number of max tries
+	{
+		"\0\s[0]Nope, you're all out of guesses! The word was %(HMword). Better luck next time!"
+	}
+	elseif _left > 0 //If there are still letters to guess
+	{
+		_mistakes = (_maxwrong - (STRLEN(HMlet[1]) / 2))
+		_marker = ""
+		
+		"\0\_q\*%(bb)\![set,balloontimeout,-1]\![set,autoscroll,disable]\![open,inputbox,OnGuessNormal,-1]"
+		--
+		"%(_word)\n\nGuessed so far: %(HMlet[1])\n\nTries left: "
+		--
+		for _i = 0; _i < _mistakes; _i++
+		{
+			_marker += "\![*]"
+		}
+		--
+		"%(_marker)"
+		--
+		if _left > 1
+		{
+			"\n\n\![*]\q[Guess the whole word,HangmanGuessWhole]"
+		}
+		--
+		"\n\![*]\q[Open the input box again,HangmanInput]\n\n\![*]\q[Give up,HangmanQuit]\e"
+	}
+	else //If _left is still 0, the user has guessed all letters correctly
+	{
+		HangmanWin
+		--
+		"\0\s[0]You got it! It was %(HMword)."
+	}
+	--
+	HangmanBack
+}
+
+OnGuessNormal
+{
+	if TOSTR(reference0) == "0.0" || TOSTR(reference0) == "0.000000"; reference0 = "." //Unlikely to come up, but periods are handled strangely, and also differently between aya and yaya because screw you lol
+	if STRLEN(reference0) > 1 //The user has put in more than 1 letter
+	{
+		"\0\s[0]Single letters only, please.\x"
+	}
+	elseif TOLOWER(reference0) _in_ TOLOWER(HMlet[0]) //The user has already guessed that letter
+	{
+		"\0\s[0]You already guessed %(reference0)! Try something new.\x"
+	}
+	elseif TOLOWER(reference0) _in_ TOLOWER(HMword) //The letter is in the word
+	{
+		HMlet[0] += reference0
+	}
+	else //The letter is not in the word
+	{
+		HMlet[0] += reference0
+		HMlet[1] += "%(TOLOWER(reference0)) "
+	}
+	--
+	OnHangman
+}
+
+Select.HangmanGuessWhole
+{
+	_word = ""
+	_left = 0
+	for _i = 0; _i < STRLEN(HMword); _i++
+	{
+		_let = TOLOWER(SUBSTR(HMword,_i,1)) //Get the current letter and make it lowercase
+		if _let _in_ HMlet[0] || _let == " "
+		{
+			_word += "%(SUBSTR(HMword,_i,1))"
+		}
+		else
+		{
+			_word += "_ "
+			_left++
+		}
+	}
+	"\0\*%(b)\![set,balloontimeout,-1]\![set,autoscroll,disable]\![close,inputbox,OnGuessNormal]\![open,inputbox,OnGuessWhole,-1]"
+	--
+	"\0\s[0]Feeling brave? Alright, the word so far is %(_word)\n\nYou've guessed these letters so far: %(HMlet[1])\n\nWhat do you think it is?"
+	--
+	"\n\n\n\![*]\q[Open the input box again,WholeInput]\n\n\![*]\q[Give up,HangmanQuit]\e"
+}
+
+OnGuessWhole
+{
+	_word = ""
+	_left = 0
+	for _i = 0; _i < STRLEN(HMword); _i++
+	{
+		_let = TOLOWER(SUBSTR(HMword,_i,1)) //Get the current letter and make it lowercase
+		if _let _in_ HMlet[0] || _let == " "
+		{
+			_word += "%(SUBSTR(HMword,_i,1))"
+		}
+		else
+		{
+			_word += "_ "
+			_left++
+		}
+	}
+	if TOLOWER(reference0) == TOLOWER(HMword) //Correct guess, instant win
+	{
+		HangmanWin
+		--
+		"\0\s[0]Wow, that's right, it was %(HMword)! You guessed it with %(_left) letters still blank!"
+	}
+	else //Incorrect guess, instant lose
+	{
+		"\0\s[0]Nope, it was %(HMword)! Better luck next time!"
+	}
+	--
+	HangmanBack
+}
+
+Select.HangmanInput
+{
+	"\C\![close,inputbox,OnGuessNormal]\![open,inputbox,OnGuessNormal,-1]\_l[0,0] "
+}
+
+Select.WholeInput
+{
+	"\C\![close,inputbox,OnGuessWhole]\![open,inputbox,OnGuessWhole,-1]\_l[0,0] "
+}
+
+Select.HangmanQuit
+{
+	"\0\![close,inputbox,OnGuessNormal]\![close,inputbox,OnGuessWhole]%(b)"
+	--
+	"\0\s[0]Aw, alright. It was %(HMword). Better luck next time!"
+	--
+	HangmanBack
+}
+
+HangmanBack
+{
+	"\n\n\![*]\q[Another!,OnStartHangman]\n\![*]\q[I'm done,cancelnodialogue]\e"
+}
+
+HangmanWin //This function is called every time the user wins hangman. You can use it to easily add friendship/money/whatever in one easy place. This does not include dialogue, it's just for variable changes. The ones I've left in here are examples.
+{
+	//friendship++
+	//money++
+}
+
+hangmanwords : nonoverlap //Words it can choose - add lots of these!
+{
+	"Hangman"
+	"Girl"
+	"Triangle"
+	"Rhythm"
+	"Jazz"
+	"Skeletons"
+	"Nyctophobia"
+	"Neophyte"
+	"Lenticular"
+	"Ukagaka"
+	"Ghost"
+}
