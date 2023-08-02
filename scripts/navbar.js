@@ -43,6 +43,8 @@ let deepness = 0;
 //Get how many subfolders deep we are
 function findDeepness()
 {
+	console.log("find deepness");
+	console.log(location.pathname);
 	if (ishomepage)
 	{
 		deepness = 0;
