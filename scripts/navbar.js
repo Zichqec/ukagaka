@@ -47,7 +47,8 @@ function findDeepness()
 	console.log(location.pathname);
 	let path = location.pathname;
 	console.log(path);
-	
+	console.log(islocal);
+	console.log(ishomepage);
 	if (ishomepage)
 	{
 		deepness = 0;
