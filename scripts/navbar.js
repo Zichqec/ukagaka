@@ -3,7 +3,7 @@ console.log("hello, world!");
 console.log(location.pathname);
 let islocal = location.protocol == "https:" ? '' : '.html';
 let ishomepage = 1;
-if (!(location.pathname.endsWith("ukagaka/index.html") || location.pathname.endsWith("ukagaka/") || location.pathname == "index.html" || location.pathname == ""))
+if (!(location.pathname.endsWith("ukagaka/index.html") || location.pathname.endsWith("ukagaka/") || location.pathname == "/" || location.pathname == ""))
 {
 	ishomepage = 0;
 }
