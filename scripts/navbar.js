@@ -1,7 +1,6 @@
 //Many thanks to andrews05 in the EV Nova Discord for helping me with the initial setup for this! I've made lots of changes at this point, but it really helped me get a grasp on this.
 console.log("hello, world!");
 let path = location.pathname
-console.log(path);
 let islocal = location.protocol == "https:" ? '' : '.html';
 let ishomepage = 1;
 if (!(location.pathname.endsWith("ukagaka/index.html") || location.pathname.endsWith("ukagaka/") || location.pathname == "/" || location.pathname == ""))
@@ -43,12 +42,7 @@ let deepness = 0;
 //Get how many subfolders deep we are
 function findDeepness()
 {
-	console.log("find deepness");
-	console.log(location.pathname);
 	let path = location.pathname;
-	console.log(path);
-	console.log(islocal);
-	console.log(ishomepage);
 	if (ishomepage)
 	{
 		deepness = 0;
@@ -64,11 +58,9 @@ function findDeepness()
 		{
 			
 		}
-		console.log(path);
 		path = path.split("/");
 		deepness = path.length - 1;
 	}
-	console.log(path);
 }
 
 function linkHTML(link)
