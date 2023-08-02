@@ -1,6 +1,7 @@
 //Many thanks to andrews05 in the EV Nova Discord for helping me with the initial setup for this! I've made lots of changes at this point, but it really helped me get a grasp on this.
 console.log("hello, world!");
-console.log(location.pathname);
+let path = location.pathname
+console.log(path);
 let islocal = location.protocol == "https:" ? '' : '.html';
 let ishomepage = 1;
 if (!(location.pathname.endsWith("ukagaka/index.html") || location.pathname.endsWith("ukagaka/") || location.pathname == "/" || location.pathname == ""))
@@ -48,8 +49,6 @@ function findDeepness()
 	}
 	else
 	{
-		let path = location.pathname;
-		
 		if (islocal)
 		{
 			path = path.split("ukagaka/"); //this is bad and i should fix this at some point
