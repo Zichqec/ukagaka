@@ -1,5 +1,6 @@
 //Many thanks to andrews05 in the EV Nova Discord for helping me with the initial setup for this! I've made lots of changes at this point, but it really helped me get a grasp on this.
-
+console.log("hello, world!");
+console.log(location.pathname);
 let islocal = location.protocol == "https:" ? '' : '.html';
 let ishomepage = 1;
 if (!(location.pathname.endsWith("ukagaka/index.html") || location.pathname.endsWith("ukagaka/") || location.pathname == "index.html" || location.pathname == ""))
