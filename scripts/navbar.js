@@ -65,8 +65,8 @@ function findDeepness()
 			
 		}
 		console.log(path);
-		//path = path.split("/");
-		//deepness = path.length - 1;
+		path = path.split("/");
+		deepness = path.length - 1;
 	}
 	console.log(path);
 }
