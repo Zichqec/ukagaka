@@ -30,19 +30,19 @@
 
 	<p>Here's an example from my FLUX shell, Cibus! Her arms can never disappear, but they also need to be chosen randomly. I can't use replace, either, because her hair is a dressup item and replace would cut into that.</p>
 	
-	<img src="imgdir/flux_cibus.gif" alt="Cibus shell singing">
+	<img src="ping_pong_loops/flux_cibus.gif" alt="Cibus shell singing">
 
 	<p>I used to use replace, back when she only had one hairstyle, but there was still an issue with that. If you have multiple animations set to random, and they overlap each other, the one with the highest number (if you use the default sort order) will always be on top of the other ones. So, one set of arms was always appearing on top of the other arms and overriding them, leading to that pair of arms showing up more often and causing odd stutters in the animation. This may not matter much to you if you're not worried about getting your shells perfect, but it drove me crazy. (Side note, I found out later that you <i>could</i> use a special option to make the arm animations be exclusive to each other, but that might still be a little wonky I think)</p>
 
 	<p>Here's another example with the master shell from FLUX! All of the arms animate independently without interrupting each other, and without disappearing. Even the head bobbing is a ping pong loop. This would not be possible with replace at all, since the arms in front would make the arms in back disappear.</p>
 	
-	<img src="imgdir/flux_master.gif" alt="FLUX master shell singing">
+	<img src="ping_pong_loops/flux_master.gif" alt="FLUX master shell singing">
 
 	<p>Ok, now that I've hopefully convinced you that ping pong loops are worth using, how do they work? First of all, each ping pong loop needs a 'control animation', and multiple other animations to be randomly called. (As a note, I'm writing in the new definition here, but it should work in the old definition too! If you're not sure what the difference is, I have a guide [here].)</p>
 
 	<p>The basic idea is this: you create one animation that controls all the rest. The control animation calls one of the other animations, and when that animation finishes playing, it calls the control animation again. The control animation says ping, the animation it calls says pong, and it goes back and forth forever, randomly picking a different animation to call each time.</p>
 	
-	<img src="imgdir/loop_code_visualization.gif" alt="Visualization of a ping pong loop">
+	<img src="ping_pong_loops/loop_code_visualization.gif" alt="Visualization of a ping pong loop">
 
 	<p>All of that happens super fast, the gif is just to give you a general idea of what's going on. I'll break down each bit of code, so you can see what it's really doing.</p>
 <pre>
