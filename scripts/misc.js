@@ -24,31 +24,34 @@ for (i = 0; i < coll.length; i++)
 //Why does this function exist? Because I don't want to have to write <img src="please_arrive_15_minutes_before_your_scheduled_interview_time/1.png"> for every image!!!!!!
 //♫ I make all of my own problems ♫
 
-function FixImgs()
-{
-	let pagename = location.pathname
+// function FixImgs()
+// {
+	// let pagename = location.pathname
 
-	if (pagename.endsWith(".html"))
-	{
-		pagename = pagename.replace(".html","")
-	}
-	pagename = pagename.split("/")
-	pagename = pagename[pagename.length - 1]
+	// if (pagename.endsWith(".html"))
+	// {
+		// pagename = pagename.replace(".html","")
+	// }
+	// pagename = pagename.split("/")
+	// pagename = pagename[pagename.length - 1]
 
 
 
-	let img_links = document.getElementsByTagName("img");
+	// let img_links = document.getElementsByTagName("img");
 
-	for (let img of img_links)
-	{
-		if (img.src.indexOf("imgdir") != -1)
-		{
-			img.src = img.src.replace("imgdir",`${pagename}`);
-		}
-	}
-}
+	// for (let img of img_links)
+	// {
+		// if (img.src.indexOf("imgdir") != -1)
+		// {
+			// img.src = img.src.replace("imgdir",`${pagename}`);
+		// }
+	// }
+// }
 
-FixImgs();
+// FixImgs();
+
+//Why does this function no longer exist? Because sometimes, depending on the order stuff loads in, it would throw a 404 in the console and that feels bad even though the image still appeared just fine!!!
+//♫ I make all of my own problems ♫
 
 
 //Maybe I'll make this its own function at one point
