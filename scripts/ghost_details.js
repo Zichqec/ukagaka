@@ -274,6 +274,18 @@ let item_details = [
 		blurb: "Do you like job interviews? How about wearing ties? If you answered yes to either of these, then this is the ghost for you! Interview continually for a new position doing hoard maintenance for a dragon. Answer questions, ask questions of your own, and learn all about your prospective job! Good luck!"
 	},
 	{
+		name: "S the Skeleton",
+		release: "May 1st, 2020",
+		latest: "August 25th, 2022",
+		version: "1.5.0",
+		forevent: null,
+		collaborators: null,
+		translations: null,
+		content_warnings: "Explores themes of grief, loss, dehumanization, and more.",
+		download: "https://www.mediafire.com/file/4limx4dmrox5xqr/s_the_skeleton_v1.5.0.nar/file",
+		blurb: "S the Skeleton is the first ghost I put serious work into that I actually published! He's old, his code is a mess, he's written in the old meta style, and his story is extremely convoluted. I love him dearly, but I don't truly recommend him. If you like that style though, maybe you'll enjoy him! He does have a lot of work that went into him."
+	},
+	{
 		name: "Skyrim Guard",
 		release: "June 13th, 2020",
 		latest: "June 14th, 2020",
@@ -301,18 +313,6 @@ let item_details = [
 		content_warnings: null,
 		download: "https://github.com/Zichqec/SSP_Angel/releases/latest",
 		blurb: "SSP Angel is here to teach you all about SSP! But fear not if you're already an experienced SSP user, SSP Angel is great for new and old users alike! They come with lots of tips and information, but you can also turn off their tips and be delighted by their 100+ whimsical idle dialogues!"
-	},
-	{
-		name: "S the Skeleton",
-		release: "May 1st, 2020",
-		latest: "August 25th, 2022",
-		version: "1.5.0",
-		forevent: null,
-		collaborators: null,
-		translations: null,
-		content_warnings: "Explores themes of grief, loss, dehumanization, and more.",
-		download: "https://www.mediafire.com/file/4limx4dmrox5xqr/s_the_skeleton_v1.5.0.nar/file",
-		blurb: "S the Skeleton is the first ghost I put serious work into that I actually published! He's old, his code is a mess, he's written in the old meta style, and his story is extremely convoluted. I love him dearly, but I don't truly recommend him. If you like that style though, maybe you'll enjoy him! He does have a lot of work that went into him."
 	},
 	{
 		name: "Ukatranslator",
