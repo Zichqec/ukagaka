@@ -440,3 +440,5 @@ if (pagetype == "ghost")
 }
 
 document.getElementById('page_index').innerHTML = makePageIndex();
+
+document.getElementById('tempblurb').innerHTML = `<p>${currentpage.blurb}</p>`;
