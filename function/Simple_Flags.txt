@@ -1,4 +1,4 @@
-//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+//Written by Zichqec https://ukagaka.zichqec.com/
 
 //Usage: This is intended to take the place of single-use variables that only contain 0 or 1, used as flags for certain events and such. With these functions, you can store all those flags as a single array, meaning you can make as many flags as you want without having to really worry about save bloat. It can also make your code a bit more readable!
 

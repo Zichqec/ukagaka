@@ -1,4 +1,4 @@
-//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+//Written by Zichqec https://ukagaka.zichqec.com/
 //This function will make the ghost wander randomly on the current screen. If set properly, they should never go off either edge of the screen, even if it is not your primary monitor. Please note that I only have two monitors to test this with, it might break with 3 or more!
 //I recommend making a hotkey for your test variable if you want to try this out, it's kinda fun tbh
 //Please note; there is a bug where if you boot a ghost on a secondary monitor, they will move to the primary monitor if you ask them to wander without dragging them onto a different monitor. I can't think of a way to fix this, but if you think of something please tell me.

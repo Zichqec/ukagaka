@@ -1,4 +1,4 @@
-//Written by Zichqec https://zichqec.github.io/s-the-skeleton/index.html
+//Written by Zichqec https://ukagaka.zichqec.com/index.html
 
 //If this all looks scary to you, no worries! All you need to do is set a few options in OnStartWordSearch, set up dialogue in WordSearchDialogue, and then add your own pool of words for it to choose from in WordSearchWords. If it gives you any trouble, let me know!
 

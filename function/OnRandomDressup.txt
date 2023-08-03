@@ -1,4 +1,4 @@
-//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+//Written by Zichqec https://ukagaka.zichqec.com/
 //IMPORTANT NOTE: This also contains two functions you might already have - The built in SHIORI event OnNotifyDressupInfo, and my function ASUB. If you already have ASUB, just don't include this ASUB. They're the same. If you already have OnNotifyDressupInfo, you might have to modify it so that they don't conflict!
 
 //This function will remove all the current dressups from a character, then pick random ones based on what categories of dressup are available. If the category is mustselect, it will always pick one. If it's multiple, it has a chance to pick multiple. And any categories that are not mustselect may be skipped over entirely, to increase variety.

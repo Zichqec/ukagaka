@@ -1,4 +1,4 @@
-//Written by Zichqec https://zichqec.github.io/s-the-skeleton/index.html
+//Written by Zichqec https://ukagaka.zichqec.com/index.html
 
 OnStartHangman //Sets up starting variables
 {

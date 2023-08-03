@@ -1,4 +1,4 @@
-//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+//Written by Zichqec https://ukagaka.zichqec.com/
 
 //Main game window
 OnJumble

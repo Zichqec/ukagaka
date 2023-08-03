@@ -1,4 +1,4 @@
-//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+//Written by Zichqec https://ukagaka.zichqec.com/
 
 //This function is intended to replace the functionality of an old SAORI that I found and couldn't get working. It lets multiple characters say different things at the same time.
 

@@ -1,4 +1,4 @@
-//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+//Written by Zichqec https://ukagaka.zichqec.com/
 
 //parallel Pool("Pool_Example","%(example == 'True')")
 //parallel Pool("Pool_Example",example == 'True')

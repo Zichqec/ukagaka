@@ -1,4 +1,4 @@
-//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+//Written by Zichqec https://ukagaka.zichqec.com/
 
 //To call the function, you can either call the function in your code like this:
 //Capitalize(SomeEnvelope) or Capitalize("some text")
