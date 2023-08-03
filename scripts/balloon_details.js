@@ -158,7 +158,7 @@ let item_details = [
 			Venelona
 		],
 		download: ["https://www.mediafire.com/file/0p615t180u08wnw/moth_chat_vz_v1.0.0.nar/file"],
-		blurb: "A balloon styled to resemble a chatting program! The text starts typing at the bottom and moves upwards, to complete the effect. This balloon was drawn by Venelona and assembled by me. Note that the balloon was originally released bundled with @funkylittlemothman, and was only released separately on August 1st, 2023."
+		blurb: "A balloon styled to resemble a chatting program! The text starts typing at the bottom and moves upwards, to complete the effect. This balloon was drawn by Venelona and assembled by me. Note that the balloon was originally released bundled with @funkylittlemothman, and was only released separately on August 2nd, 2023."
 	},
 	{
 		name: "Needloon",
