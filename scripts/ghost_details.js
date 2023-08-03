@@ -202,7 +202,7 @@ let item_details = [
 	{
 		name: "Lulo",
 		release: "January 1st, 2021",
-		latest: "January 1st, 2021",
+		latest: "August 2nd, 2023",
 		version: "0.0.2",
 		forevent: null,
 		collaborators: null,
