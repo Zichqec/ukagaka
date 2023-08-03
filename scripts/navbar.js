@@ -117,11 +117,6 @@ function linkHTML(link)
 findDeepness();
 document.getElementById('navbar').innerHTML = links.map(linkHTML).join('');
 
-if (!islocal)
-{
-	fixLocalLinks();
-}
-
 
 //Space mode stuff, thank you https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_dark_mode and https://stackoverflow.com/questions/60037491/how-to-save-cookies-for-dark-light-mode-toggle !!!
 
