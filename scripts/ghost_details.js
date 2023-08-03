@@ -341,6 +341,6 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/udb8b165gitux1d/warrior_generator_v1.0.0.nar/file",
-		blurb: "Do you like Warrior Cats? Do you like generating names, designs, and more? That's what this ghost will do for you! You can even export the designs as image files, for easy sharing."
+		blurb: "Do you like Warrior Cats? Do you like generating names, designs, and more? That's what this ghost will do for you! You can save the characters you generate as files to share or reload later. You can even export the designs as image files, for easy sharing."
 	}
 ]
