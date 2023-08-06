@@ -1,5 +1,5 @@
 //Written by Zichqec https://zichqec.github.io/s-the-skeleton/
-//Version 1.0.0
+//Version 1.0.1
 //This does not work in AYA ghosts. If you want to try to get it working in AYA, you're welcome to. You'll need to replace the one EVAL command, and make your OnTranslate call this manually. I think it could probably be done but I have not tested.
 
 
@@ -141,23 +141,29 @@ MarkdownProcessor.Options
 	//Same as above with the skip processing tag, but only for if you set _require_tag_to_process to True
 	_use_processing = "\![use-markdown]"
 	
+	//Events to skip in the processor completely, without needing a tag. This is important for things like the homeurl event. Add any new options you want, and separate them by | 
+	//I added a second one here so you can see how they need to be separated.
+	_events_to_skip = "On_homeurl|On_craftman"
 	
-	(_mode,_escape_section,_skip_processing,_require_tag_to_process,_use_processing)
+	
+	(_mode,_escape_section,_skip_processing,_require_tag_to_process,_use_processing,_events_to_skip)
 }
 
 
 //Don't touch the rest of this!!
 OnTranslateInternal.MarkdownProcessor
 {
-	_mode = MarkdownProcessor.Options[0] //Slowest, but should guarantee no overlap with sakurascript tags
-	
 	_input = _argv[0]
 	if reference1 == "debug"; _input = reference0
 	
 	//If no markdown is desired, skip the processing
+	_bad_events = SPLIT(MarkdownProcessor.Options[6],"|")
+	if ASEARCH(SHIORI3FW.Eventid,_bad_events) != -1; {_input; return}
+	
 	if MarkdownProcessor.Options[3] _in_ _input || (MarkdownProcessor.Options[4] == "True" && MarkdownProcessor.Options[5] !_in_ _input); {_input; return}
 	
 	
+	_mode = MarkdownProcessor.Options[0] //Slowest, but should guarantee no overlap with sakurascript tags
 	_tags = MarkdownProcessor.Tags
 	
 	//Special tag for escaping entire sections. Sections enclosed in this tag/tags will not have markdown applied. Leave the second tag blank if you want to use just one tag as a toggle back and forth.
