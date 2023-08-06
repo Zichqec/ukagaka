@@ -1,5 +1,5 @@
-//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
-//Version 1.0.1
+//Written by Zichqec https://ukagaka.zichqec.com/
+//Version 1.0.2
 //This does not work in AYA ghosts. If you want to try to get it working in AYA, you're welcome to. You'll need to replace the one EVAL command, and make your OnTranslate call this manually. I think it could probably be done but I have not tested.
 
 
@@ -282,10 +282,10 @@ MarkdownProcessor.ApplyMarkdown
 		_tag_open = _tag[2,C_BYTE1]
 		_tag_close = _tag[3,C_BYTE1]
 		
-		
+		_prev_end_snip = ""
 		
 		if _single_tag
-		{	
+		{
 			_pieces = SPLIT(_input,_mark_open)
 			_temp = ""
 			
@@ -296,6 +296,7 @@ MarkdownProcessor.ApplyMarkdown
 				{
 					_temp += _piece
 					_i++
+					_prev_end_snip = SUBSTR(_temp,STRLEN(_temp) - 2,2)
 					continue
 				}
 				_current_tag = _tag_open
@@ -307,10 +308,10 @@ MarkdownProcessor.ApplyMarkdown
 				}
 				
 				_apply_markdown = 1
-				if SUBSTR(_piece,STRLEN(_piece) - 1,1) == "|"
+				if SUBSTR(_prev_end_snip,1,1) == "|"
 				{
-					_piece = SUBSTR(_piece,0,STRLEN(_piece) - 1) //Either way we want to erase one of these
-					if SUBSTR(_piece,STRLEN(_piece) - 1,1) != "|" //If it's a double, apply the markdown
+					_temp = SUBSTR(_temp,0,STRLEN(_temp) - 1) //Either way we want to erase one of these
+					if SUBSTR(_prev_end_snip,0,1) != "|" //If it's a double, apply the markdown
 					{
 						_apply_markdown = 0
 					}
@@ -322,6 +323,7 @@ MarkdownProcessor.ApplyMarkdown
 				if _apply_markdown; _i++
 				
 				_temp += _piece
+				_prev_end_snip = SUBSTR(_temp,STRLEN(_temp) - 2,2)
 			}
 			_input = _temp
 		}
@@ -347,13 +349,14 @@ MarkdownProcessor.ApplyMarkdown
 					{
 						_temp += _piece
 						_first = 0
+						_prev_end_snip = SUBSTR(_temp,STRLEN(_temp) - 2,2)
 						continue
 					}
 					_apply_markdown = 1
-					if SUBSTR(_piece,STRLEN(_piece) - 1,1) == "|"
+					if SUBSTR(_prev_end_snip,1,1) == "|"
 					{
-						_piece = SUBSTR(_piece,0,STRLEN(_piece) - 1) //Either way we want to erase one of these
-						if SUBSTR(_piece,STRLEN(_piece) - 1,1) != "|" //If it's a double, apply the markdown
+						_temp = SUBSTR(_temp,0,STRLEN(_temp) - 1) //Either way we want to erase one of these
+						if SUBSTR(_prev_end_snip,0,1) != "|" //If it's a double, apply the markdown
 						{
 							_apply_markdown = 0
 						}
@@ -363,6 +366,7 @@ MarkdownProcessor.ApplyMarkdown
 					else; _piece = _current_mark + _piece
 					
 					_temp += _piece
+					_prev_end_snip = SUBSTR(_temp,STRLEN(_temp) - 2,2)
 				}
 				_input = _temp
 				_i++
@@ -372,7 +376,7 @@ MarkdownProcessor.ApplyMarkdown
 	_input
 }
 
-//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+//Written by Zichqec https://ukagaka.zichqec.com/
 //Version 1.0.0
 
 /*
