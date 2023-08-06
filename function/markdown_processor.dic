@@ -1,0 +1,567 @@
+//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+//Version 1.0.0
+//This does not work in AYA ghosts. If you want to try to get it working in AYA, you're welcome to. You'll need to replace the one EVAL command, and make your OnTranslate call this manually. I think it could probably be done but I have not tested.
+
+
+/*
+——————————————— BASIC USAGE ———————————————
+
+This set of functions will allow you to use markdown formatting in your scripts! It's not perfect, but I hope it will do the job.
+
+All you need to do is add this dic file to your ghost, and markdown formatting should be available for your scripts! These are the tags supported by default:
+
+**Bold**
+_Italics_
+__Underlined__
+~~Strikethrough~~
+
+==Highlighed (anchor color)==
+((Dimmed))
+
+-=Large text=-
+=-Small text-=
+^Superscript^
+$$Subscript$$
+
+``Monospaced``
+
+You can also escape tags:
+|_escapes single tags|_. I've had to use | instead of \ because of overlap with sakurascript. (note that unlike Discord, pairs will not be escaped, so you will have to escape both the beginning and ending tags)
+```Escapes an _entire_ section of text```
+\![no-markdown] anywhere in a script disables markdown for the whole script.
+
+Want to customize these, or customize other settings related to this processor? Check out the MarkdownProcessor.Tags and MarkdownProcessor.Options functions.
+
+Here's a test script you can run to see if markdown is working:
+"\b2\_qNormal\n**Bold**\n_Italics_\n__Underlined__\n~~Strikethrough~~\n==Highlighted==\n((Dimmed))\n-=Big=-\n=-Small-=\n^Superscript ^\n$$Subscript$$\n``Monospaced``"
+
+Note: Markdown will not be applied if you run scripts through script input! If you would like it to work with script input, see below in advanced settings.
+
+Have fun with markdown, and please let me know if you run into any issues!
+*/
+
+
+
+/*
+——————————————— ADVANCED SETTINGS & NOTES ———————————————
+
+You can skip this bit if you're not interested!
+
+This processor may cause extra lag on very long scripts with hundreds of tags. If you are running into this issue, I would recommend using \![no-markdown] and writing your sakurascript tags manually for that script. Alternatively, there are some options you can set.
+
+You can change the processor to _only_ process scripts that you manually direct it to. This is good if you have a lot of intensive menu scripts, and only want markdown for things like dialogue.
+
+You can also change the processor to only partially ignore sakurascript tags. By default, the processor scrapes out all sakurascript tags, so that they don't interfere with the markdown formatting. This is what causes the slowdown, so you can either turn it completely off (but you would have to be careful about what tags/markdown tags you use), or you can set it to only escape tags with underscores, asterisks, and \+ \++.
+
+If you have very long scripts, you may also run into YAYA's loop limit. By default the limit is 10000. If you want to change it, you can add looplimit,[number] to your yaya.txt. If you set the number to 0, it will disable the limit altogether, but if you hit an infinite loop SSP will crash. More information here:
+https://emily.shillest.net/ayaya/index.php?%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB/%E6%96%87%E6%B3%95/1.%E5%9F%BA%E7%A4%8E%E8%A8%AD%E5%AE%9A#w2afd51b
+
+Don't use >> or << as markdown tags. You can do it, but you have to be careful with it, because in YAYA, <<" ">> <<' and '>> are all syntax for special strings. So a script like ">>Hello<<, world!" would cause an error.
+
+Finally, how to get markdown to work in script input: If you already have a setup in OnTranslate that allows you to run envelopes through script input, you can simply replace this bit:
+
+EVAL('"' + REPLACE(_talk,'"','" + CHR(0x22) + "') + '"')  //Or EVAL('"' + REPLACE(_talk,'"','""') + '"')
+
+With this:
+
+_talk = EVAL('"' + REPLACE(_talk,'"','" + CHR(0x22) + "') + '"')
+_talk = OnTranslateInternal.MarkdownProcessor(_talk)
+_talk
+
+If you don't have anything like that in your OnTranslate, here's a guide I wrote that will get you set up: https://zichqec.github.io/s-the-skeleton/envelopes_script_input
+*/
+
+MarkdownProcessor.Tags
+{
+	//——————————————— HOW TO ADD NEW TAGS ———————————————
+	//The format here is (Opening markdown tag,Optional closing markdown tag,Opening sakurascript tag,Closing sakurascript tag)
+	//If you omit the closing tag, it will use the opening tag instead. So you can have formatting like **Bold**, or you can have formatting like ((Dimmed)). Or you could even be extra spicy and write <i>Italics</i>.
+	//If you omit the closing tag, make sure you leave a space in the array where it would be. I've just put an extra comma in my examples, but you could put some empty quotes as well.
+	//Make sure you pick unique variable names for each type of tag you add. Then make sure you add the name of the variable as a string to the _tag_list below.
+	
+	//Basics
+	_tag.bold = ("**",,"\f[bold,1]","\f[bold,0]") // **Bold**
+	_tag.italics = ("_",,"\f[italic,1]","\f[italic,0]") //_italics_ (note, if you change this to use // instead of underscores, make sure that there is something after it in the comment or stuff will break lol. Just... Just leave this note here, trust me on this)
+	_tag.underlined = ("__",,"\f[underline,1]","\f[underline,0]") //__Underlined__
+	_tag.strikethrough = ("~~",,"\f[strike,1]","\f[strike,0]") //~~Strikethrough~~
+	
+	//Color
+	_tag.highlighted = ("==","","\f[color,default.anchor]","\f[color,default]") //==Highlighted==
+	_tag.dimmed = ("((","))","\f[color,disable]","\f[color,default]") //((Dimmed))
+	
+	//Size/placement
+	//You could do absolute sizes here if you want, or make the height go back to default when the tag closes, I just think that allows less freedom
+	//_tag.big = ("<|","|>","\f[height,+4]","\f[height,-4]") //<|Big|> - This is an option if you would prefer to make it go back to the default size when you write the closing tag. Or if you want a different size change from the small tag. But for now, I think having relative changes is easier, and it means they can share tags!
+	_tag.small = ("=-","-=","\f[height,-4]","\f[height,+4]") //=-Small-= - or -=big=-
+	_tag.superscript = ("^","","\f[sup,1]","\f[sup,0]") //^Superscript^
+	_tag.subscript = ("$$","","\f[sub,1]","\f[sub,0]") //$$Subscript$$ - This doesn't match the single ~ that the markdown specification recommends, because ~ sometimes shows up in ghost dialogue and that would be annoying to have to escape.
+	
+	//Font
+	_tag.monospaced = ("``","","\f[name,courier new]","\f[name,default]") //``Monospaced``
+	
+	//Don't forget to add the name of your new variable here. If you want them to process in a different order (like having a tag that uses 3 ___ be processed before a tag that uses 2 __), you can put them in the order you want here while still having it organized by type above.
+	_tag_list = ("_tag.underlined","_tag.bold","_tag.italics","_tag.strikethrough","_tag.highlighted","_tag.dimmed","_tag.small","_tag.superscript","_tag.subscript","_tag.monospaced")
+	
+	
+	//You don't need to worry about the rest of this
+	//Change from nice individual arrays to a multidimensional array. Every day, I yearn for real multidimensional arrays... but then again, if I used those for this, only folks that update their YAYA could use it lol
+	_tags = IARRAY
+	foreach _tag_list; _current
+	{
+		_tag = EVAL("%(_current)")
+		_tags ,= _tag[0] + C_BYTE1 + _tag[1] + C_BYTE1 + _tag[2] + C_BYTE1 + _tag[3]
+	}
+	_tags
+}
+
+MarkdownProcessor.Options
+{
+	//Adjust these as you like!
+	
+	/*
+		MODE OPTIONS:
+		
+		Remove All      - Slowest, but should guarantee no overlap with sakurascript tags.
+		Remove Common   - Compromise, fixes overlap with tags with underscores, asterisks, and plusses, like \_q and \__q, as well as \*, %*, \![*], \+, and \++, so that you can use these characters for tags.
+		None            - Fastest, but you will not be able to use underscores at all for your markdown tags.
+	*/
+	_mode = "Remove All"
+	
+	//Special tag for escaping entire sections. Sections enclosed in this tag/tags will not have markdown applied. Leave the second tag blank if you want to use just one tag as a toggle back and forth.
+	_escape_section = ("```","")
+	
+	//Tag for skipping processing entirely. I have this formatted like a SakuraScript tag because that makes it not display to the user. I would recommend keeping it that way, but you can customize the text inside if you want something else.
+	_skip_processing = "\![no-markdown]"
+	
+	//If you would prefer to tell it which scripts you want run through the processor, rather than which scripts you do _not_ want run through the processor, set this to True
+	//False:   "This script would have __markdown__ applied!"                  "\![no-markdown]This script would __not__ have markdown applied!"
+	//True:    "\![use-markdown]This script would have __markdown__ applied!"   "This script would __not__ have markdown applied!"
+	_require_tag_to_process = "False"
+	
+	//Same as above with the skip processing tag, but only for if you set _require_tag_to_process to True
+	_use_processing = "\![use-markdown]"
+	
+	
+	(_mode,_escape_section,_skip_processing,_require_tag_to_process,_use_processing)
+}
+
+
+//Don't touch the rest of this!!
+OnTranslateInternal.MarkdownProcessor
+{
+	_mode = MarkdownProcessor.Options[0] //Slowest, but should guarantee no overlap with sakurascript tags
+	
+	_input = _argv[0]
+	if reference1 == "debug"; _input = reference0
+	
+	//If no markdown is desired, skip the processing
+	if MarkdownProcessor.Options[3] _in_ _input || (MarkdownProcessor.Options[4] == "True" && MarkdownProcessor.Options[5] !_in_ _input); {_input; return}
+	
+	
+	_tags = MarkdownProcessor.Tags
+	
+	//Special tag for escaping entire sections. Sections enclosed in this tag/tags will not have markdown applied. Leave the second tag blank if you want to use just one tag as a toggle back and forth.
+	_escape_section = (MarkdownProcessor.Options[1],MarkdownProcessor.Options[2])
+	
+
+	_scooped_tags = IARRAY
+	if _mode == "Remove All" //SakuraScooper
+	{
+		_scooped_tags = SakuraScooper(_input)
+		foreach _scooped_tags; _scoop
+		{
+			_input = REPLACE(_input,_scoop,C_BYTE1 + "ScOoPeD TaG" + C_BYTE1,1)
+		}
+	}
+	elseif _mode == "Remove Common"
+	{
+		_input = REPLACE(_input,"\__",C_BYTE1 + "DoUbLe UnDeRsCoRe" + C_BYTE1)
+		_input = REPLACE(_input,"\_",C_BYTE1 + "SiNgLe UnDeRsCoRe" + C_BYTE1)
+		_input = REPLACE(_input,"\*",C_BYTE1 + "SlAsH AsTeRiSk" + C_BYTE1)
+		_input = REPLACE(_input,"%*",C_BYTE1 + "PeRcEnT AsTeRiSk" + C_BYTE1)
+		_input = REPLACE(_input,"\![*]",C_BYTE1 + "ChOiCe MaRkEr" + C_BYTE1)
+		_input = REPLACE(_input,"\++",C_BYTE1 + "DoUbLe PlUs" + C_BYTE1)
+		_input = REPLACE(_input,"\+",C_BYTE1 + "SiNgLe PlUs" + C_BYTE1)
+	}
+	
+	//If there is a section to be escaped
+	if _escape_section[0] _in_ _input
+	{
+		_sections = SPLIT(_input,_escape_section[0])
+		_all_temp = ""
+		
+		//Apply markdown but only if not in an escaped section
+		_i = 0
+		foreach _sections; _section
+		{
+			if _escape_section[1] != "" //If it's 2 tags
+			{
+				if _i == 0
+				{
+					_all_temp += MarkdownProcessor.ApplyMarkdown(_section)
+					_i++
+					continue
+				}
+				_close = _escape_section[1]
+				
+				_rest = _section
+				_section = _section[0,_close]
+				_rest[0,_close] = IARRAY
+				if ARRAYSIZE(SPLIT(_rest,_close)) > 1
+				{
+					_rest = SPLIT(_rest,_close)
+					_temp_rest = ""
+					foreach _rest; _rest_section
+					{
+						_temp_rest += _rest_section
+					}
+					_rest = _temp_rest
+				}
+				
+				_rest = MarkdownProcessor.ApplyMarkdown(_rest)
+				
+				_all_temp += _section + _rest
+			}
+			else //If it's 1
+			{
+				if _i % 2 == 0
+				{
+					_section = MarkdownProcessor.ApplyMarkdown(_section)
+				}
+				
+				_all_temp += _section
+				
+				_i++
+			}
+		}
+		_input = _all_temp
+	}
+	else; _input = MarkdownProcessor.ApplyMarkdown(_input)
+	
+	
+	
+	if _mode == "Remove All"
+	{
+		foreach _scooped_tags; _scoop
+		{
+			_input = REPLACE(_input,C_BYTE1 + "ScOoPeD TaG" + C_BYTE1,_scoop,1)
+		}
+	}
+	elseif _mode == "Remove Common"
+	{
+		_input = REPLACE(_input,C_BYTE1 + "DoUbLe UnDeRsCoRe" + C_BYTE1,"\__")
+		_input = REPLACE(_input,C_BYTE1 + "SiNgLe UnDeRsCoRe" + C_BYTE1,"\_")
+		_input = REPLACE(_input,C_BYTE1 + "SlAsH AsTeRiSk" + C_BYTE1,"\*")
+		_input = REPLACE(_input,C_BYTE1 + "PeRcEnT AsTeRiSk" + C_BYTE1,"%*")
+		_input = REPLACE(_input,C_BYTE1 + "ChOiCe MaRkEr" + C_BYTE1,"\![*]")
+		_input = REPLACE(_input,C_BYTE1 + "DoUbLe PlUs" + C_BYTE1,"\++")
+		_input = REPLACE(_input,C_BYTE1 + "SiNgLe PlUs" + C_BYTE1,"\+")
+	}
+	_input
+}
+
+MarkdownProcessor.ApplyMarkdown
+{
+	//Applying the markdown tags
+	_tags = MarkdownProcessor.Tags
+	_input = _argv[0]
+	foreach _tags; _tag
+	{
+		_mark_open = _tag[0,C_BYTE1]
+		_mark_close = _tag[1,C_BYTE1]
+		_single_tag = 0
+		if _mark_close == ""; {_mark_close = _mark_open; _single_tag = 1}
+		if _mark_open !_in_ _input && _mark_close !_in_ _input; continue //If this tag is not in the script, skip the processing
+		
+		_tag_open = _tag[2,C_BYTE1]
+		_tag_close = _tag[3,C_BYTE1]
+		
+		
+		
+		if _single_tag
+		{	
+			_pieces = SPLIT(_input,_mark_open)
+			_temp = ""
+			
+			_i = 0
+			foreach _pieces; _piece
+			{
+				if _i == 0
+				{
+					_temp += _piece
+					_i++
+					continue
+				}
+				_current_tag = _tag_open
+				_current_mark = _mark_open
+				if _i % 2 == 0
+				{
+					_current_tag = _tag_close
+					_current_mark = _mark_close
+				}
+				
+				_apply_markdown = 1
+				if SUBSTR(_piece,STRLEN(_piece) - 1,1) == "|"
+				{
+					_piece = SUBSTR(_piece,0,STRLEN(_piece) - 1) //Either way we want to erase one of these
+					if SUBSTR(_piece,STRLEN(_piece) - 1,1) != "|" //If it's a double, apply the markdown
+					{
+						_apply_markdown = 0
+					}
+				}
+				
+				
+				if _apply_markdown; _piece = _current_tag + _piece
+				else; _piece = _current_mark + _piece
+				if _apply_markdown; _i++
+				
+				_temp += _piece
+			}
+			_input = _temp
+		}
+		else
+		{
+			_i = 0
+			foreach (_mark_open,_mark_close); _openclose
+			{
+				_current_tag = _tag_open
+				_current_mark = _mark_open
+				if _i == 1
+				{
+					_current_tag = _tag_close
+					_current_mark = _mark_close
+				}
+				_pieces = SPLIT(_input,_openclose)
+				_temp = ""
+				
+				_first = 1
+				foreach _pieces; _piece
+				{
+					if _first
+					{
+						_temp += _piece
+						_first = 0
+						continue
+					}
+					_apply_markdown = 1
+					if SUBSTR(_piece,STRLEN(_piece) - 1,1) == "|"
+					{
+						_piece = SUBSTR(_piece,0,STRLEN(_piece) - 1) //Either way we want to erase one of these
+						if SUBSTR(_piece,STRLEN(_piece) - 1,1) != "|" //If it's a double, apply the markdown
+						{
+							_apply_markdown = 0
+						}
+					}
+					
+					if _apply_markdown; _piece = _current_tag + _piece
+					else; _piece = _current_mark + _piece
+					
+					_temp += _piece
+				}
+				_input = _temp
+				_i++
+			}
+		}
+	}
+	_input
+}
+
+//Written by Zichqec https://zichqec.github.io/s-the-skeleton/
+//Version 1.0.0
+
+/*
+This function will return an array of all recognized sakurascript tags in a script. This includes tags like \t, \*, \_q, \__q, \![raise,OnFunction,arbitrary,info], %*, %property[arbitrary.property], and even nested tags like \q[Fix the clock,script:"\![execute,SNTP]"].
+It takes one argument, which is the script you want it to process.
+
+This is very useful for instances where you want to remove tags from a script, add some processing to the script, and then insert them back in. Like so:
+
+OnTranslate
+{
+	_talk = reference0
+	
+	_tags = SakuraScooper(_talk) //Get a list of all the tags
+	
+	//Remove tags and replace with C_BYTE1 (you might want to do something more unique depending on your usage)
+	foreach _tags; _tag
+	{
+		_talk = REPLACE(_talk,_tag,C_BYTE1,1)
+	}
+	
+	//Some sort of script processing...
+	
+	//Put tags back into place
+	foreach _tags; _tag
+	{
+		_talk = REPLACE(_talk,C_BYTE1,_tag,1)
+	}
+	
+	_talk
+}
+
+Please note that scripts with many tags in them may cause some lag. Use wisely.
+*/
+SakuraScooper
+{
+	_input = _argv[0]
+	_scooped_tags = IARRAY
+	
+	_no_underscores = ("!","&","*","+","-","0","1","4","5","6","7","8","C","a","b","c","e","f","i","j","m","n","p","q","s","t","v","w","x","z")
+	_one_underscore = ("!","+","?","V","a","b","l","m","n","q","s","v","w")
+	_two_underscores = ("b","c","q","t","u","v","w")
+	
+	_percent = ("month","day","hour","minute","second","username","selfname","selfname2","keroname","screenwidth","screenheight","exh","et","wronghour","ms","mz","ml","mc","mh","mt","me","mp","m?","dms","lastghostname","lastobjectname","*","property")
+	
+	_must_have_brackets = ("\!","\&","\8","\__b","\__u","\__w","\_b","\_l","\_m","\_v","\_w","\f","\i","\j","\m","\q")
+	_may_have_brackets = ("\__q","\_a","\_s","\b","\c","\n","\p","\s","\x")
+	_may_have_additional = ("\b","\i","\s") //,"\w")
+
+	_has_percent = 0
+	if "%" _in_ _input; _has_percent = 1
+	
+	_found_all = 0
+	_pos = -1
+	while _found_all != 1 //Loop through to find all tags
+	{
+		_pos_slash = STRSTR(_input,"\",_pos + 1)
+		
+		if _has_percent //Don't want to be checking twice if we don't have to be...
+		{
+			_pos_percent = STRSTR(_input,"%",_pos + 1)
+			
+			if _pos_percent != -1 && _pos_percent < _pos_slash; _pos = _pos_percent
+			else; _pos = _pos_slash
+		}
+		else; _pos = _pos_slash
+		
+		
+		if _pos == -1; {_found_all = 1; break} //seems redundant??
+		
+		_underscores = 0
+		_tag = ""
+		_has_brackets = 0
+		
+		
+		_checkarray = IARRAY
+		
+		//Determine how many underscores and what tag we have here
+		if SUBSTR(_input,_pos,1) == "%"
+		{
+			if SUBSTR(_input,_pos,9) == "%property"; _has_brackets = 1
+			_checkarray = _percent
+		}
+		else
+		{
+			_two_chars = SUBSTR(_input,_pos,2) //I was using this 3 times, so...
+			if _two_chars == "\\"; continue
+			elseif _two_chars == "\%"; continue
+			elseif SUBSTR(_input,_pos,3) == "\__"
+			{
+				_underscores = 2
+				_tag = "\__"
+				
+			}
+			elseif _two_chars == "\_"
+			{
+				_underscores = 1
+				_tag = "\_"
+			}
+			else
+			{
+				_tag = "\"
+			}
+
+			if _underscores == 2; _checkarray = _two_underscores
+			elseif _underscores == 1; _checkarray = _one_underscore
+			else; _checkarray = _no_underscores
+			
+		}
+		
+		//Validate tag
+		_check = SUBSTR(_input,_pos + _underscores + 1,1)
+		
+		if ASEARCH(_check,_checkarray) == -1; continue
+		
+		//Check if it needs a bracket to be valid
+		_tag += SUBSTR(_input,_pos + _underscores + 1,1)
+		_next_char = SUBSTR(_input,_pos + _underscores + 2,1)
+		_end_pos = 0
+		
+		if ASEARCH(_tag,_must_have_brackets) != -1
+		{
+			if _next_char == "["; _has_brackets = 1
+			else; continue
+		}
+		elseif ASEARCH(_tag,_may_have_brackets) != -1
+		{
+			if _next_char == "["; _has_brackets = 1
+			elseif ASEARCH(_tag,_may_have_additional) != -1
+			{
+				if ISINTSTR(_next_char); {_end_pos = _pos + 2}
+				else; _end_pos = _pos +  1
+			}
+			else
+			{
+				_end_pos = _pos + 1
+			}
+		}
+		elseif _tag == "\+" //:unamused:
+		{
+			if _next_char == "+"; _end_pos = _pos + 2
+			else; _end_pos = _pos + 1
+		}
+		elseif _tag == "\w" //:deargodhelpme:
+		{
+			if ISINTSTR(_next_char); {_end_pos = _pos + 2}
+			else; _end_pos = _pos + 1
+		}
+		else
+		{
+			_end_pos = _pos + 1
+		}
+		
+		_startpos = _pos //This is because of nested tags... have to skip them
+		//If it has brackets, grab the entire bracket section
+		if _has_brackets
+		{
+			
+			_end_found = 0
+			_strpos = _pos + _underscores + 1
+			_quotes_open = 0
+			_escape_active = 0
+			
+			while !_end_found
+			{
+				if _strpos > STRLEN(_input); break
+				
+				_cur = SUBSTR(_input,_strpos,1)
+				
+				if _cur == '"'
+				{
+					if _quotes_open == 0; _quotes_open = 1
+					else; _quotes_open = 0
+				}
+				elseif _cur == "\"
+				{
+					_pos = _strpos
+					if _escape_active == 1; _escape_active = 0
+					else; _escape_active = 2 //this will be 1 on the next go around
+				}
+				elseif _cur == "]"
+				{
+					if _escape_active == 0 && _quotes_open == 0
+					{
+						_end_pos = _strpos - _underscores
+						_end_found = 1
+						break
+					}
+				}
+				
+				if _escape_active > 0; _escape_active--
+				_strpos++
+			}
+		}
+		
+		_scooped_tags ,= SUBSTR(_input,_startpos,(_end_pos + _underscores) - _startpos + 1)
+	}
+	_scooped_tags
+}
