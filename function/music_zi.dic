@@ -1,0 +1,2205 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//Version 1.0.0
+
+/*
+ABOUT THE MUSIC PLAYER:
+
+This music player is based off of the one in FLUX. It is written for YAYA, and most likely is _not_ compatible with AYA.
+
+Compatibility version: this version is built to be compatible with older versions of YAYA. If you are running YAYATc569-4 or later, you may want to try the Modern version, which has cleaner syntax allowed by newer versions of YAYA. You can find both versions on my website, linked above.
+
+This music player allows the user to add songs by dragging and dropping files and folders onto the ghost, and copy in .m3u playlists the same way. Music can be played through the music menu, which can be called with \![raise,OnMusicMenu] or \q[Music Menu,OnMusicMenu], etc. It can also be played via hotkeys or hotspots, which you can customize a bit.
+
+The volume, speed, and left/right balance of the music can be customized in the settings menu, and it also comes with a few different play modes. Additionally, there is an option to make playback stop after the current song finishes.
+
+Playlists can be saved as .m3u files and are compatible with FLUX and FLELE. You can rearrange the order of your current playlist through another menu.
+
+The ghost will also send out an event every time the music changes, notifying other ghosts of what music it is playing.
+
+Great care has been taken to try and ensure that the menus for the music player update dynamically when the music changes, and also to keep the balloon from flickering at any point. If you find an area where the balloon flickers when you click buttons, please tell me about it so I can fix it.
+
+
+
+IMPLEMENTING THE MUSIC PLAYER:
+
+This music player was a lot of work, so if you use it in your ghost I would ask that you kindly credit me in your ghost's readme. My link is at the top of this file. You are free to study how this music player works if you want to try writing your own implementation, no credit required for that. I will also gladly answer any questions you may have!
+
+This will require some adjustment to slot into your ghost. Specifically, there is a label below for BUILT IN SHIORI EVENTS
+The functions there may already exist in your ghost and therefore cause errors. You will need to go over them carefully and integrate them into your ghost's existing code.
+
+There are also optional Discord functions. These require a good bit of additional setup, I go into more detail in the DISCORD section. You can completely ignore them if you don't want them.
+
+I have left markers in the file for what bits you actually need to mess with. You should have a look at the section markers I have added, and also run searches for the following terms:
+
+//DIALOGUE:
+//CUSTOMIZE:
+
+DIALOGUE is anywhere that you will probably want to put custom dialogue.
+CUSTOMIZE is anywhere you may want to make small changes to the code to better suit your ghost.
+
+You will also definitely want to go over the functions in the FUNCTIONS THAT SHOULD BE CUSTOMIZED section. This has critical things such as which surfaces will be used while the ghost is singing.
+
+A function you might find helpful is the Singing function. It returns a 1 if music is currently playing, and a 0 if not. You can use this to add checks to functions like OnSurfaceRestore, to make sure your ghost stays in the singing poses while playing music.
+
+Listed below are the variables this music player uses, as well as the values they should be initialized to. I would recommend putting this in your OnFirstBoot.
+
+NowPlaying = ("",-1,"")
+MusicSettings = (100,100,0,0,"","Off") //Volume, Speed, Balance, Play mode, Stop after current flag, Song bar
+CurrentPlaylist = IARRAY
+ShuffledPlaylist = IARRAY
+Hotkeys = IARRAY
+BalloonLines = # //Replace the # with the number of lines in the balloon that you'll be using for the music menu. This is mostly used for the menu where you can change the order of songs in the playlist. This will be automatically set any time the user changes balloons, but it's good to make sure the initial value is correct. If you look in the OnBalloonChange function, it'll have a property command you could use for this, as well.
+Playtime = 0 //Only needed if you implement the Playtime counter below
+DiscordDisplay = ("On",0) //Only needed if you implement the Discord functions
+
+Additionally, I would recommend putting %(UpdateTooltips) and %(OnNotifySongInfo) into your firstboot, boot dialogues, ghost changing dialogues, etc. This will ensure that your ghost shows the tooltips properly and also updates any open ghosts on the status of the music player. 
+
+I will also recommend that you use developer_options.txt in order to prevent your playlists folder from ending up in your update files or nar files.
+
+If you run into any trouble do let me know and I will try to help you. If you find any bugs in the music player itself, please let me know and I will try to get them fixed.
+
+I may release new versions of this from time to time, but you will probably have to update this file piecemeal if you decide to update. I will likely have some sort of instructions in that case.
+*/
+
+/*
+Section names, for easy searching with Ctrl F:
+
+CORE FUNCTIONS
+FUNCTIONS THAT SHOULD BE CUSTOMIZED
+BUILT IN SHIORI EVENTS
+TOOLS
+DISCORD
+*/
+
+//—————————— CORE FUNCTIONS ——————————
+//The bulk of the menus and functions used by the music player. Most of this you won't need to touch.
+
+//Main music menu display; this displays the list of songs and the controls
+OnMusicMenu
+{
+	//Set default values if these get deleted or are not set
+	if MusicSettings[0] == ""; MusicSettings[0] = 100 //Volume
+	if MusicSettings[1] == ""; MusicSettings[1] = 100 //Speed
+	if MusicSettings[2] == ""; MusicSettings[2] = 0 //Balance
+	if MusicSettings[3] == ""; MusicSettings[3] = 0 //Play mode - 0 for loop playlist, 1 for shuffle playlist, 2 for loop song, 3 for play one song, 4 for random
+	//MusicSettings[4] is the 'stop after current' option
+	if MusicSettings[5] == ""; MusicSettings[5] = "Off" //Song bar
+	
+	_h = "\f[color,default.anchor]" //Highlight
+	_g = "\f[color,disable]" //Gray
+	_d = "\f[color,default]" //Default
+	
+	if _argv[0] != "manual" && BalloonIsOpen; "\C"
+	--
+	_display = ""
+	_currentsong = IARRAY
+	for _i = 0; _i < ARRAYSIZE(CurrentPlaylist); _i++
+	{
+		_song = CurrentPlaylist[_i]
+		_song = SPLITPATH(_song)[2] //Picks out just the name of the file, no extension
+		_path = CurrentPlaylist[_i]
+
+		_display += "\q[(x),OnRemoveSong,%(_i)] " //(x) button
+
+		if _i == NowPlaying[1] //If this is the song that's playing right now
+		{
+			_display += "\f[bold,1]\f[italic,1]"
+			_currentsong[0] = _song //Song name
+			_currentsong[1] = CurrentPlaylist[_i] //Song path
+		}
+		_display += "%(_h)\__q[OnPlaySong,%(CHR(34))%(_path)%(CHR(34)),%(_i),frommenu]%(_song)\__q%(_d)\n"
+		if _i == NowPlaying[1]; _display += "\f[default]" //Reset the bold/italic if it was applied
+	}
+	
+	if _currentsong[0] == "" //Placeholder if the song was removed from the playlist
+	{
+		_currentsong[0] = "(Removed from playlist)"
+		_currentsong[1] = NowPlaying[0]
+	}
+	--
+	"\0%(MusicPlayerBalloon)\_q\*\![set,autoscroll,disable]\c"
+	--
+	//CUSTOMIZE: If you're using something other than OnMenuRun for your menu, you'll need to edit this button and the one at the bottom of the menu
+	"\![*]\q[Back,OnMenuRun]  \![*]\__q[OnCancelBlank]Close window\__q\n"
+	--
+	"\![*]\__q[OnMusicSettings]Settings and Info\__q  \![*]\__q[OnScootSongMenu]Move songs\__q\n\n[half]"
+	--
+	if NowPlaying[0] == "" //This is if no song is loaded in. The text will be grayed out until a song is chosen.
+	{
+		//The playbutton reference here is for if no song is loaded
+		//CUSTOMIZE: I've used align commands here to make the buttons jump around less, but this is not suitable for all balloons. If these buttons overlap on your balloon, you can use this commented out version instead, which just uses normal spaces.
+		//"%(_g)<<<   \![*]Pause       %(_d)\![*]\q[Play,OnPlaySong,,,OnMusicMenu]    %(_g)>>>%(_d)\n\n[half]"
+		
+		"%(_g)<<<   \![*]Pause%(_d)%(newline)\f[align,right]\![*]\q[Play,OnPlaySong,,,OnMusicMenu]    %(_g)>>>%(_d)\n\n[half]\f[align,left]"
+	}
+	else //This else is if a song is loaded. The pause button will change to say resume if a song is currently paused.
+	{
+		/*
+		//CUSTOMIZE: As above, if you need to use regular spaces instead of align commands for your balloon, you can use this commented version instead
+		"\q[<<<,OnPrevSong]   "
+		--
+		if NowPlaying[2] != ""; "\![*]\q[Resume,OnPauseSong,OnMusicMenu,resume]"
+		else; "\![*]\q[Pause,OnPauseSong,OnMusicMenu,pause]   "
+		--
+		"    \![*]\q[Stop,OnStopSong,OnMusicMenu]    \q[>>>,OnNextSong]\n\n[half]"
+		*/
+		
+		"\q[<<<,OnPrevSong]   "
+		--
+		if NowPlaying[2] != ""; "\![*]\q[Resume,OnPauseSong,OnMusicMenu,resume]"
+		else; "\![*]\q[Pause,OnPauseSong,OnMusicMenu,pause]"
+		--
+		"%(newline)\f[align,right]\![*]\q[Stop,OnStopSong,OnMusicMenu]    \q[>>>,OnNextSong]\n\n[half]\f[align,left]"
+	}
+	--
+	"Now playing:"
+	--
+	if NowPlaying[0] != ""; " %(_h)\__q[OnSongLocation,%(CHR(34))%(_currentsong[1])%(CHR(34))]%(_currentsong[0])\__q\f[default]"
+	--
+	"\n\n[half]%(_display)\n"
+	--
+	"\![*]\q[Back,OnMenuRun]  \![*]\__q[OnCancelBlank]Close window\__q"
+	--
+	"\e __MUSIC_PLAYER_MAIN_MENU__" //Do not remove this, it's here so the menu can update dynamically
+}
+
+//Function that actually plays the songs
+OnPlaySong
+{
+	//reference0 - Name of the current song
+	//reference1 - Index number of the current song
+	//reference2 - Where this is coming from (menu, hotkey, justadded, etc)
+
+	NowPlaying[2] = "" //Clearing the paused song if there was one
+	
+	//Reset variables to defaults if they got erased
+	if MusicSettings[0] == ""; MusicSettings[0] = 100 //Volume
+	if MusicSettings[1] == ""; MusicSettings[1] = 100 //Speed
+	if MusicSettings[2] == ""; MusicSettings[2] = 0 //Balance
+	if MusicSettings[3] == ""; MusicSettings[3] = 0 //Play mode
+	if MusicSettings[4] != ""; MusicSettings[4] = "" //Reset 'stop after current' setting
+	if MusicSettings[5] == ""; MusicSettings[5] = "Off" //Song bar
+	
+	if IsMinimized //If it's minimized, the info will be coming from arguments rather than references
+	{
+		reference0 = _argv[0]
+		reference1 = _argv[1]
+	}
+	
+	if ARRAYSIZE(CurrentPlaylist) > 0 //If there are more songs to play
+	{
+		//This bit is for if it has been asked to play a new song and none is loaded yet, which only happens if the user clicks a hotspot, presses a hotkey, or clicks the play button directly.
+		if NowPlaying[0] == "" && !(reference2 == "frommenu" || reference2 == "justadded") //If no song was playing and this is not a manual choice by the user or a new song
+		{
+			if NowPlaying[1] == -1 //If no song was playing
+			{
+				if MusicSettings[3] == 1 //If it's set to shuffle
+				{
+					ShuffledPlaylist = ShufflePlaylist(RAND(ARRAYSIZE(CurrentPlaylist)),CurrentPlaylist)
+					NowPlaying[1] = ShuffledPlaylist[0]
+				}
+				elseif MusicSettings[3] == 4 //If it's set to random
+				{
+					NowPlaying[1] = RAND(ARRAYSIZE(CurrentPlaylist))
+				}
+				else //If it's not shuffling
+				{
+					NowPlaying[1] = 0
+				}
+			}
+			reference1 = NowPlaying[1]
+			reference0 = CurrentPlaylist[reference1]
+		}
+
+		NowPlaying[0] = reference0 //Name of the current song
+		
+		if reference2 == "justadded"; NowPlaying[1] = ARRAYSIZE(CurrentPlaylist) - 1 //Position of the current song
+		else; NowPlaying[1] = TOINT(reference1) //Position of the current song
+		
+		if reference2 == "frommenu" //If the user started a new song manually, shuffle the shuffled playlist again
+		{
+			ShuffledPlaylist = ShufflePlaylist(NowPlaying[1],CurrentPlaylist)
+		}
+		if MenuIsOpen; "\C" //If the balloon is currently open, keep it open
+		--
+		UpdateTooltips
+		--
+		"%(SingingSurfaces)" //Start the singing animations if they weren't already started
+		--
+		_send = ""
+		_send += "%(OnNotifySongInfo)"
+		_send += "\![sound,stop]"
+		
+		_window = "False"
+		if MusicSettings[5] == "On"; _window = "True"
+		
+		_send += "\![sound,play,%(CHR(34))%(reference0)%(CHR(34)),--volume=%(MusicSettings[0]),--rate=%(MusicSettings[1]),--balance=%(MusicSettings[2]),--window=%(_window),--sound-only=true]" //Play new song
+		
+		if IsMinimized
+		{
+			SHIORI3FW.MakeValueNotify(_send)
+		}
+		else
+		{
+			_send
+			-- 
+			if reference2 == "frommenu"; reference2 = "OnMusicMenu" //At this point it doesn't need to be distinct anymore
+			if reference2 != ""; "\![raise,%(reference2)]" //If music menu is already open, reopen it so that it highlights the correct song properly
+		}
+	}
+	else //If there are no songs available to play
+	{
+		_from = CheckWhichMenu
+		
+		"\![raise,OnStopSong,%(_from)]\e"
+	}
+	--
+	"\e"
+}
+
+//Stopping a song
+OnStopSong
+{
+	//reference0 is which menu this is coming from
+	
+	NowPlaying[0] = "" //song name
+	NowPlaying[2] = "" //Clearing paused song
+	MusicSettings[4] = "" //Reset the stop after current option
+	
+	if MenuIsOpen; "\C"
+	--
+	"\![sound,stop]"
+	--
+	"%(NonSingingSurfaces)%(OnNotifySongInfo)%(UpdateTooltips)" //Stop the singing animations
+	--
+	if reference0 != ""; "\![raise,%(reference0)]" //If music menu is already open, reopen it so that it highlights the correct song properly
+	--
+	"\e"
+}
+
+//Pausing or unpausing a song
+OnPauseSong
+{
+	//reference0 is which menu this is coming from
+	//reference1 is if we're pausing or resuming
+	_window = "False"
+	if MusicSettings[5] == "On"; _window = "True"
+	
+	if MenuIsOpen; "\C" //If the balloon is open, keep it open
+	--
+	"\![sound,option,%(CHR(34))%(NowPlaying[0])%(CHR(34)),--volume=%(MusicSettings[0]),--rate=%(MusicSettings[1]),--balance=%(MusicSettings[2]),--window=%(_window)]"
+	--
+	if reference1 == "resume" //Unpausing
+	{
+		NowPlaying[2] = ""
+		"%(SingingSurfaces)\![sound,resume]"
+	}
+	else //Pausing
+	{
+		NowPlaying[2] = NowPlaying[0] //Store the song in NowPlaying[2] to show it's paused
+		"%(NonSingingSurfaces)\![sound,pause]"
+	}
+	--
+	"%(OnNotifySongInfo)%(UpdateTooltips)"
+	--
+	if reference0 != ""; "\![raise,%(reference0)]" //If music menu is already open, reopen it so that it highlights the correct song properly
+	--
+	"\e"
+}
+
+//The user pressed a hotkey or menu option to go to the next song
+OnNextSong
+{
+	//reference0 is which menu this is coming from
+
+	NowPlaying[2] = ""
+	
+	_from = reference0
+	if _from == ""; _from = CheckWhichMenu //Sent to OnPlaySong
+	_next = 0
+	
+	if MenuIsOpen; "\C"
+	--
+	"\![sound,stop]"
+	--
+	if ARRAYSIZE(CurrentPlaylist) > 0 //Songs available to play
+	{
+		if MusicSettings[3] == 1
+		{
+			ShuffledPlaylist = ACYCLE('+',ShuffledPlaylist)
+			_next = ShuffledPlaylist[0]
+		}
+		elseif MusicSettings[3] == 4
+		{
+			_next = RAND(ARRAYSIZE(CurrentPlaylist))
+		}
+		else //Looping the list normally
+		{
+			if NowPlaying[1] >= (ARRAYSIZE(CurrentPlaylist) - 1) //If this was the last song on the list
+			{
+				_next = 0
+			}
+			else //If there are more songs to go
+			{
+				_next = NowPlaying[1] + 1
+			}
+		}
+		NowPlaying[0] = CurrentPlaylist[_next] //song name
+		NowPlaying[1] = _next //song position
+		--
+		"\![raise,OnPlaySong,%(CHR(34))%(CurrentPlaylist[_next])%(CHR(34)),%(_next),%(_from)]\e"
+	}
+	else //No more songs to play
+	{
+		"\![raise,OnStopSong,%(_from)]\e"
+	}
+}
+
+//The user pressed a hotkey or menu option to go to the previous song
+OnPrevSong
+{
+	//reference0 is which menu this is coming from
+
+	NowPlaying[2] = ""
+	
+	_from = reference0
+	if _from == ""; _from = CheckWhichMenu //Sent to OnPlaySong
+	
+	_next = 0
+	
+	if MenuIsOpen; "\C"
+	--
+	"\![sound,stop]"
+	--
+	if ARRAYSIZE(CurrentPlaylist) > 0 //Songs available to play
+	{
+		if MusicSettings[3] == 1
+		{
+			ShuffledPlaylist = ACYCLE('-',ShuffledPlaylist)
+			_next = ShuffledPlaylist[0]
+		}
+		elseif MusicSettings[3] == 4
+		{
+			_next = RAND(ARRAYSIZE(CurrentPlaylist))
+		}
+		else //Looping the list normally
+		{
+			if NowPlaying[1] <= 0 //If this was the last song on the list
+			{
+				_next = ARRAYSIZE(CurrentPlaylist) - 1
+			}
+			else //If there are more songs to go
+			{
+				_next = NowPlaying[1] - 1
+			}
+		}
+		NowPlaying[0] = CurrentPlaylist[_next] //song name
+		NowPlaying[1] = _next //song position
+		--
+		"\![raise,OnPlaySong,%(CHR(34))%(CurrentPlaylist[_next])%(CHR(34)),%(_next),%(_from)]\e"
+	}
+	else //No songs available to play
+	{
+		"\![raise,OnStopSong,%(_from)]\e"
+	}
+}
+
+//Removing a song from the current playlist
+OnRemoveSong
+{
+	if NowPlaying[2] != "" && reference0 == NowPlaying[1]; NowPlaying[2] = "" //If the song being removed was the paused song, clear it
+	CurrentPlaylist[reference0] = IARRAY //Clear the song that we want to remove
+	
+	if reference0 < NowPlaying[1]; NowPlaying[1] = NowPlaying[1] - 1
+	elseif reference0 == NowPlaying[1]; NowPlaying[1] = -1
+	
+	if NowPlaying[0] == CurrentPlaylist[reference0] //If the song being removed is being played, remove it from the shuffle list
+	{
+		ShuffledPlaylist = ShufflePlaylist('|removed|',CurrentPlaylist) //Send a placeholder for the song that was already removed, and shuffle the playlist
+	}
+	else //If another song is playing
+	{
+		ShuffledPlaylist = ShufflePlaylist(NowPlaying[1],CurrentPlaylist) //Shuffle with the current song as 1
+	}
+	--
+	"%(OnNotifySongInfo)\![raise,OnMusicMenu]"
+}
+
+//Menu for moving songs around in the playlist. Would love to eventually set it up to allow you to move songs to certain index numbers...
+OnScootSongMenu
+{
+	//CUSTOMIZE: This is the menu for moving songs in the playlist. The value below determines how much of the file name should be displayed before it shows an ellipsis. Adjust as needed to fit your balloon.
+	_max_name_length = 23 //Max length of names in this menu. After this number of characters it will write an ellipsis
+	
+	_h = "\f[color,default.anchor]"
+	_g = "\f[color,disable]"
+	_d = "\f[color,default]"
+	
+	_display = ""
+	if reference1 == "top"; _display += "\![set,autoscroll,disable]"
+	
+	_currentsong = IARRAY
+	for _i = 0; _i < ARRAYSIZE(CurrentPlaylist); _i++
+	{
+		_song = CurrentPlaylist[_i]
+		_song = SPLITPATH(_song)[2] //Picks out just the name of the file, no extension
+
+		if _i != 0
+		{
+			_display += "\q[▲▲,OnMoveSong,%(_i),top]  "
+			_display += "\f[bold,1]\q[△,OnScootSong,%(_i),-]\f[bold,default] "
+		}
+		else
+		{
+			_display += "%(_g)"
+			_display += "▲▲  "
+			_display += "\f[bold,1]△\f[bold,default] "
+			_display += "%(_d)"
+		}
+		
+		if _i == NowPlaying[1] //If this is the song that's playing right now
+		{
+			_display += "\f[bold,1]" //Make it bold
+			_currentsong[0] = _song //Saves the song name into _currentsong[0]
+			_currentsong[1] = CurrentPlaylist[_i] //Saves the song path into _currentsong[1]
+		}
+		
+		//Attempt to position the menu such that it's not jumping around _too_ badly... as long as you don't click too fast.
+		_lines = BalloonLines / 2 - 1
+		if reference1 == "+"; _lines += 1
+		elseif reference1 == "-"; _lines -= 1
+		if (_i - _lines) == reference0 && reference1 != "end"; _display += "\![set,autoscroll,disable]"
+		
+		//Handle which song name to highlight (by unhighlighting)
+		_justmoved = reference0
+		if reference1 == "end"; _justmoved = ARRAYSIZE(CurrentPlaylist) - 1
+		elseif reference1 == "top"; _justmoved = 0
+		elseif reference1 == "+"; _justmoved++
+		else; _justmoved--
+		
+		if _i != _justmoved; _display += "%(_h)" //Highlight song if it's not the one that was just moved
+		//NOTE: If you're getting an error about the line below, you probably don't have yaya_optional.txt! You can pick that up here: https://github.com/ponapalt/yaya-dic
+		_display += "\_n%(SHIORI3FW.MakeShortText(_song,_max_name_length)) \_n" //Add song to list
+		if _i != _justmoved; _display += "%(_d)"
+		if _i == NowPlaying[1]; _display += "\f[default]" //Reset the bold if it was applied
+		
+		_display += "%(newline)\f[align,right]\f[bold,1]"
+		if _i != (ARRAYSIZE(CurrentPlaylist) - 1)
+		{
+			_display += "\q[▽,OnScootSong,%(_i),+]\f[bold,default]  "
+			_display += "\q[▼▼,OnMoveSong,%(_i),end]"
+		}
+		else
+		{
+			_display += "%(_g)"
+			_display += "▽\f[bold,default]  "
+			_display += "▼▼"
+		}
+		_display += "\n\f[align,left]%(newline)%(_d)" //Align commands... so useful but so tricky. Idk why this works but it does. It was putting extra spaces before which are really obvious on some balloons with fonts that have wide spaces
+	}
+	if reference1 != ""; "\C\![lock,balloonrepaint]\c"
+	--
+	"\0%(MusicPlayerBalloon)\_q\*"
+	--
+	"\![*]\q[Back,OnMusicMenu]\n\n"
+	--
+	"%(_display)\n\n"
+	--
+	"\![*]\q[Back,OnMusicMenu]\![unlock,balloonrepaint]\e"
+}
+
+//Move song to top or bottom of playlist
+OnMoveSong
+{
+	_temp = CurrentPlaylist[reference0]
+	if reference1 == "top"
+	{
+		_temparray = CurrentPlaylist
+		_temparray[reference0] = IARRAY
+		CurrentPlaylist = IARRAY
+		CurrentPlaylist ,= _temp
+		foreach _temparray; _song
+		{
+			CurrentPlaylist ,= _song
+		}
+		if reference0 == NowPlaying[1] //If it's the current song, the index will now be 0
+		{
+			NowPlaying[1] = 0
+		}
+		elseif reference0 > NowPlaying[1] //If not, and the song _used_ to be below this one on the list, increase the index number since now the current song is lower in the list
+		{
+			NowPlaying[1] = NowPlaying[1] + 1
+		}
+	}
+	else //End
+	{
+		CurrentPlaylist[reference0] = IARRAY
+		CurrentPlaylist ,= _temp
+		if reference0 == NowPlaying[1] //If it's the current song, the index will now be the last in the array
+		{
+			NowPlaying[1] = ARRAYSIZE(CurrentPlaylist) - 1
+		}
+		elseif reference0 < NowPlaying[1] //If not, and the song _used_ to be above this one in the list, decrease the index number since now the current song is higher in the list 
+		{
+			NowPlaying[1] = NowPlaying[1] - 1
+		}
+	}
+	ShuffledPlaylist = ShufflePlaylist(NowPlaying[1],CurrentPlaylist)
+	--
+	"\C\![raise,OnScootSongMenu,%(reference0),%(reference1)]"
+}
+
+//Moving a song in the playlist by one space
+OnScootSong
+{
+	CurrentPlaylist = ASCOOTEX(TOINT(reference0),reference1,CurrentPlaylist)
+	if reference0 == NowPlaying[1]
+	{
+		if reference1 == "+"
+		{
+			NowPlaying[1] = NowPlaying[1] + 1
+		}
+		else //-
+		{
+			NowPlaying[1] = NowPlaying[1] - 1
+		}
+	}
+	elseif (reference0 + 1) == NowPlaying[1] && reference1 == "+"
+	{
+		NowPlaying[1] = NowPlaying[1] - 1
+	}
+	elseif (reference0 - 1) == NowPlaying[1] && reference1 == "-"
+	{
+		NowPlaying[1] = NowPlaying[1] + 1
+	}
+	
+	ShuffledPlaylist = ShufflePlaylist(NowPlaying[1],CurrentPlaylist)
+	--
+	"\C\![raise,OnScootSongMenu,%(reference0),%(reference1)]"
+}
+
+//Open the folder of the currently playing song
+OnSongLocation
+{
+	_path = SPLITPATH(reference0)[0] + SPLITPATH(reference0)[1]
+	_path = ERASE(_path,STRLEN(_path) - 1,1) //Erases the last \
+	
+	"\![open,file,%(CHR(34))%(_path)%(CHR(34))]\![raise,OnMusicMenu]"
+}
+
+//Settings menu
+OnMusicSettings
+{
+	//Set default values if these get deleted or are not set
+	if MusicSettings[0] == ""; MusicSettings[0] = 100 //Volume
+	if MusicSettings[1] == ""; MusicSettings[1] = 100 //Speed
+	if MusicSettings[2] == ""; MusicSettings[2] = 0 //Balance
+	if MusicSettings[3] == ""; MusicSettings[3] = 0 //Play mode - 0 for loop playlist, 1 for shuffle playlist, 2 for loop song, 3 for play one song, 4 for random
+	//MusicSettings[4] is the 'stop after current' option
+	if MusicSettings[5] == ""; MusicSettings[5] = "Off" //Song bar
+	if DiscordDisplay[0] == ""; DiscordDisplay[0] = "On"
+	
+	_h = "\f[color,default.anchor]"
+	_g = "\f[color,disable]"
+	_d = "\f[color,default]"
+	
+	_mode = MusicSettings[3]
+	_vol = MusicSettings[0]
+	_speed = MusicSettings[1]
+	_bal = MusicSettings[2]
+	
+	if _mode == 1; _mode = "Shuffle and Loop"
+	elseif _mode == 2; _mode = "Loop One Song"
+	elseif _mode == 3; _mode = "Play One Song"
+	elseif _mode == 4; _mode = "Random"
+	else; _mode = "Loop Playlist"
+	
+	"\C\![lock,balloonrepaint]\c\0\![set,autoscroll,disable]\_q\*%(MusicPlayerBalloon)"
+	
+	//▲▼⯇⯈ - buttons for ease of copying
+	//Doing this here so that the menu bit itself can be cleaner... This is just handling graying out the buttons if clicking them would do nothing.
+	_vol_up_btn = "\q[▲,OnQuickVolume,Up]"
+	if MusicSettings[0] >= 100; _vol_up_btn = "%(_g)▲%(_d)"
+	_vol_down_btn = "\q[▼,OnQuickVolume,Down]"
+	if MusicSettings[0] <= 0; _vol_down_btn = "%(_g)▼%(_d)"
+	
+	_speed_up_btn = "\q[▲,OnQuickSpeed,Up]"
+	if MusicSettings[1] >= MAX_RATE; _speed_up_btn = "%(_g)▲%(_d)"
+	_speed_down_btn = "\q[▼,OnQuickSpeed,Down]"
+	if MusicSettings[1] <= 0; _speed_down_btn = "%(_g)▼%(_d)"
+	
+	_balance_left_btn = "\q[⯇,OnQuickBalance,Left]"
+	if MusicSettings[2] <= -100; _balance_left_btn = "%(_g)⯇%(_d)"
+	_balance_right_btn = "\q[⯈,OnQuickBalance,Right]"
+	if MusicSettings[2] >= 100; _balance_right_btn = "%(_g)⯈%(_d)"
+	
+	
+	--; "Play mode: \![*]\__q[OnPlaybackType]%(_mode)\__q\n\n[half]"
+	--; "Volume: %(_vol_up_btn)%(_vol_down_btn) %(_h)\q[%(_vol),OnMusicSet,Volume]%(_d)\n"
+	--; "Speed: %(_speed_up_btn)%(_speed_down_btn) %(_h)\q[%(_speed),OnMusicSet,Speed]%(_d)\n"
+	--; "Balance: %(_balance_left_btn)%(_balance_right_btn) %(_h)\q[%(_bal),OnMusicSet,Balance]%(_d)\n\n"
+	--; "\__q[OnStopAfterPlayback]Stop after current song\__q"
+	--; if MusicSettings[4] == "stop after playback"; " \![*]"
+	--; "\n"
+	--; "Song Bar \![*]%(_h)\__q[OnToggleSongBar]%(MusicSettings[5])\__q%(_d)\n"
+	//CUSTOMIZE: If you want Discord functionality, you'll need to uncomment this
+	//--; "Show current song in Discord? %(_h)\__q[OnToggleDiscordPlugin]%(DiscordDisplay[0])\__q%(_d)\n"
+	--; "\n"
+	
+	--; "\![*]\__q[OnSavePlaylist]Save current playlist\__q\n"
+	--; "\![*]\__q[OnLoadPlaylist]Load playlist\__q\n"
+	--; "\![*]\__q[OnClearPlaylist]Clear current playlist\__q\n\n"
+	
+	--; "\![*]\__q[OnHotkeys]Change Hotkeys\__q\n\n"
+	
+	--; "\![*]\__q[OnMusicInfo,addsong]How do I add a song?\__q\n"
+	--; "\![*]\__q[OnMusicInfo,error]Why do some songs give an error?\__q\n"
+	--; "\![*]\__q[OnMusicInfo,playlistsave]Where are playlists saved?\__q"
+	--; "\n\n\![*]\__q[OnMusicMenu]Back to music menu\__q"
+	
+	--
+	"\![unlock,balloonrepaint]\e __MUSIC_SETTINGS_MENU__"
+}
+
+//Changing the playback type
+OnPlaybackType
+{
+	"\0%(MusicPlayerBalloon)\_q"
+	--
+	--; "\![*]\q[Loop Playlist,OnPlaybackTypeChange,0]\n"
+	--; "\![*]\q[Shuffle and Loop,OnPlaybackTypeChange,1]\n"
+	--; "\![*]\q[Loop One Song,OnPlaybackTypeChange,2]\n"
+	--; "\![*]\q[Play One Song,OnPlaybackTypeChange,3]\n"
+	--; "\![*]\q[Random,OnPlaybackTypeChange,4]\n"
+	--; "\n\![*]\q[Back to music settings,OnMusicSettings]\e"
+}
+
+//Actually making the change
+OnPlaybackTypeChange
+{
+	reference0 = TOINT(reference0)
+	MusicSettings[3] = reference0
+	if reference0 == 1 //If the user set it to shuffle, shuffle the playlist
+	{
+		ShuffledPlaylist = ShufflePlaylist(NowPlaying[1],CurrentPlaylist)
+	}
+	OnMusicSettings
+}
+
+//Bringing up input boxes
+OnMusicSet
+{
+	"\0%(MusicPlayerBalloon)\_q\*"
+	--
+	if reference0 == "Balance"; "\![open,inputbox,OnMusicBalance,-1]"
+	elseif reference0 == "Speed"; "\![open,sliderinput,OnMusicSpeed,-1,100,1,%(MAX_RATE)]"
+	else; "\![open,sliderinput,OnMusicVolume,-1,100,1,100]"
+	--
+	//DIALOGUE: Dialogue for when you click the numbers for volume/speed/balance to set them directly.
+	if reference0 == "Balance"
+	{
+		"Type a balance value. 0 is center, -100 is all the way to the left, 100 is all the way to the right."
+	}
+	elseif reference0 == "Speed"
+	{
+		"Pick a speed. 100 is normal."
+	}
+	else //volume
+	{
+		"Pick a volume. 100 is the default."
+	}
+	--
+	"\n\n\![*]\q[Cancel,OnCloseMusicSet,%(reference0)]\e"
+}
+
+//Setting the balance
+OnMusicBalance
+{
+	MusicSettings[2] = TOINT(reference0)
+	if MusicSettings[2] > 100; MusicSettings[2] = 100
+	if MusicSettings[2] < -100; MusicSettings[2] = -100
+	if Singing; "\![sound,option,%(CHR(34))%(NowPlaying[0])%(CHR(34)),--balance=%(MusicSettings[2])]"
+	--
+	OnMusicSettings
+}
+
+//Setting the speed
+OnMusicSpeed
+{
+	MusicSettings[1] = reference0
+	if Singing; "\![sound,option,%(CHR(34))%(NowPlaying[0])%(CHR(34)),--rate=%(MusicSettings[1])]"
+	--
+	OnMusicSettings
+}
+
+//Setting the volume
+OnMusicVolume
+{
+	MusicSettings[0] = reference0
+	if Singing; "\![sound,option,%(CHR(34))%(NowPlaying[0])%(CHR(34)),--volume=%(MusicSettings[0])]"
+	--
+	OnMusicSettings
+}
+
+//If the user cancels the changes, this'll close the input boxes
+OnCloseMusicSet
+{
+	"\C\![close,inputbox,OnMusic%(reference0)]"
+	--
+	OnMusicSettings
+}
+
+//Up/Down volume buttons
+OnQuickVolume
+{
+	if reference0 == "Up" || _argv[0] == "Up"
+	{
+		MusicSettings[0] += 5
+		if MusicSettings[0] > 100; MusicSettings[0] = 100
+	}
+	else //Down
+	{
+		MusicSettings[0] -= 5
+		if MusicSettings[0] < 0; MusicSettings[0] = 0
+	}
+	if Singing
+	{
+		if MenuIsOpen; "\C"
+		--
+		"\![sound,option,%(CHR(34))%(NowPlaying[0])%(CHR(34)),--volume=%(MusicSettings[0])]"
+	}
+	--
+	if _argc == 0; OnMusicSettings //If this was done with the buttons - there will be no args in that case
+	elseif _argv[1] != "" //If a menu is listed to refresh
+	{
+		"\C\![raise,%(_argv[1])]"
+	}
+}
+
+//Up/Down speed buttons
+OnQuickSpeed
+{
+	if reference0 == "Up" || _argv[0] == "Up"
+	{
+		MusicSettings[1] += 5
+		if MusicSettings[1] > MAX_RATE; MusicSettings[1] = MAX_RATE
+	}
+	else //Down
+	{
+		MusicSettings[1] -= 5
+		if MusicSettings[1] < 0; MusicSettings[1] = 0
+	}
+	if Singing
+	{
+		if MenuIsOpen; "\C"
+		--
+		"\![sound,option,%(CHR(34))%(NowPlaying[0])%(CHR(34)),--rate=%(MusicSettings[1])]"
+	}
+	--
+	if _argc == 0; OnMusicSettings //If this was done with the buttons - there will be no args in that case
+	elseif _argv[1] != "" //If a menu is listed to refresh
+	{
+		"\C\![raise,%(_argv[1])]"
+	}
+}
+
+//Left/Right balance buttons
+OnQuickBalance
+{
+	if reference0 == "Right" || _argv[0] == "Right"
+	{
+		MusicSettings[2] += 5
+		if MusicSettings[2] > 100; MusicSettings[2] = 100
+	}
+	else //Left
+	{
+		MusicSettings[2] -= 5
+		if MusicSettings[2] < -100; MusicSettings[2] = 0
+	}
+	if Singing
+	{
+		if MenuIsOpen; "\C"
+		--
+		"\![sound,option,%(CHR(34))%(NowPlaying[0])%(CHR(34)),--balance=%(MusicSettings[2])]"
+	}
+	--
+	if _argc == 0; OnMusicSettings //If this was done with the buttons - there will be no args in that case
+	elseif _argv[1] != "" //If a menu is listed to refresh
+	{
+		"\C\![raise,%(_argv[1])]"
+	}
+}
+
+//Toggles the stop after playback function
+OnStopAfterPlayback 
+{
+	if MusicSettings[4] != "stop after playback"; MusicSettings[4] = "stop after playback"
+	else; MusicSettings[4] = ""
+
+	OnMusicSettings
+}
+
+OnToggleSongBar
+{
+	if MusicSettings[5] != "Off"; MusicSettings[5] = "Off"
+	else; MusicSettings[5] = "On"
+	
+	_onoff = "False"
+	if MusicSettings[5] == "On"; _onoff = "True"
+	
+	if MenuIsOpen; "\C"
+	--
+	if Singing || NowPlaying[2] != ""; "\![sound,option,%(CHR(34))%(NowPlaying[0])%(CHR(34)),--window=%(_onoff)]"
+	--
+	if _argc == 0; OnMusicSettings //If this was done with the buttons - there will be no args in that case
+	elseif _argv[1] != "" //If a menu is listed to refresh
+	{
+		"\C\![raise,%(_argv[1])]"
+	}
+}
+
+//Hotkey menu
+OnHotkeys
+{
+	if reference1 != ""; Hotkeys[reference0] = reference1 //If the user cancelled, set the hotkey back to what it was
+	
+	_msg = "Unbound"
+	
+	if Hotkeys[0] == ""; Hotkeys[0] = _msg //Play/pause
+	if Hotkeys[1] == ""; Hotkeys[1] = _msg //Next
+	if Hotkeys[2] == ""; Hotkeys[2] = _msg //Previous
+	if Hotkeys[3] == ""; Hotkeys[3] = _msg //Stop
+	if Hotkeys[4] == ""; Hotkeys[4] = _msg //Menu
+	if Hotkeys[5] == ""; Hotkeys[5] = _msg //Volume Up
+	if Hotkeys[6] == ""; Hotkeys[6] = _msg //Volume Down
+	if Hotkeys[7] == ""; Hotkeys[7] = _msg //Speed Up
+	if Hotkeys[8] == ""; Hotkeys[8] = _msg //Speed Down
+	if Hotkeys[9] == ""; Hotkeys[9] = _msg //Balance Left
+	if Hotkeys[10] == ""; Hotkeys[10] = _msg //Balance Right
+	if Hotkeys[11] == ""; Hotkeys[11] = _msg //Song Bar
+	
+	
+	_playpause = Hotkeys[0]
+	_next = Hotkeys[1]
+	_prev = Hotkeys[2]
+	_stop = Hotkeys[3]
+	_menu = Hotkeys[4]
+	_songbar = Hotkeys[5]
+	_volup = Hotkeys[6]
+	_voldown = Hotkeys[7]
+	_speedup = Hotkeys[8]
+	_speeddown = Hotkeys[9]
+	_balanceleft = Hotkeys[10]
+	_balanceright = Hotkeys[11]
+
+	_h = "\f[color,default.anchor]" //Highlight color
+	_d = "\f[color,default]" //Default color
+
+	"\C\![lock,balloonrepaint]\c\0%(MusicPlayerBalloon)\_q\*\![set,autoscroll,disable]"
+	
+	//DIALOGUE: Menu for changing the hotkeys
+	--; "Click a hotkey to change it, click the (x) to unset it.\n\n"
+
+	--; "\q[(x),OnUnsetHotkey,0] Play/Pause: %(_h)\__q[OnChangeHotkey,0]%(_playpause)\__q%(_d)\n"
+	--; "\q[(x),OnUnsetHotkey,1] Next Song: %(_h)\__q[OnChangeHotkey,1]%(_next)\__q%(_d)\n"
+	--; "\q[(x),OnUnsetHotkey,2] Previous Song: %(_h)\__q[OnChangeHotkey,2]%(_prev)\__q%(_d)\n"
+	--; "\q[(x),OnUnsetHotkey,3] Stop Song: %(_h)\__q[OnChangeHotkey,3]%(_stop)\__q%(_d)\n"
+	--; "\q[(x),OnUnsetHotkey,4] Open Music Menu: %(_h)\__q[OnChangeHotkey,4]%(_menu)\__q%(_d)\n"
+	--; "\q[(x),OnUnsetHotkey,5] Toggle Song Bar: %(_h)\__q[OnChangeHotkey,5]%(_songbar)\__q%(_d)\n\n"
+	
+	--; "\q[(x),OnUnsetHotkey,6] Volume Up: %(_h)\__q[OnChangeHotkey,6]%(_volup)\__q%(_d)\n"
+	--; "\q[(x),OnUnsetHotkey,7] Volume Down: %(_h)\__q[OnChangeHotkey,7]%(_voldown)\__q%(_d)\n"
+	--; "\q[(x),OnUnsetHotkey,8] Speed Up: %(_h)\__q[OnChangeHotkey,8]%(_speedup)\__q%(_d)\n"
+	--; "\q[(x),OnUnsetHotkey,9] Speed Down: %(_h)\__q[OnChangeHotkey,9]%(_speeddown)\__q%(_d)\n"
+	--; "\q[(x),OnUnsetHotkey,10] Balance Left: %(_h)\__q[OnChangeHotkey,10]%(_balanceleft)\__q%(_d)\n"
+	--; "\q[(x),OnUnsetHotkey,11] Balance Right: %(_h)\__q[OnChangeHotkey,11]%(_balanceright)\__q%(_d)\n"
+	
+	--; "\n\![*]\q[Back to Music Settings,OnMusicSettings]\![unlock,balloonrepaint]\e"
+}
+
+//Waiting for user input to change the hotkey
+OnChangeHotkey
+{
+	reference0 = TOINT(reference0)
+	_temp = Hotkeys[reference0]
+	
+	_option = ""
+	if reference0 == 1; _option = "next song"
+	elseif reference0 == 2; _option = "previous song"
+	elseif reference0 == 3; _option = "stop song"
+	elseif reference0 == 4; _option = "open menu"
+	elseif reference0 == 5; _option = "toggle song bar"
+	elseif reference0 == 6; _option = "volume up"
+	elseif reference0 == 7; _option = "volume down"
+	elseif reference0 == 8; _option = "speed up"
+	elseif reference0 == 9; _option = "speed down"
+	elseif reference0 == 10; _option = "balance left"
+	elseif reference0 == 11; _option = "balance right"
+	else; _option =  "Play/Pause"
+	
+	"\C\![lock,balloonrepaint]\c\0%(MusicPlayerBalloon)\*\_q"
+	--
+	//DIALOGUE: Changing a hotkey
+	"Press a key for %(_option)."
+	--
+	"\n\n\![*]\q[Cancel,OnHotkeys,%(reference0),%(_temp)]"
+	--
+	"\![unlock,balloonrepaint]\e changing hotkey: %(reference0)" //DO NOT TOUCH THIS. It will not work if you erase or change this.
+}
+
+//Unbinding the hotkey
+OnUnsetHotkey
+{
+	reference0 = TOINT(reference0)
+	Hotkeys[reference0] = "Unbound"
+	OnHotkeys
+}
+
+//Information that the user can ask about
+OnMusicInfo
+{
+	_h = "\f[color,default.anchor]" //highlight
+	_d = "\f[color,default]" //default
+	
+	if reference0 == "playlistsave"
+	{
+		_path = PLAYLIST_FOLDER
+		if FENUM(_path) == ""; void MKDIR(_path) //make directory if none exists
+	}
+	
+	"\C\0%(MusicPlayerBalloon)\_q\![lock,balloonrepaint]\c"
+	--
+	//DIALOGUE: Answers for the FAQ - Make sure you replace the file path in the one about where playlists save
+	if reference0 == "addsong" //Asking how to add songs
+	{
+		"To add songs, drag and drop them onto the ghost. Multiple files may be dragged at once, or entire folders. Compatible file types are %(_h).mp3%(_d), %(_h).wav%(_d), %(_h).wma%(_d), and %(_h).mid%(_d).\n\nIf you have \_a[https://github.com/Nevcairiel/LAVFilters/releases]LAV Filters\_a installed, many more file types will be compatible, including %(_h).flac%(_d), %(_h).ogg%(_d), and %(_h).m4a%(_d). For a full list of compatible file types, \_a[OnDisplayFileTypes]click here\_a."
+	}
+	elseif reference0 == "error" //Asking why some songs give errors
+	{
+		"Some songs will not play despite being the correct type. This is an SSP limitation. You can install \_a[https://github.com/Nevcairiel/LAVFilters/releases]LAVFilters\_a, an open source program, to fix most of these errors. If you don't want to do that, you can import a song into an audio editing program like \_a[https://www.audacityteam.org/]Audacity\_a and export it again, or convert it to another compatible type with something like \_a[https://www.onlineconverter.com/]Online Converter\_a."
+	}
+	elseif reference0 == "playlistsave" //Asking where playlists save
+	{
+		"Playlists are saved in \_a[OnPlaylistPath]SSP/ghost/THIS GHOST/playlists/\_a. You can also load a playlist from elsewhere by dragging and dropping it onto the ghost."
+	}
+	--
+	"\![unlock,balloonrepaint]\x[noclear]\![raise,OnMusicSettings]"
+}
+
+//Display a list of all the compatible filetypes
+OnDisplayFileTypes
+{
+	"\0%(MusicPlayerBalloon)\_q"
+	--
+	_display = ""
+	_i = 0
+	foreach CompatibleMusicFileTypes; _type
+	{
+		if _i >= 3; _i = 0
+		
+		
+		if _i != 0; _display += "    "
+		else; {_display += "\n"}
+		
+		_i++
+		_display += "\f[color,default.anchor]%(_type)\f[color,default]"
+	}
+	_display
+	--
+	"\x\![raise,OnMusicSettings]"
+}
+
+//Saving a playlist
+OnSavePlaylist
+{
+	_playlists = FENUM(PLAYLIST_FOLDER,C_BYTE1)
+	if _playlists == ""; void MKDIR(PLAYLIST_FOLDER)
+	_playlists = SPLIT(_playlists,C_BYTE1)
+	
+	_display = ""
+	for _i = 0; _i < ARRAYSIZE(_playlists); _i++
+	{
+		_playlist = _playlists[_i]
+		_playlist = RE_REPLACE(_playlist,"\.m3u$","")
+		_display += "\__q[OnPlaylistOverwrite,%(CHR(34))%(_playlist)%(CHR(34))]\_?%(_playlist)\_?\__q\n"
+	}
+	--
+	"\C\![lock,balloonrepaint]\c\0%(MusicPlayerBalloon)\*\_q\![set,autoscroll,disable]\![open,inputbox,OnPlaylistName,-1]"
+	--
+	//DIALOGUE: Saving a playlist
+	"Type a name to save the current playlist as a new playlist, or click an old playlist to save over it."
+	--
+	"\n\n\![*]\q[Cancel,OnPlaylistSaveCancel]"
+	--
+	"\n\n%(_display)\![unlock,balloonrepaint]\e"
+}
+
+//Closing the input box if the user chooses to cancel
+OnPlaylistSaveCancel
+{
+	"\C\![close,inputbox,OnPlaylistName]\![raise,OnMusicSettings]"
+}
+
+OnPlaylistName //After the user types a name
+{
+	_name = TOSTR(reference0) //Removing illegal characters
+	_name = REPLACE(_name,"\","_") 
+	_name = REPLACE(_name,"/","_")
+	_name = REPLACE(_name,":","_")
+	_name = REPLACE(_name,"*","_")
+	_name = REPLACE(_name,"%(CHR(0x22))","_")
+	_name = REPLACE(_name,"<","_")
+	_name = REPLACE(_name,">","_")
+	_name = REPLACE(_name,"|","_")
+	_name = REPLACE(_name,"?","_")
+	
+	--
+	_playlists = FENUM(PLAYLIST_FOLDER,C_BYTE1)
+	_playlists = SPLIT(_playlists,C_BYTE1)
+	if ASEARCH("%(_name).m3u",_playlists) != -1 && reference1 == ""; "\C\![raise,OnPlaylistOverwrite,%(CHR(34))%(_name)%(CHR(34)),are you sure]\e"
+	else
+	{
+		_path = PLAYLIST_FOLDER + "%(_name).m3u"
+		_o = FOPEN(_path,"w") //Create a new file
+		--
+		for _i = 0; _i < ARRAYSIZE(CurrentPlaylist); _i++
+		{
+			void FWRITE(_path,"%(CurrentPlaylist[_i])") //Write each file path
+		}
+		--
+		void FCLOSE(_path)
+		--
+		"\C\![lock,balloonrepaint]\![close,inputbox,OnPlaylistName]\c\0%(MusicPlayerBalloon)\_q"
+		--
+		//DIALOGUE: a playlist saving correctly, or failing to save
+		if _o == 1 //If it saves successfully
+		{
+			"Playlist saved successfully as '\_?%(_name)\_?'."
+		}
+		else //If saving fails
+		{
+			"Failed to save playlist."
+		}
+		--
+		"\![unlock,balloonrepaint]\x[noclear]\![raise,OnMusicMenu]"
+	}
+}
+
+//Checking before overwriting playlists
+OnPlaylistOverwrite
+{
+	if reference1 == "are you sure"
+	{
+		"\C\![lock,balloonrepaint]\c\*\0%(MusicPlayerBalloon)\_q"
+		--
+		//DIALOGUE: If the user puts in a playlist name that is the same as an existing playlist, it'll ask if they want to overwrite the old one or not
+		"The name '\_?%(reference0)\_?' is already in use. Do you want to overwrite '\_?%(reference0)\_?'?"
+		--
+		"\n\n\![*]\q[Overwrite it,OnPlaylistOverwrite,%(CHR(34))%(reference0)%(CHR(34))]  \![*]\q[Don't,OnSavePlaylist]"
+		--
+		"\![unlock,balloonrepaint]\e"
+	}
+	else
+	{
+		"\C\![raise,OnPlaylistName,%(reference0),overwrite]"
+	}
+}
+
+//Menu for loading playlists
+OnLoadPlaylist
+{
+	_playlists = FENUM(PLAYLIST_FOLDER)
+	if _playlists == ""; void MKDIR(PLAYLIST_FOLDER)
+	_display = ""
+	foreach _playlists; _playlist
+	{
+		_playlist = RE_REPLACE(_playlist,"\.m3u$","")
+		_display += "\q[(x),OnDeletePlaylist,%(_playlist)] \q[%(CHR(34))%(_playlist)%(CHR(34)),OnSelectPlaylist,%(_playlist)]\n"
+	}
+	
+	"\C\![lock,balloonrepaint]\c\0\_q%(MusicPlayerBalloon)\*\![set,autoscroll,disable]"
+	--
+	//DIALOGUE: Loading a playlist
+	"Which playlist do you want to load? If the current playlist is not saved, it will be lost."
+	--
+	"\n\n\![*]\q[Back to Music Settings,OnMusicSettings]"
+	--
+	"\n\n%(_display)\![unlock,balloonrepaint]\e"
+}
+
+//Loading the playlist
+OnSelectPlaylist
+{
+	NowPlaying[0] = ""
+	NowPlaying[1] = 0
+	NowPlaying[2] = ""
+	CurrentPlaylist = IARRAY
+	_path = PLAYLIST_FOLDER + "%(reference0).m3u"
+	
+	void FOPEN(_path,"r")
+	for _buff = FREAD(_path); _buff != -1; _buff = FREAD(_path)
+	{
+		CurrentPlaylist ,= _buff
+	}
+	void FCLOSE(_path)
+	
+	ShuffledPlaylist = ShufflePlaylist(NowPlaying[1],CurrentPlaylist)
+	
+	"%(NonSingingSurfaces)"
+	--
+	"\![sound,stop]%(OnNotifySongInfo)"
+	--
+	OnMusicMenu
+}
+
+//Confirmation before deleting a playlist
+OnDeletePlaylist
+{
+	_playlist = IARRAY
+	_path = PLAYLIST_FOLDER + "%(reference0).m3u"
+	
+	void FOPEN(_path,"r")
+	for _buff = FREAD(_path); _buff != -1; _buff = FREAD(_path)
+	{
+		_playlist ,= _buff
+	}
+	void FCLOSE(_path)
+	
+	_songs = ARRAYSIZE(_playlist)
+	--
+	"\0%(MusicPlayerBalloon)\*"
+	--
+	_s = ""; if _songs != 1; _s = "s"
+	//DIALOGUE: Asking for confirmation before deleting a playlist. You can use %(_s) to add an s if there is more than one song in the playlist
+	"Are you sure you want to delete '\_?%(reference0)\_?' and the %(_songs) song%(_s) inside?\w8 This cannot be undone."
+	--
+	"\n\n\![*]\q[Delete it,OnPlaylistDeleted,%(CHR(34))%(reference0)%(CHR(34))]\n\![*]\q[Cancel,OnLoadPlaylist]\e"
+}
+
+//Actually deleting the file
+OnPlaylistDeleted
+{
+	_path = PLAYLIST_FOLDER + "%(reference0).m3u"
+	
+	"\0%(MusicPlayerBalloon)"
+	--
+	//DIALOGUE: Going through with deleting the playlist. If it fails it will offer the directory so that the user can delete it manually.
+	if FDEL(_path) == 1 //If the playlist deleted successfully
+	{
+		"Playlist '\_?%(reference0)\_?' deleted.\x"
+	}
+	else //If it was unable to delete
+	{
+		"Something went wrong.\w8 You can delete it manually \_a[OnPlaylistPath]here\_a if you need to.\x"
+	}
+	--
+	OnLoadPlaylist
+}
+
+//Confirmation before clearing the current playlist
+OnClearPlaylist
+{
+	_num = ARRAYSIZE(CurrentPlaylist)
+	
+	_are = "are"; _s = "s"
+	if _num == 1; {_are = "is"; _s = ""}
+	
+	"\0%(MusicPlayerBalloon)"
+	--
+	//DIALOGUE: Asking for confirmation before clearing the current playlist. %(_are) and %(_s) can be used for plurals.
+	"There %(_are) %(_num) song%(_s) in the current playlist. Are you sure you want to clear it? It cannot be brought back unless you have saved it."
+	--
+	"\n\n\_q\![*]\q[Clear it,OnPlaylistCleared,%(_argv[0])]  \![*]\q[Don't,OnMusicSettings]\e"
+}
+
+//Actually clearing the current playlist
+OnPlaylistCleared
+{
+	CurrentPlaylist = IARRAY
+	NowPlaying[0] = "" //song name
+	NowPlaying[1] = -1 //song position
+	NowPlaying[2] = "" //Paused song
+	
+	"\![sound,stop]%(OnNotifySongInfo)"
+	--
+	"%(NonSingingSurfaces)%(MusicPlayerBalloon)"
+	--
+	if reference0 == ""; OnMusicMenu
+	else
+	{
+		//DIALOGUE: After clearing the playlist
+		"The playlist has been cleared."
+		--
+		"\n\n\_q\![*]\q[Open music controls,OnMusicMenu]  \![*]\q[Close,OnCancel]\e"
+	}
+}
+
+//From OnFileDrop2. If the user chooses to overwrite, it'll overwrite. If not, it'll tell them to rename it.
+OnPlaylistCopy
+{
+	if reference0 == "Overwrite"
+	{
+		_path = PLAYLIST_FOLDER
+		if FENUM(_path) == ""; void MKDIR(_path)
+		_f = FCOPY(reference1,_path)
+		
+		PlaylistCopied("%(_f)","%(reference2)")
+	}
+	else
+	{
+		//DIALOGUE: If the user chooses not to overwrite a playlist after dragging and dropping it onto the ghost (and having a filename conflict), then it will recommend that they rename the playlist before trying again.
+		"\0Please rename the playlist,\w4 then drag and drop it again.\e"
+	}
+}
+
+//After copying
+PlaylistCopied
+{
+	_playlist = _argv[1]
+	
+	//DIALOGUE: If the user copies a playlist into the playlists folder by dragging and dropping it onto the ghost, and also dialogue for if this fails.
+	if _argv[0] == "1" //If it was successful
+	{
+		"\0Successfully copied playlist '\_?%(_playlist)\_?'. Do you want to load it now?"
+		--
+		"\n\n\![*]\__q[OnSelectPlaylist,%(_playlist)]Load '\_?%(_playlist)\_?'\__q\n\![*]\q[Open music player,OnMusicMenu]\n\n\![*]\q[Close,OnCancel]\e"
+	}
+	else //If it failed
+	{
+		"\0Copying failed, please try again.\e"
+	}
+}
+
+//Wallpaper setting function, in case you don't want to fuss too much with OnFileDrop2. Feel free to scrap this if you don't want it.
+SetWallpaper
+{
+	_filepath = SPLITPATH(_argv[0])
+	_name = _filepath[2] +_filepath[3]
+	_file = CHR(34) + REPLACE(_argv[0],"]","\]") + CHR(34)
+	
+	//DIALOGUE: Menu for setting a new wallpaper
+	--;"\0Setting '\_?%(_name)\_?' as wallpaper..."
+	--; "\n\n\_q"
+	--; "\![*]\q[Centered,OnWallpaper,%(_file),center]\n"
+	--; "\![*]\q[Tiled,OnWallpaper,%(_file),tile]\n"
+	--; "\![*]\q[Stretched,OnWallpaper,%(_file),stretch]"
+	
+	--
+	if "Windows 10" _in_ NotifyOS //NotifyOS is set just below. The Span option is only available if you're on Win 10, so this means it won't display unless you're on Win 10
+	{
+		--; "\n\![*]\q[Spanned,OnWallpaper,%(_file),span]"
+	}
+	--
+	if "Windows 7" _in_ NotifyOS || "Windows 10" _in_ NotifyOS //These are the 'fit' and 'fill' options available from win 7 on
+	{
+		--; "\n\![*]\q[Fill,OnWallpaper,%(_file),stretch-x]"
+		--; "\n\![*]\q[Fit,OnWallpaper,%(_file),stretch-y]"
+	}
+	
+	--; "\n\n\![*]\q[Cancel,OnCancel]\e"
+}
+
+//Setting the wallpaper
+OnWallpaper
+{
+	"\0\![set,wallpaper,%(REPLACE(reference0,']','\]')),%(reference1)]"
+	--
+	//DIALOGUE: After the wallpaper is set
+	"Wallpaper set.\e"
+}
+
+//Sending information about the current song to other open ghosts. Also sends information to Discord, if you set that up.
+OnNotifySongInfo
+{
+	//CUSTOMIZE: If you set up the Discord stuff, uncomment this bit:
+	/*
+	_song = " "
+	if Singing
+	{
+		_song = "♫ %(CHR(34))%(SPLITPATH(NowPlaying[0])[2])%(CHR(34)) ♫"
+	}
+	
+	if DiscordDisplay[0] == "On"; "\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomDetail,%(_song)]"
+	else; "\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomDetail, ]"
+	*/
+	--
+	"\![notifyother,__SYSTEM_ALL_GHOST__,OnSongInfo,%(CHR(34))%(selfname)%(CHR(34)),%(CHR(34))%(NowPlaying[0])%(CHR(34)),%(NowPlaying[1]),%(CHR(34))%(NowPlaying[2])%(CHR(34)),%(MusicSettings[0]),%(MusicSettings[1]),%(MusicSettings[2]),%(MusicSettings[3]),%(MusicSettings[4]),%(ARRAYSIZE(CurrentPlaylist))]"
+	
+	//References:
+	//0 - The name of this ghost, since this event may come from multiple ghosts
+	//1 - The file path of the currently playing song. If empty, no song is loaded. THIS IS NOT ESCAPED.
+	//2 - The index number of the currently playing song. If the song is paused, the index number is still tracked. This probably isn't that useful but I feel like I'll regret it later if I don't add it.
+	//3 - If there is a song listed in here, then that song is paused. If this is empty and there is a song loaded, the song is playing. THIS IS NOT ESCAPED.
+	//4 - Current volume from 0 - 100
+	//5 - Current speed, from 0 - 400 (see MAX_RATE function for more info). 100 is normal speed
+	//6 - Current balance. 0 is normal, -100 is all the way left, 100 is all the way right
+	//7 - The play mode. 0 for loop playlist, 1 for shuffle playlist, 2 for loop song, 3 for play one song, 4 for random
+	//8 - If not empty, then playback will stop after the current song
+	//9 - Number of songs in the current playlist
+}
+
+UpdateTooltips
+{
+	//CUSTOMIZE: Setting up tooltips for hotspots
+	//Each of these array elements is for a hotspot. You can remove any that you don't want to use.
+	//The string on the left of the C_BYTE1 is the label that will show up on the tooltip, and the string on the right is the name of the collision EXACTLY as it is written in surfaces.txt. If you change the names of these hotspots, you will also have to change them over in MouseDoubleClickSakura!
+	//If you don't want tooltips you can just make this function empty
+	
+	_buttons = IARRAY
+	
+	//If there's already a song playing, the play button will act as a next button. So this needs to change based on whether a song is playing or not.
+	if Singing; _buttons ,= "Play" + C_BYTE1 + "play_button"
+	else; _buttons ,= "Play" + C_BYTE1 + "play_button"
+	
+	//Similarly, this will create a pause button if there is a song playing, and a resume button if there is a paused song
+	if NowPlaying[2] == ""; _buttons ,= "Pause" + C_BYTE1 + "pause_resume_button"
+	else; _buttons ,= "Resume" + C_BYTE1 + "pause_resume_button"
+	
+	_buttons ,= "Stop" + C_BYTE1 + "stop_button"
+	_buttons ,= "Next Song" + C_BYTE1 + "next_button"
+	_buttons ,= "Previous Song" + C_BYTE1 + "previous_button"
+	_buttons ,= "Music Menu" + C_BYTE1 + "music_menu_button"
+	_buttons ,= "Clear Playlist" + C_BYTE1 + "clear_button"
+	_buttons ,= "Stop After Current Song" + C_BYTE1 + "stop_after_current_button"
+	_buttons ,= "Toggle Song Bar" + C_BYTE1 + "song_bar_button"
+	_buttons ,= "Volume Up" + C_BYTE1 + "volume_up_button"
+	_buttons ,= "Volume Down" + C_BYTE1 + "volume_down_button"
+	_buttons ,= "Speed Up" + C_BYTE1 + "speed_up_button"
+	_buttons ,= "Speed Down" + C_BYTE1 + "speed_down_button"
+	_buttons ,= "Balance Left" + C_BYTE1 + "balance_left_button"
+	_buttons ,= "Balance Right" + C_BYTE1 + "balance_right_button"
+	
+	_cmd = ""
+	foreach _buttons; _button
+	{
+		_name = _button[0,C_BYTE1]
+		_collision = _button[1,C_BYTE1]
+		_cmd += "\![set,property,currentghost.seriko.tooltip.scope(0).textlist(%(_collision)).text,%(_name)]"
+	}
+	_cmd
+}
+
+
+
+
+
+
+
+
+//—————————— FUNCTIONS THAT SHOULD BE CUSTOMIZED ——————————
+//CUSTOMIZE: Functions that either must be customized, such as which surfaces are used for singing, or that you may want to customize such as the path of the playlists folder.
+
+//Surfaces used for singing animation
+SingingSurfaces
+{
+	"\s[25]"
+}
+
+//Surfaces to go to when music stops
+NonSingingSurfaces
+{
+	"\s[0]"
+}
+
+//Which balloon will be used for the menus in the music player.
+MusicPlayerBalloon
+{
+	"\b[2]"
+}
+
+//Maximum speed for the music player. Because of an SSP bug, this is capped at 435 at the time of writing. According to Ukadoc it should be able to go up to 10000. To avoid bugs I'm going to cap this at 400, but if the bug is fixed in the future you can change the rate to whatever cap you want here.
+MAX_RATE
+{
+	400
+}
+
+//Change the below path if you want your folder called something other than 'playlists', or if you want it placed somewhere else.
+PLAYLIST_FOLDER
+{
+	"../../playlists/"
+}
+
+/*
+//If you want a count of the total time the user has been listening to music, you can add this to your OnSecondChange
+if Singing
+{
+	Playtime++
+}
+*/
+
+/*
+If you want to have a display on your main menu for the currently playing song, you need to add this after your \e in the menu:
+__GHOST_MAIN_MENU__
+
+This will let it know to run OnMenuRun again if the current song changes/stops/etc. If your menu is in a function other than OnMenuRun, you'll need to change it in a few places in this file. Ctrl F is your friend here.
+*/
+
+
+
+
+
+
+
+//—————————— BUILT IN SHIORI EVENTS ——————————
+//These may or may not already exist in your ghost. You may need to make alterations to the code if you already have custom behavior for these functions. This is probably the hardest part of this music player to implement.
+
+//When the user manually closes the balloon when it's still typing out dialogue.
+OnBalloonBreak
+{
+	//Should make it so that if the user closes the balloon while the song is waiting to repeat, it repeats properly
+	if "\![raise,OnSoundStop]" _in_ SHIORI3FW.LastTalk; "\![raise,OnSoundStop]"
+}
+
+//Hotkeys. reference0 is the name of the key as displayed on the keycap. reference4, for SSP only, will have things like ctrl and alt, separated by commas.
+OnKeyPress
+{
+	reference0 = TOSTR(reference0)
+	if "changing hotkey: " _in_ SPLIT(SHIORI3FW.LastTalk,"\e")[1] //If the hotkey input is open
+	{
+		_k = TOUPPER(reference0)
+		_changing = TOINT(SPLIT(SHIORI3FW.LastTalk,"changing hotkey: ")[1])
+		
+		//CUSTOMIZE: Customizable list of reserved hotkeys. Add in any hotkeys you've already used to this array.
+		_reserved_keys = ("T","R","F1","V")
+		
+		if ASEARCH(_k,_reserved_keys) != -1 //If it's reserved
+		{
+			//DIALOGUE: If the user tries to put in a hotkey that is reserved
+			"\0That hotkey is reserved, please choose another.\x"
+		}
+		elseif ASEARCH(_k,Hotkeys) != -1 //If this hotkey is already selected for something else
+		{
+			//DIALOGUE: If the user tries to enter a hotkey that is already being used
+			"\0That hotkey is already in use, please clear it before assigning it to another option.\x"
+		}
+		else //If it's a valid key
+		{
+			Hotkeys[_changing] = TOUPPER(reference0)
+			"\C\![raise,OnHotkeys]\e"
+		}
+		--
+		"\![raise,OnChangeHotkey,%(_changing)]"
+		
+	}
+	else //Actually using a hotkey
+	{
+		reference0 = TOUPPER(reference0)
+		_inmenu = CheckWhichMenu
+		
+		//CUSTOMIZE: I just put the normal hotkeys that I use in here. If you use different hotkeys, you'll need to change this and update the list of reserved keys.
+		if reference0 == "T" //Talk
+		{
+			"\![raise,OnAiTalk,Hotkey]"
+		}
+		elseif reference0 == "R" //Repeat
+		{
+			lastTalk
+		}
+		elseif reference0 == "F1" //Help
+		{
+			"\![open,readme]"
+		}
+		elseif reference0 == "V" //Test variable (if debug mode is on; this is a variable I manually set in script input)
+		{
+			if debug; OnTestVar
+		}
+		//—————————————————————————————————————————————————————————————————————
+		//Don't mess with anything beyond this point unless you want to change the behavior of the music player.
+		elseif reference0 == Hotkeys[0] //Play/Pause
+		{
+			if MenuIsOpen; "\C"
+			--
+			if NowPlaying[0] == ""; "\![raise,OnPlaySong,,,%(_inmenu)]"
+			elseif NowPlaying[2] != ""; "\![raise,OnPauseSong,%(_inmenu),resume]"
+			else; "\![raise,OnPauseSong,%(_inmenu),pause]"
+		}
+		elseif reference0 == Hotkeys[1] //Next song
+		{
+			if NowPlaying[0] != ""
+			{
+				if MenuIsOpen; "\C"
+				--
+				"\![raise,OnNextSong,%(_inmenu)]\e"
+			}
+		}
+		elseif reference0 == Hotkeys[2] //Previous song
+		{
+			if NowPlaying[0] != ""
+			{
+				if MenuIsOpen; "\C"
+				--
+				"\![raise,OnPrevSong,%(_inmenu)]\e"
+			}
+		}
+		elseif reference0 == Hotkeys[3] //Stop song
+		{
+			if MenuIsOpen; "\C"
+			--
+			"\![raise,OnStopSong,%(_inmenu)]"
+		}
+		elseif reference0 == Hotkeys[4] //Music menu
+		{
+			OnMusicMenu("manual")
+		}
+		elseif reference0 == Hotkeys[5] //Song Bar
+		{
+			OnToggleSongBar("Hotkey",_inmenu)
+		}
+		elseif reference0 == Hotkeys[6] //Volume up
+		{
+			OnQuickVolume("Up",_inmenu)
+		}
+		elseif reference0 == Hotkeys[7] //Volume down
+		{
+			OnQuickVolume("Down",_inmenu)
+		}
+		elseif reference0 == Hotkeys[8] //Speed up
+		{
+			OnQuickSpeed("Up",_inmenu)
+		}
+		elseif reference0 == Hotkeys[9] //Speed down
+		{
+			OnQuickSpeed("Down",_inmenu)
+		}
+		elseif reference0 == Hotkeys[10] //Balance left
+		{
+			OnQuickBalance("Left",_inmenu)
+		}
+		elseif reference0 == Hotkeys[11] //Balance right
+		{
+			OnQuickBalance("Right",_inmenu)
+		}
+	}
+}
+
+//When you drop a file on the ghost that isn't something it can install
+//reference0 is the file path, which is split up amongst the local variables below
+OnFileDrop2
+{
+	_filearray = SPLIT(reference.raw[0],C_BYTE1)
+
+	if ARRAYSIZE(_filearray) == 1 //If it's a single file
+	{
+		_filepath = SPLITPATH(_filearray)
+		_filename = _filepath[2]
+		_fileext = TOLOWER(_filepath[3])
+		
+		//Incompatible audio types: cdda, cvs, cvsd, cvu, dvms, fssd, grst, htk, ima, prc, smp, sndr, sndt, sou, txw, vms, vox
+		_imgtypes = (".jpg",".jpeg",".bmp",".png")
+		if ASEARCH(_fileext,_imgtypes) != -1 //If it's a compatible image file for a wallpaper
+		{
+			//CUSTOMIZE: Because this whole function changed so much, I added in this function for dealing with the wallpaper setting. You can exclude this if you want, or put other code in, or whatever. It's just here for convenience.
+			SetWallpaper(_filearray)
+		}
+		elseif ASEARCH(_fileext,CompatibleMusicFileTypes) != -1 //If it's a compatible music file
+		{
+			CurrentPlaylist ,= _filearray
+			ShuffledPlaylist = ShufflePlaylist(NowPlaying[1],CurrentPlaylist)
+			
+			//DIALOGUE: Added a file to the playlist
+			"\0Added '\_?%(_filename)\_?' to the playlist."
+			--
+			"\n\n\_q\![*]\q[Play it now,OnPlaySong,%(CHR(34))%(_filearray)%(CHR(34)),,justadded]\n\![*]\q[Open music player,OnMusicMenu]\n\n\![*]\q[Close,OnCancel]\e"
+		}
+		elseif _fileext == ".m3u" //If it's a playlist
+		{
+			LOGGING("Playlist")
+			_path = PLAYLIST_FOLDER
+			_playlists = FENUM(_pathmC_BYTE1)
+			_playlists = SPLIT(_playlists,C_BYTE1)
+			if ASEARCH("%(_filename).m3u",_playlists) != -1
+			{
+				//DIALOGUE: Dragged and dropped a playlist onto the ghost, but a playlist with the same name already exists
+				"\0A playlist called '\_?%(_filename)\_?' already exists.\w8 Do you wish to overwrite it?"
+				--
+				"\n\n\![*]\q[Overwrite it,OnPlaylistCopy,Overwrite,%(CHR(34))%(_filearray)%(CHR(34)),%(CHR(34))%(_filename)%(CHR(34))]\n\![*]\q[Cancel,OnPlaylistCopy,Don't]"
+			}
+			else
+			{
+				if FENUM(_path) == ""; void MKDIR(_path)
+				_f = FCOPY(_filearray,_path)
+				
+				PlaylistCopied("%(_f)","%(_filename)")
+			}
+		}
+		else //Incompatible
+		{
+			//DIALOGUE: Any file that is not music, a playlist, or an image that can be set as a wallpaper
+			"\0This isn't a recognized file type.\e"
+		}
+	}
+	else //More than 1 file
+	{
+		_musicfiles = OnFindSongs(,_filearray)
+
+		if ARRAYSIZE(_musicfiles) == 0 //If there are no music files
+		{
+			//DIALOGUE: Multiple files were dropped on the ghost, but none of them are compatible music files.
+			"\0None of these files are compatible with the music player.\e"
+		}
+		else //If there are music files
+		{
+			_num = ARRAYSIZE(_musicfiles)
+			
+			_s = ""; if _num != 1; _s = "s"
+			
+			//Multiple files were dragged on the ghost, and some of them were music files. %(_s) can be used to add an s if the number of compatible files is plural, and %(_num) can be used to list the number of files.
+			"\0%(_num) compatible song%(_s) added to the playlist."
+			--
+			"\n\n\_q\![*]\q[Open music player,OnMusicMenu]\n\![*]\q[Close,OnCancel]\e"
+		}
+	}
+}
+
+//If a folder is dropped on the ghost
+OnDirectoryDrop
+{
+	_files = FENUM(reference0,C_BYTE1) //Gets all the files in the folder
+	_orig = _files
+
+	_musicfiles = OnFindSongs(reference0,_files)
+	
+	_path = SPLITPATH(reference0)[1]
+	SETDELIM(_path,"\")
+	_len = ARRAYSIZE(_path) - 2
+	_folder = _path[_len] //This stuff gets the folder name
+	
+	if ARRAYSIZE(_musicfiles) == 0 //If there were no compatible songs inside
+	{
+		//DIALOGUE: The user dropped a folder on the ghost, but nothing inside was a compatible music file
+		"\0None of the files in \_?%(_folder)\_? are compatible music files.\e"
+	}
+	else //If there are compatible songs
+	{
+		_num = ARRAYSIZE(_musicfiles)
+		_s = ""; if _num != 1; _s = "s"
+		
+		//DIALOGUE: The user dropped a folder on the ghost, and some files inside were compatible music files. %(_s) can be used to add an s if the number of compatible files is plural, %(_num) can be used to list the number of files, and %(_folder) is the name of the folder that was dropped.
+		"\0Added %(_num) song%(_s) from \_?%(_folder)\_?."
+		--
+		"\n\n\_q\![*]\q[Open music player,OnMusicMenu]\n\![*]\q[Close,OnCancel]\e"
+	}
+}
+
+//This assumes that you have this function over in mouse.dic. If not, this'll be OnMouseDoubleClick
+MouseDoubleClickSakura
+{
+	_inmenu = CheckWhichMenu
+	
+	//CUSTOMIZE: Hotspots. The only ones included here are for the music player and opening the menu. If you want more for your ghost you'll need to work them in here.
+	if reference4 == "menu" || reference4 == "" //Menu open
+	{
+		OnMenuRun
+	}
+	elseif reference4 == "stop_button"//Stopping the music
+	{
+		"\![raise,OnStopSong,%(_inmenu)]"
+	}
+	elseif reference4 == "play_button" //Playing a song. This should always start the next one, probably? If none is playing, it should either start at 0 or a random position... If something is playing, it should skip to the next, I think.
+	{
+		if MenuIsOpen; "\C"
+		--
+		if NowPlaying[0] == "" //If no song is playing
+		{
+			"\![raise,OnPlaySong,,,%(_inmenu)]"
+		}
+		elseif NowPlaying[2] != ""
+		{
+			"\![raise,OnPauseSong,%(_inmenu),resume]"
+		}
+		else //If a song is already playing, go to the next one
+		{
+			"\![raise,OnNextSong,%(_inmenu)]\e"
+		}
+	}
+	elseif reference4 == "pause_resume_button"
+	{
+		if MenuIsOpen; "\C"
+		--
+		if NowPlaying[2] != ""; "\![raise,OnPauseSong,%(_inmenu),resume]"
+		else; "\![raise,OnPauseSong,%(_inmenu),pause]"
+	}
+	elseif reference4 == "next_button"
+	{
+		if NowPlaying[0] != ""
+		{
+			if MenuIsOpen; "\C\![raise,OnNextSong,%(_inmenu)]"
+			else; "\![raise,OnNextSong,%(_inmenu)]\e"
+		}
+	}
+	elseif reference4 == "previous_button"
+	{
+		if NowPlaying[0] != ""
+		{
+			if MenuIsOpen; "\C\![raise,OnPrevSong,%(_inmenu)]"
+			else; "\![raise,OnPrevSong,%(_inmenu)]\e"
+		}
+	}
+	elseif reference4 == "stop_after_current_button"
+	{
+		if MusicSettings[4] != "stop after playback"
+		{
+			MusicSettings[4] = "stop after playback"
+		}
+		else
+		{
+			MusicSettings[4] = ""
+		}
+		if _inmenu == "OnMusicSettings"; "\C\![raise,OnMusicSettings]"
+	}
+	elseif reference4 == "music_menu_button"
+	{
+		OnMusicMenu("manual")
+	}
+	elseif reference4 == "clear_button" //Clearing the current playlist
+	{
+		OnClearPlaylist
+	}
+	elseif reference4 == "song_bar_button" //Song Bar
+	{
+		OnToggleSongBar("Hotspot",_inmenu)
+	}
+	elseif reference4 == "volume_up_button" //Volume up
+	{
+		OnQuickVolume("Up",_inmenu)
+	}
+	elseif reference4 == "volume_down_button" //Volume down
+	{
+		OnQuickVolume("Down",_inmenu)
+	}
+	elseif reference4 == "speed_up_button" //Speed up
+	{
+		OnQuickSpeed("Up",_inmenu)
+	}
+	elseif reference4 == "speed_down_button" //Speed down
+	{
+		OnQuickSpeed("Down",_inmenu)
+	}
+	elseif reference4 == "balance_left_button" //Balance left
+	{
+		OnQuickBalance("Left",_inmenu)
+	}
+	elseif reference4 == "balance_right_button" //Balance right
+	{
+		OnQuickBalance("Right",_inmenu)
+	}
+}
+
+//When a song ends on its own
+OnSoundStop
+{
+	_inmenu = CheckWhichMenu
+	NowPlaying[2] = "" //Clear paused song if there somehow was one
+	if BalloonIsOpen; "\C\_l[0,0]"
+	--
+	if MusicSettings[3] == 3  //If it's set to play one song and then stop
+	{
+		"\![raise,OnStopSong,%(_inmenu)]"
+	}
+	else //If another song needs to play
+	{
+		_next = 0
+		--
+		if MusicSettings[3] == 1 //Shuffle and loop
+		{
+			ShuffledPlaylist = ACYCLE('+',ShuffledPlaylist)
+			_next = ShuffledPlaylist[0]
+		}
+		elseif MusicSettings[3] == 2 //Loop one song
+		{
+			_next = NowPlaying[1]
+		}
+		elseif MusicSettings[3] == 4
+		{
+			_next = RAND(ARRAYSIZE(CurrentPlaylist))
+		}
+		else //Loop playlist
+		{
+			if NowPlaying[1] >= (ARRAYSIZE(CurrentPlaylist) - 1) //If it was the last song on the list
+			{
+				_next = 0
+			}
+			else
+			{
+				_next = NowPlaying[1] + 1
+			}
+		}
+		NowPlaying[0] = CurrentPlaylist[_next] //Song name
+		NowPlaying[1] = _next //Song index
+		--
+		//If it's set to stop after the current song, make sure it stops. Down here so the index number still advances if you're not set to loop a single song
+		if MusicSettings[4] == "stop after playback"
+		{
+			"\![raise,OnStopSong,%(_inmenu)]"
+		}
+		else
+		{
+			if IsMinimized
+			{
+				OnPlaySong(CurrentPlaylist[_next],_next)
+			}
+			else
+			{
+				"%(SingingSurfaces)\![raise,OnPlaySong,%(CHR(34))%(CurrentPlaylist[_next])%(CHR(34)),%(_next),%(_inmenu)]"
+			}
+		}
+	}
+}
+
+//If a song fails to play for some reason
+OnSoundError
+{
+	_playnext = 0
+	if !(MusicSettings[3] == 2 || MusicSettings[3] == 3 || MusicSettings[4] == "stop after playback" || ARRAYSIZE(CurrentPlaylist) <= 1); _playnext = 1 //If it IS able to play another song
+	
+	if _playnext == 0
+	{
+		NowPlaying[0] = "" //song name
+		NowPlaying[2] = "" //Clearing paused song
+	}
+	if IsMinimized && !_playnext; SHIORI3FW.MakeValueNotify("%(OnNotifySongInfo)")
+	else; "%(OnNotifySongInfo)"
+	--
+	//DIALOGUE: If there is an error, it will tell the user and try to play the next song. reference3 is the error message, reference2 is the file name. Below is dialogue for attempting to play the next song
+	"\0Cannot play file \f[color,default.anchor]\_?%(reference2)\_?\f[color,default]; '%(reference3)'"
+	--
+	//If it's able to play another song
+	if _playnext
+	{
+		"\n\n\w8\w8[Starting next song...]"
+		--
+		"\_w[1000]\![raise,OnSoundStop]"
+	}
+}
+
+//When the balloon is changed. This gets the number of lines in the current balloon, so that in certain menus it doesn't jump around so much.
+OnBalloonChange
+{
+	if BalloonIsOpen; "\C"
+	--
+	"%(MusicPlayerBalloon)\![get,property,OnBalloonLines,currentghost.balloon.scope(0).lines.initial]"
+}
+
+//Not a built in event, but related to the above
+OnBalloonLines
+{
+	BalloonLines = TOINT(reference0)
+}
+
+//When the user closes an inputbox. Not strictly necessary, can be removed if you don't want it. Just makes things a little more polished.
+OnUserInputCancel
+{
+	if reference0 == "OnMusicSpeed" || reference0 == "OnMusicVolume" || reference0 == "OnMusicBalance" || reference0 == "OnPlaylistName"; "\C\![raise,OnMusicSettings]"
+}
+
+
+
+
+
+
+
+
+//—————————— TOOLS ——————————
+//These are (mostly) pure functions that aid in various places in the code. You may already have some of these in your ghost, in which case they will cause conflicts. You should be able to comment out any functions that are causing errors, though maybe compare to see how similar they are just to be sure.
+
+
+//Checks if the balloon is currently open. 1 if yes, 0 if no.
+BalloonIsOpen
+{
+	"balloon" _in_ var.req.value[ASEARCH("Status",var.req.key)]
+}
+
+//Checks if the balloon is open and there are menu choices. 1 if yes, 0 if no.
+MenuIsOpen
+{
+	"choosing" _in_ var.req.value[ASEARCH("Status",var.req.key)]
+}
+
+//Checks if the ghost is currently minimized. 1 if yes, 0 if no.
+IsMinimized
+{
+    "minimizing" _in_ var.req.value[ASEARCH("Status",var.req.key)]
+}
+
+//Returns 1 if singing, 0 if not
+Singing
+{
+	!(NowPlaying[0] == "" || NowPlaying[2] != "")
+}
+
+//Helps with alignment commands
+newline
+{
+	"\n \n[-100]"
+}
+
+//Added with help from steve02081504. Send an argument to this function to send it with ValueNotify. This can be used even while the ghost is minimized to run tags like the sound command.
+SHIORI3FW.MakeValueNotify : void
+{
+	SHIORI3FW.PushAdditionalReturn('ValueNotify',_argv)
+}
+
+
+//You can get other information about the OS here, it's in the other references. Reference0 includes the OS system, version, and display name. This is used for the wallpaper setting function.
+OnNotifyOSInfo
+{
+	NotifyOS = reference0
+}
+
+//A list of compatible music file types.
+CompatibleMusicFileTypes : array
+{
+	//In an order that makes sense to me
+	// //Available without LAV Filters
+	// ".mid"; ".mp3"; ".wav"; ".wma" 
+	
+	// //With LAV Filters. I have tested this whole block myself and they work.
+	// ".8svx"; ".ac3"; ".aiff"; ".amb"; ".au"; ".avr"; ".caf"; ".dts"; ".fap"; ".flac"; ".hcom"
+	// ".ircam"; ".m4a"; ".m4r"; ".maud"; ".mp2"; ".nist"; ".oga"; ".ogg"; ".opus"; ".paf"
+	// ".pfv"; ".ra"; ".sln"; ".snd"; ".sph"; ".spx"; ".tta"; ".voc"; ".w64"; ".wv"; ".wve"
+	
+	// //With LAV Filters. I have not tested these, but they should work. Also includes video files!
+	// ".ape"; ".avo"; ".wmv"; ".rm"; ".rmvb"; ".mp4"; ".mkv"; ".flv"; ".mpg"
+	
+	//Alphabetical so I don't get complaints lol
+	
+	".8svx"; ".ac3"; ".aiff"; ".amb"; ".ape"; ".au"; ".avo"; ".avr"; ".caf"; ".dts"; ".fap"; ".flac"; ".flv"; ".hcom"
+	".ircam"; ".m4a"; ".m4r"; ".maud"; ".mid"; ".mkv"; ".mp2"; ".mp3"; ".mp4"; ".mpg"; ".nist"; ".oga"; ".ogg"; ".opus"; ".paf"
+	".pfv"; ".ra"; ".rm"; ".rmvb"; ".sln"; ".snd"; ".sph"; ".spx"; ".tta"; ".voc"; ".w64"; ".wav"; ".wma"; ".wmv"; ".wv"; ".wve"
+}
+
+//---ASCOOTEX---
+//Array scoot EX. Scoots a value forwards or backwards in an array by 1. You'll need to plan ahead with your menus and set them up to send the element number rather than the name of the item you want to scoot.
+//Argument 0: Number of the element that you want to scoot
+//Argument 1: - if you want to scoot it backwards, + if you want to scoot it forwards
+//Argument 2: The array you want to scoot in
+
+//ShuffledPlaylist = ASCOOT(5,"+",ShuffledPlaylist)
+
+ASCOOTEX
+{
+	_array = _argv //Take in all the arguments as an array
+	_array[1] = IARRAY //Erase the other arguments because we don't want them in the array
+	_array[0] = IARRAY
+	_index = TOINT(_argv[0])
+	if _index > (ARRAYSIZE(_array) - 1) || _index < 0 //Not sure why this is here... perhaps investigate later
+	{
+		_array
+		return
+	}
+	if _argv[1] == "-" //Backwards
+	{
+		if _argv[0] == 0 //If it's already at the start of the array
+		{
+			_array
+			return
+		}
+		_curnum = _index //Get positions
+		_prvnum = _curnum - 1
+		
+		_current = _array[_curnum] //Assign elements to temp vars
+		_prev = _array[_prvnum]
+		
+		_array[_curnum] = _prev //Replace elements with swapped elements
+		_array[_prvnum] = _current
+	}
+	else //Forwards
+	{
+		if _argv[0] == (ARRAYSIZE(_array) - 1) //If it's already at the end of the array
+		{
+			_array
+			return
+		}
+		_curnum = _index //Get positions
+		_nxtnum = _curnum + 1
+		
+		_current = _array[_curnum] //Assign elements to temp vars
+		_next = _array[_nxtnum]
+		
+		_array[_curnum] = _next //Replace elements with swapped elements
+		_array[_nxtnum] = _current
+	}
+	_array
+}
+
+//Cycles items in an array backwards or forwards, in such a way that they loop around. So when going forwards, the item at the start of the array will end up being cycled to the end of the array. ...I might have that backwards but you get the idea.
+ACYCLE
+{
+	_output = IARRAY
+	if _argv[0] == "-" //Backwards
+	{
+		_c = _argc - 1
+		_output ,= _argv[_c]
+		for _i = 1; _i < _c; _i++
+		{
+			_output ,= _argv[_i]
+		}
+	}
+	else //Forwards
+	{
+		for _i = 2; _i < _argc; _i++
+		{
+			_output ,= _argv[_i]
+		}
+		_output ,= _argv[1]
+	}
+	_output
+}
+
+//Shuffles the array but keeps the first element the same
+ShufflePlaylist
+{
+	_start = IARRAY
+	for _i = 0; _i < _argc - 1; _i++
+	{
+		if _i == _argv[0]; continue
+		else; _start ,= _i
+	}
+	
+	_len = ARRAYSIZE(_start)
+	_output = IARRAY
+	if _argv[0] != "|removed|"; _output ,= TOINT(_argv[0])
+	for _i = 0; _i < _len; _i++
+	{
+		_l = ARRAYSIZE(_start)
+		_rand = RAND(_l)
+		_output ,= _start[_rand]
+		_start[_rand] = IARRAY
+	}
+	_output
+}
+
+//Checks for music files in folders and multiple files
+OnFindSongs
+{
+	//This portion normalizes the input to a general purpose array
+	_added = IARRAY
+	_input = IARRAY
+	_recursive = IARRAY
+	if _argv[0] != ""
+	{
+		if _argv[1] == ""; {_added = ""; return}
+		else; _input = SPLIT(_argv[1],C_BYTE1) //If it came from FENUM
+	}
+	else //If it came from multiple files
+	{
+		for _i = 1; _i < _argc; _i++ //Probably a bug to not be argc - 1... but it seems to be working????
+		{
+			if _argv[_i] != ""; _input ,= _argv[_i]
+		}
+	}
+	
+	foreach _input; _file
+	{
+		_path = SPLITPATH(_file)
+		_ext = TOLOWER(_path[3])
+		if ASEARCH(_ext,CompatibleMusicFileTypes) != -1
+		{
+			_file = REPLACE(_file,",","%(C_BYTE1)")
+			CurrentPlaylist ,= "%(_argv[0])%(_file)"
+			_added ,= _file
+		}
+		elseif _ext == ""
+		{
+			_recursive = OnFindSongs("%(_argv[0])%(_file)\",FENUM("%(_argv[0])%(_file)",C_BYTE1))
+			if _recursive != ""; _added ,= _recursive
+		}
+	}
+	TOSTR(_added)
+}
+
+//Opening the folder for the user
+OnPlaylistPath
+{
+	"\C\![open,file,playlists]\_l[0,0] "
+}
+
+//Checks for special text to determine which menu the ghost is currently in, and returns 
+CheckWhichMenu
+{
+	_inmenu = ""
+	if "__MUSIC_PLAYER_MAIN_MENU__" _in_ SHIORI3FW.LastTalk; _inmenu = "OnMusicMenu"
+	elseif "__GHOST_MAIN_MENU__" _in_ SHIORI3FW.LastTalk; _inmenu = "OnMenuRun"
+	elseif "__MUSIC_SETTINGS_MENU__" _in_ SHIORI3FW.LastTalk; _inmenu = "OnMusicSettings"
+	_inmenu
+}
+
+
+
+//—————————— DISCORD ——————————
+
+/*
+//CUSTOMIZE: Discord plugin functions
+//All of the stuff in here is for handling the Discord plugin. You can completely ignore this if you're not interested. If you ARE interested, the setup is a bit involved, and I can't really include all of the code here.
+//I recommend reading this guide on how to set up everything you need for the Discord plugin: https://gist.github.com/steve02081504/a3cccec1d7e70bceebcc70ac99e3558a
+//I would also recommend looking at how FLUX handles the plugin. Some of the code is below, but there are other bits that are important.
+//Of note is that DiscordDisplay[0] is an On/Off toggle for the user to be able to choose if they want the ghost to send info to discord at all
+//DiscordDisplay[1] handles when the plugin turns on and off, since when you first select the ghost it won't immediately set your custom details.
+//I am glad to try and help with this if you want to set it up and you're not quite sure what you're doing. The guide linked above is very helpful though, it's how I figured this all out.
+//Note that if you use this, there's also a bit in OnNotifySongInfo that you'll also want to uncomment.
+
+OnDiscordPluginCustom
+{
+	DiscordDisplay[1] = 2
+}
+
+OnDiscordPluginCustomEnd
+{
+	DiscordDisplay[1] = 0
+}
+
+OnDiscordPluginBoot
+{
+	_song = " "
+	if Singing; _song = "♫ %(CHR(34))%(SPLITPATH(NowPlaying[0])[2])%(CHR(34)) ♫"
+	
+	"\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,YOUR APP ID HERE,,,thumbnail,YOUR GHOSTS'S URL OR A MESSAGE HERE,]"
+	--
+	if DiscordDisplay[0] == "On"
+	{
+		"\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomDetail,%(_song)]"
+		--
+		"\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomState,WHATEVER YOU WANT HERE]"
+	}
+	--
+	if debug //I set this variable manually with script input, you could remove it if you want.
+	{
+		"\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,dev]"
+		--
+		"\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,Dev]"
+	}
+}
+
+//This bit has to go in OnSecondChange
+if DiscordDisplay[1] == 2 && SHIORI3FW.CanTalk //If this ghost was chosen in the Discord plugin, and that hasn't been handled yet
+{
+	DiscordDisplay[1] = 1
+	if BalloonIsOpen; "\C"
+	--
+	"\![raise,OnDiscordPluginBoot]"
+}
+
+//Toggle for the settings menu. Make sure you uncomment the option that calls this.
+OnToggleDiscordPlugin
+{
+	if DiscordDisplay[0] != "On"
+	{
+		_song = " "
+		if Singing; _song = "♫ %(CHR(34))%(SPLITPATH(NowPlaying[0])[2])%(CHR(34)) ♫"
+
+		DiscordDisplay[0] = "On"
+		"\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomDetail,%(_song)]"
+		--
+		"\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomState,WHATEVER YOU WANT HERE]"
+	}
+	else
+	{
+		DiscordDisplay[0] = "Off"
+		"\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomDetail, ]"
+		--
+		"\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomState, ]"
+	}
+	--
+	OnMusicSettings
+}
+*/
