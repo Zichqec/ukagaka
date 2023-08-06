@@ -177,7 +177,7 @@ let item_details = [
 		forevent: null,
 		language: "YAYA",
 		download: "https://www.mediafire.com/file/lhvamfbysq2edo6/markdown_processor_v1.0.2.zip/file",
-		blurb: "This is a .dic file that you can add to your ghost, which will allow you to use a rough markdown formatting for your dialogue! You can even set the tags to almost anything you want. It has a few quirks, like using | instead of \ to escape tags, because of overlap with SakuraScript tags. But it can still be quite handy! Note that this makes use of my SakuraScooper function and comes bundled with it.<br><br>Changes for this file are available to see <a href='https://github.com/Zichqec/ukagaka/commits/main/function/markdown_processor.dic'>here</a>."
+		blurb: "This is a .dic file that you can add to your ghost, which will allow you to use a rough markdown formatting for your dialogue! You can even set the tags to almost anything you want. It has a few quirks, like using | instead of \\ to escape tags, because of overlap with SakuraScript tags. But it can still be quite handy! Note that this makes use of my SakuraScooper function and comes bundled with it.<br><br>Changes for this file are available to see <a href='https://github.com/Zichqec/ukagaka/commits/main/function/markdown_processor.dic'>here</a>."
 	},
 	{
 		name: "Mock",
