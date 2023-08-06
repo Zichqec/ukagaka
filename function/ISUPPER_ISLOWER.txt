@@ -1,0 +1,17 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+
+//Functions for checking if the given string is all uppercase or lowercase. If the given string matches itself when the case is changed, then it must be all upper/lowercase. Note that empty strings and numbers are always treated as being true.
+//You can use them like so:
+//if ISUPPER(username); "The user's name is in all caps"
+
+ISUPPER
+{
+    if _argv[0] == TOUPPER(_argv[0]); 1
+    else; 0
+}
+
+ISLOWER
+{
+    if _argv[0] == TOLOWER(_argv[0]); 1
+    else; 0
+}

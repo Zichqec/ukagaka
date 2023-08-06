@@ -1,0 +1,32 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//Thanks to https://www.industrian.net/tutorials/converting-numbers-to-roman-numerals/ for helping me figure out the logic for this
+
+//Usage:
+//Argument 0: The integer you want to convert to roman numerals
+//Example: IntToNumeral(123)
+//Note that this only handles numbers from 1 to 3999
+IntToNumeral
+{
+    //This generator only handles from 1-3999, so if it's outside that range, return a 0
+    _input = TOINT(_argv[0])
+    if _input <= 0 || _input >= 4000; {0; return}
+    
+    _thousands = ",M,MM,MMM"
+    _hundreds = ",C,CC,CCC,CD,D,DC,DCC,DCCC,CM"
+    _tens = ",X,XX,XXX,XL,L,LX,LXX,LXXX,XC"
+    _ones = ",I,II,III,IV,V,VI,VII,VIII,IX"
+    
+    //Do math to get which number is in each column
+    _thousands_digit = (_input / 1000)
+    _hundreds_digit = (_input / 100) % 10
+    _tens_digit = (_input / 10) % 10
+    _ones_digit = _input % 10
+    
+    //Add numerals based on which digits they correspond to
+    _output = ""
+    _output += _thousands[_thousands_digit]
+    _output += _hundreds[_hundreds_digit]
+    _output += _tens[_tens_digit]
+    _output += _ones[_ones_digit]
+    _output
+}

@@ -1,0 +1,42 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//Takes an array of alternating names and urls, and formats them for use with the right click menu
+FormatLinks
+{
+	_display = ""
+	for _i = 0; _i < ARRAYSIZE(_argv); _i++
+	{
+		_display += _argv[_i] //Add the link/title
+		
+		//Alternate between adding ASC(1) or ASC(2)
+		if _i % 2 == 1; _display += ASC(2)
+		else; _display += ASC(1)
+	}
+	_display
+}
+
+//When you write your links, you'll have to make a new array function to store them in. All you have to do is write separate strings for each title and link, title first. Here are some examples of ways you can format it:
+
+//Names/links on separate lines, one after another
+recommendlinks : array
+{
+	"Site 1"
+	"https://example.com/"
+	"Site 2"
+	"https://example.org/"
+	"Site 3"
+	"https://example.net/"
+}
+
+//Name/link pairs, with a semicolon separating them
+portallinks : array
+{
+	"Site 1"; "https://example.com/"
+	"Site 2"; "https://example.org/"
+	"Site 3"; "https://example.net/"
+}
+
+//The event for the top tab in the right click menu, as an example of how this is implemented
+On_sakura.recommendsites
+{
+  FormatLinks(recommendlinks)
+}

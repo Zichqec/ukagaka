@@ -1,0 +1,50 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+/*
+This function should work in any YAYA ghost. Just copy the whole function into your ghost somewhere, and it should be applied automatically!
+If you're using AYA, you can just copy over the entire if check into your normal OnTranslate function, and leave out the other lines of code.
+
+
+How to write your dialogues with this processor:
+
+This is some dialogue. Pauses will be inserted after punctuation marks, so long as there is a space after them! If you want to control the timing manually...\w8\w8\w8\w8 you can do that too. \n\nMake sure you add a space before linebreaks if you want the previous sentence to have a pause after it.\![dummy-tag] You can also purposefully not add a space (or put another tag in the way) if you want to omit the pause.
+
+With the default setup, this would be the output:
+
+This is some dialogue.\w8 Pauses will be inserted after punctuation marks,\w4 so long as there is a space after them!\w8 If you want to control the timing manually...\w8\w8\w8\w8 you can do that too.\w8 \n\nMake sure you add a space before linebreaks if you want the previous sentence to have a pause after it.\![dummy-tag] You can also purposefully not add a space (or put another tag in the way) if you want to omit the pause.
+
+
+Pause tags are added after punctuation marks, but ONLY if that punctuation mark is followed immediately by a space. You can use this to control whether or not a pause is added at any point in your dialogue.
+
+You can also add \![no-autopause] anywhere in a script to prevent pauses from being added in any part of the script! This is useful for things like menus.
+Be careful that you don't have a comma and space combination in your sakurascript tags! As long as you write them like \![raise,OnThing,Arg 1] and not \![raise, OnThing, Arg 1], you should be fine.
+
+You can adjust this all how you like. I also included options to handle ellipsis separately.
+You'll have to be a bit mindful of how you write your dialogues, but this can make it much easier/cleaner in general!
+
+Note: you could also change this to only add autopause if you specify a \![autopause] tag in the script, just by changing the if check! You could even get a bit more involved, and make it automatically check for certain events (like aitalk) and apply pauses to those but nowhere else. Whatever you need to make it useful but not a nuisance to you!
+*/
+
+OnTranslateInternal.AutoPause
+{
+	_talk = _argv[0]
+	
+	if "\![no-autopause]" !_in_ _talk
+	{
+		/*
+		//Additional options if you want ellipsis to have little pauses between each dot. Personally, I think I want to do that manually, for when I want a particular flavor. If you want this, just uncomment it.
+		
+		_talk = REPLACE(_talk,"... ",".\w2.\w2.\w8 ") //Ellipsis
+		_talk = REPLACE(_talk,"..? ",".\w2.\w2?\w8 ") //Question mark + ellipsis
+		_talk = REPLACE(_talk,"..! ",".\w2.\w2!\w8 ") //Exclamation point + ellipsis
+		*/
+		
+		_talk = REPLACE(_talk,", ",",\w4 ") //Comma
+		_talk = REPLACE(_talk,". ",".\w8 ") //Period
+		_talk = REPLACE(_talk,"? ","?\w8 ") //Question mark
+		_talk = REPLACE(_talk,"! ","!\w8 ") //Exclamation point
+		//_talk = REPLACE(_talk,"- ","-\w8 ") //Dash - This one seems to happen a lot when I don't want it, so I am commenting it out
+		_talk = REPLACE(_talk,"; ",";\w4 ") //Semicolon
+	}
+	
+	_talk
+}

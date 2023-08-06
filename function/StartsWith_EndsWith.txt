@@ -1,0 +1,24 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+
+//Searches the start of a string for the requested substring.
+//Argument 0 is the source string to search, argument 1 is the substring to search for.
+//Returns 1 if true, 0 if false.
+//Usage example:
+//StartsWith("Testing","Test")
+StartsWith
+{
+    SUBSTR(_argv[0],0,STRLEN(_argv[1])) == _argv[1]
+}
+
+
+
+//Searches the end of a string for the requested substring.
+//Argument 0 is the source string to search, argument 1 is the substring to search for.
+//Returns 1 if true, 0 if false.
+//Usage example:
+//EndsWith("Testing","ing")
+EndsWith
+{
+	_len = STRLEN(_argv[1])
+    SUBSTR(_argv[0],STRLEN(_argv[0]) - _len,_len) == _argv[1]
+}

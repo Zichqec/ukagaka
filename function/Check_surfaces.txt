@@ -1,0 +1,33 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//This function is for if you have multiple shells and you can't guarantee they'll all have the same surface numbers. For example, if someone else makes a shell for your ghost that you're still updating. This will add an extra bit of processing that checks the surface numbers and replaces invalid surface calls with \s[0], so that the ghost doesn't disappear.
+//Note that SSP has this functionality built in as something the user can toggle on in the SSP preferences, but I don't think it's a good idea to rely on the user knowing how to do that. Plus, if they're a developer too, they may want to keep that option off.
+
+//Usage: simply place this code into your ghost and it will run automatically on any script. If you already have the OnNotifyShellInfo event, you will need to combine it with the version of OnNotifyShellInfo in this code.
+//If you're the developer and you want this functionality turned off, you can toggle the "Enable SHIORI Debug Mode" option in the dev palette. This function is set up not to process anything if that option is on.
+
+//NOTE: this will not work in script input unless you add some additional setup! You can call this function from your regular OnTranslate, it'll probably look something like this:
+//_talk = OnTranslateInternal.CheckSurfaces(_talk)
+
+OnTranslateInternal.CheckSurfaces
+{
+	_talk = _argv[0]
+	if !SHIORI3FW.DebugMode
+	{
+		_checksurfaces = SPLIT(_talk,"\s[") //Make an array of the current dialogue, with each element starting with a surface call
+		_checksurfaces[0] = IARRAY //Erase the first element since it won't have a surface call
+		
+		foreach _checksurfaces; _element
+		{
+			_surface = TOSTR(SPLIT(_element,"]")[0]) //Split off the rest of this bit of dialogue so that we just have the surface number
+			_isvalid = ASEARCH(_surface,CheckSurfaces.ValidSurfaces)
+			if _isvalid == -1 && TOINT(_surface) >= 0; _talk = REPLACE(_talk,"\s[%(_surface)]","\s[0]")
+		}
+	}
+	_talk
+}
+	
+//You may already have this event! If you do you'll need to incorporate this code into it.
+OnNotifyShellInfo
+{
+    CheckSurfaces.ValidSurfaces = SPLIT(reference2,",")
+}

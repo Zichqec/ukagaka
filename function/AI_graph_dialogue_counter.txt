@@ -1,0 +1,34 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//This code automates adding simple information to SSP's AI graph, for if you want a simple count of things like your number of randomtalks, the number of entries in an envelope, etc.
+//The AI graph can do a lot more besides just this! Read up about it on Ukadoc here: https://ukagakadreamteam.github.io/ukadoc/manual/list_shiori_resource.html#getaistateex
+//Note: if things are set up wrong, opening the AI graph may cause SSP to crash. Just be a little cautious and make sure you follow the instructions.
+On_getaistateex : all
+{
+    _graph = AI_Graphs[reference0]
+    if _graph != ""
+    {
+        _items = SPLIT(_graph,",")
+        for _i = 0; _i < ARRAYSIZE(_items); _i++
+        {
+            if _i > 0; ","
+            OUTPUTNUM("%(_items[_i])")
+        }
+        C_BYTE1
+        for _i = 0; _i < ARRAYSIZE(_items); _i++
+        {
+            if _i > 0; ","
+            "%(_items[_i])"
+        }
+    }
+}
+
+//Each entry in this array is a new page that will be added to the AI Graph.
+//You can add as many entries as you want, and each one will be a new page.
+//You can add as many items to the entries as you want, just have at least 3 or SSP will crash when trying to load the graph.
+//Obviously, if you add too many, it will at some point become very overwhelming to look at. You might try adding some sort of variables to control when each option is output.
+//Make sure you write the NAMES of the functions/envelopes you want it to count, NOT a function call like %(name)
+AI_Graphs : array
+{
+    "RandomTalk,envelope1,envelope2,envelope3,envelope4,envelope5"
+    "anotherenvelope,anotherenvelope2,anotherenvelope3"
+}

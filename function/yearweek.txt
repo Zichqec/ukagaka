@@ -1,0 +1,33 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//Outputs what week of the year it is. Does account for week 53.
+//Simply call the function and it will return the current week as an integer.
+
+yearweek
+{
+    //Get the current day of the year (This was previously using my yearday function, so I'm adding a 1 here to compensate...)
+    _days = GETTIME[7] + 1
+    
+    //Get the number of days into the current week that we are
+    _trailingdays = 0
+    while weekday - _trailingdays >= 0
+    {
+        _trailingdays++
+    }
+    
+    //Get the number of weeks minus leading and trailing days
+    _days -= _trailingdays
+    _weeks = _days / 7
+    _leadingdays = _days % 7
+    
+    //Add in the trailing weeks
+    if _leadingdays > 0; _weeks++
+    if _trailingdays > 0; _weeks++
+
+    //Handles week 53
+    if _weeks == 53
+    {
+        _daysleft = 31 - day
+        if _daysleft + _trailingdays < 7; _weeks = 1
+    }
+    _weeks
+}

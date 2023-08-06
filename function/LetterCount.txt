@@ -1,0 +1,18 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+
+//Count the amount of a specific character in a string
+//You CAN put multiple letters in at once, but it will only count each instance it finds once, without overlapping.
+//Argument 0: The string to check
+//Argument 1: The letter(s) to search for (case sensitive)
+//Examples:
+//LetterCount("Ukagaka","a") //Returns 3
+//LetterCount("Ukagaka","ka") //Returns 2
+LetterCount
+{
+    _input = _argv[0]
+    _let = _argv[1]
+    _replaced = REPLACE(_input,_let,"")
+    _num = STRLEN(_input) - STRLEN(_replaced)
+    if STRLEN(_let) > 1; _num /= STRLEN(_let)
+    _num
+}

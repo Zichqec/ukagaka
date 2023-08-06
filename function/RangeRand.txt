@@ -1,0 +1,22 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+
+//Get a random number within the specified range (inclusive by default). Even handles negative numbers!
+//If you exclude either of the first two arguments, it will return nothing.
+//If you write the arguments in the wrong order or you put in strings instead of integers, I don't know what will happen nor am I planning to cover those cases.
+//Arg 0: The lowest possible value
+//Arg 1: The highest possible value
+//Arg 2: "exclusive" for exclusive range (1-10 would only output numbers from 1-9), leave blank if unwanted
+//Example: RangeRand(1,10) will output a random number from 1 to 10
+RangeRand
+{
+    if _argv[0] == "" || _argv[1] == ""; return
+    
+    _num = _argv[0]
+    _randamt = _argv[1] + 1
+    if _argv[2] == "exclusive"; _randamt--
+    
+    _randamt -= _num //Adjust how much the RAND function will output based on the lowest value
+    
+    _num += RAND(_randamt)
+    _num
+}

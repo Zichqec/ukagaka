@@ -1,0 +1,49 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//This function is to make simple anchors easier, hopefully. This is for if you just want to set up anchors that you can click to learn more about a character or location, etc. It's a bit like Select.options in menu tags.
+
+//Usage: Add the names you want to the _namelist simple array. Names can contain any character, but mind that spaces and other special characters (those listed in the _invalidcharacters array) will have to be written as underscores when you make the anchor functions. Note that names are case sensitive!
+//Create an Anchor.function for each name. For example, for the name "Example", you would create a function called "Anchor.Example", with the dialogue you want to be displayed when that anchor is clicked, or whatever you want to happen.
+//Now, you can simply write @Example in dialogue if you want to create an anchor about "Example", or you can write it without the @ sign if you just want to display it as plain text.
+//NOTE: this will not work in script input unless you add some additional setup! You can call this function from your regular OnTranslate, it'll probably look something like this:
+//_talk = OnTranslateInternal.AutoAnchor(_talk)
+
+//This function can be added to your ghost as is and will run automatically any time there is a script. All you need to do is add to the _namelist variable.
+OnTranslateInternal.AutoAnchor
+{
+	//List of names to be turned into anchors. Add as many names as you want to this list
+	_namelist = "Example,Name,Some Place"
+	
+	_talk = _argv[0]
+
+	//Loops through every name on the list and checks for them in dialogue
+	foreach _namelist; _name
+	{
+		//List of characters that are invalid for function names
+		_invalidcharacters = (" ","%(CHR(34))","#","$","%","&","(",")","*","+","-","/",":",";","<","=",">","?","@","[","]","`","{","|","}",",")
+		_funcname = _name
+		
+		foreach _invalidcharacters; _char //Loop through each invalid character and replace them with _ if they exist
+		{
+			if _char _in_ _funcname; _funcname = REPLACE(_funcname,_char,"_")
+		}
+		
+		_talk = REPLACE(_talk,"@%(_name)","\_a[AUTO_ANCHOR:%(_funcname)]%(_name)\_a") //Replace the @name in the script with an anchor
+	}
+	_talk
+}
+
+//You are likely to already have OnAnchorSelect and will need to incorporate this code into your existing event if so.
+OnAnchorSelect
+{
+	//Checks for the Auto Anchor tag. If it exists, runs a function starting with 'Anchor.' The name of the function, as set up above, will be appended to the end. Example: Anchor.Name, Anchor.Some_Place
+	if "AUTO_ANCHOR:" _in_ reference0
+	{
+		EVAL("Anchor.%(SPLIT(reference0,'AUTO_ANCHOR:')[1])")
+	}
+}
+
+//And these are the functions you will add with dialogue!
+Anchor.Example
+{
+	"Information about this person."
+}

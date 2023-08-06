@@ -1,0 +1,25 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//I don't really recommend using this for your network updates. Honestly, I recommend just getting rid of this function altogether! Having any script in it at all can slow down your network update speeds *drastically*, because these events were made for a time when internet connections were much slower. The time it takes to display this text delays it from downloading the next file straight away.
+//But if you really want a progress bar, this is a clean and easy setup! Customize with the text/images you like.
+
+//reference0 is the name of the file currently being downloaded
+OnUpdate.OnDownloadBegin
+{
+	_progress = TOINT(reference1) + 1
+	_total = TOINT(reference2) + 1
+
+	"\0\s[0]\b[2]\_qDownloading %(reference0)...\n\n"
+	
+	_display = ""
+	for _i = 0; _i < _total; _i++
+	{
+		//Loading bar display - customize with text or images or whatever
+		_filled = "■" //Files that have already been downloaded
+		_empty = "□" //Files that have not been downloaded yet
+		
+		//This is a bit like a ternary operator, for anyone wondering. Depending on the values of _i and _progress, it will pick different options from the array.
+		_display += (_empty,_filled)[_i < _progress]
+	}
+	
+	"%(_display)\n\n%(_progress)/%(_total)\e"
+}

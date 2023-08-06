@@ -1,0 +1,463 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+
+//Ok! Here's a quick explanation of switch statements in YAYA. THESE ARE NOT EQUIVALENT TO SWITCH STATEMENTS IN OTHER LANGUAGES. Other languages use the labels switch/case for what YAYA calls case/when.
+//Instead, switch statements in YAYA take an integer value, and they pick the dialogue in the switch statement that is at that index. So if I do this...
+/*
+switch weekday //weekday starts from 0 for some reason, so 0 is sunday, 6 is saturday
+{
+	"Sunday" //Position 0
+	"Monday" //1
+	"Tuesday" //2
+	"Wednesday" //3
+	"Thursday" //4
+	"Friday" //5
+	"Saturday" //6
+}
+*/
+//Depending on the value of weekday, it will choose the appropriate day name! If you put a set of brackets in place of one of those dialogues, it will choose randomly from the dialogues in the brackets.
+
+//So, with that in mind, below is a _giant_ function with if checks for each month, then switch statements for the days in each month filled with bracket sets. You can either use find and replace to change all {} to "" if you only want a single dialogue for each day, or you can go through and put a linebreak between the brackets when you're ready to use them.
+
+DailyDialogues
+{
+	_day = day - 1 //Subtract by 1 because switch statements are 0 indexed but the day function isn't. This way we don't need to leave a blank string at the start of each switch statement.
+	
+	if month == 1 //January
+	{
+		switch _day
+		{
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+		}
+	}
+	elseif month == 2 //February
+	{
+		switch _day
+		{
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{} //Leap day
+		}
+	}
+	elseif month == 3 //March
+	{
+		switch _day
+		{
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+		}
+	}
+	elseif month == 4 //April
+	{
+		switch _day
+		{
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+		}
+	}
+	elseif month == 5 //May
+	{
+		switch _day
+		{
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+		}
+	}
+	elseif month == 6 //June
+	{
+		switch _day
+		{
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+		}
+	}
+	elseif month == 7 //July
+	{
+		switch _day
+		{
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+		}
+	}
+	elseif month == 8 //August
+	{
+		switch _day
+		{
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+		}
+	}
+	elseif month == 9 //September
+	{
+		switch _day
+		{
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+		}
+	}
+	elseif month == 10 //October
+	{
+		switch _day
+		{
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+		}
+	}
+	elseif month == 11 //November
+	{
+		switch _day
+		{
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+		}
+	}
+	else //December
+	{
+		switch _day
+		{
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+			{}
+		}
+	}
+}

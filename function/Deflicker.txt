@@ -1,0 +1,16 @@
+//The deflicker effect works like so:
+// \C *must* come first in whatever script it is in. This makes the previous balloon instantly reopen itself to whatever it displayed last. Then we lock the balloon so it stops drawing for a bit, and clear it so that we can add new content. Once the new content has been added, we then unlock the balloon. This makes it appear to the user that the previous content has switched to the new content instantly, with no flicker of a blank balloon inbetween.
+
+//OnTranslateInternal functions will automatically run in YAYA for each event if they exist, just like OnTranslate
+OnTranslateInternal.Deflicker
+{
+    _talk = _argv[0]
+    if "\![deflicker]" _in_ _talk //Only apply this effect if the user wants it
+    {
+        _talk = REPLACE(_talk,"\![deflicker]","")
+        _talk = "\C\![lock,balloonrepaint]\c" + _talk
+        if "\e" _in_ _talk; _talk = REPLACE(_talk,"\e","\![unlock,balloonrepaint]\e") //Make sure it comes before \e so it runs properly
+        else; _talk += "\![unlock,balloonrepaint]"
+        _talk
+    }
+}

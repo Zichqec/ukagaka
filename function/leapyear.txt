@@ -1,0 +1,17 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//This function will tell you if any given year is a leap year (hopefully, they might change the rules, you never know)
+
+//Usage: Outputs a 1 if it's a leapyear, and 0 if it's not.
+//Argument 0: The year to check. If omitted, it will use the current year.
+//Example 1: if leapyear; "It's a leap year!"
+//Example 2: if leapyear(year + 1); "Next year is going to be a leap year!"
+
+leapyear
+{
+    _year = year; if _argv[0] != ""; _year = _argv[0]
+	
+    if _year % 4 != 0; 0
+    elseif _year % 100 != 0; 1
+    elseif _year % 400 != 0; 0
+    else; 1
+}

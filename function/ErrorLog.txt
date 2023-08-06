@@ -1,0 +1,57 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+
+//This function is intended to let you send custom errors to SSP's error log! It's a debugging tool, really. You'll need the ErrorLog function below, and then there's some other code you'll have to implement in other places in your ghost as well.
+
+
+//This function needs to go on its own in a dic file somewhere.
+//Usage:
+//Argument 0 - The information you want to print to the error log.
+//Argument 1 - The level of the error. Can be info, warning, or error. If omitted, it will default to warning.
+//Note: You can pick in the SSP preferences what level of error you want to give you notification sounds. I believe the default is warning.
+//The levels are mostly cosmetic here, but the info level is useful if you want to silently log debug information.
+//Example: ErrorLog("Some debug info","info")
+ErrorLog
+{
+	//Create arrays if none exist
+	if !ISVAR("ErrorsToPush.level"); ErrorsToPush.level = IARRAY
+	if !ISVAR("ErrorsToPush.description"); ErrorsToPush.description = IARRAY
+	
+	_level = "warning" //It defaults to warning if it doesn't recognize what you've put in, so I will too
+	if _argv[1] != ""; _level = _argv[1]
+	
+	ErrorsToPush.level ,= _level
+	ErrorsToPush.description ,= _argv[0]
+}
+
+
+//The below code should go in OnSecondChange. Alternatively, you can put it in OnTranslate (but if you do, it'll only work properly in functions that actually return something), or I suppose you could live life on the edge and try to stick it into the shiori3 file somewhere (like the request function maybe???), but I can't say I recommend that.
+
+//Create arrays if none exist
+if !ISVAR("ErrorsToPush.level"); ErrorsToPush.level = IARRAY
+if !ISVAR("ErrorsToPush.description"); ErrorsToPush.description = IARRAY
+
+if ARRAYSIZE(ErrorsToPush.level) > 0 //If there are errors
+{
+	_levels = ""
+	_descriptions = ""
+	for _i = 0; _i < ARRAYSIZE(ErrorsToPush.level); _i++ //CHR(1) in here is the divider between errors
+	{
+		if _i > 0; {_levels += CHR(1); _descriptions += CHR(1)}
+		_levels += ErrorsToPush.level[_i]
+		_descriptions += ErrorsToPush.description[_i]
+	}
+	//Push the whole list of errors together
+	SHIORI3FW.PushAdditionalReturn('ErrorLevel',_levels)
+	SHIORI3FW.PushAdditionalReturn('ErrorDescription',_descriptions)
+	
+	//Clear the arrays so we don't send any more errors later
+	ErrorsToPush.level = IARRAY
+	ErrorsToPush.description = IARRAY
+}
+
+
+//You should also put these in OnFirstBoot/OnInitialize.
+//It's not the end of the world if you don't include these.
+
+ErrorsToPush.level = IARRAY
+ErrorsToPush.description = IARRAY
