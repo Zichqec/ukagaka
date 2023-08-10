@@ -202,13 +202,13 @@ let item_details = [
 	{
 		name: "Lulo",
 		release: "January 1st, 2021",
-		latest: "August 2nd, 2023",
+		latest: "August 10th, 2023",
 		version: "0.0.2",
 		forevent: null,
 		collaborators: null,
 		translations: null,
 		content_warnings: null,
-		download: "https://www.mediafire.com/file/gg06i2yhobdsamg/lulo_v0.0.3.nar/file",
+		download: "https://www.mediafire.com/file/n9kjrfl7dcje002/lulo_v0.0.4.nar/file",
 		blurb: "An old ghost of mine that went into beta testing, and then I never finished her. She is centered around her 3 different modes: awake, sleepy, and asleep. She was intended to have many features, but development of this ghost has been abandoned as I no longer want to publish content for this character and no longer write ghosts in this style. So, most of her features are half-finished/rushed. But if you like meta-style ghosts, perhaps you'll enjoy having a sleepy companion. Released for public download on August 2nd, 2023."
 	},
 	{
