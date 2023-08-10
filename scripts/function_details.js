@@ -17,7 +17,7 @@ let item_details = [
 		forevent: null,
 		language: "YAYA",
 		download: "Auto_anchor.txt",
-		blurb: "This handy function can automatically apply pause tags (\w tags) to your dialogues! It takes a bit of getting used to, but it can make your scripts much cleaner and much faster to write! Just follow the instructions carefully, and make sure you know how to plan so that it doesn't make your menus wonky."
+		blurb: "This is a setup to make very basic anchors simple! It's meant for if you have, say, a bunch of anchors that have basic character explanations, and such. You add your names to a list, create corresponding \"Anchor.\" events, and then when you write the names in dialogue, you can write with an @ when you want it to be an anchor, or write without an @ if you just want to display the name as plain text!"
 	},
 	{
 		name: "AutoPause",
@@ -27,7 +27,7 @@ let item_details = [
 		forevent: null,
 		language: "YAYA / AYA",
 		download: "AutoPause.txt",
-		blurb: "This handy function can automatically apply pause tags (\w tags) to your dialogues! It takes a bit of getting used to, but it can make your scripts much cleaner and much faster to write! Just follow the instructions carefully, and make sure you know how to plan so that it doesn't make your menus wonky."
+		blurb: "This handy function can automatically apply pause tags (\\w tags) to your dialogues! It takes a bit of getting used to, but it can make your scripts much cleaner and much faster to write! Just follow the instructions carefully, and make sure you know how to plan so that it doesn't make your menus wonky."
 	},
 	{
 		name: "Capitalize",
@@ -77,7 +77,7 @@ let item_details = [
 		forevent: null,
 		language: "YAYA / AYA",
 		download: "Deflicker.txt",
-		blurb: "Ever notice that ghost menus tend to flicker when you click on stuff? I do! So I crafted this convoluted setup to fix it, and then packaged that into an easy-to-add module for your ghost. All you'll have to do is add \![deflicker] to your menu script, and your flicker woes will disappear! Provided it's a menu that's suitable. If your menu displays dialogue before the rest shows up, or something along those lines, this won't help you.<br><br>If you're using AYA, you'll need to incorporate this into OnTranslate itself. In YAYA, simply add the function to your ghost, and it will work automatically!"
+		blurb: "Ever notice that ghost menus tend to flicker when you click on stuff? I do! So I crafted this convoluted setup to fix it, and then packaged that into an easy-to-add module for your ghost. All you'll have to do is add \\![deflicker] to your menu script, and your flicker woes will disappear! Provided it's a menu that's suitable. If your menu displays dialogue before the rest shows up, or something along those lines, this won't help you.<br><br>If you're using AYA, you'll need to incorporate this into OnTranslate itself. In YAYA, simply add the function to your ghost, and it will work automatically!"
 	},
 	{
 		name: "ErrorLog",
