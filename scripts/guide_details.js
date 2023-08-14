@@ -22,7 +22,7 @@ let item_details = [
 	{
 		name: "Ghost Release Tips & Checklist",
 		release: "June 18th, 2023",
-		latest: null,
+		latest: "August 14th, 2023",
 		guidefor: "Devs",
 		language: null,
 		collaborators: null,
