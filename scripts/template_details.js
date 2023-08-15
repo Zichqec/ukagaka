@@ -1,5 +1,16 @@
 let item_details = [
 	{
+		name: "Hydrate Shell Template",
+		type: "Shell",
+		release: "August 16th, 2022",
+		latest: "August 15th, 2023",
+		version: "1.0.1",
+		forevent: null,
+		collaborators: null,
+		download: "https://github.com/Zichqec/hydrate_shell_template/releases/latest",
+		blurb: "A template for making shells for the ghost <a href='../ghost/hydrate.html'>Hydrate</a>! It's just a simple little thing I threw together to make life easier. You can use this to make other shells too, if you want a clean base to start from."
+	},
+	{
 		name: "Minimum YAYA Template",
 		type: "Ghost",
 		release: "April 18th, 2022",
