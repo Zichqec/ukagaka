@@ -60,7 +60,9 @@ function makeStandard(input)
 	let output = input.toLowerCase();
 	output = output.replace(" - ","_");
 	output = output.replace(" & ","_");
+	output = output.replace(":","_");
 	output = output.replace(/ /g,"_");
+	output = output.replace("__","_");
 	output = output.replace("%","");
 	output = output.replace("@","");
 	output = output.replace("'","");
