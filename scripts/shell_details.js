@@ -89,6 +89,17 @@ let shell_details = [
 		blurb: "A shell for both Hydrate and Needle! I thought that would be cool and fun, but you would not believe the consternation this has caused me figuring out how to categorize this dang thing! I like it a lot though, it's very silly, and it has a nice variety of dressups for needle length and the color of the liquid inside. Use it for whichever ghost you prefer, or both at once. What could go wrong, confusing your drink reminder with Needle!"
 	},
 	{
+		name: "Tiered Bowls",
+		goeswith: ["Hydrate"],
+		release: "August 20th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: "8/20 Hydrate Shell Jam 2023",
+		collaborators: null,
+		download: "https://www.mediafire.com/file/jwqbrgb2ek7qi1a/tiered_bowls_v1.0.0.nar/file",
+		blurb: "A tiered bowl water feature! Use a dressup to turn the water on or off. This shell hangs from the ceiling, which may be useful to keep it tucked out of the way!"
+	},
+	{
 		name: "Tiny Pokey Pixels",
 		goeswith: ["Needle"],
 		release: "November 11th, 2022",
