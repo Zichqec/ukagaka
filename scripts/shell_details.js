@@ -1,6 +1,17 @@
 let shell_details = [
 
 	{
+		name: "After the rainfall",
+		goeswith: ["Hydrate"],
+		release: "August 20th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: "8/20 Hydrate Shell Jam 2023",
+		collaborators: null,
+		download: "https://www.mediafire.com/file/7ckaqxegdioyqvv/after_the_rainfall_v1.0.0.nar/file",
+		blurb: "Do you want to drink your water off a leaf? Of course you do! This simple shell hangs out on the right side of your screen and that's about it."
+	},
+	{
 		name: "Ballpoint Pen",
 		goeswith: ["Hydrate"],
 		release: "August 20th, 2022",
