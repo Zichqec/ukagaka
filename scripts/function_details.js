@@ -147,7 +147,7 @@ let item_details = [
 		forevent: null,
 		language: "YAYA / AYA",
 		download: "leapyear.txt",
-		blurb: "A pair of functions to quickly check if a given string is all uppercase or all lowercase!"
+		blurb: "This function well help you determine if it's a leapyear or not! You can check the current year, or send it a specific year to check as an argument!"
 	},
 	{
 		name: "LetterCount",
