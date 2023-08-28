@@ -139,10 +139,7 @@ let item_details = [
 		version: "1.0.0",
 		forevent: null,
 		goeswith: null,
-		collaborators:
-		[
-			Galla
-		],
+		collaborators: null,
 		download: ["https://www.mediafire.com/file/scxvbn3qzx7xvhm/minimalism_v1.0.0.nar/file"],
 		blurb: "A silly challenge balloon where I tried to make a balloon with as few files as possible! It has only a single size for this reason. There are 6 files total, with the readme being stored as comments in the install.txt file."
 	},
