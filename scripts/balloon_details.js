@@ -100,6 +100,17 @@ let item_details = [
 		blurb: "A dreamy, cloud themed balloon, which has 3 color options for the sakura! Each comes with 2 sizes."
 	},
 	{
+		name: "Flip of a Coin",
+		release: "August 31st, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		goeswith: ["Xander's Refuge"],
+		collaborators: null,
+		download: ["https://www.mediafire.com/file/s2i1xkf6xhx68aj/flip_of_a_coin_v1.0.0.nar/file"],
+		blurb: "A simple green and brown balloon with a coin flipping animation for the online marker. If you really squint, you can also pretend the choice markers are clovers. Comes in 4 different sizes."
+	},
+	{
 		name: "Galaxy Balloon Pack",
 		release: "June 4th, 2020",
 		latest: null,

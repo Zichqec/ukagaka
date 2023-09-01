@@ -342,5 +342,17 @@ let item_details = [
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/udb8b165gitux1d/warrior_generator_v1.0.0.nar/file",
 		blurb: "Do you like Warrior Cats? Do you like generating names, designs, and more? That's what this ghost will do for you! You can save the characters you generate as files to share or reload later. You can even export the designs as image files, for easy sharing."
+	},
+	{
+		name: "Xander's Refuge",
+		release: "August 31st, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: "Aughost",
+		collaborators: null,
+		translations: null,
+		content_warnings: null,
+		download: "",
+		blurb: "Xander's Refuge is a ghost made based on the prompt \"a ghost of an ancient deity that always seems tired, and is looking for a safe place to hide\". He's an extremely straightforward ghost, with few mechanics and a focus on content instead.<br><br>He has over 100 idle dialogues, and he works well as an aesthetic companion also! He has a looping smoke animation, and will randomly change poses when left idle so that he's never still for too long. He'll even do this if you turn his dialogues off!"
 	}
 ]
