@@ -352,7 +352,7 @@ let item_details = [
 		collaborators: null,
 		translations: null,
 		content_warnings: null,
-		download: "https://github.com/Zichqec/xanders_refuge/releases/tag/v1.0.0",
+		download: "https://github.com/Zichqec/xanders_refuge/releases/latest",
 		blurb: "Xander's Refuge is a ghost made based on the prompt \"a ghost of an ancient deity that always seems tired, and is looking for a safe place to hide\". He's an extremely straightforward ghost, with few mechanics and a focus on content instead.<br><br>He has over 100 idle dialogues, and he works well as an aesthetic companion also! He has a looping smoke animation, and will randomly change poses when left idle so that he's never still for too long. He'll even do this if you turn his dialogues off!"
 	}
 ]
