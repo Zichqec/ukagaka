@@ -80,6 +80,16 @@ let item_details = [
 		blurb: "Ever notice that ghost menus tend to flicker when you click on stuff? I do! So I crafted this convoluted setup to fix it, and then packaged that into an easy-to-add module for your ghost. All you'll have to do is add \\![deflicker] to your menu script, and your flicker woes will disappear! Provided it's a menu that's suitable. If your menu displays dialogue before the rest shows up, or something along those lines, this won't help you.<br><br>If you're using AYA, you'll need to incorporate this into OnTranslate itself. In YAYA, simply add the function to your ghost, and it will work automatically!"
 	},
 	{
+		name: "DisplayReal",
+		release: "September 4th, 2023",
+		latest: null,
+		version: null,
+		forevent: null,
+		language: "YAYA",
+		download: "DisplayReal.txt",
+		blurb: "Want to display a real number (float) without all those annoying trailing 0s? This function can help! Note that this is for display purposes only, the result it returns is a string and not a number."
+	},
+	{
 		name: "ErrorLog",
 		release: "June 4th, 2022",
 		latest: null,
