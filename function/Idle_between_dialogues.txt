@@ -1,0 +1,33 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//This code can be used to easily make your ghost change poses randomly between dialogues. This works even if dialogues are turned off entirely.
+//OnSurfaceRestore only happens once after each dialogue, so most ghosts will be static between their dialogues, and stand completely still if you turn dialogues off. This code seeks to alleviate that.
+
+//This works by calling OnSurfaceRestore, so you can simply add whatever random poses you want to OnSurfaceRestore. If that won't work for your setup, you could make a separate function with a pool of poses for it to call.
+//By default, this has a chance to make the ghost run OnSurfaceRestore every 15 seconds, so long as 15 seconds have passed since the last dialogue (and the balloon is not currently open). You can adjust this timing, and adjust the chance to change poses, if you like. I made it not change every time because I think it feels more organic that way.
+
+//If you already have OnSecondChange, you will have to incorporate this into your existing OnSecondChange, since you can't have two of the same event.
+//If you have my BalloonIsOpen function, you can substitute that in here. Just change the !_balloonisopen in the if check to !BalloonIsOpen, and remove the line that sets _balloonisopen in this function. It's not necessary to do so, though.
+
+OnSecondChange
+{
+	//This gets the time since the last dialogue ended, in seconds. SHIORI3FW.TalkEndTime is a variable that comes with YAYA as SHIORI
+	_since = GETSECCOUNT - SHIORI3FW.TalkEndTime
+	
+	_balloonisopen = "balloon" _in_ var.req.value[ASEARCH("Status",var.req.key)]
+	
+	if _since % 15 == 0 && !_balloonisopen
+	{
+		//If you want to adjust how likely it is to change poses, change the number in the RAND. Higher numbers mean a lower chance for the pose to change.
+		if RAND(4) == 0; OnSurfaceRestore
+	}
+}
+
+//This is just an example, since your ghost very likely has OnSurfaceRestore already
+OnSurfaceRestore : nonoverlap
+{
+	"\1\s[-1]\0\s[0]"
+	"\1\s[-1]\0\s[1]"
+	"\1\s[-1]\0\s[2]"
+	"\1\s[-1]\0\s[3]"
+	"\1\s[-1]\0\s[4]"
+}

@@ -120,6 +120,16 @@ let item_details = [
 		blurb: "A guide for getting your ghost to hold <a href='../ghost/dusty_and_obsidian.html'>Dusty's cat, Obsidian</a>! This is a rather old system and I've wanted to update it for years to use raiseother tags instead. I don't know that I'll ever do that at this point, unfortunately, but if you're looking to make a similar system, I highly recommend using raiseother and not using this method as an example! This way requires so much extra effort.<br><br>Please also note that you can add Obsidian as a dressup on your character, if you want to avoid having to add in checks for her everywhere. SmokyCinnamonroll did this with his ghost <a href='https://smokycinnamon.github.io/indifferentsorrel/tadora'>Tadora</a>!"
 	},
 	{
+		name: "Idle between dialogues",
+		release: "September 13th, 2023",
+		latest: null,
+		version: null,
+		forevent: null,
+		language: "YAYA",
+		download: "Idle_between_dialogues.txt",
+		blurb: "Have you ever noticed that most ghosts don't move between their dialogues, other than resetting to a default pose? For a lot of ghosts that's fine, but if you'd like yours to be a little more lively, this code will let them switch poses between dialogues! It even works if dialogues are completely turned off. I originally wrote this for <a href='../ghost/xanders_refuge.html'>Xander's Refuge</a>, and I think it does a lot to make him feel more organic."
+	},
+	{
 		name: "Interval Stacker",
 		release: "November 4th, 2020",
 		latest: "January 17th, 2021",
