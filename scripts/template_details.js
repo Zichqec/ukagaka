@@ -22,6 +22,50 @@ let item_details = [
 		blurb: "A template ghost for YAYA, with the bare basics and little else. It has the YAYA as SHIORI library, and the basic file structure, and that's pretty much it. You start with a blank main.dic file and a blank surfaces.txt file. It's meant as both an easy way to start with a clean slate, and also a way to show folks how little you actually need to have a ghost that runs."
 	},
 	{
+		name: "Simplicity Balloon",
+		type: "Balloon",
+		release: "September 15th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		collaborators: null,
+		download: "https://github.com/Zichqec/simplicity_balloon/releases",
+		blurb: "A simple balloon template! This is tidier than the X. Template Balloon, both in the look and in the files. It uses a lot of simple tricks to slim down on the amount of work required to have a functional balloon, but you can always add onto it if you'd like to."
+	},
+	{
+		name: "Simplicity Calendar",
+		type: "Calendar skin",
+		release: "September 15th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		collaborators: null,
+		download: "https://github.com/Zichqec/simplicity_calendar/releases",
+		blurb: "A template/guide for calendar skins. At the time of making this, there is no calendar skin page on Ukadoc, so this has a separate file which explains what I know about them to help you in the process of making one yourself."
+	},
+	{
+		name: "Simplicity Plugin",
+		type: "Plugin",
+		release: "September 15th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		collaborators: null,
+		download: "https://github.com/Zichqec/simplicity_plugin/releases",
+		blurb: "A simple setup using the YAYA as PLUGIN library, but with the files in English. Also includes some events as demonstration. Note that I didn't write the library! What I've added here is honestly very minimal, but hopefully it's useful if you'd like to explore the possibilities of making plugins in YAYA."
+	},
+	{
+		name: "Simplicity Shell",
+		type: "Shell",
+		release: "September 15th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		collaborators: null,
+		download: "https://github.com/Zichqec/simplicity_shell/releases",
+		blurb: "A shell template with a bit more structure to it than the Hydrate Shell Template. This one is ideal if you want to mainly overwrite images and don't want to create your own numbering scheme for the files. It includes all of the recommended expressions as listed on Ukadoc, blinking animations, a few talking animations, and even an extremely basic singing animation."
+	},
+	{
 		name: "Simplicity Template",
 		type: "Ghost",
 		release: "February 4th, 2023",
