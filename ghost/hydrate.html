@@ -401,10 +401,81 @@ let version_history = [
 	[
 		{
 			version: "1.0.0",
-			released: "August 20th, 2020",
+			released: "2020-08-20",
 			changelog:
 			[
-				"Initial release"
+				"Initial release."
+			]
+		},
+		{
+			version: "1.0.0",
+			released: "2020-08-20",
+			changelog:
+			[
+				"Fixed a small issue with the balloon."
+			]
+		}
+	]
+},
+{
+	version: "1.1.0",
+	patches:
+	[
+		{
+			version: "1.1.0",
+			released: "2021-01-05",
+			changelog:
+			[
+				"Hydrate will now have special comments based on how many drinks in a row you've hit!",
+				"Changed the shell menu to dynamically change depending on what shells you have installed. Check the link in it if you want to download more shells!",
+				"Added a dynamic dressup menu if the current shell has available dressup items!",
+				"Added a stats menu to track your stats! Please note that most of these will start at 0 since they were just added.",
+				"Added an option to tell Hydrate you took an extra sip of water! This won't count towards the timed drinks, but you still get some credit!",
+				"Hydrate will now send your stats to other ghosts when pinged, and will ping them every hour with your stats! If other ghosts are set up to receive and process these stats, you might see your other ghosts comment on them!",
+				"Added in the auto update system that I had removed for some reason. Hydrate will now check for updates once a day and let you know if there's something new!",
+				"Unfortunately, it cannot automatically check for balloon and shell updates. There are buttons in the menu to check for updates for balloons and shells, make sure you check now and then for your favorite shells!",
+				"Please note, if you're using the H2O balloon, that got an update as well. You should see larger balloons in the menus; if not, please ask Hydrate to update the balloon in the Config menu!",
+				"The reminder balloon will now time out if you don't interact with it for long enough. This is set for 5 minutes by default, but it will be shorter if you set a shorter reminder time!",
+				"If you're interested in having your ghost receive stats from Hydrate, or you'd like to make a shell for Hydrate, please check in Hydrate's folder for documentation!"
+			]
+		}
+	]
+},
+{
+	version: "1.2.0",
+	patches:
+	[
+		{
+			version: "1.2.0",
+			released: "2022-08-20",
+			changelog:
+			[
+				"You can now choose to have a sound play when a reminder pops up! Choose from 6 defaults, or set your own custom sound.",
+				"Added pause mode; pause your drink reminders when you step away from your computer, without losing your drink streak!",
+				"Hydrate's auto update checks will now automatically check for updates to the current shell and balloon as well.",
+				"Added an option to pick randomly from available designs.",
+				"Added an option to toggle off hour notifications.",
+				"Added a few new dialogues.",
+				"Reorganized the config menu.",
+				"Prettied up some of the other menus a little.",
+				"Updated to YAYAtc571-3.",
+				"Updates to some of the old code."
+			]
+		},
+		{
+			version: "1.2.1",
+			released: "2022-08-26",
+			changelog:
+			[
+				"Added unique switch dialogues for all currently known shells.",
+				"Added an option to swap to a random shell.",
+				"Changing shells will now check for shell updates if you have auto update checks on.",
+				"Fixed the auto updates system, it now does what it says it does!",
+				"Fixed a bug where the shell would not be placed correctly when changing shells.",
+				"Fixed a bug where if you installed another ghost, the buttons to change to/call the other ghost had their labels swapped.",
+				"Fixed some minor formatting issues.",
+				"Changed the right click menu to include functions I had previously excluded.",
+				"Changed the slider input when changing the reminder rate back to a normal input box. This should allow finer control, independent of balloon. Also you can set your reminders to absurd lengths now."
 			]
 		}
 	]

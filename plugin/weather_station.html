@@ -62,10 +62,43 @@ let version_history = [
 	[
 		{
 			version: "1.0.0",
-			released: "Month 0th, 20xx",
+			released: "2022-02-01",
 			changelog:
 			[
-				"Initial release",
+				"Initial release.",
+			]
+		},
+		{
+			version: "1.0.1",
+			released: "2022-02-02",
+			changelog:
+			[
+				"Fixes an issue with weather alerts that would output broken text into ghost dialogue.",
+			]
+		},
+		{
+			version: "1.0.2",
+			released: "2022-08-25",
+			changelog:
+			[
+				"Fixed the documentation having a couple of references in the wrong order.",
+				"Changed the display to use plain text highlighting instead of anchors. This will not work on older versions of SSP, but fixes an issue where the balloon could time out if they were clicked.",
+				"Cancelling the location search menu will now close the input box.",
+				"Added an additional reference to OnWeatherStation.Error that indicates whether an update is available for the plugin.",
+				"Updated to YAYAtc571-3."
+			]
+		},
+		{
+			version: "1.0.3",
+			released: "2023-07-19",
+			changelog:
+			[
+				"Fixed an issue where if a location search only returned a single result, it would say there were none.",
+				"Fixed an issue where the references in the daily forecast for average humidity and maximum wind speed in mph were swapped.",
+				"Fixed an issue where metric time would not show the \"No sunrise\" etc. displays (I think, I did this so long ago I'm not positive).",
+				"Made emdashes always appear in the font Calibri, to avoid tofus on balloons with special fonts.",
+				"Added a \![no-autopause] tag to menus for ghosts using my autopause system, so that they should display menus instantly.",
+				"Gave Weather Station its own github repo where changes can be tracked, and changed the homeurl accordingly. Find it here! https://github.com/Zichqec/weather_station"
 			]
 		}
 	]

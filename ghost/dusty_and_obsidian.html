@@ -70,10 +70,111 @@ let version_history = [
 	[
 		{
 			version: "1.0.0",
-			released: "Month 0th, 20xx",
+			released: "2020-08-01",
 			changelog:
 			[
-				"Initial release"
+				"Initial release."
+			]
+		},
+		{
+			version: "1.0.1",
+			released: "2020-08-30",
+			changelog:
+			[
+				"Fixed the weather glitch.",
+				"If you have auto weather checks on, Dusty will now check the weather within a few minutes of booting.",
+				"Improved the weather display on the main menu slightly.",
+				"Fixed Dusty randomly saying 0 or 1 in his balloon.",
+				"Fixed a stray pixel (with righteous indignation).",
+				"Added a new menu to the font menu that displays all fonts installed on your computer in a list!",
+				"Made Obsidian's window stick to Dusty if he's holding her.",
+				"Random dialogue will no longer happen while you're in the middle of confiding/gushing.",
+				"Fixed a bug where dialogue about your computer just wouldn't show up."
+			]
+		},
+		{
+			version: "1.0.2",
+			released: "2020-10-02",
+			changelog:
+			[
+				"Fixed the weather glitch again, it should be less of an issue from now on! If you're outside the US, you might have to reset your location.",
+				"When you check the weather, Dusty will also list the time of the sunrise and sunset in your area!",
+				"Auto weather checks will no longer open a balloon and will happen completely silently.",
+				"Added the option to opt in to beta updates.",
+				"Obsidian can now be held by <a href='../ghost/s_the_skeleton.html'>S</a> if you have them both up to date!",
+				"Some other small bugfixes."
+			]
+		},
+		{
+			version: "1.0.3",
+			released: "2020-10-02",
+			changelog:
+			[
+				"Fixed a bug with S holding Obsidian."
+			]
+		},
+		{
+			version: "1.0.4",
+			released: "2020-10-18",
+			changelog:
+			[
+				"Dusty's weather checking is fixed again, and there is now a toggle for Fahrenheit or Celsius in his menu. Please tell me if anything goes wrong with this!",
+				"Made it so that if another ghost talks to Dusty while he's holding Obsidian, he'll ignore them. This is a placeholder dialogue to prevent weird visual bugs until I get a better fix in.",
+				"Added a few new dialogues.",
+				"Fixed a bug where having translation tooltips on would cause timeout messages."
+			]
+		},
+		{
+			version: "1.0.5",
+			released: "2020-10-18",
+			changelog:
+			[
+				"Fixed a typo in the weather location dialogue."
+			]
+		},
+		{
+			version: "1.0.6",
+			released: "2020-10-31",
+			changelog:
+			[
+				"Other ghosts will now be able to hold Obsidian, should the dev choose to make their ghost compatible! It's a lot of work, so I don't expect many devs to do it, however...",
+				"<a href='https://zdzisiu.github.io/Ukagaka/md.html'>MiniDev</a> can now hold Obsidian if both ghosts are up to date!",
+				"Dusty also has some basic commu conversations set up with MiniDev, to hopefully be expanded at a later date.",
+				"MiniDev has also been added to Dusty's submenu for talking about other ghosts!",
+				"Changed the way S picking up Obsidian works. Please make sure you have both ghosts up to date before you try this! Also, if you ever have trouble with S/another ghost not picking up Obsidian anymore, reloading them seems to help.",
+				"Offscreen dialogue should now happen immediately upon Dusty being moved out of bounds.",
+				"Fixed a bug where timeout dialogue was happening when it shouldn't.",
+				"Fixed some misc bugs and typos. Also, some code optimization. Expect a lot of optimization in 1.1.0, whenever I get to that..."
+			]
+		},
+		{
+			version: "1.0.7",
+			released: "2020-11-01",
+			changelog:
+			[
+				"Fixed an issue with Dusty not recognizing he'd met MiniDev if he talked to him normally.",
+				"Hopefully fixed a bug where a duplicate Obsidian would appear if you updated them while she was being held by Dusty.",
+				"Hopefully fixed a bug where Dusty's commu loop prevention was actually causing him to get stuck in loops..."
+			]
+		},
+		{
+			version: "1.0.8",
+			released: "2020-11-06",
+			changelog:
+			[
+				"Made a tiny change to the code for other ghosts holding Obsidian. She should be able to jump down on either the right or left now."
+			]
+		},
+		{
+			version: "1.0.9",
+			released: "2020-11-17",
+			changelog:
+			[
+				"Fixed an issue where lowercase a was being translated as lowercase s in the Translate From Wingdings function.",
+				"Fixed an issue where the links in the Translate From Wingdings function were overlapping improperly.",
+				"Fixed an issue where Obsidian sometimes spoke in the custom font, if you had asked Dusty to change most of his dialogue to it.",
+				"Fixed an issue where their blip in animations would play twice if S was present while booting.",
+				"Fixed an issue where email headers were completely broken."
 			]
 		}
 	]

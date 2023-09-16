@@ -257,10 +257,98 @@ let version_history = [
 	[
 		{
 			version: "1.0.0",
-			released: "May 21st, 2021",
+			released: "2021-05-12",
 			changelog:
 			[
-				"Initial release"
+				"Initial release."
+			]
+		}
+	]
+},
+{
+	version: "1.1.0",
+	patches:
+	[
+		{
+			version: "1.1.0",
+			released: "2021-09-30",
+			changelog:
+			[
+				"Added French translation by <a href='https://levidre.github.io/'>Levidre</a>!",
+				"Added Russian translation by <a href='https://smokycinnamon.github.io/indifferentsorrel/'>Smoky</a>!",
+				"Added German translation by <a href='https://koguri3108.tumblr.com/'>Koguri3108</a>!",
+				"Added support for many audio file types, including .flacs, .oggs, and .m4as, which should work if you have <a href='https://github.com/Nevcairiel/LAVFilters/releases'>LAV Filters</a> installed!",
+				"Fixed a bug in the shell template code that would mess up any shells that didn't uncomment the rest of that function. Sorry about that, completely my fault!",
+				"Added support for dragging and dropping multiple music folders onto FLUX. This will search up to ~500 directories deep, so be wary if you have large subfolders. If you have more folders/subfolders than that, you'll have to do them in batches, as it will ignore any folders past the limit. Please note, with the limit set at 500, I have not had SSP crash on me. I can't say how it will behave for slower computers, though.",
+				"Updated the yaya.dll, allowing for a new Emergency Mode! Now, if you load a shell with an error in its custom functions, FLUX will reload itself without the custom functions, allowing you to continue using it seamlessly!",
+				"Changed how the music player reads file names, issues with escape characters should be a thing of the past! IF YOU HAVE SONGS SAVED IN PLAYLIST FILES WITH COMMAS IN THEIR NAMES, please go into those files and change the || that replaced each comma to a normal comma! Also, if you had set up communication features for your ghost with FLUX, please check the updated information in FLUX's commu file!",
+				"Fixed an issue with installing FLELE shells if the files inside the zipped folder were nested in another directory.",
+				"Changed the menu for moving songs to be a lot nicer. Also, fixed a bug that would allow you to move songs off the top or bottom of the list.",
+				"Changed how the pronoun functions work- if you're a developer making a shell in a language other than english, please check the new pronoun functions for your language! I've included notes in the documentation about this.",
+				"Updated the how to make a shell guide with updated and corrected information.",
+				"The update dialogue will no longer call the singing animation repeatedly, unless you're in the master FLUX shell.",
+				"The dressup menu will now redisplay the last surface when called, to allow for complex dressup systems using OnTranslateInternal or MAKOTO."
+			]
+		},
+		{
+			version: "1.1.1",
+			released: "2021-10-01",
+			changelog:
+			[
+				"Renamed a file that was causing a 404 error."
+			]
+		}
+	]
+},
+{
+	version: "1.2.0",
+	patches:
+	[
+		{
+			version: "1.2.0",
+			released: "2021-05-12",
+			changelog:
+			[
+				"Some of the new features require SSP to be up to date! At the time of posting, the current version of SSP is 2.5.50. This SSP version also fixes a bug that prevents FLUX from switching shells properly, so it's an important one!",
+				"FLUX can now continue playing music while minimized!",
+				"If a song gives an error, FLUX now has a message about it. In addition, if you're not on the 'play one song' option, FLUX will start the next song automatically for you.",
+				"FLUX can now display your current shell and song in your Discord status if you have the new version of the <a href='https://ssp.shillest.net/plugin/discord.nar'>Discord Rich Presence plugin</a>! This can be toggled off at any time in the config menu.",
+				"Added tooltips for hotspots! Turn on this option in the config menu, and FLUX will display tooltips when you mouse over hotspots (except the pettable area).",
+				"Added 4 new optional hotspots: pause/resume, next song, previous song, and stop after current song.",
+				"Added support for 3 other hotspots from FLELE: minimize, close, and a second stop button that is identical to the original.",
+				"Updated yaya.dll to Tc564-1. This version adds new function modifiers to make creating dialogue pools easier!",
+				"Slightly rearranged main menu if you have debug mode on.",
+				"Updated music player menus to be slightly nicer when changing songs via the hotkeys/hotspots.",
+				"Slightly changed how surfaces are called when singing. Hopefully this will smooth out issues where the singing animation would stop when changing shells.",
+				"Fixed an issue where the music would stop if you changed shells right as it ended. There's a tiny window where this may still happen, but I don't think it's something I can change!",
+				"Hopefully fixed an issue where if you closed the balloon while a song was waiting to play, it would not play the next song.",
+				"Fixed an issue where FLUX would not reset its variables when booting because another ghost was uninstalled. There is also now an option for shell devs to determine if the OnCustom_OnVanished event triggered while FLUX was already open, or if it just booted."
+			]
+		},
+		{
+			version: "1.2.1",
+			released: "2021-05-12",
+			changelog:
+			[
+				"Updated YAYA version to Tc568-1.",
+				"Fixed an issue where the setting for when FLUX should speak did not work as intended.",
+				"Fixed an issue where aitalk would stop working if the option to speak was set to something other than 'any time'. This is a bandaid patch until the issue is fixed at the source.",
+				"Fixed an issue where the talk rate would not display properly in the menu if it was set to never.",
+				"Fixed an issue where opening the music menu with the hotkey or hotspots would be delayed if the shell was in the middle of a dialogue.",
+				"Removed the text after picking a talk rate, it goes straight back to the config menu now for a smoother experience.",
+				"Fixed an issue where the talk rate could not be changed when the language was set to French.",
+				"Changed the info about how to use the Discord plugin to display instantly."
+			]
+		},
+		{
+			version: "1.2.2",
+			released: "2021-05-12",
+			changelog:
+			[
+				"Updated YAYA version to Tc569-4.",
+				"Changing the volume, playback speed, and balance from the music settings menu will now immediately take effect.",
+				"Made several menus, including the music menu, move songs menu, and dressup menu, less flickery.",
+				"Fixed a small issue where FLUX may not have recognized that it was in the settings menu when changing songs unless the language was set as English."
 			]
 		}
 	]

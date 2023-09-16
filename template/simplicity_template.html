@@ -66,10 +66,70 @@ let version_history = [
 	[
 		{
 			version: "1.0.0",
-			released: "August 20th, 2022",
+			released: "2023-02-04",
 			changelog:
 			[
-				"Initial release",
+				"Initial release.",
+			]
+		},
+		{
+			version: "1.0.1",
+			released: "2023-02-12",
+			changelog:
+			[
+				"Updated the base YAYA files, to fix a bug.",
+				"Added OnInitialize to boot.dic, to make resetting variables on boot easier/more consistent.",
+				"Fixed an issue where LastTalk was not initialized, nor reset upon boot.",
+				"Made username into a variable instead of using the environment variable version. This means you can use things like TOUPPER on it now.",
+				"Changed the surfaces to be a different width/height/color than the Minimum YAYA Template, so they are possible to distinguish now. The sakura character also has a star on it to distinguish it from the kero.",
+				"Made all dialogues start with a surface call."
+			]
+		},
+		{
+			version: "1.0.2",
+			released: "2023-04-14",
+			changelog:
+			[
+				"Updated the YAYA as SHIORI dic files with the latest security patches.",
+				"Added a basic emergency mode setup, so that errors will now appear in SSP's error log.",
+				"Removed information about AUTO_DATA_CONVERT in the readme, as the information was actually incorrect.",
+				"Removed the update progress bar, as updates are actually much faster without it.",
+				"Changed the setup for menu greetings, so that removing the kero's menu file will no longer cause an unexpected error.",
+				"Moved notes about initializing update variables to OnInitialize.",
+				"Fixed an issue where the talk rate menu's back button was labelled improperly and directed to a non-existent event.",
+				"Fixed an issue where the kero would not appear on first boot."
+			]
+		},
+		{
+			version: "1.0.3",
+			released: "2023-05-06",
+			changelog:
+			[
+				"Made cancel buttons lead to a dummy function instead of being blank, since this was causing a small bug with RSS feeds.",
+				"Added a note about OnInitialize being a NOTIFY event.",
+				"Added OnWindowStateRestore to prevent an oversight where unminimizing would use the default surfaces, which might not be suitable for all ghosts."
+			]
+		},
+		{
+			version: "1.0.4",
+			released: "2023-05-22",
+			changelog:
+			[
+				"Fixed a critical bug in the OnBoot that would make the ghost not recognize when it was the user's birthday.",
+				"Updated the YAYA dic files."
+			]
+		},
+		{
+			version: "1.0.5",
+			released: "2023-08-01",
+			changelog:
+			[
+				"Updated YAYA dic files; this adds the has_event event to the ghost, so that ghosts made with this template can now interface with Ukadoc by default!",
+				"Added a note to surfaces.txt about recommended surfaces.",
+				"Added an example talk animation to surfaces.txt, which is commented out.",
+				"Changed username from a variable to a function, eliminating a global variable and some redundant code. (If you want to let the user set a name within the ghost you'll have to create a separate variable for that, but this was also the case previously.)",
+				"Fixed a bug with a plural check in the meta.dic file.",
+				"Fixed the example comments for the %(p) function, which were missing a function call."
 			]
 		}
 	]

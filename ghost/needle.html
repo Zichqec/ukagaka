@@ -93,10 +93,68 @@ let version_history = [
 	[
 		{
 			version: "1.0.0",
-			released: "May 11th, 2022",
+			released: "2022-05-11",
 			changelog:
 			[
-				"Initial release"
+				"Initial release."
+			]
+		},
+		{
+			version: "1.0.1",
+			released: "2022-05-11",
+			changelog:
+			[
+				"Fixed a small issue with the balloon not installing (hopefully)."
+			]
+		},
+		{
+			version: "1.0.2",
+			released: "2022-05-27",
+			changelog:
+			[
+				"Added two new envelopes, with 271 items between them!",
+				"Added a few new dialogues, and items to existing envelopes.",
+				"Improved detection for poking other ghosts, and added brief documentation in the code for how to implement the event.",
+				"Added dialogue for changing shells.",
+				"Added a check so that the same nickname will (almost certainly) not be generated twice.",
+				"Added a thumbnail for the master shell.",
+				"Tweaked an envelope to allow shell switching.",
+				"Fixed nickname highlighting.",
+				"Fixed nicknames being generated on boot when no username was set.",
+				"Fixed the invisible kero character not being cleared properly.",
+				"Fixed balloon sometimes freaking out when Needle was near the edge of the screen.",
+				"Added events for Tama.",
+				"Misc improvements."
+			]
+		},
+		{
+			version: "1.0.3",
+			released: "2022-05-29",
+			changelog:
+			[
+				"Disallows illegal names that were causing issues with Needle poking other ghosts if you used them."
+			]
+		}
+	]
+},
+{
+	version: "1.1.0",
+	patches:
+	[
+		{
+			version: "1.1.0",
+			released: "2022-11-11",
+			changelog:
+			[
+				"Fixes a critical bug that was introduced by changes to SSP, which caused Needle's talkrate to not randomize properly.",
+				"Needle now has some dialogues which involve motion/jittering. These dialogues may be harmful for photosensitive individuals, and as such, are filtered unless the user explicitly opts in by following the instructions in the new enable_extra_content.txt file in needle's folder.",
+				"Added 175 new idle dialogues. (A ~50% increase!)",
+				"Added many new envelope entries in various places.",
+				"Added new options to the name mangler.",
+				"Needle will now send the name of the shell it is currently using as reference1 when it pokes a ghost.",
+				"There is now a reaction if you drop a folder on Needle.",
+				"Fixed an issue where Needle's balloons would all be in the same space during the first boot sequence.",
+				"Updated YAYA to Tc571-5."
 			]
 		}
 	]

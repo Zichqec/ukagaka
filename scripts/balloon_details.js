@@ -230,17 +230,6 @@ let item_details = [
 		blurb: "Vaguely undertale-themed balloons, with a simple look and subtle coloring. Comes in 8 different colors, each with the option to either have hearts, or \"souls\" (upside-down hearts)! Each comes in 2 sizes."
 	},
 	{
-		name: "StarClan",
-		release: "March 7th, 2021",
-		latest: null,
-		version: "1.0.0",
-		forevent: null,
-		goeswith: ["Warrior Generator"],
-		collaborators: null,
-		download: ["https://www.mediafire.com/file/0zgg4tn1m6hgdf7/starclan_v1.0.0.nar/file"],
-		blurb: "A Warrior Cats themed balloon, with a starry background and decorative cat ear shape! The sakura balloon is blue, while the kero balloon is purple. Each has 3 sizes."
-	},
-	{
 		name: "Star Cloud",
 		release: "February 8th, 2022",
 		latest: null,
@@ -250,6 +239,17 @@ let item_details = [
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/6w3z48152gtw79x/star_cloud_v1.0.0.nar/file"],
 		blurb: "A starry balloon with a pixel purple background and a white border! Comes with 3 sizes."
+	},
+	{
+		name: "StarClan",
+		release: "March 7th, 2021",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		goeswith: ["Warrior Generator"],
+		collaborators: null,
+		download: ["https://www.mediafire.com/file/0zgg4tn1m6hgdf7/starclan_v1.0.0.nar/file"],
+		blurb: "A Warrior Cats themed balloon, with a starry background and decorative cat ear shape! The sakura balloon is blue, while the kero balloon is purple. Each has 3 sizes."
 	},
 	{
 		name: "Tamriel",
