@@ -91,9 +91,18 @@ function ItemInfo()
 		output += `<img src="${lowername}/appearance.png" class="centerimg" alt="${currentpage.name} preview" onError="this.onerror=null;this.src='${lowername}/preview.png';">`;
 	}
 	
-	output += `<br>
-		<div id="download"><a href="${currentpage.download}" class="dl_button">Download latest version</a></div>
-		<h2>Details</h2>
+	output += `<br>`;
+	
+	if (pagetype == "balloon" && currentpage.download.length > 1)
+	{
+		output += `<div id="download"><a href="${currentpage.download[0]}" class="dl_button">Download (pack)</a> <a href="${currentpage.download[1]}" class="dl_button">Download (individual balloons)</a></div>`;
+	}
+	else
+	{
+		output += `<div id="download"><a href="${currentpage.download}" class="dl_button">Download latest version</a></div>`;
+	}
+	
+	output += `<h2>Details</h2>
 		<p>
 			<b>Initial release:</b> ${currentpage.release}
 		`;

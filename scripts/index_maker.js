@@ -63,7 +63,8 @@ function makeIndex(item)
 	if (pagetype != "guide")
 	{
 		//Sometimes functions and minigames are versioned, sometimes not
-		if ((pagetype == "function" || pagetype == "minigame") && item.version != null)
+		//if ((pagetype == "function" || pagetype == "minigame") && item.version != null)
+		if (item.version != null)
 		{
 			output += ` / v${item.version}`;
 		}
