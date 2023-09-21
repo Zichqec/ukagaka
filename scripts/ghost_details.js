@@ -299,7 +299,7 @@ let item_details = [
 	},
 	{
 		name: "SSP Angel",
-		release: "Match 23rd, 2023",
+		release: "March 23rd, 2023",
 		latest: "March 26th, 2023",
 		version: "1.0.1",
 		forevent: null,
