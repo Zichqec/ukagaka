@@ -57,21 +57,6 @@ function ItemInfo()
 			}
 		}
 	}
-	
-	//Make list of ghosts that a balloon goes with
-	let goeswith = ``;
-	if (currentpage.goeswith != null)
-	{
-		for (let i = 0; i < currentpage.goeswith.length; i++)
-		{
-			if (i > 0)
-			{
-				goeswith += `, `;
-			}
-			
-			goeswith += `<a href="../ghost/${makeStandard(currentpage.goeswith[i])}.html">${currentpage.goeswith[i]}</a>`
-		}
-	}
 
 	let lowername = makeStandard(currentpage.name);
 
@@ -160,7 +145,8 @@ function ItemInfo()
 			}
 		}
 	}
-	if (pagetype == "shell")
+	
+	if ((pagetype == "shell" || pagetype == "balloon") && currentpage.goeswith != null)
 	{
 		output += `<br>
 		<b>Made for:</b> `;
@@ -182,11 +168,6 @@ function ItemInfo()
 				output += `<a href="../ghost/${makeStandard(currentpage.goeswith[i])}.html">${currentpage.goeswith[i]}</a>`;
 			}
 		}
-	}
-	else if (pagetype == "balloon")
-	{
-		output += `<br>
-		<b>Originally made for:</b> ${goeswith}`;
 	}
 	else if (pagetype == "template")
 	{
