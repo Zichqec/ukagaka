@@ -316,5 +316,19 @@ let item_details = [
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/bf2ds032oawk287/void_screen_v1.0.0.nar/file"],
 		blurb: "A gray balloon with wingdings theming! The markers use pixel wingdings symbols, and a second copy of each of the sakura's balloons uses wingdings as the default font. The kero balloon is tiny, and has cat theming instead. Each balloon comes with 2 sizes."
+	},
+	{
+		name: "Wedges Balloon Pack",
+		release: "September 22nd, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: "Etc. Jam 2023",
+		goeswith: null,
+		collaborators:
+		[
+			Galla
+		],
+		download: ["https://www.mediafire.com/file/i6qr7o00yjejf73/wedges_balloons_gz_v1.0.0.zip/file", "https://www.mediafire.com/folder/ug6k36xrmw4du/Wedges_Balloons"],
+		blurb: "A pack of balloons with a triangle theming! There are 36 balloons total. There is a 12 color rainbow of options for the accent colors, and light, dark, and mid options for each! Pick and choose what suits you/your project the best! This set of balloons is also very easily customized, thanks to the simple pixel style they use."
 	}
 ]
