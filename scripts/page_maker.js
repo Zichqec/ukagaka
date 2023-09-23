@@ -82,6 +82,10 @@ function ItemInfo()
 	{
 		output += `<div id="download"><a href="${currentpage.download[0]}" class="dl_button">Download (pack)</a> <a href="${currentpage.download[1]}" class="dl_button">Download (individual balloons)</a></div>`;
 	}
+	else if (pagetype == "calendar_skin" && currentpage.download.length > 1)
+	{
+		output += `<div id="download"><a href="${currentpage.download[0]}" class="dl_button">Download (pack)</a> <a href="${currentpage.download[1]}" class="dl_button">Download (individual skins)</a></div>`;
+	}
 	else
 	{
 		output += `<div id="download"><a href="${currentpage.download}" class="dl_button">Download latest version</a></div>`;

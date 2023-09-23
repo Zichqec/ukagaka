@@ -204,6 +204,10 @@ function makeIndex(item)
 	{
 		output += `<a href="${item.download[0]}">Download (pack)</a> | <a href="${item.download[1]}">Download (individual balloons)</a></p>`
 	}
+	else if (pagetype == "calendar_skin" && item.download.length > 1)
+	{
+		output += `<a href="${item.download[0]}">Download (pack)</a> | <a href="${item.download[1]}">Download (individual skins)</a></p>`
+	}
 	else if (pagetype != "guide") //TODO | ??? idk what this TODO was for tbqh 23-7-28
 	{
 		if ((pagetype == "function" || pagetype == "minigame") && !item.download.startsWith("https://"))
