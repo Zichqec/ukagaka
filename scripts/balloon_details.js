@@ -329,6 +329,6 @@ let item_details = [
 			Galla
 		],
 		download: ["https://www.mediafire.com/file/i6qr7o00yjejf73/wedges_balloons_gz_v1.0.0.zip/file", "https://www.mediafire.com/folder/ug6k36xrmw4du/Wedges_Balloons"],
-		blurb: "A pack of balloons with a triangle theming! There are 36 balloons total. There is a 12 color rainbow of options for the accent colors, and light, dark, and mid options for each! Pick and choose what suits you/your project the best! This set of balloons is also very easily customized, thanks to the simple pixel style they use."
+		blurb: "A pack of balloons with a triangle theming! There are 36 balloons total. There is a 12 color rainbow of options for the accent colors, and light, dark, and mid options for each! Pick and choose what suits you/your project the best! This set of balloons is also very easily customized, thanks to the simple pixel style they use.<br><br>Also check out the matching <a href='../calendar_skin/wedges_calendar_skin_pack.html'>calendar skin pack</a>!"
 	}
 ]
