@@ -64,6 +64,16 @@ let item_details = [
 		blurb: "A walkthrough for setting up network updates for a ghost in GitHub. Note that this guide is fairly outdated, and I would change my recommendations if I were to rewrite it (in particular, I recommend having different repositories for each ghost). Even so, it will still work. One of these days I will rewrite it."
 	},
 	{
+		name: "Notepad++ tips to improve your ghost dev experience",
+		release: "September 24th, 2023",
+		latest: null,
+		guidefor: "Devs",
+		language: null,
+		collaborators: null,
+		externallink: null,
+		blurb: "Learn all sorts of tips and tricks you can use to work more efficiently in Notepad++! I've picked this stuff up over years of making ghosts and learning how to use the various features of the program to suit my needs."
+	},
+	{
 		name: "Old Definition vs. New Definition",
 		release: "June 23rd, 2021",
 		latest: "June 23rd, 2021",

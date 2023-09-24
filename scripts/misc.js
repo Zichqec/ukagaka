@@ -69,6 +69,8 @@ function makeStandard(input)
 	output = output.replace(".","");
 	output = output.replace("(","");
 	output = output.replace(")","");
+	output = output.replace("+","");
+	output = output.replace("+",""); //I'll um... fix this later, I'm in a rush
 	
 	return output
 }

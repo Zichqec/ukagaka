@@ -446,3 +446,10 @@ pre
 {
 	font-size: 14px;
 }
+
+/* Using this in the np++ guide. I may need to change this if I ever try to implement syntax highlighting again? */
+code
+{
+	background: #d1d1d1;
+	font-family: 'Courier New', monospace;
+}
