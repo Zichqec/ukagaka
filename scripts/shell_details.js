@@ -23,6 +23,17 @@ let shell_details = [
 		blurb: "A ballpoint pen shell for Hydrate, made on a whim at the end of the jam! It's inspired by what was one of my favorite pens at my job at the time. Who wouldn't want to drink pen ink!? (Don't drink ink.)"
 	},
 	{
+		name: "Cavatappi",
+		goeswith: ["Noodle"],
+		release: "September 24th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: "Etc. Jam 2023",
+		collaborators: null,
+		download: "https://www.mediafire.com/file/3mtcvd07vdy4hli/cavatappi_zi_v1.0.0.nar/file",
+		blurb: "Noodle in cavatappi form! Made during Etc. Jam 2023, since I had more time than expected at the end. Comes in all the same colors as the original Noodle shell!"
+	},
+	{
 		name: "Cibus",
 		goeswith: ["FLUX","FLELE"],
 		release: "October 9th, 2020",
@@ -45,6 +56,17 @@ let shell_details = [
 		blurb: "Released for Needle Day on 11/11, this massive shell clocks in at a canvas size of 5000x5030! If you really want to inspect Needle in great detail, this is the shell for you!<br><br>Note: SSP may struggle to run this shell, and even crash. You're on your own if it does!"
 	},
 	{
+		name: "Conchiglie",
+		goeswith: ["Noodle"],
+		release: "September 24th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: "Etc. Jam 2023",
+		collaborators: null,
+		download: "https://www.mediafire.com/file/lxnumg24cvsiwi3/conchiglie_zi_v1.0.0.nar/file",
+		blurb: "Noodle in conchiglie form! Made during Etc. Jam 2023, since I had more time than expected at the end. Comes in all the same colors as the original Noodle shell!"
+	},
+	{
 		name: "Diamond Eye",
 		goeswith: ["Needle"],
 		release: "May 26th, 2022",
@@ -54,6 +76,17 @@ let shell_details = [
 		collaborators: null,
 		download: "https://www.mediafire.com/file/e5mb26kvfgt5g8x/diamond_eye_v1.0.0.nar/file",
 		blurb: "An alternative shell made for Needle, with soft shading. It's very typical of my style at the time! This was the first Needle shell I made, not long after Needle was released."
+	},
+	{
+		name: "Farfalle",
+		goeswith: ["Noodle"],
+		release: "September 24th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: "Etc. Jam 2023",
+		collaborators: null,
+		download: "https://www.mediafire.com/file/dvus956q6b5nlp0/farfalle_zi_v1.0.0.nar/file",
+		blurb: "Noodle in farfalle form! Made during Etc. Jam 2023, since I had more time than expected at the end. Comes in all the same colors as the original Noodle shell!"
 	},
 	{
 		name: "FLUX",
@@ -67,6 +100,17 @@ let shell_details = [
 		blurb: "A standalone version of the FLUX master shell! FLUX the character is actually separate from FLUX the music player system. This release exists so that you can use this shell with FLELE, if you prefer! This shell comes bundled with FLUX, and has custom dialogue, though it's all simply music notes. When playing music, he'll bob his head and use holographic synthesizers."
 	},
 	{
+		name: "Macaroni",
+		goeswith: ["Noodle"],
+		release: "September 24th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: "Etc. Jam 2023",
+		collaborators: null,
+		download: "https://www.mediafire.com/file/co7zxeiwpkdiv54/macaroni_zi_v1.0.0.nar/file",
+		blurb: "Noodle in macaroni form! Made during Etc. Jam 2023, since I had more time than expected at the end. Comes in all the same colors as the original Noodle shell!"
+	},
+	{
 		name: "Metal Bottle",
 		goeswith: ["Hydrate"],
 		release: "August 20th, 2022",
@@ -76,6 +120,28 @@ let shell_details = [
 		collaborators: null,
 		download: "https://www.mediafire.com/file/lahs1kuwx7nriat/metal_bottle_v1.0.0.nar/file",
 		blurb: "A metal bottle, based on one I actually own! It comes with a lot of dressups that let you customize your cap color and bottle design. I had this shell in development for a long time, and I finally released it just before the start of the first 8/20 Hydrate Shell Jam. (I couldn't live with myself if I had worked on this shell for so long, and then Syringe ended up being my first released Hydrate shell...!)"
+	},
+	{
+		name: "Penne",
+		goeswith: ["Noodle"],
+		release: "September 24th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: "Etc. Jam 2023",
+		collaborators: null,
+		download: "https://www.mediafire.com/file/oltfnnvqkyromvo/penne_zi_v1.0.0.nar/file",
+		blurb: "Noodle in penne form! Made during Etc. Jam 2023, since I had more time than expected at the end. Comes in all the same colors as the original Noodle shell!"
+	},
+	{
+		name: "Rotini",
+		goeswith: ["Noodle"],
+		release: "September 24th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: "Etc. Jam 2023",
+		collaborators: null,
+		download: "https://www.mediafire.com/file/zd2rd6w5oh62sun/rotini_zi_v1.0.0.nar/file",
+		blurb: "Noodle in rotini form! Made during Etc. Jam 2023, since I had more time than expected at the end. Comes in all the same colors as the original Noodle shell!"
 	},
 	{
 		name: "Starset Messenger",
