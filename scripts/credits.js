@@ -54,3 +54,7 @@ let Koguri = {
 let Venelona = {
 	name: "Venelona", creditlink: "https://venelona.tumblr.com/"
 }
+
+let idk = {
+	name: "idk", creditlink: null
+}
