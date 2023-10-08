@@ -123,7 +123,7 @@
 
 <code>parallel random nonoverlap sequential array pool melt all last nonoverlap_pool sequential_pool array_pool pool_nonoverlap pool_sequential pool_array melt_nonoverlap melt_array melt_sequential</code>
 
-<p>Now you should see modifiers like parallel and nonoverlap and pool be highlighted!</p>
+<p>Now you should see modifiers like parallel, nonoverlap, and pool be highlighted!</p>
 
 <img src="notepad_tips_to_improve_your_ghost_dev_experience/004_type_word_highlighting.png">
 
@@ -144,7 +144,7 @@
 
 <p>Let's say you want to comment out a large chunk of code. You can't simply use the <code>/* */</code> style of block commenting because there are already block comments in the code, and block comments can't be nested. What to do? Writing all those // at the start of each line would be miserable!</p>
 
-<p>Luckily for you, there's a really easy solution! Simply highlight the code in question, and press Ctrl + K (K for Komment? ... It's kind of a stretch, but that's how I remember it). Tada! Every line got a // added at the beginning to make it a single line comment. This is also really useful in surfaces.txt, where block comments aren't valid at all, and is the primary reason I turn on C highlighting even in shell files.</p>
+<p>Luckily for you, there's a really easy solution! Simply highlight the code in question, and press Ctrl + K (K for Komment? ... It's kind of a stretch, but that's how I remember it). Tada! Every line got a // added at the beginning to make it a single line comment. This is also really useful in surfaces.txt, where block comments aren't valid at all, and is the primary reason I also turn on C highlighting in shell files.</p>
 
 <img src="notepad_tips_to_improve_your_ghost_dev_experience/006_mass_comment.gif">
 
@@ -250,7 +250,7 @@
 
 <h3 id="basic_searching">Basic searching</h3>
 
-<p>If you don't know, in many programs you can press Ctrl + F to bring up a search o ption. This will let you search for text in a page, to find it quickly! It's great.</p>
+<p>If you don't know, in many programs you can press Ctrl + F to bring up a search option. This will let you search for text in a page, to find it quickly! It's great.</p>
 
 <p>This is super useful for me when I'm coding ghosts, because it takes so much time to scroll and try to find a specific function, and it's much easier for me to simply type in the name and be taken there instantly. My brain is good at remembering things like the names of functions, so it is honestly my primary way of navigating my code.</p>
 
@@ -363,7 +363,7 @@
 
 <p>I may be able to narrow down my search if I've had the foresight to put the Capitalize function into a file that is just for utility code and therefore "Capitalize" doesn't show up much (as this example function would primarily be used in dialogue in other files), but that's not always the case, or convenient to do.</p>
 
-<p>There is however, another way. You see, unless I was formatting my code in a very bizarre way, I know that it will look generally like this:</p>
+<p>There is, however, another way. You see, unless I was formatting my code in a very bizarre way, I know that it will look generally like this:</p>
 
 <pre>
 Capitalize
@@ -401,7 +401,7 @@ Capitalize
 
 <h3 id="regular_expression_search_mode">Regular expression search mode</h3>
 
-<p>I'm not going to go into much detail on this. If you know regular expressions (regex), then there's a search mode for it! If you don't know regex, this is not a regex guide because that is a whole other in-depth topic.</p>
+<p>I'm not going to go into much detail on this. If you know regular expressions (regex), then there's a search mode for it! If you don't know regex, this is not a regex guide because that is a whole other in-depth topic. If you'd like to learn, you can read my <a href="https://zichqec.github.io/YAYA_Fundamentals/module_07_regular_expressions/00_what_is_regex.html">guide to regex</a> that is a part of my YAYA Fundamentals guide, or if you're not interested in YAYA, you can find other regex guides online.</p>
 
 <p>All I will say here is a couple basic things. First of all, the option for regex search mode is at the bottom of the "Search Mode" box, labelled "Regular expression". Turn this on, and you can put regular expressions in the find and replace fields.</p>
 
@@ -494,7 +494,7 @@ Capitalize
 
 <p>Learning how to make good use of macros can do wonders to make things easier on you. It's not even just time—tasks like these can be mind-numbing to do by hand! Why spend all that time and effort when you could solve it quickly with a macro, and move on to more important parts of the project that will actually exercise your creativity? Why spend hours whiling away at a task that is just busywork, when you could instead sharpen your problem solving and craft a macro?</p>
 
-<p>Two final notes before moving on. I'll mention Home and End a bit later; those are <i>really</i> useful when dealing with macros. Honestly, I think macros are what got me started on using those keys. You can't really tell, but in that last gif, I used the Home key to ensure that after this macro runs it will always be positioned at the start of the next line! That way I can run it several times in a row and it will be lined up properly.</p>
+<p>Two final notes before moving on. I mentioned Home and End in a previous section on generic keypresses; those are <i>really</i> useful when dealing with macros. Honestly, I think macros are what got me started on using those keys. You can't really tell, but in that last gif, I used the Home key to ensure that after this macro runs it will always be positioned at the start of the next line! That way I can run it several times in a row and it will always be lined up properly.</p>
 
 <p>Also, you may have noticed in the gif that I had to manually tab everything. When recording macros, Notepad++ will not do automatic spacing for you. So, you'll have to remember to add the tabs and such yourself.</p>
 
@@ -568,7 +568,7 @@ Capitalize
 
 <p>This is a bit like mass commenting, but honestly I think this can come up more often. Sometimes, you realize that you have to restructure a bit of your code, and as a result you have like 100 lines that need to be tabbed in order to be properly indented. Oh no! And proper indentation is really important for making your code easily readable, so what will you do!? That'll take ages to tab by hand!</p>
 
-<p>And the good news is, you don't have to! At all! Simply select all the lines that you want to be indented, and press tab. Tada! They've all be indented by one space.</p>
+<p>And the good news is, you don't have to! At all! Simply select all the lines that you want to be indented, and press tab. Tada! They've all been indented by one space.</p>
 
 <img src="notepad_tips_to_improve_your_ghost_dev_experience/043_mass_indent.gif">
 
@@ -645,7 +645,7 @@ Capitalize
 
 <p>For one, just look at how the top option is misaligned from the rest. I hate that! ... Ok, that's kind of a silly reason, but it does irk me.</p>
 
-<p>Second, and more important, is that this frequently causes confusion, especially for folks who are new to YAYA. It's very easy to forget to add the / characters when you add a new line to your menu, or to add an extra one before the final quote. I cannot tell you how many times I've helped someone debug their ghost, and one of these menus was the cause. I used to have this issue a lot myself! It's so easy to do.</p>
+<p>Second, and more important, is that this frequently causes confusion, especially for folks who are new to YAYA. It's very easy to forget to add the / characters when you add a new line to your menu, or to add an extra one before the final quote. I cannot tell you how many times I've helped someone debug their ghost, and one of these menus was the cause of the error that prevented their ghost from loading. I used to have this issue a lot myself! It's so easy to make mistakes with this formatting.</p>
 
 <p>And finally, these break syntax highlighting. Because they're a weird YAYA thing, C syntax highlighting doesn't account for them, and I don't know of any other syntax highlighting that does (though if you know of a way to make it work, please tell me). And that means, if there's something else wrong in your string making it invalid, <i>you won't see it.</i></p>
 
@@ -662,11 +662,11 @@ Capitalize
 
 <h3 id="folding_curly_braces_is_sometimes_weird">Folding curly braces is sometimes weird</h3>
 
-<p>Related to the above, if you use the folding braces feature (by clicking the little minus icons next to the start of a curly brace to collapse it), you may notice that sometimes you fold a braces and it folds the rest of the file. There's a simple reason that happens! It's because if you have a menu as described above, and one of your menu options has an apostrophe in it, Notepad++ gets confused. So something like this:</p>
+<p>Related to the above, if you use the folding braces feature (by clicking the little minus icons next to the start of a curly brace to collapse it), you may notice that sometimes you fold a braces and it folds the rest of the file. There's a simple reason that happens! It's because if you have a menu as described above, and one of your menu options has an apostrophe in it, Notepad++ gets confused. So something like this...</p>
 
 <img src="notepad_tips_to_improve_your_ghost_dev_experience/053_bad_folding_menu.png">
 
-<p>Will cause the braces folding problem because of the ' in "I'm done"!</p>
+<p>...Will cause the braces folding problem because of the ' in "I'm done"!</p>
 
 <img src="notepad_tips_to_improve_your_ghost_dev_experience/054_fix_folding.gif">
 

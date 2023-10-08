@@ -65,7 +65,7 @@ let item_details = [
 	},
 	{
 		name: "Notepad++ tips to improve your ghost dev experience",
-		release: "September 24th, 2023",
+		release: "October 8th, 2023",
 		latest: null,
 		guidefor: "Devs",
 		language: null,
