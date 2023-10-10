@@ -83,7 +83,7 @@ let item_details = [
 	},
 	{
 		name: "FLUX",
-		release: "May 21st, 2021",
+		release: "May 12th, 2021",
 		latest: "January 31st, 2022",
 		version: "1.2.2",
 		forevent: null,

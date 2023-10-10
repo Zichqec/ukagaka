@@ -113,13 +113,13 @@ let item_details = [
 	{
 		name: "Galaxy Balloon Pack",
 		release: "June 4th, 2020",
-		latest: null,
-		version: "1.0.0",
+		latest: "October 9th, 2023",
+		version: "1.1.0",
 		forevent: null,
 		goeswith: null,
 		collaborators: null,
-		download: ["http://www.mediafire.com/file/sb46dkuekuni7jq/galaxy_balloon_pack.zip/file", "http://www.mediafire.com/folder/lc5sylvjgl7de/Galaxy_Balloons"],
-		blurb: "A pack of galaxy balloons using the same base as the Soul Balloon Pack, but with galaxy pictures from NASA! The readability is a little rough, though it can be improved by changing the dropshadow option to an outline option instead. This balloon pack also comes bundled with my Galaxy calendar skin."
+		download: ["https://www.mediafire.com/file/svi9bx8dwxj45m6/Galaxy_Balloon_Pack_v1.1.0.zip/file", "https://www.mediafire.com/folder/1isyy80aupofq/Galaxy_Balloons_v1.1.0"],
+		blurb: "A pack of galaxy balloons using the same base as the Soul Balloon Pack, but with galaxy pictures from NASA! The readability is a little rough, but they're pretty. Note that these balloons are set to bold by default, which I don't recommend doing if you're making balloons! But I don't want to change the look of the balloons now. Don't miss the matching <a href='../calendar_skin/galaxy.html'>Galaxy calendar skin</a>!"
 	},
 	{
 		name: "H2O",
@@ -185,13 +185,24 @@ let item_details = [
 	{
 		name: "Notes",
 		release: "May 12th, 2021",
+		latest: "October 9th, 2023",
+		version: "1.1.0",
+		forevent: null,
+		goeswith: ["FLUX"],
+		collaborators: null,
+		download: ["https://www.mediafire.com/file/2zeja7ggyawtnzn/notes_v1.1.0.nar/file"],
+		blurb: "A plain balloon with a music note motif in the markers! Comes with a dark mode and light mode, in 3 sizes each."
+	},
+	{
+		name: "Notes (Light)",
+		release: "October 9th, 2023",
 		latest: null,
 		version: "1.0.0",
 		forevent: null,
 		goeswith: ["FLUX"],
 		collaborators: null,
-		download: ["https://www.mediafire.com/file/tap447gbisqmxct/flux_notes_v1.0.0.nar/file"],
-		blurb: "A plain balloon with a music note motif in the markers! Comes with a dark mode and light mode, in 3 sizes each."
+		download: ["https://www.mediafire.com/file/7g1dq1hs6wk6wjm/notes_light_v1.0.0.nar/file"],
+		blurb: "An alternate version of the Notes balloon, which has just the light mode version! This is useful if you want to use the light mode with other ghosts that don't specifically support this balloon."
 	},
 	{
 		name: "Ocean Fishies",
