@@ -7,7 +7,7 @@
 //StartsWith("Testing","Test")
 StartsWith
 {
-    SUBSTR(_argv[0],0,STRLEN(_argv[1])) == _argv[1]
+	SUBSTR(_argv[0],0,STRLEN(_argv[1])) == _argv[1]
 }
 
 
@@ -20,5 +20,5 @@ StartsWith
 EndsWith
 {
 	_len = STRLEN(_argv[1])
-    SUBSTR(_argv[0],STRLEN(_argv[0]) - _len,_len) == _argv[1]
+	SUBSTR(_argv[0],STRLEN(_argv[0]) - _len,_len) == _argv[1]
 }
