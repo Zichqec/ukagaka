@@ -113,12 +113,12 @@ let item_details = [
 	{
 		name: "Galaxy Balloon Pack",
 		release: "June 4th, 2020",
-		latest: "October 9th, 2023",
-		version: "1.1.0",
+		latest: "October 15th, 2023",
+		version: "1.1.1",
 		forevent: null,
 		goeswith: null,
 		collaborators: null,
-		download: ["https://www.mediafire.com/file/svi9bx8dwxj45m6/Galaxy_Balloon_Pack_v1.1.0.zip/file", "https://www.mediafire.com/folder/1isyy80aupofq/Galaxy_Balloons_v1.1.0"],
+		download: ["https://www.mediafire.com/file/0621yy5qymuutin/Galaxy_Balloon_Pack_v1.1.1.zip/file", "https://www.mediafire.com/folder/o0tatvi44cfnq/Galaxy_Balloons_v1.1.1"],
 		blurb: "A pack of galaxy balloons using the same base as the Soul Balloon Pack, but with galaxy pictures from NASA! The readability is a little rough, but they're pretty. Note that these balloons are set to bold by default, which I don't recommend doing if you're making balloons! But I don't want to change the look of the balloons now. Don't miss the matching <a href='../calendar_skin/galaxy.html'>Galaxy calendar skin</a>!"
 	},
 	{
