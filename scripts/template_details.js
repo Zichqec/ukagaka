@@ -15,7 +15,7 @@ let item_details = [
 		type: "Ghost",
 		release: "April 18th, 2022",
 		latest: "April 14th, 2023",
-		version: "1.0.0",
+		version: "1.0.2",
 		forevent: null,
 		collaborators: null,
 		download: "https://github.com/Zichqec/minimum_yaya_template/releases/latest",
