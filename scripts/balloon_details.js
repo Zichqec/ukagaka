@@ -100,6 +100,17 @@ let item_details = [
 		blurb: "A dreamy, cloud themed balloon, which has 3 color options for the sakura! Each comes with 2 sizes."
 	},
 	{
+		name: "Distant Lights Balloon Pack",
+		release: "October 23rd, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		goeswith: null,
+		collaborators: null,
+		download: ["https://www.mediafire.com/file/jxay7yj46wb31gi/distant_lights_balloon_pack_v1.0.0.zip/file","https://www.mediafire.com/folder/6qyyy3yj3bux4/Distant_Lights_Balloon_Pack_v1.0.0"],
+		blurb: "A simple set of balloons with gradient accents! I just felt like making some balloons one day. Hopefully easy to modify to your own color scheme, if you like!"
+	},
+	{
 		name: "Flip of a Coin",
 		release: "August 31st, 2023",
 		latest: null,
