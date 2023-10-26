@@ -162,14 +162,14 @@ function ItemInfo()
 				output += `, `;
 			}
 			
-			if (currentpage.goeswith[i] == "FLELE")
+			if (currentpage.goeswith[i].download_link == "mine")
 			{
-				output += `<a href="https://ukagakadreamteam.com/wiki/ghost/flele">${currentpage.goeswith[i]}</a> (External link)`;
+				output += `<a href="../ghost/${makeStandard(currentpage.goeswith[i].name)}.html">${currentpage.goeswith[i].name}</a>`
 				
 			}
 			else
 			{
-				output += `<a href="../ghost/${makeStandard(currentpage.goeswith[i])}.html">${currentpage.goeswith[i]}</a>`;
+				output += `<a href="${currentpage.goeswith[i].download_link}.html">${currentpage.goeswith[i].name}</a>`
 			}
 		}
 	}

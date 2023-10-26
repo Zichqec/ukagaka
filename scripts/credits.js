@@ -58,3 +58,31 @@ let Venelona = {
 let idk = {
 	name: "idk", creditlink: null
 }
+
+
+
+
+//For shells
+let FLUX = {
+	name: "FLUX", download_link: "mine"
+}
+
+let FLELE = {
+	name: "FLELE", download_link: "https://ukagakadreamteam.com/wiki/ghost/flele"
+}
+
+let Hydrate = {
+	name: "Hydrate", download_link: "mine"
+}
+
+let Needle = {
+	name: "Needle", download_link: "mine"
+}
+
+let Noodle = {
+	name: "Noodle", download_link: "mine"
+}
+
+let Presentable_Can = {
+	name: "Presentable Can", download_link: "https://www.tumblr.com/characteroulette/717104163012608000/ghost-jam-2023-hype-anyway-this-thing-is-done"
+}

@@ -2,7 +2,7 @@ let shell_details = [
 
 	{
 		name: "After the rainfall",
-		goeswith: ["Hydrate"],
+		goeswith: [Hydrate],
 		release: "August 20th, 2023",
 		latest: null,
 		version: "1.0.0",
@@ -13,7 +13,7 @@ let shell_details = [
 	},
 	{
 		name: "Ballpoint Pen",
-		goeswith: ["Hydrate"],
+		goeswith: [Hydrate],
 		release: "August 20th, 2022",
 		latest: null,
 		version: "1.0.0",
@@ -24,7 +24,7 @@ let shell_details = [
 	},
 	{
 		name: "Cavatappi",
-		goeswith: ["Noodle"],
+		goeswith: [Noodle],
 		release: "September 24th, 2023",
 		latest: null,
 		version: "1.0.0",
@@ -35,7 +35,7 @@ let shell_details = [
 	},
 	{
 		name: "Cibus",
-		goeswith: ["FLUX","FLELE"],
+		goeswith: [FLUX,FLELE],
 		release: "October 9th, 2020",
 		latest: "May 12th, 2021",
 		version: "2.0.0",
@@ -46,7 +46,7 @@ let shell_details = [
 	},
 	{
 		name: "Close-Up View",
-		goeswith: ["Needle"],
+		goeswith: [Needle],
 		release: "November 11th, 2022",
 		latest: null,
 		version: "1.0.0",
@@ -57,7 +57,7 @@ let shell_details = [
 	},
 	{
 		name: "Conchiglie",
-		goeswith: ["Noodle"],
+		goeswith: [Noodle],
 		release: "September 24th, 2023",
 		latest: null,
 		version: "1.0.0",
@@ -68,7 +68,7 @@ let shell_details = [
 	},
 	{
 		name: "Diamond Eye",
-		goeswith: ["Needle"],
+		goeswith: [Needle],
 		release: "May 26th, 2022",
 		latest: null,
 		version: "1.0.0",
@@ -79,7 +79,7 @@ let shell_details = [
 	},
 	{
 		name: "Farfalle",
-		goeswith: ["Noodle"],
+		goeswith: [Noodle],
 		release: "September 24th, 2023",
 		latest: null,
 		version: "1.0.0",
@@ -90,7 +90,7 @@ let shell_details = [
 	},
 	{
 		name: "FLUX",
-		goeswith: ["FLUX","FLELE"],
+		goeswith: [FLUX,FLELE],
 		release: "May 12th, 2021",
 		latest: null,
 		version: "1.0.0",
@@ -100,8 +100,19 @@ let shell_details = [
 		blurb: "A standalone version of the FLUX master shell! FLUX the character is actually separate from FLUX the music player system. This release exists so that you can use this shell with FLELE, if you prefer! This shell comes bundled with FLUX, and has custom dialogue, though it's all simply music notes. When playing music, he'll bob his head and use holographic synthesizers."
 	},
 	{
+		name: "Gourmet Ravioli",
+		goeswith: [FLUX,FLELE,Hydrate,Noodle,Presentable_Can],
+		release: "October 26th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		collaborators: null,
+		download: "https://www.mediafire.com/file/ko7m0lqe4sq4nps/gourmet_ravioli_v1.0.0.nar/file",
+		blurb: "A shell of a can of gourmet ravioli, lovingly based on the <a href=\"https://www.youtube.com/watch?v=0m-wBGGIBPo\">album art</a> of <a href=\"https://www.youtube.com/watch?v=6ZIogYd0gSo\">Gourmet Ravioli</a>, by First of October! This shell is made to go with 5 different ghosts, including hotspots for FLUX, FLELE, and Presentable Can! It also has dressups to suit Noodle. And who wouldn't want to get their hydration via canned ravioli!? This shell has it all!"
+	},
+	{
 		name: "Macaroni",
-		goeswith: ["Noodle"],
+		goeswith: [Noodle],
 		release: "September 24th, 2023",
 		latest: null,
 		version: "1.0.0",
@@ -112,7 +123,7 @@ let shell_details = [
 	},
 	{
 		name: "Metal Bottle",
-		goeswith: ["Hydrate"],
+		goeswith: [Hydrate],
 		release: "August 20th, 2022",
 		latest: null,
 		version: "1.0.0",
@@ -123,7 +134,7 @@ let shell_details = [
 	},
 	{
 		name: "Penne",
-		goeswith: ["Noodle"],
+		goeswith: [Noodle],
 		release: "September 24th, 2023",
 		latest: null,
 		version: "1.0.0",
@@ -134,7 +145,7 @@ let shell_details = [
 	},
 	{
 		name: "Rotini",
-		goeswith: ["Noodle"],
+		goeswith: [Noodle],
 		release: "September 24th, 2023",
 		latest: null,
 		version: "1.0.0",
@@ -145,7 +156,7 @@ let shell_details = [
 	},
 	{
 		name: "Starset Messenger",
-		goeswith: ["FLUX","FLELE"],
+		goeswith: [FLUX,FLELE],
 		release: "October 24th, 2021",
 		latest: null,
 		version: "1.0.0",
@@ -156,7 +167,7 @@ let shell_details = [
 	},
 	{
 		name: "Syringe",
-		goeswith: ["Hydrate","Needle"],
+		goeswith: [Hydrate,Needle],
 		release: "August 20th, 2022",
 		latest: null,
 		version: "1.0.0",
@@ -167,7 +178,7 @@ let shell_details = [
 	},
 	{
 		name: "Tiered Bowls",
-		goeswith: ["Hydrate"],
+		goeswith: [Hydrate],
 		release: "August 20th, 2023",
 		latest: null,
 		version: "1.0.0",
@@ -178,7 +189,7 @@ let shell_details = [
 	},
 	{
 		name: "Tiny Pokey Pixels",
-		goeswith: ["Needle"],
+		goeswith: [Needle],
 		release: "November 11th, 2022",
 		latest: null,
 		version: "1.0.0",
@@ -189,7 +200,7 @@ let shell_details = [
 	},
 	{
 		name: "Twemoji",
-		goeswith: ["Needle"],
+		goeswith: [Needle],
 		release: "May 26th, 2022",
 		latest: null,
 		version: "1.0.0",

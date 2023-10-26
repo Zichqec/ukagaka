@@ -131,14 +131,14 @@ function makeIndex(item)
 				output += `, `;
 			}
 			
-			if (item.goeswith[i] == "FLELE")
+			if (item.goeswith[i].download_link == "mine")
 			{
-				output += `<a href="https://ukagakadreamteam.com/wiki/ghost/flele">${item.goeswith[i]}</a> (External link)`
+				output += `<a href="../ghost/${makeStandard(item.goeswith[i].name)}.html">${item.goeswith[i].name}</a>`
 				
 			}
 			else
 			{
-				output += `<a href="../ghost/${makeStandard(item.goeswith[i])}.html">${item.goeswith[i]}</a>`
+				output += `<a href="${item.goeswith[i].download_link}.html">${item.goeswith[i].name}</a>`
 			}
 		}
 	}
