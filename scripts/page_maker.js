@@ -416,7 +416,7 @@ if (pagetype == "ghost")
 		let found = 0;
 		for (let madefor of ghost.goeswith)
 		{
-			if (madefor == currentpage.name)
+			if (madefor.name == currentpage.name)
 			{
 				found = 1;
 				break;
