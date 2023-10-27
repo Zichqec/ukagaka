@@ -133,6 +133,17 @@ let shell_details = [
 		blurb: "A metal bottle, based on one I actually own! It comes with a lot of dressups that let you customize your cap color and bottle design. I had this shell in development for a long time, and I finally released it just before the start of the first 8/20 Hydrate Shell Jam. (I couldn't live with myself if I had worked on this shell for so long, and then Syringe ended up being my first released Hydrate shell...!)"
 	},
 	{
+		name: "Old Beans",
+		goeswith: [Hydrate,Presentable_Can],
+		release: "October 27th, 2023",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		collaborators: null,
+		download: "https://www.mediafire.com/file/3yyjs7f53vufl7i/old_beans_v1.0.0.nar/file",
+		blurb: "A shell I drew in 2021 for Hydrate, and then never finished. Released towards the end of 2023 just to have it out there! I also added a hotspot so it can be used with Presentable Can too. And a neat tiling bean pattern in the owner draw menu! Get some beans today."
+	},
+	{
 		name: "Penne",
 		goeswith: [Noodle],
 		release: "September 24th, 2023",
