@@ -38,7 +38,7 @@
 	
 	<img src="ping_pong_loops/flux_master.gif" alt="FLUX master shell singing">
 
-	<p>Ok, now that I've hopefully convinced you that ping pong loops are worth using, how do they work? First of all, each ping pong loop needs a 'control animation', and multiple other animations to be randomly called. (As a note, I'm writing in the new definition here, but it should work in the old definition too! If you're not sure what the difference is, I have a guide [here].)</p>
+	<p>Ok, now that I've hopefully convinced you that ping pong loops are worth using, how do they work? First of all, each ping pong loop needs a 'control animation', and multiple other animations to be randomly called. (As a note, I'm writing in the new definition here, but it should work in the old definition too! If you're not sure what the difference is, I have a guide <a href="../guide/old_definition_vs_new_definition.html">here</a>.)</p>
 
 	<p>The basic idea is this: you create one animation that controls all the rest. The control animation calls one of the other animations, and when that animation finishes playing, it calls the control animation again. The control animation says ping, the animation it calls says pong, and it goes back and forth forever, randomly picking a different animation to call each time.</p>
 	
