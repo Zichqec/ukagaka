@@ -103,11 +103,11 @@ let shell_details = [
 		name: "Gourmet Ravioli",
 		goeswith: [FLUX,FLELE,Hydrate,Noodle,Presentable_Can],
 		release: "October 26th, 2023",
-		latest: null,
-		version: "1.0.0",
+		latest: "November 5th, 2023",
+		version: "1.0.1",
 		forevent: null,
 		collaborators: null,
-		download: "https://www.mediafire.com/file/ko7m0lqe4sq4nps/gourmet_ravioli_v1.0.0.nar/file",
+		download: "https://www.mediafire.com/file/wlumv0c7wutalon/gourmet_ravioli_v1.0.1.nar/file",
 		blurb: "A shell of a can of gourmet ravioli, lovingly based on the <a href=\"https://www.youtube.com/watch?v=0m-wBGGIBPo\">album art</a> of <a href=\"https://www.youtube.com/watch?v=6ZIogYd0gSo\">Gourmet Ravioli</a>, by First of October! This shell is made to go with 5 different ghosts, including hotspots for FLUX, FLELE, and Presentable Can! It also has dressups to suit Noodle. And who wouldn't want to get their hydration via canned ravioli!? This shell has it all!"
 	},
 	{
