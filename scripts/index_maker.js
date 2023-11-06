@@ -138,7 +138,7 @@ function makeIndex(item)
 			}
 			else
 			{
-				output += `<a href="${item.goeswith[i].download_link}.html">${item.goeswith[i].name}</a>`
+				output += `<a href="${item.goeswith[i].download_link}.html">${item.goeswith[i].name}</a> (External link)`
 			}
 		}
 	}
