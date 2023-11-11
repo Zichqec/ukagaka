@@ -207,11 +207,24 @@ function makeMyShellIndex(shells)
 	<p>These are external shells by me! These don't come bundled with the ghost (unless otherwise noted), if you want them you'll have to download them and install them separately.</p>
 	`;
 	
+	if (shells.length > 3)
+	{
+		output += `<p>These links at the top of this section act as a quick index that will jump you to the different entries on this list.</p>`;
+		output += `<div id="quick_index">`;
+		
+		for (let item of shells)
+		{
+			output += `<div class="index_link"><a href="#${makeStandard(item.name)}">${item.name}</a></div>`;
+		}
+		
+		output += `<br></div>`;
+	}
+	
 	
 	for (let item of shells)
 	{
 		let lowername = makeStandard(item.name);
-		output += `<div class="shell_box">`;
+		output += `<div class="shell_box" id=${lowername}>`;
 		output +=  `
 		<div class="container_box">
 			<div class="container_text">
@@ -270,6 +283,8 @@ function makeMyShellIndex(shells)
 		
 		output += `
 		<p>${item.blurb}</p>
+		
+		<p class="back_to_top"><a href='#shells_by_me'>Back to shells</a></p>
 		</div>`;
 		
 		output += `
