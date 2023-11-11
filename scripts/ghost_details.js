@@ -161,7 +161,7 @@ let item_details = [
 		forevent: "Ghost Jam 2020",
 		collaborators:
 		[
-			{name: "Pommy", creditlink: "https://www.youtube.com/user/Pommy15642"}
+			Pommy
 		],
 		translations: null,
 		content_warnings: null,
@@ -214,8 +214,8 @@ let item_details = [
 	{
 		name: "Needle",
 		release: "May 11th, 2022",
-		latest: "November 11th, 2022",
-		version: "1.1.0",
+		latest: "November 11th, 2023",
+		version: "1.1.1",
 		forevent: "Ghost Jam 2022",
 		collaborators:
 		[
@@ -223,7 +223,7 @@ let item_details = [
 		],
 		translations: null,
 		content_warnings: "Mentions of violence, gaslighting, general unsettlingness, some movement/jittery effects (if toggled on).",
-		download: "https://www.mediafire.com/file/vujvnpna833sv8c/needle_gz_v1.1.0.nar/file",
+		download: "https://github.com/Zichqec/Needle/releases/latest",
 		blurb: "It's the ghost sensation that started a whole genre! The one, the only, the amazing Needle! Put it on your desktop and hope it says things to you! Learn your true name, or reject it and gain a thousand nicknames! Enjoy your new life companion!!"
 	},
 	{
