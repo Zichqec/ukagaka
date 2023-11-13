@@ -11,7 +11,7 @@ let Galla = {
 //game #2
 
 let Yuyudev = {
-	name: "Yuyudev", creditlink: "https://twitter.com/yuyudev"
+	name: "Yuyudev", creditlink: "https://thatoddhaystack.neocities.org/ukagaka/"
 }
 
 //blankie
