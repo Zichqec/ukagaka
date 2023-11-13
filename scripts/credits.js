@@ -63,6 +63,9 @@ let Pommy = {
 	name: "Pommy", creditlink: "https://www.youtube.com/user/Pommy15642"
 }
 
+let Digibillcipher = {
+	name: "Digibillcipher", creditlink: "https://digibillcipher.github.io/index_files/ukagaka.htm"
+}
 
 
 
