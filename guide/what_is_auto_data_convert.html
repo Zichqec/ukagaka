@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Zi's Ukagaka Space"/>
+    <meta property="og:description" content="Zi's hub for ukagaka"/>
+    <meta property="og:url" content="https://zichqec.github.io/ukagaka/"/>
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png"/>
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<article>
+
+
+<div id="item_info"></div>
+</article>
+<article>
+<h2>Intro</h2>
+
+<p>Well, the time has finally come to talk about AUTO_DATA_CONVERT. If you've ever looked around in the config files for YAYA, you may be familiar with this. Or, if you've ever used a SHIORI event that talks about separating information by "byte 1" characters, or 0x01. Or maybe, if you've updated your YAYA to the latest versions and had to turn this option back on, lest some parts your ghost break. So what is it? Why does it break things? What can you do about it? Let's get into that.</p>
+
+<h2 id="index">Index</h2>
+<ol>
+	<li><a href="#shiori_events">SHIORI Events</a>
+	<li><a href="#what_auto_data_convert_does">What AUTO_DATA_CONVERT does</a>
+	<li><a href="#without_auto_data_convert">Without AUTO_DATA_CONVERT</a>
+	<li><a href="#0x01_and_commas">0x01 and commas</a>
+	<li><a href="#ok_so_just_turn_it_off">Ok, so just turn it off?</a>
+	<li><a href="#reference_raw">reference.raw</a>
+	<li><a href="#conclusion">Conclusion</a>
+</ol>
+
+<h2 id="shiori_events">SHIORI Events</h2>
+
+<p>First, we need to talk about SHIORI events. In short, when a SHIORI event is sent to the ghost from the baseware, all of the information is passed along as <i>strings</i> separated by linebreaks. This includes reference information! Here is an example of a SHIORI event.</p>
+
+<pre>
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnKeyPress
+Reference0: t
+Reference1: 84
+Reference2: 1
+Reference3: 0
+Reference4: 
+
+
+// response (Execution time : 16[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: \0\s[0]Hey it's some dialogue
+</pre>
+
+<p>In the example above, you can see that when the request is made, 5 references are sent. Most of them are numbers. However, all of this information is simply sent as a string. Why is that important?</p>
+
+<p>The reason is that you can't do math operations on strings. So, when YAYA breaks these down into reference variables for you, it will attempt to convert them to numbers if at all possible. However, the way it does this depends on your settings, and the difference is critical.</p>
+
+<h2 id="what_auto_data_convert_does">What AUTO_DATA_CONVERT does</h2>
+<p>Here's where things get messy! AUTO_DATA_CONVERT is... I'm not sure how to describe it, exactly. I'm truly not sure why it exists! I think it may have been put into place to make YAYA behave like AYA, to help people who were converting? But don't quote me on that, I haven't tested anything in AYA for a long time so I'm not certain. Anyways, as I said, when YAYA breaks down the data into references, it will attempt to convert the information to integers if it can. So if the data <i>can</i> be a number, it <i>will</i> be a number.</p>
+
+<p>Ok, great! Sounds nice! ... Except. Sometimes, you don't want the data to be a number. Here's a couple of examples I have personally run into.</p>
+
+<p>When setting up a weather system in my ghosts (modified from code by <a href="https://thatoddhaystack.neocities.org/ukagaka/">Yuyudev</a>), one of the ways the user could find their location was to put in their zip code. All fine and dandy, easy to deal with. They should all be 5 numbers, no problem! The issue is, some zip codes start with a leading 0. So for example, a zip code could be 01234. Well, that's fine, that's still 5 digits, right?</p>
+
+<p>However, if you convert 01234 to an <i>integer</i>, integers don't <i>have</i> leading 0s. 01234 as an <i>integer</i> is 1234. That isn't a valid zip code. I had to add in extra code to deal with that edge case. What a pain.</p>
+
+<p>A second example. In my ghost <a href="../ghost/s_the_skeleton/html">S the Skeleton</a>, I wanted to add name checks to see if the user put in 0825 as a name, since that number is relevant to him. Ah, but look! Another leading 0! I had a heck of a time finding out why my check wasn't working, until I realized that the data I was receiving was the integer <code>825</code> instead of the string <code>0825</code>. What a pain!</p>
+
+<p>A third example, not one I have had happen to me but I saw someone else run into it. They wanted the user to put in a fake phone number for an event in their ghost, but for some reason the number was coming out all wrong. It's because the base YAYA code was attempting to convert it to an integer, but that integer went over the 32 bit integer limit! What a confusing bug to run into; numbers from the input box coming out as a totally different number.</p>
+
+<p>All of these have one thing in common. If they had been left alone as a string, they would have been fine, but when attempting to convert them to an integer some information was lost. And because this conversion happens in the base dic files for YAYA, you can't get your hands on that data before it's converted!</p>
+
+<h2 id="without_auto_data_convert">Without AUTO_DATA_CONVERT</h2>
+<p>The behavior without AUTO_DATA_CONVERT is a little different. The problem with AUTO_DATA_CONVERT and numbers is that it is simply too vigorous. Without AUTO_DATA_CONVERT, YAYA uses TOAUTOEX to convert the data, which has an additional check to ensure that no data is lost when converting. The check is simple; if the converted number can be converted back to a string again, and is still the same as the original, then it will go ahead with the conversion because no data will be lost. Otherwise, it leaves the data as a string.</p>
+
+<p>This resolves all of the above issues neatly!</p>
+
+<h2 id="0x01_and_commas">0x01 and commas</h2>
+<p>One more thing that you should know about AUTO_DATA_CONVERT before we move on. In addition to converting strings to numbers when possible, it also converts the byte 0x01 to a comma. What does that mean?</p>
+
+<p>Well, 0x01 is what machine translation on Ukadoc usually calls a "byte-1" character. It's a character that the user can't really type, and as a result is super handy as a delimiter for splitting up arrays of data. Especially with simple arrays! In fact, YAYA as SHIORI has a special setup for this, where you can write C_BYTE1 and it will place a 0x01 character for you. Really useful for all sorts of things.</p>
+
+<p>So useful, that some SHIORI events, such as OnBIFFComplete, use 0x01 to split up data! In particular, this is the event for successfully checking for emails, and reference7 contains the headers for each email. Trying to split up this information with commas would be a <i>disaster!</i> Email headers often have commas in them, so if you use commas to split up the array, then you won't be able to reliably tell where one entry stops and another begins!</p>
+
+<p>... Are you seeing where this is going?</p>
+
+<p>Yeah. AUTO_DATA_CONVERT changes all those 0x01 characters to commas. <i>You can't reliably tell where one entry stops and another begins.</i></p>
+
+<p>So, you can see the problem.</p>
+
+<h2 id="ok_so_just_turn_it_off">Ok, so just turn it off?</h2>
+<p>Yes! Plain and simple, yes. I'll be honest with you, I have no idea what the benefit of having AUTO_DATA_CONVERT on would be. If someone knows, please tell me. If you're converting from AYA, you might want to check and see if there's anything that relies on AUTO_DATA_CONVERT, but I'm really not sure.</p>
+
+<p>There is one snag when turning AUTO_DATA_CONVERT off, and that is, if you have code set up that already relies on that behavior you will have to adjust it. For example, if you had set up email header code that attempted to break down the headers based on commas, you would need to change it to use C_BYTE1 instead. It shouldn't be too big of an issue, but you should definitely double check before converting, since it may introduce subtle bugs.</p>
+
+<h2 id="reference_raw">reference.raw</h2>
+<p>There is one saving grace if you don't want to turn off AUTO_DATA_CONVERT, and that is reference.raw. reference.raw is what it sounds like; the raw data from the references, without conversion. Unlike the other references, this is <i>only</i> available as an array. So you can't write reference.raw7, you have to write reference.raw[7]. But if you need to keep AUTO_DATA_CONVERT on, you can use this for the edge cases mentioned above whenever you need access to the raw data as a string. It's very helpful.</p>
+
+<p>reference.raw[0] is reference0 but without conversion, reference.raw[1] is reference1 without conversion, and so on and so forth.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>What a headache! But not as much of a headache as I originally thought. If you had read the original version of this guide, then just know, at some point some wires got crossed in my head and I mixed up having AUTO_DATA_CONVERT off with reference.raw, and thought all of the data would be strings unless you converted it. Thankfully, this isn't the case! What a nightmare that would have been, truly.</p>
+
+<p>The reason I am writing about this is that in 2022, the YAYA as SHIORI dic files updated to have AUTO_DATA_CONVERT off by default, when before it was on by default. So, anyone updating their YAYA may run into issues. Additionally, I plan to update my templates to match, since I want their base YAYA files to match the originals (except for translations).</p>
+
+<p>I think it would be best for those making free code to turn AUTO_DATA_CONVERT off, or at least plan for their code to be used in environments without this feature. That way, anyone can use the code as-is without having to worry about this issue. That's my recommendation, anyways.</p>
+
+<p>Hopefully this helps to explain things!</p>
+
+</article>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+<script src="../scripts/credits.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script src="../scripts/guide_details.js"></script>
+<script src="../scripts/guide_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>

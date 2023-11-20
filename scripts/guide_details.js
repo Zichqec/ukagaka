@@ -22,16 +22,12 @@ let item_details = [
 	{
 		name: "Ghost Release Tips & Checklist",
 		release: "June 18th, 2023",
-		latest: "August 14th, 2023",
+		latest: "November 20th, 2023",
 		guidefor: "Devs",
 		language: null,
 		collaborators: null,
-		externallink:
-		{
-			hostedby: "Ukagaka Dream Team Wiki",
-			link: "https://ukagakadreamteam.com/wiki/guide/ghost_release_tips_checklist_zichqec"
-		},
-		blurb: "A checklist for releasing a ghost, to serve both as a reminder for experienced developers trying to curb release-day jitters, and to give advice to developers releasing their first ghosts to try to steer them away from certain pitfalls."
+		externallink: null,
+		blurb: "A checklist for releasing a ghost, to serve both as a reminder for experienced developers trying to curb release-day jitters, and to give advice to developers releasing their first ghosts to try to steer them away from certain pitfalls.<br><br>Note that I originally wrote this guide on the Ukagaka Dream Team wiki, and have since moved it here."
 	},
 	{
 		name: "Loops and Arrays",
@@ -106,16 +102,12 @@ let item_details = [
 	{
 		name: "Setting up subfolders in your ghost list",
 		release: "May 2nd, 2023",
-		latest: null,
+		latest: "November 20th, 2023",
 		guidefor: "Users",
 		language: null,
 		collaborators: null,
-		externallink:
-		{
-			hostedby: "Ukagaka Dream Team Wiki",
-			link: "https://ukagakadreamteam.com/wiki/guide/ssp/setting_up_subfolders_in_your_ghost_list_zichqec"
-		},
-		blurb: "Did you know you can set up subfolders in your ghost list/balloon list/etc.? You can! And this guide will tell you all about it, with images and explanations for each step."
+		externallink: null,
+		blurb: "Did you know you can set up subfolders in your ghost list/balloon list/etc.? You can! And this guide will tell you all about it, with images and explanations for each step.<br><br>Note that I originally wrote this guide on the Ukagaka Dream Team wiki, and have since moved it here."
 	},
 	{
 		name: "Upgrade Old Versions of YAYA",
@@ -130,16 +122,12 @@ let item_details = [
 	{
 		name: "What is AUTO_DATA_CONVERT",
 		release: "February 2nd, 2023",
-		latest: "April 14th, 2023",
+		latest: "November 20th, 2023",
 		guidefor: "Devs",
 		language: "YAYA",
 		collaborators: null,
-		externallink:
-		{
-			hostedby: "Ukagaka Dream Team Wiki",
-			link: "https://ukagakadreamteam.com/wiki/guide/aya_yaya/what_is_auto_data_convert_zichqec"
-		},
-		blurb: "A guide demonstrating how to create SAORI-basic, specifically in Python! May be useful to get the general idea of how SAORI-basic works, even in other languages."
+		externallink: null,
+		blurb: "A guide explaining YAYA's AUTO_DATA_CONVERT option, what it does, and why you should (almost always) turn it off. Please note that when I first wrote this guide, I had thought the option would cause a much more severe compatibility issue, but this turned out to be untrue and I have since corrected it.<br><br>Note that I originally wrote this guide on the Ukagaka Dream Team wiki, and have since moved it here."
 	},
 	{
 		name: "YAYA Fundamentals",

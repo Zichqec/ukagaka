@@ -24,543 +24,320 @@
 <div id="item_info"></div>
 </article>
 <article>
-<h2>Guide</h2>
+<h2 id="intro">Intro</h2>
+<p>So, you're preparing to release a ghost! If you're new to this, you may want some tips to ensure you've got all your bases covered and that your release is as smooth as possible. If you're an experienced dev, maybe you're like me and constantly feel like you're forgetting something! Or maybe you're working on a ghost for an event like <a href="https://ukagakadreamteam.com/wiki/event/ghost_jam">Ghost Jam</a> and the stress of the time crunch has you scrambling to remember what you need. Whatever the case, hopefully this guide will give you confidence that you've filled in all the vital details and your ghost is ready to release into the world.</p>
 
-	<p>So what's the deal with arrays, and why do you need them? Simply put, arrays are a flexible list of values that you can add to, remove from, and generally manipulate however you want. Want to store a list of words that the user has input? Want to save a bunch of similar variables in a compact way? How about an inventory of items that can be easily tracked? Arrays have got you covered!</p>
-		
-	<p>This guide will also include information about loops, since arrays and loops go hand in hand. If you can learn both of them, they'll open up a ton of options to you! You can achieve a lot with just if/else, but loops/arrays open up a whole new world. Also note: I'm covering AYA/YAYA syntax specifically, but the basic concepts apply to most modern programming languages.</p>
-	<br>
-	
-	<h3>Simple Arrays</h3>
-	
-	<p>First of all, AYA/YAYA have two different kinds of arrays: Simple Arrays and General Purpose Arrays. A simple array is not a true array, though they are very useful. A simple array is a string separated by commas. By attaching an index number, you can pull out the text between the commas. This is what it looks like to declare a simple array:</p>
+<p>Up top will be the short list, which you can use if you're already experienced at this and just need a reminder/a list to check off. The rest of the guide is detailed explanations of each item, why it's there, and my personal recommendations.</p>
+
+<p>Note: most of these tips apply regardless of what coding language your ghost is written in! The stuff listed here is mostly handled on the baseware side.</p>
+
+<h2 id="the_list">The list</h2>
+<ul>
+	<li><b>Do a fresh install of your ghost on a different instance of SSP</b></li>
+	<li>Check install.txt for ghost and balloon</li>
+	<li>Check descript.txt for ghost, shell, and balloon
+		<ul><li>If you're distributing a balloon with your ghost, make sure you've set it as the standard balloon</li></ul>
+	</li>
+	<li>Check readme.txt for ghost, shell, and balloon</li>
+	<li>Check your homeurl
+		<ul><li>Add developer_options.txt and .gitignore if you need them</li></ul>
+	</li>
+	<li>Check thumbnails for ghost, shell, and balloon</li>
+	<li>Check the ghost's icon</li>
+	<li>Check what links you have in the right click menu</li>
+	<li>Check for any lingering shell errors/warnings/notices</li>
+</ul>
+
+<p>Read onwards if you want explanations and notes for each item! I recommend copying this list into a notepad somewhere and marking off each item as you complete it. Good luck! </p>
+
+<h2 id="index">Index</h2>
+<ol>
+	<li><a href="#do_a_fresh_install">Do a fresh install of your ghost on a different instance of SSP</a>
+		<ul>
+			<li><a href="#variable_initialization">Variable initialization</a></li>
+			<li><a href="#surface_calls">Surface calls</a></li>
+			<li><a href="#other_misc_install_info">Other misc install info</a></li>
+			<li><a href="#but_i_dont_want_to">But I don't want to! That sounds like a lot of effort!</a></li>
+		</ul>
+	</li>
+	<li><a href="#check_install_txt_for_ghost_balloon">Check install.txt for ghost and balloon</a>
+		<ul>
+			<li><a href="#directory_name">Directory name</a></li>
+			<li><a href="#balloon_installation">Balloon installation</a></li>
+			<li><a href="#about_distributing_balloons">A note about distributing balloons separately...</a></li>
+		</ul>
+	</li>
+	<li><a href="#check_descript_txt_for_ghost_shell_balloon">Check descript.txt for ghost, shell, and balloon</a>
+		<ul>
+			<li><a href="#double_checking_names">Double checking names</a></li>
+			<li><a href="#craftman">Craftman</a></li>
+			<li><a href="#standard_balloon">Standard balloon</a></li>
+		</ul>
+	</li>
+	<li><a href="#check_readme_txt_for_ghost_shell_balloon">Check readme.txt for ghost, shell, and balloon</a>
+	<li><a href="#check_your_homeurl">Check your homeurl</a>
+	<li><a href="#check_thumbnails_for_ghost_shell_balloon">Check thumbnails for ghost, shell, and balloon</a>
+	<li><a href="#check_the_ghosts_icon">Check the ghost's icon</a>
+	<li><a href="#check_links_in_right_click_menu">Check what links you have in the right click menu</a>
+	<li><a href="#check_for_shell_errors">Check for any lingering shell errors/warnings/notices</a>
+	<li><a href="#its_time">All of that look good? Then it's time!</a>
+	<li><a href="#conclusion">Conclusion</a>
+</ol>
+
+
+<h2 id="do_a_fresh_install">Do a fresh install of your ghost on a different instance of SSP</h2>
+<p>This is one of the most important things you can do. <b>ALWAYS do this at least once!</b> This is <b>not the same as testing the OnFirstBoot event in an existing copy of the ghost.</b> Testing OnFirstBoot in an existing copy of the ghost (usually by using the <code>\![raise,OnFirstBoot]</code> tag in script input, or <code>\![raise,OnFirstBoot,0]</code> if you're on the GT Template) is generally fine for testing that your dialogue flows how you want, but there are several issues that it may mask. Here are some reasons why it's different and why you should do a fresh install.</p>
+
+<h3 id="variable_initialization">Variable initialization</h3>
+<p><i>This issue in particular is probably more specific to AYA and YAYA, as I'm not sure how other languages may handle this situation.</i></p>
+
+<p>As you've been working on your ghost, you've probably initialized several variables. When you run OnFirstBoot via the raise tag, everything looks fine! But if you forgot to initialize <i>anything,</i> this can create critical bugs for your users upon installing the ghost. A fresh install will often reveal these issues, but simply testing the OnFirstBoot event will not, because on your existing installation the variables are already initialized and therefore will behave differently from uninitialized variables.</p>
+
+<p>If you're not sure what initialization means, the most important thing to know is that variables which have yet to be created in AYA or YAYA are treated as empty strings. So if you have, say, a variable for how many times your ghost has been pet in total, you need that to be a number so that you can add to it properly. But if the user installs your ghost and that variable doesn't get created as a number from the start, AYA/YAYA will happily add numbers onto it as <i>strings</i> rather than doing math. 1 + 1 is 2, but "1" + "1" is "11". So after the user has pet your ghost 5 times, the pet counter would show "11111" instead of 5. That's a very tame example; there are far worse bugs that could happen, depending on how complex your ghost is! Variable initialization is really important, make sure you set all your variables to some kind of default value (like 0 in the case of a pet counter) in OnFirstBoot.</p>
+
+<h3 id="surface_calls">Surface calls</h3>
+<p>I have at times forgotten to actually put surface tags at the start of my OnFirstBoot dialogue. Kind of a silly mistake! But, it happens, especially when you're in a rush.</p>
+
+<p>When testing the OnFirstBoot event via the raise tag, my ghost would appear to work properly! Because, the ghost remained in the default surface that it was previously using, so I didn't see the issue. That was, until I did an install test, and on a fresh install my ghost was invisible for the first section of the dialogue. Embarassing, to say the least! But thankfully, I had decided to do a boot test before release, and it was easily fixed.</p>
+
+<h3 id="other_misc_install_info">Other misc install info</h3>
+<p>I'll get more into details about install.txt in the next section. But in general, as you're doing your install test, make sure you're checking that it installed to the right directory name, that the balloon installed with it, etc. <b>I recommend using a second copy of SSP for this, especially if you're testing a balloon install as well!</b> If the balloon is already installed in the version of SSP that you're testing on, you may not notice if the balloon isn't set up to install properly, because the balloon is already installed and therefore appears and works properly. It's happened to me before!</p>
+
+<h3 id="but_i_dont_want_to">But I don't want to! That sounds like a lot of effort!</h3>
+<p>It is an extra bit of effort! But let me put it to you this way. <b>Your firstboot is the user's first impression of your ghost.</b> You want to set the stage and get people invested in using your ghost for a while to explore everything it has to offer, right? If your ghost appears buggy right from the get-go, it's a terrible first impression and might put people off straight away. Take the time to check it. It's only a few minutes of your day to set up a second copy of SSP and install your ghost on it, and it'll save you embarassment and hassle down the line.</p>
+
+<p>Users may only see the firstboot once, but if the ghost doesn't work properly, it may be the <i>only</i> thing they ever see of it! So it's always worthwhile to give it a little extra effort and make sure that it's polished and working just how you want.</p>
+
+<p>And let me tell you, do <i>not</i> get cocky with this, even if you're an experienced dev! I've released lots of ghosts, I have learned about all the issues that can happen on a fresh install first hand, so you'd think I'd have it covered by now and not need to do extra testing. But every time I so much as <i>think</i> about skipping a fresh install test, I end up finding big issues! Never ever <i>ever</i> skip this step; you can skip every other step on this list if you want, but never skip this one!</p>
+
+
+<h2 id="check_install_txt_for_ghost_balloon">Check install.txt for ghost and balloon</h2>
+<h3 id="directory_name">Directory name</h3>
+<p>I touched on this above, but I'm going to list some things to keep in mind about directory names here.</p>
+
+<ul>
+	<li>Double check your directory name is what you want it to be, and that you didn't forget to change it.
+		<ul><li>Don't be like me and make typos, and end up with a ) in there by mistake!</li></ul>
+	</li>
+	<li>Try to pick a unique folder name, so that other ghosts don't end up overwriting yours!
+		<ul>
+		<li>If you want to keep it simple, you can just add your dev name or initials after the folder name. Initials work great if you have multiple teammates!
+		<li>I recommend putting your name/initials <i>after</i> the folder name.
+			<ul><li>For example: The initials used for <a href="../ghost/needle.html">Needle</a> are gz. If they are added <i>before</i> the folder name like <code>gz_needle</code>, that puts Needle in the G section and makes it hard to find. <code>needle_gz</code> is just as unique, and sorts it properly into the N section!</li></ul>
+		</li>
+		<li>Don't make the folder name something totally unrelated to the ghost, it makes it hard to find. I recommend making it the same as the ghost's overall name/title.</li>
+		</ul>
+	</li>
+	<li>Don't include spaces in any folder/file names! Spaces will cause you pain and suffering if you ever do network updates or the like!
+	<li>For shells in particular, if your default shell's folder is not called <code>master</code>, it will complain about it!
+		<ul><li>There is a way around this, but if you have not yet released your ghost it is best to just have the default shell be in a folder called <code>master</code>.</li></ul>
+	</li>
+</ul>
+
+<p>Note that when I talk about folders being hard to find, this isn't just for the convenience of code crawlers like me! It's also for everyday users who might want to make backups, move their ghosts onto another computer, etc. Have your ghost be easy to find! You don't <i>have</i> to if you don't want to, but it makes life easier for folks if you do.</p>
+
+
+<h3 id="balloon_installation">Balloon installation</h3>
+<p><i>This section only applies if you're bundling a balloon with your ghost.</i></p>
+
+<p>Are you bundling a balloon with your ghost? Great news! You can distribute your balloon inside of your ghost's nar file, so that they install together! It's wonderfully convenient for your users.</p>
+
+<p>The way to do this is simple. All you need to do is copy your balloon's folder into your ghost's folder, on the top level. So the files would look something like this:</p>
+
+<img src="ghost_release_tips_checklist/where_to_place_the_balloon_folder.png" alt="The top level of a ghost's folder, showing the ghost folder, shell folder, install.txt, and other files. A folder called 'transmission' is highlighted.">
+
+<p>See the "transmission" folder that's highlighted there? That's <a href="../balloon/transmission.html">the balloon</a> for <a href="../ghost/iea.html">Iea</a>, the ghost who's files are pictured here. Make sure you don't have any additional subfolders nested in here or anything, when you double click on the balloon's folder you should see all the files right there.</p>
+
+<p>Note: You want to <i>copy</i> the balloon into your ghost's files, not move it. SSP won't run your balloon from the ghost's folder! Balloons are installed to SSP's balloon folder (<a href="../guide/setting_up_subfolders_in_your_ghost_list.html">unless you've changed your settings</a>), so if you need to make adjustments to your balloon, you'll need to do it to the version in SSP's balloon folder in order to see the changes take effect. Just make sure that when you package your ghost for distribution, you've copied the latest version of the balloon into its files!</p>
+
+<p>Anyways, with that done, you'll also need to make sure install.txt is pointing to your balloon directory! In the <b>ghost's</b> install.txt, check if there's an option for <code>balloon.directory</code>. If not, add one. You'll need to add the name of the <b>folder</b> of your balloon. So, for the ghost I showed before, I would add <code>balloon.directory,transmission</code>. This will vary based on the folder name of your balloon.</p>
+
+<p>If you've done this correctly, when users install your ghost it should install both of them together! Convenience at it's finest.</p>
+
+<p><b>NOTE: if you're NOT including a balloon with your ghost, <i>please remove the balloon.directory from your ghost's install.txt!</i></b> If you leave it in, SSP will still attempt to install a balloon, and will create empty folders in its balloon folder. This is really frustrating as a user, because it leaves you with a mess to clean up! If you don't plan to use it, remove it or comment it out.</p>
+
+
+<h3 id="about_distributing_balloons-">A note about distributing balloons separately...</h3>
+<p>You may also want to distribute your balloon separately, if you want it to exist independently of your ghost. <b>Balloons can be distributed as nar files! Please distribute your balloons as nar files and not zips!</b> Zip files will work, but then you don't get the benefits of file association. If you have nar files associated with SSP, you can double click them for easy/quick installation. Helpful for folks that may have difficulty with drag and drop! (If you haven't associated nar files with SSP, you can do it in the preferences with the "Associate Related File Extension to SSP" option on the General tab!)</p>
+
+<p>Unless you have a really particular reason to be distributing your balloon as a zip file, please just use a nar! You can make them the same way as you make nar files for ghosts; drag and drop the balloon's folder onto your ghost, and tell it to make a nar. A lot of early English ghosts distributed balloons as zip files simply because they <b>did not know they could be made into nars.</b> There's not really a reason to keep doing it. At best it's a meaningless difference (nar files <b>are</b> zip files, just with file association and a cute icon), and at worst it's extra inconvenience for your users, particularly for folks that may have trouble with drag and drop.</p>
+
+
+<h2 id="check_descript_txt_for_ghost_shell_balloon">Check descript.txt for ghost, shell, and balloon</h2>
+<h3 id="double_checking_names">Double checking names</h3>
+<p>First of all, you should double check the names of everything in here. Is the name of your creation correct? The <code>name</code> field is how the name will appear in the right click menu. <b>If your creation is going to have a page on the <a href="https://ukagakadreamteam.com/wiki/home">Ukagaka Dream Team Wiki</a>, this is the name we will use for it!</b> That name is how people will have to find it in the right click menu, in the ghost explorer, etc. So, pick a good one! I don't really recommend adding your dev name or initials here. Think of this as the title for your creation, like the title of a book. Try to make it unique, but it's not the end of the world if it isn't.</p>
+
+<p>And feel free to get creative with it, as well! This is the <i>title</i> for your creation, not necessarily the character's name! A ghost like <a href="../ghost/iea.html">Iea</a> uses the name of the character as the ghost name, while a ghost like <a href="please_arrive_15_minutes_before_your_scheduled_interview_time.html">Please arrive 15 minutes before your scheduled interview time</a> uses this as a (silly) title to help set the tone of the ghost.</p>
+
+<p>Secondly, for a ghost, you also have the <code>sakura.name</code>. <b>This name is really important!</b> A lot of events and other things use the <b>sakura name</b> of the ghost, such as reference0 in <a href="https://ukagakadreamteam.github.io/ukadoc/manual/list_shiori_event.html#OnGhostChanging">OnGhostChanging</a> or <a href="https://ukagakadreamteam.github.io/ukadoc/manual/list_shiori_event.html#OnCommunicate">OnCommunicate</a>.</p>
+
+<p>You absolutely should set this to the name you want your main character to be referred to as, since a lot of ghosts will say this name as a part of their dialogues if they refer to your ghost! But if it's super generic or you know another ghost with the same one, you may want to try and make it unique somehow. But, don't stress too much about it. In events like OnGhostChanging, at least in SSP, there is other information that can be used to determine exactly which ghost this is, in the case of overlapping names. Just be aware of it, and pick something reasonable! The ghost "Please arrive 15 minutes before your scheduled interview time" that I mentioned? That one's sakura name is just "Boss".</p>
+
+<p>Finally, about <code>kero.name</code>. This is not important in the same way that the sakura name is. If you don't have a kero character, just change it to a dash or something. But if you do have a kero character, go ahead and set it to their name. It doesn't come up often, but every great once in a while you may see something that will grab the kero name of your ghost to comment on it.</p>
+
+<h3 id="craftman">Craftman</h3>
+<p>The craftman information is really important. This is the crediting for your ghost! Make sure you've got it right, and if you don't want to include credits to yourself, at least remove the template maker's information so that it doesn't cause confusion!</p>
+
+<ul>
+	<li>Check that these are correct and don't have typos, that your link works, etc.</li>
+	<li>Note that the name listed in the craftman is how we will list you on the <a href="https://ukagakadreamteam.com/wiki/home">Ukagaka Dream Team Wiki</a>, if your creation gets a wiki page!</li>
+	<li>If your name is written with alphanumeric characters, you can omit the craftmanw.
+		<ul><li>The craftmanw, as I understand, exists so that names with characters such as full width Japanese characters can be properly represented.</li></ul>
+	</li>
+	<li>The craftmanurl needs to be a single link to your website/social media/ghost release post/something that directs users to you.
+		<ul>
+			<li>This link is displayed on the ghost's readme window, and may also be accessed via the ghost explorer or services like Ghost Captor Sakura.</li>
+			<li>Because of the above, <b>do not link to places where there may be NSFW content here!</b> Someone could use the ghost explorer to jump to your link, without seeing any warnings that you may have included!</li>
+			<li>You also cannot put multiple links here, they won't work!
+				<ul><li>If you need to include multiple links, such as if the ghost is a collab with someone else, consider putting a link to the ghost's release/website as the craftmanurl, and putting individual links to each creator in the readme.</li></ul>
+			</li>
+			<li>You can omit the craftmanurl entirely if you like, but this may make it hard for users to find you in order to submit bug reports, and such. Even if you have links in the readme, services like Ghost Captor Sakura rely on the craftmanurl being valid.</li>
+		</ul>
+	</li>
+</ul>
+
+<h3 id="standard_balloon">Standard balloon</h3>
+<p><i>This section only applies if you're bundling a balloon with your ghost.</i></p>
+
+<p>Yes, I already touched on balloons in the earlier section about install.txt. However, there is one more piece to the puzzle! And that is making your balloon the standard balloon for your ghost.</p>
+
+<p>What does "standard" balloon mean? Put simply, when the user first boots up your ghost, if there is a standard balloon SSP will use that balloon by default if it is installed. That balloon will also get a special spot in the right click menu for your ghost! This is really helpful for users that have many balloons installed, or have their balloons sorted into subfolders. This is especially true if the name of your balloon is very distinct from your ghost, because let me tell you from experience, it's really easy to forget which balloon goes with what ghost!</p>
+
+<p>To add a standard balloon for a ghost, go into the <b>ghost's</b> descript.txt and add <code>balloon,Name of Balloon</code>. Change "Name of Balloon" to whatever the <b>name</b> of the balloon is, <i>not</i> the folder name. This is the name as it appears in the right click menu! So if you wanted to recommend <a href="../balloon/thaw.html">Thaw</a>, you would write <code>balloon,Thaw</code>, and <b>not</b> <code>balloon,thaw_ss-db</code>.</p>
+
+<p>A couple of additional notes with this! First of all, <i>you can have multiple standard balloons!</i> Just add multiple <code>balloon</code> entries! <a href="../ghost/ssp_angel.html">SSP Angel</a> does this, like so:</p>
+
 <pre>
-ColorArray = "Red,Green,Blue"
-
-"%(ColorArray[0])" //This would display 'Red' in dialogue
-"%(ColorArray[1])" //This would display 'Green' in dialogue
-"%(ColorArray[2])" //This would display 'Blue' in dialogue
+balloon,Angelbox
+balloon,Angelbox (Biblically Accurate)
+balloon,Cotton Candy
 </pre>
-		<p>As you can see, a string separated by commas is stored in the variable ColorArray. Then, by calling ColorArray with an index number in brackets, you can pull out specific parts of the array. Index numbers start from 0, don't forget that! This is also how double envelopes work, if you're familiar with the <a href="http://ashido.com/ukagaka/">GT Template</a>.</p>
-		
-		<p>One more note about simple arrays: you can actually use any delimiter, not just commas! That would look like this:</p>
-<pre>
-ColorArray = "Red|Green|Blue"
 
-"%(ColorArray[0,'|'])" //This would display 'Red' in dialogue
-"%(ColorArray[1,'|'])" //This would display 'Green' in dialogue
-"%(ColorArray[2,'|'])" //This would display 'Blue' in dialogue
-</pre>
-	<p>All you have to do is include the delimiter you want to use inside the brackets with the index number. You can use anything you want, | is just a personal preference of mine (it can't be used in file names, which is very handy if you're working with files).</p>
-	
-	<p>A lot of SHIORI functions return values as simple arrays, so you should familiarize yourself with them! You can also convert a simple array to a general purpose array, but I'll cover that a bit further down.</p>
-	<br>
-	
-	<h3>General Purpose Arrays</h3>
-	
-	<p>Alright, so here's the deal. Simple arrays are fairly unique to AYA/YAYA, as far as I know. No other language treats comma-separated strings like an array. Most languages have something like general purpose arrays, and general purpose arrays are where the real magic happens! This is what it looks like to declare a general purpose array:</p>
-<pre>
-ColorArray = ("Red","Green","Blue")
+<p>And all of those 3 balloons will be given a special spot in the right click menu! I <i>believe</i> they are listed in the order they are written, and as far as I know, SSP will use the top option as the balloon to be used by default, as long as it is installed. If that one's not installed, I believe it'll continue down until it finds one that is.</p>
 
-"%(ColorArray[0])" //This would display 'Red' in dialogue
-"%(ColorArray[1])" //This would display 'Green' in dialogue
-"%(ColorArray[2])" //This would display 'Blue' in dialogue
-</pre>
-	<p>This may look very similar to the simple array, but it's actually very different. As you can see, inside the () are three <i>different</i> values; three different strings separated by commas. You can still access them with index numbers, the same as a simple array, but you can do so much more!</p>
-	
-	<p>Something important about general purpose arrays: since they're not just a string, you can store any type of variable you want in them (besides other arrays)! Here's an example with a string, an int, and a float/real number:</p>
-<pre>
-ExampleArray = ("String",42,3.14)
+<p>That's my second note as well! <i>You do not have to be the author of a balloon, nor bundle the balloon with your ghost, to make it a standard balloon!</i> So if you don't want to make your own balloon for your ghost, but you like somebody else's balloon and think it's a nice fit with yours, you can absolutely set it as the standard balloon! If your users have that balloon installed, then your ghost will boot up and use it by default. It's simply a recommendation of what you think is a good fit.</p>
 
-_sum = ExampleArray[1] + ExampleArray[1]
-//Since ExampleArray[1] (42) is stored as an integer, adding them like this will give you a result of 84.
-</pre>
-	<p>Mix and match types to your heart's content! Don't forget that you can use TOINT, TOSTR, and TOREAL to convert types if you need to. Now, on to dynamically adding/changing/removing values in arrays...</p>
+<p>You may want to link to whatever balloon you recommend on your ghost's download page, so that users who don't have it know where to find it (and who made it!). In SSP Angel's case, the other two standard balloons <i>were</i> made by the devs of that ghost, and are simply optional downloads. Once they're installed, they'll show up in the standard section of the balloon menu!</p>
 
-	<p>First of all, lets cover how to add new elements to an array. If you know what index number you want to store your value in, then you can just write it like so:</p>
-<pre>
-ColorArray[3] = "Yellow"
-//The array now contains Red, Green, Blue, and Yellow
 
-"%(ColorArray[3])" //This would display 'Yellow' in dialogue
-</pre>
-	<p>You can use this to create a new element, or to change an existing element. Lets say I decided that I want orange instead of yellow. I can change it just like I would a normal variable, I just have to give it the index number of the element I want changed.</p>
-<pre>
-ColorArray[3] = "Orange"
-//The array now contains Red, Green, Blue, and Orange
+<h2 id="check_readme_txt_for_ghost_shell_balloon">Check readme.txt for ghost, shell, and balloon</h2>
+<p>On to the readmes! Readmes, a helpful tool but often neglected. Here are some pointers to make your readmes helpful and more likely to actually be read.</p>
 
-"%(ColorArray[3])" //This would display 'Orange' in dialogue
-</pre>
-	<p>Great! But the thing is, when working with arrays, you often don't know what the index number of a particular value is, especially if you're creating dynamic lists. Thankfully, adding a new element to an array without knowing the index number is super easy:</p>
-<pre>
-ColorArray ,= "Purple"
-//The array now contains Red, Green, Blue, Orange, and Purple
+<ul>
+	<li><b>Keep them brief.</b> Many users will not read a readme that is more than a paragraph or two, and <i>especially</i> not if they have to scroll.</li>
+	<li><b>IF YOU HAVE CONTENT WARNINGS, PUT THEM AT THE TOP.</b>
+		<ul>
+			<li>Do <b>not</b> assume that your user will read to the end, or even the middle, of your readme. Very often, they won't!</li>
+			<li>If you don't want to go into full detail about your warnings at the top, at least indicate that there are more warnings to be read down below!</li>
+			<li>Content warnings are very important to have visible! They should be one of the first things your user's eyes land on.</li>
+		</ul>
+	</li>
+	<li>Consider if you really need to include a full user manual in your readme.
+		<ul>
+			<li>If your ghost is in a particularly popular fandom, or is the first in its fandom, a few quick user tips for how to access the menu, right click menu, or pet the ghost, may be useful.</li>
+			<li>If your ghost is an OC and you don't have a very large following, or it's from a fandom with several ghosts, or you are otherwise catering to advanced ukagaka users, then you probably don't need it.</li>
+			<li>User manuals can be useful for newbies. But when every ghost has them, it tends to have the effect of making advanced users skip the rest of the readme!
+				<ul><li>This can be mitigated by placing the manual below other important information.</li></ul>
+			</li>
+		</ul>
+	</li>
+	<li>Dense text walls can be really intimidating and difficult to read! Have mercy on your user, don't dump text here that you don't need to. They likely want to get to the ghost, not do homework!</li>
+</ul>
 
-"%(ColorArray[4])" //This would display 'Purple' in dialogue
-</pre>
-	<p>,= is a great operator that assigns a <i>new</i> element to an array, making it the last element in the list. You can add as much as you want to your array this way!</p>
-	
-	<p>Alright, so what if I don't know what index number an element of my array is, but I want to change it? There's a function to help with that called ASEARCH. ASEARCH will search an array for a value, and return the index number. For example:</p>
-<pre>
-_i = ASEARCH("Blue",ColorArray)
-//"Blue" is element 2 in the array (remember that the count starts from 0), so _i now contains the value 2
-ColorArray[_i] = "Cyan" //You can use variables that contain numbers as the index! So this would change element 2
+<p>Personally, I think readmes are best kept short and sweet. These are usually the things I note in a readme:</p>
 
-//The array now contains Red, Green, Cyan, Orange, and Purple
+<ul>
+	<li>Any content warnings.</li>
+	<li>Any people involved in the creation of the ghost, and their links for crediting (unless it was a solo ghost, in which case the craftmanurl will suffice).</li>
+	<li>A note about if the ghost was made for an event like Ghost Jam.</li>
+	<li>A description of the character if it's an OC.</li>
+	<li>A very brief user manual if it's a fandom ghost that is one of the first in its fandom, as described above.</li>
+</ul>
 
-"%(ColorArray[2])" //This would display 'Cyan' in dialogue
-</pre>
-	<p>ASEARCH is a bit advanced, but you should know it exists. It takes two arguments, the key, and the array. The key is the exact string you want to search for, and the array is the array you want to search in. Make sure you get the order of those two arguments correct, it's backwards from how most other functions work so it's easy to mix up. Also note: if ASEARCH does not find the element you searched for, it will return -1.</p>
-	
-	<p>A note about ASEARCH: it will only return the first value that it finds. If you know there are more than 1 of the same value in your array, you'll want to use ASEARCHEX, which will return an array of index numbers. That's a bit advanced for this guide, though; if you want to know more you can <a href="http://emily.shillest.net/ayaya/index.php?%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB/%E9%96%A2%E6%95%B0/ASEARCHEX">read about it on the AYAYA wiki</a>.</p>
-	
-	<p>Alright, that's all well and good, but what if you want to remove a value from an array? This is also very easy! There is a handy function called IARRAY that will help. IARRAY is used to initialize empty arrays, <i>and</i> to delete an element of an array.</p>
-<pre>
-ColorArray[2] = IARRAY
+<p>That's it! If you don't have anything more to say than that, don't feel pressured to add more!</p>
 
-//The array now contains Red, Green, Orange, and Purple
 
-"%(ColorArray[2])" //This would display 'Orange' in dialogue
-</pre>
-	<p>When you delete an element of an array with IARRAY, all the other elements of the array will shuffle back to fill in the gap. So, even though Orange was ColorArray[3] before, once you delete Cyan/ColorArray[2], Orange will now be ColorArray[2] and Purple will be ColorArray[3].</p>
-	
-	<p>Note! This is different from setting an element to ""! Let me demonstrate with a new array:</p>
-<pre>
-FoodArray = ("Carrots","Celery","Tomatoes","Cucumbers")
+<h2 id="check_your_homeurl">Check your homeurl</h2>
+<p>Let me tell you a secret. I have straight up forgotten to add a homeurl in the first release of some of my ghosts, because we were rushing to finish in time for Ghost Jam and it slipped my mind because I thought I had added it already. If you're adding network updates to your ghost, <i>make sure</i> you double check this. It's a nightmare to find out after your release that you can't actually push updates to your ghost and will have to ask people to update it manually. (There is a way to distribute updates via supplemental files to fix this, but that's a guide I'll write another day.)</p>
 
-//FoodArray contains Carrots, Celery, Tomatoes, and Cucumbers
+<p>If you've not set up network updates, and you think there is any chance at all that you'll want to update your ghost in the future, sit down and set up network updates now. It will save you a ton of hassle in the future, and it's really not terribly difficult to do. There is a guide <a href="https://ukagaka.zichqec.com/guide/network_updates_with_github">here</a> on how to do it. It is old and needs updated with better recommendations, but it should still work. (In particular, these days I highly recommend making separate GitHub repositories for each ghost!)</p>
 
-FoodArray[2] = ""
+<ul>
+	<li>Check that your homeurl is in place, is correct, and verify it by testing (for ghosts, you can use "Update Full Check" in the dev. palette for this).</li>
+	<li>In ghosts made in AYA or YAYA, you may have an event called <code>On_homeurl</code> in your dic files. You can fill in your homeurl here, and even add logic to change it based on certain conditions if you wanted.</li>
+	<li>For just about anything that is <i>not</i> a ghost, you can include a homeurl in the descript.txt for your creation. Just write <code>homeurl,(url here)</code>
+		<ul><li>Note that calendar skins in particular cannot network update (at least, as of 2023).</li></ul>
+	</li>
+	<li>homeurls must always end with a <code>/</code>. If you get a mysterious warning when you attempt an update that says "/ added", that's what it's referring to!</li>
+	<li>While you're at it, if you're familiar with developer_options.txt (and .gitignore if you're using GitHub), now is a good time to add those.
+		<ul>
+			<li>In particular, I recommend excluding your balloon files from your update files, that way users won't have to redownload them. (The balloon files are emptied from the ghost's folder and moved into SSP's balloon folder upon installation. So if they are included as part of the update files, the ghost will see that it's missing the balloon files from its own folder and will download them when updated next.)</li>
+			<li>If you're using GitHub, I recommend excluding your save file and profile folder. nar files will automatically exclude these, but you don't really want them on GitHub for the world to see.</li>
+		</ul>
+	</li>
+</ul>
 
-//FoodArray contains Carrots, Celery, an empty string, and Cucumbers
 
-"%(FoodArray[2])" //This would return an empty string
-"%(FoodArray[3])" //This would display 'Cucumbers' in dialogue
-</pre>
-	<p>As you can see, when you set an element of an array to "", it does not remove the element entirely, it simply sets it to an empty string. That means the other elements of the array will maintain their current positions, which is useful in some circumstances.</p>
-	
-	<p>Ok, back to the IARRAY function. As I said before, it can create empty arrays, too. Why do you need this? It's important for initializing your variables properly. Lets start a new ColorArray to demonstrate:
-<pre>
-ColorArray = ""
-//ColorArray is now an empty string
+<h2 id="check_thumbnails_for_ghost_shell_balloon">Check thumbnails for ghost, shell, and balloon</h2>
+<p>Thumbnails are something easily forgotten! Especially if you mostly just keep your own ghost open and don't switch around much. If you leave in a template thumbnail, it can really affect the first impression of your ghost and make it look as though it's not very polished. So, either make a thumbnail, or remove the thumbnail altogether!</p>
 
-ColorArray ,= "Gray"
-ColorArray ,= "White"
+<p>You don't <i>need</i> to include a thumbnail, but I highly recommend it. It's really useful for users to have a preview of what your ghost/balloon/shell is or looks like before they open it. You don't need to make it anything fancy! I never do, mine are pretty basic thumbnails that simply show what you'll get when you click, most of the time. For example, see <a href="https://ukagakadreamteam.com/wiki/ghost/iea">Iea</a> or <a href="https://ukagakadreamteam.com/wiki/balloon/thaw">Thaw's</a> thumbnails.</p>
 
-//ColorArray now contains an empty string, Gray, and White
+<p>Thumbnails are also nice for folks like wiki editors or event coordinators to use, as they have a quick image to represent your creation without having to make a new one! So if, say, you're making a ghost for Ghost Jam and it's going to be shared in a compilation post at the end, making a thumbnail means you're choosing how your ghost will be represented on that post!</p>
 
-"%(ColorArray[0])" //This will return an empty string
-</pre>
-	<p>As you can see, if you use ,= on an empty string, it leaves a blank element at the start of your array. That's frustrating! But the solution is simple. If you initialize ColorArray as an empty <i>array</i> rather than an empty <i>string</i>, it won't leave that empty element at the start.</p>
-<pre>
-ColorArray = IARRAY
-//ColorArray is now an empty array
+<p>Shell thumbnails are often forgotten, but I recommend making them as well. Especially if you have multiple shells, it's really nice for the user to have an idea of what style/look they'll get before they click. And even if you don't have multiple shells, you never know when someone else may make a shell for your ghost!</p>
 
-ColorArray ,= "Gray"
-ColorArray ,= "White"
 
-//ColorArray now contains Gray and White
+<h2 id="check_the_ghosts_icon">Check the ghost's icon</h2>
+<p>The icon is also often forgotten! Many many ghosts out there have the icon of the template they were made on, rather than their own.</p>
 
-"%(ColorArray[0])" //This will display 'Gray' in dialogue
-</pre>
-	<p>No more empty element! So if you need an empty array to add values to later, always initialize it with IARRAY.</p>
-	
-	<p>Alright, there's one more function for arrays that I want to show you before we move into loops, and that's ARRAYSIZE. ARRAYSIZE is just what it says on the tin; it tells you how many elements are in your array! Lets create a new array so I can demonstrate.</p>
-<pre>
-ExampleArray = ("Element 0","Element 1","Element 2","Element 3","Element 4")
+<p>You don't need to make your own icon! If you don't want to do this, then don't! But, I would recommend that you <i>remove the existing icon</i> rather than leaving it as template. SSP has a default bow and bell image it will use as the icon if there is none. And this looks a lot more polished than leaving it as a template icon!</p>
 
-_size = ARRAYSIZE(ExampleArray)
-//_size will now contain the integer 5
-</pre>
-	<p>Notice that even though we have elements 0-4, ARRAYSIZE returned 5. Why is that? Well, index numbers start at 0, but ARRAYSIZE counts <i>how many</i> elements are in the array. If you only had element 0 and it said 0, that wouldn't be accurate! There are 5 elements total in this array, even though the index number starts counting from 0. Be aware of this, as it's an easy source of off-by-one errors.</p>
 
-	<p>One more useful function. You <i>can</i> use the RAND function to get a random element from an array, like so:</p>
-<pre>
-_rand = RAND(ARRAYSIZE(ColorArray))
-//_rand now contains a random number, no higher than the last element of ColorArray
+<h2 id="check_links_in_right_click_menu">Check what links you have in the right click menu</h2>
+<p>This is another one that's really easy to forget. A lot of ghosts simply have template links in here! If you don't want links, just remove or comment those events entirely! It won't hurt anything; the tabs will simply be grayed out.</p>
 
-_color = ColorArray[_rand]
-//_color is now a random element from ColorArray, based on the number stored in _rand
-</pre>
-	<p>But there's a much easier way to write this if you just need a quick random selection. ANY will grab a random element from whatever array you give it.</p>
-<pre>
-_color = ANY(ColorArray)
-//_color is now a random element from ColorArray
-</pre>
-	<br>
-	<h3>Function Arrays</h3>
-	
-	<p>There is actually one more type of array you need to know about before we continue. Functions can be set up to return arrays, like so:</p>
-<pre>
-ColorArray : array
-{
-	"Red"
-	"Green"
-	"Blue"
-}
+<p>If you're not sure what to link, keep it simple. Links to yourself/your collaborators are handy, or if you have a place to find more info about your character (or maybe a wiki if it's a fandom character), those are good to have, or links for things like where to find more about ghosts. It doesn't need to be anything fancy!</p>
 
-"%(ColorArray[0])" //This would display 'Red' in dialogue
-"%(ColorArray[1])" //This would display 'Green' in dialogue
-"%(ColorArray[2])" //This would display 'Blue' in dialogue
-</pre>
-	<p>The thing about these arrays is that they are static. You cannot have the ghost modify anything about the actual array that's stored here. However, you can copy the contents of this array into a variable, and change that, if you want!</p>
-<pre>
-ColorArray : array
-{
-	"Red"
-	"Green"
-	"Blue"
-}
 
-_colors = ColorArray
-//_colors now contains the values Red, Green, and Blue
+<h2 id="check_for_shell_errors">Check for any lingering shell errors/warnings/notices</h2>
+<p>Shell errors. What a pain they are. And let me tell you, as much as they are a pain for you the dev, they can be even more annoying for your users. For some folks, shell errors are so grating as to make ghosts that have them completely unusable. Don't let that be your ghost!</p>
 
-_colors[1] = IARRAY
-//_colors now contains the values Red and Blue
-</pre>
-	<p>I have personally found this useful for things like pages in a book or changelog. I'll show off how this can be used at the end of this guide, with some examples.</p>
-	<br>
-		
-	<h3 id="loops">for Loops</h3>
-	
-	<p>Alright, on to loops! This is where stuff starts to get really fun. I'll run through all the loop types that AYA/YAYA offer, but for the purposes of interacting with arrays, you'll mostly use for and foreach.</p>
-	
-	<p>So, why would you want a loop? Loops are one of the most useful building blocks of programming. They let you execute the same code over and over as many times as you need! Want to display an inventory page where the number of items can change? Want to check if the user has guessed all the right letters in your hangman game? Want to read every line of a file to check for a specific string? Loops can do all that and so much more!</p>
-	
-	<p>We'll start with for loops. Personally, I always thought that 'for' was kind of a weird label. Things like if/else make intuitive sense to me, since you can say 'if X happens, then do this, else, do this' and it makes sense. It took me a while to find a good way to think about 'for', but here's what I eventually came up with: 'for every time X is true, do this'. It'll make more sense in a minute, I promise. Here's the basic structure of a for loop:</p>
-<pre>
-for _i = 0; _i < 10; _i++
-{
-	//Some code
-}
-</pre>
-	<p>That may look a bit confusing, but I'll break it down. A for loop has 4 parts. After the word 'for' are 3 sections separated by semicolons. These are the initialization, the condition, and the incrementor.</p>
-	
-	<p>The initialization in this loop is _i = 0. This will run one time before the loop starts, and is generally used to set up a variable to count how many loops have been done. So in this case, we create a new local variable called _i, and set it to 0.</p>
-	
-	<p>The condition in this loop is _i < 10. The condition is checked every time the loop ends. In the case of a for loop, if the condition is true, it will run the code in the loop again. So, after the code in the loop runs, if _i is less than 10, the loop will run again.</p>
-	
-	<p>The incrementor in this loop is _i++. The incrementor is run every time the loop ends and the condition is true. So, if _i is less than 10 in this loop, the incrementor will raise the value of _i by 1. The end result is that this loop will run 10 times and then stop!</p>
-	
-	<p>Finally, there's the code inside the brackets. That's the code that will be run over and over until the condition is false.</p>
-	
-	<p>Here's the thing though; all of the stuff I just mentioned is totally flexible. You can get really creative with your loops, you don't have to just do a simple count up like this! Here's an example of a for loop that would read every line in a file:</p>
-<pre>
-for _buff = FREAD(_file); _buff != -1; _buff = FREAD(_file)
-{
-	//Some code
-}
-</pre>
-	<p>I won't go into the specifics of reading files here, but for this loop, the initializer reads the first line of the file, the condition checks to make sure the end of the file has <b>not</b> been reached (FREAD will return -1 if the end of the file is reached), and the incrementor reads the next line of the file. You can do all kinds of creative loops like this!</p>
-	
-	<p>Alright, so why do we need a loop like this, anyways? Well, lets go back to arrays for a moment. Lets say we have an array that contains items the user has given their ghost today, and you want to display those items in a list when the user opens a certain menu. Here's a really simple setup for that:</p>
-<pre>
-_display = "" //Initialize a local variable to hold the display
+<p>Yes, shell errors can look scary and there can be lots of them, but very very often they have a simple cause, like having written the wrong numbers somewhere. They're often not that hard to solve! If you've got shell errors, set aside some time to go through them.</p>
 
-for _i = 0; _i < ARRAYSIZE(TodaysItems); _i++ //Loop through every element of the array
-{
-	_display += "%(TodaysItems[_i])\n" //Add the current element to a string, with a linebreak afterwards
-}
+<p>The really great thing about shell errors? Most (but not all) of the time, SSP's error log can point you pretty much right to the error! The errors are not always easy to understand, since the English translation is a bit rough, but if you look, they're usually pointing you to the exact animation, pattern, and line that the error occurs on! So that's a pretty good place to start looking. Often they will describe the error as well. <b>Take the time to read the error log, it is trying to help you!</b> (If what you're seeing is a "communication error", that's an error with AYA/YAYA/whatever SHIORI you're using. If you're using AYA/YAYA, try <a href="https://ukagakadreamteam.com/wiki/tool/tama_umeici">Tama</a> to figure out what the actual issue is.)</p>
 
-"Here are the items you've given me today:\n\n%(_display)\e"
-</pre>
-	<p>Just that small amount of code will display every item in the TodaysItems array, no matter how many items the user has given the ghost! And this is only scratching the surface of what's possible.</p>
-	
-	<p>I briefly mentioned before that you can use variables as index numbers for arrays. Loops are where that's extremely useful! Since _i in this loop always has the number of the loop we're currently on, you can use _i to get each element of the array in order as the loop continues to execute.</p>
-	
-	<p>One more thing before we move on. Beware of infinite loops! An infinite loop happens when the condition of the loop is never false. The loop will run forever, and it will crash SSP. Here's an example of an infinite loop:</p>
-<pre>
-for _i = 0; _i > -1; _i++
-{
-	//Some code
-}
-</pre>
-	<p>Since _i is counting up, it will always be greater than -1, and this loop will never stop running. Always test your loops thoroughly!</p> 
-	<br>
-	
-	<h3>foreach loops</h3>
-	
-	<p>If all you need is a simple display like the item list above, you might be able to simplify your loop to a foreach loop! foreach loops are specifically for arrays, both simple and general purpose. They run once for every element of the array, and then stop. You can set up a foreach loop like this:</p>
-<pre>
-ColorArray = ("Red","Green","Blue")
+<p>Occasionally, the error will actually be wrong, depending on what kind of error it is. Don't be afraid to reach out and get help with solving shell errors! Lots of folks on the <a href="https://ukagakadreamteam.com/wiki/info/ukagaka_dream_team#where_to_find_us">Ukagaka Dream Team Discord server</a> have experience with fixing these and can help you.</p>
 
-foreach ColorArray; _color
-{
-	//Some code
-}
-</pre>
-	<p>This one is simple. There are two parts, the array you want to read, and the variable you want to store the current element in. So this loop means 'for every element in the array ColorArray, store the current element in _color, and run this code'. When the loop runs the first time, _color will be "Red". Then it'll run again, and _color will be "Green". Then it'll run one last time, and _color will be "Blue".</p>
-	
-	<p>foreach loops are a great way to simplify a simple item display like the one we made above! Lets recreate it with a foreach loop.</p>
-<pre>
-_display = "" //Initialize a local variable to hold the display
+<p>A very common issue I see that causes <i>all sorts</i> of confusing errors, is trying to use same-line comments in surfaces.txt. surfaces.txt does not support same line comments! So if you're rooting around in your shell code and you find comments that are not on their own line, try moving them to their own line before anything else. I have personally seen this clear up <i>many</i> confusing errors straight away.</p>
 
-foreach TodaysItems; _item //Loop through every element of the array, store the current item in _item
-{
-	_display += "%(_item)\n" //Add the current element to a string, with a linebreak afterwards
-}
+<p>I also want to make the note: errors in SSP's error log accumulate over time! Try clicking the <code>delete</code> button on the error log to clear the errors, and then reload your ghost again. That will show just the current errors, and not any previous ones that may already have been resolved. That may help to make it a lot less overwhelming.</p>
 
-"Here are the items you've given me today:\n\n%(_display)\e"
-</pre>
-	<p>That's a lot tidier! It's also safer than a for loop, since this will never result in an infinite loop. Sometimes it's more useful to have a for loop, though. A foreach loop like this can't read a file like the for loop I showed earlier. Also, sometimes you just really need that index number for things like dynamic menus!</p>
-	<br>
-	
-	<h3>while loops</h3>
-	
-	<p>There is one more type of loop, and it might be easier for you to grasp if you aren't so sure about for and foreach loops. The while loop is simple, you only need one thing: A condition.</p>
-<pre>
-_i = 0
-while _i < 10
-{
-	//Some code
-	_i++
-}
-</pre>
-	<p>When you set up a while loop, the only thing you need to give it is a condition. That while loop will run as long as the condition is true. while loops are a bit more dangerous than for loops, since it's much easier to get into an infinite loop! You must be very careful when setting up while loops. When I start a new while loop like this, the first thing I do is make sure that it will not run infinitely.</p>
-	
-	<p>You may notice that this while loop does the exact same thing as the for loop I showed you. First I declare _i before the loop starts, then it checks if _i is less than 10, and if so it will run the code inside the brackets. Then I also added _i++ to increment _i every time the loop runs, so that it doesn't run forever. You could easily write this as a for loop instead! I usually do, since I think it keeps my code neater. It's really up to your personal preference, though. They say you're supposed to use for loops when you know the number of loops you need to run, and while loops when the number of loops is unknown, but for the purposes of ghost coding I don't think it matters that much. Write whatever loop you feel most comfortable with.</p>
-	
-	<p>Alright, lets write that same example of a simple item display with a while loop.</p>
-<pre>
-_display = "" //Initialize a local variable to hold the display
-_i = 0 //Start a variable to keep track of the index
+<p>It's worth the effort to have an error-free shell! If you've been listening to that annoying error sound every time you reload your ghost, let me tell you, it's a huge relief when you finally reload it and there are no errors at all. Blissful silence.</p>
 
-while _i < ARRAYSIZE(TodaysItems) //Loop through every element of the array
-{
-	_display += "%(TodaysItems[_i])\n" //Add the current element to a string, with a linebreak afterwards
-	_i++ //Increment _i so we don't make an infinite loop
-}
 
-"Here are the items you've given me today:\n\n%(_display)\e"
-</pre>
-	<p>There you go! That's the basic logic behind loops.</p>
-	<br>
-	
-	<h3>Break and Continue</h3>
-	
-	<p>There are two more commands you need to know, and they can be used with any type of loop. Break is a command that will stop the currently running loop. This is good for preventing infinite loops, or for ending a loop once you've completed an objective, so that it doesn't need to waste time running the loop again (big loops can noticably impact performance, so this is very useful). Here's an example with a while loop:</p>
-<pre>
-_i = 0
+<h2 id="its_time">All of that look good? Then it's time!</h2>
+<p>Package your nar file and distribute it to the world!</p>
 
-while _i > 0
-{
-	if _i > 100
-	{
-		break
-	}
-	_i++
-}
-</pre>
-	<p>This loop is not set up properly. Since _i will always be greater than 0, the loop would run infinitely. However, we've included a break command to prevent that! Once _i is greater than 100, it will run the break command, and the loop will end. Note: if you have multiple loops nested in each other, the break command will only apply to the specific loop that it's in. So if you put your break command in the innermost loop, it will only break the innermost loop.</p>
-	
-	<p>Similar to the break command is the continue command. This will skip the current loop, and go straight to the next iteration of the loop. For example, if you wanted to display a list of even numbers, you could do this:</p>
-<pre>
-_display = ""
+<p>I personally recommend using GitHub releases to distribute your ghost. It's easy to use if you've got a repository for your ghost, easy for users to find what they need to download, and it even will count downloads for you (though you'll need to use something like <a href="https://shields.io/badges/git-hub-all-releases">shields.io</a> to actually see the numbers).</p>
 
-for _i = 0; _i < 10; _i++
-{
-	if _i % 2 != 0 //This checks if the number is not even
-	{
-		continue
-	}
-	_display += "%(_i) "
-}
+<p>Even if you don't go with GitHub, I recommend using something where you can change the download after the fact! Why? Well... Let's imagine you upload your ghost to somewhere like MediaFire, and then you link that MediaFire file in a post on Tumblr. Then that post gets reblogged by a bigger blog, and gets hundreds of notes. Great! ... And then weeks or months later, your homeurl gets broken, or you find a really bad bug and you want to update the version that people will likely find and install first, or maybe, even, you decide you want to pull the ghost from the internet entirely. You can't do that if someone else has already reblogged your ghost. The link is what it is and you can't change it. Yes, I am speaking from personal experience and regret on this one. Don't let it be you.</p>
 
-"%(_display)"
-</pre>
-	<p>The loop will run 10 times, but any time the number in _i is odd, it will go back to the top of the loop, run the incrementor, and start again. If you're writing a while loop, be careful! If your incrementor is at the bottom of the loop, you might end up skipping it, causing an infinite loop.</p>
-	
-	<p>And that's that for simple loop logic! Now, how about some examples of loops and arrays together, where they really shine?</p>
-	<br>
-	
-	<h3>Dynamic Menus</h3>
-	
-	<p>You don't have to read the rest of this if you don't want to, some of it is pretty complex. This is just some examples of how I've used the concepts discussed above! If you're interested in seeing how these bits of code work, you should copy them into your own ghost and experiment with them.</p>
-	
-	<p>I love dynamic menus, and if you've used any of my ghosts, you've probably noticed. So how do those work? Here's a simple example, a dynamic menu that will display all of the shells that a ghost has installed and allow the user to click the buttons to change to the various shells. If you want to see a menu like this in action, check out Hydrate!</p>
-<pre>
-On_installedshellname //This SHIORI event is notified when the ghost starts, and lists all the shells as reference values
-{
-	ShellList = IARRAY //Declare an empty array
-	foreach reference; _shell //Each shell is in it's *own* reference value, but you can use a foreach loop like this to gather each one since reference is an array!
-	{
-		ShellList ,= _shell
-	}
-}
+<p>Instead, consider setting up a little webpage for your ghost. It doesn't need to be anything fancy! I even have a little website template and guide on how to set it up on my <a href="../guide/network_updates_with_github.html">guide for network updates with github</a>. With a website, you could use that as the link in your Tumblr post. Then no matter what happens, you can always update your website with new information, a new nar file, whatever! This keeps the control in your hands.</p>
 
-OnShellMenu //The actual menu displaying the shell names
-{
-	_display = ""
-	foreach ShellList; _shell //Go through every element of the array we made earlier
-	{
-		if _shell == nowshell; _display += "\![*]" //If this is the current shell, add a choice marker to show that it's in use
-		_display += "\q[%(_shell),OnSwitchShell,%(_shell)]\n" //Add a button for this shell. Note that the name of the shell is also the third argument here; this will be used to send it to the OnSwitchShell function as reference0
-	}
-	--
-	"\0\*\_q\![set,autoscroll,0]" //Some starting tags before we get into the dynamic content. These set the character to the Sakura, prevent the balloon from timing out, display the menu instantly, and prevent the balloon from scrolling on its own (so the user sees the top of the menu first), respectively.
-	--
-	//These ARRAYSIZE checks here check how long the list is, and will choose bigger balloon sizes if the list is long. The biggest one will also add a back button at the top of the menu, so you don't have to scroll too long.
-	if ARRAYSIZE(ShellList) > 16; "\b4\n\n[half]\![*]\q[Back to menu,OnMenuRun]"
-	elseif ARRAYSIZE(ShellList) > 11; "\b4"
-	else; "\b2"
-	--
-	"\_l[53]---Shells---"
-	--
-	"\n\n[half]%(_display)" //The actual dynamic content
-	--
-	"\n\n[half]\![*]\q[Back to menu,OnMenuRun]\n\![*]\q[Nevermind,Cancel]\e" //Back and cancel buttons at the end of the menu
-}
+<p>A note for folks in our Discord server: this is why I also do not recommend directly attaching nar files to your messages! Once you've sent the message you can't edit the file <i>at all</i> unless you make a whole new post. It's a real pain, don't let it be you!</p>
 
-OnSwitchShell //When one of the buttons in the menu is clicked, this function will be called. Since the shell name is sent as reference0, all this needs is a single command!
-{
-	"\![change,shell,%(reference0)]"
-}
-</pre>
-	<p>Pretty neat, right? No matter how many shells the user installs for this ghost, they'll always show in this menu. Even if they're shells you don't know about and didn't plan for!</p>
-	
-	<p>Where I think arrays are most useful is dealing with user content. Lets say you have a game of hangman, and you want the user to be able to put in their own words to guess. Here's a little set of functions that would let you add, edit, and remove words from the list.</p>
-<pre>
-OnHangmanWords
-{
-	_display = ""
-	for _i = 0; _i < ARRAYSIZE(HangmanWords); _i++ //Gets each word that is stored in the HangmanWords array. Note that I'm using a for loop and not a foreach loop, because I need the number in _i!
-	{
-		_display += "\q[(x),OnRemoveWord,%(_i)] \q[%(HangmanWords[_i]),OnEditWord,%(_i)]\n"
-	}
-	
-	"\0\*\_q\![set,autoscroll,disable]List of hangman words:"
-	--
-	"\n\n\![*]\q[Add a word,OnAddWord]"
-	--
-	"\n\n%(_display)"
-	--
-	"\n\n\![*]\q[Back to menu,OnMenuRun]\e"
-}
+<p>A note for folks that are using GitHub releases: If you make a link with this format: <code>https://github.com/(username)/(repository)/releases/latest</code>, users will be taken to your most recent release when they click it! This is the way I do it personally, these days, and I'm finding that it makes life very simple for me. I still link everything to my website so that users get the full context for what my ghost is, etc., but I no longer have to change the download links after I set them up once.</p>
 
-//---Adding a word---
-OnAddWord
-{
-	"Type a word to add to the list."
-	--
-	"\![open,inputbox,OnWordAdded,-1]\e" //Opens an input box
-}
+<p>One final thing. On the <a href="https://ukagakadreamteam.com/wiki/home">Ukagaka Dream Team Wiki</a>, we only share things that are considered <b>public</b> releases. That means they have to be available somewhere on the internet at large, not just in our Discord server. If you're wanting your ghost to be eligible for a wiki page, the best thing to do is make a website or social media post for it! But if you're wanting to keep your ghost private, then you should either attach the nar directly in the server, or use something like MediaFire or Dropbox and only share the link within the server.</p>
 
-OnWordAdded
-{
-	HangmanWords ,= reference0 //Adds the word to the array
-	"\![raise,OnHangmanWords]" //Goes back to the word menu
-}
+<p>If you don't have anywhere else to share your ghost online and you want to use the <a href="https://ukagakadreamteam.com/wiki/home">Ukagaka Dream Team Wiki</a> as a release platform, that can be done! You'll need to upload your nar file to somewhere like MediaFire or Dropbox, and inform a moderator that you want it to be released publicly. We will assume such links are private until told otherwise.</p>
 
-//---Editing a word---
-OnEditWord
-{
-	Temp = TOINT(reference0) //Stores the index number in a temporary variable. Have to do this because you can't send references through input boxes. Also note that reference0 will be a string because it was sent from a sakurascript!
-	
-	"Editing: %(HangmanWords[reference0])."
-	--
-	"\![open,inputbox,OnWordEdited,-1,%(HangmanWords[reference0])]\e" //Opens an input box. Note the argument after the -1, that makes it so that the word that's being edited will already be in the inputbox when it opens, so the user can edit it more easily.
-}
+<h2 id="conclusion">Conclusion</h2>
+<p>And that's all! I know that's a lot, but most of these steps aren't really all that involved, they're simple checks for things you may have already done. I made this list because, as someone who has released around 20 ghosts at the time of writing, I have learned a lot of tricks to make ghost releases go more smoothly, and what sorts of issues to look out for!</p>
 
-OnWordEdited
-{
-	HangmanWords[Temp] = reference0 //Change the specific word that was being edited
-	ERASEVAR("Temp") //Erase the temp var because we don't need it now
-	"\![raise,OnHangmanWords]" //Goes back to the word menu
-}
+<p>I always find myself scrambling during Ghost Jams, struggling to remember what all the steps are, so I hope that having this list written down outside my head will help me remember everything I need to do and soothe the release day jitters. I hope it can do that for you, too! Release day is a big day, and if you've done everything on this list, then congratulations and good luck!</p>
 
-//---Removing a word---
-OnRemoveWord
-{
-	HangmanWords[reference0] = IARRAY //Removes the chosen word
-	"\![raise,OnHangmanWords]" //Goes back to the word menu
-}
-
-//When you start a game of hangman, you can pick a random word from the list with _word = ANY(HangmanWords). Make sure you check that the array isn't empty, first!
-</pre>
-	<p>You can do all kinds of stuff with lists like this! Go crazy with it! You might want to add some checks to make sure the user doesn't put in anything dangerous, like sakurascript tags, but there's a lot of potential here as long as you're careful!</p>
-	
-	<p>Alright, so what about those function arrays I mentioned earlier? How are those helpful? Let me show you a simplified version of a shop system I set up for one of my ghosts. I wanted to be able to easily add new items to the shop, without having to hardcode a bunch of menus. So, I made a big array of items, and a menu that decodes that array to figure out what to display!</p>
-<pre>
-ShopItems : array
-{
-	//Name,Category,Price,Unlock condition(1 for always unlocked),Sold out condition (-1 for never sold out)
-	//Important note: If you have an envelope like %(hour < 5), it will display 1 if the hour is less than 5 and 0 if the hour is 5 or more. This is really useful for making items only available when certain conditions are met!
-	
-	//Also notice the local variables here. If I decided I wanted to change the price of all cheap items to 15, I'd only have to change the value here and it would automatically apply to every item that's using %(_pricecheap)
-	_pricecheap = 20
-	_pricemid = 50
-	_priceexpensive = 100
-	
-	"Sweater,Clothing,%(_priceexpensive),1,%(ASEARCH('Sweater',Inventory))" //These two will always be available, since their unlock condition is just 1. They will not appear in the shop if already purchased, thanks to an ASEARCH command checking if they're already in your inventory
-	"Hoodie,Clothing,%(_priceexpensive),1,%(ASEARCH('Hoodie',Inventory))"
-	
-	"Juice,Consumables,%(_pricecheap),%(timeslot == 'earlymorning' || timeslot == 'morning'),-1" //Is only available in the morning, never sells out
-	"Water,Consumables,%(_pricecheap),1,-1" //Always available, never sells out
-}
-
-OnShopMenu
-{
-	_items = ShopItems //Store the items in a temp array
-	if reference0 == ""; reference0 = "Consumables" //Sets it to the consumable page if reference0 is empty
-	_display = ""
-	
-	for _i = 0; _i < ARRAYSIZE(_items); _i++
-	{
-		_current = _items[_i] //Get the current element of the array
-		//Here's where simple arrays come in handy! Now that _current has the whole array entry, which is separated by commas, I can easily pick out individual values!
-		_name = _current[0]
-		_category = _current[1]
-		_price = _current[2]
-		_unlock = _current[3]
-		_soldout = _current[4]
-		
-		if _unlock == "1" //If the item is unlocked
-		{
-			if reference0 == _category //Checks to make sure we're looking at the right category. You'll only see consumables on the consumables page, and you'll only see clothing on the clothing page
-			{
-				if _soldout != -1 //If the item is sold out. The reason I have this check for -1 is that ASEARCH returns -1 if it does not find anything, and I use ASEARCH to check if items already exist in the inventory.
-				{
-					_display += "\f[color,150,150,150]%(_name) (Sold out)\f[default]\n" //Adds the name of the item, but grayed out
-				}
-				else
-				{
-					_display += "\q[%(_name),OnBuyItem,%(reference0),%(_i)] ($%(_price))\n" //Adds the item as a clickable button. Note that clicking this sends the value that already exists in reference0 as reference0. This keeps us on the same menu page!
-				}
-			}
-		}
-	}
-	
-	"\0\b2\_q\*\![set,autoscroll,disable]"
-	--
-	"\![*]\q[Clothing,OnShopMenu,Clothing]  \![*]\q[Consumables,OnShopMenu,Consumables]\n\n" //These buttons let you change what page you're on by calling this function again with a different value in reference0
-	--
-	"%(reference0):" //The title of the current category we're in
-	--
-	"\n\n%(_display)" //The dynamic content
-	--
-	"\n\n\![*]\q[Back to menu,OnMenuRun]\e"
-}
-
-OnBuyItem
-{
-	_current = ShopItems[reference1] //Get the array entry the user clicked on
-	_name = _current[0]
-	_category = _current[1]
-	_price = _current[2]
-	
-	if _category == "Clothing"
-	{
-		Inventory ,= _name //Add the clothing that was purchased to the inventory
-	}
-	
-	money -= TOINT(_price) //Make the price an integer and subtract it from the user's money
-	
-	"You bought the %(_name)!\x\![raise,OnShopMenu,%(reference0)]"
-}
-</pre>
-	<p>This is an extremely simplified example, you'd have to add checks to make sure the user actually has enough money and such, but you can see what sorts of potential there is here! You could add hundreds of items just by adding new entries to the array, and the menu would just handle it! You could add more pages, lots of different unlock conditions, special dialogue for every item, whatever you want to do. And all of it would be super flexible and easy to change.</p>
-	
-	<p>This is all just a small sample of what is possible with arrays and loops. Go forth and make something awesome! The AYAYA Wiki has <a href="http://emily.shillest.net/ayaya/index.php?%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB/%E9%96%A2%E6%95%B0%E7%94%A8%E9%80%94%E5%88%A5%E4%B8%80%E8%A6%A7">a page with all of the functions in AYA/YAYA</a>, and it includes a section for functions that manipulate arrays. Give those a read if you're interested in more stuff you can do with arrays! If you have any questions about the information in this guide, feel free to contact me at the links below, or on the <a href="https://ukagakadreamteam.tumblr.com/discord">Ukagaka Dream Team Discord Server</a>. I love talking about this stuff, and there are some other folks on the discord who are also knowledgable about arrays and loops and can help you with them!</p>
 
 </article>
 
