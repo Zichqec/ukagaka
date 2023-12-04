@@ -70,7 +70,7 @@ function makeIndex(item)
 		}
 	}
 	
-	if (pagetype == "ghost")
+	if (pagetype == "ghost" || pagetype == "template")
 	{
 		if (item.translations != null)
 		{
@@ -84,7 +84,14 @@ function makeIndex(item)
 				{
 					output += `, `;
 				}
-				output += `${item.translations[i].spoken_language}`;
+				if (item.translations[i].download == null)
+				{
+					output += `${item.translations[i].spoken_language}`;
+				}
+				else
+				{
+					output += `<a href='${item.translations[i].download}'>${item.translations[i].spoken_language}</a> (Separate release)`;
+				}
 			}
 		}
 	}

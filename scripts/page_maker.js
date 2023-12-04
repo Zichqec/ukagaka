@@ -131,7 +131,7 @@ function ItemInfo()
 		<b>Content warnings: </b> ${currentpage.content_warnings}`;
 	}
 
-	if (pagetype == "ghost")
+	if (pagetype == "ghost" || pagetype == "template")
 	{
 		if (currentpage.translations != null)
 		{
@@ -145,7 +145,15 @@ function ItemInfo()
 				{
 					output += `, `;
 				}
-				output += `${currentpage.translations[i].spoken_language} (by <a href='${currentpage.translations[i].translator.creditlink}'>${currentpage.translations[i].translator.name}</a>)`;
+				if (currentpage.translations[i].download == null)
+				{
+					output += `${currentpage.translations[i].spoken_language} (by <a href='${currentpage.translations[i].translator.creditlink}'>${currentpage.translations[i].translator.name}</a>)`;
+				}
+				else
+				{
+					output += `<a href='${currentpage.translations[i].download}'>${currentpage.translations[i].spoken_language}</a> (Separate release, by <a href='${currentpage.translations[i].translator.creditlink}'>${currentpage.translations[i].translator.name}</a>)`;
+				}
+				
 			}
 		}
 	}

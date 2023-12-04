@@ -91,19 +91,23 @@ let item_details = [
 		translations: [
 			{
 				spoken_language: "Polski",
-				translator: Zdzisiu
+				translator: Zdzisiu,
+				download: null
 			},
 			{
 				spoken_language: "Français",
-				translator: {name: "Levidre", creditlink: "https://levidre.github.io/"}
+				translator: {name: "Levidre", creditlink: "https://levidre.github.io/"},
+				download: null
 			},
 			{
 				spoken_language: "Deutsch",
-				translator: Koguri
+				translator: Koguri,
+				download: null
 			},
 			{
 				spoken_language: "Русский",
-				translator: SmokyCinnamonroll
+				translator: SmokyCinnamonroll,
+				download: null
 			}
 		],
 		content_warnings: null,
@@ -324,7 +328,8 @@ let item_details = [
 		translations: [
 			{
 				spoken_language: "Deutsch",
-				translator: Koguri
+				translator: Koguri,
+				download: null
 			}
 		],
 		content_warnings: null,
