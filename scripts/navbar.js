@@ -137,7 +137,8 @@ function toggleSpaceMode() {
 	if (theme && theme === "space_mode")
 	{
 		localStorage.setItem("theme", "purple");
-	} else
+	}
+	else
 	{
 		localStorage.setItem("theme", "space_mode");
 	}
