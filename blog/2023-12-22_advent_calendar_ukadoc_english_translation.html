@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Zi's Ukagaka Space"/>
+    <meta property="og:description" content="Zi's hub for ukagaka"/>
+    <meta property="og:url" content="https://zichqec.github.io/ukagaka/"/>
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png"/>
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<!-- <article> -->
+
+
+<!-- <div id="item_info"></div> -->
+<!-- </article> -->
+<article>
+<h1>Advent Calendar 2023 - Ukadoc English Translation Completed</h1>
+<p>This article is for the 22nd day of the <a href="https://adventar.org/calendars/8679">伺か Advent Calendar 2023</a>. Yesterday's article was written by steve green, and was about using Ghost Terminal. Today's article will be about the long-awaited completion of a certain translation project.</p>
+
+<p>The Ukagaka Dream Team has completed a project to create an English translation of Ukadoc! The completed translation is viewable <a href="https://ukagakadreamteam.github.io/ukadoc/manual/index.html">here</a>. Every page has been translated, including all of the images.</p>
+
+<p>This translation is not perfect, and will continue to be updated over time if improved translations are provided, or new information is added to the original Ukadoc. Anyone that is willing to contribute is welcome to do so on <a href="https://github.com/ukagakadreamteam/ukadoc">the project's GitHub Repository</a>! Or if you don't know how to work GitHub, contacting me through our <a href="https://ukagakadreamteam.com/wiki/info/ukagaka_dream_team#where_to_find_us">Discord server</a> or other means is fine too.</p>
+
+<p>If you would like to learn more of how this project came to be, as well as special thanks and other notes, please read onwards.</p>
+
+<h2 id="index">Index</h2>
+<ol>
+	<li><a href="#why_does_this_matter">Why does this matter?</a></li>
+	<li><a href="#inital_project_goals">Initial project goals</a></li>
+	<li><a href="#completing_the_translation">Completing the translation</a></li>
+	<li><a href="#what_i_learned_during_this_project">What I learned during this project</a></li>
+	<li><a href="#special_thanks">Special thanks</a></li>
+	<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+
+
+<h2 id="why_does_this_matter">Why does this matter?</h2>
+
+<p>Ukadoc is pretty ubiquitous in ghost dev communities, but I think there are some English developers that aren't fully aware of what it is, so I will explain briefly here.</p>
+
+<p>Ukadoc is one of the most important resources that a ghost developer has at their disposal. It is the official documentation for SSP, and it covers everything that is handled by the baseware (usually SSP). This means it documents things like what SHIORI Events you can use and what they do, what SakuraScript tags are available, and more.</p>
+
+<p>I think most English developers are probably familiar with at least the SHIORI Events List and SakuraScript List, but it is so much more than that. It has information on other files like descript.txt, install.txt, surfaces.txt, etc. It has examples on how you should set up the file structure of ghosts, balloons, etc., an explanation of how SHIORI Events work, and whole guides on how to do various things like create nar files and set up network updates.</p>
+
+<p>There is a <i>ton</i> of information contained in this document, it's enormous. It covers pretty much everything except for the specifics of the SHIORI that you're using (AYA, YAYA, Kawari, Satori, <a href="https://gist.github.com/Tatakinov/cbaabd07069161e316a690b0e1ccbb69">etc.</a>). If you're a ghost developer and you haven't spent some time browsing Ukadoc, you are doing yourself a disservice, and you should go and have a look at it.</p>
+
+<p>So, why haven't English ghost developers typically done this? Well, simply put, our only way to browse Ukadoc in the past was through machine translation. Machine translation does an ok job with technical documentation, but it was still very difficult to navigate, especially if you weren't already somewhat familiar with ghost development.</p>
+
+<p>Even if you could navigate to the information you needed, it was often difficult to parse. Machine translation often says things in awkward ways that are not intuitive. It also frequently mangles ukagaka-specific terms because it doesn't know what they are. "伺か" (ukagaka), for example, is often translated as "kikaka", "shikaka", "visitor", etc., because DeepL and Google Translate don't know what an ukagaka is. Terms like SHIORI often come out as "bookmark", which is especially confusing if you're not familiar with it.</p>
+
+<p>Some people do alright at parsing the strange output of machine translated text. But for other folks, it's impenetrable, and that meant that there were several English ghost developers that were cut off from a major source of information. I wanted to change that.</p>
+
+
+<h2 id="inital_project_goals">Initial project goals</h2>
+
+<p>I think everyone wished for an English translation of Ukadoc for as long as we've known about Ukadoc's existence. I've seen brief mentions of it all the way back as far as late 2018, before I even became an active ghost developer. But it was always seen as an extremely large project, which would be impossible to complete. So, nothing happened for years.</p>
+
+<p>I started kicking around the idea of maybe making a translation myself, probably sometime in 2021. I don't know Japanese, but I figured that since I'm usually pretty good at working out the meaning of Ukadoc through machine translation, I could use machine translation and correct the details it gets wrong, and make it sound a bit more natural. Still, it was a daunting task, and I was busy with other work, so I didn't commit to it.</p>
+
+<p>At the start of 2022, the idea of working on translating Ukadoc as a group project came up, and I started a fork of the Ukadoc repo to facilitate this. My goal was to focus on translating two of the pages that English developers used the most: the SHIORI Events List and SakuraScript List. <a href="https://github.com/Ayakamtka">ayakamtka</a> joined me on the project, and started work on translating the SakuraScript List.</p>
+
+<p>Unfortunately, due to some personal events in 2022, I wasn't able to contribute much to the project at that time. I mostly advised when questions about the content came up, and maintained the repo, learning from steve green how to keep it up to date with the original version of Ukadoc. Over the course of about a year, ayakamtka translated both the SakuraScript List and SHIORI Event List, as well as the Index page and a few other misc things. He does actually know Japanese, so the quality of translation on those pages is very good.</p>
+
+<p>If you're not familiar with Ukadoc's directory, you may not know that those two pages make up almost half of the document, being approximately 550mb. This was a huge accomplishment, and even having just these few pages translated was a huge boon for the English community.</p>
+
+
+<h2 id="completing_the_translation">Completing the translation</h2>
+
+<p>At this point in the project, the two biggest pages were done, and I was starting to realize both how useful a full translation would be, and that it was within our grasp. From this point on, the project fell to me, and I started working on it every Thursday in about June of 2023.</p>
+
+<p>By this point I had learned a lot about the pitfalls of machine translation from ayakamtka, and that it was worse than I had imagined at the start. But I have a lot of practical experience with ghosts, so I decided to press forward, and test carefully to verify the accuracy of translations where I could.</p>
+
+<p>I decided to start with the largest pages first (skipping the External SHIORI Events List, as it would be difficult to translate and also was not a high priority page), and work my way down to the smaller ones. Progress was slow at first, but after I completed the surfaces.txt page, the pages started to be small enough that I could usually complete a single page within a day of work. So I kept at it, and progress came along steadily for a while.</p>
+
+<p>Unfortunately, due to more personal issues, I wasn't able to complete the translation as early as I wanted to. But I did manage to push through, and completed it earlier this month! The last 15 pages were so small that I was able to complete them all within 2 days.</p>
+
+
+<h2 id="what_i_learned_during_this_project">What I learned during this project</h2>
+
+<p>I learned a lot as a result of this project. I'd never done a translation project before this, and I didn't expect it would teach me so much.</p>
+
+<p>First of all, machine translation is really bad. Really, really bad. I know there have been a lot of advancements, but as I said earlier, when it comes to something like ukagaka where it just isn't familiar with any of the terms, it struggles a lot. It turned out ok for this project, because this was technical documentation that I was working with and I could verify the results of the translation, but this article is not about translating ghosts themselves. Ghosts are art projects and therefore inherently much more difficult to translate via machine translation, because you cannot verify for yourself the accuracy unless you speak the language.</p>
+
+<p>I learned a bit about the Japanese language and some of the ways it differs from English, which was really interesting. I also realized that English text tends to be a lot more horizontal! This came up frequently, when translated passages would suddenly be a lot wider than what they had been.</p>
+
+<p>Japanese also seems to have a lot more information in each sentence, and so the output from machine translation would frequently include run-on sentences that were difficult to parse. I had to do a lot of work splitting up those sentences into something more manageable! So even though DeepL did a lot of the work for me, I still needed to work on my technical writing skills in order to make the output easy to understand. Fixing up the output of machine translation isn't an easy task to do well!</p>
+
+<p>I learned a lot about the sorts of choices that translators and localizers make. There are some things that I had to change because they simply would not make sense for an English audience. I tried to keep these minimal, but at times they were necessary. I've become pretty fascinated with the mechanics of translation itself, and all those choices that translators make to help a work be better understood by the target audience. I think <a href="https://www.youtube.com/watch?v=pU9sHwNKc2c">this video</a> (available in both English and Japanese!) explains some of what I mean. One day I hope to learn even more!</p>
+
+<p>I also learned how to use some features in GitHub! This wasn't my first time managing a repository, but it was my first time managing a fork. I had to learn how to keep our repository up to date, so that we could keep up with new events, tags, and options that were being added over the ~2 years that we worked on this project. GitHub isn't very user friendly, but with some help I was able to learn what I needed. (Although, at one point I got confused and accidentally overwrote the main Ukadoc repository with our English translation, which was very embarrassing and I am still sorry for it! Lesson learned: double check which direction changes are going in before you finalize them.)</p>
+
+
+<h2 id="special_thanks">Special thanks</h2>
+
+<p>I would like to extend thanks to several folks that helped with this project, even though they were not directly involved.</p>
+
+<p>steve green helped me learn a lot of things about GitHub, and it was with their help that I was able to get my footing and learn how to manage our repository.</p>
+
+<p>Ponapalt, Nikolat, Nanachi, and a few other folks on Ukadon answered some of the questions I had about SSP, and about various translations that I couldn't make sense of through machine translation. There are several sections of the document that could not have been translated without their help.</p>
+
+<p>And finally, my friend Galla who was there behind the scenes to give me moral support, and occasionally spotted some typos in various pages when I finished translating them. I would have given up long ago without them to fuel my fire and keep me working on it, week after week after week.</p>
+
+<p>My deepest thanks to everyone who helped this to come together. This would not have happened without all of your support!</p>
+
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>That's all there is to say about the project for now! As I said at the start, I intend to keep our translation up to date as new information is added, so maintaining the English version of Ukadoc will be an ongoing project in the future. It is my hope that having this document be more accessible to an English audience will pave the way for more (and better) English-speaking ghosts, and that the English community will thrive in the coming years.</p>
+
+<p>I'd like to talk more about the growth of the English community and our accomplishments this year, so please join me again tomorrow for an article on that topic!</p>
+
+<p>Thank you for reading.</p>
+</article>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+<script src="../scripts/credits.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>
