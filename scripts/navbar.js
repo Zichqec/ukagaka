@@ -33,6 +33,7 @@ let links = [
 		{path: 'blog/2022-12-23_advent_calendar_wiki_release', title: "Advent Calendar 2022 (#01)"},
 		{path: 'blog/2022-12-24_advent_calendar_yaya_fundamentals_release', title: "Advent Calendar 2022 (#02)"},
 		{path: 'blog/2023-12-22_advent_calendar_ukadoc_english_translation', title: "Advent Calendar 2023 (#00)"},
+		{path: 'blog/2023-12-23_advent_calendar_summary_of_2023', title: "Advent Calendar 2023 (#01)"},
 	]},
 	{title: "Space Mode Toggle"}
 ];
