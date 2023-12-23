@@ -5,7 +5,7 @@
 
 //Argument 0: The real number to display
 //Argument 1: The number of digits to display after the decimal point, by force. This is optional, and is used if you want it to, say, always display 3 digits after the decimal point, whether they are 0s or not. YAYA only tracks up to 6 digits after the decimal, but if you specify more for some reason this function will add additional 0s to match the length you specified.
-//Argument 2: Whether numbers with no non-zero digits after the decimal point should be displayed like "1.0" or like "1" (whole number). 0 or blank to display like "1.0", 1 to display as a whole number. This setting only applies if argument 2 is blank.
+//Argument 2: Whether numbers with no non-zero digits after the decimal point should be displayed like "1.0" or like "1" (whole number). 0 or blank to display like "1.0", 1 to display as a whole number. This setting only applies if argument 1 is blank.
 
 //Examples:
 //DisplayReal(Temperature,2)
