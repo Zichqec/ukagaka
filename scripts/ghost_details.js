@@ -191,8 +191,8 @@ let item_details = [
 	{
 		name: "KEEP FROZEN",
 		release: "May 2nd, 2023",
-		latest: "December 25th, 2023",
-		version: "1.1.0",
+		latest: "December 30th, 2023",
+		version: "1.1.1",
 		forevent: "Ghost Masquerade 5",
 		collaborators:
 		[
