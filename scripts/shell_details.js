@@ -287,6 +287,17 @@ let shell_details = [
 		blurb: "Released for Needle Day on 11/11, this tiny shell only has a canvas size of 16x16 pixels! If you're not careful, you may very well lose it on your desktop. Watch out, those pixels are pointy!"
 	},
 	{
+		name: "Tuxeedle",
+		goeswith: [Needle],
+		release: "January 1st, 2024",
+		latest: null,
+		version: "1.0.0",
+		forevent: "mine and Galla's dev-wedding",
+		collaborators: null,
+		download: "https://www.mediafire.com/file/0obv5xn9kgkkar0/tuxeedle_v1.0.0.nar/file",
+		blurb: "A shell made to officiate and commemorate mine and Galla's dev-wedding!  If you know you know. Comes with some additional dressups!"
+	},
+	{
 		name: "Twemoji",
 		goeswith: [Needle],
 		release: "May 26th, 2022",
