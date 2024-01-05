@@ -92,7 +92,7 @@ let item_details = [
 	{
 		name: "Run Envelopes Through Script Input",
 		release: "August 3rd, 2022",
-		latest: "July 10th, 2023",
+		latest: "January 5th, 2024",
 		guidefor: "Devs",
 		language: "YAYA",
 		collaborators: null,
