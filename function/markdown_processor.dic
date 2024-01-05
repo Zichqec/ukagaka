@@ -58,7 +58,7 @@ https://emily.shillest.net/ayaya/index.php?%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%
 
 Don't use >> or << as markdown tags. You can do it, but you have to be careful with it, because in YAYA, <<" ">> <<' and '>> are all syntax for special strings. So a script like ">>Hello<<, world!" would cause an error.
 
-Finally, how to get markdown to work in script input: If you already have a setup in OnTranslate that allows you to run envelopes through script input, you can simply replace this bit:
+Finally, how to get markdown to work in script input: If you already have a setup in OnTranslate that allows you to run embedded elements through script input, you can simply replace this bit:
 
 EVAL('"' + REPLACE(_talk,'"','" + CHR(0x22) + "') + '"')  //Or EVAL('"' + REPLACE(_talk,'"','""') + '"')
 
@@ -68,7 +68,7 @@ _talk = EVAL('"' + REPLACE(_talk,'"','" + CHR(0x22) + "') + '"')
 _talk = OnTranslateInternal.MarkdownProcessor(_talk)
 _talk
 
-If you don't have anything like that in your OnTranslate, here's a guide I wrote that will get you set up: https://zichqec.github.io/s-the-skeleton/envelopes_script_input
+If you don't have anything like that in your OnTranslate, here's a guide I wrote that will get you set up: https://ukagaka.zichqec.com/guide/run_envelopes_through_script_input
 */
 
 MarkdownProcessor.Tags

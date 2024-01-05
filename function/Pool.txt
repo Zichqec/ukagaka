@@ -15,7 +15,7 @@ Pool
 //The word parallel is a built in function of YAYA, which treats all the elements of an array as individual output candidates. After that is a call to the Pool function, which you give two arguments.
 //Argument 1 is the name of the pool you want to call. I always start them with Pool_ but you don't have to. Name it anything you want, as long as it's a valid function name.
 //Argument 2 is the if check you want to activate the pool. In this case, this pool would be used if the variable somevar is equal to True.
-//You'll notice that I've put the condition for the if check into an envelope. You don't have to do that! I just do it because I think it makes the text highlighting nicer. You could also write it like this:
+//You'll notice that I've put the condition for the if check into an embedded element. You don't have to do that! I just do it because I think it makes the text highlighting nicer. You could also write it like this:
 //parallel Pool("Pool_SomePool",somevar == 'True')
 //Either way, you can put any kind of if check in here. So both of these are also valid:
 //parallel Pool("Pool_NobodyWillEverSeeThis",%(hour == 5 && friendship > 1000 || ARRAYSIZE(inventory) > 50 && (minute == 20 || minute == 40)))

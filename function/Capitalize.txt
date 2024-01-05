@@ -1,9 +1,9 @@
 //Written by Zichqec https://ukagaka.zichqec.com/
 
 //To call the function, you can either call the function in your code like this:
-//Capitalize(SomeEnvelope) or Capitalize("some text")
+//Capitalize(SomeWordGroup) or Capitalize("some text")
 //Or in dialogue like this:
-//"%(Capitalize(SomeEnvelope))" or "%(Capitalize('some text'))"
+//"%(Capitalize(SomeWordGroup))" or "%(Capitalize('some text'))"
 
 Capitalize
 {
