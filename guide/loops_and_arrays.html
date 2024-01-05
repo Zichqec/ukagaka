@@ -41,7 +41,7 @@ ColorArray = "Red,Green,Blue"
 "%(ColorArray[1])" //This would display 'Green' in dialogue
 "%(ColorArray[2])" //This would display 'Blue' in dialogue
 </pre>
-		<p>As you can see, a string separated by commas is stored in the variable ColorArray. Then, by calling ColorArray with an index number in brackets, you can pull out specific parts of the array. Index numbers start from 0, don't forget that! This is also how double envelopes work, if you're familiar with the <a href="http://ashido.com/ukagaka/">GT Template</a>.</p>
+		<p>As you can see, a string separated by commas is stored in the variable ColorArray. Then, by calling ColorArray with an index number in brackets, you can pull out specific parts of the array. Index numbers start from 0, don't forget that! This is also how "double envelopes" work, if you're familiar with the <a href="http://ashido.com/ukagaka/">GT Template</a>.</p>
 		
 		<p>One more note about simple arrays: you can actually use any delimiter, not just commas! That would look like this:</p>
 <pre>
@@ -484,7 +484,7 @@ OnRemoveWord
 ShopItems : array
 {
 	//Name,Category,Price,Unlock condition(1 for always unlocked),Sold out condition (-1 for never sold out)
-	//Important note: If you have an envelope like %(hour < 5), it will display 1 if the hour is less than 5 and 0 if the hour is 5 or more. This is really useful for making items only available when certain conditions are met!
+	//Important note: If you have an embedded element like %(hour < 5), it will display 1 if the hour is less than 5 and 0 if the hour is 5 or more. This is really useful for making items only available when certain conditions are met!
 	
 	//Also notice the local variables here. If I decided I wanted to change the price of all cheap items to 15, I'd only have to change the value here and it would automatically apply to every item that's using %(_pricecheap)
 	_pricecheap = 20

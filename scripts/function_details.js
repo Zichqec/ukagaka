@@ -7,7 +7,7 @@ let item_details = [
 		forevent: null,
 		language: "YAYA",
 		download: "AI_graph_dialogue_counter.txt",
-		blurb: "A simple setup to output the count of outputs in a function to SSP's AI graph. This is useful if you've got a lot of word lists (envelopes) or dialogue pools to count! There are many other things you can use the AI graph for as well, this is a pretty simple option."
+		blurb: "A simple setup to output the count of outputs in a function to SSP's AI graph. This is useful if you've got a lot of word groups (\"envelopes\") or dialogue pools to count! There are many other things you can use the AI graph for as well, this is a pretty simple option."
 	},
 	{
 		name: "Auto anchor",

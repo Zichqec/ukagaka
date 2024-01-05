@@ -39,7 +39,7 @@ OnTranslate
 {
 	_talk = reference0
 	
-	//This is the bit that runs envelopes in script input
+	//This is the bit that runs embedded elements in script input
 	if reference1 == "" && reference2 == "" //If this is from script input
 	{
 		
@@ -78,7 +78,7 @@ OnTranslate
 
 		<p>With this bit:</p>
 <pre>
-	//This is the bit that runs envelopes in script input
+	//This is the bit that runs embedded elements in script input
 	if reference1 == "" && reference2 == "" //If this is from script input
 	{
 		
@@ -100,7 +100,7 @@ OnTranslate
  	_talk = REPLACE(_talk, "Anchor 2", "\_a[anchor2]Anchor 2\_a")
  	_talk = REPLACE(_talk, "Anchor 3", "\_a[anchor3]Anchor 3\_a")
 	
-	//This is the bit that runs envelopes in script input
+	//This is the bit that runs embedded elements in script input
 	if reference1 == "" && reference2 == "" //If this is from script input
 	{
 		
@@ -113,7 +113,7 @@ OnTranslate
 }
 </pre>
 
-	<p>And that's it! What this bit of code does is escape any quotes in the string, and then use EVAL to run it, which will make the results of the envelopes be displayed in the script.</p>
+	<p>And that's it! What this bit of code does is escape any quotes in the string, and then use EVAL to run it, which will make the results of the embedded elements be displayed in the script.</p>
 	
 	<p><b>Important note:</b> This code <i>does not</i> work on AYA, and only works on YAYATc569-8 or newer as-is. You can convert from AYA to YAYA by following <a href="../guide/convert_from_aya_to_yaya.html">this guide</a>, upgrade from old YAYA versions to new YAYA versions by following <a href="../guide/upgrade_old_versions_of_yaya.html">this guide</a>, or if you're staying on an older version of YAYA, replace the EVAL command in the code you copied with this original version instead:</p>
 <pre>

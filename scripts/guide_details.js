@@ -97,7 +97,7 @@ let item_details = [
 		language: "YAYA",
 		collaborators: null,
 		externallink: null,
-		blurb: "An explanation of YAYA's \"envelopes\" and the additional code needed to make them function in script input."
+		blurb: "An explanation of how to create word groups in YAYA (\"envelopes\", though I try to avoid this term now), and the additional code needed to make them function in script input."
 	},
 	{
 		name: "Setting up subfolders in your ghost list",
