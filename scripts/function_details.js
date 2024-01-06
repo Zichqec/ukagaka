@@ -47,7 +47,7 @@ let item_details = [
 		forevent: null,
 		language: "YAYA",
 		download: "Check_surfaces.txt",
-		blurb: "If you've got a ghost with multiple shells and can't guarantee they all have the same surfaces, this handy function will make it so that your ghost defaults to surface0 instead of disappearing! This is mainly intended for if someone else makes a shell for your ghost, but you continue to update it with new surfaces. There is also an SSP preferences setting to do this, but that relies on the user knowing about and setting that option, and if they're a developer they may not want to do that."
+		blurb: "If you've got a ghost with multiple shells and can't guarantee they all have the same surfaces, this handy function will make it so that your ghost defaults to surface0 instead of disappearing! This is mainly intended for if someone else makes a shell for your ghost, but you continue to update it with new surfaces. There is also an SSP preferences setting to do this, but that relies on the user knowing about and setting that option."
 	},
 	{
 		name: "CreepyText",
