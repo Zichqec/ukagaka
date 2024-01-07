@@ -34,6 +34,20 @@ let shell_details = [
 		blurb: "A ballpoint pen shell for Hydrate, made on a whim at the end of the jam! It's inspired by what was one of my favorite pens at my job at the time. Who wouldn't want to drink pen ink!? (Don't drink ink.)"
 	},
 	{
+		name: "Birthday Needle",
+		goeswith: [Needle],
+		release: "January 7th, 2024",
+		latest: null,
+		version: "1.0.0",
+		forevent: "Perseverence Day",
+		collaborators:
+		[
+			Galla
+		],
+		download: "https://www.mediafire.com/file/encn6b68y41o6bx/birthday_needle_v1.0.0.nar/file",
+		blurb: "A celebratory Needle drawn by Galla, and decorated with candle dressups by me, in commemoration of yet another lap around the sun. A personal high score!"
+	},
+	{
 		name: "Cavatappi",
 		goeswith: [Noodle],
 		release: "September 24th, 2023",
