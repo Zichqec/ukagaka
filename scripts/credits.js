@@ -20,7 +20,7 @@ let StrangelyKai = {
 }
 
 let Zdzisiu = {
-	name: "Zdzisiu", creditlink: "https://zdzisiu.github.io/Ukagaka/index.html"
+	name: "Zdzisiu", creditlink: "https://zdzisiu.github.io/Cemetery/"
 }
 
 let likikoari = {
