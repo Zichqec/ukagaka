@@ -271,7 +271,7 @@ function makeMyShellIndex(shells)
 				{
 					output += `, `;
 				}
-				if (item.developers[i].creditlink == null)
+				if (item.collaborators[i].creditlink == null)
 				{
 					output += `${item.collaborators[i].name}`
 				}
