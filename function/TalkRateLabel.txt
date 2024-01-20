@@ -3,6 +3,7 @@
 //Arguments:
 //It takes a single argument, which is a positive whole number of seconds. 0, negative numbers, and strings will all return the string "Off". Real numbers will be converted to integers and lose the numbers after the decimal point. Arrays will only have their first element processed.
 //Example: TalkRateLabel(aitalkinterval)
+//Example output, assuming aitalkinterval is 90: "1 minute, 30 seconds"
 
 //Note that by default, the highest unit it will use is hours. I commented the higher units out to save on processing time, but they're there as example. Uncomment them if you want them. And of course, you can add any additional units you wish, as long as they are larger than seconds.
 
