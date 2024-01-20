@@ -310,6 +310,16 @@ let item_details = [
 		blurb: "A pair of functions for checking the start and end of a string! For example, you could check if a string begins with \"Mr.\" or \"https://\", or if it ends with \".txt\" or \"!\", etc."
 	},
 	{
+		name: "TalkRateLabel",
+		release: "January 20th, 2024",
+		latest: null,
+		version: null,
+		forevent: null,
+		language: "YAYA / AYA",
+		download: "TalkRateLabel.txt",
+		blurb: "A nice label generator for talk rates, so that you don't need a stack of if checks in every menu where you want to display the current talk rate, and you don't have to write the labels by hand. While it is specifically keyed for talk rates, it is built to be easily customized and can be repurposed for other things."
+	},
+	{
 		name: "Update progress bar",
 		release: "December 2nd, 2021",
 		latest: "August 6th, 2023",

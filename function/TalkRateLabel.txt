@@ -1,0 +1,56 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//A label generator for talk rate, so that you don't have to write each label by hand with a stack of if checks. While this is set up specifically for that, it's coded in such a way that it could be easily customized and repurposed for something else.
+//Arguments:
+//It takes a single argument, which is a positive whole number of seconds. 0, negative numbers, and strings will all return the string "Off". Real numbers will be converted to integers and lose the numbers after the decimal point. Arrays will only have their first element processed.
+//Example: TalkRateLabel(aitalkinterval)
+
+//Note that by default, the highest unit it will use is hours. I commented the higher units out to save on processing time, but they're there as example. Uncomment them if you want them. And of course, you can add any additional units you wish, as long as they are larger than seconds.
+
+//The format of the output puts a comma between each unit. If you want it to be more gramatically correct and put "and", then replace `_output != ""; _output += ", "` with the following code.
+/*
+			if _output != ""
+			{
+				if _unit[0] == "second"
+				{
+					if "," _in_ _output; _output += ","
+					_output += " and "
+				}
+				else; _output += ", "
+			}
+*/
+//I did not add this by default because it is more messy, and it makes the labels longer.
+
+TalkRateLabel
+{
+	_num = TOINT(_argv[0])
+	if _num <= 0; {"Off"; return}
+	
+	_output = ""
+	
+	//Singular form, plural form, number of seconds
+	_units = ( /
+	//"millenium,millenia,31536000000",/
+	//"century,centuries,3153600000",/
+	//"decade,decades,315360000",/
+	//"year,years,31536000",/
+	//"day,days,86400",/
+	"hour,hours,3600",/
+	"minute,minutes,60",/
+	"second,seconds,1"/
+	)
+	
+	foreach _units; _unit
+	{
+		_duration = TOINT(_unit[2])
+		_amt = _num / _duration
+		_num = _num % _duration
+		
+		if _amt > 0
+		{
+			if _output != ""; _output += ", "
+			_output += "%(_amt) %(_unit[_amt > 1])"
+		}
+		if _num <= 0; break
+	}
+	_output
+}
