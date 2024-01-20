@@ -317,7 +317,7 @@ let item_details = [
 		forevent: null,
 		language: "YAYA / AYA",
 		download: "TalkRateLabel.txt",
-		blurb: "Generates a nice label for your talkrate (like \"1 minute, 30 seconds\"), so that you don't need a stack of if checks in every menu where you want to display the current talk rate, and you don't have to write the labels by hand. It would also work well for things like a customizeable talkrate!<br><br>While it is specifically keyed for talkrates, it is built to be easily customized and can be repurposed for other things."
+		blurb: "Generates a nice label for your talk rate (like \"1 minute, 30 seconds\"), so that you don't need a stack of if checks in every menu where you want to display the current talk rate, and you don't have to write the labels by hand. It would also work well for things like a customizeable talk rate!<br><br>While it is specifically keyed for talk rates, it is built to be easily customized and can be repurposed for other things."
 	},
 	{
 		name: "Update progress bar",
