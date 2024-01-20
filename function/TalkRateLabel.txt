@@ -26,8 +26,6 @@ TalkRateLabel
 	_num = TOINT(_argv[0])
 	if _num <= 0; {"Off"; return}
 	
-	_output = ""
-	
 	//Singular form, plural form, number of seconds
 	_units = ( /
 	//"millenium,millenia,31536000000",/
@@ -40,6 +38,7 @@ TalkRateLabel
 	"second,seconds,1"/
 	)
 	
+	_output = ""
 	foreach _units; _unit
 	{
 		_duration = TOINT(_unit[2])
@@ -49,6 +48,8 @@ TalkRateLabel
 		if _amt > 0
 		{
 			if _output != ""; _output += ", "
+			
+			//The second function call here handles whether the unit name should be displayed as plural or not, depending on if the amount of that unit is greater than 1
 			_output += "%(_amt) %(_unit[_amt > 1])"
 		}
 		if _num <= 0; break
