@@ -75,8 +75,8 @@ let item_details = [
 		name: "Simplicity Template",
 		type: "Ghost",
 		release: "February 4th, 2023",
-		latest: "May 22nd, 2023",
-		version: "1.0.6",
+		latest: "February 4th, 2024",
+		version: "1.0.7",
 		forevent: null,
 		collaborators: null,
 		translations: [
