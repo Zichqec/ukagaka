@@ -1,0 +1,56 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+/*
+This function and event are for quickly checking if a character is wearing a given dressup. Something like "If they're wearing a scarf, do this".
+This is intended to be simplified for folks that just need quick, easy checks. If your dressups are more involved or you want to do more complicated checks, you may need to write some custom code in OnNotifyDressupInfo. **This is not the only way to do dressup checks.**
+
+Arguments:
+Arguments are written as a **single comma separated string** rather than separate elements.
+Arg 1: Which character (0 for sakura, 1 for kero, 2+ for additional characters...)
+Arg 1: Dressup category
+Arg 2: Dressup name
+
+Usage example:
+if WearingDressup("0,Hat,Silly")
+{
+	"\0\s[0]I'm wearing a silly hat!"
+}
+
+Customizing this function:
+- If you only have one character, then you may want to omit the need for specifying which character a dressup is on.
+- If all of your items have completely unique names, you may want to omit the need to specify which category the item is.
+However you want to change it, just go to the _info array created in OnNotifyDressupInfo (there's a comment just above it showing where it's at), and edit what parameters are included/what order they're listed in to suit you.
+For example, if you change it to _info = "%(_item_name),%(_category)"
+Then you can write your check like if WearingDressup("Silly,Hat")
+
+Note:
+This makes use of the OnNotifyDressupInfo event, which you can read more about here: https://ukagakadreamteam.github.io/ukadoc/manual/list_shiori_event.html#OnNotifyDressupInfo
+If you already have OnNotifyDressupInfo, you may need to modify it to suit this function.
+
+This also makes use of a global variable called CurrentDressups.
+You should initialize CurrentDressups with the following code in OnFirstBoot:
+CurrentDressups = IARRAY
+*/
+
+WearingDressup
+{
+	if ASEARCH(_argv[0],CurrentDressups) != -1; 1
+	else; 0
+}
+
+//[character ID, category name, part name, option, on-1/off-0, thumbnail path]
+OnNotifyDressupInfo
+{
+	CurrentDressups = IARRAY
+	foreach reference; _dressup
+	{
+		_dressup = SPLIT(_dressup,C_BYTE1)
+		_id = _dressup[0]
+		_category = _dressup[1]
+		_item_name = _dressup[2]
+		
+		//Edit here if you want to change what all you have to specify! This just specifies the form you want the dressups to be listed as.
+		_info = "%(_id),%(_category),%(_item_name)"
+		
+		if _dressup[4] == "1"; CurrentDressups ,= _info
+	}
+}

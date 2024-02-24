@@ -330,6 +330,16 @@ let item_details = [
 		blurb: "A progress bar for network updates. I don't recommend using this! Having these update events AT ALL aside from the error events will slow down your network updates DRASTICALLY. Like, 3x to 5x slow down, if I had to estimate. These events were made for a time when download speeds were much slower, but these days the time it takes to display the text (even if you use instant display!) makes it take a little extra time between each file, and it adds up quick unless your updates are small. But if you really want an update bar, this is a quick and clean setup!"
 	},
 	{
+		name: "WearingDressup",
+		release: "February 24th, 2024",
+		latest: null,
+		version: null,
+		forevent: null,
+		language: "YAYA",
+		download: "WearingDressup.txt",
+		blurb: "If you need quick and easy checks for if a character is wearing certain dressups, this function will do that for you! Note that this isn't the only way to check for dressups, so if you need something more complicated then you may have to write custom code.<br><br>Also note that this includes the event OnNotifyDressupInfo, so if you've already got that event, you may need to make modifications!"
+	},
+	{
 		name: "Wobble",
 		release: "January 5th, 2021",
 		latest: null,
