@@ -23,8 +23,8 @@ let Zdzisiu = {
 	name: "Zdzisiu", creditlink: "https://zdzisiu.github.io/Cemetery/"
 }
 
-let likikoari = {
-	name: "likikoari", creditlink: "https://likikoari.carrd.co/"
+let Rosenheim = {
+	name: "Rosenheim", creditlink: "https://likikoari.carrd.co/"
 }
 
 let Zarla = {
