@@ -51,15 +51,19 @@
 			<li><a href="#generic_keypresses">Generic keypresses</a></li>
 		</ul>
 	</li>
-	<li><a href="#column_editing">Column editing</a></li>
+	<li><a href="#column_editing">Column editing</a>
+		<ul>
+			<li><a href="#multi-editing">Multi-Editing</a></li>
+		</ul>
+	</li>
 	<li><a href="#find_and_replace">Find and replace</a>
-	<ul>
-		<li><a href="#basic_searching">Basic searching</a></li>
-		<li><a href="#find_in_files">Find in files</a></li>
-		<li><a href="#replace">Replace</a></li>
-		<li><a href="#extended_search_mode">Extended search mode</a></li>
-		<li><a href="#regular_expression_search_mode">Regular expression search mode</a></li>
-	</ul>
+		<ul>
+			<li><a href="#basic_searching">Basic searching</a></li>
+			<li><a href="#find_in_files">Find in files</a></li>
+			<li><a href="#replace">Replace</a></li>
+			<li><a href="#extended_search_mode">Extended search mode</a></li>
+			<li><a href="#regular_expression_search_mode">Regular expression search mode</a></li>
+		</ul>
 	</li>
 	<li><a href="#macros">Macros</a></li>
 	<li><a href="#sessions_and_other_setup">Sessions and other setup</a>
@@ -68,20 +72,25 @@
 			<li><a href="#split_view">Split view</a></li>
 			<li><a href="#saving_and_loading_sessions">Saving and loading sessions</a></li>
 			<li><a href="#open_folder_as_workspace">Open folder as workspace</a></li>
+			<li><a href="#zooming_in_and_out">Zooming in and out</a></li>
 		</ul>
 	</li>
 	<li><a href="#miscellaneous">Miscellaneous</a>
 		<ul>
 			<li><a href="#mass_indenting">Mass indenting</a></li>
 			<li><a href="#large_selections">Large selections</a></li>
+			<li><a href="#sorting_lines">Sorting lines</a></li>
+			<li><a href="#changing_cases">Changing cases</a></li>
 			<li><a href="#click_and_drag_to_select_whole_words">Click and drag to select whole words</a></li>
 			<li><a href="#highlight_matching_words">Highlight matching words</a></li>
 			<li><a href="#make_the_numbers_not_orange">Make the numbers not orange</a></li>
 			<li><a href="#yayas_character">YAYA's / character</a></li>
 			<li><a href="#folding_curly_braces_is_sometimes_weird">Folding curly braces is sometimes weird</a></li>
+			<li><a href="#what_are_those_idsp_characters">What are those IDSP characters?</a></li>
 		</ul>
 	</li>
 	<li><a href="#conclusion">Conclusion</a></li>
+	<li><a href="#update_notes">Update notes</a></li>
 </ol>
 
 
@@ -190,6 +199,9 @@
 
 <img src="notepad_tips_to_improve_your_ghost_dev_experience/012_move_lines_up_down.gif">
 
+<p>You can also do this with selections! If you want to scoot several lines around at once, just select the text you want to scoot, and use the same key combo as before.</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/012-2_move_selection_up_down.gif">
 
 <p><a href="#intro">Back to top</a></p>
 
@@ -237,10 +249,27 @@
 
 <p>As you can see here, I actually forgot to put a number after the word animation, but thanks to column editing I was able to correct that very quickly and painlessly!</p>
 
-<p>A couple of notes with this: you can't press the left/right arrow keys at any time, or you will exit column editing mode. Additionally, it can get finicky with word wrap. If you're working on something with long lines, you may need to turn word wrap off temporarily, if you're using it.</p>
+<p>A quick note: this can get a little finicky with word wrap. If you're working on something with long lines, you may need to turn word wrap off temporarily, if you're using it.</p>
 
 <p>That's it! Column editing is really simple and easy, and <i>really</i> effective for surfaces.txt code. It is fantastic for quickly switching animation numbers and the like.</p>
 
+<p><a href="#intro">Back to top</a></p>
+
+<h3 id="multi-editing">Multi-Editing</h3>
+
+<p>Related to the above, but added after I initially wrote this guide, Notepad++ also does Multi-Editing! This means you don't have to just stick to a single column; you can have multiple carets anywhere.</p>
+
+<p>It used to be that pressing left or right while in column editing mode would kick you out of that mode. But no longer! Now you can move left and right, up and down, free as a bird. If you press home, your carets will move to the first column. If you press end, it'll move to the end of each line, and in many cases, this means it won't be a perfect column anymore! But look at how useful that can be.</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/018-2_column_to_multi-editing.gif">
+
+<p>If you're used to the way that column editing used to be, you can turn this feature off if you don't want it! Just go to Settings>Preferences, then on the Editing 2 tab of that window you should see some Multi-Editing related settings. Untick the option that says "Enable Column Selection to Multi-Editing", and it should work as it used to!</p>
+
+<p>So what else can you do with Multi-Editing? You don't have to enter this mode from column editing, you can do it by holding down Ctrl, and clicking with your mouse anywhere that you want a new caret to appear! (You can also click and drag to make multiple selections if you want.) Check out what that means.</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/018-3_multi_caret.gif">
+
+<p>Handy, right? Just remember to leave this mode once you're done with it! At any time, you can return to a normal single caret by clicking anywhere in a file (without holding down Ctrl), or by pressing Escape.</p>
 
 <p><a href="#intro">Back to top</a></p>
 
@@ -559,6 +588,24 @@ Capitalize
 
 <p><a href="#intro">Back to top</a></p>
 
+<h3 id="zooming_in_and_out">Zooming in and out</h3>
+
+<p>Is the text too small or large for you? I get it, some days my eyes feel blurry or strained, and it really helps me if I make the text large and give my eyes a break. Or sometimes, I want to zoom way out, so that I can see just how much dialogue I've just written. Thankfully, zooming in and out like this is really easy.</p>
+
+<p>Simply press and hold Ctrl, then zoom in and out with your scroll wheel! Scrolling up zooms in, and scrolling down zooms out. You can also press Ctrl and the + or - keys on the num pad to scroll in or out respectively.</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/042-2_zoom_in_out.gif">
+
+<p>Done zooming in/out, and want to get back to default? If you're anything like me, you might find it annoying because you can't quite tell if you're back to the default zoom level or not. But have no fear! There is a really easy key combination for this. Just press Ctrl and the num pad's / key, and you'll be back to normal zoom.</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/042-3_default_zoom.gif">
+
+<p>No numpad/scroll wheel? No problem! There are also clickable buttons for zooming in the top menu! Just click on View, then hover over Zoom, and you'll find all the same options in there.</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/042-4_zoom_menu_items.png">
+
+<p><a href="#intro">Back to top</a></p>
+
 <h2 id="miscellaneous">Miscellaneous</h2>
 
 <p>Here are some miscellaneous tidbits and also some observations of the ways that Notepad++ interacts with ghost coding in YAYA.</p>
@@ -587,6 +634,38 @@ Capitalize
 
 <img src="notepad_tips_to_improve_your_ghost_dev_experience/045_big_selection.gif">
 
+
+<p><a href="#intro">Back to top</a></p>
+
+<h3 id="sorting_lines">Sorting lines</h3>
+
+<p>Have you ever had a list that you wanted to sort alphabetically, but you didn't want to do it by hand? Thankfully, Notepad++ has an easy option built in to do that. Just select the lines you want to sort (or don't make a selection if you want to sort the whole file), click the Edit tab at the top, and hover over the Line Operations tab. There's a lot in here, but don't worry! It's not as scary as it may look at first.</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/045-2_sort_options.png">
+
+<p>There are lots of interesting options in here that you should try at some point, but for now, we want to look at the lower two sections. The middle section in this menu is for Ascending sort, which means we sort from A-Z. The bottom section is for Descending sort, which means we sort from Z-A.</p>
+
+<p>If you want to sort a list into alphabetical order, you'll want the "Lexicographically" option. So "Sort Lines Lexicographically Ascending" is the option you'd want for a normal, ascending order, alphabetical sort. Note that this covers more than just letters; it's lexicographical instead of alphabetical because it covers every symbol, as I understand it.</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/045-3_sort_lexicographically.gif">
+
+<p>There are also some other sorting options you can try out, for things like case-insensitive sorting, and sorting numbers! It's definitely worth knowing your options in here.</p>
+
+<p><a href="#intro">Back to top</a></p>
+
+<h3 id="sorting_lines">Changing cases</h3>
+
+<p>You ever write a full paragraph without looking up, only to realize that you had capslock on the whole time, and now you have to rewrite your paragraph all over again? I've done it too. But thankfully, with Notepad++, it can change cases for you!</p>
+
+<p>All you need to do to change the case of some text is to highlight it, then click on the Edit tab at the top, and hover over Convert Case to. This will present you with a bunch of case options.</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/045-4_case_options.png">
+
+<p>Some of these have key combos, but the combos are all very similar, so don't sweat it if you find those hard to memorize. You typically won't need to do this often anyways. Just select what case you want from this menu! If your issue was that you had caps lock on by mistake, then just click the invert case option, and it will invert the case of your text so that it appears normal again!</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/045-5_invert_case.gif">
+
+<p>Need to make a dialogue or list be all upper or lowercase? Or maybe you wrote something all lowercase, and don't want to go back and add proper capitals? There are options for those too. Give some of these a whirl! They're handy to know about when you're in a pinch and don't have time to fix a bunch of missing capitals, etc.</p>
 
 <p><a href="#intro">Back to top</a></p>
 
@@ -677,6 +756,22 @@ Capitalize
 
 <p><a href="#intro">Back to top</a></p>
 
+<h3 id="what_are_those_idsp_characters">What are those IDSP characters?</h3>
+
+<p>If you browse around in the files of Japanese ghosts, or maybe in YAYA's base SHIORI files, or some other Japanese document, you'll likely have come across this little special character labeled "IDSP". In fact, it's everywhere. What's that about?</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/055_idsp_showing.png">
+
+<p>IDSP stands for "ideographic space". It's a space of a fixed-width, used in languages that have square characters. So put simply, it's the space character used in languages like Japanese, Chinese, Korean, etc.! If you have a keyboard in one of these languages installed, you can test this by typing some spaces with your keyboard set to that language. You should see these IDSP characters appear.</p>
+
+<p>So why do they show up this way? Well, Notepad++ uses a monospace font by default, which means everything (except, annoyingly, these special characters) is the same width. That means this ideographic space, which is normally approximately the width of two English spaces, would look exactly identical to a regular space. This can cause all kinds of confusion if you're needing to do certain kinds of processing. So, in newer versions of Notepad++, these spaces are indicated by the IDSP special character to make them stand out. (Note: in older versions of Notepad++, this was not the case!)</p>
+
+<p>But depending on the text, this can make it difficult to read those languages in Notepad++. Even if you aren't able to read those languages, you may still find it annoying. Thankfully, it's easily resolved. Just click on the View tab at the top, hover over Show Symbol, and untick the option for "Show Non-Printing Characters". This should make them appear just like a normal space does. Just mind that they are different characters internally!</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/056_hide_non-printing_characters.gif">
+
+<p><a href="#intro">Back to top</a></p>
+
 <h2 id="conclusion">Conclusion</h2>
 
 <p>And that's all of my tips! For now. I may update this guide in the future as I learn more Notepad++ tricks.</p>
@@ -684,6 +779,20 @@ Capitalize
 <p>Notepad++ has a ton of handy features that I haven't covered! I would encourage you to go through the settings sometime and just play with it, and learn what they do. There's lots of little tweaks I've done to mine that I haven't even mentioned here. For example, I've turned off the toolbar at the top with the icons, because I never use it, so it's just visual clutter for me. But Notepad++ lets me switch it totally off, so I just have the menu tabs and my tabs for my documents.</p>
 
 <p>Everything I talked about in this guide is something I learned from just exploring the various menus, and occasionally searching something online when it wasn't clear (like the details of regex search)!</p>
+
+<p><a href="#intro">Back to top</a></p>
+
+<h2 id="update_notes">Update notes</h2>
+
+<h3>2024-02-27</h3>
+<ul>
+	<li>Added a note about shifting entire selections up and down.</li>
+	<li>Added a section on Multi-Editing, a newly introduced feature that improves upon column editing.</li>
+	<li>Added a section on changing the zoom level.</li>
+	<li>Added a section on line sorting options.</li>
+	<li>Added a section on case changing options.</li>
+	<li>Added a section on what the IDSP special character is and how to hide it.</li>
+</ul>
 
 </article>
 
