@@ -144,6 +144,17 @@ let item_details = [
 		blurb: "A simple water themed balloon with 3 different sizes!"
 	},
 	{
+		name: "Leap Day Frog",
+		release: "February 29th, 2024",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		goeswith: null,
+		collaborators: null,
+		download: ["https://www.mediafire.com/file/ddk58j2d2dmafpa/leap_day_frog_v1.0.0.nar/file"],
+		blurb: "A silly little frog balloon made for leap day 2024! It comes in 4 sizes, and 2 color options. The eyes blink when in online mode."
+	},
+	{
 		name: "Minimal Neon",
 		release: "February 2nd, 2022",
 		latest: null,
