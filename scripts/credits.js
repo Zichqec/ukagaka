@@ -67,6 +67,9 @@ let Digibillcipher = {
 	name: "Digibillcipher", creditlink: "https://digibillcipher.github.io/index_files/ukagaka.htm"
 }
 
+let Softie = {
+	name: "Softie", creditlink: "https://ukagakadreamteam.com/wiki/dev/dragonmoth28"
+}
 
 
 //For shells
