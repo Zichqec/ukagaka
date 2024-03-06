@@ -191,6 +191,19 @@ let version_history = [
 				"Updated some links in the readme that were out of date.",
 				"Fixed the readme stating the incorrect version of Simplicity Template."
 			]
+		},
+		{
+			version: "1.0.8",
+			released: "2024-03-06",
+			changelog:
+			[
+				"Added the craftmanw field back in, since it's not really meant to be omissible and this may cause problems with some services (such as Ghost Captor Sakura).",
+				"Added a note about Simplicity Shell to the surfaces.txt file, and fixed the pattern numbers not starting at 0.",
+				"Added some additional events to meta.dic, to cover the failure states of some of SSP's functions. In particular, the following were added: OnInstallFailure, OnBIFFFailure, OnHeadlinesenseFailure.",
+				"In addition to the above, OnUpdateFailure was reworked to be simpler and follow the same format as the other failure events.",
+				"Ukadoc links were added in the meta.dic file to the documentation for each group of events. If you want to expand upon those events and add in the ones I omitted, it should now be easier to do so.",
+				"Added a link to the YAYA Shiori GitHub organization in the readme. This will take you to where you can update yaya.dll, the YAYA as SHIORI dic files, and where you can see YAYA's license if you have need to."
+			]
 		}
 	]
 },
