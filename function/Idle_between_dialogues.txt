@@ -13,7 +13,8 @@ OnSecondChange
 	//This gets the time since the last dialogue ended, in seconds. SHIORI3FW.TalkEndTime is a variable that comes with YAYA as SHIORI
 	_since = GETSECCOUNT - SHIORI3FW.TalkEndTime
 	
-	_balloonisopen = "balloon" _in_ var.req.value[ASEARCH("Status",var.req.key)]
+	//status is an inbuilt YAYA variable that has information on if the balloon is open, etc.
+	_balloonisopen = "balloon" _in_ status
 	
 	if _since % 15 == 0 && !_balloonisopen
 	{

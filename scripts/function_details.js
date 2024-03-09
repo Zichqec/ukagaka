@@ -122,7 +122,7 @@ let item_details = [
 	{
 		name: "Idle between dialogues",
 		release: "September 13th, 2023",
-		latest: null,
+		latest: "March 9th, 2024",
 		version: null,
 		forevent: null,
 		language: "YAYA",
