@@ -10,6 +10,16 @@ let item_details = [
 		blurb: "This is an early bit of code I made to make it so that you can pet ghosts multiple times in a row and they'll notice and comment on it. They'll also track a high score for you, which is silly and fun. It's quite outdated, and I can make this much cleaner now. Maybe I'll update it someday, we'll see."
 	},
 	{
+		name: "Digits of Pi",
+		release: "March 14th, 2024",
+		latest: null,
+		version: null,
+		forevent: null,
+		language: "YAYA",
+		download: "Digits_of_Pi.txt",
+		blurb: "This is a little memorization minigame! You input the digits of Pi, one at a time, and they display in the balloon as you type. If you get one wrong, you lose! But it will tell you what it should have been, so you can get a bit farther next time. Comes with 10000 digits of Pi by default, but in theory you could set it to other strings! Or a more reasonable number of digits so that it's a winnable game.<br><br>Over the course of making this game, I went from 6 digits of Pi memorized to a bit over 40! It's surprisingly enticing to keep trying again and again."
+	},
+	{
 		name: "Hangman",
 		release: "November 4th, 2020",
 		latest: "January 5th, 2021",
