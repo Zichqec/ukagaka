@@ -241,8 +241,18 @@ function makeIndex(item)
 	if (pagetype != "guide")
 	{
 		output += `
-		<div class="indexbox">
-			<img src="${lowername}/preview.png" alt="${item.name} `;
+		<div class="indexbox">`;
+		//Minigames and functions do not have pages with more images. Also, they should be gifs
+		if (pagetype == "function" || pagetype == "minigame")
+		{
+			output += `<img src="${lowername}.gif"`;
+		}
+		else
+		{
+			output += `<img src="${lowername}/preview.png"`;
+		}
+			
+			output += ` alt="${item.name} `;
 		
 		if (pagetype == "function" || pagetype == "minigame")
 		{
