@@ -245,7 +245,7 @@ function makeIndex(item)
 		//Minigames and functions do not have pages with more images. Also, they should be gifs
 		if (pagetype == "function" || pagetype == "minigame")
 		{
-			output += `<img src="${lowername}.gif"`;
+			output += `<img src="${lowername}_demonstration.gif"`;
 		}
 		else
 		{
