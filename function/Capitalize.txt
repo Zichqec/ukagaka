@@ -7,8 +7,8 @@
 
 Capitalize
 {
-	_buffer = SUBSTR(_argv[0],0,1) //Storing the first character in _buffer
-	_argv[0] = ERASE(_argv[0],0,1) //Erasing the first character from _argv[0]
-	_argv[0] = INSERT(_argv[0],0,TOUPPER(_buffer)) //Making the character in _buffer uppercase and inserting it back into _argv[0]
-	_argv[0] //Returns the capitalized word
+	_first = SUBSTR(_argv[0],0,1)
+	_rest = ERASE(_argv[0],0,1) //Erase the first character and store everything else in _rest
+	
+	TOUPPER(_first) + _rest
 }

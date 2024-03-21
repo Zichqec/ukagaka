@@ -32,7 +32,7 @@ let item_details = [
 	{
 		name: "Capitalize",
 		release: "January 5th, 2021",
-		latest: null,
+		latest: "March 20th, 2024",
 		version: null,
 		forevent: null,
 		language: "YAYA",
