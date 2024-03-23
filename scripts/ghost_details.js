@@ -304,8 +304,8 @@ let item_details = [
 	{
 		name: "SSP Angel",
 		release: "March 23rd, 2023",
-		latest: "March 26th, 2023",
-		version: "1.0.1",
+		latest: "March 23rd, 2024",
+		version: "1.1.0",
 		forevent: null,
 		collaborators:
 		[
@@ -316,7 +316,7 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/SSP_Angel/releases/latest",
-		blurb: "SSP Angel is here to teach you all about SSP! But fear not if you're already an experienced SSP user, SSP Angel is great for new and old users alike! They come with lots of tips and information, but you can also turn off their tips and be delighted by their 100+ whimsical idle dialogues!"
+		blurb: "SSP Angel is here to teach you all about SSP! But fear not if you're already an experienced SSP user, SSP Angel is great for new and old users alike! They come with lots of tips and information, but you can also turn off their tips and be delighted by their 200 whimsical idle dialogues!"
 	},
 	{
 		name: "Ukatranslator",
