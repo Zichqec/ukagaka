@@ -340,6 +340,17 @@ let item_details = [
 		blurb: "A galaxy themed balloon with an online marker that makes the stars glow and twinkle! I wanted to make several balloons like this, hence \"hues\" being appended to the name, but then I didn't because I wanted them to all have their own starfields and that sounded like a ton of work. Maybe one day I'll do more like this. Comes with 3 sizes."
 	},
 	{
+		name: "Unyu Bank Notes",
+		release: "April 1st, 2024",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		goeswith: ["ATM Machine"],
+		collaborators: null,
+		download: ["https://www.mediafire.com/file/2zeja7ggyawtnzn/notes_v1.1.0.nar/file"],
+		blurb: "A money and Unyu themed balloon! The smaller sizes of balloon are like a bill that has been folded over. Bigger sizes show the full design. Comes in 6 colors, each with 5 sizes, including a wide option."
+	},
+	{
 		name: "Void Screen",
 		release: "August 1st, 2020",
 		latest: null,
