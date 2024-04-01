@@ -24,7 +24,7 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/atm_machine/releases/latest",
-		blurb: "ATM Machine is a very tiny ghost I created on a whim one night. It works with the plugin <a href='https://github.com/nikolat/wallet_of_unyu'>Wallet of Unyu</a> and allows the user to gain UNYU, a fake cryptocurrency, by clicking a link on a website. This was possible when Wallet of Unyu was first released, but was disabled unless there was a specific ghost to receive it, for security reasons. So ATM Machine is that ghost. And that's it that's the whole thing. (Note that the shell is modifed clipart from <a href='https://joypixels.com/'>joypixels</a>!)"
+		blurb: "Become an ATM maintenance worker with this ATM Machine ghost! Earn UNYU* by whiling away at your boring ATM recalibration job, listening to bank advertisements all day long. It'll be great! Or perhaps... there is another way you could acquire funds?<br><br>*UNYU is a fake crypto currency made by the <a href='https://github.com/nikolat/wallet_of_unyu'>Wallet of Unyu</a> plugin, which this ghost requires. ATM Machine was originally made to assist with the website associated with the plugin, but has since been overhauled to add hundreds of dialogues, two minigames, and more."
 	},
 	{
 		name: "Balloons",
