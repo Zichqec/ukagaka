@@ -347,7 +347,7 @@ let item_details = [
 		forevent: null,
 		goeswith: ["ATM Machine"],
 		collaborators: null,
-		download: ["https://www.mediafire.com/file/2zeja7ggyawtnzn/notes_v1.1.0.nar/file"],
+		download: ["https://www.mediafire.com/file/avtn3jzm53t5bst/unyu_bank_notes_v1.0.0.nar/file"],
 		blurb: "A money and Unyu themed balloon! The smaller sizes of balloon are like a bill that has been folded over. Bigger sizes show the full design. Comes in 6 colors, each with 5 sizes, including a wide option."
 	},
 	{
