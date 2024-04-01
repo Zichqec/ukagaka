@@ -17,8 +17,8 @@ let item_details = [
 	{
 		name: "ATM Machine",
 		release: "April 9th, 2023",
-		latest: null,
-		version: "1.0.0",
+		latest: "April 1st, 2024",
+		version: "2.0.0",
 		forevent: null,
 		collaborators: null,
 		translations: null,
