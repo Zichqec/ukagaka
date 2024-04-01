@@ -170,14 +170,23 @@ function ItemInfo()
 				output += `, `;
 			}
 			
-			if (currentpage.goeswith[i].download_link == "mine")
+			if (pagetype == "shell")
 			{
-				output += `<a href="../ghost/${makeStandard(currentpage.goeswith[i].name)}.html">${currentpage.goeswith[i].name}</a>`
-				
+				if (currentpage.goeswith[i].download_link == "mine")
+				{
+					output += `<a href="../ghost/${makeStandard(currentpage.goeswith[i].name)}.html">${currentpage.goeswith[i].name}</a>`
+					
+				}
+				else
+				{
+					output += `<a href="${currentpage.goeswith[i].download_link}.html">${currentpage.goeswith[i].name}</a> (External link)`
+				}
 			}
 			else
 			{
-				output += `<a href="${currentpage.goeswith[i].download_link}.html">${currentpage.goeswith[i].name}</a> (External link)`
+				//TODO sorry future zi, if you make balloons for ghosts other than your own that is your problem and not mine
+				//I'll have to do it at some point, but i don't want to declare objects for all of my ghosts, ugh... I'll figure something out eventually
+				output += `<a href="../ghost/${makeStandard(currentpage.goeswith[i])}.html">${currentpage.goeswith[i]}</a>`
 			}
 		}
 	}
