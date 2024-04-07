@@ -37,7 +37,7 @@ let item_details = [
 		forevent: null,
 		language: "YAYA",
 		download: "Jumble.txt",
-		blurb: "This is a simple word jumble game! Give it a list of words, and then try to unscramble them! It's actually pretty difficult! Though I suppose the difficulty depends on the words you choose."
+		blurb: "This is a simple word jumble game! Give it a list of words, and then try to unscramble them! But despite its simplicity, guessing words when you don't know the category is really difficult. For an improved version of this game, see <a href='#word_jumble'>below</a>."
 	},
 	{
 		name: "Rock Paper Scissors",
@@ -48,6 +48,26 @@ let item_details = [
 		language: "YAYA",
 		download: "Rock_Paper_Scissors",
 		blurb: "My setup for rock paper scissors, which keeps track of how many matches you've played in the current game session, how many you've won/lost/tied, and the dialogue is set up so that it's all in one function and changes dynamically based on who picked what. You can set up surfaces to go with this, so that if your ghost picks rock it'll show that with its hands, but I have not done so yet so I can't show that in the example."
+	},
+	{
+		name: "Tic Tac Toe",
+		release: "April 7th, 2024",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		language: "YAYA",
+		download: "Tic_Tac_Toe.txt",
+		blurb: "A simple tic tac toe game! There are other implementations of tic tac toe out there, but mine aims for a hopefully more natural feel by letting the ghost comment on the moves it's making, and also not playing perfectly so that the user has a chance to win. Although, sometimes the moves it makes are pretty silly! How often the ghost will try to make smart moves is adjustable."
+	},
+	{
+		name: "Word Jumble",
+		release: "April 7th, 2024",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		language: "YAYA",
+		download: "Word_Jumble.txt",
+		blurb: "An improved version of my original Jumble minigame! This version prompts the user with a category, and asks them to solve 5 words in that category before they win. The number of words to guess is adjustable!"
 	},
 	{
 		name: "Word Search",

@@ -1,0 +1,290 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//v1.0.0
+/*
+To run this game in your ghost, call the event OnTTT.Start from a menu choice, raise tag, etc. Example: \![*]\q[Play Tic Tac Toe,OnTTT.Start]
+
+There is dialogue to customize towards the bottom of the OnTTT.Display event.
+
+If you want to adjust how often the ghost tries to make a smart move, you can do so at the bottom of the TTT.GhostMovePick function.
+
+Note that this *requires* a monospace font to work. I've set it to courier new for this purpose.
+
+This game isn't nearly as smart as the older implementation of Tic Tac Toe that I've seen floating around, but that's by design! My hope with this version is that it feels more natural and gives the user a chance to win, plus you can adjust the difficulty a bit based on your character. Also, I really wanted the ability to have comments from the ghost during the game.
+*/
+
+OnTTT.Start
+{
+	TTT.Board = ("0","0","0","0","0","0","0","0","0")
+	"\![raise,OnTTT.Display]"
+}
+
+OnTTT.Display : all
+{
+	//You can change these to be things besides Xs and Os if you want, or you could set it up to let the user pick or what have you.
+	_usertoken = "O"
+	_ghosttoken = "X"
+	
+	_win = TTT.WinCheck
+	_who_won = _win[0]
+	_win[0] = IARRAY
+	
+	"\C\![lock,balloonrepaint]\c"
+	"\0\b[2]\![set,autoscroll,disable]\![quicksection,1]"
+	if _who_won == 0; "\*\t"
+	
+	
+	"\f[name,courier new]\f[height,+20]\f[bold,1]\f[cursorstyle,none]\f[align,center]"
+	//Board
+	" | | \n \n[-100]_____\n"
+	" | | \n \n[-100]_____\n"
+	" | | \n \n[-300]"
+	
+	_i = 0
+	foreach TTT.Board; _space
+	{
+		if _who_won != 0 && ASEARCH("%(_i)",_win) != -1; "\f[color,default.anchor]"
+		
+		if _space == "1"; _usertoken
+		elseif _space == "2"; _ghosttoken
+		else
+		{
+			if reference0 != 1 && _who_won == 0 //It's the user's turn to move
+			{
+				"\__q[OnTTT.Move,1,%(_i)] \__q"
+			}
+			else; " "
+		}
+		
+		"\f[color,default]"
+		_i++
+		if _i % 3 == 0; "\n"
+		else; " "
+	}
+	"\f[default]\f[align,left]"
+	"\n\n"
+	if _who_won != 0 //If someone won or it was a draw
+	{
+		"\![*]\__q[OnTTT.Start]Play again\__q  \![*]\__q[OnBlank]Done\__q"
+	}
+	else
+	{
+		"\![*]\__q[OnTTT.Quit]Give up\__q"
+	}
+	//"\n\![*]\__q[OnTTT.Display,1]Skip turn\__q" //For debugging
+	"\![unlock,balloonrepaint]\![quicksection,0]\n\n"
+	
+	if _who_won == 0 && reference0 == 1 //Ghost's turn
+	{
+		_play = TTT.GhostMovePick
+		_type = _play[0]
+		_move = _play[1]
+		
+		//Each type is a different move that the ghost will take. You can have responses to all of these if you want, or you can cut out the ones you don't care for and just keep the else statement. Or snip them all if you don't want the ghost to talk!
+		if _type == "win" //Taking a winning move
+		{
+			nonoverlap :/
+			{
+				"Aha, I've got you now!"
+			}
+		}
+		elseif _type == "block" //Blocking the user from winning
+		{
+			nonoverlap :/
+			{
+				"Not so fast!"
+				"No you don't!"
+			}
+		}
+		elseif _type == "build" //Playing in the same row/column as one of its previous moves
+		{
+			nonoverlap :/
+			{
+				"And then I'll put one here..."
+			}
+		}
+		elseif _type == "middle" //Taking the middle if the user has not
+		{
+			nonoverlap :/
+			{
+				"Haha, the middle is mine!"
+			}
+		}
+		else //Picking a random space
+		{
+			nonoverlap :/
+			{
+				"Hmm... I'll pick..."
+			}
+		}
+		"\_w[300]"
+		"\![raise,OnTTT.Move,2,%(_move)]"
+	}
+	elseif _who_won == 1 //Player win
+	{
+		nonoverlap :/
+		{
+			"Oh, you won!"
+		}
+	}
+	elseif _who_won == 2 //Ghost win
+	{
+		nonoverlap :/
+		{
+			"Haha, I win!"
+		}
+	}
+	elseif _who_won == 3 //Draw
+	{
+		nonoverlap :/
+		{
+			"Aw, it's a draw."
+		}
+	}
+}
+
+//Quitting the game
+OnTTT.Quit
+{
+	"\0\b[0]Aw, ok."
+}
+
+OnTTT.Move
+{
+	TTT.Board[reference1] = TOSTR(reference0)
+	"\C\![lock,balloonrepaint]\![raise,OnTTT.Display,%(reference0)]"
+}
+
+//Determine if there is a smart move to be played, and if so, whether it will be taken. Outputs what type of play it picked and what index it picked
+TTT.GhostMovePick
+{
+	_open = ASEARCHEX(0,TTT.Board)
+	
+	_win_positions = ( /
+		"0,1,2", /
+		"3,4,5", /
+		"6,7,8", /
+		
+		"0,3,6", /
+		"1,4,7", /
+		"2,5,8", /
+		
+		"0,4,8", /
+		"2,4,6" /
+	)
+	
+	_positions_to_win = IARRAY
+	_positions_to_block = IARRAY
+	_positions_to_build = IARRAY
+	_who_won = 0
+	foreach _win_positions; _position
+	{
+		_pos0 = TOINT(_position[0])
+		_pos1 = TOINT(_position[1])
+		_pos2 = TOINT(_position[2])
+		
+		_space = TTT.Board[_pos0] + TTT.Board[_pos1] + TTT.Board[_pos2]
+		
+		if _space == "220" || _space == "202" || _space == "022"
+		{
+			if TTT.Board[_pos0] == 0; _positions_to_win ,= _pos0
+			elseif TTT.Board[_pos1] == 0; _positions_to_win ,= _pos1
+			elseif TTT.Board[_pos2] == 0; _positions_to_win ,= _pos2
+		}
+		elseif _space == "110" || _space == "101" || _space == "011"
+		{
+			if TTT.Board[_pos0] == 0; _positions_to_block ,= _pos0
+			elseif TTT.Board[_pos1] == 0; _positions_to_block ,= _pos1
+			elseif TTT.Board[_pos2] == 0; _positions_to_block ,= _pos2
+		}
+		elseif _space == "002" || _space == "020" || _space == "200"
+		{
+			if TTT.Board[_pos0] == 0; _positions_to_build ,= _pos0
+			if TTT.Board[_pos1] == 0; _positions_to_build ,= _pos1
+			if TTT.Board[_pos2] == 0; _positions_to_build ,= _pos2
+		}
+	}
+	
+	_play_index = ANY(_open)
+	_play_type = "random"
+	
+	_rand = RAND(100)
+	
+	
+	//You can adjust the smartness of the ghost by changing the values at the ends of these checks. They're a percentage out of 100, so setting one of them to 80 means an 80 percent chance, plus it increases the more options are available to it (so if there are multiple moves that will win, it has an increased chance to pick one)
+	if ARRAYSIZE(_positions_to_win) > 0 && _rand - (ARRAYSIZE(_positions_to_win) * 10) <= 80
+	{
+		_play_type = "win"
+		_play_index = ANY(_positions_to_win)
+	}
+	elseif ASEARCH(4,_open) != -1 && _rand <= 80
+	{
+		_play_type = "middle"
+		_play_index = 4
+	}
+	elseif ARRAYSIZE(_positions_to_block) > 0 && _rand - (ARRAYSIZE(_positions_to_block) * 10) <= 80
+	{
+		_play_type = "block"
+		_play_index = ANY(_positions_to_block)
+	}
+	elseif ARRAYSIZE(_positions_to_build) > 0 && _rand - (ARRAYSIZE(_positions_to_build) * 10) <= 70
+	{
+		_play_type = "build"
+		_play_index = ANY(_positions_to_build)
+	}
+	
+	(_play_type,_play_index)
+}
+
+//Check if there is a win on the board, and if so, list which indices are part of the win
+TTT.WinCheck
+{
+	//0 1 2
+	//3 4 5
+	//6 7 8
+	
+	_win_positions = ( /
+		"0,1,2", /
+		"3,4,5", /
+		"6,7,8", /
+		
+		"0,3,6", /
+		"1,4,7", /
+		"2,5,8", /
+		
+		"0,4,8", /
+		"2,4,6" /
+	)
+	
+	_found_positions = IARRAY
+	_who_won = 0
+	foreach _win_positions; _position
+	{
+		_pos0 = TOINT(_position[0])
+		_pos1 = TOINT(_position[1])
+		_pos2 = TOINT(_position[2])
+		
+		_space = TTT.Board[_pos0] + TTT.Board[_pos1] + TTT.Board[_pos2]
+		
+		if _space == "111" || _space == "222"
+		{
+			if _space == "111"; _who_won = 1
+			elseif _space == "222"; _who_won = 2
+			_found_positions ,= _position
+		}
+	}
+	
+	_win_indices = IARRAY
+	foreach _found_positions; _pos
+	{
+		foreach SPLIT(_pos,","); _index
+		{
+			if ASEARCH(_index,_win_indices) == -1; _win_indices ,= _index
+		}
+	}
+	
+	//Draw
+	if _who_won == 0 && ASEARCH("0",TTT.Board) == -1; _who_won = 3
+	
+	//Outputs who won, and then any and all winning index numbers
+	(_who_won,_win_indices)
+}
