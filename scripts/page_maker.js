@@ -422,31 +422,31 @@ function makePageIndex()
 {
 	output = ``;
 	
-	if (shell_list.length > 0 || shells_by_others.length > 0 || version_history != null)
+	if (pagetype == "ghost")
 	{
-		output += `
+		if (shell_list.length > 0)
+		{
+			output += `<a href="#shells_by_me">Shells by me</a><br>`
+		}
+		if (shells_by_others.length > 0)
+		{
+			output += `<a href="#shells_by_others">Shells by others</a><br>`
+		}
+	}
+	
+	if (version_history != null)
+	{
+		output += `<a href="#version_history">Version history</a>`;
+	}
+	
+	if (output != ``)
+	{
+		output = `
 		<h2>Index</h2>
 		<p>
-		`
-		
-		if (pagetype == "ghost")
-		{
-			if (shell_list.length > 0)
-			{
-				output += `<a href="#shells_by_me">Shells by me</a><br>`
-			}
-			if (shells_by_others.length > 0)
-			{
-				output += `<a href="#shells_by_others">Shells by others</a><br>`
-			}
-		}
-		
-		if (version_history != null)
-		{
-			output += `<a href="#version_history">Version history</a>`;
-		}
-		output += `</p>`;
+		` + output + `</p>`
 	}
+	
 	return output;
 }
 
