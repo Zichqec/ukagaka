@@ -219,7 +219,7 @@ let item_details = [
 		],
 		translations: null,
 		content_warnings: null,
-		download: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=ghost_yaminabe",
+		download: "https://github.com/Zichqec/literally_just_a_mess_why_did_you_download_this/releases/latest",
 		blurb: "A chaotic ghost made in an afternoon! We all spontaneously got together on a collaborative coding site, and about 4 hours later we had this simple ghost with 600 dialogues and 10 shells."
 	},
 	{
