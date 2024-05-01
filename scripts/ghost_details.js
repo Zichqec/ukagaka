@@ -204,6 +204,25 @@ let item_details = [
 		blurb: "A simple ice cube, which will tell you about various things that are cold. Over time it will melt, and you can either freeze it to keep it alive, or you can let it melt and collect the items inside, and even display them on your desktop. Can you resist the urge to get the items inside? Not many do!"
 	},
 	{
+		name: "Literally just a mess why did you download this",
+		release: "March 24th, 2024",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		collaborators:
+		[
+			Galla,
+			SmokyCinnamonroll,
+			Zdzisiu,
+			Softie,
+			Koguri
+		],
+		translations: null,
+		content_warnings: null,
+		download: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=ghost_yaminabe",
+		blurb: "A chaotic ghost made in an afternoon! We all spontaneously got together on a collaborative coding site, and about 4 hours later we had this simple ghost with 600 dialogues and 10 shells."
+	},
+	{
 		name: "Lulo",
 		release: "January 1st, 2021",
 		latest: "August 10th, 2023",
@@ -359,5 +378,21 @@ let item_details = [
 		content_warnings: null,
 		download: "https://github.com/Zichqec/xanders_refuge/releases/latest",
 		blurb: "Xander's Refuge is a ghost made based on the prompt \"a ghost of an ancient deity that always seems tired, and is looking for a safe place to hide\". He's an extremely straightforward ghost, with few mechanics and a focus on content instead.<br><br>He has over 100 idle dialogues, and he works well as an aesthetic companion also! He has a looping smoke animation, and will randomly change poses when left idle so that he's never still for too long. He'll even do this if you turn his dialogues off!"
+	},
+	{
+		name: "ゴースト闇鍋",
+		release: "March 2nd, 2024",
+		latest: "N/A",
+		version: null,
+		forevent: "ゴースト闇鍋",
+		collaborators:
+		[
+			Galla,
+			{name: "See page for all collaborators", creditlink: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=ghost_yaminabe"}
+		],
+		translations: null,
+		content_warnings: null,
+		download: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=ghost_yaminabe",
+		blurb: "A collaborative event ghost that I participated in! (Romanization: Ghost Yaminabe / Translation: Ghost Dark Pot) Most of the dialogue is in Japanese, but Galla and I participated and wrote some English dialogue together. Unfortunately, due to a last-minute calculation error on my part, the English dialogue shows extremely rarely. But I swear it's there!"
 	}
 ]
