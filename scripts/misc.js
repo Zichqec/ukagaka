@@ -57,6 +57,7 @@ for (i = 0; i < coll.length; i++)
 //Maybe I'll make this its own function at one point
 function makeStandard(input)
 {
+	console.log(input);
 	let output = input.toLowerCase();
 	output = output.replace(" - ","_");
 	output = output.replace(" & ","_");
@@ -71,6 +72,7 @@ function makeStandard(input)
 	output = output.replace(")","");
 	output = output.replace("+","");
 	output = output.replace("+",""); //I'll um... fix this later, I'm in a rush
+	output = output.replace("ゴースト闇鍋","ghost_yaminabe"); //How many ghosts with names in jp could I possibly have!
 	
 	return output
 }

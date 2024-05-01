@@ -21,13 +21,22 @@ else
 	index_details = item_details;
 }
 
+console.log(pagename);
+
+
 for (let i = 0; i < index_details.length; i++)
 {
 	if (makeStandard(index_details[i].name) == pagename)
 	{
+		console.log(i);
+		console.log(index_details[i]);
+		console.log(index_details[i].name);
 		currentpage = index_details[i]
 	}
 }
+
+console.log(currentpage);
+console.log(currentpage.name);
 
 let shell_list = []
 
@@ -113,8 +122,8 @@ function ItemInfo()
 		output += `None`;
 	}
 
-	//Guides aren't versioned
-	if (pagetype != "guide")
+	//Guides aren't versioned - and there are exceptions like Ghost Yaminabe...
+	if (!(pagetype == "guide" || currentpage.version == null))
 	{
 		output += ` / v${currentpage.version}`;
 	}
@@ -412,25 +421,32 @@ function makeOtherShellIndex(shells)
 function makePageIndex()
 {
 	output = ``;
-	output += `
-	<h2>Index</h2>
-	<p>
-	`
 	
-	if (pagetype == "ghost")
+	if (shell_list.length > 0 || shells_by_others.length > 0 || version_history != null)
 	{
-		if (shell_list.length > 0)
+		output += `
+		<h2>Index</h2>
+		<p>
+		`
+		
+		if (pagetype == "ghost")
 		{
-			output += `<a href="#shells_by_me">Shells by me</a><br>`
+			if (shell_list.length > 0)
+			{
+				output += `<a href="#shells_by_me">Shells by me</a><br>`
+			}
+			if (shells_by_others.length > 0)
+			{
+				output += `<a href="#shells_by_others">Shells by others</a><br>`
+			}
 		}
-		if (shells_by_others.length > 0)
+		
+		if (version_history != null)
 		{
-			output += `<a href="#shells_by_others">Shells by others</a><br>`
+			output += `<a href="#version_history">Version history</a>`;
 		}
+		output += `</p>`;
 	}
-	output += `<a href="#version_history">Version history</a>`;
-	output += `</p>`;
-	
 	return output;
 }
 

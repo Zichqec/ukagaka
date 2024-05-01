@@ -35,4 +35,7 @@ function makeHistory(hist)
 	return output;
 }
 
-document.getElementById('history_list').innerHTML = makeHistory(version_history);
+if (version_history != null)
+{
+	document.getElementById('history_list').innerHTML = makeHistory(version_history);
+}
