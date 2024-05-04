@@ -1,5 +1,15 @@
 let item_details = [
 	{
+		name: "More Tuna Please",
+		release: "May 4th, 2024",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		collaborators: null,
+		download: "https://github.com/Zichqec/more_tuna_please/releases/latest",
+		blurb: "A cute catboy with an animated tail! Comes with the standard expressions, plus variations for eyes pointing different directions, a couple of arm poses, and a few special expressions. There is also a blush and a sweat drop that can be applied to any surface with \i[] tags.<br><br>If you use him, consider recoloring him to be another type of cat! You can use him as-is, of course, I just think it would be cute to see all different colors of cats made with this shell."
+	},
+	{
 		name: "Skeleton 00",
 		release: "February 2nd, 2022",
 		latest: null,
