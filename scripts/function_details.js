@@ -211,13 +211,13 @@ let item_details = [
 	},
 	{
 		name: "Music player",
-		release: "January 5th, 2021",
-		latest: "April 29th, 2022",
-		version: "1.0.0",
+		release: "April 29th, 2022",
+		latest: "May 12th, 2024",
+		version: "2.0.0",
 		forevent: null,
 		language: "YAYA",
-		download: "https://www.mediafire.com/file/oy1fk4uskghy5ib/music_zi.dic_v1.0.0.zip/file",
-		blurb: "This is an updated version of the music player in <a href='../ghost/flux.html'>FLUX</a>! This music player actually started all the way back in <a href='../ghost/lulo.html'>Lulo</a>, then got rewritten for FLUX, and then got overhauled again to be in its own .dic file to be added to other ghosts! Follow the instructions carefully, as there are some steps you need to take to integrate this with your ghost.<br><br>If you use this one, please put a credit in your ghost's readme stating such! I worked very hard on this music player, it's a big thing with a lot of little functions and polish.<br><br>Changes for this file are available to see <a href='https://github.com/Zichqec/ukagaka/commits/main/function/music_zi.dic'>here</a>."
+		download: "https://github.com/Zichqec/music_player/releases/latest",
+		blurb: "This is an updated version of the music player in <a href='../ghost/flux.html'>FLUX</a>! This music player actually started all the way back in <a href='../ghost/lulo.html'>Lulo</a>, then got rewritten for FLUX, and then got overhauled again to be in its own .dic file to be added to other ghosts! Follow the instructions carefully, as there are some steps you need to take to integrate this with your ghost.<br><br>If you use my <a href='../template/simplicity_template.html'>Simplicity Template</a>, I have created a special file bundle you can apply to a fresh, unmodified copy of Simplicity in order to do the basic integration automatically. You can download it at the same place the music player file itself is downloaded from. Please read the instructions carefully.<br><br>If you use this code, please put a credit in your ghost's readme stating such! I worked very hard on this music player, it's a big thing with a lot of little functions and polish.<br><br>Changes to the music player can be tracked <a href='https://github.com/Zichqec/ukagaka/commits/main/function/music_zi.dic'>here</a>."
 	},
 	{
 		name: "OnRandomDressup",
