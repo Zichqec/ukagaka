@@ -27,6 +27,8 @@ let links = [
 		{path: 'minigame/index', title: 'Minigames'},
 	]},
 	{title: 'Other', sublinks:[
+		{path: 'free_asset/index', title: "Free Assets"},
+		{path: 'misc/index', title: "Misc"},
 		{path: 'resources', title: "Resources"},
 		{path: 'blog/2021-12-12_advent_calendar_probabilities', title: "Advent Calendar 2021"},
 		{path: 'blog/2022-12-19_advent_calendar_how_to_write_a_needle', title: "Advent Calendar 2022 (#00)"},
