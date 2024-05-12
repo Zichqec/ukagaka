@@ -56,7 +56,7 @@ let Venelona = {
 }
 
 let idk = {
-	name: "idk", creditlink: "https://ukagakadreamteam.com/wiki/dev/idkimtired"
+	name: "idk", creditlink: "https://github.com/singlefl4me"
 }
 
 let Pommy = {
