@@ -71,6 +71,10 @@ let Softie = {
 	name: "Softie", creditlink: "https://ukagakadreamteam.com/wiki/dev/dragonmoth28"
 }
 
+let Logic = {
+	name: "logic.png", creditlink: "https://logicpng.neocities.org/"
+}
+
 
 //For shells
 let FLUX = {
