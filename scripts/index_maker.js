@@ -159,7 +159,11 @@ function makeIndex(item)
 			{
 				output += `, `;
 			}
-			output += `<a href="../ghost/${makeStandard(item.goeswith[i])}.html">${item.goeswith[i]}</a>`
+			if (typeof item.goeswith[i] === "string")
+			{
+				output += `<a href="../ghost/${makeStandard(item.goeswith[i])}.html">${item.goeswith[i]}</a>`
+			}
+			output += `<a href="${item.goeswith[i].download}">${item.goeswith[i].name}</a>`
 		}
 		output += `</p>`;
 	}
@@ -202,7 +206,7 @@ function makeIndex(item)
 		
 		output += `</p>`;
 	}
-	else if (!(pagetype == "function" || pagetype == "minigame"))
+	else if (!(pagetype == "function" || pagetype == "minigame" || pagetype == "free_asset" || pagetype == "misc"))
 	{
 		output += `<p><a href="${lowername}.html">Read more</a> | `;
 	}
