@@ -195,7 +195,15 @@ function ItemInfo()
 			{
 				//TODO sorry future zi, if you make balloons for ghosts other than your own that is your problem and not mine
 				//I'll have to do it at some point, but i don't want to declare objects for all of my ghosts, ugh... I'll figure something out eventually
-				output += `<a href="../ghost/${makeStandard(currentpage.goeswith[i])}.html">${currentpage.goeswith[i]}</a>`
+				
+				if (typeof currentpage.goeswith[i] === "string")
+				{
+					output += `<a href="../ghost/${makeStandard(currentpage.goeswith[i])}.html">${currentpage.goeswith[i]}</a>`
+				}
+				else
+				{
+					output += `<a href="${currentpage.goeswith[i].download}">${currentpage.goeswith[i].name}</a>`
+				}
 			}
 		}
 	}
@@ -302,7 +310,12 @@ function makeMyShellIndex(shells)
 		}
 		
 		
-		
+		if (item.content_warnings != null)
+		{
+			output += `<br><br>
+			<b>Content warnings: </b> ${item.content_warnings}
+			<br>`;
+		}
 		
 		
 		output += `<p><a href="../shell/${lowername}.html">Read more</a> | <a href="${item.download}">Download</a></p>`;
@@ -391,6 +404,13 @@ function makeOtherShellIndex(shells)
 		if (item.forevent != null)
 		{
 			output += ` (for ${item.forevent})`;
+		}
+		
+		if (item.content_warnings != null)
+		{
+			output += `<br><br>
+			<b>Content warnings: </b> ${item.content_warnings}
+			<br>`;
 		}
 		
 		output += `<p><a href="${item.download}">Download</a></p>`;
