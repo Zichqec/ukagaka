@@ -75,6 +75,10 @@ let Logic = {
 	name: "logic.png", creditlink: "https://logicpng.neocities.org/"
 }
 
+let GameKid = {
+	name: "Game Kid", creditlink: "https://characteroulette.tumblr.com/"
+}
+
 
 //For shells
 let FLUX = {
