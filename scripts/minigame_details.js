@@ -62,8 +62,8 @@ let item_details = [
 	{
 		name: "Word Jumble",
 		release: "April 7th, 2024",
-		latest: null,
-		version: "1.0.0",
+		latest: "May 13th, 2024",
+		version: "1.0.1",
 		forevent: null,
 		language: "YAYA",
 		download: "Word_Jumble.txt",

@@ -1,5 +1,5 @@
 //Written by Zichqec https://ukagaka.zichqec.com/
-//v1.0.0
+//v1.0.1
 /*
 This is an improved version of my original Junior Jumble game. In this version of the game, the user is prompted with a category for the words they will be solving, because as it turns out unscrambling words is hard when you have no idea what they might be!
 
@@ -267,7 +267,7 @@ WordJumble.Scramble
 			_word = ERASE(_word,_n,1)
 		}
 		
-		if _output != _word; break
+		if _output != TOLOWER(_argv[0]); break
 	}
 	_output
 }
