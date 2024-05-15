@@ -163,7 +163,10 @@ function makeIndex(item)
 			{
 				output += `<a href="../ghost/${makeStandard(item.goeswith[i])}.html">${item.goeswith[i]}</a>`
 			}
-			output += `<a href="${item.goeswith[i].download}">${item.goeswith[i].name}</a>`
+			else
+			{
+				output += `<a href="${item.goeswith[i].download}">${item.goeswith[i].name}</a>`
+			}
 		}
 		output += `</p>`;
 	}
