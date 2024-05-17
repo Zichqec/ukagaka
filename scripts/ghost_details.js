@@ -46,7 +46,6 @@ let item_details = [
 		release: "May 2nd, 2023",
 		latest: "May 26th, 2023",
 		version: "1.0.1",
-		forevent: "Ghost Masquerade 5",
 		forevent: "ゴーストマスカレード5",
 		collaborators: null,
 		translations: null,
@@ -62,7 +61,6 @@ let item_details = [
 		forevent: "Ghost Jam 2021",
 		collaborators:
 		[
-			{name: "Game Kid", creditlink: "https://characteroulette.tumblr.com/"},
 			GameKid,
 			Zarla
 		],
@@ -195,7 +193,6 @@ let item_details = [
 		release: "May 2nd, 2023",
 		latest: "December 30th, 2023",
 		version: "1.1.1",
-		forevent: "Ghost Masquerade 5",
 		forevent: "ゴーストマスカレード5",
 		collaborators:
 		[
@@ -310,6 +307,21 @@ let item_details = [
 		content_warnings: null,
 		download: "https://github.com/Zichqec/please_arrive_15_minutes_before_your_scheduled_interview_time/releases/latest",
 		blurb: "Do you like job interviews? How about wearing ties? If you answered yes to either of these, then this is the ghost for you! Interview continually for a new position doing hoard maintenance for a dragon. Answer questions, ask questions of your own, and learn all about your prospective job! Good luck!"
+	},
+	{
+		name: "Quiet conversation over tea",
+		release: "May 2nd, 2024",
+		latest: "May 17th, 2024",
+		version: "1.0.0",
+		forevent: "ゴーストマスカレード6",
+		collaborators:
+		[
+			Logic
+		],
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/quiet_conversation_over_tea/releases/latest",
+		blurb: "It's been several years since you moved to the big city, and your life became chaotic and busy. Now things are finally starting to quiet down again, and you've gotten a request from your childhood friend to meet up at a cafe and catch up over a cup of tea.<br><br>The photo used in the background of the shell is by <a href='https://unsplash.com/@minkus?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Minku Kang</a> on <a href='https://unsplash.com/photos/white-and-brown-wooden-dining-table-and-chairs-67EZZZl6jeI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Unsplash</a>."
 	},
 	{
 		name: "S the Skeleton",
