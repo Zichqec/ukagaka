@@ -260,6 +260,7 @@ let item_details = [
 		goeswith: ["May I have a book please?"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/vp4zqyk39lclmd4/reading_is_for_owls_v1.0.0.nar/file"],
+		download: ["https://www.mediafire.com/file/k97pzqnpvkp4bep/reading_is_for_owls_v1.0.0.nar/file"],
 		blurb: "A library-inspired balloon, inspired by <a href='https://wikiwiki.jp/feeshell/%E3%82%AB%E3%83%95%E3%82%A7%E3%82%AA%E3%83%AC%E3%81%B3%E3%81%9F%E3%81%97%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3?word=%E3%82%AB%E3%83%95%E3%82%A7%E3%82%AA%E3%83%AC%E3%81%B3%E3%81%9F%E3%81%97%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3'>this freeshell</a>! It comes with 3 sizes, one of them being tiny (only suitable for 1 or 2 words), and tail options for side tails, bottom tails, or no tails."
 	},
 	{
