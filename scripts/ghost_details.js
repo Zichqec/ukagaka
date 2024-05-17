@@ -47,6 +47,7 @@ let item_details = [
 		latest: "May 26th, 2023",
 		version: "1.0.1",
 		forevent: "Ghost Masquerade 5",
+		forevent: "ゴーストマスカレード5",
 		collaborators: null,
 		translations: null,
 		content_warnings: null,
@@ -62,6 +63,7 @@ let item_details = [
 		collaborators:
 		[
 			{name: "Game Kid", creditlink: "https://characteroulette.tumblr.com/"},
+			GameKid,
 			Zarla
 		],
 		translations: null,
@@ -194,6 +196,7 @@ let item_details = [
 		latest: "December 30th, 2023",
 		version: "1.1.1",
 		forevent: "Ghost Masquerade 5",
+		forevent: "ゴーストマスカレード5",
 		collaborators:
 		[
 			Galla
