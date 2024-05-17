@@ -235,6 +235,18 @@ let item_details = [
 		blurb: "An old ghost of mine that went into beta testing, and then I never finished her. She is centered around her 3 different modes: awake, sleepy, and asleep. She was intended to have many features, but development of this ghost has been abandoned as I no longer want to publish content for this character and no longer write ghosts in this style. So, most of her features are half-finished/rushed. But if you like meta-style ghosts, perhaps you'll enjoy having a sleepy companion. Released for public download on August 2nd, 2023."
 	},
 	{
+		name: "May I have a book please?",
+		release: "May 2nd, 2024",
+		latest: "May 17th, 2024",
+		version: "1.0.0",
+		forevent: "ゴーストマスカレード6",
+		collaborators: null,
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/may_i_have_a_book_please/releases/latest",
+		blurb: "Your life's greatest work is nearly complete. All you need is to unlock one final secret, and your research will be finished. And the only place you can find the information you need is in a library that claims to hold lost and forbidden knowledge. Are you prepared to brave this strange library and its even stranger policies?<br><br>Uses the freeshell <a href='https://wikiwiki.jp/feeshell/%E3%82%AB%E3%83%95%E3%82%A7%E3%82%AA%E3%83%AC%E3%81%B3%E3%81%9F%E3%81%97%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3?word=%E3%82%AB%E3%83%95%E3%82%A7%E3%82%AA%E3%83%AC%E3%81%B3%E3%81%9F%E3%81%97%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3'>カフェオレびたしのオールドファッション</a> (Old Fashioned with Cafe Au Lait) by ゆゆぴか!"
+	},
+	{
 		name: "Needle",
 		release: "May 11th, 2022",
 		latest: "December 11th, 2023",
