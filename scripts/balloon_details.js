@@ -252,6 +252,17 @@ let item_details = [
 		blurb: "A large balloon themed after papaer, with some decorations. Comes with 5 sizes, and has a lot of space for things like minigames! Drawn by Galla and assembled by me."
 	},
 	{
+		name: "Quaint Little Café",
+		release: "May 2nd, 2024",
+		latest: null,
+		version: "1.0.0",
+		forevent: null,
+		goeswith: ["Quiet conversation over tea"],
+		collaborators: null,
+		download: ["https://www.mediafire.com/file/qqosui1s5djyzob/quaint_little_cafe_v1.0.0.nar/file"],
+		blurb: "A café themed balloon! It's made to mimic the border style used by the ghost <a href='../ghost/quiet_conversation_over_tea.html'>Quiet conversation over tea</a>, and also uses the same background photo by <a href='https://unsplash.com/@minkus?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Minku Kang</a> on <a href='https://unsplash.com/photos/white-and-brown-wooden-dining-table-and-chairs-67EZZZl6jeI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Unsplash</a>. Comes in just 2 sizes."
+	},
+	{
 		name: "Reading is for Owls",
 		release: "May 2nd, 2024",
 		latest: "May 17th, 2024",
