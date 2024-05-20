@@ -222,12 +222,12 @@ let item_details = [
 	{
 		name: "OnRandomDressup",
 		release: "July 13th, 2021",
-		latest: "August 4th, 2021",
+		latest: "May 20th, 2024",
 		version: null,
 		forevent: null,
-		language: "YAYA / AYA",
+		language: "YAYA",
 		download: "OnRandomDressup.txt",
-		blurb: "If you have a lot of dressups, you might want a button to select some of them randomly. And that's just what this will do! This one actually does have an AYA version, if you're using AYA please check the comments in the code for instructions. This function will attempt to respect various options that dressups may have, like having a chance to pick multiple of a dressup category if the multiple option is specified."
+		blurb: "If you have a lot of dressups, you might want a button to select some of them randomly. And that's just what this will do! This function will respect various options that dressups may have, like having a chance to pick multiple of a dressup category if the multiple option is specified."
 	},
 	{
 		name: "OnWander",
