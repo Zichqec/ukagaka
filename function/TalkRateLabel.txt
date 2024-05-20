@@ -11,7 +11,7 @@
 /*
 			if _output != ""
 			{
-				if _unit[0] == "second"
+				if _num == 0
 				{
 					if "," _in_ _output; _output += ","
 					_output += " and "

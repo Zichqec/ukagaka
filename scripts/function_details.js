@@ -312,7 +312,7 @@ let item_details = [
 	{
 		name: "TalkRateLabel",
 		release: "January 20th, 2024",
-		latest: null,
+		latest: "May 20th, 2024",
 		version: null,
 		forevent: null,
 		language: "YAYA / AYA",
