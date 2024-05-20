@@ -47,7 +47,7 @@ OnRandomDressup : all
 	}
 	
 	//—— Assign new dressups ——
-	_skipratio = 4 // 1 out of 4
+	_skipratio = 4 //1 out of 4
 	for _i = 0; _i < ARRAYSIZE(_category.key); _i++
 	{
 		_multiple = 0
