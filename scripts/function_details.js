@@ -30,6 +30,16 @@ let item_details = [
 		blurb: "This handy function can automatically apply pause tags (\\w tags) to your dialogues! It takes a bit of getting used to, but it can make your scripts much cleaner and much faster to write! Just follow the instructions carefully, and make sure you know how to plan so that it doesn't make your menus wonky."
 	},
 	{
+		name: "BottomText",
+		release: "May 21st, 2024",
+		latest: null,
+		version: null,
+		forevent: null,
+		language: "YAYA / AYA",
+		download: "BottomText.txt",
+		blurb: "A small set of events/functions for displaying text on the bottom of a balloon, no matter what balloon the user is using! There are some limitations, so be sure to read the instructions. This implementation is also intentionally kept simple, but it could definitely be expanded for use with more balloon sizes, etc., if need be!"
+	},
+	{
 		name: "Capitalize",
 		release: "January 5th, 2021",
 		latest: "March 20th, 2024",

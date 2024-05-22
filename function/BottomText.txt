@@ -1,0 +1,33 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+/*
+A little set of events and functions for making it possible to display text at the bottom of a balloon, regardless of what balloon the user is using.
+Note that this setup is for the \b[2] balloon specifically, you'll need to make adjustmments if you want to use it for balloons other than that.
+Note also that it is not suitable for all displays. If your menu text is too long, this will overlap with it! Be mindful how you use it.
+This includes the SHIORI event OnBalloonChange, so if you already have that event in your ghost you may need to customize it to integrate this.
+
+MAKE SURE you add the following to your OnFirstBoot, so that users get the correct display even if they never change balloons:
+BalloonLines = 15
+
+Set the 15 to whatever the default number of lines in your balloon is. If you're not sure what that number is, change to a different balloon and change back (after you implement the code below), then check the contents of BalloonLines.
+
+Example usage: "\b[2]%(BottomText)Whatever you want displayed at the bottom"
+*/
+
+//This happens when the balloon is changed. If you want to use this for a balloon other than \b[2], you will need to change the \b[2] tag before the property command.
+//I am sure you could create a setup for multiple balloons as well, if you needed, by running multiple property commands after different balloon tags and sending them to different events.
+OnBalloonChange : all
+{
+	if "balloon" _in_ status; "\C"
+	"\b[2]\![get,property,OnBalloonLines,currentghost.balloon.scope(0).lines.initial]"
+}
+
+//Event to save the amount given by the property command
+OnBalloonLines
+{
+	BalloonLines = TOINT(reference0)
+}
+
+BottomText
+{
+	"\_l[0,0]\n[%((BalloonLines - 1) * 100)]"
+}
