@@ -66,7 +66,7 @@ function makeIndex(item)
 		//if ((pagetype == "function" || pagetype == "minigame") && item.version != null)
 		if (item.version != null)
 		{
-			output += ` / v${item.version}`;
+			output += ` / ${item.version}`;
 		}
 	}
 	

@@ -3,7 +3,7 @@ let item_details = [
 		name: "@funkylittlemothman",
 		release: "June 25th, 2023",
 		latest: null,
-		version: "1.0.0",
+		version: "v1.0.0",
 		forevent: "Idea Adoption Jam",
 		collaborators:
 		[
@@ -18,7 +18,7 @@ let item_details = [
 		name: "ATM Machine",
 		release: "April 9th, 2023",
 		latest: "April 1st, 2024",
-		version: "2.0.0",
+		version: "v2.0.0",
 		forevent: null,
 		collaborators: null,
 		translations: null,
@@ -30,7 +30,7 @@ let item_details = [
 		name: "Balloons",
 		release: "May 8th, 2022",
 		latest: "February 15th, 2023",
-		version: "1.0.3",
+		version: "v1.0.3",
 		forevent: "Ghost Jam 2022",
 		collaborators:
 		[
@@ -45,7 +45,7 @@ let item_details = [
 		name: "Call of the Sea",
 		release: "May 2nd, 2023",
 		latest: "May 26th, 2023",
-		version: "1.0.1",
+		version: "v1.0.1",
 		forevent: "ゴーストマスカレード5",
 		collaborators: null,
 		translations: null,
@@ -57,7 +57,7 @@ let item_details = [
 		name: "CT Epoch Jam",
 		release: "April 24th, 2021",
 		latest: null,
-		version: "1.0.0",
+		version: "v1.0.0",
 		forevent: "Ghost Jam 2021",
 		collaborators:
 		[
@@ -73,7 +73,7 @@ let item_details = [
 		name: "Dusty and Obsidian",
 		release: "August 1st, 2020",
 		latest: "November 17th, 2020",
-		version: "1.0.9",
+		version: "v1.0.9",
 		forevent: null,
 		collaborators: null,
 		translations: null,
@@ -85,7 +85,7 @@ let item_details = [
 		name: "FLUX",
 		release: "May 12th, 2021",
 		latest: "January 31st, 2022",
-		version: "1.2.2",
+		version: "v1.2.2",
 		forevent: null,
 		collaborators: null,
 		translations: [
@@ -118,7 +118,7 @@ let item_details = [
 		name: "Gallery 512",
 		release: "May 14th, 2023",
 		latest: "May 19th, 2023",
-		version: "1.0.1",
+		version: "v1.0.1",
 		forevent: "Ghost Jam 2023",
 		collaborators:
 		[
@@ -134,7 +134,7 @@ let item_details = [
 		name: "Ghost Guides",
 		release: "December 24th, 2022",
 		latest: "April 14th, 2023",
-		version: "1.0.1",
+		version: "v1.0.1",
 		forevent: null,
 		collaborators: null,
 		translations: null,
@@ -146,7 +146,7 @@ let item_details = [
 		name: "Hydrate",
 		release: "August 20th, 2020",
 		latest: "August 26th, 2022",
-		version: "1.2.1",
+		version: "v1.2.1",
 		forevent: null,
 		collaborators:
 		[
@@ -161,7 +161,7 @@ let item_details = [
 		name: "Iea",
 		release: "April 25th, 2020",
 		latest: "April 25th, 2020",
-		version: "1.0.1",
+		version: "v1.0.1",
 		forevent: "Ghost Jam 2020",
 		collaborators:
 		[
@@ -176,7 +176,7 @@ let item_details = [
 		name: "If I Can't Have Shrimp No One Can",
 		release: "June 19th, 2023",
 		latest: "June 27th, 2023",
-		version: "1.0.1",
+		version: "v1.0.1",
 		forevent: "Idea Adoption Jam",
 		collaborators:
 		[
@@ -192,7 +192,7 @@ let item_details = [
 		name: "KEEP FROZEN",
 		release: "May 2nd, 2023",
 		latest: "December 30th, 2023",
-		version: "1.1.1",
+		version: "v1.1.1",
 		forevent: "ゴーストマスカレード5",
 		collaborators:
 		[
@@ -207,7 +207,7 @@ let item_details = [
 		name: "Literally just a mess why did you download this",
 		release: "March 24th, 2024",
 		latest: null,
-		version: "1.0.0",
+		version: "v1.0.0",
 		forevent: null,
 		collaborators:
 		[
@@ -226,7 +226,7 @@ let item_details = [
 		name: "Lulo",
 		release: "January 1st, 2021",
 		latest: "August 10th, 2023",
-		version: "0.0.4",
+		version: "v0.0.4",
 		forevent: null,
 		collaborators: null,
 		translations: null,
@@ -238,7 +238,7 @@ let item_details = [
 		name: "May I have a book please?",
 		release: "May 2nd, 2024",
 		latest: "May 17th, 2024",
-		version: "1.0.0",
+		version: "v1.0.0",
 		forevent: "ゴーストマスカレード6",
 		collaborators: null,
 		translations: null,
@@ -250,7 +250,7 @@ let item_details = [
 		name: "Needle",
 		release: "May 11th, 2022",
 		latest: "December 11th, 2023",
-		version: "1.1.2",
+		version: "v1.1.2",
 		forevent: "Ghost Jam 2022",
 		collaborators:
 		[
@@ -265,7 +265,7 @@ let item_details = [
 		name: "Noodle",
 		release: "May 31st, 2023",
 		latest: "June 2nd, 2023",
-		version: "1.0.2",
+		version: "v1.0.2",
 		forevent: null,
 		collaborators:
 		[
@@ -280,7 +280,7 @@ let item_details = [
 		name: "Paper",
 		release: "May 12th, 2022",
 		latest: "June 3rd, 2022",
-		version: "1.0.1",
+		version: "v1.0.1",
 		forevent: "Ghost Jam 2022",
 		collaborators:
 		[
@@ -296,7 +296,7 @@ let item_details = [
 		name: "Please arrive 15 minutes before your scheduled interview time",
 		release: "May 18th, 2023",
 		latest: null,
-		version: "1.0.0",
+		version: "v1.0.0",
 		forevent: "Ghost Jam 2023",
 		collaborators:
 		[
@@ -312,7 +312,7 @@ let item_details = [
 		name: "Quiet conversation over tea",
 		release: "May 2nd, 2024",
 		latest: "May 17th, 2024",
-		version: "1.0.0",
+		version: "v1.0.0",
 		forevent: "ゴーストマスカレード6",
 		collaborators:
 		[
@@ -327,7 +327,7 @@ let item_details = [
 		name: "S the Skeleton",
 		release: "May 1st, 2020",
 		latest: "August 25th, 2022",
-		version: "1.5.0",
+		version: "v1.5.0",
 		forevent: null,
 		collaborators: null,
 		translations: null,
@@ -339,7 +339,7 @@ let item_details = [
 		name: "Skyrim Guard",
 		release: "June 13th, 2020",
 		latest: "June 14th, 2020",
-		version: "1.0.1",
+		version: "v1.0.1",
 		forevent: null,
 		collaborators: null,
 		translations: null,
@@ -351,7 +351,7 @@ let item_details = [
 		name: "SSP Angel",
 		release: "March 23rd, 2023",
 		latest: "March 23rd, 2024",
-		version: "1.1.0",
+		version: "v1.1.0",
 		forevent: null,
 		collaborators:
 		[
@@ -368,7 +368,7 @@ let item_details = [
 		name: "Ukatranslator",
 		release: "October 4th, 2021",
 		latest: null,
-		version: "1.0.0",
+		version: "v1.0.0",
 		forevent: null,
 		collaborators: null,
 		translations: [
@@ -386,7 +386,7 @@ let item_details = [
 		name: "Warrior Generator",
 		release: "March 7th, 2021",
 		latest: null,
-		version: "1.0.0",
+		version: "v1.0.0",
 		forevent: null,
 		collaborators: null,
 		translations: null,
@@ -398,7 +398,7 @@ let item_details = [
 		name: "Xander's Refuge",
 		release: "August 31st, 2023",
 		latest: "March 20th, 2024",
-		version: "1.0.1",
+		version: "v1.0.1",
 		forevent: "Aughost",
 		collaborators: null,
 		translations: null,

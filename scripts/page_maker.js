@@ -125,7 +125,7 @@ function ItemInfo()
 	//Guides aren't versioned - and there are exceptions like Ghost Yaminabe...
 	if (!(pagetype == "guide" || currentpage.version == null))
 	{
-		output += ` / v${currentpage.version}`;
+		output += ` / ${currentpage.version}`;
 	}
 
 	if (currentpage.collaborators != null)
@@ -283,7 +283,7 @@ function makeMyShellIndex(shells)
 			output += `None`;
 		}
 		
-			output += ` / v${item.version}`;
+			output += ` / ${item.version}`;
 		
 		
 		//Display collaborators if there are any

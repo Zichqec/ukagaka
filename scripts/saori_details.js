@@ -3,7 +3,7 @@ let item_details = [
 		name: "ImageCompositor",
 		release: "March 7th, 2021",
 		latest: null,
-		version: "1.0.0",
+		version: "v1.0.0",
 		forevent: null,
 		collaborators: null,
 		standard: "SAORI-basic",

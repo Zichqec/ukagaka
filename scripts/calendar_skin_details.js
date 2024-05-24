@@ -3,7 +3,7 @@ let item_details = [
 		name: "Galaxy",
 		release: "June 4th, 2020",
 		latest: null,
-		version: "1.0.0",
+		version: "v1.0.0",
 		forevent: null,
 		collaborators: null,
 		download: ["http://www.mediafire.com/file/osfvmhlm2p9sh7r/galaxy_calendar_skin_v1.nar/file"],
@@ -13,7 +13,7 @@ let item_details = [
 		name: "Undertale",
 		release: "June 4th, 2020",
 		latest: null,
-		version: "1.0.0",
+		version: "v1.0.0",
 		forevent: null,
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/qdjgsdmbu95ogmb/undertale_calendar_skin_v1.0.1.nar/file"],
@@ -23,7 +23,7 @@ let item_details = [
 		name: "Wedges Calendar Skin Pack",
 		release: "September 23rd, 2023",
 		latest: null,
-		version: "1.0.0",
+		version: "v1.0.0",
 		forevent: "Etc. Jam 2023",
 		collaborators: [
 			Galla
