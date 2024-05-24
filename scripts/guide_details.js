@@ -132,7 +132,7 @@ let item_details = [
 	{
 		name: "YAYA Fundamentals",
 		release: "December 24th, 2022",
-		latest: "May 21st, 2024",
+		latest: "May 23rd, 2024",
 		guidefor: "Devs",
 		language: "YAYA",
 		collaborators: null,
