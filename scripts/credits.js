@@ -79,6 +79,10 @@ let GameKid = {
 	name: "Game Kid", creditlink: "https://characteroulette.tumblr.com/"
 }
 
+let OmochiYoichi = {
+	name: "おもちよいち (OmochiYoichi)", creditlink: "https://sites.google.com/view/omochi-yoichi/"
+}
+
 
 //For shells
 let FLUX = {
