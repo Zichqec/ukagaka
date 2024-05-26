@@ -383,6 +383,23 @@ let item_details = [
 		blurb: "A simple little function ghost, which helps you run other ghosts dialogue through machine translation! Machine translation is horrifically bad, but if you want to give it a go, this is better than having to copy text out of script log by hand!"
 	},
 	{
+		name: "Under the Stars",
+		release: "May 25th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Ghost Jam 2024",
+		collaborators:
+		[
+			Galla,
+			{name: "YudiDoodles", creditlink: "https://www.tumblr.com/yudidoodles"},
+			OmochiYoichi
+		],
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/under_the_stars/releases/latest",
+		blurb: "Watch the wonder and amazement of a young merfolk as they gaze up at the stars for the first time!"
+	},
+	{
 		name: "Warrior Generator",
 		release: "March 7th, 2021",
 		latest: null,

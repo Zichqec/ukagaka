@@ -274,6 +274,17 @@ let item_details = [
 		blurb: "A library-inspired balloon, inspired by <a href='https://wikiwiki.jp/feeshell/%E3%82%AB%E3%83%95%E3%82%A7%E3%82%AA%E3%83%AC%E3%81%B3%E3%81%9F%E3%81%97%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3'>this freeshell</a>! It comes with 3 sizes, one of them being tiny (only suitable for 1 or 2 words), and tail options for side tails, bottom tails, or no tails."
 	},
 	{
+		name: "Reflections of Starlight",
+		release: "May 25th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Ghost Jam 2024",
+		goeswith: ["Under the Stars"],
+		collaborators: [OmochiYoichi],
+		download: ["https://www.mediafire.com/file/f7tqe1e3c06020s/reflections_of_starlight_v1.0.0.nar/file"],
+		blurb: "View the endless stars in the reflection of a puddle! Comes with 4 sizes, and a pretty meteor shower online marker."
+	},
+	{
 		name: "Soul Balloon Pack",
 		release: "August 31st, 2020",
 		latest: "February 8th, 2022",
