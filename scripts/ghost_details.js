@@ -435,7 +435,7 @@ let item_details = [
 			seika
 		],
 		translations: null,
-		content_warnings: null,
+		content_warnings: "Eyes, discussions of death",
 		download: "https://github.com/Zichqec/zanas_laws/releases/latest",
 		blurb: "You find yourself in a desperate state. The world shudders and writhes, crumbling around you. But amidst the chaos, you see a steady light. It's... a gate? Untouched by the collapse of the world, glowing with a heavenly light. Do you dare to trespass on what feels like holy ground...?"
 	},
