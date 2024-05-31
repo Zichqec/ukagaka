@@ -424,6 +424,22 @@ let item_details = [
 		blurb: "Xander's Refuge is a ghost made based on the prompt \"a ghost of an ancient deity that always seems tired, and is looking for a safe place to hide\". He's an extremely straightforward ghost, with few mechanics and a focus on content instead.<br><br>He has over 100 idle dialogues, and he works well as an aesthetic companion also! He has a looping smoke animation, and will randomly change poses when left idle so that he's never still for too long. He'll even do this if you turn his dialogues off!"
 	},
 	{
+		name: "Zana's Laws",
+		release: "May 30th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Ghost Jam 2024",
+		collaborators:
+		[
+			Galla,
+			seika
+		],
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/zanas_laws/releases/latest",
+		blurb: "You find yourself in a desperate state. The world shudders and writhes, crumbling around you. But amidst the chaos, you see a steady light. It's... a gate? Untouched by the collapse of the world, glowing with a heavenly light. Do you dare to trespass on what feels like holy ground...?"
+	},
+	{
 		name: "ゴースト闇鍋",
 		release: "March 2nd, 2024",
 		latest: "N/A",
