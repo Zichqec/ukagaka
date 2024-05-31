@@ -83,6 +83,10 @@ let OmochiYoichi = {
 	name: "おもちよいち (OmochiYoichi)", creditlink: "https://sites.google.com/view/omochi-yoichi/"
 }
 
+let seika = {
+	name: "月波 清火 (Tsukinami Seika)", creditlink: "https://tukinami.github.io/"
+}
+
 
 //For shells
 let FLUX = {

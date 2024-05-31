@@ -111,6 +111,21 @@ let item_details = [
 		blurb: "A simple set of balloons with gradient accents! I just felt like making some balloons one day. Hopefully easy to modify to your own color scheme, if you like!"
 	},
 	{
+		name: "Effortless Iridescence",
+		release: "May 30th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Ghost Jam 2024",
+		goeswith: ["Zana's Laws"],
+		collaborators:
+		[
+			Galla,
+			seika
+		],
+		download: ["https://www.mediafire.com/file/2vd223dsco0ji5x/effortless_iridescence_v1.0.0.nar/file"],
+		blurb: "Gaze into the depths of a gem containing a universe. Comes in 4 sizes, and looks very edible if you ask me."
+	},
+	{
 		name: "Flip of a Coin",
 		release: "August 31st, 2023",
 		latest: null,
@@ -142,6 +157,17 @@ let item_details = [
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/m6cga89ate7z2x7/h2o_v1.1.0.nar/file"],
 		blurb: "A simple water themed balloon with 3 different sizes!"
+	},
+	{
+		name: "In the Meadow",
+		release: "May 2nd, 2024",
+		latest: null,
+		version: null,
+		forevent: null,
+		goeswith: [{name: "Encore! Onto Another Life", download: "TEMP"}],
+		collaborators: null,
+		download: ["https://www.mediafire.com/file/xpbt54i971f2jrj/in_the_meadow_v1.0.0.nar/file"],
+		blurb: "A meadow themed balloon, inspired by <a href='https://wikiwiki.jp/feeshell/field'>this freeshell</a>! Comes in 4 sizes."
 	},
 	{
 		name: "Leap Day Frog",
