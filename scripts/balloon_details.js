@@ -159,17 +159,6 @@ let item_details = [
 		blurb: "A simple water themed balloon with 3 different sizes!"
 	},
 	{
-		name: "In the Meadow",
-		release: "May 2nd, 2024",
-		latest: null,
-		version: null,
-		forevent: null,
-		goeswith: [{name: "Encore! Onto Another Life", download: "TEMP"}],
-		collaborators: null,
-		download: ["https://www.mediafire.com/file/xpbt54i971f2jrj/in_the_meadow_v1.0.0.nar/file"],
-		blurb: "A meadow themed balloon, inspired by <a href='https://wikiwiki.jp/feeshell/field'>this freeshell</a>! Comes in 4 sizes."
-	},
-	{
 		name: "Leap Day Frog",
 		release: "February 29th, 2024",
 		latest: null,
