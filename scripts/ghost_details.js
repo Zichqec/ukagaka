@@ -426,8 +426,8 @@ let item_details = [
 	{
 		name: "Zana's Laws",
 		release: "May 30th, 2024",
-		latest: null,
-		version: "v1.0.0",
+		latest: "June 7th, 2024",
+		version: "v1.0.1",
 		forevent: "Ghost Jam 2024",
 		collaborators:
 		[
