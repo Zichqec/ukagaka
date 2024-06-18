@@ -44,7 +44,7 @@ let WhatAPhantasia = {
 }
 
 let SmokyCinnamonroll = {
-	name: "SmokyCinnamonroll", creditlink: "https://smokycinnamon.github.io/indifferentsorrel/"
+	name: "SmokyCinnamonRoll", creditlink: "https://smokycinnamon.github.io/indifferentsorrel/"
 }
 
 let Koguri = {
