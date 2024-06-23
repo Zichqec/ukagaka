@@ -109,6 +109,10 @@ let Noodle = {
 	name: "Noodle", download_link: "mine"
 }
 
+let IfICantHaveShrimpNoOneCan = {
+	name: "If I Can't Have Shrimp No One Can", download_link: "mine"
+}
+
 let Presentable_Can = {
 	name: "Presentable Can", download_link: "https://www.tumblr.com/characteroulette/717104163012608000/ghost-jam-2023-hype-anyway-this-thing-is-done"
 }

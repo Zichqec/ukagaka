@@ -25,6 +25,18 @@ let shell_details = [
 		blurb: "Do you want to drink your water off a leaf? Of course you do! This simple shell hangs out on the right side of your screen and that's about it."
 	},
 	{
+		name: "Angrily Vibrating Flamingo",
+		goeswith: [IfICantHaveShrimpNoOneCan],
+		release: "June 23rd, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "National Pink Flamingo Day",
+		collaborators: null,
+		content_warnings: "Intense vibrating effects (toggleable)",
+		download: "https://www.mediafire.com/file/x9bl69kdjrduy3z/angrily_vibrating_flamingo_v1.0.0.nar/file",
+		blurb: "Have you ever wanted a flamingo so angry that it vibrates? Well now you can! And if you're sensitive to that kind of motion, you can toggle it off via dressups and enjoy a normal alternative shell."
+	},
+	{
 		name: "Ballpoint Pen",
 		goeswith: [Hydrate],
 		release: "August 20th, 2022",
