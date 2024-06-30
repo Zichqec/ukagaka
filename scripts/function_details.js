@@ -22,7 +22,7 @@ let item_details = [
 	{
 		name: "AutoPause",
 		release: "July 25th, 2022",
-		latest: null,
+		latest: "June 30th, 2024",
 		version: null,
 		forevent: null,
 		language: "YAYA / AYA",

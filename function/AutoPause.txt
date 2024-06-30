@@ -33,17 +33,17 @@ OnTranslateInternal.AutoPause
 		/*
 		//Additional options if you want ellipsis to have little pauses between each dot. Personally, I think I want to do that manually, for when I want a particular flavor. If you want this, just uncomment it.
 		
-		_talk = REPLACE(_talk,"... ",".\w2.\w2.\w8 ") //Ellipsis
-		_talk = REPLACE(_talk,"..? ",".\w2.\w2?\w8 ") //Question mark + ellipsis
-		_talk = REPLACE(_talk,"..! ",".\w2.\w2!\w8 ") //Exclamation point + ellipsis
+		_talk = REPLACE(_talk,"... ",".\w4.\w4.\w8\w8 ") //Ellipsis
+		_talk = REPLACE(_talk,"...? ",".\w4.\w4.\w4?\w8\w8 ") //Question mark + ellipsis
+		_talk = REPLACE(_talk,"...! ",".\w4.\w4.\w4!\w8\w8 ") //Exclamation point + ellipsis
 		*/
 		
 		_talk = REPLACE(_talk,", ",",\w4 ") //Comma
-		_talk = REPLACE(_talk,". ",".\w8 ") //Period
-		_talk = REPLACE(_talk,"? ","?\w8 ") //Question mark
-		_talk = REPLACE(_talk,"! ","!\w8 ") //Exclamation point
-		//_talk = REPLACE(_talk,"- ","-\w8 ") //Dash - This one seems to happen a lot when I don't want it, so I am commenting it out
+		_talk = REPLACE(_talk,". ",".\w8\w8 ") //Period
+		_talk = REPLACE(_talk,"? ","?\w8\w8 ") //Question mark
+		_talk = REPLACE(_talk,"! ","!\w8\w8 ") //Exclamation point
 		_talk = REPLACE(_talk,"; ",";\w4 ") //Semicolon
+		//_talk = REPLACE(_talk,"- ","-\w8 ") //Dash - This one seems to happen a lot when I don't want it, so I am commenting it out
 	}
 	
 	_talk
