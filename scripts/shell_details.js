@@ -292,6 +292,18 @@ let shell_details = [
 		blurb: "A soft crochet needle made of plastic, with additional strings for decoration. There are 11 plastic colors, 11 string styles, and 11 colors for the strings! I'm not terribly good at math, but from my dodgy calculations it came out to over 240k combinations of dressups for this shell."
 	},
 	{
+		name: "Spigot",
+		goeswith: [Hydrate],
+		release: "August 20th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "8/20 Hydrate Shell Jam 2024",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/x6kmi9k662g272s/spigot_v1.0.0.nar/file",
+		blurb: "Who has time to run inside for a drink of water? Not me! But hey, the spigot's right there...<br><br>Comes with several spigot colors, various liquids, and you can control how far open the spigot is!"
+	},
+	{
 		name: "Starset Messenger",
 		goeswith: [FLUX,FLELE],
 		release: "October 24th, 2021",
