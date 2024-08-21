@@ -205,7 +205,7 @@ let shell_details = [
 		collaborators: null,
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/mf10z1f6lgvlt7y/leaking_from_somewhere_v1.0.0.nar/file",
-		blurb: "Uh oh, better get a bucket! This shell endlessly drips down from the top of your monitor, and may be useful if you want to keep Hydrate out of the way. Use dressups to add additional drips, and change the liquid!"
+		blurb: "Uh oh, better get a bucket! This shell endlessly drips down from the top of your monitor, and may be useful if you want to keep Hydrate out of the way. Use dressups to add additional drips, and to change the liquid!"
 	},
 	{
 		name: "Macaroni",
