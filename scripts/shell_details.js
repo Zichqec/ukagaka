@@ -196,6 +196,18 @@ let shell_details = [
 		blurb: "A simple inked needle, with an additional dressup that I made by mistake and then ended up really liking. Perfect for your black and white Needle needs."
 	},
 	{
+		name: "Leaking from somewhere",
+		goeswith: [Hydrate],
+		release: "August 20th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "8/20 Hydrate Shell Jam 2024",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/mf10z1f6lgvlt7y/leaking_from_somewhere_v1.0.0.nar/file",
+		blurb: "Uh oh, better get a bucket! This shell endlessly drips down from the top of your monitor. Use dressups to add additional drips, and change the liquid!"
+	},
+	{
 		name: "Macaroni",
 		goeswith: [Noodle],
 		release: "September 24th, 2023",
