@@ -1,5 +1,15 @@
 let item_details = [
 	{
+		name: "Lollipop Tanktop",
+		release: "September 26th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: null,
+		collaborators: null,
+		download: "https://github.com/Zichqec/lollipop_tanktop/releases/latest",
+		blurb: "A tattooed girl with a lollipop, in a tanktop! She appears to be sitting on a wall or similar, and her leg idly moves back and forth, occasionally kicking forward. Comes with the standard expressions, plus variations for eyes pointing different directions, a couple of arm poses, and some special expressions. There is also a blush and a sweat drop that can be appled to any surface with \\i[] tags.<br><br>Additionally, her psd file comes with several alternate color palettes and tattoo options! Feel free to mix and match those to get something you like, or create your own colors/tattoos!"
+	},
+	{
 		name: "More Tuna Please",
 		release: "May 4th, 2024",
 		latest: null,
