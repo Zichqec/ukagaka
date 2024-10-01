@@ -46,7 +46,7 @@ let item_details = [
 		version: null,
 		forevent: null,
 		language: "YAYA",
-		download: "Rock_Paper_Scissors",
+		download: "Rock_Paper_Scissors.txt",
 		blurb: "My setup for rock paper scissors, which keeps track of how many matches you've played in the current game session, how many you've won/lost/tied, and the dialogue is set up so that it's all in one function and changes dynamically based on who picked what. You can set up surfaces to go with this, so that if your ghost picks rock it'll show that with its hands, but I have not done so yet so I can't show that in the example."
 	},
 	{
