@@ -2,8 +2,8 @@ let item_details = [
 	{
 		name: "Weather Station",
 		release: "February 1st, 2022",
-		latest: "July 19th, 2023",
-		version: "v1.0.3",
+		latest: "October 15th, 2024",
+		version: "v1.0.4",
 		forevent: null,
 		collaborators: null,
 		download: "https://github.com/Zichqec/weather_station/releases/latest",
