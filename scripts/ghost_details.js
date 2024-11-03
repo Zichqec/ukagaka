@@ -237,8 +237,8 @@ let item_details = [
 	{
 		name: "May I have a book please?",
 		release: "May 2nd, 2024",
-		latest: "May 17th, 2024",
-		version: "v1.0.0",
+		latest: "November 3rd, 2024",
+		version: "v1.0.1",
 		forevent: "ゴーストマスカレード6",
 		collaborators: null,
 		translations: null,
