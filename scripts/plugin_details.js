@@ -2,8 +2,8 @@ let item_details = [
 	{
 		name: "Spectre",
 		release: "October 29th, 2024",
-		latest: null,
-		version: "v1.0.0",
+		latest: "November 3rd, 2024",
+		version: "v1.0.1",
 		forevent: "Etc. Jam 2024",
 		collaborators:
 		[
