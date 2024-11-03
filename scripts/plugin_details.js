@@ -1,5 +1,18 @@
 let item_details = [
 	{
+		name: "Spectre",
+		release: "October 29th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Etc. Jam 2024",
+		collaborators:
+		[
+			Galla
+		],
+		download: "https://github.com/Zichqec/spectre/releases/latest",
+		blurb: "Enhances your SSP experience. Enhancements are improved by calibrating the plugin for the ghost you're currently running. Don't like the changes? The plugin's effects can be turned off from its menu.<br><br>It's recommended to use the balloon <a href='../balloon/ghost_balloon.html'>Ghost Balloon</a>!"
+	},
+	{
 		name: "Weather Station",
 		release: "February 1st, 2022",
 		latest: "October 15th, 2024",
