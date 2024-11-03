@@ -430,8 +430,8 @@ let item_details = [
 	{
 		name: "Xander's Refuge",
 		release: "August 31st, 2023",
-		latest: "March 20th, 2024",
-		version: "v1.0.1",
+		latest: "November 3rd, 2024",
+		version: "v1.0.2",
 		forevent: "Aughost",
 		collaborators: null,
 		translations: null,
