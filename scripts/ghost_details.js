@@ -175,8 +175,8 @@ let item_details = [
 	{
 		name: "If I Can't Have Shrimp No One Can",
 		release: "June 19th, 2023",
-		latest: "June 23rd, 2024",
-		version: "v1.1.0",
+		latest: "November 3rd, 2024",
+		version: "v1.1.1",
 		forevent: "Idea Adoption Jam",
 		collaborators:
 		[
