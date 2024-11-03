@@ -38,7 +38,7 @@ let item_details = [
 		[
 			Galla
 		],
-		download: ["https://github.com/Zichqec/SSP_Angel_Balloons"],
+		download: ["https://www.mediafire.com/file/jfry7471otzocq3/balloons_balloon_gz_v1.0.1.nar/file"],
 		blurb: "A balloon themed balloon, with 2 sizes, and a second, slimmer design. Drawn by Galla and assembled by me!"
 	},
 	{
@@ -148,6 +148,20 @@ let item_details = [
 		blurb: "A pack of galaxy balloons using the same base as the Soul Balloon Pack, but with galaxy pictures from NASA! The readability is a little rough, but they're pretty. Note that these balloons are set to bold by default, which I don't recommend doing if you're making balloons! But I don't want to change the look of the balloons now. Don't miss the matching <a href='../calendar_skin/galaxy.html'>Galaxy calendar skin</a>!"
 	},
 	{
+		name: "Ghost Balloon",
+		release: "October 25th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Etc. Jam 2024",
+		goeswith: ["Spectre"],
+		collaborators:
+		[
+			Galla
+		],
+		download: ["https://github.com/GallaTheGalla/ghost_balloon/releases/latest"],
+		blurb: "A ghost themed balloon for all your ghost balloon needs! Made to go with the plugin <a href='../plugin/spectre.html'>Spectre</a>. Comes in 4 sizes."
+	},
+	{
 		name: "H2O",
 		release: "August 20th, 2020",
 		latest: "January 5th, 2021",
@@ -157,6 +171,17 @@ let item_details = [
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/m6cga89ate7z2x7/h2o_v1.1.0.nar/file"],
 		blurb: "A simple water themed balloon with 3 different sizes!"
+	},
+	{
+		name: "In the Meadow",
+		release: "May 2nd, 2024",
+		latest: null,
+		version: null,
+		forevent: null,
+		goeswith: [{name: "Encore! Onto Another Life", download: "TEMP"}],
+		collaborators: null,
+		download: ["https://www.mediafire.com/file/xpbt54i971f2jrj/in_the_meadow_v1.0.0.nar/file"],
+		blurb: "A meadow themed balloon, inspired by <a href='https://wikiwiki.jp/feeshell/field'>this freeshell</a>! Comes in 4 sizes."
 	},
 	{
 		name: "Leap Day Frog",

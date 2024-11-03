@@ -184,7 +184,6 @@ function ItemInfo()
 				if (currentpage.goeswith[i].download_link == "mine")
 				{
 					output += `<a href="../ghost/${makeStandard(currentpage.goeswith[i].name)}.html">${currentpage.goeswith[i].name}</a>`
-					
 				}
 				else
 				{
@@ -198,7 +197,14 @@ function ItemInfo()
 				
 				if (typeof currentpage.goeswith[i] === "string")
 				{
-					output += `<a href="../ghost/${makeStandard(currentpage.goeswith[i])}.html">${currentpage.goeswith[i]}</a>`
+					if (currentpage.goeswith[i] == "Spectre")
+					{
+						output += `<a href="../plugin/spectre.html">Spectre</a>`
+					}
+					else
+					{
+						output += `<a href="../ghost/${makeStandard(currentpage.goeswith[i])}.html">${currentpage.goeswith[i]}</a>`
+					}
 				}
 				else
 				{

@@ -141,7 +141,6 @@ function makeIndex(item)
 			if (item.goeswith[i].download_link == "mine")
 			{
 				output += `<a href="../ghost/${makeStandard(item.goeswith[i].name)}.html">${item.goeswith[i].name}</a>`
-				
 			}
 			else
 			{
@@ -161,7 +160,14 @@ function makeIndex(item)
 			}
 			if (typeof item.goeswith[i] === "string")
 			{
-				output += `<a href="../ghost/${makeStandard(item.goeswith[i])}.html">${item.goeswith[i]}</a>`
+				if (item.goeswith[i] == "Spectre")
+				{
+					output += `<a href="../plugin/spectre.html">Spectre</a>`
+				}
+				else
+				{
+					output += `<a href="../ghost/${makeStandard(item.goeswith[i])}.html">${item.goeswith[i]}</a>`
+				}
 			}
 			else
 			{
