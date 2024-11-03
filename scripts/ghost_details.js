@@ -112,7 +112,7 @@ let item_details = [
 		],
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/6kxhs0s8ga3cov3/flux_v1.2.2.nar/file",
-		blurb: "FLUX is a music player ghost I made as a spiritual successor to <a href='https://ukagakadreamteam.com/wiki/ghost/flele'>FLELE</a>. I wanted to make more FLELE shells with dialogue, and I thought, damn, it would be cool if there was a better system for that. The result is a solid music player that supports many more file types than FLELE, a system for adding custom functionality to shells, and it even supports multiple languages!"
+		blurb: "FLUX is a music player ghost I made as a spiritual successor to <a href='https://ukagakadreamteam.com/wiki/ghost/flele'>FLELE</a>. It features a robust music player, and is compatible with most (if not all) FLELE shells. It also has some special custom shell functionality, although these days I think my implementation was misguided.<br><br>Thanks to the hard work of translators, it is also available in several languages! You can switch languages within the ghost's menu."
 	},
 	{
 		name: "Gallery 512",
@@ -398,6 +398,22 @@ let item_details = [
 		content_warnings: null,
 		download: "https://github.com/Zichqec/under_the_stars/releases/latest",
 		blurb: "Watch the wonder and amazement of a young merfolk as they gaze up at the stars for the first time!"
+	},
+	{
+		name: "Very Fast Snail",
+		release: "October 6th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Idea Adoption Jam 2024",
+		collaborators:
+		[
+			Galla,
+			WhatAPhantasia
+		],
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/very_fast_snail/releases",
+		blurb: "Sponsor snails, equip them with gear, and send them off to the races to set new records! Learn about snail culture, listen to the radio, enjoy poetry??? All this and more if you download Very Fast Snail today!!"
 	},
 	{
 		name: "Warrior Generator",
