@@ -264,8 +264,8 @@ let item_details = [
 	{
 		name: "Noodle",
 		release: "May 31st, 2023",
-		latest: "June 2nd, 2023",
-		version: "v1.0.2",
+		latest: "November 3rd, 2024",
+		version: "v1.0.3",
 		forevent: null,
 		collaborators:
 		[
