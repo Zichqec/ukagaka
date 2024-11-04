@@ -63,7 +63,7 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/countdown/releases/latest",
-		blurb: "It's a countdown.<br><br>My contribution to the \"useless ghosts\" genre! Comes with two shells because I couldn't decide on a style."
+		blurb: "It's a countdown.<br><br>My contribution to the \"useless ghost\" genre! Comes with two shells because I couldn't decide on a style."
 	},
 	{
 		name: "CT Epoch Jam",
