@@ -54,6 +54,18 @@ let item_details = [
 		blurb: "Call of the Sea is a ghost with a strong focus on storytelling. It isn't a desktop companion so much as a decoration that will play a series of stories. Just what's happening on the other side of the shell? That's for you to decide..."
 	},
 	{
+		name: "Countdown",
+		release: "November 4th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: null,
+		collaborators: null,
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/countdown/releases/latest",
+		blurb: "It's a countdown.<br><br>My contribution to the \"useless ghosts\" genre!"
+	},
+	{
 		name: "CT Epoch Jam",
 		release: "April 24th, 2021",
 		latest: null,
