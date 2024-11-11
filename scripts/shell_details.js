@@ -339,7 +339,7 @@ let shell_details = [
 		forevent: "Needle Day (11/11)",
 		collaborators: null,
 		content_warnings: null,
-		download: "TEMP",
+		download: "https://www.mediafire.com/file/bs5a3q6z9g2tjq3/needly_accurate_angle_v1.0.0.nar/file",
 		blurb: "FEAR NOT MORTAL. It's just a handmade gift that exists in the real world, brought into the digital realm so we can all benefit. Enjoy :)"
 	},
 	{
