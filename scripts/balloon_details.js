@@ -255,7 +255,7 @@ let item_details = [
 		[
 			Galla
 		],
-		download: ["https://www.mediafire.com/file/ytzwp4fr90sohzh/needloon_readable_v1.0.0.nar/file"],
+		download: ["https://www.mediafire.com/file/teo2cwcq9x0t2ay/needloon_readable_v1.0.0.nar/file"],
 		blurb: "We all know that Needloon is the most beautiful balloon in the world, but I think we can all admit it's not the most readable. Here's a more readable Needloon."
 	},
 	{
