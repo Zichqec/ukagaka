@@ -261,8 +261,8 @@ let item_details = [
 	{
 		name: "Needle",
 		release: "May 11th, 2022",
-		latest: "December 11th, 2023",
-		version: "v1.1.2",
+		latest: "November 11th, 2024",
+		version: "v1.1.3",
 		forevent: "Ghost Jam 2022",
 		collaborators:
 		[

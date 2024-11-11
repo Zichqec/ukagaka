@@ -37,6 +37,30 @@ let shell_details = [
 		blurb: "Have you ever wanted a flamingo so angry that it vibrates? Well now you can! And if you're sensitive to that kind of motion, you can toggle it off via dressups and enjoy a normal alternative shell."
 	},
 	{
+		name: "ASCIIdle",
+		goeswith: [Needle],
+		release: "November 11th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/j3fqxczcxty8bgv/asciidle_v1.0.0.nar/file",
+		blurb: "A text-based needle for all your text-based needle needs! The text can be uppercase or lowercase, and the color can be black, white, or both!"
+	},
+	{
+		name: "Ballpoint",
+		goeswith: [Needle],
+		release: "November 11th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/d2wxbnkhw8bi23a/ballpoint_v1.0.0.nar/file",
+		blurb: "A needle drawn with a ballpoint pen. Comes with 3 designs that can be switched between via dressups!"
+	},
+	{
 		name: "Ballpoint Pen",
 		goeswith: [Hydrate],
 		release: "August 20th, 2022",
@@ -136,6 +160,21 @@ let shell_details = [
 		blurb: "An alternative shell made for Needle, with soft shading. It's very typical of my style at the time! This was the first Needle shell I made, not long after Needle was released."
 	},
 	{
+		name: "Expensive Needle",
+		goeswith: [Needle],
+		release: "November 11th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators:
+		[
+			Galla
+		],
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/hx039cguaqkjsmq/expensive_needle_v1.0.0.nar/file",
+		blurb: "The most expensive needle you'll ever see! Buy now while you can! Comes with 17 different designs and 3 levels of sparkliness (or no sparkles at all, if you prefer)."
+	},
+	{
 		name: "Farfalle",
 		goeswith: [Noodle],
 		release: "September 24th, 2023",
@@ -148,6 +187,18 @@ let shell_details = [
 		blurb: "Noodle in farfalle form! Made during Etc. Jam 2023, since I had more time than expected at the end. Comes in all the same colors as the original Noodle shell!"
 	},
 	{
+		name: "Fineliners",
+		goeswith: [Needle],
+		release: "November 11th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/g67r62rwuocmyky/fineliners_v1.0.0.nar/file",
+		blurb: "A needle drawn with every color of fineliner I currently own! Switch between colors with dressups."
+	},
+	{
 		name: "FLUX",
 		goeswith: [FLUX,FLELE],
 		release: "May 12th, 2021",
@@ -158,6 +209,18 @@ let shell_details = [
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/5noi6l85a7xn06r/flux_shell_standalone_v1.0.0.nar/file",
 		blurb: "A standalone version of the FLUX master shell! FLUX the character is actually separate from FLUX the music player system. This release exists so that you can use this shell with FLELE, if you prefer! This shell comes bundled with FLUX, and has custom dialogue, though it's all simply music notes. When playing music, he'll bob his head and use holographic synthesizers."
+	},
+	{
+		name: "Glitchy Needle",
+		goeswith: [Needle],
+		release: "November 11th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: "Flashing/jittering, sudden movements",
+		download: "https://www.mediafire.com/file/d1kvybo18b5rfpe/glitchy_needle_v1.0.0.nar/file",
+		blurb: "An entirely normal needle which has nothing strange about it. Strange happenings can most definitely not be controlled via dressups."
 	},
 	{
 		name: "Gourmet Ravioli",
@@ -254,6 +317,30 @@ let shell_details = [
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/lahs1kuwx7nriat/metal_bottle_v1.0.0.nar/file",
 		blurb: "A metal bottle, based on one I actually own! It comes with a lot of dressups that let you customize your cap color and bottle design. I had this shell in development for a long time, and I finally released it just before the start of the first 8/20 Hydrate Shell Jam. (I couldn't live with myself if I had worked on this shell for so long, and then Syringe ended up being my first released Hydrate shell...!)"
+	},
+	{
+		name: "Moneydle",
+		goeswith: [Needle],
+		release: "November 11th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/0hf59etg5mehacd/moneydle_v1.0.0.nar/file",
+		blurb: "Needlebucks, for all your money needs! Not legal tender for any debts, public or private. Use dressups to un-scrunch."
+	},
+	{
+		name: "Needly Accurate Angle",
+		goeswith: [Needle],
+		release: "November 11th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "TEMP",
+		blurb: "FEAR NOT MORTAL. It's just a handmade gift that exists in the real world, brought into the digital realm so we can all benefit. Enjoy :)"
 	},
 	{
 		name: "Old Beans",
@@ -385,7 +472,19 @@ let shell_details = [
 		collaborators: null,
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/28o2p3hzh31pv0c/twemoji_v1.0.0.nar/file",
-		blurb: "A shell made with the :sewing_needle: emoji from the open source <a href='https://twemoji.twitter.com/'>Twemoji</a> set! There's not much to say here, I just like the look of Twemoji's sewing needle and figured it would be fun to have as an option."
+		blurb: "A shell made with the :sewing_needle: emoji from the open source <a href='https://github.com/jdecked/twemoji'>Twemoji</a> set! There's not much to say here, I just like the look of Twemoji's sewing needle and figured it would be fun to have as an option."
+	},
+	{
+		name: "Upholstery Needle",
+		goeswith: [Needle],
+		release: "November 11th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/rdteq44d41cfu9s/upholstery_needle_v1.0.0.nar/file",
+		blurb: "Did you know there are curved needles? You do now! Possibly one of the gnarliest needles in existence."
 	},
 	{
 		name: "Wobbly Mouse Art",
@@ -398,5 +497,17 @@ let shell_details = [
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/03be1pe4ihuw5wb/wobbly_mouse_art_v1.0.0.nar/file",
 		blurb: "This is just a little Needle doodle I did on a whim at one point. And then I thought it was cute and decided it could stay."
+	},
+	{
+		name: "X-ray",
+		goeswith: [Needle],
+		release: "November 11th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/fx3quca9oxarhm0/x-ray_v1.0.0.nar/file",
+		blurb: "Needle went in for a checkup and got this cool x-ray. Look at all those strong, healthy bones, ready to stab stab poke poke!"
 	}
 ]
