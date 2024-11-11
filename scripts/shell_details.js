@@ -331,6 +331,18 @@ let shell_details = [
 		blurb: "Needlebucks, for all your money needs! Not legal tender for any debts, public or private. Use dressups to un-scrunch."
 	},
 	{
+		name: "Needkly",
+		goeswith: [Skrunkly],
+		release: "November 11th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/21bxv5zw8z5voab/needkly_v1.0.0.nar/file",
+		blurb: "It's the crossover of all time! Have all the horrors of Needle in the form factor of Skrunkly!"
+	},
+	{
 		name: "Needly Accurate Angle",
 		goeswith: [Needle],
 		release: "November 11th, 2024",

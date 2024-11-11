@@ -116,3 +116,7 @@ let IfICantHaveShrimpNoOneCan = {
 let Presentable_Can = {
 	name: "Presentable Can", download_link: "https://www.tumblr.com/characteroulette/717104163012608000/ghost-jam-2023-hype-anyway-this-thing-is-done"
 }
+
+let Skrunkly = {
+	name: "Skrunkly", download_link: "https://ukagakadreamteam.com/wiki/ghost/skrunkly"
+}

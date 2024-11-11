@@ -187,7 +187,7 @@ function ItemInfo()
 				}
 				else
 				{
-					output += `<a href="${currentpage.goeswith[i].download_link}.html">${currentpage.goeswith[i].name}</a> (External link)`
+					output += `<a href="${currentpage.goeswith[i].download_link}">${currentpage.goeswith[i].name}</a> (External link)`
 				}
 			}
 			else
