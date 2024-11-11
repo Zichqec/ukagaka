@@ -245,6 +245,20 @@ let item_details = [
 		blurb: "A balloon made for Needle, of Needle, debatably by Needle! Made using a warped version of the original Needle shell, which was drawn by Galla. Comes with 2 sizes, and suits any and every ghost perfectly."
 	},
 	{
+		name: "Needloon (readable)",
+		release: "November 11th, 2024",
+		latest: null,
+		version: "v1.0.0",
+		goeswith: ["Needle"],
+		forevent: null,
+		collaborators:
+		[
+			Galla
+		],
+		download: ["https://www.mediafire.com/file/ytzwp4fr90sohzh/needloon_readable_v1.0.0.nar/file"],
+		blurb: "We all know that Needloon is the most beautiful balloon in the world, but I think we can all admit it's not the most readable. Here's a more readable Needloon."
+	},
+	{
 		name: "Notes",
 		release: "May 12th, 2021",
 		latest: "October 9th, 2023",
