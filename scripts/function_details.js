@@ -230,6 +230,16 @@ let item_details = [
 		blurb: "This is an updated version of the music player in <a href='../ghost/flux.html'>FLUX</a>! This music player actually started all the way back in <a href='../ghost/lulo.html'>Lulo</a>, then got rewritten for FLUX, and then got overhauled again to be in its own .dic file to be added to other ghosts! Follow the instructions carefully, as there are some steps you need to take to integrate this with your ghost.<br><br>If you use my <a href='../template/simplicity_template.html'>Simplicity Template</a>, I have created a special file bundle you can apply to a fresh, unmodified copy of Simplicity in order to do the basic integration automatically. You can download it at the same place the music player file itself is downloaded from. Please read the instructions carefully.<br><br>If you use this code, please put a credit in your ghost's readme stating such! I worked very hard on this music player, it's a big thing with a lot of little functions and polish.<br><br>Changes to the music player can be tracked <a href='https://github.com/Zichqec/music_player/commits/main/music_player.dic'>here</a>."
 	},
 	{
+		name: "Needle poking repeatedly",
+		release: "December 17th, 2024",
+		latest: null,
+		version: null,
+		forevent: null,
+		language: "YAYA",
+		download: "Needle_poking_repeatedly.txt",
+		blurb: "A bit of simple logic for the <a href='TODO URL'>OnNeedlePoke</a> event, to allow your ghost to react if the user has been pestering them repeatedly with Needle in a short timespan! Can also be used as a base to create similar functions, for things like repeated petting, pestering with a specific question, etc."
+	},
+	{
 		name: "OnRandomDressup",
 		release: "July 13th, 2021",
 		latest: "May 20th, 2024",
