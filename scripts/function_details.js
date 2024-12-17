@@ -237,7 +237,7 @@ let item_details = [
 		forevent: null,
 		language: "YAYA",
 		download: "Needle_poking_repeatedly.txt",
-		blurb: "A bit of simple logic for the <a href='TODO URL'>OnNeedlePoke</a> event, to allow your ghost to react if the user has been pestering them repeatedly with Needle in a short timespan! Can also be used as a base to create similar functions, for things like repeated petting, pestering with a specific question, etc."
+		blurb: "A bit of simple logic for the <a href='https://ukagakadreamteam.github.io/ukadoc/manual/list_shiori_event_ex.html#OnNeedlePoke'>OnNeedlePoke</a> event, to allow your ghost to react if the user has been pestering them repeatedly with Needle in a short timespan! Can also be used as a base to create similar functions, for things like repeated petting, pestering with a specific question, etc."
 	},
 	{
 		name: "OnRandomDressup",

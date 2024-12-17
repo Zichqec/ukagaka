@@ -1,7 +1,8 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
 //Needle poking repeatedly
 //Just a simple bit of logic for the OnNeedlePoke event, to make it so if the user pokes the ghost repeatedly the ghost can react to it.
 //This can be useful for things besides Needle poking! Petting a ghost, pestering them with questions, etc. Whatever you can think of, you can can use this code as a starting point.
-//For more information about the OnNeedlePoke event, see <TODO UKADOC LINK>
+//For more information about the OnNeedlePoke event, see https://ukagakadreamteam.github.io/ukadoc/manual/list_shiori_event_ex.html#OnNeedlePoke
 
 //The way this works is that when the ghost is poked, it tracks when it was last poked, and counts how many times it was poked. If 3 minutes elapse between pokes, the counter resets.
 //So basically, if the user pokes at least once every 3 minutes, and does this 10 times, they'll get a special response for harrassing the ghost repeatedly. You can adjust the time and the number of pokes required to your liking.
