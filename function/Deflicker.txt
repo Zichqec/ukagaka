@@ -1,3 +1,4 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
 //The deflicker effect works like so:
 // \C *must* come first in whatever script it is in. This makes the previous balloon instantly reopen itself to whatever it displayed last. Then we lock the balloon so it stops drawing for a bit, and clear it so that we can add new content. Once the new content has been added, we then unlock the balloon. This makes it appear to the user that the previous content has switched to the new content instantly, with no flicker of a blank balloon inbetween.
 
