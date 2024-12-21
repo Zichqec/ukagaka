@@ -34,6 +34,13 @@ img
 	max-height: 100%;
 }
 
+.halfimage
+{
+	max-width: 50%;
+	max-height: 50%;
+}
+
+
 .centerimg
 {
 	display: block;
@@ -452,4 +459,26 @@ code
 {
 	background: #d1d1d1;
 	font-family: 'Courier New', monospace;
+}
+
+
+/* from https://stackoverflow.com/questions/28615544/how-can-i-create-spoiler-text */
+.spoiler
+{
+	background-color: #28262B;
+	color: transparent;
+}
+
+.spoiler:hover
+{
+	background-color: inherit;
+	color: inherit;
+}
+
+.credit_transcription
+{
+	font-style: italic;
+	background-color: #d1d1d1;
+	padding: 1px 5px 1px 5px;
+	border-radius: 3px;
 }
