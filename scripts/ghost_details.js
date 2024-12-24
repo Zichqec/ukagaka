@@ -203,8 +203,8 @@ let item_details = [
 	{
 		name: "KEEP FROZEN",
 		release: "May 2nd, 2023",
-		latest: "November 3rd, 2024",
-		version: "v1.1.2",
+		latest: "December 24th, 2024",
+		version: "v1.1.3",
 		forevent: "ゴーストマスカレード5",
 		collaborators:
 		[
