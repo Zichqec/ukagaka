@@ -466,12 +466,12 @@ let shell_details = [
 		name: "Tuxeedle",
 		goeswith: [Needle],
 		release: "January 1st, 2024",
-		latest: null,
-		version: "v1.0.0",
+		latest: "January 1st, 2025",
+		version: "v1.0.1",
 		forevent: "mine and Galla's dev-wedding",
 		collaborators: null,
 		content_warnings: null,
-		download: "https://www.mediafire.com/file/0obv5xn9kgkkar0/tuxeedle_v1.0.0.nar/file",
+		download: "https://www.mediafire.com/file/unx34sk9lxvu7iz/tuxeedle_v1.0.1.nar/file",
 		blurb: "A shell made to officiate and commemorate mine and Galla's dev-wedding!  If you know you know. Comes with some additional dressups!"
 	},
 	{
