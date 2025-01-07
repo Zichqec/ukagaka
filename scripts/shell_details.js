@@ -76,15 +76,15 @@ let shell_details = [
 		name: "Birthday Needle",
 		goeswith: [Needle],
 		release: "January 7th, 2024",
-		latest: null,
-		version: "v1.0.0",
+		latest: "January 7th, 2025",
+		version: "v1.0.1",
 		forevent: "Perseverence Day",
 		collaborators:
 		[
 			Galla
 		],
 		content_warnings: null,
-		download: "https://www.mediafire.com/file/encn6b68y41o6bx/birthday_needle_v1.0.0.nar/file",
+		download: "https://www.mediafire.com/file/u4blnjezisq6kji/birthday_needle_v1.0.1.nar/file",
 		blurb: "A celebratory Needle drawn by Galla, and decorated with candle dressups by me, in commemoration of yet another lap around the sun. A personal high score!"
 	},
 	{
