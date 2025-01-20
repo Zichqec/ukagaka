@@ -26,7 +26,7 @@ let item_details = [
 		version: null,
 		forevent: null,
 		collaborators: null,
-		download: "TODO",
+		download: "https://www.mediafire.com/file/zi5jitzjg3596q6/tiling_pattern_set_02.zip/file",
 		blurb: "A set of tiling patterns, intended for use in the owner draw menu! It is highly encouraged to change the colors to suit your ghost.<br><br>There are 9 patterns included, and each one is just a tiny little image file, smaller than what's in this preview. Check the readme for the settings needed to make SSP tile this across the whole menu."
 	}
 ]
