@@ -2,7 +2,7 @@ let item_details = [
 	{
 		name: "Convert from AYA to YAYA",
 		release: "August 3rd, 2022",
-		latest: "February 12th, 2023",
+		latest: "January 20th, 2025",
 		guidefor: "Devs",
 		language: "AYA / YAYA",
 		collaborators: null,

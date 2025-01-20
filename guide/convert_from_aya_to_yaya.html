@@ -33,7 +33,7 @@
 		<li>Rename <b>aya5.txt</b> to <b>yaya.txt</b></li>
 		<li>Download the system dictionary files <a href="https://github.com/ponapalt/yaya-dic">here</a> (you can click Code>Download Zip), exctract them, and copy the <b>yaya_base</b> folder into your <b>ghost/master/</b> folder. Not the contents of it, the whole folder. <u>You do not need the other files that you downloaded and can ignore them</u>.</li>
 		<li>In yaya.txt, delete <b>dic, aya_shiori3.dic</b> and replace it with <b>dicdir, yaya_base</b></li>
-		<li>In yaya_base/config.dic, make sure <b>SHIORI3FW.AUTO_DATA_CONVERT</b> is set to <b>1</b>, and <b>SHIORI3FW.REF_ACCEL</b> is set to <b>0</b>. If you want to know more about AUTO_DATA_CONVERT, you can read about it <a href="https://ukagakadreamteam.com/wiki/guide/aya_yaya/what_is_auto_data_convert_zichqec">here</a>. As far as I know, AYA uses AUTO_DATA_CONVERT, so you should turn it on unless you know for sure you do not need it.</li>
+		<li>In yaya_base/config.dic, make sure <b>SHIORI3FW.AUTO_DATA_CONVERT</b> is set to <b>1</b>, and <b>SHIORI3FW.REF_ACCEL</b> is set to <b>0</b>. If you want to know more about AUTO_DATA_CONVERT, you can read about it <a href="../guide/what_is_auto_data_convert.html">here</a>. As far as I know, AYA uses AUTO_DATA_CONVERT, so you should turn it on unless you know for sure you do not need it.</li>
 		<li>In your aitalk.dic, run a search for a function called <b>AiTalk</b>. If it is named <b>AiTalk</b>, rename it to <b>OnAiTalk</b></li>
 		<li>Run a search in your ghost's files for a function called <b>OnChoiceSelect</b>. If it does not exist, add this function into a file somewhere:
 <pre>
@@ -44,14 +44,14 @@ OnChoiceSelect
 }
 </pre>
 		</li>
-		<li>Note: If your ghost was already released, you will need to add <b>aya5.dll</b> and <b>aya5.txt</b> to <a href="https://ssp-shillest-net.translate.goog/ukadoc/manual/descript_install.html?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_sch=http#delete.txt">delete.txt</a>, to ensure it'll be deleted on the user's end as well when they update.</li>
+		<li>Note: If your ghost was already released, you will need to add <b>aya5.dll</b> and <b>aya5.txt</b> to <a href="https://ukagakadreamteam.github.io/ukadoc/manual/descript_install.html#delete.txt">delete.txt</a>, to ensure it'll be deleted on the user's end as well when they update.</li>
 	</ol>
 	
 	<p>To check and make sure this worked, try putting <b>%(LICENSE[0])</b> into a dialogue or menu somewhere. If the update worked correctly, this should display the version number of the YAYA you just installed.</p>
 	
-	<p>If you would like to be able to run embedded elements like the above directly in the script input box, there's a guide for that <a href="https://ukagaka.zichqec.com/guide/run_envelopes_through_script_input.html">here</a></p>
+	<p>If you would like to be able to run embedded elements like the above directly in the script input box, there's a guide for that <a href="../guide/run_envelopes_through_script_input.html">here</a></p>
 	
-	<p>NOTE: If you're planning to set up network updates with GitHub, or you already use GitHub for your network updates, be very careful. If you're using a github.io homeurl, it will give a 404 error because of the file _loading_order.txt. It does not like file names that start with underscores. Your options are to use the raw.githubusercontent url instead, or, you can copy the contents of _loading_order.txt into yaya.txt and delete _loading_order.txt. See <a href="https://ukagaka.zichqec.com/guide/network_updates_with_github.html">my guide on using GitHub for network updates</a> for more info.</p>
+	<p>NOTE: If you're planning to set up network updates with GitHub, or you already use GitHub for your network updates, be very careful. If you're using a github.io homeurl, it will give a 404 error because of the file _loading_order.txt. It does not like file names that start with underscores. Your options are to use the raw.githubusercontent url instead, or, you can copy the contents of _loading_order.txt into yaya.txt and delete _loading_order.txt. See <a href="../guide/network_updates_with_github.html">my guide on using GitHub for network updates</a> for more info.</p>
 </article>
 
 <footer><div id="footer" class="footer"></div></footer>
