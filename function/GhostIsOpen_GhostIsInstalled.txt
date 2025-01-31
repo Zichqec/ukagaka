@@ -1,0 +1,38 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+
+//Functions for checking if a particular ghost is open or installed.
+//They each take a single argument: the name of the ghost to check for.
+//NOTE: For GhostIsOpen, you have to input the SAKURA NAME, not the ghost name. For GhostIsInstalled, it is the proper name of the ghost, NOT the sakura name.
+
+//Use them like this:
+// if GhostIsOpen("Somebody")
+
+// if GhostIsInstalled("Some Ghost")
+
+
+//Your ghost may already have On_otherghostname. In ghosts made with the GT Template or similar templates, this is usually found in string.dic. If this is the case, you'll need to integrate this version of On_otherghostname into what you have, or replace it entirely with this one.
+//The installedghostlist array is made within YAYA's base SHIORI files, and unless you've been messing with those files or the config setup, you should have this variable. If you don't, you can easily make it with the On_installedghostname event.
+
+//If you're migrating a ghost away from using the variables ghostexlist and ghostexcount, you might find it useful to know that with this setup you can use ARRAYSIZE(CurrentlyOpenGhosts) to get a count of the currently open ghosts, and ANY(CurrentlyOpenGhosts) to select the name of a random open ghost. If that's too much typing, you can easily create functions to act as shortcuts for them (or feel free to change the name of CurrentlyOpenGhosts to whatever you like).
+
+
+//This uses the SAKURA NAME
+GhostIsOpen
+{
+	ASEARCH(_argv[0],CurrentlyOpenGhosts) != -1
+}
+
+//This uses the GHOST NAME
+GhostIsInstalled
+{
+	ASEARCH(_argv[0],installedghostlist) != -1
+}
+
+On_otherghostname
+{
+	CurrentlyOpenGhosts = IARRAY
+	foreach reference.raw; _ref
+	{
+		CurrentlyOpenGhosts ,= _ref[0,C_BYTE1]
+	}
+}
