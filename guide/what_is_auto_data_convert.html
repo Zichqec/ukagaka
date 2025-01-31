@@ -108,7 +108,7 @@ Value: \0\s[0]Hey it's some dialogue
 
 <p>There is one snag when turning AUTO_DATA_CONVERT off, and that is, if you have code set up that already relies on that behavior you will have to adjust it. For example, if you had set up email header code that attempted to break down the headers based on commas, you would need to change it to use C_BYTE1 instead. It shouldn't be too big of an issue, but you should definitely double check before converting, since it may introduce subtle bugs.</p>
 
-<p>One of the more common issues is with ghosts that make use of a variable called <code>ghostexlist</code>, because this variable is saved as a string relies on the behavior of AUTO_DATA_CONVERT. There are various ways you may handle this, but I would recommend changing ghostexlist to an array if you're able. I wrote <a href="../function/index.html#ghostisopen_ghostisinstalled">some functions</a> that can make this easier, they're just a bit of a different way of working from what you may be used to.</p>
+<p>One of the more common issues is with ghosts that make use of a variable called <code>ghostexlist</code>, because this variable is saved as a string and relies on the behavior of AUTO_DATA_CONVERT. There are various ways you may handle this, but I would recommend changing ghostexlist to an array if you're able. I wrote <a href="../function/index.html#ghostisopen_ghostisinstalled">some functions</a> that can make this easier, they're just a slightly different approach from what you may be used to.</p>
 
 <p>If you want to keep ghostexlist as a string, you can try updating <code>On_otherghostname</code> to this:</p>
 
@@ -125,7 +125,7 @@ On_otherghostname
 }
 </pre>
 
-<p>If you'd like to split up the list of names with C_BYTE1 instead of a comma (since ghost names may contain commas and break the list, although that's admittedly unlikely), you might try this version:</p>
+<p>If you'd like to split up the list of names with C_BYTE1 instead of a comma (since ghost names may contain commas and break the list, although that's admittedly not a super common occurence), you might try this version:</p>
 
 <pre>
 On_otherghostname
@@ -140,7 +140,7 @@ On_otherghostname
 }
 </pre>
 
-<p>Just bear in mind that you won't be able to pick ghosts directly from this version like you can with a comma-separated string. YAYA treats comma-separated strings as <a href="TODO LINK TO YAYA FUNDAMENTALS">"simple arrays"</a>, but if you're using another character to separate it such as C_BYTE1, you'll have to tell it that's what you're doing.</p>
+<p>Just bear in mind that you won't be able to pick ghosts directly from this version like you can with a comma-separated string. YAYA treats comma-separated strings as <a href="https://zichqec.github.io/YAYA_Fundamentals/module_02_arrays/02_simple_arrays.html">"simple arrays"</a>, but if you're using another character to separate it such as C_BYTE1, you'll have to tell it that's what you're doing.</p>
 
 <p>So code like this can stay the same:</p>
 
@@ -158,7 +158,7 @@ _ghost = ghostexlist[_num]
 <p>Would need to be updated to something like this:</p>
 
 <pre>
-_list = REPLACE(ghostexlist,C_BYTE1,",")
+_list = SPLIT(ghostexlist,C_BYTE1)
 _ghost = ANY(_list)
 </pre>
 
@@ -180,14 +180,14 @@ _ghost = ANY(_list)
 
 <h2 id="update_notes">Update notes</h2>
 
-<h3>2025-01-29</h3>
+<h3>2025-01-31</h3>
 <ul>
 	<li>Added a section describing a common issue with ghostexlist and how it can be fixed, including a link to new functions I wrote to make this functionality easier.</li>
 </ul>
 
-<h3>2023-XX-XX TODO</h3>
+<h3>2023-04-15</h3>
 <ul>
-	<li>TODO.</li>
+	<li>Fixed incorrect information about the impact of AUTO_DATA_CONVERT.</li>
 </ul>
 
 </article>
