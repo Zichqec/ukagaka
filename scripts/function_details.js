@@ -120,6 +120,16 @@ let item_details = [
 		blurb: "A function to simplify adding links to your right click menu, so that all you need to do is write an alternating list of labels and links. Makes things nice and tidy!"
 	},
 	{
+		name: "GhostIsOpen & GhostIsInstalled",
+		release: "January 30th, 2025",
+		latest: null,
+		version: null,
+		forevent: null,
+		language: "YAYA",
+		download: "GhostIsOpen_GhostIsInstalled.txt",
+		blurb: "A couple of functions for easily determining if a particular ghost is installed, or is currently open. Use it to comment on other ghosts, or whatever you feel like doing!<br><br>This may also be helpful if you're <a href='../guide/what_is_auto_data_convert.html'>transitioning a ghost off of AUTO_DATA_CONVERT</a>, since one of the things that tends to break in that conversion is old implementations of checking for other open ghosts that use a variable called ghostexlist. These functions will work with AUTO_DATA_CONVERT off!"
+	},
+	{
 		name: "Holding Obsidian",
 		release: "November 4th, 2020",
 		latest: "November 6th, 2020",
