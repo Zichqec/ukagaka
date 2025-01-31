@@ -121,7 +121,7 @@ let item_details = [
 	},
 	{
 		name: "GhostIsOpen & GhostIsInstalled",
-		release: "January 30th, 2025",
+		release: "January 31st, 2025",
 		latest: null,
 		version: null,
 		forevent: null,

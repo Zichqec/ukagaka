@@ -122,7 +122,7 @@ let item_details = [
 	{
 		name: "What is AUTO_DATA_CONVERT",
 		release: "February 2nd, 2023",
-		latest: "January 29th, 2025",
+		latest: "January 31st, 2025",
 		guidefor: "Devs",
 		language: "YAYA",
 		collaborators: null,
