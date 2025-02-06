@@ -481,6 +481,6 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=ghost_yaminabe",
-		blurb: "A collaborative event ghost that I participated in! (Romanization: Ghost Yaminabe / Translation: Ghost Dark Pot) Most of the dialogue is in Japanese, but Galla and I participated and wrote some English dialogue together. Unfortunately, due to a last-minute calculation error on my part, the English dialogue shows extremely rarely. But I swear it's there!<br><br>Note that the shell is a modified version of eVe.'s \"Unyielding Free Shell\"."
+		blurb: "A collaborative event ghost that I participated in! (Romanization: Ghost Yaminabe / Translation: Ghost Dark Pot) Most of the dialogue is in Japanese, but Galla and I participated and wrote some English dialogue together. Unfortunately, due to a last-minute calculation error on my part, the English dialogue shows extremely rarely. But I swear it's there!<br><br>Note that the shell is a modified version of eVe.'s \"うにゅっとしたフリーシェル\"."
 	}
 ]
