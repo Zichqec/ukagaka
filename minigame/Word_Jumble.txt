@@ -202,7 +202,7 @@ OnWordJumble.Display : all
 	
 	"\C\![lock,balloonrepaint]\c"
 	"\0\b[2]\_q\*\t"
-	"\![no-markdown]" //TODO I'm silly and testing this in a ghost with markdown
+	"\![no-markdown]" //I'm silly and testing this in a ghost with markdown. But maybe I'll leave it? Shouldn't hurt
 	"\![open,inputbox,OnWordJumble.Guess,--reference=""%(_category_name)"",--reference=""%(_word_list)"",--reference=""%(_correct_guesses)"",--reference=""%(_scrambled)""]"
 	
 	"Unscramble the words!"
