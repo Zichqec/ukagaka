@@ -100,7 +100,7 @@
 <h3 id="surface_calls">Surface calls</h3>
 <p>I have at times forgotten to actually put surface tags at the start of my OnFirstBoot dialogue. Kind of a silly mistake! But, it happens, especially when you're in a rush.</p>
 
-<p>When testing the OnFirstBoot event via the raise tag, my ghost would appear to work properly! Because, the ghost remained in the default surface that it was previously using, so I didn't see the issue. That was, until I did an install test, and on a fresh install my ghost was invisible for the first section of the dialogue. Embarassing, to say the least! But thankfully, I had decided to do a boot test before release, and it was easily fixed.</p>
+<p>When testing the OnFirstBoot event via the raise tag, my ghost would appear to work properly! That happened because the ghost remained in the default surface that it was previously using, so I didn't see the issue. That was, until I did an install test, and on a fresh install my ghost was invisible for the first section of the dialogue. Embarassing, to say the least! But thankfully, I had decided to do a boot test before release, and it was easily fixed.</p>
 
 <h3 id="other_misc_install_info">Other misc install info</h3>
 <p>I'll get more into details about install.txt in the next section. But in general, as you're doing your install test, make sure you're checking that it installed to the right directory name, that the balloon installed with it, etc. <b>I recommend using a second copy of SSP for this, especially if you're testing a balloon install as well!</b> If the balloon is already installed in the version of SSP that you're testing on, you may not notice if the balloon isn't set up to install properly, because the balloon is already installed and therefore appears and works properly. It's happened to me before!</p>
@@ -131,7 +131,7 @@
 		</ul>
 	</li>
 	<li>Don't include spaces in any folder/file names! Spaces will cause you pain and suffering if you ever do network updates or the like!
-	<li>For shells in particular, if your default shell's folder is not called <code>master</code>, it will complain about it!
+	<li>For shells in particular, if your default shell's folder is not called <code>master</code>, SSP will complain about it!
 		<ul><li>There is a way around this, but if you have not yet released your ghost it is best to just have the default shell be in a folder called <code>master</code>.</li></ul>
 	</li>
 </ul>
@@ -201,7 +201,7 @@
 
 <p>Yes, I already touched on balloons in the earlier section about install.txt. However, there is one more piece to the puzzle! And that is making your balloon the standard balloon for your ghost.</p>
 
-<p>What does "standard" balloon mean? Put simply, when the user first boots up your ghost, if there is a standard balloon SSP will use that balloon by default if it is installed. That balloon will also get a special spot in the right click menu for your ghost! This is really helpful for users that have many balloons installed, or have their balloons sorted into subfolders. This is especially true if the name of your balloon is very distinct from your ghost, because let me tell you from experience, it's really easy to forget which balloon goes with what ghost!</p>
+<p>What does "standard" balloon mean? Put simply: When the user first boots up your ghost, if there is a balloon listed as the "standard" balloon, SSP will use that balloon by default if it is installed. That balloon will also get a special spot in the right click menu for your ghost! This is really helpful for users that have many balloons installed, or have their balloons sorted into subfolders. This is especially true if the name of your balloon is very distinct from your ghost, because let me tell you from experience, it's really easy to forget which balloon goes with what ghost!</p>
 
 <p>To add a standard balloon for a ghost, go into the <b>ghost's</b> descript.txt and add <code>balloon,Name of Balloon</code>. Change "Name of Balloon" to whatever the <b>name</b> of the balloon is, <i>not</i> the folder name. This is the name as it appears in the right click menu! So if you wanted to recommend <a href="../balloon/thaw.html">Thaw</a>, you would write <code>balloon,Thaw</code>, and <b>not</b> <code>balloon,thaw_ss-db</code>.</p>
 
