@@ -204,6 +204,25 @@ let version_history = [
 				"Ukadoc links were added in the meta.dic file to the documentation for each group of events. If you want to expand upon those events and add in the ones I omitted, it should now be easier to do so.",
 				"Added a link to the YAYA Shiori GitHub organization in the readme. This will take you to where you can update yaya.dll, the YAYA as SHIORI dic files, and where you can see YAYA's license if you have need to."
 			]
+		},
+		{
+			version: "v1.0.9",
+			released: "2025-03-07",
+			changelog:
+			[
+				"sakura_menu.dic and kero_menu.dic were renamed to menu_sakura.dic and menu_kero.dic respectively.",
+				"Improved OnNarLocation: removed some unneeded code, and it will now highlight the file that was created when opening the explorer window.",
+				"\"Say that again\" button in the menu now appears grayed out when there isn't a dialogue to repeat yet, as opposed to being hidden.",
+				"OnWindowStateRestore now calls OnSurfaceRestore by default, to simplify things.",
+				"readme.txt is now encoded as UTF-8 with BOM. This should fix the display if international characters are used.",
+				"Changed buttons that said \"Nevermind\" to say \"Cancel\" instead.",
+				"All \\b2 tags have been changed to \\b[2].",
+				"Unneeded \\1 tags were removed from KeroMenuGreetings.",
+				"\\s[10] tag was added to OnKeroMenu.",
+				"Fixed alphabetization of files listed in yaya.txt.",
+				"Rearranged OnAiTalk, RandomTalk is now the fallback case. This shouldn't impact behavior, but it's better practice and useful if you implement more modes, etc.",
+				"Updated to YAYA Tc571-11."
+			]
 		}
 	]
 },
