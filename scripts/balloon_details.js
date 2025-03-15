@@ -1,5 +1,16 @@
 let item_details = [
 	{
+		name: "Ancient Gem Balloon",
+		release: "March 15th, 2025",
+		latest: null,
+		version: "v1.0.0",
+		forevent: null,
+		goeswith: null,
+		collaborators: null,
+		download: ["https://github.com/Zichqec/ancient_gem_balloon/releases/latest"],
+		blurb: "A gem themed balloon made for Etc. Jam 2025. Perhaps you'll find some treasures deep within this cave."
+	},
+	{
 		name: "Angelbox",
 		release: "March 23rd, 2023",
 		latest: null,
