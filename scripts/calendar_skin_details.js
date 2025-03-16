@@ -1,5 +1,15 @@
 let item_details = [
 	{
+		name: "Ancient Gem Calendar",
+		release: "March 16th, 2025",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Etc. Jam 2025",
+		collaborators: null,
+		download: ["https://github.com/Zichqec/ancient_gem_calendar/releases/latest"],
+		blurb: "A gem themed calendar skin made for Etc. Jam 2025. Look at all the gems you've found! Could there be more...?"
+	},
+	{
 		name: "Galaxy",
 		release: "June 4th, 2020",
 		latest: null,
