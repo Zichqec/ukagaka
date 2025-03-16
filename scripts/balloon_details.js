@@ -4,7 +4,7 @@ let item_details = [
 		release: "March 15th, 2025",
 		latest: null,
 		version: "v1.0.0",
-		forevent: null,
+		forevent: "Etc. Jam 2025",
 		goeswith: null,
 		collaborators: null,
 		download: ["https://github.com/Zichqec/ancient_gem_balloon/releases/latest"],
