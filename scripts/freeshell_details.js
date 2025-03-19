@@ -1,5 +1,15 @@
 let item_details = [
 	{
+		name: "Ancient Gem",
+		release: "March 19th, 2025",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Etc. Jam 2025",
+		collaborators: null,
+		download: "https://github.com/Zichqec/ancient_gem/releases/latest",
+		blurb: "Holy gemstones! You've found the gem queen! What happens next...? Well, that's all up to you, isn't it?<br><br>A person made of rock and gems, with a poseable head, and dressups for different eye colors. I'm intending to update this with some additional pieces after jam that I didn't have time for. If it's been out more than two weeks and I haven't done it yet, give me a poke!<br><br>Check out the matching <a href='../balloon/ancient_gem_balloon.html'>balloon</a> and <a href='../calendar_skin/ancient_gem_calendar.html'>calendar skin</a>, as well as the <a href='https://github.com/GallaTheGalla/forged_metal/releases/latest'>Forged Metal</a> set by Galla which is made to pair with this!"
+	},
+	{
 		name: "Lollipop Tanktop",
 		release: "September 26th, 2024",
 		latest: "December 2nd, 2024",
