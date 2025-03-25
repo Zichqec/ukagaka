@@ -1,5 +1,16 @@
 let item_details = [
 	{
+		name: "Aosora talk block UDL",
+		release: "March 25th, 2025",
+		latest: null,
+		version: "v1.0.0",
+		forevent: null,
+		goeswith: [{name: "Notepad++", download: "https://notepad-plus-plus.org/downloads/"}],
+		collaborators: null,
+		download: "https://github.com/Zichqec/aosora_talk_block_udl",
+		blurb: "A Notepad++ UDL for highlighting in Aosora's talk blocks. This is best used if you keep most of your talk blocks separate from your other code blocks, because it doesn't have proper highlighting for normal code. Instead, it focuses on being able to dim SakuraScript tags for you, and highlight some of the unique syntax made for talk blocks."
+	},
+	{
 		name: "Dark theme mod for Tama",
 		release: "March 7th, 2021",
 		latest: null,
