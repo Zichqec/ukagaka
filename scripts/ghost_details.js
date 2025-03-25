@@ -452,6 +452,18 @@ let item_details = [
 		blurb: "Xander's Refuge is a ghost made based on the prompt \"a ghost of an ancient deity that always seems tired, and is looking for a safe place to hide\". He's an extremely straightforward ghost, with few mechanics and a focus on content instead.<br><br>He has over 100 idle dialogues, and he works well as an aesthetic companion also! He has a looping smoke animation, and will randomly change poses when left idle so that he's never still for too long. He'll even do this if you turn his dialogues off!"
 	},
 	{
+		name: "Xander's Refuge (Aosora)",
+		release: "March 25th, 2025",
+		latest: null,
+		version: "v1.0.3-a01",
+		forevent: null,
+		collaborators: null,
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/xanders_refuge_aosora/releases/latest",
+		blurb: "This is a port of my ghost <a href='../ghost/xanders_refuge.html'>Xander's Refuge</a> into the SHIORI <a href='https://github.com/kanadelab/aosora-shiori'>Aosora</a>. I created it as a way to test the SHIORI, and to have as a roughly 1:1 comparison of YAYA code and Aosora code. If you want to learn more about the ghost's premise, please check the page for Xander's Refuge.<br><br>Because this is a port of a YAYA ghost, it is coded in a very YAYA way, and doesn't make use of Aosora to its fullest extent. Please keep this in mind if you look at the code!"
+	},
+	{
 		name: "Zana's Laws",
 		release: "May 30th, 2024",
 		latest: "November 3rd, 2024",
