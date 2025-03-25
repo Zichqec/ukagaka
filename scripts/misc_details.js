@@ -53,5 +53,16 @@ let item_details = [
 		collaborators: null,
 		download: "https://github.com/Zichqec/party_parrot_supplements/releases/latest",
 		blurb: "A galaxy parrot which changes colors in the same manner as the original party parrot. Please be careful if you have photosensitivity!"
+	},
+	{
+		name: "Surfaces.txt new definition UDL",
+		release: "March 25th, 2025",
+		latest: null,
+		version: "v1.0.0",
+		forevent: null,
+		goeswith: [{name: "Notepad++", download: "https://notepad-plus-plus.org/downloads/"}],
+		collaborators: null,
+		download: "https://github.com/Zichqec/surfaces_txt_new_definition_udl",
+		blurb: "A Notepad++ UDL for highlighting in surfaces.txt. It may help with distinguishing between animations vs. patterns, and patterns vs. intervals/options. It may also help avoid some problems such as typos.<br><br>It can also dim the coordinate fields if they're set to 0,0, but please be aware that if the wait time is also set to 0 it will dim that too! This can lead to accidentally omitting the Y coordinate, so please be mindful of it."
 	}
 ]
