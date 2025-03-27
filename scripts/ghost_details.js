@@ -155,6 +155,18 @@ let item_details = [
 		blurb: "This is a companion ghost for my guide, <a href='https://zichqec.github.io/YAYA_Fundamentals/'>YAYA Fundamentals</a>! Currently it mostly just runs example code from the guide lessons, but it also serves as a safe sandbox to play with code and try things out. Even if there's an error in your code, the ghost will still be able to load in and direct you to helpful resources."
 	},
 	{
+		name: "Hoard of Shinies",
+		release: "March 27th, 2025",
+		latest: null,
+		version: "v1.0.0",
+		forevent: null,
+		collaborators: null,
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/hoard_of_shinies/releases/latest",
+		blurb: "Hang out with your merfolk friend in your collection of everything that sparkles and shines!<br><br>A quick ghost made (mostly) in an afternoon! I was eager to try writing a new ghost in Aosora. Uses an edited version of the freeshell <a href='https://ako-kipali.tumblr.com/ghost-stuff'>Merfolk May</a> by Kipali!"
+	},
+	{
 		name: "Hydrate",
 		release: "August 20th, 2020",
 		latest: "August 26th, 2022",
