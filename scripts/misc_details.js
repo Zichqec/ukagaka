@@ -57,7 +57,7 @@ let item_details = [
 	{
 		name: "Surfaces.txt new definition UDL",
 		release: "March 25th, 2025",
-		latest: null,
+		latest: "March 27th, 2025",
 		version: null,
 		forevent: null,
 		goeswith: [{name: "Notepad++", download: "https://notepad-plus-plus.org/downloads/"}],
