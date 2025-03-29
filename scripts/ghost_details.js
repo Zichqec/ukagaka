@@ -157,8 +157,8 @@ let item_details = [
 	{
 		name: "Hoard of Shinies",
 		release: "March 27th, 2025",
-		latest: null,
-		version: "v1.0.0",
+		latest: "March 29th, 2025",
+		version: "v1.0.1",
 		forevent: null,
 		collaborators: null,
 		translations: null,
