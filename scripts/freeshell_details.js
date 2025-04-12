@@ -11,9 +11,9 @@ let item_details = [
 	},
 	{
 		name: "Lollipop Tanktop",
-		release: "September 26th, 2024",
+		release: "April 12th, 2025",
 		latest: "December 2nd, 2024",
-		version: "v1.0.1",
+		version: "v1.0.2",
 		forevent: null,
 		collaborators: null,
 		download: "https://github.com/Zichqec/lollipop_tanktop/releases/latest",
