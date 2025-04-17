@@ -374,8 +374,8 @@ let item_details = [
 	{
 		name: "SSP Angel",
 		release: "March 23rd, 2023",
-		latest: "November 3rd, 2024",
-		version: "v1.1.1",
+		latest: "April 17th, 2025",
+		version: "v1.1.2",
 		forevent: null,
 		collaborators:
 		[
