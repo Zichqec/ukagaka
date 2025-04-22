@@ -232,8 +232,8 @@ let item_details = [
 	{
 		name: "Music player",
 		release: "April 29th, 2022",
-		latest: "May 22nd, 2024",
-		version: "v2.0.2",
+		latest: "April 22nd, 2025",
+		version: "v2.0.3",
 		forevent: null,
 		language: "YAYA",
 		download: "https://github.com/Zichqec/music_player/releases/latest",
