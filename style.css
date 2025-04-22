@@ -482,3 +482,38 @@ code
 	padding: 1px 5px 1px 5px;
 	border-radius: 3px;
 }
+
+.TagFilter
+{
+	display: none;
+}
+
+.TFShow
+{
+	display: block;
+}
+
+/* Make the quick index links gray out */
+.TFQHide a
+{
+	color: #888888;
+}
+
+.tagbtn, .tagbtnclear
+{
+	border: none;
+	outline: none;
+	padding: 5px;
+	background-color: #DBDBDB;
+}
+
+.tagbtn.FilterAdd
+{
+	background-color: #b6b5b6;
+}
+
+.tagbtn.FilterRemove
+{
+	text-decoration: line-through;
+	color: #888888;
+}

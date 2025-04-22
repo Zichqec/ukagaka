@@ -16,7 +16,18 @@ function makeTopIndex(item)
 {
 	let lowername = makeStandard(item.name);
 	
-	return `<div class="index_link"><a href="#${lowername}">${item.name}</a></div>`;
+	//Make tags first cuz we'll need them for the div...
+	let tagdiv = ``;
+	if (item.tags != null)
+	{
+		for (let i = 0; i < item.tags.length; i++)
+		{
+			if (i > 0) tagdiv += ` `;
+			tagdiv += `${item.tags[i]}`;
+		}
+	}
+	
+	return `<div class="index_link TagFilterQuickIndex ${tagdiv}"><a href="#${lowername}">${item.name}</a></div>`;
 }
 
 function makeIndex(item)
@@ -24,8 +35,29 @@ function makeIndex(item)
 	let lowername = makeStandard(item.name);
 	let output = ``;
 	
+	//Make tags first cuz we'll need them for the div...
+	let taglist = ``;
+	let tagdiv = ``;
+	if (item.tags != null)
+	{
+		taglist += `<p><i>Tags:`
+		
+		for (let i = 0; i < item.tags.length; i++)
+		{
+			if (i > 0)
+			{
+				taglist += ",";
+				tagdiv += ` `;
+			}
+			taglist += ` ${item.tags[i].replace("_"," ")}`;
+			tagdiv += `${item.tags[i]}`;
+		}
+		
+		taglist += `</i></p>`
+	}
+	
 	output += `
-	<article id="${lowername}">
+	<article id="${lowername}" class="TagFilter ${tagdiv}">
 	`;
 	
 	//Guides don't have images
@@ -222,21 +254,21 @@ function makeIndex(item)
 	
 	if (pagetype == "balloon" && item.download.length > 1)
 	{
-		output += `<a href="${item.download[0]}">Download (pack)</a> | <a href="${item.download[1]}">Download (individual balloons)</a></p>`
+		output += `<a href="${item.download[0]}">Download (pack)</a> | <a href="${item.download[1]}">Download (individual balloons)</a></p>`;
 	}
 	else if (pagetype == "calendar_skin" && item.download.length > 1)
 	{
-		output += `<a href="${item.download[0]}">Download (pack)</a> | <a href="${item.download[1]}">Download (individual skins)</a></p>`
+		output += `<a href="${item.download[0]}">Download (pack)</a> | <a href="${item.download[1]}">Download (individual skins)</a></p>`;
 	}
 	else if (pagetype != "guide") //TODO | ??? idk what this TODO was for tbqh 23-7-28
 	{
 		if ((pagetype == "function" || pagetype == "minigame") && !item.download.startsWith("https://"))
 		{
-			output += `<a href="${item.download}" target="_blank">View code</a></p>`
+			output += `<a href="${item.download}" target="_blank">View code</a></p>`;
 		}
 		else
 		{
-			output += `<a href="${item.download}">Download</a></p>`
+			output += `<a href="${item.download}">Download</a></p>`;
 		}
 	}
 	
@@ -244,9 +276,11 @@ function makeIndex(item)
 	
 	
 	output += `
-	<p>${item.blurb}</p>
+	<p>${item.blurb}</p>`;
 	
-	<p class="back_to_top"><a href='#'>Back to top</a></p>
+	output += taglist;
+	
+	output += `<p class="back_to_top"><a href='#'>Back to top</a></p>
 	</div>
 	`;
 	
