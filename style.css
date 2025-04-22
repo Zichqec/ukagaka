@@ -504,7 +504,10 @@ code
 	border: none;
 	outline: none;
 	padding: 5px;
+	margin-top: 2px;
+	margin-bottom: 2px;
 	background-color: #DBDBDB;
+	border-radius: 2px;
 }
 
 .tagbtn.FilterAdd
@@ -515,5 +518,11 @@ code
 .tagbtn.FilterRemove
 {
 	text-decoration: line-through;
+	color: #888888;
+}
+
+.tagdisplay
+{
+	font-style: italic;
 	color: #888888;
 }

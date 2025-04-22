@@ -23,7 +23,7 @@ function makeTopIndex(item)
 		for (let i = 0; i < item.tags.length; i++)
 		{
 			if (i > 0) tagdiv += ` `;
-			tagdiv += `${item.tags[i]}`;
+			tagdiv += `${item.tags[i].replace(/ /g,"_")}`;
 		}
 	}
 	
@@ -40,7 +40,7 @@ function makeIndex(item)
 	let tagdiv = ``;
 	if (item.tags != null)
 	{
-		taglist += `<p><i>Tags:`
+		taglist += `<p class="tagdisplay">Tags:`
 		
 		for (let i = 0; i < item.tags.length; i++)
 		{
@@ -49,11 +49,11 @@ function makeIndex(item)
 				taglist += ",";
 				tagdiv += ` `;
 			}
-			taglist += ` ${item.tags[i].replace("_"," ")}`;
-			tagdiv += `${item.tags[i]}`;
+			taglist += ` ${item.tags[i]}`;
+			tagdiv += `${item.tags[i].replace(/ /g,"_")}`;
 		}
 		
-		taglist += `</i></p>`
+		taglist += `</p>`
 	}
 	
 	output += `
@@ -335,3 +335,162 @@ else
 
 document.getElementById('quick_index').innerHTML = index_details.map(makeTopIndex).join('');
 document.getElementById('full_index').innerHTML = index_details.map(makeIndex).join('');
+
+
+
+//Filter by tag on index pages
+let FilterAdd = [];
+let FilterRemove = [];
+let total_count = 0;
+let shown_count = 0;
+
+
+//EXCLUDED TAGS TAKE PRECEDENT OVER INCLUDED ONES
+//Also, it uses AND and not OR
+filterSelection("clear")
+function filterSelection(tag, operation)
+{
+	let elements = document.getElementsByClassName("TagFilter")
+	if (tag == "clear")
+	{
+		FilterAdd = [];
+		FilterRemove = [];
+	}
+	else //Adjust if the filter is including the tag, excluding it, or off
+	{
+		let addpos = FilterAdd.indexOf(tag)
+		let rempos = FilterRemove.indexOf(tag)
+		if (rempos != -1)
+		{
+			FilterRemove.splice(rempos, 1)
+		}
+		else if (addpos != -1)
+		{
+			FilterAdd.splice(addpos, 1)
+			FilterRemove.push(tag);
+		}
+		else
+		{
+			FilterAdd.push(tag);
+		}
+	}
+	
+	let elementlist = "";
+	for (let i = 0; i < elements.length; i++)
+	{
+		if (i > 0) elementlist += ", ";
+		elementlist += elements[i].id;
+	}
+	
+	total_count = 0;
+	shown_count = 0;
+	
+	//Refresh the display
+	for (let i = 0; i < elements.length; i++)
+	{
+		classes = elements[i].className.split(" ");
+		for (let ii = 0; ii < classes.length; ii++)
+		{
+			if (classes[ii] == "TFShow")
+			{
+				classes.splice(ii, 1);
+				break;
+			}
+		}
+		
+		let to_show = 1;
+		for (let ii = 0; ii < FilterAdd.length; ii++)
+		{
+			if (classes.indexOf(FilterAdd[ii]) == -1 && FilterAdd.length > 0)
+			{
+				to_show = 0;
+				break;
+			}
+		}
+		for (let ii = 0; ii < FilterRemove.length; ii++)
+		{
+			if (classes.indexOf(FilterRemove[ii]) != -1)
+			{
+				to_show = 0;
+				break;
+			}
+		}
+		
+		if (to_show == 1)
+		{
+			classes.push("TFShow");
+			shown_count++;
+		}
+		total_count++;
+		elements[i].className = classes.join(" ");
+	}
+	
+	/* Similar to the above but for the quick index. In this case, if the entry is not showing, gray out the link to it */
+	let elementsquickindex = document.getElementsByClassName("TagFilterQuickIndex")
+	for (let i = 0; i < elementsquickindex.length; i++)
+	{
+		classes = elementsquickindex[i].className.split(" ");
+		for (let ii = 0; ii < classes.length; ii++)
+		{
+			if (classes[ii] == "TFQHide")
+			{
+				classes.splice(ii, 1);
+				break;
+			}
+		}
+		
+		let to_hide = 0;
+		for (let ii = 0; ii < FilterAdd.length; ii++)
+		{
+			if (classes.indexOf(FilterAdd[ii]) == -1 && FilterAdd.length > 0)
+			{
+				to_hide = 1;
+				break;
+			}
+		}
+		for (let ii = 0; ii < FilterRemove.length; ii++)
+		{
+			if (classes.indexOf(FilterRemove[ii]) != -1)
+			{
+				to_hide = 1;
+				break;
+			}
+		}
+		//NOTE: currently, despite being grayed out they are still clicky... oh well?
+		if (to_hide == 1)
+		{
+			classes.push("TFQHide");
+		}
+		elementsquickindex[i].className = classes.join(" ");
+	}
+	
+	document.getElementById('filtercount').innerHTML = `(${shown_count} of ${total_count} shown)`;
+}
+
+let buttoncontainer = document.getElementById("tagfilterbuttons");
+let buttons = buttoncontainer.getElementsByClassName("tagbtn");
+
+for (let i = 0; i < buttons.length; i++)
+{
+	buttons[i].addEventListener("click", function() {
+		if (this.className.indexOf("FilterRemove") != -1) this.className = this.className.replace(" FilterRemove","");
+		else if (this.className.indexOf("FilterAdd") != -1) this.className = this.className.replace(" FilterAdd"," FilterRemove");
+		else
+		{
+			this.className += " FilterAdd";
+		}	
+	});
+}
+
+let clearbutton = buttoncontainer.getElementsByClassName("tagbtnclear")[0];
+
+clearbutton.addEventListener("click", function() {
+	for (let i = 0; i < buttons.length; i++)
+	{
+		console.log(`button ${i}`);
+		buttons[i].className = buttons[i].className.replace(" FilterAdd","");
+		buttons[i].className = buttons[i].className.replace(" FilterRemove","");
+	}
+});
+
+document.getElementById('filtercount').innerHTML = `(${shown_count} of ${total_count} shown)`;

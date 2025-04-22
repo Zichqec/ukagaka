@@ -362,7 +362,7 @@ function makeOtherShellIndex(shells)
 	
 	if (shells.length > 3)
 	{
-		output += `<p>These links at the top of this section act as a quick index that will jump you to the different entries on this list.</p>`;
+		output += `<p>Quick index:</p>`;
 		output += `<div id="quick_index">`;
 		
 		for (let item of shells)
