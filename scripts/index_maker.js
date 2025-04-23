@@ -34,9 +34,6 @@ function makeFilterSortList()
 {
 	let output = ``;
 	output += `
-	Filter and sort <span id="filtercount">(X of X shown)</span>
-	</div>
-
 	<div id="filtersortbuttons" class="collapsiblecontent">
 	Sort:
 	<br>
@@ -76,7 +73,7 @@ function makeFilterSortList()
 		<button class="filtersortbtn tagbtnclear" onclick="filterSelection('clear')">Clear all filters</button>
 		<br>
 		<br>
-		Selected tags use logic:
+		Included tags use logic:
 		<button class="filtersortbtn tagSettingInclude FilterSettingActive" onclick="filterSelection('IncludeSetting','AND')">AND</button>
 		<button class="filtersortbtn tagSettingInclude" onclick="filterSelection('IncludeSetting','OR')">OR</button>
 		<br>
@@ -393,10 +390,11 @@ if (pagetype == "shell")
 }
 else
 {
+	index_details = item_details;
 	index_tags = item_tags;
 }
 
-document.getElementById('SortAndFilter').innerHTML = makeFilterSortList();
+document.getElementById('filtersortbuttons').outerHTML = makeFilterSortList();
 
 
 
@@ -687,6 +685,7 @@ function sortCompare(a, b)
 		if (aVal == null) aVal = `0${a.release}`;
 		if (bVal == null) bVal = `0${b.release}`;
 	}
+	
 	//If same, sort by name
 	if (aVal == bVal)
 	{

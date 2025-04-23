@@ -1,3 +1,7 @@
+let item_tags = [
+	[""],
+]
+
 let item_details = [
 	{
 		name: "Convert from AYA to YAYA",
@@ -7,7 +11,8 @@ let item_details = [
 		language: "AYA / YAYA",
 		collaborators: null,
 		externallink: null,
-		blurb: "A walkthrough for the process of converting a ghost from AYA to YAYA! This is specifically aimed towards ghosts made on the GT Ghost Template with all its particular quirks, but it should work for any ghost."
+		blurb: "A walkthrough for the process of converting a ghost from AYA to YAYA! This is specifically aimed towards ghosts made on the GT Ghost Template with all its particular quirks, but it should work for any ghost.",
+		tags: []
 	},
 	{
 		name: "Creating SAORI-Basic",
@@ -17,7 +22,8 @@ let item_details = [
 		language: "Python / other",
 		collaborators: null,
 		externallink: null,
-		blurb: "A guide demonstrating how to create SAORI-basic, specifically in Python! May be useful to get the general idea of how SAORI-basic works, even in other languages."
+		blurb: "A guide demonstrating how to create SAORI-basic, specifically in Python! May be useful to get the general idea of how SAORI-basic works, even in other languages.",
+		tags: []
 	},
 	{
 		name: "Ghost Release Tips & Checklist",
@@ -27,7 +33,8 @@ let item_details = [
 		language: null,
 		collaborators: null,
 		externallink: null,
-		blurb: "A checklist for releasing a ghost, to serve both as a reminder for experienced developers trying to curb release-day jitters, and to give advice to developers releasing their first ghosts to try to steer them away from certain pitfalls.<br><br>Note that I originally wrote this guide on the Ukagaka Dream Team wiki, and have since moved it here."
+		blurb: "A checklist for releasing a ghost, to serve both as a reminder for experienced developers trying to curb release-day jitters, and to give advice to developers releasing their first ghosts to try to steer them away from certain pitfalls.<br><br>Note that I originally wrote this guide on the Ukagaka Dream Team wiki, and have since moved it here.",
+		tags: []
 	},
 	{
 		name: "Loops and Arrays",
@@ -37,7 +44,8 @@ let item_details = [
 		language: "AYA / YAYA",
 		collaborators: null,
 		externallink: null,
-		blurb: "A guide explaining loops and arrays in AYA/YAYA, showing examples of how they may be combined together to create things like dynamic menus! It's a bit old, if you want a more up to date guide you can try YAYA Fundamentals, which is linked below. But if YAYA Fundamentals doesn't click with you/seems overwhelming, maybe this one will be of help."
+		blurb: "A guide explaining loops and arrays in AYA/YAYA, showing examples of how they may be combined together to create things like dynamic menus! It's a bit old, if you want a more up to date guide you can try YAYA Fundamentals, which is linked below. But if YAYA Fundamentals doesn't click with you/seems overwhelming, maybe this one will be of help.",
+		tags: []
 	},
 	{
 		name: "Negative Coordinates in Balloons",
@@ -47,7 +55,8 @@ let item_details = [
 		language: null,
 		collaborators: null,
 		externallink: null,
-		blurb: "A quick explanation of the negative coordinates system used by balloons in order to greatly simplify balloon making. It will make your balloon-making life so much easier!"
+		blurb: "A quick explanation of the negative coordinates system used by balloons in order to greatly simplify balloon making. It will make your balloon-making life so much easier!",
+		tags: []
 	},
 	{
 		name: "Network updates with Github",
@@ -57,7 +66,8 @@ let item_details = [
 		language: null,
 		collaborators: null,
 		externallink: null,
-		blurb: "A walkthrough for setting up network updates for a ghost in GitHub. Note that this guide is fairly outdated, and I would change my recommendations if I were to rewrite it (in particular, I recommend having different repositories for each ghost). Even so, it will still work. One of these days I will rewrite it."
+		blurb: "A walkthrough for setting up network updates for a ghost in GitHub. Note that this guide is fairly outdated, and I would change my recommendations if I were to rewrite it (in particular, I recommend having different repositories for each ghost). Even so, it will still work. One of these days I will rewrite it.",
+		tags: []
 	},
 	{
 		name: "Notepad++ tips to improve your ghost dev experience",
@@ -67,7 +77,8 @@ let item_details = [
 		language: null,
 		collaborators: null,
 		externallink: null,
-		blurb: "Learn all sorts of tips and tricks you can use to work more efficiently in Notepad++! I've picked this stuff up over years of making ghosts and learning how to use the various features of the program to suit my needs."
+		blurb: "Learn all sorts of tips and tricks you can use to work more efficiently in Notepad++! I've picked this stuff up over years of making ghosts and learning how to use the various features of the program to suit my needs.",
+		tags: []
 	},
 	{
 		name: "Old Definition vs. New Definition",
@@ -77,7 +88,8 @@ let item_details = [
 		language: "SERIKO",
 		collaborators: null,
 		externallink: null,
-		blurb: "An explanation of the differences between the old and new definitions of SERIKO, and the advantages of converting to the new definition. Comes with a handy tool to help you convert easily!"
+		blurb: "An explanation of the differences between the old and new definitions of SERIKO, and the advantages of converting to the new definition. Comes with a handy tool to help you convert easily!",
+		tags: []
 	},
 	{
 		name: "Ping Pong Loops",
@@ -87,7 +99,8 @@ let item_details = [
 		language: "SERIKO",
 		collaborators: null,
 		externallink: null,
-		blurb: "An explanation of a particular shell coding trick that I use to create animations which must always be visible, but that I want to switch between random options. If you need to do this one particular thing, maybe this will help!"
+		blurb: "An explanation of a particular shell coding trick that I use to create animations which must always be visible, but that I want to switch between random options. If you need to do this one particular thing, maybe this will help!",
+		tags: []
 	},
 	{
 		name: "Run Envelopes Through Script Input",
@@ -97,7 +110,8 @@ let item_details = [
 		language: "YAYA",
 		collaborators: null,
 		externallink: null,
-		blurb: "An explanation of how to create word groups in YAYA (\"envelopes\", though I try to avoid this term now), and the additional code needed to make them function in script input."
+		blurb: "An explanation of how to create word groups in YAYA (\"envelopes\", though I try to avoid this term now), and the additional code needed to make them function in script input.",
+		tags: []
 	},
 	{
 		name: "Setting up subfolders in your ghost list",
@@ -107,7 +121,8 @@ let item_details = [
 		language: null,
 		collaborators: null,
 		externallink: null,
-		blurb: "Did you know you can set up subfolders in your ghost list/balloon list/etc.? You can! And this guide will tell you all about it, with images and explanations for each step.<br><br>Note that I originally wrote this guide on the Ukagaka Dream Team wiki, and have since moved it here."
+		blurb: "Did you know you can set up subfolders in your ghost list/balloon list/etc.? You can! And this guide will tell you all about it, with images and explanations for each step.<br><br>Note that I originally wrote this guide on the Ukagaka Dream Team wiki, and have since moved it here.",
+		tags: []
 	},
 	{
 		name: "Upgrade Old Versions of YAYA",
@@ -117,7 +132,8 @@ let item_details = [
 		language: "YAYA",
 		collaborators: null,
 		externallink: null,
-		blurb: "A walkthrough for updating ghosts from older versions of YAYA to newer ones! This is really important to get security updates, bug fixes, and the latest features to make development easier! Once you've done this a single time, the upgrade process should become easier in the future."
+		blurb: "A walkthrough for updating ghosts from older versions of YAYA to newer ones! This is really important to get security updates, bug fixes, and the latest features to make development easier! Once you've done this a single time, the upgrade process should become easier in the future.",
+		tags: []
 	},
 	{
 		name: "What is AUTO_DATA_CONVERT",
@@ -127,7 +143,8 @@ let item_details = [
 		language: "YAYA",
 		collaborators: null,
 		externallink: null,
-		blurb: "A guide explaining YAYA's AUTO_DATA_CONVERT option, what it does, and why you should (almost always) turn it off. Please note that when I first wrote this guide, I had thought the option would cause a much more severe compatibility issue, but this turned out to be untrue and I have since corrected it.<br><br>Note that I originally wrote this guide on the Ukagaka Dream Team wiki, and have since moved it here."
+		blurb: "A guide explaining YAYA's AUTO_DATA_CONVERT option, what it does, and why you should (almost always) turn it off. Please note that when I first wrote this guide, I had thought the option would cause a much more severe compatibility issue, but this turned out to be untrue and I have since corrected it.<br><br>Note that I originally wrote this guide on the Ukagaka Dream Team wiki, and have since moved it here.",
+		tags: []
 	},
 	{
 		name: "YAYA Fundamentals",
@@ -141,6 +158,7 @@ let item_details = [
 			hostedby: "Separate website",
 			link: "https://zichqec.github.io/YAYA_Fundamentals/",
 		},
-		blurb: "A large guide teaching the YAYA programming language from the ground up, starting with the basics and exploring more complicated functions. Comes with a companion ghost that can be used to run example code, and serves as a sandbox to practice code in. My biggest and most comprehensive guide."
+		blurb: "A large guide teaching the YAYA programming language from the ground up, starting with the basics and exploring more complicated functions. Comes with a companion ghost that can be used to run example code, and serves as a sandbox to practice code in. My biggest and most comprehensive guide.",
+		tags: []
 	}
 ]
