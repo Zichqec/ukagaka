@@ -57,7 +57,6 @@ for (i = 0; i < coll.length; i++)
 //Maybe I'll make this its own function at one point
 function makeStandard(input)
 {
-	console.log(input);
 	let output = input.toLowerCase();
 	output = output.replace(" - ","_");
 	output = output.replace(" & ","_");

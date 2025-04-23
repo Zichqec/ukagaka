@@ -57,7 +57,7 @@ function makeIndex(item)
 	}
 	
 	output += `
-	<article id="${lowername}" class="TagFilter ${tagdiv}">
+	<article id="${lowername}" class="FilterSort ${tagdiv}">
 	`;
 	
 	//Guides don't have images
@@ -332,15 +332,16 @@ else
 {
 	index_details = item_details;
 }
-
-document.getElementById('quick_index').innerHTML = index_details.map(makeTopIndex).join('');
-document.getElementById('full_index').innerHTML = index_details.map(makeIndex).join('');
+//TODO save a separate quick index lol
 
 
 
-//Filter by tag on index pages
+
+//————— Filter by tag on index pages —————
 let FilterAdd = [];
 let FilterRemove = [];
+let IncludeSetting = "AND";
+let ExcludeSetting = "OR";
 let total_count = 0;
 let shown_count = 0;
 
@@ -350,28 +351,39 @@ let shown_count = 0;
 filterSelection("clear")
 function filterSelection(tag, operation)
 {
-	let elements = document.getElementsByClassName("TagFilter")
-	if (tag == "clear")
+	let elements = document.getElementsByClassName("FilterSort")
+	if (tag != "refresh")
 	{
-		FilterAdd = [];
-		FilterRemove = [];
-	}
-	else //Adjust if the filter is including the tag, excluding it, or off
-	{
-		let addpos = FilterAdd.indexOf(tag)
-		let rempos = FilterRemove.indexOf(tag)
-		if (rempos != -1)
+		if (tag == "clear")
 		{
-			FilterRemove.splice(rempos, 1)
+			FilterAdd = [];
+			FilterRemove = [];
 		}
-		else if (addpos != -1)
+		else if (tag == "IncludeSetting")
 		{
-			FilterAdd.splice(addpos, 1)
-			FilterRemove.push(tag);
+			IncludeSetting = operation;
 		}
-		else
+		else if (tag == "ExcludeSetting")
 		{
-			FilterAdd.push(tag);
+			ExcludeSetting = operation;
+		}
+		else //Adjust if the filter is including the tag, excluding it, or off
+		{
+			let addpos = FilterAdd.indexOf(tag)
+			let rempos = FilterRemove.indexOf(tag)
+			if (rempos != -1)
+			{
+				FilterRemove.splice(rempos, 1)
+			}
+			else if (addpos != -1)
+			{
+				FilterAdd.splice(addpos, 1)
+				FilterRemove.push(tag);
+			}
+			else
+			{
+				FilterAdd.push(tag);
+			}
 		}
 	}
 	
@@ -389,6 +401,7 @@ function filterSelection(tag, operation)
 	for (let i = 0; i < elements.length; i++)
 	{
 		classes = elements[i].className.split(" ");
+		//Remove the class from everything and start fresh
 		for (let ii = 0; ii < classes.length; ii++)
 		{
 			if (classes[ii] == "TFShow")
@@ -399,22 +412,69 @@ function filterSelection(tag, operation)
 		}
 		
 		let to_show = 1;
-		for (let ii = 0; ii < FilterAdd.length; ii++)
+		//Include
+		if (FilterAdd.length > 0) //If there is no filter, just show it
 		{
-			if (classes.indexOf(FilterAdd[ii]) == -1 && FilterAdd.length > 0)
+			if (IncludeSetting == "OR")
 			{
-				to_show = 0;
-				break;
+				to_show = 0; //Hide unless we find at least 1 tag
+				for (let ii = 0; ii < FilterAdd.length; ii++)
+				{
+					if (classes.indexOf(FilterAdd[ii]) != -1)
+					{
+						to_show = 1;
+						break;
+					}
+				}
+			}
+			else //AND
+			{
+				//Show unless we find at least one tag not present
+				for (let ii = 0; ii < FilterAdd.length; ii++)
+				{
+					if (classes.indexOf(FilterAdd[ii]) == -1)
+					{
+						to_show = 0;
+						break;
+					}
+				}
 			}
 		}
-		for (let ii = 0; ii < FilterRemove.length; ii++)
+		
+		//Exclude
+		if (FilterRemove.length > 0) //If no filters applied, skip
 		{
-			if (classes.indexOf(FilterRemove[ii]) != -1)
+			if (ExcludeSetting == "OR")
 			{
-				to_show = 0;
-				break;
+				//If any tag in the exclusion list is found, skip
+				for (let ii = 0; ii < FilterRemove.length; ii++)
+				{
+					if (classes.indexOf(FilterRemove[ii]) != -1)
+					{
+						to_show = 0;
+						break;
+					}
+				}
 			}
+			else //AND
+			{
+				//If ALL tags in the exclusion list are found, hide it
+				let tagsfound = 0;
+				for (let ii = 0; ii < FilterRemove.length; ii++)
+				{
+					if (classes.indexOf(FilterRemove[ii]) != -1)
+					{
+						tagsfound++;
+					}
+				}
+				if (tagsfound == FilterRemove.length)
+				{
+					to_show = 0;
+				}
+			}
+			
 		}
+		
 		
 		if (to_show == 1)
 		{
@@ -440,22 +500,71 @@ function filterSelection(tag, operation)
 		}
 		
 		let to_hide = 0;
-		for (let ii = 0; ii < FilterAdd.length; ii++)
+		//Include
+		if (FilterAdd.length > 0) //If there is no filter, just show it
 		{
-			if (classes.indexOf(FilterAdd[ii]) == -1 && FilterAdd.length > 0)
+			if (IncludeSetting == "OR")
 			{
-				to_hide = 1;
-				break;
+				to_hide = 1; //Hide unless we find at least 1 tag
+				for (let ii = 0; ii < FilterAdd.length; ii++)
+				{
+					if (classes.indexOf(FilterAdd[ii]) != -1)
+					{
+						to_hide = 0;
+						break;
+					}
+				}
+			}
+			else //AND
+			{
+				//Show unless we find at least one tag not present
+				for (let ii = 0; ii < FilterAdd.length; ii++)
+				{
+					if (classes.indexOf(FilterAdd[ii]) == -1)
+					{
+						to_hide = 1;
+						break;
+					}
+				}
 			}
 		}
-		for (let ii = 0; ii < FilterRemove.length; ii++)
+		
+		//Exclude
+		if (FilterRemove.length > 0) //If no filters applied, skip
 		{
-			if (classes.indexOf(FilterRemove[ii]) != -1)
+			if (ExcludeSetting == "OR")
 			{
-				to_hide = 1;
-				break;
+				//If any tag in the exclusion list is found, skip
+				for (let ii = 0; ii < FilterRemove.length; ii++)
+				{
+					if (classes.indexOf(FilterRemove[ii]) != -1)
+					{
+						to_hide = 1;
+						break;
+					}
+				}
+			}
+			else //AND
+			{
+				//If ALL tags in the exclusion list are found, hide it
+				let tagsfound = 0;
+				for (let ii = 0; ii < FilterRemove.length; ii++)
+				{
+					if (classes.indexOf(FilterRemove[ii]) != -1)
+					{
+						tagsfound++;
+					}
+				}
+				
+				if (tagsfound == FilterRemove.length)
+				{
+					to_hide = 1;
+				}
 			}
 		}
+		
+		
+		
 		//NOTE: currently, despite being grayed out they are still clicky... oh well?
 		if (to_hide == 1)
 		{
@@ -467,12 +576,103 @@ function filterSelection(tag, operation)
 	document.getElementById('filtercount').innerHTML = `(${shown_count} of ${total_count} shown)`;
 }
 
-let buttoncontainer = document.getElementById("tagfilterbuttons");
-let buttons = buttoncontainer.getElementsByClassName("tagbtn");
+//————— Sort on index pages —————
+let SortType = "Alphabetical";
+let SortDirection = "ascending";
 
-for (let i = 0; i < buttons.length; i++)
+//which: type or direction
+//operation: alphabetical, ascending, etc
+function sortIndex(which, adjustment)
 {
-	buttons[i].addEventListener("click", function() {
+	//Change the variables to the new setting
+	if (which == "type") SortType = adjustment;
+	else if (which == "direction") SortDirection = adjustment;
+	
+	//Sort the index arrays appropriately
+	index_details.sort(sortCompare); //magical arguments, apparently
+	
+	
+	//If it's descending order, just reverse it after...
+	if (SortDirection == "descending") index_details.reverse();
+	
+	//Clear old index elements
+	document.getElementById('full_index').innerHTML = ``;
+	
+	//Regenerate the index
+	document.getElementById('full_index').innerHTML = index_details.map(makeIndex).join('');
+	
+	filterSelection("refresh")
+}
+document.getElementById('quick_index').innerHTML = index_details.map(makeTopIndex).join('');
+
+function sortCompare(a, b)
+{
+	let aVal = a.name;
+	let bVal = b.name;
+	
+	if (SortType == "release_date")
+	{
+		aVal = a.release;
+		bVal = b.release;
+	}
+	else if (SortType == "last_updated")
+	{
+		aVal = a.latest;
+		bVal = b.latest;
+		//AHAHAHA i'm so happy with this. easy way to make it so that ones without updates are sorted by date instead but stay at the "earliest" spot on the list :) because I don't want them mixed in
+		//Without this, the ones with null values just swap around randomly and it's annoying
+		if (aVal == null) aVal = `0${a.release}`;
+		if (bVal == null) bVal = `0${b.release}`;
+	}
+	console.log(`${aVal} : ${bVal}`);
+	
+	if (aVal < bVal)
+	{
+		return -1;
+	}
+	if (aVal > bVal)
+	{
+		return 1;
+	}
+	return 0;
+}
+
+sortIndex();
+
+// document.getElementById('quick_index').innerHTML = index_details.map(makeTopIndex).join('');
+// document.getElementById('full_index').innerHTML = index_details.map(makeIndex).join('');
+
+
+let buttoncontainer = document.getElementById("filtersortbuttons");
+
+let sortbuttonsType = buttoncontainer.getElementsByClassName("sortbtnType");
+for (let i = 0; i < sortbuttonsType.length; i++)
+{
+	sortbuttonsType[i].addEventListener("click", function() {
+		for (let i = 0; i < sortbuttonsType.length; i++)
+		{
+			sortbuttonsType[i].className = sortbuttonsType[i].className.replace(" SortActive","");
+		}
+		this.className += " SortActive";	
+	});
+}
+
+let sortbuttonsDir = buttoncontainer.getElementsByClassName("sortbtnDir");
+for (let i = 0; i < sortbuttonsDir.length; i++)
+{
+	sortbuttonsDir[i].addEventListener("click", function() {
+		for (let i = 0; i < sortbuttonsDir.length; i++)
+		{
+			sortbuttonsDir[i].className = sortbuttonsDir[i].className.replace(" SortActive","");
+		}
+		this.className += " SortActive";	
+	});
+}
+
+let filterbuttons = buttoncontainer.getElementsByClassName("tagbtn");
+for (let i = 0; i < filterbuttons.length; i++)
+{
+	filterbuttons[i].addEventListener("click", function() {
 		if (this.className.indexOf("FilterRemove") != -1) this.className = this.className.replace(" FilterRemove","");
 		else if (this.className.indexOf("FilterAdd") != -1) this.className = this.className.replace(" FilterAdd"," FilterRemove");
 		else
@@ -482,14 +682,38 @@ for (let i = 0; i < buttons.length; i++)
 	});
 }
 
-let clearbutton = buttoncontainer.getElementsByClassName("tagbtnclear")[0];
+let filterbuttonsInclude = buttoncontainer.getElementsByClassName("tagSettingInclude");
+for (let i = 0; i < filterbuttonsInclude.length; i++)
+{
+	filterbuttonsInclude[i].addEventListener("click", function() {
+		for (let i = 0; i < filterbuttonsInclude.length; i++)
+		{
+			filterbuttonsInclude[i].className = filterbuttonsInclude[i].className.replace(" FilterSettingActive","");
+		}
+		this.className += " FilterSettingActive";	
+	});
+}
 
+let filterbuttonsExclude = buttoncontainer.getElementsByClassName("tagSettingExclude");
+for (let i = 0; i < filterbuttonsExclude.length; i++)
+{
+	filterbuttonsExclude[i].addEventListener("click", function() {
+		for (let i = 0; i < filterbuttonsExclude.length; i++)
+		{
+			filterbuttonsExclude[i].className = filterbuttonsExclude[i].className.replace(" FilterSettingActive","");
+		}
+		this.className += " FilterSettingActive";	
+	});
+}
+
+
+
+let clearbutton = buttoncontainer.getElementsByClassName("tagbtnclear")[0];
 clearbutton.addEventListener("click", function() {
-	for (let i = 0; i < buttons.length; i++)
+	for (let i = 0; i < filterbuttons.length; i++)
 	{
-		console.log(`button ${i}`);
-		buttons[i].className = buttons[i].className.replace(" FilterAdd","");
-		buttons[i].className = buttons[i].className.replace(" FilterRemove","");
+		filterbuttons[i].className = filterbuttons[i].className.replace(" FilterAdd","");
+		filterbuttons[i].className = filterbuttons[i].className.replace(" FilterRemove","");
 	}
 });
 
