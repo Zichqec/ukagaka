@@ -1,3 +1,12 @@
+let item_tags = [
+	["2020","2021","2022","2023","2024","2025"],
+	["YAYA","Aosora","Satori"],
+	["Collab","Translations available","Uses freeshell","Includes my writing","Includes my art","Includes my code"],
+	["For event","Ghost Jam","Ghost Masquerade","Ghost Yaminabe","Idea Adoption Jam"],
+	["Idle chatter","Story","Utility","Minigames"],
+	["WIP"],
+]
+
 let item_details = [
 	{
 		name: "@funkylittlemothman",

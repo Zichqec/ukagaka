@@ -32,70 +32,7 @@
 <div id="quick_index"></div>
 </p>
 
-<div class="collapsible">
-Filter and sort <span id="filtercount">(X of X shown)</span>
-</div>
-
-<div id="filtersortbuttons" class="collapsiblecontent">
-	Sort:
-	<br>
-	<button class="filtersortbtn sortbtnType SortActive" onclick="sortIndex('type','alphabetical')">Alphabetical</button>
-	<button class="filtersortbtn sortbtnType" onclick="sortIndex('type','release_date')">Release date</button>
-	<button class="filtersortbtn sortbtnType" onclick="sortIndex('type','last_updated')">Last updated</button>
-	<br>
-	<button class="filtersortbtn sortbtnDir SortActive" onclick="sortIndex('direction','ascending')">Ascending</button>
-	<button class="filtersortbtn sortbtnDir" onclick="sortIndex('direction','descending')">Descending</button>
-	
-	<br>
-	<br>
-	
-	Filter:
-	<br>
-	<br>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('2020')">2020</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('2021')">2021</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('2022')">2022</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('2023')">2023</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('2024')">2024</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('2025')">2025</button>
-	<br>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('YAYA')">YAYA</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Aosora')">Aosora</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Satori')">Satori</button>
-	<br>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Collab')">Collab</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Translations_available')">Translations available</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Uses_freeshell')">Uses freeshell</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Includes_my_writing')">Includes my writing</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Includes_my_art')">Includes my art</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Includes_my_code')">Includes my code</button>
-	<br>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('For_event')">For event</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Ghost_Jam')">Ghost Jam</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Ghost_Masquerade')">Ghost Masquerade</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Ghost_Yaminabe')">Ghost Yaminabe</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Idea_Adoption_Jam')">Idea Adoption Jam</button>
-	<br>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Idle_chatter')">Idle chatter</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Story')">Story</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Utility')">Utility</button>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('Minigames')">Minigames</button>
-	<br>
-	<button class="filtersortbtn tagbtn" onclick="filterSelection('WIP')">WIP</button>
-	<br>
-	<br>
-	<button class="filtersortbtn tagbtnclear" onclick="filterSelection('clear')">Clear all filters</button>
-	<br>
-	<br>
-	Selected tags use logic:
-	<button class="filtersortbtn tagSettingInclude FilterSettingActive" onclick="filterSelection('IncludeSetting','AND')">AND</button>
-	<button class="filtersortbtn tagSettingInclude" onclick="filterSelection('IncludeSetting','OR')">OR</button>
-	<br>
-	Excluded tags use logic: 
-	<button class="filtersortbtn tagSettingExclude" onclick="filterSelection('ExcludeSetting','AND')">AND</button>
-	<button class="filtersortbtn tagSettingExclude FilterSettingActive" onclick="filterSelection('ExcludeSetting','OR')">OR</button>
-	
-</div>
+<div id="SortAndFilter" class="collapsible"></div>
 
 </article>
 

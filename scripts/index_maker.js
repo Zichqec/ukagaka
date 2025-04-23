@@ -30,6 +30,68 @@ function makeTopIndex(item)
 	return `<div class="index_link TagFilterQuickIndex ${tagdiv}"><a href="#${lowername}">${item.name}</a></div>`;
 }
 
+function makeFilterSortList()
+{
+	let output = ``;
+	output += `
+	Filter and sort <span id="filtercount">(X of X shown)</span>
+	</div>
+
+	<div id="filtersortbuttons" class="collapsiblecontent">
+	Sort:
+	<br>
+	<button class="filtersortbtn sortbtnType SortActive" onclick="sortIndex('type','alphabetical')">Alphabetical</button>
+	<button class="filtersortbtn sortbtnType" onclick="sortIndex('type','release_date')">Release date</button>
+	<button class="filtersortbtn sortbtnType" onclick="sortIndex('type','last_updated')">Last updated</button>
+	<br>
+	<button class="filtersortbtn sortbtnDir SortActive" onclick="sortIndex('direction','ascending')">Ascending</button>
+	<button class="filtersortbtn sortbtnDir" onclick="sortIndex('direction','descending')">Descending</button>
+
+	<br>
+	<br>
+
+	Filter:
+	<br>
+	`;
+	
+	if (index_tags != null)
+	{
+		for (let i = 0; i < index_tags.length; i++)
+		{
+			output += `<br>`;
+			let tags = index_tags[i];
+			//tags is a linear array of the tags for this row of the filter list
+			for (let ii = 0; ii < tags.length; ii++)
+			{
+				let processed = tags[ii];
+				processed = processed.replace(/ /g,"_");
+				processed = processed.toLowerCase();
+				output += `<button class="filtersortbtn tagbtn" onclick="filterSelection('${processed}')">${tags[ii]}</button>
+				`;
+			}
+		}
+		output += `
+		<br>
+		<br>
+		<button class="filtersortbtn tagbtnclear" onclick="filterSelection('clear')">Clear all filters</button>
+		<br>
+		<br>
+		Selected tags use logic:
+		<button class="filtersortbtn tagSettingInclude FilterSettingActive" onclick="filterSelection('IncludeSetting','AND')">AND</button>
+		<button class="filtersortbtn tagSettingInclude" onclick="filterSelection('IncludeSetting','OR')">OR</button>
+		<br>
+		Excluded tags use logic: 
+		<button class="filtersortbtn tagSettingExclude" onclick="filterSelection('ExcludeSetting','AND')">AND</button>
+		<button class="filtersortbtn tagSettingExclude FilterSettingActive" onclick="filterSelection('ExcludeSetting','OR')">OR</button>
+		`;
+	}
+	else
+	{
+		output += `<i>No tags available.</a>`;
+	}
+	return output;
+}
+
 function makeIndex(item)
 {
 	let lowername = makeStandard(item.name);
@@ -327,13 +389,14 @@ let index_details = [];
 if (pagetype == "shell")
 {
 	index_details = shell_details;
+	index_tags = shell_tags;
 }
 else
 {
-	index_details = item_details;
+	index_tags = item_tags;
 }
-//TODO save a separate quick index lol
 
+document.getElementById('SortAndFilter').innerHTML = makeFilterSortList();
 
 
 
@@ -623,6 +686,12 @@ function sortCompare(a, b)
 		//Without this, the ones with null values just swap around randomly and it's annoying
 		if (aVal == null) aVal = `0${a.release}`;
 		if (bVal == null) bVal = `0${b.release}`;
+	}
+	//If same, sort by name
+	if (aVal == bVal)
+	{
+		aVal = a.name;
+		bVal = b.name;
 	}
 	console.log(`${aVal} : ${bVal}`);
 	

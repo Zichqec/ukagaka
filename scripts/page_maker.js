@@ -23,7 +23,6 @@ else
 
 console.log(pagename);
 
-
 for (let i = 0; i < index_details.length; i++)
 {
 	if (makeStandard(index_details[i].name) == pagename)

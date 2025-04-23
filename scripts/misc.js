@@ -1,10 +1,10 @@
 //Collabsibles for spoilers, etc. From https://www.w3schools.com/howto/howto_js_collapsible.asp
 var coll = document.getElementsByClassName("collapsible");
-var i;
+var collapsiblecheck;
 
-for (i = 0; i < coll.length; i++)
+for (collapsiblecheck = 0; collapsiblecheck < coll.length; collapsiblecheck++)
 {
-	coll[i].addEventListener("click", function()
+	coll[collapsiblecheck].addEventListener("click", function()
 	{
 		this.classList.toggle("active");
 		var content = this.nextElementSibling;
