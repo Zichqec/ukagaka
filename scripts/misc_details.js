@@ -1,7 +1,7 @@
 let item_details = [
 	{
 		name: "Aosora talk block UDL",
-		release: "March 25th, 2025",
+		release: "2025-03-25",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -12,7 +12,7 @@ let item_details = [
 	},
 	{
 		name: "Dark theme mod for Tama",
-		release: "March 7th, 2021",
+		release: "2021-03-07",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -23,7 +23,7 @@ let item_details = [
 	},
 	{
 		name: "Galaxy Blob",
-		release: "September 25th, 2022",
+		release: "2022-09-25",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -34,7 +34,7 @@ let item_details = [
 	},
 	{
 		name: "Galaxy Parrot",
-		release: "May 12th, 2024",
+		release: "2024-05-12",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -45,7 +45,7 @@ let item_details = [
 	},
 	{
 		name: "Rainbow Galaxy Parrot",
-		release: "May 12th, 2024",
+		release: "2024-05-12",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -56,8 +56,8 @@ let item_details = [
 	},
 	{
 		name: "Surfaces.txt new definition UDL",
-		release: "March 25th, 2025",
-		latest: "March 27th, 2025",
+		release: "2025-03-25",
+		latest: "2025-03-27",
 		version: null,
 		forevent: null,
 		goeswith: [{name: "Notepad++", download: "https://notepad-plus-plus.org/downloads/"}],

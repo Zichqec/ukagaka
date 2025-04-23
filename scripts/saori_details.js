@@ -1,7 +1,7 @@
 let item_details = [
 	{
 		name: "ImageCompositor",
-		release: "March 7th, 2021",
+		release: "2021-03-07",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,

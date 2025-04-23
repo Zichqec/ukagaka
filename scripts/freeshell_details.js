@@ -1,7 +1,7 @@
 let item_details = [
 	{
 		name: "Ancient Gem",
-		release: "March 19th, 2025",
+		release: "2025-03-19",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Etc. Jam 2025",
@@ -11,8 +11,8 @@ let item_details = [
 	},
 	{
 		name: "Lollipop Tanktop",
-		release: "September 26th, 2024",
-		latest: "December 2nd, 2024",
+		release: "2024-09-26",
+		latest: "2024-12-02",
 		version: "v1.0.1",
 		forevent: null,
 		collaborators: null,
@@ -21,7 +21,7 @@ let item_details = [
 	},
 	{
 		name: "More Tuna Please",
-		release: "May 4th, 2024",
+		release: "2024-05-04",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -31,7 +31,7 @@ let item_details = [
 	},
 	{
 		name: "Skeleton 00",
-		release: "February 2nd, 2022",
+		release: "2022-02-02",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,

@@ -1,7 +1,7 @@
 let item_details = [
 	{
 		name: "@funkylittlemothman",
-		release: "June 25th, 2023",
+		release: "2023-06-25",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Idea Adoption Jam",
@@ -17,8 +17,8 @@ let item_details = [
 	},
 	{
 		name: "ATM Machine",
-		release: "April 9th, 2023",
-		latest: "November 3rd, 2024",
+		release: "2023-04-09",
+		latest: "2024-11-03",
 		version: "v2.0.1",
 		forevent: null,
 		collaborators: null,
@@ -30,8 +30,8 @@ let item_details = [
 	},
 	{
 		name: "Balloons",
-		release: "May 8th, 2022",
-		latest: "February 15th, 2023",
+		release: "2022-05-08",
+		latest: "2023-02-15",
 		version: "v1.0.3",
 		forevent: "Ghost Jam 2022",
 		collaborators:
@@ -46,8 +46,8 @@ let item_details = [
 	},
 	{
 		name: "Call of the Sea",
-		release: "May 2nd, 2023",
-		latest: "May 26th, 2023",
+		release: "2023-05-02",
+		latest: "2023-05-26",
 		version: "v1.0.1",
 		forevent: "ゴーストマスカレード5",
 		collaborators: null,
@@ -59,7 +59,7 @@ let item_details = [
 	},
 	{
 		name: "Countdown",
-		release: "November 4th, 2024",
+		release: "2024-11-04",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -72,7 +72,7 @@ let item_details = [
 	},
 	{
 		name: "CT Epoch Jam",
-		release: "April 24th, 2021",
+		release: "2021-04-24",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Ghost Jam 2021",
@@ -89,8 +89,8 @@ let item_details = [
 	},
 	{
 		name: "Dusty and Obsidian",
-		release: "August 1st, 2020",
-		latest: "November 17th, 2020",
+		release: "2020-08-01",
+		latest: "2020-11-17",
 		version: "v1.0.9",
 		forevent: null,
 		collaborators: null,
@@ -102,8 +102,8 @@ let item_details = [
 	},
 	{
 		name: "FLUX",
-		release: "May 12th, 2021",
-		latest: "January 31st, 2022",
+		release: "2021-05-12",
+		latest: "2022-01-31",
 		version: "v1.2.2",
 		forevent: null,
 		collaborators: null,
@@ -136,8 +136,8 @@ let item_details = [
 	},
 	{
 		name: "Gallery 512",
-		release: "May 14th, 2023",
-		latest: "May 19th, 2023",
+		release: "2023-05-14",
+		latest: "2023-05-19",
 		version: "v1.0.1",
 		forevent: "Ghost Jam 2023",
 		collaborators:
@@ -153,8 +153,8 @@ let item_details = [
 	},
 	{
 		name: "Ghost Guides",
-		release: "December 24th, 2022",
-		latest: "April 14th, 2023",
+		release: "2022-12-24",
+		latest: "2023-04-14",
 		version: "v1.0.1",
 		forevent: null,
 		collaborators: null,
@@ -166,8 +166,8 @@ let item_details = [
 	},
 	{
 		name: "Hoard of Shinies",
-		release: "March 27th, 2025",
-		latest: "April 5th, 2025",
+		release: "2025-03-27",
+		latest: "2025-04-05",
 		version: "v1.0.2",
 		forevent: null,
 		collaborators: null,
@@ -179,8 +179,8 @@ let item_details = [
 	},
 	{
 		name: "Hydrate",
-		release: "August 20th, 2020",
-		latest: "August 26th, 2022",
+		release: "2020-08-20",
+		latest: "2022-08-26",
 		version: "v1.2.1",
 		forevent: null,
 		collaborators:
@@ -195,8 +195,8 @@ let item_details = [
 	},
 	{
 		name: "Iea",
-		release: "April 25th, 2020",
-		latest: "April 25th, 2020",
+		release: "2020-04-25",
+		latest: "2020-04-25",
 		version: "v1.0.1",
 		forevent: "Ghost Jam 2020",
 		collaborators:
@@ -211,8 +211,8 @@ let item_details = [
 	},
 	{
 		name: "If I Can't Have Shrimp No One Can",
-		release: "June 19th, 2023",
-		latest: "November 3rd, 2024",
+		release: "2023-06-19",
+		latest: "2024-11-03",
 		version: "v1.1.1",
 		forevent: "Idea Adoption Jam",
 		collaborators:
@@ -228,8 +228,8 @@ let item_details = [
 	},
 	{
 		name: "KEEP FROZEN",
-		release: "May 2nd, 2023",
-		latest: "December 29th, 2024",
+		release: "2023-05-02",
+		latest: "2024-12-29",
 		version: "v1.1.6",
 		forevent: "ゴーストマスカレード5",
 		collaborators:
@@ -244,7 +244,7 @@ let item_details = [
 	},
 	{
 		name: "Literally just a mess why did you download this",
-		release: "March 24th, 2024",
+		release: "2024-03-24",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -264,8 +264,8 @@ let item_details = [
 	},
 	{
 		name: "Lulo",
-		release: "January 1st, 2021",
-		latest: "August 10th, 2023",
+		release: "2021-01-01",
+		latest: "2023-08-10",
 		version: "v0.0.4",
 		forevent: null,
 		collaborators: null,
@@ -277,8 +277,8 @@ let item_details = [
 	},
 	{
 		name: "May I have a book please?",
-		release: "May 2nd, 2024",
-		latest: "November 3rd, 2024",
+		release: "2024-05-02",
+		latest: "2024-11-03",
 		version: "v1.0.1",
 		forevent: "ゴーストマスカレード6",
 		collaborators: null,
@@ -290,8 +290,8 @@ let item_details = [
 	},
 	{
 		name: "Needle",
-		release: "May 11th, 2022",
-		latest: "December 15th, 2024",
+		release: "2022-05-11",
+		latest: "2024-12-15",
 		version: "v1.1.4",
 		forevent: "Ghost Jam 2022",
 		collaborators:
@@ -306,8 +306,8 @@ let item_details = [
 	},
 	{
 		name: "Noodle",
-		release: "May 31st, 2023",
-		latest: "November 3rd, 2024",
+		release: "2023-05-31",
+		latest: "2024-11-03",
 		version: "v1.0.3",
 		forevent: null,
 		collaborators:
@@ -322,8 +322,8 @@ let item_details = [
 	},
 	{
 		name: "Paper",
-		release: "May 12th, 2022",
-		latest: "June 3rd, 2022",
+		release: "2022-05-12",
+		latest: "2022-06-03",
 		version: "v1.0.1",
 		forevent: "Ghost Jam 2022",
 		collaborators:
@@ -339,7 +339,7 @@ let item_details = [
 	},
 	{
 		name: "Please arrive 15 minutes before your scheduled interview time",
-		release: "May 18th, 2023",
+		release: "2023-05-18",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Ghost Jam 2023",
@@ -356,8 +356,8 @@ let item_details = [
 	},
 	{
 		name: "Quiet conversation over tea",
-		release: "May 2nd, 2024",
-		latest: "May 17th, 2024",
+		release: "2024-05-02",
+		latest: "2024-05-17",
 		version: "v1.0.0",
 		forevent: "ゴーストマスカレード6",
 		collaborators:
@@ -372,8 +372,8 @@ let item_details = [
 	},
 	{
 		name: "S the Skeleton",
-		release: "May 1st, 2020",
-		latest: "August 25th, 2022",
+		release: "2020-05-01",
+		latest: "2022-08-25",
 		version: "v1.5.0",
 		forevent: null,
 		collaborators: null,
@@ -385,8 +385,8 @@ let item_details = [
 	},
 	{
 		name: "Skyrim Guard",
-		release: "June 13th, 2020",
-		latest: "June 14th, 2020",
+		release: "2020-06-13",
+		latest: "2020-06-14",
 		version: "v1.0.1",
 		forevent: null,
 		collaborators: null,
@@ -398,8 +398,8 @@ let item_details = [
 	},
 	{
 		name: "SSP Angel",
-		release: "March 23rd, 2023",
-		latest: "November 3rd, 2024",
+		release: "2023-03-23",
+		latest: "2024-11-03",
 		version: "v1.1.1",
 		forevent: null,
 		collaborators:
@@ -416,7 +416,7 @@ let item_details = [
 	},
 	{
 		name: "Ukatranslator",
-		release: "October 4th, 2021",
+		release: "2021-10-04",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -435,7 +435,7 @@ let item_details = [
 	},
 	{
 		name: "Under the Stars",
-		release: "May 25th, 2024",
+		release: "2024-05-25",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Ghost Jam 2024",
@@ -453,7 +453,7 @@ let item_details = [
 	},
 	{
 		name: "Very Fast Snail",
-		release: "October 6th, 2024",
+		release: "2024-10-06",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Idea Adoption Jam 2024",
@@ -470,7 +470,7 @@ let item_details = [
 	},
 	{
 		name: "Warrior Generator",
-		release: "March 7th, 2021",
+		release: "2021-03-07",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -483,8 +483,8 @@ let item_details = [
 	},
 	{
 		name: "Xander's Refuge",
-		release: "August 31st, 2023",
-		latest: "March 25th, 2025",
+		release: "2023-08-31",
+		latest: "2025-03-25",
 		version: "v1.0.3",
 		forevent: "Aughost",
 		collaborators: null,
@@ -496,7 +496,7 @@ let item_details = [
 	},
 	{
 		name: "Xander's Refuge (Aosora)",
-		release: "March 25th, 2025",
+		release: "2025-03-25",
 		latest: null,
 		version: "v1.0.3-a01",
 		forevent: null,
@@ -505,12 +505,12 @@ let item_details = [
 		content_warnings: null,
 		download: "https://github.com/Zichqec/xanders_refuge_aosora/releases/latest",
 		blurb: "This is a port of my ghost <a href='../ghost/xanders_refuge.html'>Xander's Refuge</a> into the SHIORI <a href='https://github.com/kanadelab/aosora-shiori'>Aosora</a>. I created it as a way to test the SHIORI, and to have as a roughly 1:1 comparison of YAYA code and Aosora code. If you want to learn more about the ghost's premise, please check the page for Xander's Refuge.<br><br>Because this is a port of a YAYA ghost, it is coded in a very YAYA way, and doesn't make use of Aosora to its fullest extent. Please keep this in mind if you look at the code!",
-		tags: ["2023", "Aosora", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Story"]
+		tags: ["2025", "Aosora", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Story"]
 	},
 	{
 		name: "Zana's Laws",
-		release: "May 30th, 2024",
-		latest: "November 3rd, 2024",
+		release: "2024-05-30",
+		latest: "2024-11-03",
 		version: "v1.0.2",
 		forevent: "Ghost Jam 2024",
 		collaborators:
@@ -526,8 +526,8 @@ let item_details = [
 	},
 	{
 		name: "ゴースト闇鍋",
-		release: "March 2nd, 2024",
-		latest: "N/A",
+		release: "2024-03-02",
+		latest: null,
 		version: null,
 		forevent: "ゴースト闇鍋",
 		collaborators:

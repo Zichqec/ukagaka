@@ -3,7 +3,7 @@ let shell_details = [
 	{
 		name: "A thousand thousand dots",
 		goeswith: [Needle],
-		release: "November 11th, 2023",
+		release: "2023-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -15,7 +15,7 @@ let shell_details = [
 	{
 		name: "After the rainfall",
 		goeswith: [Hydrate],
-		release: "August 20th, 2023",
+		release: "2023-08-20",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "8/20 Hydrate Shell Jam 2023",
@@ -27,7 +27,7 @@ let shell_details = [
 	{
 		name: "Angrily Vibrating Flamingo",
 		goeswith: [IfICantHaveShrimpNoOneCan],
-		release: "June 23rd, 2024",
+		release: "2024-06-23",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "National Pink Flamingo Day",
@@ -39,7 +39,7 @@ let shell_details = [
 	{
 		name: "ASCIIdle",
 		goeswith: [Needle],
-		release: "November 11th, 2024",
+		release: "2024-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -51,7 +51,7 @@ let shell_details = [
 	{
 		name: "Ballpoint",
 		goeswith: [Needle],
-		release: "November 11th, 2024",
+		release: "2024-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -63,7 +63,7 @@ let shell_details = [
 	{
 		name: "Ballpoint Pen",
 		goeswith: [Hydrate],
-		release: "August 20th, 2022",
+		release: "2022-08-20",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "8/20 Hydrate Shell Jam 2022",
@@ -76,7 +76,7 @@ let shell_details = [
 		name: "Birthday Needle",
 		goeswith: [Needle],
 		release: "January 7th, 2024",
-		latest: "January 7th, 2025",
+		latest: "2025-01-07",
 		version: "v1.0.1",
 		forevent: "Perseverence Day",
 		collaborators:
@@ -90,7 +90,7 @@ let shell_details = [
 	{
 		name: "Cavatappi",
 		goeswith: [Noodle],
-		release: "September 24th, 2023",
+		release: "2023-09-24",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Etc. Jam 2023",
@@ -102,8 +102,8 @@ let shell_details = [
 	{
 		name: "Cibus",
 		goeswith: [FLUX,FLELE],
-		release: "October 9th, 2020",
-		latest: "May 12th, 2021",
+		release: "2020-10-09",
+		latest: "2021-05-12",
 		version: "v2.0.0",
 		forevent: null,
 		collaborators: null,
@@ -114,7 +114,7 @@ let shell_details = [
 	{
 		name: "Close-Up View",
 		goeswith: [Needle],
-		release: "November 11th, 2022",
+		release: "2022-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -126,7 +126,7 @@ let shell_details = [
 	{
 		name: "Colored Pencils",
 		goeswith: [Needle],
-		release: "November 11th, 2023",
+		release: "2023-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -138,7 +138,7 @@ let shell_details = [
 	{
 		name: "Conchiglie",
 		goeswith: [Noodle],
-		release: "September 24th, 2023",
+		release: "2023-09-24",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Etc. Jam 2023",
@@ -150,7 +150,7 @@ let shell_details = [
 	{
 		name: "Diamond Eye",
 		goeswith: [Needle],
-		release: "May 26th, 2022",
+		release: "2022-05-26",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -162,7 +162,7 @@ let shell_details = [
 	{
 		name: "Expensive Needle",
 		goeswith: [Needle],
-		release: "November 11th, 2024",
+		release: "2024-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -177,7 +177,7 @@ let shell_details = [
 	{
 		name: "Farfalle",
 		goeswith: [Noodle],
-		release: "September 24th, 2023",
+		release: "2023-09-24",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Etc. Jam 2023",
@@ -189,7 +189,7 @@ let shell_details = [
 	{
 		name: "Fineliners",
 		goeswith: [Needle],
-		release: "November 11th, 2024",
+		release: "2024-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -201,7 +201,7 @@ let shell_details = [
 	{
 		name: "FLUX",
 		goeswith: [FLUX,FLELE],
-		release: "May 12th, 2021",
+		release: "2021-05-12",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -213,7 +213,7 @@ let shell_details = [
 	{
 		name: "Glitchy Needle",
 		goeswith: [Needle],
-		release: "November 11th, 2024",
+		release: "2024-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -225,8 +225,8 @@ let shell_details = [
 	{
 		name: "Gourmet Ravioli",
 		goeswith: [FLUX,FLELE,Hydrate,Noodle,Presentable_Can],
-		release: "October 26th, 2023",
-		latest: "November 5th, 2023",
+		release: "2023-10-26",
+		latest: "2023-11-05",
 		version: "v1.0.1",
 		forevent: null,
 		collaborators: null,
@@ -237,7 +237,7 @@ let shell_details = [
 	{
 		name: "Graphite",
 		goeswith: [Needle],
-		release: "November 11th, 2023",
+		release: "2023-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -249,7 +249,7 @@ let shell_details = [
 	{
 		name: "Inkdle",
 		goeswith: [Needle],
-		release: "November 11th, 2023",
+		release: "2023-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -261,7 +261,7 @@ let shell_details = [
 	{
 		name: "Leaking from somewhere",
 		goeswith: [Hydrate],
-		release: "August 20th, 2024",
+		release: "2024-08-20",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "8/20 Hydrate Shell Jam 2024",
@@ -273,7 +273,7 @@ let shell_details = [
 	{
 		name: "Macaroni",
 		goeswith: [Noodle],
-		release: "September 24th, 2023",
+		release: "2023-09-24",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Etc. Jam 2023",
@@ -285,7 +285,7 @@ let shell_details = [
 	{
 		name: "Markers",
 		goeswith: [Needle],
-		release: "November 11th, 2023",
+		release: "2023-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -297,7 +297,7 @@ let shell_details = [
 	{
 		name: "Maybe a Tornado",
 		goeswith: [Needle],
-		release: "November 11th, 2023",
+		release: "2023-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -309,7 +309,7 @@ let shell_details = [
 	{
 		name: "Metal Bottle",
 		goeswith: [Hydrate],
-		release: "August 20th, 2022",
+		release: "2022-08-20",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -321,7 +321,7 @@ let shell_details = [
 	{
 		name: "Moneydle",
 		goeswith: [Needle],
-		release: "November 11th, 2024",
+		release: "2024-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -333,7 +333,7 @@ let shell_details = [
 	{
 		name: "Needkly",
 		goeswith: [Skrunkly],
-		release: "November 11th, 2024",
+		release: "2024-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -345,7 +345,7 @@ let shell_details = [
 	{
 		name: "Needly Accurate Angle",
 		goeswith: [Needle],
-		release: "November 11th, 2024",
+		release: "2024-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -357,7 +357,7 @@ let shell_details = [
 	{
 		name: "Old Beans",
 		goeswith: [Hydrate,Presentable_Can],
-		release: "October 27th, 2023",
+		release: "2023-10-27",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -369,7 +369,7 @@ let shell_details = [
 	{
 		name: "Penne",
 		goeswith: [Noodle],
-		release: "September 24th, 2023",
+		release: "2023-09-24",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Etc. Jam 2023",
@@ -381,7 +381,7 @@ let shell_details = [
 	{
 		name: "Rotini",
 		goeswith: [Noodle],
-		release: "September 24th, 2023",
+		release: "2023-09-24",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Etc. Jam 2023",
@@ -393,7 +393,7 @@ let shell_details = [
 	{
 		name: "Safety Needle",
 		goeswith: [Needle],
-		release: "November 11th, 2023",
+		release: "2023-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -405,7 +405,7 @@ let shell_details = [
 	{
 		name: "Spigot",
 		goeswith: [Hydrate],
-		release: "August 20th, 2024",
+		release: "2024-08-20",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "8/20 Hydrate Shell Jam 2024",
@@ -417,7 +417,7 @@ let shell_details = [
 	{
 		name: "Starset Messenger",
 		goeswith: [FLUX,FLELE],
-		release: "October 24th, 2021",
+		release: "2021-10-24",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -429,7 +429,7 @@ let shell_details = [
 	{
 		name: "Syringe",
 		goeswith: [Hydrate,Needle],
-		release: "August 20th, 2022",
+		release: "2022-08-20",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "8/20 Hydrate Shell Jam 2022",
@@ -441,7 +441,7 @@ let shell_details = [
 	{
 		name: "Tiered Bowls",
 		goeswith: [Hydrate],
-		release: "August 20th, 2023",
+		release: "2023-08-20",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "8/20 Hydrate Shell Jam 2023",
@@ -453,7 +453,7 @@ let shell_details = [
 	{
 		name: "Tiny Pokey Pixels",
 		goeswith: [Needle],
-		release: "November 11th, 2022",
+		release: "2022-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -466,7 +466,7 @@ let shell_details = [
 		name: "Tuxeedle",
 		goeswith: [Needle],
 		release: "January 1st, 2024",
-		latest: "January 1st, 2025",
+		latest: "2025-01-01",
 		version: "v1.0.1",
 		forevent: "mine and Galla's dev-wedding",
 		collaborators: null,
@@ -477,7 +477,7 @@ let shell_details = [
 	{
 		name: "Twemoji",
 		goeswith: [Needle],
-		release: "May 26th, 2022",
+		release: "2022-05-26",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -489,7 +489,7 @@ let shell_details = [
 	{
 		name: "Upholstery Needle",
 		goeswith: [Needle],
-		release: "November 11th, 2024",
+		release: "2024-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -501,7 +501,7 @@ let shell_details = [
 	{
 		name: "Wobbly Mouse Art",
 		goeswith: [Needle],
-		release: "November 11th, 2023",
+		release: "2023-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",
@@ -513,7 +513,7 @@ let shell_details = [
 	{
 		name: "X-ray",
 		goeswith: [Needle],
-		release: "November 11th, 2024",
+		release: "2024-11-11",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Needle Day (11/11)",

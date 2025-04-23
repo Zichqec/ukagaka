@@ -1,7 +1,7 @@
 let item_details = [
 	{
 		name: "Ancient Gem Calendar",
-		release: "March 16th, 2025",
+		release: "2025-03-16",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Etc. Jam 2025",
@@ -11,7 +11,7 @@ let item_details = [
 	},
 	{
 		name: "Galaxy",
-		release: "June 4th, 2020",
+		release: "2020-06-04",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -21,7 +21,7 @@ let item_details = [
 	},
 	{
 		name: "Undertale",
-		release: "June 4th, 2020",
+		release: "2020-06-04",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -31,7 +31,7 @@ let item_details = [
 	},
 	{
 		name: "Wedges Calendar Skin Pack",
-		release: "September 23rd, 2023",
+		release: "2023-09-23",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Etc. Jam 2023",

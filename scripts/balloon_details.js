@@ -1,7 +1,7 @@
 let item_details = [
 	{
 		name: "Ancient Gem Balloon",
-		release: "March 15th, 2025",
+		release: "2025-03-15",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Etc. Jam 2025",
@@ -12,7 +12,7 @@ let item_details = [
 	},
 	{
 		name: "Angelbox",
-		release: "March 23rd, 2023",
+		release: "2023-03-23",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -26,7 +26,7 @@ let item_details = [
 	},
 	{
 		name: "Angelbox (Biblically Accurate)",
-		release: "March 23rd, 2023",
+		release: "2023-03-23",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -40,8 +40,8 @@ let item_details = [
 	},
 	{
 		name: "Balloons Balloon",
-		release: "May 8th, 2022",
-		latest: "February 12th, 2023",
+		release: "2022-05-08",
+		latest: "2023-02-12",
 		version: "v1.0.1",
 		forevent: null,
 		goeswith: ["Balloons"],
@@ -54,8 +54,8 @@ let item_details = [
 	},
 	{
 		name: "Beach Day Gone Wrong",
-		release: "May 2nd, 2023",
-		latest: "May 31st, 2023",
+		release: "2023-05-02",
+		latest: "2023-05-31",
 		version: "v1.0.2",
 		forevent: null,
 		goeswith: ["Call of the Sea"],
@@ -65,7 +65,7 @@ let item_details = [
 	},
 	{
 		name: "Cardboard",
-		release: "December 26th, 2022",
+		release: "2022-12-26",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -76,7 +76,7 @@ let item_details = [
 	},
 	{
 		name: "Chrono Trigger",
-		release: "April 24th, 2021",
+		release: "2021-04-24",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -90,7 +90,7 @@ let item_details = [
 	},
 	{
 		name: "Cosmic Pixel Balloon Pack",
-		release: "March 26th, 2022",
+		release: "2022-03-26",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -112,7 +112,7 @@ let item_details = [
 	},
 	{
 		name: "Distant Lights Balloon Pack",
-		release: "October 23rd, 2023",
+		release: "2023-10-23",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -123,7 +123,7 @@ let item_details = [
 	},
 	{
 		name: "Effortless Iridescence",
-		release: "May 30th, 2024",
+		release: "2024-05-30",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Ghost Jam 2024",
@@ -138,7 +138,7 @@ let item_details = [
 	},
 	{
 		name: "Flip of a Coin",
-		release: "August 31st, 2023",
+		release: "2023-08-31",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -149,8 +149,8 @@ let item_details = [
 	},
 	{
 		name: "Galaxy Balloon Pack",
-		release: "June 4th, 2020",
-		latest: "October 15th, 2023",
+		release: "2020-06-04",
+		latest: "2023-10-15",
 		version: "v1.1.1",
 		forevent: null,
 		goeswith: null,
@@ -160,7 +160,7 @@ let item_details = [
 	},
 	{
 		name: "Ghost Balloon",
-		release: "October 25th, 2024",
+		release: "2024-10-25",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Etc. Jam 2024",
@@ -174,8 +174,8 @@ let item_details = [
 	},
 	{
 		name: "H2O",
-		release: "August 20th, 2020",
-		latest: "January 5th, 2021",
+		release: "2020-08-20",
+		latest: "2021-01-05",
 		version: "v1.1.0",
 		forevent: null,
 		goeswith: ["Hydrate"],
@@ -185,7 +185,7 @@ let item_details = [
 	},
 	{
 		name: "Leap Day Frog",
-		release: "February 29th, 2024",
+		release: "2024-02-29",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -196,7 +196,7 @@ let item_details = [
 	},
 	{
 		name: "Minimal Neon",
-		release: "February 2nd, 2022",
+		release: "2022-02-02",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -207,7 +207,7 @@ let item_details = [
 	},
 	{
 		name: "Minimalism",
-		release: "February 8th, 2022",
+		release: "2022-02-08",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -218,7 +218,7 @@ let item_details = [
 	},
 	{
 		name: "Moth Chat",
-		release: "June 25th, 2023",
+		release: "2023-06-25",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -232,7 +232,7 @@ let item_details = [
 	},
 	{
 		name: "Needloon",
-		release: "May 11th, 2022",
+		release: "2022-05-11",
 		latest: null,
 		version: "v1.0.0",
 		goeswith: ["Needle"],
@@ -246,7 +246,7 @@ let item_details = [
 	},
 	{
 		name: "Needloon (readable)",
-		release: "November 11th, 2024",
+		release: "2024-11-11",
 		latest: null,
 		version: "v1.0.0",
 		goeswith: ["Needle"],
@@ -260,8 +260,8 @@ let item_details = [
 	},
 	{
 		name: "Notes",
-		release: "May 12th, 2021",
-		latest: "October 9th, 2023",
+		release: "2021-05-12",
+		latest: "2023-10-09",
 		version: "v1.1.0",
 		forevent: null,
 		goeswith: ["FLUX"],
@@ -271,7 +271,7 @@ let item_details = [
 	},
 	{
 		name: "Notes (Light)",
-		release: "October 9th, 2023",
+		release: "2023-10-09",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -282,7 +282,7 @@ let item_details = [
 	},
 	{
 		name: "Ocean Fishies",
-		release: "March 1st, 2022",
+		release: "2022-03-01",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -293,8 +293,8 @@ let item_details = [
 	},
 	{
 		name: "Paperboard",
-		release: "May 12th, 2022",
-		latest: "June 3rd, 2022",
+		release: "2022-05-12",
+		latest: "2022-06-03",
 		version: "v1.0.1",
 		forevent: null,
 		goeswith: ["Paper"],
@@ -307,7 +307,7 @@ let item_details = [
 	},
 	{
 		name: "Quaint Little Café",
-		release: "May 2nd, 2024",
+		release: "2024-05-02",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -318,8 +318,8 @@ let item_details = [
 	},
 	{
 		name: "Reading is for Owls",
-		release: "May 2nd, 2024",
-		latest: "May 17th, 2024",
+		release: "2024-05-02",
+		latest: "2024-05-17",
 		version: "v1.0.0",
 		forevent: null,
 		goeswith: ["May I have a book please?"],
@@ -329,7 +329,7 @@ let item_details = [
 	},
 	{
 		name: "Reflections of Starlight",
-		release: "May 25th, 2024",
+		release: "2024-05-25",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Ghost Jam 2024",
@@ -340,8 +340,8 @@ let item_details = [
 	},
 	{
 		name: "Soul Balloon Pack",
-		release: "August 31st, 2020",
-		latest: "February 8th, 2022",
+		release: "2020-08-31",
+		latest: "2022-02-08",
 		version: "v1.0.1",
 		forevent: null,
 		goeswith: ["S the Skeleton"],
@@ -351,7 +351,7 @@ let item_details = [
 	},
 	{
 		name: "Star Cloud",
-		release: "February 8th, 2022",
+		release: "2022-02-08",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -362,7 +362,7 @@ let item_details = [
 	},
 	{
 		name: "StarClan",
-		release: "March 7th, 2021",
+		release: "2021-03-07",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -373,7 +373,7 @@ let item_details = [
 	},
 	{
 		name: "Tamriel",
-		release: "June 13th, 2020",
+		release: "2020-06-13",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -384,8 +384,8 @@ let item_details = [
 	},
 	{
 		name: "Thaw",
-		release: "May 2nd, 2023",
-		latest: "May 31st, 2023",
+		release: "2023-05-02",
+		latest: "2023-05-31",
 		version: "v1.0.2",
 		forevent: null,
 		goeswith: ["KEEP FROZEN"],
@@ -395,7 +395,7 @@ let item_details = [
 	},
 	{
 		name: "Transmission",
-		release: "April 25th, 2020",
+		release: "2020-04-25",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -406,8 +406,8 @@ let item_details = [
 	},
 	{
 		name: "Translator",
-		release: "February 8th, 2022",
-		latest: "September 2nd, 2022",
+		release: "2022-02-08",
+		latest: "2022-09-02",
 		version: "v1.0.2",
 		forevent: null,
 		goeswith: ["Ukatranslator"],
@@ -417,7 +417,7 @@ let item_details = [
 	},
 	{
 		name: "Twinkling Galaxy - Hues",
-		release: "December 17th, 2021",
+		release: "2021-12-17",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -428,7 +428,7 @@ let item_details = [
 	},
 	{
 		name: "Unyu Bank Notes",
-		release: "April 1st, 2024",
+		release: "2024-04-01",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -439,7 +439,7 @@ let item_details = [
 	},
 	{
 		name: "Void Screen",
-		release: "August 1st, 2020",
+		release: "2020-08-01",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -450,7 +450,7 @@ let item_details = [
 	},
 	{
 		name: "Wedges Balloon Pack",
-		release: "September 22nd, 2023",
+		release: "2023-09-22",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Etc. Jam 2023",

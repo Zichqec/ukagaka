@@ -11,7 +11,7 @@ let item_details = [
 	},
 	{
 		name: "Digits of Pi",
-		release: "March 14th, 2024",
+		release: "2024-03-14",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -21,8 +21,8 @@ let item_details = [
 	},
 	{
 		name: "Hangman",
-		release: "November 4th, 2020",
-		latest: "January 5th, 2021",
+		release: "2020-11-04",
+		latest: "2021-01-05",
 		version: null,
 		forevent: null,
 		language: "YAYA",
@@ -31,8 +31,8 @@ let item_details = [
 	},
 	{
 		name: "Jumble",
-		release: "November 4th, 2020",
-		latest: "November 6th, 2020",
+		release: "2020-11-04",
+		latest: "2020-11-06",
 		version: null,
 		forevent: null,
 		language: "YAYA",
@@ -41,8 +41,8 @@ let item_details = [
 	},
 	{
 		name: "Rock Paper Scissors",
-		release: "November 4th, 2020",
-		latest: "January 17th, 2021",
+		release: "2020-11-04",
+		latest: "2021-01-17",
 		version: null,
 		forevent: null,
 		language: "YAYA",
@@ -51,7 +51,7 @@ let item_details = [
 	},
 	{
 		name: "Tic Tac Toe",
-		release: "April 7th, 2024",
+		release: "2024-04-07",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -61,8 +61,8 @@ let item_details = [
 	},
 	{
 		name: "Word Jumble",
-		release: "April 7th, 2024",
-		latest: "May 13th, 2024",
+		release: "2024-04-07",
+		latest: "2024-05-13",
 		version: "v1.0.1",
 		forevent: null,
 		language: "YAYA",
@@ -72,7 +72,7 @@ let item_details = [
 	{
 		name: "Word Search",
 		release: "January 5th, 2021",
-		latest: "January 27th, 2021",
+		latest: "2021-01-27",
 		version: null,
 		forevent: null,
 		language: "YAYA",

@@ -1,7 +1,7 @@
 let item_details = [
 	{
 		name: "Galaxy Pattern Set 01",
-		release: "May 12th, 2024",
+		release: "2024-05-12",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -11,7 +11,7 @@ let item_details = [
 	},
 	{
 		name: "Tiling Pattern Set 01",
-		release: "May 5th, 2022",
+		release: "2022-05-05",
 		latest: null,
 		version: null,
 		forevent: null,

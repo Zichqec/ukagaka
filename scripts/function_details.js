@@ -1,7 +1,7 @@
 let item_details = [
 	{
 		name: "AI graph dialogue counter",
-		release: "June 2nd, 2023",
+		release: "2023-06-02",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -11,8 +11,8 @@ let item_details = [
 	},
 	{
 		name: "Auto anchor",
-		release: "November 23rd, 2021",
-		latest: "August 6th, 2023",
+		release: "2021-11-23",
+		latest: "2023-08-06",
 		version: null,
 		forevent: null,
 		language: "YAYA",
@@ -21,8 +21,8 @@ let item_details = [
 	},
 	{
 		name: "AutoPause",
-		release: "July 25th, 2022",
-		latest: "June 30th, 2024",
+		release: "2022-07-25",
+		latest: "2024-06-30",
 		version: null,
 		forevent: null,
 		language: "YAYA / AYA",
@@ -31,7 +31,7 @@ let item_details = [
 	},
 	{
 		name: "BottomText",
-		release: "May 21st, 2024",
+		release: "2024-05-21",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -42,7 +42,7 @@ let item_details = [
 	{
 		name: "Capitalize",
 		release: "January 5th, 2021",
-		latest: "March 20th, 2024",
+		latest: "2024-03-20",
 		version: null,
 		forevent: null,
 		language: "YAYA",
@@ -51,8 +51,8 @@ let item_details = [
 	},
 	{
 		name: "Check surfaces",
-		release: "February 9th, 2022",
-		latest: "August 6th, 2023",
+		release: "2022-02-09",
+		latest: "2023-08-06",
 		version: null,
 		forevent: null,
 		language: "YAYA",
@@ -61,8 +61,8 @@ let item_details = [
 	},
 	{
 		name: "CreepyText",
-		release: "November 4th, 2020",
-		latest: "January 5th, 2021",
+		release: "2020-11-04",
+		latest: "2021-01-05",
 		version: null,
 		forevent: null,
 		language: "YAYA",
@@ -71,8 +71,8 @@ let item_details = [
 	},
 	{
 		name: "Daily dialogues",
-		release: "November 30th, 2021",
-		latest: "August 5th, 2023",
+		release: "2021-11-30",
+		latest: "2023-08-05",
 		version: null,
 		forevent: null,
 		language: "YAYA / AYA",
@@ -81,7 +81,7 @@ let item_details = [
 	},
 	{
 		name: "Deflicker",
-		release: "September 21st, 2022",
+		release: "2022-09-21",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -91,7 +91,7 @@ let item_details = [
 	},
 	{
 		name: "DisplayReal",
-		release: "September 4th, 2023",
+		release: "2023-09-04",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -101,7 +101,7 @@ let item_details = [
 	},
 	{
 		name: "ErrorLog",
-		release: "June 4th, 2022",
+		release: "2022-06-04",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -111,7 +111,7 @@ let item_details = [
 	},
 	{
 		name: "FormatLinks",
-		release: "November 20th, 2021",
+		release: "2021-11-20",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -131,8 +131,8 @@ let item_details = [
 	},
 	{
 		name: "Holding Obsidian",
-		release: "November 4th, 2020",
-		latest: "November 6th, 2020",
+		release: "2020-11-04",
+		latest: "2020-11-06",
 		version: "v1.0.1",
 		forevent: null,
 		language: "YAYA",
@@ -141,8 +141,8 @@ let item_details = [
 	},
 	{
 		name: "Idle between dialogues",
-		release: "September 13th, 2023",
-		latest: "March 9th, 2024",
+		release: "2023-09-13",
+		latest: "2024-03-09",
 		version: null,
 		forevent: null,
 		language: "YAYA",
@@ -151,8 +151,8 @@ let item_details = [
 	},
 	{
 		name: "Interval Stacker",
-		release: "November 4th, 2020",
-		latest: "January 17th, 2021",
+		release: "2020-11-04",
+		latest: "2021-01-17",
 		version: "v2.0.5",
 		forevent: null,
 		language: "YAYA",
@@ -161,7 +161,7 @@ let item_details = [
 	},
 	{
 		name: "IntToNumeral",
-		release: "May 13th, 2022",
+		release: "2022-05-13",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -171,7 +171,7 @@ let item_details = [
 	},
 	{
 		name: "ISUPPER & ISLOWER",
-		release: "June 22nd, 2022",
+		release: "2022-06-22",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -181,7 +181,7 @@ let item_details = [
 	},
 	{
 		name: "leapyear",
-		release: "November 26th, 2021",
+		release: "2021-11-26",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -191,7 +191,7 @@ let item_details = [
 	},
 	{
 		name: "LetterCount",
-		release: "May 15th, 2023",
+		release: "2023-05-15",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -201,7 +201,7 @@ let item_details = [
 	},
 	{
 		name: "LoopImage",
-		release: "November 7th, 2022",
+		release: "2022-11-07",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -211,8 +211,8 @@ let item_details = [
 	},
 	{
 		name: "Markdown processor",
-		release: "August 9th, 2022",
-		latest: "August 26th, 2022",
+		release: "2022-08-09",
+		latest: "2022-08-26",
 		version: "v1.0.2",
 		forevent: null,
 		language: "YAYA",
@@ -222,7 +222,7 @@ let item_details = [
 	{
 		name: "Mock",
 		release: "January 5th, 2021",
-		latest: "January 27th, 2021",
+		latest: "2021-01-27",
 		version: null,
 		forevent: null,
 		language: "YAYA",
@@ -231,8 +231,8 @@ let item_details = [
 	},
 	{
 		name: "Music player",
-		release: "April 29th, 2022",
-		latest: "May 22nd, 2024",
+		release: "2022-04-29",
+		latest: "2024-05-22",
 		version: "v2.0.2",
 		forevent: null,
 		language: "YAYA",
@@ -241,7 +241,7 @@ let item_details = [
 	},
 	{
 		name: "Needle poking repeatedly",
-		release: "December 17th, 2024",
+		release: "2024-12-17",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -251,8 +251,8 @@ let item_details = [
 	},
 	{
 		name: "OnRandomDressup",
-		release: "July 13th, 2021",
-		latest: "May 20th, 2024",
+		release: "2021-07-13",
+		latest: "2024-05-20",
 		version: null,
 		forevent: null,
 		language: "YAYA",
@@ -261,8 +261,8 @@ let item_details = [
 	},
 	{
 		name: "OnWander",
-		release: "November 4th, 2020",
-		latest: "April 29th, 2022",
+		release: "2020-11-04",
+		latest: "2022-04-29",
 		version: null,
 		forevent: null,
 		language: "YAYA",
@@ -281,7 +281,7 @@ let item_details = [
 	},
 	{
 		name: "Pool",
-		release: "August 3rd, 2021",
+		release: "2021-08-03",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -291,7 +291,7 @@ let item_details = [
 	},
 	{
 		name: "RangeRand",
-		release: "June 19th, 2023",
+		release: "2023-06-19",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -301,7 +301,7 @@ let item_details = [
 	},
 	{
 		name: "SakuraScooper",
-		release: "August 9th, 2022",
+		release: "2022-08-09",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -322,7 +322,7 @@ let item_details = [
 	{
 		name: "Simple Flags",
 		release: "January 15th, 2021",
-		latest: "February 2nd, 2021",
+		latest: "2021-02-02",
 		version: null,
 		forevent: null,
 		language: "YAYA",
@@ -331,8 +331,8 @@ let item_details = [
 	},
 	{
 		name: "StartsWith & EndsWith",
-		release: "March 30th, 2022",
-		latest: "August 6th, 2023",
+		release: "2022-03-30",
+		latest: "2023-08-06",
 		version: null,
 		forevent: null,
 		language: "YAYA / AYA",
@@ -342,7 +342,7 @@ let item_details = [
 	{
 		name: "TalkRateLabel",
 		release: "January 20th, 2024",
-		latest: "May 20th, 2024",
+		latest: "2024-05-20",
 		version: null,
 		forevent: null,
 		language: "YAYA / AYA",
@@ -351,8 +351,8 @@ let item_details = [
 	},
 	{
 		name: "Update progress bar",
-		release: "December 2nd, 2021",
-		latest: "August 6th, 2023",
+		release: "2021-12-02",
+		latest: "2023-08-06",
 		version: null,
 		forevent: null,
 		language: "YAYA / AYA",
@@ -361,7 +361,7 @@ let item_details = [
 	},
 	{
 		name: "WearingDressup",
-		release: "February 24th, 2024",
+		release: "2024-02-24",
 		latest: null,
 		version: null,
 		forevent: null,
@@ -381,7 +381,7 @@ let item_details = [
 	},
 	{
 		name: "yearweek",
-		release: "November 26th, 2021",
+		release: "2021-11-26",
 		latest: null,
 		version: null,
 		forevent: null,

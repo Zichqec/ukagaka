@@ -1,7 +1,7 @@
 let item_details = [
 	{
 		name: "CommuHelper",
-		release: "October 13th, 2021",
+		release: "2021-10-13",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -11,7 +11,7 @@ let item_details = [
 	},
 	{
 		name: "olddef2newdef",
-		release: "June 23rd, 2021",
+		release: "2021-06-23",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
