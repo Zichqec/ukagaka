@@ -1,10 +1,10 @@
 //Collabsibles for spoilers, etc. From https://www.w3schools.com/howto/howto_js_collapsible.asp
 var coll = document.getElementsByClassName("collapsible");
-var i;
+var collapsiblecheck;
 
-for (i = 0; i < coll.length; i++)
+for (collapsiblecheck = 0; collapsiblecheck < coll.length; collapsiblecheck++)
 {
-	coll[i].addEventListener("click", function()
+	coll[collapsiblecheck].addEventListener("click", function()
 	{
 		this.classList.toggle("active");
 		var content = this.nextElementSibling;
@@ -57,7 +57,6 @@ for (i = 0; i < coll.length; i++)
 //Maybe I'll make this its own function at one point
 function makeStandard(input)
 {
-	console.log(input);
 	let output = input.toLowerCase();
 	output = output.replace(" - ","_");
 	output = output.replace(" & ","_");
@@ -77,4 +76,42 @@ function makeStandard(input)
 	output = output.replace("ゴースト闇鍋","ghost_yaminabe"); //How many ghosts with names in jp could I possibly have!
 	
 	return output
+}
+
+function dateDisplay(input)
+{
+	let output = "";
+	input = input.split("-");
+	let year = input[0]
+	let month = input[1];
+	let day = input[2]
+	
+	if (month == "01") month = "January"
+	else if (month == "02") month = "February"
+	else if (month == "03") month = "March"
+	else if (month == "04") month = "April"
+	else if (month == "05") month = "May"
+	else if (month == "06") month = "June"
+	else if (month == "07") month = "July"
+	else if (month == "08") month = "August"
+	else if (month == "09") month = "September"
+	else if (month == "10") month = "October"
+	else if (month == "11") month = "November"
+	else if (month == "12") month = "December"
+	
+	if (day >= 11 && day <= 13) //Handle teen numbers - only less than 100, as a note
+	{
+		day += "th";
+	}
+	else
+	{
+		let onesColumn = day.substring(1)
+		if (onesColumn == 1) day += "st";
+		else if (onesColumn == 2) day += "nd";
+		else if (onesColumn == 3) day += "rd";
+		else day += "th";
+	}
+	if (day.substring(0,1) == "0") day = day.substring(1); //no days like 05th lol
+	
+	return `${month} ${day}, ${year}`;
 }

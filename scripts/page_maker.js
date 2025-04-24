@@ -23,7 +23,6 @@ else
 
 console.log(pagename);
 
-
 for (let i = 0; i < index_details.length; i++)
 {
 	if (makeStandard(index_details[i].name) == pagename)
@@ -102,7 +101,7 @@ function ItemInfo()
 	
 	output += `<h2>Details</h2>
 		<p>
-			<b>Initial release:</b> ${currentpage.release}
+			<b>Initial release:</b> ${dateDisplay(currentpage.release)}
 		`;
 
 	if (currentpage.forevent != null)
@@ -115,7 +114,7 @@ function ItemInfo()
 
 	if (currentpage.latest != null)
 	{
-		output += `${currentpage.latest}`;
+		output += `${dateDisplay(currentpage.latest)}`;
 	}
 	else
 	{
@@ -271,7 +270,7 @@ function makeMyShellIndex(shells)
 			<h3>${item.name}</h3>
 			`;
 			
-		output += `<b>Initial release:</b> ${item.release}`;
+		output += `<b>Initial release:</b> ${dateDisplay(item.release)}`;
 		//Additional display if it was for an event
 		if (item.forevent != null)
 		{
@@ -282,7 +281,7 @@ function makeMyShellIndex(shells)
 		
 		if (item.latest != null)
 		{
-			output += `${item.latest}`;
+			output += `${dateDisplay(item.latest)}`;
 		}
 		else
 		{
@@ -362,7 +361,7 @@ function makeOtherShellIndex(shells)
 	
 	if (shells.length > 3)
 	{
-		output += `<p>These links at the top of this section act as a quick index that will jump you to the different entries on this list.</p>`;
+		output += `<p>Quick index:</p>`;
 		output += `<div id="quick_index">`;
 		
 		for (let item of shells)
@@ -404,7 +403,7 @@ function makeOtherShellIndex(shells)
 		}
 		
 		output += `<br>
-		<b>Initial release:</b> ${item.release}`;
+		<b>Initial release:</b> ${dateDisplay(item.release)}`;
 		
 		//Additional display if it was for an event
 		if (item.forevent != null)

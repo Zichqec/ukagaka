@@ -1,7 +1,16 @@
+let item_tags = [
+	["2020","2021","2022","2023","2024","2025"],
+	["YAYA","Aosora","Satori"],
+	["Collab","Translations available","Uses freeshell","Includes my writing","Includes my art","Includes my code"],
+	["For event","Ghost Jam","Ghost Masquerade","Ghost Yaminabe","Idea Adoption Jam"],
+	["Idle chatter","Story","Utility","Minigames"],
+	["WIP"],
+]
+
 let item_details = [
 	{
 		name: "@funkylittlemothman",
-		release: "June 25th, 2023",
+		release: "2023-06-25",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Idea Adoption Jam",
@@ -12,24 +21,26 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/funkylittlemothman/releases/latest",
-		blurb: "@funkylittlemothman is a chill friend to keep you company on your desktop! He's working on several ghosts of his own, and he'll alternate between different projects and talk about each one! He can also generate weird ghost ideas if you want something new to make."
+		blurb: "@funkylittlemothman is a chill friend to keep you company on your desktop! He's working on several ghosts of his own, and he'll alternate between different projects and talk about each one! He can also generate weird ghost ideas if you want something new to make.",
+		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Idea Adoption Jam", "Idle chatter"]
 	},
 	{
 		name: "ATM Machine",
-		release: "April 9th, 2023",
-		latest: "November 3rd, 2024",
+		release: "2023-04-09",
+		latest: "2024-11-03",
 		version: "v2.0.1",
 		forevent: null,
 		collaborators: null,
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/atm_machine/releases/latest",
-		blurb: "Become an ATM maintenance worker with this ATM Machine ghost! Earn UNYU* by whiling away at your boring ATM recalibration job, listening to bank advertisements all day long. It'll be great! Or perhaps... there is another way you could acquire funds?<br><br>*UNYU is a fake crypto currency made by the <a href='https://github.com/nikolat/wallet_of_unyu'>Wallet of Unyu</a> plugin, which this ghost requires. ATM Machine was originally made to assist with the website associated with the plugin, but has since been overhauled to add hundreds of dialogues, two minigames, and more."
+		blurb: "Become an ATM maintenance worker with this ATM Machine ghost! Earn UNYU* by whiling away at your boring ATM recalibration job, listening to bank advertisements all day long. It'll be great! Or perhaps... there is another way you could acquire funds?<br><br>*UNYU is a fake crypto currency made by the <a href='https://github.com/nikolat/wallet_of_unyu'>Wallet of Unyu</a> plugin, which this ghost requires. ATM Machine was originally made to assist with the website associated with the plugin, but has since been overhauled to add hundreds of dialogues, two minigames, and more.",
+		tags: ["2023", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Minigames"]
 	},
 	{
 		name: "Balloons",
-		release: "May 8th, 2022",
-		latest: "February 15th, 2023",
+		release: "2022-05-08",
+		latest: "2023-02-15",
 		version: "v1.0.3",
 		forevent: "Ghost Jam 2022",
 		collaborators:
@@ -39,23 +50,25 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/6z1jv0dpw0tyzql/balloons_v1.0.3.nar/file",
-		blurb: "Balloons has a big focus on a popping mechanic, where each balloon may be popped by clicking it, and which balloons have been popped will affect their dialogues. It also has a focus on its satisfying aesthetics, with a fun popping animation complete with sound effects, and a bobbing animation while idle."
+		blurb: "Balloons has a big focus on a popping mechanic, where each balloon may be popped by clicking it, and which balloons have been popped will affect their dialogues. It also has a focus on its satisfying aesthetics, with a fun popping animation complete with sound effects, and a bobbing animation while idle.",
+		tags: ["2022", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Jam", "WIP"]
 	},
 	{
 		name: "Call of the Sea",
-		release: "May 2nd, 2023",
-		latest: "May 26th, 2023",
+		release: "2023-05-02",
+		latest: "2023-05-26",
 		version: "v1.0.1",
 		forevent: "ゴーストマスカレード5",
 		collaborators: null,
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/call_of_the_sea/releases/latest",
-		blurb: "Call of the Sea is a ghost with a strong focus on storytelling. It isn't a desktop companion so much as a decoration that will play a series of stories. Just what's happening on the other side of the shell? That's for you to decide..."
+		blurb: "Call of the Sea is a ghost with a strong focus on storytelling. It isn't a desktop companion so much as a decoration that will play a series of stories. Just what's happening on the other side of the shell? That's for you to decide...",
+		tags: ["2023", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Masquerade", "Story"]
 	},
 	{
 		name: "Countdown",
-		release: "November 4th, 2024",
+		release: "2024-11-04",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -63,11 +76,12 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/countdown/releases/latest",
-		blurb: "It's a countdown.<br><br>My contribution to the \"useless ghost\" genre! Comes with two shells because I couldn't decide on a style."
+		blurb: "It's a countdown.<br><br>My contribution to the \"useless ghost\" genre! Comes with two shells because I couldn't decide on a style.",
+		tags: ["2024", "Satori", "Includes my art", "Includes my code"]
 	},
 	{
 		name: "CT Epoch Jam",
-		release: "April 24th, 2021",
+		release: "2021-04-24",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Ghost Jam 2021",
@@ -79,24 +93,26 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "http://www.drdowasure.com/ct_epoch_jam/index.html",
-		blurb: "CT Epoch Jam is a proof of concept for a system where ghosts with 3+ characters can have each character turn towards each other while they are talking. There isn't terribly much content in it, as our writer had a wrist injury during the event! But hopefully what's there is interesting to explore."
+		blurb: "CT Epoch Jam is a proof of concept for a system where ghosts with 3+ characters can have each character turn towards each other while they are talking. There isn't terribly much content in it, as our writer had a wrist injury during the event! But hopefully what's there is interesting to explore.",
+		tags: ["2021", "YAYA", "Includes my code", "For event", "Ghost Jam", "WIP"]
 	},
 	{
 		name: "Dusty and Obsidian",
-		release: "August 1st, 2020",
-		latest: "November 17th, 2020",
+		release: "2020-08-01",
+		latest: "2020-11-17",
 		version: "v1.0.9",
 		forevent: null,
 		collaborators: null,
 		translations: null,
 		content_warnings: "Explores themes of death, dying, and loss.",
 		download: "http://www.mediafire.com/file/rw69ptuypj9097u/dusty_and_obsidian_v1.0.9.nar/file",
-		blurb: "Dusty and Obsidian is one of my first ghosts! They're written in the old meta style, and I would like to overhaul them at some point. But that aside, they do have a lot of functions related to wingdings, and can teach you how to read them! They have a variety of minigames and things to aid in this endeavor. Also, Dusty's cat can be picked up by certain other ghosts."
+		blurb: "Dusty and Obsidian is one of my first ghosts! They're written in the old meta style, and I would like to overhaul them at some point. But that aside, they do have a lot of functions related to wingdings, and can teach you how to read them! They have a variety of minigames and things to aid in this endeavor. Also, Dusty's cat can be picked up by certain other ghosts.",
+		tags: ["2020", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Utility"]
 	},
 	{
 		name: "FLUX",
-		release: "May 12th, 2021",
-		latest: "January 31st, 2022",
+		release: "2021-05-12",
+		latest: "2022-01-31",
 		version: "v1.2.2",
 		forevent: null,
 		collaborators: null,
@@ -124,12 +140,13 @@ let item_details = [
 		],
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/6kxhs0s8ga3cov3/flux_v1.2.2.nar/file",
-		blurb: "FLUX is a music player ghost I made as a spiritual successor to <a href='https://ukagakadreamteam.com/wiki/ghost/flele'>FLELE</a>. It features a robust music player, and is compatible with most (if not all) FLELE shells. It also has some special custom shell functionality, although these days I think my implementation was misguided.<br><br>Thanks to the hard work of translators, it is also available in several languages! You can switch languages within the ghost's menu."
+		blurb: "FLUX is a music player ghost I made as a spiritual successor to <a href='https://ukagakadreamteam.com/wiki/ghost/flele'>FLELE</a>. It features a robust music player, and is compatible with most (if not all) FLELE shells. It also has some special custom shell functionality, although these days I think my implementation was misguided.<br><br>Thanks to the hard work of translators, it is also available in several languages! You can switch languages within the ghost's menu.",
+		tags: ["2021", "YAYA", "Translations available", "Includes my art", "Includes my code", "Utility"] //I can't call this "my writing" when it's utility text...
 	},
 	{
 		name: "Gallery 512",
-		release: "May 14th, 2023",
-		latest: "May 19th, 2023",
+		release: "2023-05-14",
+		latest: "2023-05-19",
 		version: "v1.0.1",
 		forevent: "Ghost Jam 2023",
 		collaborators:
@@ -140,36 +157,39 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/gallery_512/releases/latest",
-		blurb: "Do you like art? Do you like lil guys that have bad opinions? Then have we got the ghost for you! This painting can either be an aesthetic companion with an attitude, or you can open the gallery and bring in a crowd to admire/mock anything and everything on your desktop."
+		blurb: "Do you like art? Do you like lil guys that have bad opinions? Then have we got the ghost for you! This painting can either be an aesthetic companion with an attitude, or you can open the gallery and bring in a crowd to admire/mock anything and everything on your desktop.",
+		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "WIP"]
 	},
 	{
 		name: "Ghost Guides",
-		release: "December 24th, 2022",
-		latest: "April 14th, 2023",
+		release: "2022-12-24",
+		latest: "2023-04-14",
 		version: "v1.0.1",
 		forevent: null,
 		collaborators: null,
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/ghost_guides/releases/latest",
-		blurb: "This is a companion ghost for my guide, <a href='https://zichqec.github.io/YAYA_Fundamentals/'>YAYA Fundamentals</a>! Currently it mostly just runs example code from the guide lessons, but it also serves as a safe sandbox to play with code and try things out. Even if there's an error in your code, the ghost will still be able to load in and direct you to helpful resources."
+		blurb: "This is a companion ghost for my guide, <a href='https://zichqec.github.io/YAYA_Fundamentals/'>YAYA Fundamentals</a>! Currently it mostly just runs example code from the guide lessons, but it also serves as a safe sandbox to play with code and try things out. Even if there's an error in your code, the ghost will still be able to load in and direct you to helpful resources.",
+		tags: ["2022", "YAYA", "Includes my art", "Includes my code", "Utility", "WIP"]
 	},
 	{
 		name: "Hoard of Shinies",
-		release: "March 27th, 2025",
-		latest: "April 22nd, 2025",
+		release: "2025-03-27",
+		latest: "2025-04-22",
 		version: "v1.0.4",
 		forevent: null,
 		collaborators: null,
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/hoard_of_shinies/releases/latest",
-		blurb: "Hang out with your merfolk friend in your collection of everything that sparkles and shines!<br><br>A quick ghost made (mostly) in an afternoon! I was eager to try writing a new ghost in Aosora. Uses an edited version of the freeshell <a href='https://ako-kipali.tumblr.com/ghost-stuff'>Merfolk May</a> by Kipali!"
+		blurb: "Hang out with your merfolk friend in your collection of everything that sparkles and shines!<br><br>A quick ghost made (mostly) in an afternoon! I was eager to try writing a new ghost in Aosora. Uses an edited version of the freeshell <a href='https://ako-kipali.tumblr.com/ghost-stuff'>Merfolk May</a> by Kipali!",
+		tags: ["2025", "Aosora", "Uses freeshell", "Includes my writing", "Includes my code", "Idle chatter"]
 	},
 	{
 		name: "Hydrate",
-		release: "August 20th, 2020",
-		latest: "August 26th, 2022",
+		release: "2020-08-20",
+		latest: "2022-08-26",
 		version: "v1.2.1",
 		forevent: null,
 		collaborators:
@@ -179,12 +199,13 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/u7r3e9ock4ewcld/hydrate_v1.2.1.nar/file",
-		blurb: "A simple water reminder ghost. It doesn't have anything to say besides reminding you to drink at a customizable interval. But, due to its simple nature, many people have made additional shells for it! Please check out the full page to see what kinds of creative \"drinking vessels\" people have come up with!"
+		blurb: "A simple water reminder ghost. It doesn't have anything to say besides reminding you to drink at a customizable interval. But, due to its simple nature, many people have made additional shells for it! Please check out the full page to see what kinds of creative \"drinking vessels\" people have come up with!",
+		tags: ["2020", "YAYA", "Collab", "Includes my writing", "Includes my code", "Utility"]
 	},
 	{
 		name: "Iea",
-		release: "April 25th, 2020",
-		latest: "April 25th, 2020",
+		release: "2020-04-25",
+		latest: "2020-04-25",
 		version: "v1.0.1",
 		forevent: "Ghost Jam 2020",
 		collaborators:
@@ -194,12 +215,13 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "http://www.mediafire.com/file/e5bwtua399tfoyw/iea_v1_1.nar/file",
-		blurb: "The very first ghost I ever released, though not the first one I worked on. She's a ghost that tells a story, slowly trickling out more and more over time. What's going on in her world? You'll have to wait and see! Her answers to your questions may change over time."
+		blurb: "The very first ghost I ever released, though not the first one I worked on. She's a ghost that tells a story, slowly trickling out more and more over time. What's going on in her world? You'll have to wait and see! Her answers to your questions may change over time.",
+		tags: ["2020", "YAYA", "Collab", "Includes my art", "For event", "Ghost Jam", "Story"]
 	},
 	{
 		name: "If I Can't Have Shrimp No One Can",
-		release: "June 19th, 2023",
-		latest: "November 3rd, 2024",
+		release: "2023-06-19",
+		latest: "2024-11-03",
 		version: "v1.1.1",
 		forevent: "Idea Adoption Jam",
 		collaborators:
@@ -210,12 +232,13 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/GallaTheGalla/if_i_cant_have_shrimp_no_one_can/releases/latest",
-		blurb: "The idea for this ghost was \"a very mean flamingo\", and that's exactly what we made in just 24 hours! Mean and demanding, this flamingo wants you to pet it. Also, it has multiple different shells, with a variety of colors. What more could you want from a ghost?"
+		blurb: "The idea for this ghost was \"a very mean flamingo\", and that's exactly what we made in just 24 hours! Mean and demanding, this flamingo wants you to pet it. Also, it has multiple different shells, with a variety of colors. What more could you want from a ghost?",
+		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Idea Adoption Jam", "Idle chatter"]
 	},
 	{
 		name: "KEEP FROZEN",
-		release: "May 2nd, 2023",
-		latest: "December 29th, 2024",
+		release: "2023-05-02",
+		latest: "2024-12-29",
 		version: "v1.1.6",
 		forevent: "ゴーストマスカレード5",
 		collaborators:
@@ -225,11 +248,12 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/KEEP_FROZEN/releases/latest",
-		blurb: "A simple ice cube, which will tell you about various things that are cold. Over time it will melt, and you can either freeze it to keep it alive, or you can let it melt and collect the items inside, and even display them on your desktop. Can you resist the urge to get the items inside? Not many do!"
+		blurb: "A simple ice cube, which will tell you about various things that are cold. Over time it will melt, and you can either freeze it to keep it alive, or you can let it melt and collect the items inside, and even display them on your desktop. Can you resist the urge to get the items inside? Not many do!",
+		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter", "Minigames"] //It's a game, not a minigame, but...
 	},
 	{
 		name: "Literally just a mess why did you download this",
-		release: "March 24th, 2024",
+		release: "2024-03-24",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -244,36 +268,39 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/literally_just_a_mess_why_did_you_download_this/releases/latest",
-		blurb: "A chaotic ghost made in an afternoon! We all spontaneously got together on a collaborative coding site, and about 4 hours later we had this simple ghost with 600 dialogues and 10 shells."
+		blurb: "A chaotic ghost made in an afternoon! We all spontaneously got together on a collaborative coding site, and about 4 hours later we had this simple ghost with 600 dialogues and 10 shells.",
+		tags: ["2024", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter"]
 	},
 	{
 		name: "Lulo",
-		release: "January 1st, 2021",
-		latest: "August 10th, 2023",
+		release: "2021-01-01",
+		latest: "2023-08-10",
 		version: "v0.0.4",
 		forevent: null,
 		collaborators: null,
 		translations: null,
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/n9kjrfl7dcje002/lulo_v0.0.4.nar/file",
-		blurb: "An old ghost of mine that went into beta testing, and then I never finished her. She is centered around her 3 different modes: awake, sleepy, and asleep. She was intended to have many features, but development of this ghost has been abandoned as I no longer want to publish content for this character and no longer write ghosts in this style. So, most of her features are half-finished/rushed. But if you like meta-style ghosts, perhaps you'll enjoy having a sleepy companion. Released for public download on August 2nd, 2023."
+		blurb: "An old ghost of mine that went into beta testing, and then I never finished her. She is centered around her 3 different modes: awake, sleepy, and asleep. She was intended to have many features, but development of this ghost has been abandoned as I no longer want to publish content for this character and no longer write ghosts in this style. So, most of her features are half-finished/rushed. But if you like meta-style ghosts, perhaps you'll enjoy having a sleepy companion. Released for public download on August 2nd, 2023.",
+		tags: ["2021", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Utility", "Minigames", "WIP"] //Utility on the basis of music player + notebook...
 	},
 	{
 		name: "May I have a book please?",
-		release: "May 2nd, 2024",
-		latest: "April 22nd, 2025",
+		release: "2024-05-02",
+		latest: "2025-04-22",
 		version: "v1.0.2",
 		forevent: "ゴーストマスカレード6",
 		collaborators: null,
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/may_i_have_a_book_please/releases/latest",
-		blurb: "Your life's greatest work is nearly complete. All you need is to unlock one final secret, and your research will be finished. And the only place you can find the information you need is in a library that claims to hold lost and forbidden knowledge. Are you prepared to brave this strange library and its even stranger policies?<br><br>Uses the freeshell <a href='https://wikiwiki.jp/feeshell/%E3%82%AB%E3%83%95%E3%82%A7%E3%82%AA%E3%83%AC%E3%81%B3%E3%81%9F%E3%81%97%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3'>カフェオレびたしのオールドファッション</a> (Old Fashioned with Cafe Au Lait) by <a href='https://yusyuparo.net/index.html'>ゆゆぴか</a>!"
+		blurb: "Your life's greatest work is nearly complete. All you need is to unlock one final secret, and your research will be finished. And the only place you can find the information you need is in a library that claims to hold lost and forbidden knowledge. Are you prepared to brave this strange library and its even stranger policies?<br><br>Uses the freeshell <a href='https://wikiwiki.jp/feeshell/%E3%82%AB%E3%83%95%E3%82%A7%E3%82%AA%E3%83%AC%E3%81%B3%E3%81%9F%E3%81%97%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3'>カフェオレびたしのオールドファッション</a> (Old Fashioned with Cafe Au Lait) by <a href='https://yusyuparo.net/index.html'>ゆゆぴか</a>!",
+		tags: ["2024", "YAYA", "Uses freeshell", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter"]
 	},
 	{
 		name: "Needle",
-		release: "May 11th, 2022",
-		latest: "December 15th, 2024",
+		release: "2022-05-11",
+		latest: "2024-12-15",
 		version: "v1.1.4",
 		forevent: "Ghost Jam 2022",
 		collaborators:
@@ -283,12 +310,13 @@ let item_details = [
 		translations: null,
 		content_warnings: "Mentions of violence, gaslighting, general unsettlingness, some movement/jittery effects (if toggled on).",
 		download: "https://github.com/Zichqec/Needle/releases/latest",
-		blurb: "It's the ghost sensation that started a whole genre! The one, the only, the amazing Needle! Put it on your desktop and hope it says things to you! Learn your true name, or reject it and gain a thousand nicknames! Enjoy your new life companion!!"
+		blurb: "It's the ghost sensation that started a whole genre! The one, the only, the amazing Needle! Put it on your desktop and hope it says things to you! Learn your true name, or reject it and gain a thousand nicknames! Enjoy your new life companion!!",
+		tags: ["2022", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter"]
 	},
 	{
 		name: "Noodle",
-		release: "May 31st, 2023",
-		latest: "November 3rd, 2024",
+		release: "2023-05-31",
+		latest: "2024-11-03",
 		version: "v1.0.3",
 		forevent: null,
 		collaborators:
@@ -298,12 +326,13 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/noodle/releases/latest",
-		blurb: "Looking for survival tips? Noodle's your pasta! Hang out with Noodle and hear all about the latest goings-on in the kitchen and beyond. A friend of Needle's, it may have additional comments if Needle is also open! Stay safe out there, don't get eaten!"
+		blurb: "Looking for survival tips? Noodle's your pasta! Hang out with Noodle and hear all about the latest goings-on in the kitchen and beyond. A friend of Needle's, it may have additional comments if Needle is also open! Stay safe out there, don't get eaten!",
+		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter"]
 	},
 	{
 		name: "Paper",
-		release: "May 12th, 2022",
-		latest: "June 3rd, 2022",
+		release: "2022-05-12",
+		latest: "2022-06-03",
 		version: "v1.0.1",
 		forevent: "Ghost Jam 2022",
 		collaborators:
@@ -314,11 +343,12 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/0aegbwxpvapefca/paper_god_of_minigames_v1.0.1.nar/file",
-		blurb: "If you like minigames, then Paper, the god of minigames, is the desktop companion for you! Set it on your desktop and enjoy being pestered with games to no end! Just remember, you brought it here for games, so refusing to play would be rather rude..."
+		blurb: "If you like minigames, then Paper, the god of minigames, is the desktop companion for you! Set it on your desktop and enjoy being pestered with games to no end! Just remember, you brought it here for games, so refusing to play would be rather rude...",
+		tags: ["2022", "YAYA", "Collab", "Includes my code", "For event", "Ghost Jam", "Minigames"]
 	},
 	{
 		name: "Please arrive 15 minutes before your scheduled interview time",
-		release: "May 18th, 2023",
+		release: "2023-05-18",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Ghost Jam 2023",
@@ -330,12 +360,13 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/please_arrive_15_minutes_before_your_scheduled_interview_time/releases/latest",
-		blurb: "Do you like job interviews? How about wearing ties? If you answered yes to either of these, then this is the ghost for you! Interview continually for a new position doing hoard maintenance for a dragon. Answer questions, ask questions of your own, and learn all about your prospective job! Good luck!"
+		blurb: "Do you like job interviews? How about wearing ties? If you answered yes to either of these, then this is the ghost for you! Interview continually for a new position doing hoard maintenance for a dragon. Answer questions, ask questions of your own, and learn all about your prospective job! Good luck!",
+		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "WIP"]
 	},
 	{
 		name: "Quiet conversation over tea",
-		release: "May 2nd, 2024",
-		latest: "May 17th, 2024",
+		release: "2024-05-02",
+		latest: "2024-05-17",
 		version: "v1.0.0",
 		forevent: "ゴーストマスカレード6",
 		collaborators:
@@ -345,36 +376,39 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/quiet_conversation_over_tea/releases/latest",
-		blurb: "It's been several years since you moved to the big city, and your life became chaotic and busy. Now things are finally starting to quiet down again, and you've gotten a request from your childhood friend to meet up at a cafe and catch up over a cup of tea.<br><br>The photo used in the background of the shell is by <a href='https://unsplash.com/@minkus?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Minku Kang</a> on <a href='https://unsplash.com/photos/white-and-brown-wooden-dining-table-and-chairs-67EZZZl6jeI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Unsplash</a>."
+		blurb: "It's been several years since you moved to the big city, and your life became chaotic and busy. Now things are finally starting to quiet down again, and you've gotten a request from your childhood friend to meet up at a cafe and catch up over a cup of tea.<br><br>The photo used in the background of the shell is by <a href='https://unsplash.com/@minkus?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Minku Kang</a> on <a href='https://unsplash.com/photos/white-and-brown-wooden-dining-table-and-chairs-67EZZZl6jeI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Unsplash</a>.",
+		tags: ["2024", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Story"] //I don't think I can tag this as my art even though I did the shading...
 	},
 	{
 		name: "S the Skeleton",
-		release: "May 1st, 2020",
-		latest: "August 25th, 2022",
+		release: "2020-05-01",
+		latest: "2022-08-25",
 		version: "v1.5.0",
 		forevent: null,
 		collaborators: null,
 		translations: null,
 		content_warnings: "Explores themes of grief, loss, dehumanization, and more.",
 		download: "https://www.mediafire.com/file/4limx4dmrox5xqr/s_the_skeleton_v1.5.0.nar/file",
-		blurb: "S the Skeleton is the first ghost I put serious work into that I actually published! He's old, his code is a mess, he's written in the old meta style, and his story is extremely convoluted. I love him dearly, but I don't truly recommend him. If you like that style though, maybe you'll enjoy him! He does have a lot of work that went into him."
+		blurb: "S the Skeleton is the first ghost I put serious work into that I actually published! He's old, his code is a mess, he's written in the old meta style, and his story is extremely convoluted. I love him dearly, but I don't truly recommend him. If you like that style though, maybe you'll enjoy him! He does have a lot of work that went into him.",
+		tags: ["2020", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Story"]
 	},
 	{
 		name: "Skyrim Guard",
-		release: "June 13th, 2020",
-		latest: "June 14th, 2020",
+		release: "2020-06-13",
+		latest: "2020-06-14",
 		version: "v1.0.1",
 		forevent: null,
 		collaborators: null,
 		translations: null,
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/w039ic7cdw0k5ir/skyrim_guard_v1.0.1.nar/file",
-		blurb: "A guard that spouts obnoxious guard dialogues! His dialogues can change based on what hold you're in, and other guardly factors. Also comes with a proof of concept quest system, where you can go on a text adventure through a dungeon!"
+		blurb: "A guard that spouts obnoxious guard dialogues! His dialogues can change based on what hold you're in, and other guardly factors. Also comes with a proof of concept quest system, where you can go on a text adventure through a dungeon!",
+		tags: ["2020", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Minigames"]
 	},
 	{
 		name: "SSP Angel",
-		release: "March 23rd, 2023",
-		latest: "April 17th, 2025",
+		release: "2023-03-23",
+		latest: "2025-04-17",
 		version: "v1.1.2",
 		forevent: null,
 		collaborators:
@@ -386,11 +420,12 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/SSP_Angel/releases/latest",
-		blurb: "SSP Angel is here to teach you all about SSP! But fear not if you're already an experienced SSP user, SSP Angel is great for new and old users alike! They come with lots of tips and information, but you can also turn off their tips and be delighted by their 200 whimsical idle dialogues!"
+		blurb: "SSP Angel is here to teach you all about SSP! But fear not if you're already an experienced SSP user, SSP Angel is great for new and old users alike! They come with lots of tips and information, but you can also turn off their tips and be delighted by their 200 whimsical idle dialogues!",
+		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "Idle chatter", "Utility"]
 	},
 	{
 		name: "Ukatranslator",
-		release: "October 4th, 2021",
+		release: "2021-10-04",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -404,11 +439,12 @@ let item_details = [
 		],
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/rdo6brpo8m01f7s/ukatranslator_v1.0.0.nar/file",
-		blurb: "A simple little function ghost, which helps you run other ghosts dialogue through machine translation! Machine translation is horrifically bad, but if you want to give it a go, this is better than having to copy text out of script log by hand!"
+		blurb: "A simple little function ghost, which helps you run other ghosts dialogue through machine translation! Machine translation is horrifically bad, but if you want to give it a go, this is better than having to copy text out of script log by hand!",
+		tags: ["2021", "YAYA", "Translations available", "Includes my art", "Includes my code", "Utility", "WIP"]
 	},
 	{
 		name: "Under the Stars",
-		release: "May 25th, 2024",
+		release: "2024-05-25",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Ghost Jam 2024",
@@ -421,11 +457,12 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/under_the_stars/releases/latest",
-		blurb: "Watch the wonder and amazement of a young merfolk as they gaze up at the stars for the first time!"
+		blurb: "Watch the wonder and amazement of a young merfolk as they gaze up at the stars for the first time!",
+		tags: ["2024", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter"]
 	},
 	{
 		name: "Very Fast Snail",
-		release: "October 6th, 2024",
+		release: "2024-10-06",
 		latest: null,
 		version: "v1.0.0",
 		forevent: "Idea Adoption Jam 2024",
@@ -437,11 +474,12 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/very_fast_snail/releases",
-		blurb: "Sponsor snails, equip them with gear, and send them off to the races to set new records! Learn about snail culture, listen to the radio, enjoy poetry??? All this and more if you download Very Fast Snail today!!"
+		blurb: "Sponsor snails, equip them with gear, and send them off to the races to set new records! Learn about snail culture, listen to the radio, enjoy poetry??? All this and more if you download Very Fast Snail today!!",
+		tags: ["2024", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Idea Adoption Jam", "WIP"]
 	},
 	{
 		name: "Warrior Generator",
-		release: "March 7th, 2021",
+		release: "2021-03-07",
 		latest: null,
 		version: "v1.0.0",
 		forevent: null,
@@ -449,23 +487,25 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/udb8b165gitux1d/warrior_generator_v1.0.0.nar/file",
-		blurb: "Do you like Warrior Cats? Do you like generating names, designs, and more? That's what this ghost will do for you! You can save the characters you generate as files to share or reload later. You can even export the designs as image files, for easy sharing."
+		blurb: "Do you like Warrior Cats? Do you like generating names, designs, and more? That's what this ghost will do for you! You can save the characters you generate as files to share or reload later. You can even export the designs as image files, for easy sharing.",
+		tags: ["2021", "YAYA", "Includes my art", "Includes my code", "Utility"]
 	},
 	{
 		name: "Xander's Refuge",
-		release: "August 31st, 2023",
-		latest: "March 25th, 2025",
+		release: "2023-08-31",
+		latest: "2025-03-25",
 		version: "v1.0.3",
 		forevent: "Aughost",
 		collaborators: null,
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/xanders_refuge/releases/latest",
-		blurb: "Xander's Refuge is a ghost made based on the prompt \"a ghost of an ancient deity that always seems tired, and is looking for a safe place to hide\". He's an extremely straightforward ghost, with few mechanics and a focus on content instead.<br><br>He has over 100 idle dialogues, and he works well as an aesthetic companion also! He has a looping smoke animation, and will randomly change poses when left idle so that he's never still for too long. He'll even do this if you turn his dialogues off!"
+		blurb: "Xander's Refuge is a ghost made based on the prompt \"a ghost of an ancient deity that always seems tired, and is looking for a safe place to hide\". He's an extremely straightforward ghost, with few mechanics and a focus on content instead.<br><br>He has over 100 idle dialogues, and he works well as an aesthetic companion also! He has a looping smoke animation, and will randomly change poses when left idle so that he's never still for too long. He'll even do this if you turn his dialogues off!",
+		tags: ["2023", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "For event", "Idle chatter", "Story"]
 	},
 	{
 		name: "Xander's Refuge (Aosora)",
-		release: "March 25th, 2025",
+		release: "2025-03-25",
 		latest: null,
 		version: "v1.0.3-a01",
 		forevent: null,
@@ -473,12 +513,13 @@ let item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/xanders_refuge_aosora/releases/latest",
-		blurb: "This is a port of my ghost <a href='../ghost/xanders_refuge.html'>Xander's Refuge</a> into the SHIORI <a href='https://github.com/kanadelab/aosora-shiori'>Aosora</a>. I created it as a way to test the SHIORI, and to have as a roughly 1:1 comparison of YAYA code and Aosora code. If you want to learn more about the ghost's premise, please check the page for Xander's Refuge.<br><br>Because this is a port of a YAYA ghost, it is coded in a very YAYA way, and doesn't make use of Aosora to its fullest extent. Please keep this in mind if you look at the code!"
+		blurb: "This is a port of my ghost <a href='../ghost/xanders_refuge.html'>Xander's Refuge</a> into the SHIORI <a href='https://github.com/kanadelab/aosora-shiori'>Aosora</a>. I created it as a way to test the SHIORI, and to have as a roughly 1:1 comparison of YAYA code and Aosora code. If you want to learn more about the ghost's premise, please check the page for Xander's Refuge.<br><br>Because this is a port of a YAYA ghost, it is coded in a very YAYA way, and doesn't make use of Aosora to its fullest extent. Please keep this in mind if you look at the code!",
+		tags: ["2025", "Aosora", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Story"]
 	},
 	{
 		name: "Zana's Laws",
-		release: "May 30th, 2024",
-		latest: "November 3rd, 2024",
+		release: "2024-05-30",
+		latest: "2024-11-03",
 		version: "v1.0.2",
 		forevent: "Ghost Jam 2024",
 		collaborators:
@@ -489,22 +530,24 @@ let item_details = [
 		translations: null,
 		content_warnings: "Eyes, discussions of death",
 		download: "https://github.com/Zichqec/zanas_laws/releases/latest",
-		blurb: "You find yourself in a desperate state. The world shudders and writhes, crumbling around you. But amidst the chaos, you see a steady light. It's... a gate? Untouched by the collapse of the world, glowing with a heavenly light. Do you dare to trespass on what feels like holy ground...?"
+		blurb: "You find yourself in a desperate state. The world shudders and writhes, crumbling around you. But amidst the chaos, you see a steady light. It's... a gate? Untouched by the collapse of the world, glowing with a heavenly light. Do you dare to trespass on what feels like holy ground...?",
+		tags: ["2024", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter"]
 	},
 	{
 		name: "ゴースト闇鍋",
-		release: "March 2nd, 2024",
-		latest: "N/A",
+		release: "2024-03-02",
+		latest: null,
 		version: null,
 		forevent: "ゴースト闇鍋",
 		collaborators:
 		[
 			Galla,
-			{name: "See page for all collaborators", creditlink: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=ghost_yaminabe"}
+			{name: "See page for all collaborators", creditlink: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=Ghost Yaminabe"}
 		],
 		translations: null,
 		content_warnings: null,
-		download: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=ghost_yaminabe",
-		blurb: "A collaborative event ghost that I participated in! (Romanization: Ghost Yaminabe / Translation: Ghost Dark Pot) Most of the dialogue is in Japanese, but Galla and I participated and wrote some English dialogue together. Unfortunately, due to a last-minute calculation error on my part, the English dialogue shows extremely rarely. But I swear it's there!<br><br>Note that the shell is a modified version of eVe.'s \"うにゅっとしたフリーシェル\"."
+		download: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=Ghost Yaminabe",
+		blurb: "A collaborative event ghost that I participated in! (Romanization: Ghost Yaminabe / Translation: Ghost Dark Pot) Most of the dialogue is in Japanese, but Galla and I participated and wrote some English dialogue together. Unfortunately, due to a last-minute calculation error on my part, the English dialogue shows extremely rarely. But I swear it's there!<br><br>Note that the shell is a modified version of eVe.'s \"うにゅっとしたフリーシェル\".",
+		tags: ["2024", "Satori", "Collab", "Uses freeshell", "Includes my writing", "For event", "Ghost Yaminabe", "Idle chatter"],
 	}
 ]
