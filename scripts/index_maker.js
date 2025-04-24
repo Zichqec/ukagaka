@@ -286,6 +286,10 @@ function makeIndex(item)
 		}
 		output += `</p>`;
 	}
+	else if (pagetype == "function" || pagetype == "minigame")
+	{
+		output += `<p><b>SHIORI:</b> ${item.language}</p>`;
+	}
 	
 	
 	
