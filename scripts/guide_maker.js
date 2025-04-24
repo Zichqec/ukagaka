@@ -52,7 +52,7 @@ function ItemInfo()
 	<h1>${currentpage.name}</h1>
 	<h2>Details</h2>
 	<p>
-		<b>Initial release:</b> ${currentpage.release}
+		<b>Initial release:</b> ${dateDisplay(currentpage.release)}
 	`;
 	
 	if (currentpage.forevent != null)
@@ -66,7 +66,7 @@ function ItemInfo()
 	
 	if (currentpage.latest != null)
 	{
-		output += `${currentpage.latest}`;
+		output += `${dateDisplay(currentpage.latest)}`;
 	}
 	else
 	{
