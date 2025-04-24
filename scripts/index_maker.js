@@ -23,7 +23,8 @@ function makeTopIndex(item)
 		for (let i = 0; i < item.tags.length; i++)
 		{
 			if (i > 0) tagdiv += ` `;
-			tagdiv += `${item.tags[i].replace(/ /g,"_")}`;
+			//tagdiv += `${item.tags[i].replace(/ /g,"_")}`;
+			tagdiv += `${makeStandard(item.tags[i])}`;
 		}
 	}
 	
@@ -51,7 +52,7 @@ function makeFilterSortList()
 	<br>
 	`;
 	
-	if (index_tags != null)
+	if (index_tags.length > 0)
 	{
 		for (let i = 0; i < index_tags.length; i++)
 		{
@@ -61,8 +62,9 @@ function makeFilterSortList()
 			for (let ii = 0; ii < tags.length; ii++)
 			{
 				let processed = tags[ii];
-				processed = processed.replace(/ /g,"_");
-				processed = processed.toLowerCase();
+				//processed = processed.replace(/ /g,"_");
+				processed = makeStandard(processed);
+				//processed = processed.toLowerCase(); //Should be fine without... if I make this lowercase I also have to find other bits of code to make it lowercase in
 				output += `<button class="filtersortbtn tagbtn" onclick="filterSelection('${processed}')">${tags[ii]}</button>
 				`;
 			}
@@ -109,7 +111,8 @@ function makeIndex(item)
 				tagdiv += ` `;
 			}
 			taglist += ` ${item.tags[i]}`;
-			tagdiv += `${item.tags[i].replace(/ /g,"_")}`;
+			tagdiv += `${makeStandard(item.tags[i])}`;
+			//tagdiv += `${item.tags[i].replace(/ /g,"_")}`;
 		}
 		
 		taglist += `</p>`
@@ -129,7 +132,7 @@ function makeIndex(item)
 	output += `
 		<h2>${item.name}</h2>
 		<p>
-		<b>Initial release:</b> ${item.release}`;
+		<b>Initial release:</b> ${dateDisplay(item.release)}`;
 	
 	//Additional display if it was for an event
 	if (item.forevent != null)
@@ -143,7 +146,7 @@ function makeIndex(item)
 	
 	if (item.latest != null)
 	{
-		output += `${item.latest}`;
+		output += `${dateDisplay(item.latest)}`;
 	}
 	else
 	{
@@ -472,7 +475,6 @@ function filterSelection(tag, operation)
 			if (classes[ii] == "TFShow")
 			{
 				classes.splice(ii, 1);
-				break;
 			}
 		}
 		
@@ -672,8 +674,8 @@ document.getElementById('quick_index').innerHTML = index_details.map(makeTopInde
 
 function sortCompare(a, b)
 {
-	let aVal = a.name;
-	let bVal = b.name;
+	let aVal = a.name.toLowerCase();
+	let bVal = b.name.toLowerCase();
 	
 	if (SortType == "release_date")
 	{
@@ -693,10 +695,9 @@ function sortCompare(a, b)
 	//If same, sort by name
 	if (aVal == bVal)
 	{
-		aVal = a.name;
-		bVal = b.name;
+		aVal = a.name.toLowerCase();
+		bVal = b.name.toLowerCase();
 	}
-	console.log(`${aVal} : ${bVal}`);
 	
 	if (aVal < bVal)
 	{
@@ -781,12 +782,15 @@ for (let i = 0; i < filterbuttonsExclude.length; i++)
 
 
 let clearbutton = buttoncontainer.getElementsByClassName("tagbtnclear")[0];
-clearbutton.addEventListener("click", function() {
-	for (let i = 0; i < filterbuttons.length; i++)
-	{
-		filterbuttons[i].className = filterbuttons[i].className.replace(" FilterAdd","");
-		filterbuttons[i].className = filterbuttons[i].className.replace(" FilterRemove","");
-	}
-});
+if (clearbutton != null)
+{
+	clearbutton.addEventListener("click", function() {
+		for (let i = 0; i < filterbuttons.length; i++)
+		{
+			filterbuttons[i].className = filterbuttons[i].className.replace(" FilterAdd","");
+			filterbuttons[i].className = filterbuttons[i].className.replace(" FilterRemove","");
+		}
+	});
+}
 
 document.getElementById('filtercount').innerHTML = `(${shown_count} of ${total_count} shown)`;
