@@ -101,7 +101,7 @@ function ItemInfo()
 	
 	output += `<h2>Details</h2>
 		<p>
-			<b>Initial release:</b> ${currentpage.release}
+			<b>Initial release:</b> ${dateDisplay(currentpage.release)}
 		`;
 
 	if (currentpage.forevent != null)
@@ -114,7 +114,7 @@ function ItemInfo()
 
 	if (currentpage.latest != null)
 	{
-		output += `${currentpage.latest}`;
+		output += `${dateDisplay(currentpage.latest)}`;
 	}
 	else
 	{
@@ -270,7 +270,7 @@ function makeMyShellIndex(shells)
 			<h3>${item.name}</h3>
 			`;
 			
-		output += `<b>Initial release:</b> ${item.release}`;
+		output += `<b>Initial release:</b> ${dateDisplay(item.release)}`;
 		//Additional display if it was for an event
 		if (item.forevent != null)
 		{
@@ -281,7 +281,7 @@ function makeMyShellIndex(shells)
 		
 		if (item.latest != null)
 		{
-			output += `${item.latest}`;
+			output += `${dateDisplay(item.latest)}`;
 		}
 		else
 		{
@@ -403,7 +403,7 @@ function makeOtherShellIndex(shells)
 		}
 		
 		output += `<br>
-		<b>Initial release:</b> ${item.release}`;
+		<b>Initial release:</b> ${dateDisplay(item.release)}`;
 		
 		//Additional display if it was for an event
 		if (item.forevent != null)
