@@ -1,4 +1,4 @@
-let item_tags = [
+var item_tags = [
 	["2020","2021","2022","2023","2024","2025"],
 	["For event","Etc. Jam"],
 	["For devs","For users"],
@@ -6,7 +6,7 @@ let item_tags = [
 	//It would be interesting to tag by word count or something
 ]
 
-let item_details = [
+var item_details = [
 	{
 		name: "Convert from AYA to YAYA",
 		release: "2022-08-03",

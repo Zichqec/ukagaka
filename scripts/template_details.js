@@ -1,9 +1,9 @@
-let item_tags = [
+var item_tags = [
 	["2020","2021","2022","2023"],
 	["Ghost","Shell","Balloon","Other"],
 ]
 
-let item_details = [
+var item_details = [
 	{
 		name: "Hydrate Shell Template",
 		type: "Shell",

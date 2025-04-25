@@ -1,8 +1,8 @@
-let item_tags = [
+var item_tags = [
 	["2021"],
 ]
 
-let item_details = [
+var item_details = [
 	{
 		name: "ImageCompositor",
 		release: "2021-03-07",

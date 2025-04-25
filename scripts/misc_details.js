@@ -1,9 +1,9 @@
-let item_tags = [
+var item_tags = [
 	["2021","2022","2024","2025"],
 	["UDL","Supplement","Other"],
 ]
 
-let item_details = [
+var item_details = [
 	{
 		name: "Aosora talk block UDL",
 		release: "2025-03-25",

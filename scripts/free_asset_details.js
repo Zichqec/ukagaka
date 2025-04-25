@@ -1,8 +1,8 @@
-let item_tags = [
+var item_tags = [
 	["2022","2024","2025"],
 ]
 
-let item_details = [
+var item_details = [
 	{
 		name: "Galaxy Pattern Set 01",
 		release: "2024-05-12",

@@ -13,7 +13,9 @@ function fixLocalLinks()
 	}
 }
 
-if (!islocal)
+//Web archive seems to dislike sharing islocal across files...
+let islocal_2 = location.protocol == "https:" ? '' : '.html';
+if (!islocal_2)
 {
 	fixLocalLinks();
 }

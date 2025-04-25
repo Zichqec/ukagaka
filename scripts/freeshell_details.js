@@ -1,4 +1,4 @@
-let item_tags = [
+var item_tags = [
 	["2022","2024","2025"],
 	["For event","Etc. Jam"],
 	["Flat color","Shaded","Pixel style","Soft brush","Lined","Lineless"],
@@ -6,7 +6,7 @@ let item_tags = [
 	[".psd included","Surface palette ready"],
 ]
 
-let item_details = [
+var item_details = [
 	{
 		name: "Ancient Gem",
 		release: "2025-03-19",

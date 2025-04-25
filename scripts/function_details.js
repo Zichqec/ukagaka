@@ -1,10 +1,10 @@
-let item_tags = [
+var item_tags = [
 	["2020","2021","2022","2023","2024","2025"],
 	["YAYA","AYA"],
 	["Pure function"],
 ]
 
-let item_details = [
+var item_details = [
 	{
 		name: "AI graph dialogue counter",
 		release: "2023-06-02",

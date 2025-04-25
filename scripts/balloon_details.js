@@ -1,4 +1,4 @@
-let item_tags = [
+var item_tags = [
 	["2020","2021","2022","2023","2024","2025"],
 	["Collab","Includes my art"],
 	["For event","Ghost Jam","Etc. Jam"],
@@ -8,7 +8,7 @@ let item_tags = [
 	["Color alts","Extra sizes","Multiple characters","Semi-transparent"],
 ]
 
-let item_details = [
+var item_details = [
 	{
 		name: "Ancient Gem Balloon",
 		release: "2025-03-15",

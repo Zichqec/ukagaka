@@ -1,9 +1,9 @@
-let item_tags = [
+var item_tags = [
 	["2020","2021","2024"],
 	//["YAYA","AYA"],
 ]
 
-let item_details = [
+var item_details = [
 	{
 		name: "Continuous Petting",
 		release: "2021-01-05",

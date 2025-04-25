@@ -1,4 +1,4 @@
-let item_tags = [
+var item_tags = [
 	["2020","2023","2025"],
 	["Collab"],
 	["For event","Etc. Jam"],
@@ -6,7 +6,7 @@ let item_tags = [
 	["Dark text on light background","Light text on dark background"],
 ]
 
-let item_details = [
+var item_details = [
 	{
 		name: "Ancient Gem Calendar",
 		release: "2025-03-16",

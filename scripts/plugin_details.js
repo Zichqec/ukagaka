@@ -1,9 +1,9 @@
-let item_tags = [
+var item_tags = [
 	["2022","2024"],
 	["For event","Etc. Jam"],
 ]
 
-let item_details = [
+var item_details = [
 	{
 		name: "Spectre",
 		release: "2024-10-29",

@@ -1,4 +1,4 @@
-let shell_tags = [
+var shell_tags = [
 	["2020","2021","2022","2023","2024","2025"],
 	["Needle","Noodle","Hydrate","FLUX/FLELE","If I Can't Have Shrimp No One Can","Skrunkly","Presentable Can"],
 	["Collab"],
@@ -8,7 +8,7 @@ let shell_tags = [
 	["Animations","Dressups","Additional pieces","Color alts"],
 ]
 
-let shell_details = [
+var shell_details = [
 
 	{
 		name: "A thousand thousand dots",
