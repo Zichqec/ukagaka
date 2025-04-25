@@ -30,7 +30,7 @@ var item_details = [
 		goeswith: ["SSP Angel"],
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://github.com/Zichqec/SSP_Angel_Balloons"],
 		blurb: "An angel themed balloon, with a decorative halo and wings! The text area is large and plain, to optimize readability and allow a lot of text to be shown at once. The sakura and kero balloons have slightly different halo/wing colors, to suit each of the characters in SSP Angel. Each balloon comes in 4 sizes.",
@@ -45,7 +45,7 @@ var item_details = [
 		goeswith: ["SSP Angel"],
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://github.com/Zichqec/SSP_Angel_Balloons"],
 		blurb: "An expanded version of the Angelbox balloon, with all the same features, but in 43 different color options! All color options include alternate color arrows, markers, and even input boxes. Color options created by Galla, with the exception of the galaxy patterns, which were drawn by me.",
@@ -60,7 +60,7 @@ var item_details = [
 		goeswith: ["Balloons"],
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://www.mediafire.com/file/jfry7471otzocq3/balloons_balloon_gz_v1.0.1.nar/file"],
 		blurb: "A balloon themed balloon, with 2 sizes, and a second, slimmer design. Drawn by Galla and assembled by me!",
@@ -150,8 +150,8 @@ var item_details = [
 		goeswith: ["Zana's Laws"],
 		collaborators:
 		[
-			Galla,
-			seika
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+			{name: "月波 清火 (Tsukinami Seika)", creditlink: "https://tukinami.github.io/"}
 		],
 		download: ["https://www.mediafire.com/file/2vd223dsco0ji5x/effortless_iridescence_v1.0.0.nar/file"],
 		blurb: "Gaze into the depths of a gem containing a universe. Comes in 4 sizes, and looks very edible if you ask me.",
@@ -190,7 +190,7 @@ var item_details = [
 		goeswith: ["Spectre"],
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://github.com/GallaTheGalla/ghost_balloon/releases/latest"],
 		blurb: "A ghost themed balloon for all your ghost balloon needs! Made to go with the plugin <a href='../plugin/spectre.html'>Spectre</a>. Comes in 4 sizes.",
@@ -253,7 +253,7 @@ var item_details = [
 		goeswith: ["@funkylittlemothman"],
 		collaborators:
 		[
-			Venelona
+			{name: "Venelona", creditlink: "https://venelona.tumblr.com/"}
 		],
 		download: ["https://www.mediafire.com/file/0p615t180u08wnw/moth_chat_vz_v1.0.0.nar/file"],
 		blurb: "A balloon styled to resemble a chatting program! The text starts typing at the bottom and moves upwards, to complete the effect. This balloon was drawn by Venelona and assembled by me. Note that the balloon was originally released bundled with @funkylittlemothman, and was only released separately on August 2nd, 2023.",
@@ -268,7 +268,7 @@ var item_details = [
 		forevent: null,
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://www.mediafire.com/file/391sk3n5ttuy188/needloon_v1.0.0.nar/file"],
 		blurb: "A balloon made for Needle, of Needle, debatably by Needle! Made using a warped version of the original Needle shell, which was drawn by Galla. Comes with 2 sizes, and suits any and every ghost perfectly.",
@@ -283,7 +283,7 @@ var item_details = [
 		forevent: null,
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://www.mediafire.com/file/teo2cwcq9x0t2ay/needloon_readable_v1.0.0.nar/file"],
 		blurb: "We all know that Needloon is the most beautiful balloon in the world, but I think we can all admit it's not the most readable. Here's a more readable Needloon.",
@@ -334,7 +334,7 @@ var item_details = [
 		goeswith: ["Paper"],
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://www.mediafire.com/file/jhzp9wrvfpj26im/paperboard_v1.0.1.nar/file"],
 		blurb: "A large balloon themed after papaer, with some decorations. Comes with 5 sizes, and has a lot of space for things like minigames! Drawn by Galla and assembled by me.",
@@ -371,7 +371,10 @@ var item_details = [
 		version: "v1.0.0",
 		forevent: "Ghost Jam 2024",
 		goeswith: ["Under the Stars"],
-		collaborators: [OmochiYoichi],
+		collaborators:
+		[
+			{name: "おもちよいち (OmochiYoichi)", creditlink: "https://sites.google.com/view/omochi-yoichi/"}
+		],
 		download: ["https://www.mediafire.com/file/f7tqe1e3c06020s/reflections_of_starlight_v1.0.0.nar/file"],
 		blurb: "View the endless stars in the reflection of a puddle! Comes with 4 sizes, and a pretty meteor shower online marker.",
 		tags: ["2024","Collab","Includes my art","For event","Ghost Jam","Made for a ghost","Soft brush","Patterned text area","Light text on dark background","Extra sizes"]
@@ -505,7 +508,7 @@ var item_details = [
 		goeswith: null,
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://www.mediafire.com/file/i6qr7o00yjejf73/wedges_balloons_gz_v1.0.0.zip/file", "https://www.mediafire.com/folder/ug6k36xrmw4du/Wedges_Balloons"],
 		blurb: "A pack of balloons with a triangle theming! There are 36 balloons total. There is a 12 color rainbow of options for the accent colors, and light, dark, and mid options for each! Pick and choose what suits you/your project the best! This set of balloons is also very easily customized, thanks to the simple pixel style they use.<br><br>Also check out the matching <a href='../calendar_skin/wedges_calendar_skin_pack.html'>calendar skin pack</a>!",

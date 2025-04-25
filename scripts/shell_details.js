@@ -1,3 +1,37 @@
+//Objects for ghosts listed here...
+let FLUX = {
+	name: "FLUX", download_link: "mine"
+}
+
+let FLELE = {
+	name: "FLELE", download_link: "https://ukagakadreamteam.com/wiki/ghost/flele"
+}
+
+let Hydrate = {
+	name: "Hydrate", download_link: "mine"
+}
+
+let Needle = {
+	name: "Needle", download_link: "mine"
+}
+
+let Noodle = {
+	name: "Noodle", download_link: "mine"
+}
+
+let IfICantHaveShrimpNoOneCan = {
+	name: "If I Can't Have Shrimp No One Can", download_link: "mine"
+}
+
+let Presentable_Can = {
+	name: "Presentable Can", download_link: "https://www.tumblr.com/characteroulette/717104163012608000/ghost-jam-2023-hype-anyway-this-thing-is-done"
+}
+
+let Skrunkly = {
+	name: "Skrunkly", download_link: "https://ukagakadreamteam.com/wiki/ghost/skrunkly"
+}
+
+
 var shell_tags = [
 	["2020","2021","2022","2023","2024","2025"],
 	["Needle","Noodle","Hydrate","FLUX/FLELE","If I Can't Have Shrimp No One Can","Skrunkly","Presentable Can"],
@@ -97,7 +131,7 @@ var shell_details = [
 		forevent: "Perseverence Day",
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/u4blnjezisq6kji/birthday_needle_v1.0.1.nar/file",
@@ -191,7 +225,7 @@ var shell_details = [
 		forevent: "Needle Day (11/11)",
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		content_warnings: null,
 		download: "https://www.mediafire.com/file/hx039cguaqkjsmq/expensive_needle_v1.0.0.nar/file",

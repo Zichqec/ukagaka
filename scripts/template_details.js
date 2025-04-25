@@ -93,7 +93,7 @@ var item_details = [
 		translations: [
 			{
 				spoken_language: "Русский",
-				translator: SmokyCinnamonroll,
+				translator: {name: "SmokyCinnamonRoll", creditlink: "https://smokycinnamon.github.io/indifferentsorrel/"},
 				download: "https://github.com/SmokyCinnamon/simplicity_template_ru/releases"
 			},
 		],

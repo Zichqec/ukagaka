@@ -16,7 +16,7 @@ var item_details = [
 		forevent: "Idea Adoption Jam",
 		collaborators:
 		[
-			Venelona
+			{name: "Venelona", creditlink: "https://venelona.tumblr.com/"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -45,7 +45,7 @@ var item_details = [
 		forevent: "Ghost Jam 2022",
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -87,8 +87,8 @@ var item_details = [
 		forevent: "Ghost Jam 2021",
 		collaborators:
 		[
-			GameKid,
-			Zarla
+			{name: "Game Kid", creditlink: "https://characteroulette.tumblr.com/"},
+			{name: "Zarla", creditlink: "http://ashido.com/ukagaka/"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -119,7 +119,7 @@ var item_details = [
 		translations: [
 			{
 				spoken_language: "Polski",
-				translator: Zdzisiu,
+				translator: {name: "Zdzisiu", creditlink: "https://zdzisiu.github.io/Cemetery/"},
 				download: null
 			},
 			{
@@ -129,12 +129,12 @@ var item_details = [
 			},
 			{
 				spoken_language: "Deutsch",
-				translator: Koguri,
+				translator: {name: "Koguri3108", creditlink: "https://koguri3108.tumblr.com/"},
 				download: null
 			},
 			{
 				spoken_language: "Русский",
-				translator: SmokyCinnamonroll,
+				translator: {name: "SmokyCinnamonRoll", creditlink: "https://smokycinnamon.github.io/indifferentsorrel/"},
 				download: null
 			}
 		],
@@ -151,7 +151,7 @@ var item_details = [
 		forevent: "Ghost Jam 2023",
 		collaborators:
 		[
-			Galla,
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
 			{name: "Kat", creditlink: null}
 		],
 		translations: null,
@@ -210,7 +210,7 @@ var item_details = [
 		forevent: "Ghost Jam 2020",
 		collaborators:
 		[
-			Pommy
+			{name: "Pommy", creditlink: "https://www.youtube.com/user/Pommy15642"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -227,7 +227,7 @@ var item_details = [
 		collaborators:
 		[
 			{name: "Galehaut", creditlink: "https://www.tumblr.com/blog/aegisghosts"},
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -243,7 +243,7 @@ var item_details = [
 		forevent: "ゴーストマスカレード5",
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -259,11 +259,11 @@ var item_details = [
 		forevent: null,
 		collaborators:
 		[
-			Galla,
-			SmokyCinnamonroll,
-			Zdzisiu,
-			Softie,
-			Koguri
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+			{name: "SmokyCinnamonRoll", creditlink: "https://smokycinnamon.github.io/indifferentsorrel/"},
+			{name: "Zdzisiu", creditlink: "https://zdzisiu.github.io/Cemetery/"},
+			{name: "Softie", creditlink: "https://ukagakadreamteam.com/wiki/dev/dragonmoth28"},
+			{name: "Koguri3108", creditlink: "https://koguri3108.tumblr.com/"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -305,7 +305,7 @@ var item_details = [
 		forevent: "Ghost Jam 2022",
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		translations: null,
 		content_warnings: "Mentions of violence, gaslighting, general unsettlingness, some movement/jittery effects (if toggled on).",
@@ -321,7 +321,7 @@ var item_details = [
 		forevent: null,
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -337,7 +337,7 @@ var item_details = [
 		forevent: "Ghost Jam 2022",
 		collaborators:
 		[
-			Galla,
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
 			{name: "The Gibbous", creditlink: "http://inportant-spam-rsvp.tumblr.com/"}
 		],
 		translations: null,
@@ -354,7 +354,7 @@ var item_details = [
 		forevent: "Ghost Jam 2023",
 		collaborators:
 		[
-			Galla,
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
 			{name: "Naryu", creditlink: "https://naryu-n.tumblr.com/"}
 		],
 		translations: null,
@@ -371,7 +371,7 @@ var item_details = [
 		forevent: "ゴーストマスカレード6",
 		collaborators:
 		[
-			Logic
+			{name: "logic.png", creditlink: "https://logicpng.neocities.org/"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -414,8 +414,8 @@ var item_details = [
 		collaborators:
 		[
 			{name: "Ayakamtka", creditlink: "https://github.com/Ayakamtka"},
-			Galla,
-			Yuyudev
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+			{name: "Yuyudev", creditlink: "https://thatoddhaystack.neocities.org/ukagaka/"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -433,7 +433,7 @@ var item_details = [
 		translations: [
 			{
 				spoken_language: "Deutsch",
-				translator: Koguri,
+				translator: {name: "Koguri3108", creditlink: "https://koguri3108.tumblr.com/"},
 				download: null
 			}
 		],
@@ -450,9 +450,9 @@ var item_details = [
 		forevent: "Ghost Jam 2024",
 		collaborators:
 		[
-			Galla,
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
 			{name: "YudiDoodles", creditlink: "https://www.tumblr.com/yudidoodles"},
-			OmochiYoichi
+			{name: "おもちよいち (OmochiYoichi)", creditlink: "https://sites.google.com/view/omochi-yoichi/"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -468,8 +468,8 @@ var item_details = [
 		forevent: "Idea Adoption Jam 2024",
 		collaborators:
 		[
-			Galla,
-			WhatAPhantasia
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+			{name: "WhatAPhantasia", creditlink: "https://whataphantasia.github.io/projects/ukagaka/"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -524,8 +524,8 @@ var item_details = [
 		forevent: "Ghost Jam 2024",
 		collaborators:
 		[
-			Galla,
-			seika
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+			{name: "月波 清火 (Tsukinami Seika)", creditlink: "https://tukinami.github.io/"}
 		],
 		translations: null,
 		content_warnings: "Eyes, discussions of death",
@@ -541,7 +541,7 @@ var item_details = [
 		forevent: "ゴースト闇鍋",
 		collaborators:
 		[
-			Galla,
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
 			{name: "See page for all collaborators", creditlink: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=Ghost Yaminabe"}
 		],
 		translations: null,

@@ -12,7 +12,7 @@ var item_details = [
 		forevent: "Etc. Jam 2024",
 		collaborators:
 		[
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		content_warnings: "Contains various spooky/horror elements. See more detailed warnings at the bottom of the plugin's readme file.",
 		download: "https://github.com/Zichqec/spectre/releases/latest",

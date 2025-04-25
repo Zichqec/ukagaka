@@ -47,7 +47,7 @@ var item_details = [
 		version: "v1.0.0",
 		forevent: "Etc. Jam 2023",
 		collaborators: [
-			Galla
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://www.mediafire.com/file/9zvzzzh6zq79kas/wedges_calendar_skin_pack_gz_v1.0.0.zip/file", "https://www.mediafire.com/folder/h1tpn8mkcnhnx/Wedges_Calendar_Skin_Pack"],
 		blurb: "A pack of calendar skins, to match the <a href='../balloon/wedges_balloon_pack.html'>Wedges Balloon Pack</a>! Each month has a different color bar at the top, and it's available in light, mid, and dark modes. These calendar skins have the same permissions as the Wedges balloons; you are free to customize these and bundle them with your ghosts, as per the guidelines on the <a href='../balloon/index.html'>Balloons</a> page</a>!",
