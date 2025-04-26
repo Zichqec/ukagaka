@@ -477,6 +477,78 @@ function makePageIndex()
 
 document.getElementById('item_info').innerHTML = ItemInfo();
 
+function makeGallery(gallery_images)
+{
+	let fullview = ``;
+	let thumbview = ``;
+	for (let i = 0; i < gallery_images.length; i++)
+	{
+		let path = gallery_images[i].path
+		let name = path.split(".")[0]
+		let alt = gallery_images[i].alt
+		
+		fullview += `
+		<div class="gallery-full" id="${name}-full">
+			<img src="hoard_of_shinies/gallery/${path}" alt="${alt}">
+		</div>
+		`;
+		thumbview += `
+		<span class="gallery-slot" id="${name}">
+			<img src="${makeStandard(currentpage.name)}/gallery/${path}" onclick="openGalleryImage('${name}')">
+		</span>
+		`;
+	}
+	
+	let output = ``;
+	output += `
+<article>
+
+	<h2>Gallery</h2>
+
+
+
+	<div class="gallery-backdrop" id="gallery-modal" onclick="closeGalleryImage()">
+	<div class="gallery-modal-content">
+	`;
+	
+	output += fullview;
+	
+	output += `
+	</div>
+</div>
+<div class="gallery-row">
+	`;
+	
+	output += thumbview;
+	
+	output += `
+	</div>
+</article>`;
+
+	return output;
+}
+
+if (gallery_images != null)
+{
+	document.getElementById('image_gallery').innerHTML = makeGallery(gallery_images);
+}
+
+function openGalleryImage(image)
+{
+	document.getElementById("gallery-modal").style.display = "block";
+	document.getElementById(`${image}-full`).style.display = "inline-block";
+}
+
+function closeGalleryImage()
+{
+	document.getElementById("gallery-modal").style.display = "none";
+	let GalleryImages = document.getElementsByClassName("gallery-full");
+	for (let i = 0; i < GalleryImages.length; i++)
+	{
+		GalleryImages[i].style.display = "none";
+	}
+}
+
 if (pagetype == "ghost")
 {
 	if (shells_by_others.length > 0)

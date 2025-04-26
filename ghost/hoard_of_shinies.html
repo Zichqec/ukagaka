@@ -38,59 +38,7 @@
 
 </article>
 
-
-<article>
-
-<h2>Gallery</h2>
-
-
-<div class="gallery-backdrop" id="gallery-modal" onclick="closeGalleryImage()">
-	<div class="gallery-modal-content">
-		<div class="gallery-full" id="plain-full">
-			<img src="hoard_of_shinies/gallery/plain.png">
-		</div>
-		
-		<div class="gallery-full" id="tall-full">
-			<img src="hoard_of_shinies/gallery/tall.png">
-		</div>
-		
-		<div class="gallery-full" id="talk_01-full">
-			<img src="hoard_of_shinies/gallery/talk_01.png">
-		</div>
-		
-		<div class="gallery-full" id="talk_02-full">
-			<img src="hoard_of_shinies/gallery/talk_02.png">
-		</div>
-		
-		<div class="gallery-full" id="stimming-full">
-			<img src="hoard_of_shinies/gallery/stimming.gif">
-		</div>
-	</div>
-</div>
-<div class="gallery-row">
-	<span class="gallery-slot" id="plain">
-		<img src="hoard_of_shinies/gallery/plain.png" onclick="openGalleryImage('plain')">
-	</span>
-	
-	<span class="gallery-slot" id="tall">
-		<img src="hoard_of_shinies/gallery/tall.png" onclick="openGalleryImage('tall')">
-	</span>
-	
-	<span class="gallery-slot" id="talk_01">
-		<img src="hoard_of_shinies/gallery/talk_01.png" onclick="openGalleryImage('talk_01')">
-	</span>
-	
-	<span class="gallery-slot" id="talk_02">
-		<img src="hoard_of_shinies/gallery/talk_02.png" onclick="openGalleryImage('talk_02')">
-	</span>
-	
-	<span class="gallery-slot" id="stimming">
-		<img src="hoard_of_shinies/gallery/stimming.gif" onclick="openGalleryImage('stimming')">
-	</span>
-</div>
-
-
-</article>
+<div id="image_gallery"></div>
 
 <div id="shells_by_me_index"></div>
 
@@ -106,31 +54,13 @@
 <script>
 
 let gallery_images = [
-	{name: "plain.png" alt: ""},
-	{name: "tall.png" alt: ""},
-	{name:"talk_01.png" alt: ""},
-	{name:"talk_02.png" alt: ""},
-	{name:"stimming.gif" alt: ""},
+	{path: "plain.png", alt: ""},
+	{path: "tall.png", alt: ""},
+	{path:"talk_01.png", alt: ""},
+	{path:"talk_02.png", alt: ""},
+	{path:"stimming.gif", alt: "wiggle wiggle"},
+	{path:"small.png", alt: "small image"},
 ]
-
-</script>
-
-<script>
-function openGalleryImage(image)
-{
-	document.getElementById("gallery-modal").style.display = "block";
-	document.getElementById(`${image}-full`).style.display = "inline-block";
-}
-
-function closeGalleryImage()
-{
-	document.getElementById("gallery-modal").style.display = "none";
-	let GalleryImages = document.getElementsByClassName("gallery-full");
-	for (let i = 0; i < GalleryImages.length; i++)
-	{
-		GalleryImages[i].style.display = "none";
-	}
-}
 
 </script>
 
