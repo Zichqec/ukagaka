@@ -595,3 +595,38 @@ code
 {
 	display: none;
 }
+
+
+/* spoiler images (from https://www.reddit.com/r/Carrd/comments/1bopfvx/spoiler_tag_on_image/ ) */
+.spoiler
+{
+	background-color: #CCCCCC;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.spoiler img
+{
+	display: none;
+}
+
+.spoiler.revealed img
+{
+	display: block;
+}
+
+.spoiler:before
+{
+	content: "Click to reveal image";
+	color: #EBEBEB;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+}
+
+.spoiler.revealed:before
+{
+	display: none;
+}

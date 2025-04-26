@@ -487,13 +487,19 @@ function makeGallery(gallery_images)
 		let name = path.split(".")[0]
 		let alt = gallery_images[i].alt
 		
+		let spoiler = ``;
+		if (gallery_images[i].spoiler != null)
+		{
+			spoiler = `onclick="this.classlist.toggle('revealed')"`;
+		}
+		
 		fullview += `
 		<div class="gallery-full" id="${name}-full">
 			<img src="hoard_of_shinies/gallery/${path}" alt="${alt}">
 		</div>
 		`;
 		thumbview += `
-		<span class="gallery-slot" id="${name}">
+		<span class="gallery-slot" id="${name}" ${spoiler}>
 			<img src="${makeStandard(currentpage.name)}/gallery/${path}" onclick="openGalleryImage('${name}')">
 		</span>
 		`;
@@ -532,6 +538,17 @@ if (gallery_images != null)
 {
 	document.getElementById('image_gallery').innerHTML = makeGallery(gallery_images);
 }
+
+//From https://www.reddit.com/r/Carrd/comments/1bopfvx/spoiler_tag_on_image/
+document.querySelectorAll('.spoiler').forEach(function(spoiler)
+{
+    spoiler.addEventListener('click', function()
+	{
+        spoiler.classList.toggle('revealed');
+    }
+	);
+}
+);
 
 function openGalleryImage(image)
 {
