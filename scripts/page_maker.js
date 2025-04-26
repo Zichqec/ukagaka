@@ -488,9 +488,11 @@ function makeGallery(gallery_images)
 		let alt = gallery_images[i].alt
 		
 		let spoiler = ``;
+		let spoilerclass = ``;
 		if (gallery_images[i].spoiler != null)
 		{
-			spoiler = `onclick="this.classlist.toggle('revealed')"`;
+			spoiler = `onclick="this.classList.toggle('revealed')"`;
+			spoilerclass = ` spoiler`;
 		}
 		
 		fullview += `
@@ -499,7 +501,7 @@ function makeGallery(gallery_images)
 		</div>
 		`;
 		thumbview += `
-		<span class="gallery-slot" id="${name}" ${spoiler}>
+		<span class="gallery-slot ${spoilerclass}" id="${name}" ${spoiler}>
 			<img src="${makeStandard(currentpage.name)}/gallery/${path}" onclick="openGalleryImage('${name}')">
 		</span>
 		`;

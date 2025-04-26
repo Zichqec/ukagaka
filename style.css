@@ -608,6 +608,7 @@ code
 .spoiler img
 {
 	display: none;
+	width: 100%;
 }
 
 .spoiler.revealed img
