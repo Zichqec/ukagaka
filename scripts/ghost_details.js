@@ -176,8 +176,8 @@ var item_details = [
 	{
 		name: "Hoard of Shinies",
 		release: "2025-03-27",
-		latest: "2025-04-22",
-		version: "v1.0.4",
+		latest: "2025-04-27",
+		version: "v1.0.5",
 		forevent: null,
 		collaborators: null,
 		translations: null,
