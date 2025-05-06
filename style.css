@@ -612,13 +612,7 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 	background-color: #CCCCCC;
 	display: inline-block;
 	cursor: pointer;
-	padding: 0px;
 	max-height: 300px;
-}
-
-.gallery-row > .spoilerimg
-{
-	overflow: hidden;
 }
 
 .spoilerimg img
@@ -626,14 +620,12 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 	opacity: 0.0;
 	width: 100%;
 	pointer-events: none;
-	padding: 0px;
 }
 
 .spoilerimg.revealed img
 {
 	opacity: 1.0;
 	pointer-events: auto;
-	padding: 0px;
 }
 
 .spoilerimg.revealed
@@ -651,11 +643,9 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 	left: 50%;
 	transform: translate(-50%, -50%);
 	pointer-events: none;
-	padding: 0px;
 }
 
 .spoilerimg.revealed:before
 {
 	display: none;
-	padding: 0px;
 }

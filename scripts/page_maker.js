@@ -487,22 +487,34 @@ function makeGallery(gallery_images)
 		let name = path.split(".")[0]
 		let alt = gallery_images[i].alt
 		
-		let spoilerclass = ``;
-		if (gallery_images[i].spoiler != null)
-		{
-			spoilerclass = ` spoilerimg`;
-		}
+		// let spoilerclass = ``;
+		// if (gallery_images[i].spoiler != null)
+		// {
+			// spoilerclass = ` spoilerimg`;
+		// }
 		
 		fullview += `
 		<div class="gallery-full" id="${name}-full">
 			<img src="hoard_of_shinies/gallery/${path}" alt="${alt}">
 		</div>
 		`;
-		thumbview += `
-		<span class="gallery-slot${spoilerclass}" id="${name}">
-			<img src="${makeStandard(currentpage.name)}/gallery/${path}" onclick="openGalleryImage('${name}')">
-		</span>
-		`;
+		if (gallery_images[i].spoiler != null)
+		{
+			thumbview += `
+			<span class="gallery-slot" id="${name}">
+				<span class="spoilerimg"><img src="${makeStandard(currentpage.name)}/gallery/${path}" onclick="openGalleryImage('${name}')"></span>
+			</span>
+			`;
+		}
+		else
+		{
+			thumbview += `
+			<span class="gallery-slot" id="${name}">
+				<img src="${makeStandard(currentpage.name)}/gallery/${path}" onclick="openGalleryImage('${name}')">
+			</span>
+			`;
+		}
+		
 	}
 	
 	let output = ``;
