@@ -638,7 +638,7 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 {
 	/* content: "Click to reveal image"; */
 	color: #EBEBEB;
-	position: absolute; /* this is garbo lol */
+	position: absolute; /* this is garbo lol - i think i can get text to appear on top of the spoiler element on the js side and then i'll have to figure out how to position it now that i changed the way the elements are setup. unsure what position i need but absolute is almost certainly not it */
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
