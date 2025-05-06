@@ -726,7 +726,7 @@ for (let i = 0; i < sortbuttonsType.length; i++)
 		{
 			sortbuttonsType[i].className = sortbuttonsType[i].className.replace(" SortActive","");
 		}
-		this.className += " SortActive";	
+		this.className += " SortActive";
 	});
 }
 
@@ -738,7 +738,7 @@ for (let i = 0; i < sortbuttonsDir.length; i++)
 		{
 			sortbuttonsDir[i].className = sortbuttonsDir[i].className.replace(" SortActive","");
 		}
-		this.className += " SortActive";	
+		this.className += " SortActive";
 	});
 }
 

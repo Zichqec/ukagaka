@@ -540,8 +540,8 @@ code
 
 .gallery-row > .gallery-slot
 {
-	padding: 4px;
-	overflow: auto;
+	padding: 0px 4px 0px 4px;
+	overflow: auto; /* This makes the spoiler stick out oddly...? with this off, the spoiler sticks out only before being revealed... with this on, it sticks up after being revealed. annoying... */
 	white-space: nowrap;
 }
 
@@ -560,6 +560,7 @@ code
 .gallery-slot img
 {
 	max-height: 300px;
+	cursor: pointer;
 }
 
 .gallery-backdrop
@@ -589,6 +590,7 @@ code
 	padding: 0;
 	/* width: 90%; */
 	max-width: 1200px;
+	cursor: pointer;
 }
 
 .gallery-full
@@ -596,38 +598,64 @@ code
 	display: none;
 }
 
+/*
+
+I CAN'T FOR THE LIFE OF ME FIGURE OUT WHERE THE EXTRA PADDING ON BOTTOM IS COMING FROM BEFORE THE SPOILER IS CLICKED
+I managed to make it so that at least after the reveal it doesn't stick upwards. but. man, how irritating. i've tried crawling around with the inspector a bunch and i can't find anything to make it go away...
+It seems like maybe it happens because the gallery slot containers are lower than the images, but on the non-spoiler ones it doesn't matter? i'm dying. ... WAIT
+
+*/
 
 /* spoiler images (from https://www.reddit.com/r/Carrd/comments/1bopfvx/spoiler_tag_on_image/ ) */
-.spoiler
+.spoilerimg
 {
 	background-color: #CCCCCC;
 	display: inline-block;
 	cursor: pointer;
+	padding: 0px;
+	max-height: 300px;
 }
 
-.spoiler img
+.gallery-row > .spoilerimg
 {
-	display: none;
+	overflow: hidden;
+}
+
+.spoilerimg img
+{
+	opacity: 0.0;
 	width: 100%;
+	pointer-events: none;
+	padding: 0px;
 }
 
-.spoiler.revealed img
+.spoilerimg.revealed img
 {
-	display: block;
+	opacity: 1.0;
+	pointer-events: auto;
+	padding: 0px;
 }
 
-.spoiler:before
+.spoilerimg.revealed
 {
-	content: "Click to reveal image";
+	background-color: transparent; /* This hides the color but I need to resolve the padding first */
+	overflow: visible;
+}
+
+.spoilerimg:before
+{
+	/* content: "Click to reveal image"; */
 	color: #EBEBEB;
-	position: absolute;
+	position: absolute; /* this is garbo lol */
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	pointer-events: none;
+	padding: 0px;
 }
 
-.spoiler.revealed:before
+.spoilerimg.revealed:before
 {
 	display: none;
+	padding: 0px;
 }

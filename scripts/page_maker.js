@@ -487,12 +487,10 @@ function makeGallery(gallery_images)
 		let name = path.split(".")[0]
 		let alt = gallery_images[i].alt
 		
-		let spoiler = ``;
 		let spoilerclass = ``;
 		if (gallery_images[i].spoiler != null)
 		{
-			spoiler = `onclick="this.classList.toggle('revealed')"`;
-			spoilerclass = ` spoiler`;
+			spoilerclass = ` spoilerimg`;
 		}
 		
 		fullview += `
@@ -501,7 +499,7 @@ function makeGallery(gallery_images)
 		</div>
 		`;
 		thumbview += `
-		<span class="gallery-slot ${spoilerclass}" id="${name}" ${spoiler}>
+		<span class="gallery-slot${spoilerclass}" id="${name}">
 			<img src="${makeStandard(currentpage.name)}/gallery/${path}" onclick="openGalleryImage('${name}')">
 		</span>
 		`;
@@ -524,7 +522,7 @@ function makeGallery(gallery_images)
 	output += `
 	</div>
 </div>
-<div class="gallery-row">
+<div id="gallery_display" class="gallery-row">
 	`;
 	
 	output += thumbview;
@@ -542,15 +540,28 @@ if (gallery_images != null)
 }
 
 //From https://www.reddit.com/r/Carrd/comments/1bopfvx/spoiler_tag_on_image/
-document.querySelectorAll('.spoiler').forEach(function(spoiler)
+// document.querySelectorAll('.spoiler').forEach(function(spoiler)
+// {
+    // spoiler.addEventListener('click', function()
+	// {
+        // spoiler.classList.toggle('revealed');
+    // }
+	// );
+// }
+// );
+
+let gallerycontainer = document.getElementById("gallery_display");
+let spoileredImages = gallerycontainer.getElementsByClassName("spoilerimg");
+for (let i = 0; i < spoileredImages.length; i++)
 {
-    spoiler.addEventListener('click', function()
-	{
-        spoiler.classList.toggle('revealed');
-    }
-	);
+	spoileredImages[i].addEventListener("click", function() {
+		//this.classList.toggle('revealed');
+		if (this.className.indexOf("revealed") == -1)
+		{
+			this.className += " revealed";
+		}
+	});
 }
-);
 
 function openGalleryImage(image)
 {
