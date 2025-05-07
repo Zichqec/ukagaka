@@ -543,6 +543,11 @@ code
 	padding: 0px 4px 0px 4px;
 	/*overflow: auto;*/ /* This makes the spoiler stick out oddly...? with this off, the spoiler sticks out only before being revealed... with this on, it sticks up after being revealed. annoying... */
 	white-space: nowrap;
+	/* position: relative; */
+	/* width: 300px; */
+	/* height: 300px; */
+	/* display: inline-block; */
+	
 }
 
 .gallery-row:after
@@ -554,9 +559,15 @@ code
 
 .gallery-slot img
 {
+	/* height: auto; */
+	/* width: auto; */
 	max-height: 300px;
-	max-width: 300px;
+	/* max-width: 300px; */ /* I think it's nicer if they fill the box to the top... */
 	cursor: pointer;
+	/* position: absolute; */
+	/* left: 0; */
+	/* bottom: 0; */
+	vertical-align: bottom;
 }
 
 .gallery-backdrop
