@@ -21,8 +21,6 @@ else
 	index_details = item_details;
 }
 
-console.log(pagename);
-
 for (let i = 0; i < index_details.length; i++)
 {
 	if (makeStandard(index_details[i].name) == pagename)
@@ -33,9 +31,6 @@ for (let i = 0; i < index_details.length; i++)
 		currentpage = index_details[i]
 	}
 }
-
-console.log(currentpage);
-console.log(currentpage.name);
 
 let shell_list = []
 
@@ -447,15 +442,23 @@ function makePageIndex()
 {
 	output = ``;
 	
+	if (typeof gallery_images !== 'undefined')
+	{
+		if (gallery_images.length > 0)
+		{
+			output += `<a href="#gallery">Gallery</a><br>`;
+		}
+	}
+	
 	if (pagetype == "ghost")
 	{
 		if (shell_list.length > 0)
 		{
-			output += `<a href="#shells_by_me">Shells by me</a><br>`
+			output += `<a href="#shells_by_me">Shells by me</a><br>`;
 		}
 		if (shells_by_others.length > 0)
 		{
-			output += `<a href="#shells_by_others">Shells by others</a><br>`
+			output += `<a href="#shells_by_others">Shells by others</a><br>`;
 		}
 	}
 	
@@ -469,7 +472,7 @@ function makePageIndex()
 		output = `
 		<h2>Index</h2>
 		<p>
-		` + output + `</p>`
+		` + output + `</p>`;
 	}
 	
 	return output;
@@ -544,9 +547,12 @@ function makeGallery(gallery_images)
 	return output;
 }
 
-if (gallery_images != null)
+if (typeof gallery_images !== 'undefined')
 {
-	document.getElementById('image_gallery').innerHTML = makeGallery(gallery_images);
+	if (gallery_images.length > 0)
+	{
+		document.getElementById('gallery').innerHTML = makeGallery(gallery_images);
+	}
 }
 
 //From https://www.reddit.com/r/Carrd/comments/1bopfvx/spoiler_tag_on_image/
@@ -561,20 +567,23 @@ if (gallery_images != null)
 // );
 
 let gallerycontainer = document.getElementById("gallery_display");
-let spoileredImages = gallerycontainer.getElementsByClassName("spoilerimg");
-for (let i = 0; i < spoileredImages.length; i++)
+if (gallerycontainer != null)
 {
-	spoileredImages[i].addEventListener("click", function() {
-		//this.classList.toggle('revealed');
-		if (this.className.indexOf("revealed") == -1)
-		{
-			this.className += " revealed";
-		}
-		
-		//Add "revealed" to the warning text to clear it too
-		let warningMessage = spoileredImages[i].getElementsByClassName("spoilerimgwarning");
-		warningMessage[0].className += " revealed";
-	});
+	let spoileredImages = gallerycontainer.getElementsByClassName("spoilerimg");
+	for (let i = 0; i < spoileredImages.length; i++)
+	{
+		spoileredImages[i].addEventListener("click", function() {
+			//this.classList.toggle('revealed');
+			if (this.className.indexOf("revealed") == -1)
+			{
+				this.className += " revealed";
+			}
+			
+			//Add "revealed" to the warning text to clear it too
+			let warningMessage = spoileredImages[i].getElementsByClassName("spoilerimgwarning");
+			warningMessage[0].className += " revealed";
+		});
+	}
 }
 
 function openGalleryImage(image)

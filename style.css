@@ -531,7 +531,7 @@ code
 /* Gallery stuff */
 .gallery-row
 {
-	background: #b6b5b6;
+	background: #dedede; /* #b6b5b6; */
 	padding: 14px 10px 16px 10px;
 	border-radius: 3px;
 	overflow: auto;
