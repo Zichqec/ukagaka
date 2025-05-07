@@ -500,9 +500,13 @@ function makeGallery(gallery_images)
 		`;
 		if (gallery_images[i].spoiler != null)
 		{
+			//
 			thumbview += `
 			<span class="gallery-slot" id="${name}">
-				<span class="spoilerimg"><img src="${makeStandard(currentpage.name)}/gallery/${path}" onclick="openGalleryImage('${name}')"></span>
+				<div class="spoilerimg">
+					<img src="${makeStandard(currentpage.name)}/gallery/${path}" onclick="openGalleryImage('${name}')"><span class="spoilerimgwarning">${gallery_images[i].spoiler}</span>
+				</div>
+				
 			</span>
 			`;
 		}
@@ -572,6 +576,10 @@ for (let i = 0; i < spoileredImages.length; i++)
 		{
 			this.className += " revealed";
 		}
+		
+		//Add "revealed" to the warning text to clear it too
+		let warningMessage = spoileredImages[i].getElementsByClassName("spoilerimgwarning");
+		warningMessage[0].className += " revealed";
 	});
 }
 

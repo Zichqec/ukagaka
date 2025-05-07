@@ -541,7 +541,7 @@ code
 .gallery-row > .gallery-slot
 {
 	padding: 0px 4px 0px 4px;
-	overflow: auto; /* This makes the spoiler stick out oddly...? with this off, the spoiler sticks out only before being revealed... with this on, it sticks up after being revealed. annoying... */
+	/*overflow: auto;*/ /* This makes the spoiler stick out oddly...? with this off, the spoiler sticks out only before being revealed... with this on, it sticks up after being revealed. annoying... */
 	white-space: nowrap;
 }
 
@@ -552,14 +552,10 @@ code
 	/* clear: both; */
 }
 
-.gallery-slot
-{
-	/* float: left; */
-}
-
 .gallery-slot img
 {
 	max-height: 300px;
+	max-width: 300px;
 	cursor: pointer;
 }
 
@@ -613,6 +609,9 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 	display: inline-block;
 	cursor: pointer;
 	max-height: 300px;
+	text-align: center;
+	position: relative;
+	/* overflow: scroll; */
 }
 
 .spoilerimg img
@@ -630,22 +629,23 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 
 .spoilerimg.revealed
 {
-	background-color: transparent; /* This hides the color but I need to resolve the padding first */
+	background-color: transparent;
 	overflow: visible;
 }
 
-.spoilerimg:before
+.spoilerimgwarning
 {
-	/* content: "Click to reveal image"; */
-	color: #EBEBEB;
-	position: absolute; /* this is garbo lol - i think i can get text to appear on top of the spoiler element on the js side and then i'll have to figure out how to position it now that i changed the way the elements are setup. unsure what position i need but absolute is almost certainly not it */
+	color: #222020;
+	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	pointer-events: none;
+	white-space: normal;
+	overflow-wrap: anywhere; /* for some reason break-word wasn't doing it?? */
 }
 
-.spoilerimg.revealed:before
+.spoilerimgwarning.revealed
 {
 	display: none;
 }
