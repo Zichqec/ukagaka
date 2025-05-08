@@ -209,6 +209,18 @@ var item_details = [
 		tags: ["2020","Includes my art","Made for a ghost","Soft brush","Plain text area","Dark text on light background","Extra sizes"]
 	},
 	{
+		name: "In the Meadow",
+		release: "2024-05-02",
+		latest: null,
+		version: "v1.0.0",
+		forevent: null,
+		goeswith: [{name: "Encore! Onto Another Life", download: "https://github.com/GallaTheGalla/encore_onto_another_life/releases/latest"}],
+		collaborators: null,
+		download: ["https://www.mediafire.com/file/uh1bf81tvz7wpxa/in_the_meadow_v1.0.0.nar/file"],
+		blurb: "A meadow themed balloon, inspired by <a href='https://wikiwiki.jp/feeshell/field'>this freeshell</a>! Comes in 4 sizes.",
+		tags: ["2024","Includes my art","Made for a ghost","Pixel brush","Plain text area","Dark text on light background","Extra sizes"]
+	},
+	{
 		name: "Leap Day Frog",
 		release: "2024-02-29",
 		latest: null,
