@@ -183,6 +183,10 @@ var item_details = [
 		translations: null,
 		content_warnings: null,
 		download: "https://github.com/Zichqec/hoard_of_shinies/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/hoard_of_shinies"}
+		],
 		blurb: "Hang out with your merfolk friend in your collection of everything that sparkles and shines!<br><br>A quick ghost made (mostly) in an afternoon! I was eager to try writing a new ghost in Aosora. Uses an edited version of the freeshell <a href='https://ako-kipali.tumblr.com/ghost-stuff'>Merfolk May</a> by Kipali!",
 		tags: ["2025", "Aosora", "Uses freeshell", "Includes my writing", "Includes my code", "Idle chatter"]
 	},
