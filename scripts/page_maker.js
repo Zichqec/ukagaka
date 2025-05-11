@@ -229,7 +229,7 @@ function ItemInfo()
 	if (currentpage.readmore != null)
 	{
 		output += `<br>
-		<b>Read more at:</b> `
+		<b>Read more at (external links):</b> `
 		for (let i = 0; i < currentpage.readmore.length; i++)
 		{
 			if (i > 0)
