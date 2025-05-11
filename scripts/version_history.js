@@ -17,7 +17,7 @@ function makeHistory(hist)
 		
 		for (let patch of ver.patches)
 		{
-			output += `<h4>${patch.version} - ${patch.released}</h4>`;
+			output += `<h4>${patch.version} – ${patch.released}</h4>`;
 			output += `<ul>`;
 			for (let change of patch.changelog)
 			{
