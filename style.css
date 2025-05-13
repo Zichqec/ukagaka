@@ -660,3 +660,62 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 {
 	display: none;
 }
+
+
+
+
+.half_articles
+{
+	display: flex;
+	max-width: 1290px;
+	margin: auto;
+}
+
+.lefthalf
+{
+	flex: 0 0 50%;
+	margin: auto;
+	margin-right: 2px;
+}
+
+.righthalf
+{
+	flex: 1;
+	margin: auto;
+	margin-left: 3px;
+}
+
+/* Half articles on the main page */
+@media screen and (max-width: 600px)
+{
+	.half_articles
+	{
+		display: block;
+	}
+	
+	.lefthalf
+	{
+		flex: 0 0 50%;
+		margin: auto;
+	}
+
+	.righthalf
+	{
+		flex: 1;
+		margin: auto;
+	}
+}
+
+.lefthalf article, .righthalf article
+{
+	min-height: 300px;
+	max-height: 300px;
+	overflow: hidden;
+}
+
+.blogfeed
+{
+	/* min-height: 300px; */
+	max-height: 250px;
+	overflow: scroll;
+}
