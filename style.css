@@ -673,7 +673,7 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 
 .lefthalf
 {
-	flex: 0 0 50%;
+	flex: 0 0 45%;
 	margin: auto;
 	margin-right: 2px;
 }
@@ -695,7 +695,7 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 	
 	.lefthalf
 	{
-		flex: 0 0 50%;
+		flex: 0 0 45%;
 		margin: auto;
 	}
 
@@ -708,14 +708,14 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 
 .lefthalf article, .righthalf article
 {
-	min-height: 300px;
-	max-height: 300px;
+	min-height: 500px;
+	max-height: 500px;
 	overflow: hidden;
 }
 
-.blogfeed
+.scrollfeed
 {
 	/* min-height: 300px; */
-	max-height: 250px;
+	max-height: 450px;
 	overflow: scroll;
 }
