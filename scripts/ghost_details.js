@@ -690,5 +690,27 @@ var item_details = [
 		],
 		blurb: "A collaborative event ghost that I participated in! (Romanization: Ghost Yaminabe / Translation: Ghost Dark Pot) Most of the dialogue is in Japanese, but Galla and I participated and wrote some English dialogue together. Unfortunately, due to a last-minute calculation error on my part, the English dialogue shows extremely rarely. But I swear it's there!<br><br>Note that the shell is a modified version of eVe.'s \"うにゅっとしたフリーシェル\".",
 		tags: ["2024", "Satori", "Collab", "Uses freeshell", "Includes my writing", "For event", "Ghost Yaminabe", "Idle chatter"],
+	},
+	{
+		name: "ゴースト闇鍋-おかわり",
+		release: "2025-03-02",
+		latest: null,
+		version: null,
+		forevent: "ゴースト闇鍋",
+		collaborators:
+		[
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+			{name: "See event page for other participants", creditlink: null}
+		],
+		translations: null,
+		content_warnings: null,
+		download: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=yaminabe_okawari",
+		readmore:
+		[
+			{label: "Event rules page", url: "https://sites.google.com/view/ghost-yaminabe-okawari/%E4%BC%81%E7%94%BB%E6%A6%82%E8%A6%81"},
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/ゴースト闇鍋-おかわり"},
+		],
+		blurb: "A collaborative event ghost that I participated in! (Romanization: Ghost Yaminabe-okawari / Translation: Ghost Dark Pot-refill) There is dialogue in both Japanese and English. I collaborated with Galla again this year, and this time there are 50 dialogues from us to see. Our theme this year was \"Rules of Life\".<br><br>Note that the shell is a modified version of eVe.'s \"うにゅっとしたフリーシェル\".",
+		tags: ["2024", "Satori", "Collab", "Uses freeshell", "Includes my writing", "For event", "Ghost Yaminabe", "Idle chatter"],
 	}
 ]
