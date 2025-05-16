@@ -237,7 +237,7 @@ function ItemInfo()
 				output += `, `;
 			}
 			
-			output += `<a href="${currentpage.readmore[i].url}">${currentpage.readmore[i].label}</a>`
+			output += `<a href="${currentpage.readmore[i].url}" target="_blank">${currentpage.readmore[i].label}</a>`
 		}
 	}
 	

@@ -18,6 +18,10 @@ var item_details = [
 		goeswith: null,
 		collaborators: null,
 		download: ["https://github.com/Zichqec/ancient_gem_balloon/releases/latest"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/ancient_gem_balloon"},
+		],
 		blurb: "A gem themed balloon made for Etc. Jam 2025. Perhaps you'll find some treasures deep within this cave.",
 		tags: ["2025","Includes my art","For event","Etc. Jam","Pixel brush","Plain text area","Light text on dark background","Extra sizes"]
 	},
@@ -33,6 +37,10 @@ var item_details = [
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://github.com/Zichqec/SSP_Angel_Balloons"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/angelbox"},
+		],
 		blurb: "An angel themed balloon, with a decorative halo and wings! The text area is large and plain, to optimize readability and allow a lot of text to be shown at once. The sakura and kero balloons have slightly different halo/wing colors, to suit each of the characters in SSP Angel. Each balloon comes in 4 sizes.",
 		tags: ["2023","Collab","Includes my art","Made for a ghost","Pixel brush","Plain text area","Dark text on light background","Extra sizes","Multiple characters"]
 	},
@@ -48,6 +56,10 @@ var item_details = [
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://github.com/Zichqec/SSP_Angel_Balloons"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/angelbox_biblically_accurate"},
+		],
 		blurb: "An expanded version of the Angelbox balloon, with all the same features, but in 43 different color options! All color options include alternate color arrows, markers, and even input boxes. Color options created by Galla, with the exception of the galaxy patterns, which were drawn by me.",
 		tags: ["2023","Collab","Includes my art","Made for a ghost","Pixel brush","Plain text area","Dark text on light background","Color alts","Extra sizes","Multiple characters"]
 	},
@@ -63,6 +75,11 @@ var item_details = [
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://www.mediafire.com/file/jfry7471otzocq3/balloons_balloon_gz_v1.0.1.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/balloons_balloon"},
+			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/balloons/balloons_balloon"},
+		],
 		blurb: "A balloon themed balloon, with 2 sizes, and a second, slimmer design. Drawn by Galla and assembled by me!",
 		tags: ["2022","Collab","Made for a ghost","Pixel brush","Plain text area","Dark text on light background"]
 	},
@@ -75,6 +92,10 @@ var item_details = [
 		goeswith: ["Call of the Sea"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/6dnsg0dn6jg8p43/beach_day_gone_wrong_v1.0.2.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/beach_day_gone_wrong"},
+		],
 		blurb: "A beach/ocean themed balloon with 2 sizes. Text starts at the bottom, and \"bubbles\" up to the top as the balloon scrolls for a thematic effect!",
 		tags: ["2023","Includes my art","Made for a ghost","Soft brush","Patterned text area","Light text on dark background"]
 	},
@@ -87,6 +108,10 @@ var item_details = [
 		goeswith: null,
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/q491sq7oaue5gk8/cardboard_zi_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/cardboard"},
+		],
 		blurb: "A cardboard themed balloon with 3 sizes! The online marker shows the cardboard becoming wet on the corner.",
 		tags: ["2022","Includes my art","Soft brush","Patterned text area","Dark text on light background","Extra sizes"]
 	},
@@ -102,6 +127,10 @@ var item_details = [
 			{name: "Zarla", creditlink: "http://ashido.com/ukagaka/"}
 		],
 		download: ["http://www.drdowasure.com/ct_epoch_jam/index.html"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/chrono_trigger"},
+		],
 		blurb: "A balloon styled after the text boxes in the game Chrono Trigger, made during Ghost Jam 2021. The background texture was made by Zarla, and pulled the balloon together nicely!",
 		tags: ["2021","Collab","Includes my art","Made for a ghost","Pixel brush","Patterned text area","Light text on dark background"]
 	},
@@ -114,6 +143,10 @@ var item_details = [
 		goeswith: null,
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/neho8x4f6ld2dig/Comic_Pixel_Balloons.zip/file", "https://www.mediafire.com/folder/1mbemwfwnzupc/Cosmic_Pixel_Balloons"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/cosmic_pixel_balloon_pack"},
+		],
 		blurb: "A bundle of tiny pixel galaxy balloons, with white borders! Each comes in 3 sizes.",
 		tags: ["2022","Includes my art","Balloon pack","Pixel brush","Patterned text area","Light text on dark background","Color alts","Extra sizes"]
 	},
@@ -126,6 +159,10 @@ var item_details = [
 		goeswith: null,
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/jxay7yj46wb31gi/distant_lights_balloon_pack_v1.0.0.zip/file","https://www.mediafire.com/folder/6qyyy3yj3bux4/Distant_Lights_Balloon_Pack_v1.0.0"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/distant_lights_balloon_pack"},
+		],
 		blurb: "A simple set of balloons with gradient accents! I just felt like making some balloons one day. Hopefully easy to modify to your own color scheme, if you like!",
 		tags: ["2023","Includes my art","Balloon pack","Pixel brush","Plain text area","Light text on dark background","Color alts","Extra sizes"]
 	},
@@ -138,6 +175,10 @@ var item_details = [
 		goeswith: ["Lulo"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/nsi0djqput828bg/dream_cloud_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/dream_cloud"},
+		],
 		blurb: "A dreamy, cloud themed balloon, which has 3 color options for the sakura! Each comes with 2 sizes.",
 		tags: ["2021","Includes my art","Made for a ghost","Soft brush","Patterned text area","Light text on dark background","Color alts"]
 	},
@@ -154,6 +195,10 @@ var item_details = [
 			{name: "月波 清火 (Tsukinami Seika)", creditlink: "https://tukinami.github.io/"}
 		],
 		download: ["https://www.mediafire.com/file/2vd223dsco0ji5x/effortless_iridescence_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/effortless_iridescence"},
+		],
 		blurb: "Gaze into the depths of a gem containing a universe. Comes in 4 sizes, and looks very edible if you ask me.",
 		tags: ["2024","Collab","Includes my art","For event","Ghost Jam","Made for a ghost","Pixel brush","Soft brush","Patterned text area","Dark text on light background","Extra sizes"]
 	},
@@ -166,6 +211,10 @@ var item_details = [
 		goeswith: ["Xander's Refuge"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/s2i1xkf6xhx68aj/flip_of_a_coin_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/flip_of_a_coin"},
+		],
 		blurb: "A simple green and brown balloon with a coin flipping animation for the online marker. If you really squint, you can also pretend the choice markers are clovers. Comes in 4 different sizes.",
 		tags: ["2023","Includes my art","Made for a ghost","Pixel brush","Plain text area","Dark text on light background","Extra sizes"]
 	},
@@ -178,6 +227,10 @@ var item_details = [
 		goeswith: null,
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/0621yy5qymuutin/Galaxy_Balloon_Pack_v1.1.1.zip/file", "https://www.mediafire.com/folder/o0tatvi44cfnq/Galaxy_Balloons_v1.1.1"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/galaxy_balloon_pack"},
+		],
 		blurb: "A pack of galaxy balloons using the same base as the Soul Balloon Pack, but with galaxy pictures from NASA! The readability is a little rough, but they're pretty. Note that these balloons are set to bold by default, which I don't recommend doing if you're making balloons! But I don't want to change the look of the balloons now. Don't miss the matching <a href='../calendar_skin/galaxy.html'>Galaxy calendar skin</a>!",
 		tags: ["2020","Includes my art","Balloon pack","Soft brush","Patterned text area","Light text on dark background","Color alts"]
 	},
@@ -193,6 +246,10 @@ var item_details = [
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://github.com/GallaTheGalla/ghost_balloon/releases/latest"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/ghost_balloon"},
+		],
 		blurb: "A ghost themed balloon for all your ghost balloon needs! Made to go with the plugin <a href='../plugin/spectre.html'>Spectre</a>. Comes in 4 sizes.",
 		tags: ["2024","Collab","Includes my art","For event","Etc. Jam","Made for a ghost","Pixel brush","Plain text area","Dark text on light background","Extra sizes"]
 	},
@@ -205,6 +262,10 @@ var item_details = [
 		goeswith: ["Hydrate"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/m6cga89ate7z2x7/h2o_v1.1.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/h2o"},
+		],
 		blurb: "A simple water themed balloon with 3 different sizes!",
 		tags: ["2020","Includes my art","Made for a ghost","Soft brush","Plain text area","Dark text on light background","Extra sizes"]
 	},
@@ -217,6 +278,10 @@ var item_details = [
 		goeswith: null,
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/ddk58j2d2dmafpa/leap_day_frog_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/leap_day_frog"},
+		],
 		blurb: "A silly little frog balloon made for leap day 2024! It comes in 4 sizes, and 2 color options. The eyes blink when in online mode.",
 		tags: ["2024","Includes my art","Pixel brush","Plain text area","Dark text on light background","Color alts","Extra sizes"]
 	},
@@ -229,6 +294,10 @@ var item_details = [
 		goeswith: null,
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/f0wg9rmtj386j5u/minimal_neon_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/minimal_neon"},
+		],
 		blurb: "A balloon with neon accents, set up to support 8 characters each with their own color. The colors can be manually mixed and matched to get the options you prefer! The online marker causes the sidebar to glow subtly. Each color has 3 different sizes.",
 		tags: ["2022","Includes my art","Pixel brush","Plain text area","Light text on dark background","Color alts","Extra sizes","Multiple characters"]
 	},
@@ -241,6 +310,10 @@ var item_details = [
 		goeswith: null,
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/scxvbn3qzx7xvhm/minimalism_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/minimalism"},
+		],
 		blurb: "A silly challenge balloon where I tried to make a balloon with as few files as possible! It has only a single size for this reason. There are 6 files total, with the readme being stored as comments in the install.txt file.",
 		tags: ["2022","Includes my art","Pixel brush","Plain text area","Dark text on light background"]
 	},
@@ -256,6 +329,10 @@ var item_details = [
 			{name: "Venelona", creditlink: "https://venelona.tumblr.com/"}
 		],
 		download: ["https://www.mediafire.com/file/0p615t180u08wnw/moth_chat_vz_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/moth_chat"},
+		],
 		blurb: "A balloon styled to resemble a chatting program! The text starts typing at the bottom and moves upwards, to complete the effect. This balloon was drawn by Venelona and assembled by me. Note that the balloon was originally released bundled with @funkylittlemothman, and was only released separately on August 2nd, 2023.",
 		tags: ["2023","Made for a ghost","Soft brush","Plain text area","Light text on dark background"]
 	},
@@ -271,6 +348,11 @@ var item_details = [
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://www.mediafire.com/file/391sk3n5ttuy188/needloon_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/needloon"},
+			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/balloons/needloon"},
+		],
 		blurb: "A balloon made for Needle, of Needle, debatably by Needle! Made using a warped version of the original Needle shell, which was drawn by Galla. Comes with 2 sizes, and suits any and every ghost perfectly.",
 		tags: ["2022","Collab","Made for a ghost","Pixel brush","Patterned text area","Light text on dark background"]
 	},
@@ -286,6 +368,10 @@ var item_details = [
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://www.mediafire.com/file/teo2cwcq9x0t2ay/needloon_readable_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/needloon_readable"},
+		],
 		blurb: "We all know that Needloon is the most beautiful balloon in the world, but I think we can all admit it's not the most readable. Here's a more readable Needloon.",
 		tags: ["2024","Collab","Includes my art","Made for a ghost","Pixel brush","Plain text area","Dark text on light background"]
 	},
@@ -298,6 +384,10 @@ var item_details = [
 		goeswith: ["FLUX"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/2zeja7ggyawtnzn/notes_v1.1.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/notes"},
+		],
 		blurb: "A plain balloon with a music note motif in the markers! Comes with a dark mode and light mode, in 3 sizes each.",
 		tags: ["2021","Includes my art","Made for a ghost","Soft brush","Plain text area","Dark text on light background","Light text on dark background","Color alts","Extra sizes"]
 	},
@@ -310,6 +400,10 @@ var item_details = [
 		goeswith: ["FLUX"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/7g1dq1hs6wk6wjm/notes_light_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/notes_light"},
+		],
 		blurb: "An alternate version of the Notes balloon, which has just the light mode version! This is useful if you want to use the light mode with other ghosts that don't specifically support this balloon.",
 		tags: ["2021","Includes my art","Made for a ghost","Soft brush","Plain text area","Dark text on light background","Extra sizes"]
 	},
@@ -322,6 +416,10 @@ var item_details = [
 		goeswith: null,
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/eo1j0h3n2sxtc4v/ocean_fishies_zi_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/ocean_fishies"},
+		],
 		blurb: "An ocean themed balloon with a white border, and an online marker showing fish swimming in the background! Comes with 3 sizes.",
 		tags: ["2022","Includes my art","Pixel brush","Soft brush","Patterned text area","Light text on dark background","Extra sizes"]
 	},
@@ -337,6 +435,11 @@ var item_details = [
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://www.mediafire.com/file/jhzp9wrvfpj26im/paperboard_v1.0.1.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/paperboard"},
+			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/balloons/paperboard"},
+		],
 		blurb: "A large balloon themed after papaer, with some decorations. Comes with 5 sizes, and has a lot of space for things like minigames! Drawn by Galla and assembled by me.",
 		tags: ["2022","Collab","Made for a ghost","Pixel brush","Plain text area","Dark text on light background","Extra sizes"]
 	},
@@ -349,6 +452,10 @@ var item_details = [
 		goeswith: ["Quiet conversation over tea"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/qqosui1s5djyzob/quaint_little_cafe_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/quaint_little_cafe"},
+		],
 		blurb: "A café themed balloon! It's made to mimic the border style used by the ghost <a href='../ghost/quiet_conversation_over_tea.html'>Quiet conversation over tea</a>, and also uses the same background photo by <a href='https://unsplash.com/@minkus?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Minku Kang</a> on <a href='https://unsplash.com/photos/white-and-brown-wooden-dining-table-and-chairs-67EZZZl6jeI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Unsplash</a>. Comes in just 2 sizes.",
 		tags: ["2024","Includes my art","Made for a ghost","Soft brush","Patterned text area","Light text on dark background"]
 	},
@@ -361,6 +468,10 @@ var item_details = [
 		goeswith: ["May I have a book please?"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/k97pzqnpvkp4bep/reading_is_for_owls_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/reading_is_for_owls"},
+		],
 		blurb: "A library-inspired balloon, inspired by <a href='https://wikiwiki.jp/feeshell/%E3%82%AB%E3%83%95%E3%82%A7%E3%82%AA%E3%83%AC%E3%81%B3%E3%81%9F%E3%81%97%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3'>this freeshell</a>! It comes with 3 sizes, one of them being tiny (only suitable for 1 or 2 words), and tail options for side tails, bottom tails, or no tails.",
 		tags: ["2024","Includes my art","Made for a ghost","Soft brush","Plain text area","Dark text on light background","Extra sizes"]
 	},
@@ -376,6 +487,10 @@ var item_details = [
 			{name: "おもちよいち (OmochiYoichi)", creditlink: "https://sites.google.com/view/omochi-yoichi/"}
 		],
 		download: ["https://www.mediafire.com/file/f7tqe1e3c06020s/reflections_of_starlight_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/reflections_of_starlight"},
+		],
 		blurb: "View the endless stars in the reflection of a puddle! Comes with 4 sizes, and a pretty meteor shower online marker.",
 		tags: ["2024","Collab","Includes my art","For event","Ghost Jam","Made for a ghost","Soft brush","Patterned text area","Light text on dark background","Extra sizes"]
 	},
@@ -388,6 +503,10 @@ var item_details = [
 		goeswith: ["S the Skeleton"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/g1p7gbax94vmbx7/soul_balloons_v1.0.1.zip/file", "https://www.mediafire.com/folder/3jkp8thdgtoaw/Soul_Balloons_v1.0.1"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/soul_balloon_pack"},
+		],
 		blurb: "Vaguely undertale-themed balloons, with a simple look and subtle coloring. Comes in 8 different colors, each with the option to either have hearts, or \"souls\" (upside-down hearts)! Each comes in 2 sizes.",
 		tags: ["2020","Includes my art","Made for a ghost","Balloon pack","Soft brush","Plain text area","Light text on dark background","Color alts"]
 	},
@@ -400,6 +519,10 @@ var item_details = [
 		goeswith: null,
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/6w3z48152gtw79x/star_cloud_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/star_cloud"},
+		],
 		blurb: "A starry balloon with a pixel purple background and a white border! Comes with 3 sizes.",
 		tags: ["2022","Includes my art","Pixel brush","Patterned text area","Light text on dark background","Extra sizes"]
 	},
@@ -412,6 +535,10 @@ var item_details = [
 		goeswith: ["Warrior Generator"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/0zgg4tn1m6hgdf7/starclan_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/starclan"},
+		],
 		blurb: "A Warrior Cats themed balloon, with a starry background and decorative cat ear shape! The sakura balloon is blue, while the kero balloon is purple. Each has 3 sizes.",
 		tags: ["2021","Includes my art","Made for a ghost","Soft brush","Patterned text area","Light text on dark background","Color alts","Extra sizes","Multiple characters"]
 	},
@@ -424,6 +551,10 @@ var item_details = [
 		goeswith: ["Skyrim Guard"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/7f4i4zzmjlhpki2/tamriel_v1.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/tamriel"},
+		],
 		blurb: "A balloon styled after the choice menus in Skyrim! It's partially transparent, and comes in 2 sizes.",
 		tags: ["2022","Includes my art","Made for a ghost","Soft brush","Plain text area","Light text on dark background","Semi-transparent"]
 	},
@@ -436,6 +567,10 @@ var item_details = [
 		goeswith: ["KEEP FROZEN"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/tizddu8hf1gmcze/thaw_v1.0.2.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/thaw"},
+		],
 		blurb: "A tiny ice themed balloon, with a semi-transparent border! The online marker shows the icicles dripping. Comes in 3 sizes.",
 		tags: ["2022","Includes my art","Made for a ghost","Soft brush","Plain text area","Light text on dark background","Semi-transparent"]
 	},
@@ -448,6 +583,10 @@ var item_details = [
 		goeswith: ["Ukatranslator"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/fcz450wyo4jdmu9/translator_zi_v1.0.2.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/translator"},
+		],
 		blurb: "A small, semi-transprent balloon, intended to stay out of the user's way as much as possible! Comes with 3 sizes.",
 		tags: ["2022","Includes my art","Made for a ghost","Soft brush","Plain text area","Dark text on light background","Extra sizes","Semi-transparent"]
 	},
@@ -460,6 +599,10 @@ var item_details = [
 		goeswith: ["Iea"],
 		collaborators: null,
 		download: ["http://www.mediafire.com/file/j8p262nv0l4w1hp/transmission.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/transmission"},
+		],
 		blurb: "A balloon featuring a moon in the corner! Made using the same base as the Soul Balloon Pack. Due to a mistake, the kero balloon has a slightly brighter gradient.",
 		tags: ["2020","Includes my art","Made for a ghost","Soft brush","Patterned text area","Light text on dark background"]
 	},
@@ -472,6 +615,10 @@ var item_details = [
 		goeswith: null,
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/bte26ac7kasudll/twinking_galaxy_hues_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/twinkling_galaxy_hues"},
+		],
 		blurb: "A galaxy themed balloon with an online marker that makes the stars glow and twinkle! I wanted to make several balloons like this, hence \"hues\" being appended to the name, but then I didn't because I wanted them to all have their own starfields and that sounded like a ton of work. Maybe one day I'll do more like this. Comes with 3 sizes.",
 		tags: ["2021","Includes my art","Soft brush","Patterned text area","Light text on dark background","Extra sizes"]
 	},
@@ -484,6 +631,10 @@ var item_details = [
 		goeswith: ["ATM Machine"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/avtn3jzm53t5bst/unyu_bank_notes_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/unyu_bank_notes"},
+		],
 		blurb: "A money and Unyu themed balloon! The smaller sizes of balloon are like a bill that has been folded over. Bigger sizes show the full design. Comes in 6 colors, each with 5 sizes, including a wide option.",
 		tags: ["2024","Includes my art","Made for a ghost","Pixel brush","Patterned text area","Dark text on light background","Light text on dark background","Color alts","Extra sizes"]
 	},
@@ -496,6 +647,10 @@ var item_details = [
 		goeswith: ["Dusty and Obsidian"],
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/bf2ds032oawk287/void_screen_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/void_screen"},
+		],
 		blurb: "A gray balloon with wingdings theming! The markers use pixel wingdings symbols, and a second copy of each of the sakura's balloons uses wingdings as the default font. The kero balloon is tiny, and has cat theming instead. Each balloon comes with 2 sizes.",
 		tags: ["2020","Includes my art","Made for a ghost","Pixel brush","Plain text area","Dark text on light background","Multiple characters"]
 	},
@@ -511,6 +666,10 @@ var item_details = [
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		download: ["https://www.mediafire.com/file/i6qr7o00yjejf73/wedges_balloons_gz_v1.0.0.zip/file", "https://www.mediafire.com/folder/ug6k36xrmw4du/Wedges_Balloons"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/wedges_balloon_pack"},
+		],
 		blurb: "A pack of balloons with a triangle theming! There are 36 balloons total. There is a 12 color rainbow of options for the accent colors, and light, dark, and mid options for each! Pick and choose what suits you/your project the best! This set of balloons is also very easily customized, thanks to the simple pixel style they use.<br><br>Also check out the matching <a href='../calendar_skin/wedges_calendar_skin_pack.html'>calendar skin pack</a>!",
 		tags: ["2023","Collab","Includes my art","For event","Etc. Jam","Balloon pack","Pixel brush","Plain text area","Dark text on light background","Light text on dark background","Color alts","Extra sizes"]
 	}

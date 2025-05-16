@@ -61,6 +61,7 @@ var item_details = [
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/balloons"},
+			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/ghosts/balloons"},
 		],
 		blurb: "Balloons has a big focus on a popping mechanic, where each balloon may be popped by clicking it, and which balloons have been popped will affect their dialogues. It also has a focus on its satisfying aesthetics, with a fun popping animation complete with sound effects, and a bobbing animation while idle.",
 		tags: ["2022", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Jam", "WIP"]
@@ -385,6 +386,7 @@ var item_details = [
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/needle"},
+			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/ghosts/needle"},
 		],
 		blurb: "It's the ghost sensation that started a whole genre! The one, the only, the amazing Needle! Put it on your desktop and hope it says things to you! Learn your true name, or reject it and gain a thousand nicknames! Enjoy your new life companion!!",
 		tags: ["2022", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter"]
@@ -426,6 +428,7 @@ var item_details = [
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/paper"},
+			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/ghosts/paper"},
 		],
 		blurb: "If you like minigames, then Paper, the god of minigames, is the desktop companion for you! Set it on your desktop and enjoy being pestered with games to no end! Just remember, you brought it here for games, so refusing to play would be rather rude...",
 		tags: ["2022", "YAYA", "Collab", "Includes my code", "For event", "Ghost Jam", "Minigames"]
@@ -523,6 +526,7 @@ var item_details = [
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/ssp_angel"},
+			{label: "haystack blog and oddities", url: "https://thatoddhaystack.neocities.org/ukagaka/ukagakaghosts#SSPAngel"},
 		],
 		blurb: "SSP Angel is here to teach you all about SSP! But fear not if you're already an experienced SSP user, SSP Angel is great for new and old users alike! They come with lots of tips and information, but you can also turn off their tips and be delighted by their 200 whimsical idle dialogues!",
 		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "Idle chatter", "Utility"]
@@ -681,6 +685,7 @@ var item_details = [
 		download: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=ghost_yaminabe",
 		readmore:
 		[
+			{label: "Event rules/release page", url: "https://telegra.ph/%E4%BC%81%E7%94%BB%E3%82%B4%E3%83%BC%E3%82%B9%E3%83%88%E9%97%87%E9%8D%8B-12-04"},
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/ゴースト闇鍋"},
 		],
 		blurb: "A collaborative event ghost that I participated in! (Romanization: Ghost Yaminabe / Translation: Ghost Dark Pot) Most of the dialogue is in Japanese, but Galla and I participated and wrote some English dialogue together. Unfortunately, due to a last-minute calculation error on my part, the English dialogue shows extremely rarely. But I swear it's there!<br><br>Note that the shell is a modified version of eVe.'s \"うにゅっとしたフリーシェル\".",
