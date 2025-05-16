@@ -674,11 +674,11 @@ var item_details = [
 		collaborators:
 		[
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
-			{name: "See page for all collaborators", creditlink: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=Ghost Yaminabe"}
+			{name: "See event page for other participants", creditlink: null}
 		],
 		translations: null,
 		content_warnings: null,
-		download: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=Ghost Yaminabe",
+		download: "https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=ghost_yaminabe",
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/ゴースト闇鍋"},
