@@ -225,6 +225,22 @@ function ItemInfo()
 		<b>Programming language:</b> ${currentpage.language}`;
 	}
 	
+	//"Read more at" display
+	if (currentpage.readmore != null)
+	{
+		output += `<br>
+		<b>Read more at (external links):</b> `
+		for (let i = 0; i < currentpage.readmore.length; i++)
+		{
+			if (i > 0)
+			{
+				output += `, `;
+			}
+			
+			output += `<a href="${currentpage.readmore[i].url}" target="_blank">${currentpage.readmore[i].label}</a>`
+		}
+	}
+	
 	output += `</p>`;
 
 	return output;

@@ -73,6 +73,7 @@ function makeStandard(input)
 	output = output.replace("+","");
 	output = output.replace("+",""); //I'll um... fix this later, I'm in a rush
 	output = output.replace("é","e"); //"Accented characters are fun", I said...
+	output = output.replace("ゴースト闇鍋-おかわり","ghost_yaminabe_okawari"); //Uh oh!!!
 	output = output.replace("ゴースト闇鍋","ghost_yaminabe"); //How many ghosts with names in jp could I possibly have!
 	
 	return output
