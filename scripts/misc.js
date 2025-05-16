@@ -66,6 +66,7 @@ function makeStandard(input)
 	output = output.replace("%","");
 	output = output.replace("@","");
 	output = output.replace("?","");
+	output = output.replace(/!/g,""); //who! would ever!! write more than one exclamation mark in a ghost name!!!
 	output = output.replace("'","");
 	output = output.replace(".","");
 	output = output.replace("(","");

@@ -1,6 +1,6 @@
 var item_tags = [
 	["2020","2021","2022","2023","2024","2025"],
-	["YAYA","Aosora","Satori"],
+	["YAYA","Aosora","Satori","Misaka"],
 	["Collab","Translations available","Uses freeshell","Includes my writing","Includes my art","Includes my code"],
 	["For event","Ghost Jam","Ghost Masquerade","Ghost Yaminabe","Idea Adoption Jam"],
 	["Idle chatter","Story","Utility","Minigames"],
@@ -196,6 +196,23 @@ var item_details = [
 		],
 		blurb: "Do you like art? Do you like lil guys that have bad opinions? Then have we got the ghost for you! This painting can either be an aesthetic companion with an attitude, or you can open the gallery and bring in a crowd to admire/mock anything and everything on your desktop.",
 		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "WIP"]
+	},
+	{
+		name: "Ghost Club!!!",
+		release: "2025-05-02",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "ゴーストマスカレード7",
+		collaborators: null,
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/ghost_club/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/ghost_club"},
+		],
+		blurb: "Your friend has started a \"Ghost Club\" and has invited you to join. Will you go...?<br><br>A small entry I made for Ghost Masquerade 7, using a SHIORI that was new to me: Misaka! Also uses the freeshell <a href='https://github.com/SmokyCinnamon/indifferentsorrel/releases/tag/scfs'>\"Sheet Cat\"</a> by <a href='https://smokycinnamon.github.io/indifferentsorrel'>SmokyCinnamonRoll</a>.",
+		tags: ["2025", "Misaka", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter"]
 	},
 	{
 		name: "Ghost Guides",
