@@ -13,6 +13,10 @@ var item_details = [
 		goeswith: [{name: "Notepad++", download: "https://notepad-plus-plus.org/downloads/"}],
 		collaborators: null,
 		download: "https://github.com/Zichqec/aosora_talk_block_udl",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/tool/aosora_talk_block_udl"},
+		],
 		blurb: "A Notepad++ UDL for highlighting in Aosora's talk blocks. This is best used if you keep most of your talk blocks separate from your other code blocks, because it doesn't have proper highlighting for normal code. Instead, it focuses on being able to dim SakuraScript tags for you, and highlight some of the unique syntax made for talk blocks.",
 		tags: ["2025","UDL"]
 	},
@@ -38,7 +42,7 @@ var item_details = [
 		collaborators: null,
 		download: "https://www.mediafire.com/file/9froflig23yvtd7/galaxy_blob.nar/file",
 		blurb: "A supplement file for <a href='https://zdzisiu.github.io/Cemetery/index.html'>Internet Teacup's</a> Anti Stress Blob, which changes the color of the blob to a galaxy pattern. The galaxy pattern was kindly provided to me by Galla, and matches the galaxy pattern used in their <a href'../ghost/hydrate.html'>Hydrate</a> shell, <a href='https://gallathegalla.github.io/gtg-ghosts/shells/hydrate'>Slimedration</a>.<br><br>This is <em>not</em> a separate shell, it <em>will</em> overwrite whatever colors you are currently using for your blob.",
-		tags: ["2022","Other"]
+		tags: ["2022","Supplement"]
 	},
 	{
 		name: "Galaxy Parrot",
@@ -73,6 +77,10 @@ var item_details = [
 		goeswith: [{name: "Notepad++", download: "https://notepad-plus-plus.org/downloads/"}],
 		collaborators: null,
 		download: "https://github.com/Zichqec/surfaces_txt_new_definition_udl",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/tool/surfaces.txt_new_definition_udl"},
+		],
 		blurb: "A Notepad++ UDL for highlighting in surfaces.txt. It may help with distinguishing between animations vs. patterns, and patterns vs. intervals/options. It may also help avoid some problems such as typos.<br><br>It can also dim the coordinate fields if they're set to 0,0, but please be aware that if the wait time is also set to 0 it will dim that too! This can lead to accidentally omitting the Y coordinate, so please be mindful of it.",
 		tags: ["2025","UDL"]
 	}
