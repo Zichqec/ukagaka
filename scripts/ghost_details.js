@@ -532,6 +532,23 @@ var item_details = [
 		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "Idle chatter", "Utility"]
 	},
 	{
+		name: "The Garden of Lost Souls",
+		release: "2025-05-02",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "ゴーストマスカレード7",
+		collaborators: null,
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/the_garden_of_lost_souls/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/the_garden_of_lost_souls"},
+		],
+		blurb: "You find yourself in a strange place, with only this unknown girl as your guide. Walk with her, and perhaps you'll learn more...<br><br>Uses the freeshell <a href='https://littlerainy.net/b3/shell/001rim.html'>\"冷たくて、静かな\"</a> by <a href='https://littlerainy.net/b3/'>じる</a>.",
+		tags: ["2025", "YAYA", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter", "Story"]
+	},
+	{
 		name: "Ukatranslator",
 		release: "2021-10-04",
 		latest: null,
