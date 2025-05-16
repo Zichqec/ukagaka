@@ -57,6 +57,22 @@ var item_details = [
 		tags: ["2024","Supplement"]
 	},
 	{
+		name: "Misaka UDL",
+		release: "2025-05-16",
+		latest: null,
+		version: null,
+		forevent: null,
+		goeswith: [{name: "Notepad++", download: "https://notepad-plus-plus.org/downloads/"}],
+		collaborators: null,
+		download: "https://github.com/Zichqec/misaka_udl",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/tool/misaka_udl"},
+		],
+		blurb: "A Notepad++ UDL for highlighting Misaka code! This UDL focuses on highlighting function names, distinguishing between parenthesis and curly braces, and dimming SakuraScript tags to make dialogues easier to read.",
+		tags: ["2025","UDL"]
+	},
+	{
 		name: "Rainbow Galaxy Parrot",
 		release: "2024-05-12",
 		latest: null,
