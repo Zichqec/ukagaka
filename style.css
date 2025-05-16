@@ -717,5 +717,5 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 {
 	/* min-height: 300px; */
 	max-height: 450px;
-	overflow: scroll;
+	overflow: auto;
 }
