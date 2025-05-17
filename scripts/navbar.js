@@ -31,14 +31,6 @@ let links = [
 		{path: 'free_asset/index', title: "Free Assets"},
 		{path: 'misc/index', title: "Misc"},
 		{path: 'resources', title: "Resources"},
-		{path: 'blog/2021-12-12_advent_calendar_probabilities', title: "Advent Calendar 2021"},
-		{path: 'blog/2022-12-19_advent_calendar_how_to_write_a_needle', title: "Advent Calendar 2022 (#00)"},
-		{path: 'blog/2022-12-23_advent_calendar_wiki_release', title: "Advent Calendar 2022 (#01)"},
-		{path: 'blog/2022-12-24_advent_calendar_yaya_fundamentals_release', title: "Advent Calendar 2022 (#02)"},
-		{path: 'blog/2023-12-22_advent_calendar_ukadoc_english_translation', title: "Advent Calendar 2023 (#00)"},
-		{path: 'blog/2023-12-23_advent_calendar_summary_of_2023', title: "Advent Calendar 2023 (#01)"},
-		{path: 'blog/2024-12-22_advent_calendar_spectre', title: "Advent Calendar 2024 (#00)"},
-		{path: 'blog/2024-12-23_advent_calendar_summary_of_2024', title: "Advent Calendar 2024 (#01)"},
 	]},
 	{title: "Space Mode Toggle"}
 ];
