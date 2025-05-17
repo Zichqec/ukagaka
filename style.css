@@ -713,9 +713,21 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 	overflow: hidden;
 }
 
+/* TODO maybe the mobile view should ditch the scrolling sections altogether and be a plain display...? probably easier to navigate tbqh */
 .scrollfeed
 {
 	/* min-height: 300px; */
 	max-height: 450px;
 	overflow: auto;
+}
+
+.blogfeeditem h3
+{
+	/* margin-top: ; */
+	margin-bottom: 0;
+}
+
+.blogfeeditem p
+{
+	margin-top: 5px;
 }

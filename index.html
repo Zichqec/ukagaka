@@ -39,31 +39,7 @@
 
 <h2>Recent blog posts</h2>
 <div class="scrollfeed">
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
-<p>Nothing yet!</p>
+<div id="blog_recent"></div>
 </div>
 
 </article>
@@ -109,6 +85,32 @@ Want to support my work? Too bad! You can't! 😌
 <footer><div id="footer" class="footer"></div></footer>
 <script src="scripts/navbar.js"></script>
 <script src="scripts/footer.js"></script>
+
+<script src="scripts/misc.js"></script>
+<script>var item_tags = null; var item_details = null</script>
+<script src="scripts/blog_details.js"></script>
+<script>
+let index_details = item_details;
+
+function makeRecentList()
+{
+	let output = ``;
+	for (let i = 0; i < 10; i++)
+	{
+		let item = index_details[i];
+		output += `
+			<div class="blogfeeditem">
+				<h3><a href="${item.page}">${item.name}</a></h3>
+				<p><i>– ${dateDisplay(item.release)}</i></p>
+			</div>
+		`;
+	}
+	return output;
+}
+
+document.getElementById('blog_recent').innerHTML = makeRecentList();
+</script>
+
 <script src="scripts/link_fix.js"></script>
 </body>
 </html>
