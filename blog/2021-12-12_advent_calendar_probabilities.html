@@ -255,17 +255,17 @@ RandomTalk : nonoverlap
 
 	"\0\s[200]* (He's carefully taking in your desktop.)\w8\w8\n\nIt's a bit dusty in here, isn't it..?\w8\s[202] Would you mind if I cleaned this place up a bit?\e"
 	"\0\s[0]So uh, what kind of stuff do you get up to out there?\w8\w8\s[106] I can't really tell from this side of the screen.\e"
-	}
+}
 
-	Pool_Friendship_mid : array //friendship >= 75
-	{
+Pool_Friendship_mid : array //friendship >= 75
+{
 	"\0\s[1070].\w8.\w8.\w8So does this make me a 'computer person' technically?\e"
 
 	parallel Pool("Pool_Friendship_mid_long_time","%(passhour >= 20)")
-	}
+}
 
-	Pool_Friendship_mid_long_time : array //passhour >= 20
-	{
+Pool_Friendship_mid_long_time : array //passhour >= 20
+{
 	"\0\s[106]Hey uh,\w4 your %(usersfolder) was a little messy, so I straightened it up.\w8\w8\s[107] I hope that's alright, I'm kind of a compusive cleaner.\e"
 	"\0\s[202]Uh...\w8 %(username)?\w8\w8 I hope you don't mind,\w3 but \s[0]I was wandering around your %(usersfolder) and found some %(ingredients)...\w8\w8 You mind if I keep this..?\e"
 	"\0\s[207]* (He yawns, long and slow...)\e"
