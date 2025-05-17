@@ -12,6 +12,7 @@ if (!(location.pathname.endsWith("ukagaka/index.html") || location.pathname.ends
 let links = [
 	{path: 'index', title: 'Home'},
 	{path: 'about', title: 'About'},
+	{path: 'blog/index', title: 'Blog'},
 	{path: 'ghost/index', title: 'Ghosts'},
 	{path: 'shell/index', title: "Shells"},
 	{path: 'freeshell/index', title: "Freeshells"},
@@ -42,6 +43,7 @@ let links = [
 	{title: "Space Mode Toggle"}
 ];
 
+//lol past zi the word you wanted was DEPTH...
 let deepness = 0;
 
 //There's probably a much better way to do this, but what can I say, I don't actually know JavaScript lol
