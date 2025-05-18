@@ -100,7 +100,7 @@ function makeRecentList()
 		let item = index_details[i];
 		output += `
 			<div class="blogfeeditem">
-				<h3><a href="${item.page}">${item.name}</a></h3>
+				<h3><a href="blog/${item.page}">${item.name}</a></h3>
 				<p><i>– ${dateDisplay(item.release)}</i></p>
 			</div>
 		`;

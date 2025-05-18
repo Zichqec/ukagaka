@@ -12,7 +12,7 @@ var item_tags = [
 ]
 
 //Note to self: the "latest" is for if something gets a MAJOR REVISION, not just typos and such
-//Things like a catastrophic error
+//Things like an error catastrophagus
 var item_details = [
 	
 	// {

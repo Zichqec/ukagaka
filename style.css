@@ -731,3 +731,44 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 {
 	margin-top: 5px;
 }
+
+.disabletext
+{
+	color: #888888;
+}
+
+.blogdate
+{
+	margin-top: 0;
+	text-align: center;
+	font-style: italic;
+	color: #888888;
+}
+
+.blogheader
+{
+	margin-bottom: 10px;
+}
+
+.blognavbuttons
+{
+	/* THANK YOU https://stackoverflow.com/a/55341959 */
+	display: grid;
+	grid-template-columns: [first] 20% auto [last] 20%;
+	
+}
+
+.blognavleft
+{
+	
+}
+
+.blognavcenter
+{
+	margin: 0 auto;
+}
+
+.blognavright
+{
+	margin-left: auto;
+}
