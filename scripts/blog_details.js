@@ -44,7 +44,7 @@ var item_details = [
 		release: "2024-11-11",
 		latest: null,
 		page: "2024-11-11_needle_dog_mirror.html",
-		blurb: "A mirror download of the shell Needle Dog, created with permission from the original author since the original download went down.",
+		blurb: "A mirror download of the shell Needle Dog, created with permission from its author since the original download went down.",
 		tags: ["2024","November","Mirror"],
 	},
 	{
