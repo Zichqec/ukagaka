@@ -671,9 +671,10 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 	margin: auto;
 }
 
+/* Yes it's a little off center, don't @ me the visual balance is better and you won't notice unless you bring it into an art program to check. This makes it so the banners can display 3 inline, and also the links in the footer feel less unbalanced */
 .lefthalf
 {
-	flex: 0 0 45%;
+	flex: 0 0 49.3%;
 	margin: auto;
 	margin-right: 2px;
 }
@@ -685,27 +686,6 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 	margin-left: 3px;
 }
 
-/* Half articles on the main page */
-@media screen and (max-width: 600px)
-{
-	.half_articles
-	{
-		display: block;
-	}
-	
-	.lefthalf
-	{
-		flex: 0 0 45%;
-		margin: auto;
-	}
-
-	.righthalf
-	{
-		flex: 1;
-		margin: auto;
-	}
-}
-
 .lefthalf article, .righthalf article
 {
 	min-height: 500px;
@@ -713,7 +693,6 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 	overflow: hidden;
 }
 
-/* TODO maybe the mobile view should ditch the scrolling sections altogether and be a plain display...? probably easier to navigate tbqh */
 .scrollfeed
 {
 	/* min-height: 300px; */
@@ -721,15 +700,41 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 	overflow: auto;
 }
 
-.blogfeeditem h3
+/* Half articles on the main page */
+/* On mobile/super small sizes, make it vertical and make the sections not scroll */
+@media screen and (max-width: 750px)
 {
-	/* margin-top: ; */
-	margin-bottom: 0;
+	.half_articles
+	{
+		display: block;
+	}
+	
+	.lefthalf article, .righthalf article
+	{
+		min-height: initial;
+		max-height: initial;
+	}
+	
+	.scrollfeed
+	{
+		max-height: initial;
+	}
+}
+
+.blogfeeditem a
+{
+	font-size: 18px;
 }
 
 .blogfeeditem p
 {
 	margin-top: 5px;
+}
+
+.blogfeeditem
+{
+	border-left: 3px solid #cacaca;
+	padding-left: 5px;
 }
 
 .disabletext
@@ -771,4 +776,9 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 .blognavright
 {
 	margin-left: auto;
+}
+
+.paginationDisable
+{
+	text-decoration: line-through;
 }
