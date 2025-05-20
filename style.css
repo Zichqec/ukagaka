@@ -833,3 +833,10 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 {
 	width: 65px;
 }
+
+.paginationPerPageDisplay
+{
+	margin-top: 0;
+	margin-bottom: 0;
+	align: center;
+}

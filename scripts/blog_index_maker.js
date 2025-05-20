@@ -395,25 +395,20 @@ function makePaginationNav()
 			output += `<button class="paginationBtn paginationDisable">&lt; Previous</button> `;
 		}
 		
-		let currentpagedisplay = currentpage + 1;
-		if (pagination == false)
-		{
-			currentpagedisplay = 1;
-		}
 		let pagecount = TotalPages();
 		
 		if (pagination == true && shown_count > itemsperpage)
 		{
 			output += ` Page `;
 			
-			output += `<input type="number" id="jumptopage_${which}" min="1" max="${pagecount}" value="${currentpagedisplay}" onchange="paginationChange('jump_${which}','${which}')">`;
+			output += `<input type="number" id="jumptopage_${which}" min="1" max="${pagecount}" value="${currentpage + 1}" onchange="paginationChange('jump_${which}','${which}')">`;
 			output += ` <label for="jumptopage_${which}">of ${pagecount}</label>  `;  //I don't know if this is the best label but I don't have a great way to do it, tbh... hmmm
 		}
 		else
 		{
 			output += ` <span class="paginationDisable">Page `;
 			
-			output += `<input type="number" id="jumptopage_${which}" min="1" max="${pagecount}" value="${currentpagedisplay}" onchange="paginationChange('jump_${which}','${which}')">`;
+			output += `<input type="number" id="jumptopage_${which}" min="1" max="${pagecount}" value="1" disable>`;
 			output += ` <label for="jumptopage_${which}">of ${pagecount}</label></span>  `;  //I don't know if this is the best label but I don't have a great way to do it, tbh... hmmm
 		}
 		
@@ -444,6 +439,17 @@ function makePaginationNav()
 			}
 		}
 		
+		if (i == 0)
+		{
+			if (pagination == true)
+			{
+				output += `<br><p align="center" class="paginationPerPageDisplay"><i>(${itemsperpage} per page / ${total_count} total)</i></p>`;
+			}
+			else
+			{
+				output += `<br><p align="center" class="paginationPerPageDisplay"><i>(Showing all ${total_count} entries)</i></p>`;
+			}
+		}
 		output += `</span></div></article>`;
 		
 		if (i == 1) //Bottom
