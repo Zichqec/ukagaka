@@ -439,15 +439,16 @@ function makePaginationNav()
 			}
 		}
 		
-		if (i == 0)
+		if (i == 0) //Top only
 		{
+			//TODO there is the idea of showing here also how many are not displayed due to filtering... but i kinda can't be bothered at the moment, seems clunky. come back with a clearer head, perhaps
 			if (pagination == true)
 			{
-				output += `<br><p align="center" class="paginationPerPageDisplay"><i>(${itemsperpage} per page / ${total_count} total)</i></p>`;
+				output += `<br><p align="center" class="paginationPerPageDisplay"><i>(${itemsperpage} per page / ${shown_count} total)</i></p>`;
 			}
 			else
 			{
-				output += `<br><p align="center" class="paginationPerPageDisplay"><i>(Showing all ${total_count} entries)</i></p>`;
+				output += `<br><p align="center" class="paginationPerPageDisplay"><i>(Showing all ${shown_count} entries)</i></p>`;
 			}
 		}
 		output += `</span></div></article>`;
