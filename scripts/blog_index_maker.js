@@ -14,6 +14,7 @@ function makeIndex()
 	console.log(`endpoint: ${endpoint}`);
 	if (pagination == false)
 	{
+		startpoint = 0;
 		endpoint = totalitems;
 	}
 	let output = ``;
@@ -92,7 +93,7 @@ function makePaginationNav()
 	let output = ``;
 	output += `<article>`;
 	//TODO: if you click see all, you need to not see the pagination nav anymore... but I think I'll probably do this once I style it? hm
-	if (currentpage > 0)
+	if (currentpage > 0 && pagination == true)
 	{
 		output += `<button class="paginationBtn" onclick="paginationChange('first')"><< First</button>`;
 		output += `<button class="paginationBtn" onclick="paginationChange('previous')">< Previous</button>`;
@@ -103,10 +104,15 @@ function makePaginationNav()
 		output += `<button class="paginationBtn paginationDisable">< Previous</button>`;
 	}
 	
-	//TODO the first one needs to say 1 if pagination is false
-	output += ` Page ${currentpage + 1} of ${TotalPages()} `;
+	let currentpagedisplay = currentpage + 1;
+	if (pagination == false)
+	{
+		currentpagedisplay = 1;
+	}
 	
-	if ((currentpage < TotalPages() - 1))
+	output += ` Page ${currentpagedisplay} of ${TotalPages()} `;
+	
+	if ((currentpage < TotalPages() - 1) && pagination == true)
 	{
 		output += `<button class="paginationBtn" onclick="paginationChange('next')">Next ></button>`;
 		output += `<button class="paginationBtn" onclick="paginationChange('last')">Last >></button>`;
