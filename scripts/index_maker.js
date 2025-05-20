@@ -86,7 +86,7 @@ function makeFilterSortList()
 	}
 	else
 	{
-		output += `<i>No tags available.</a>`;
+		output += `<i>No tags available.</i>`;
 	}
 	return output;
 }
