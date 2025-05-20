@@ -24,7 +24,7 @@
 //25 items seems reasonable, can adjust later if desired... this would be 1 page of the blog tho, so. matchy matchy
 
 //oh my god i'm so mad i'm finally going to be forced to deal with js date times. DAMN YOU PUBDATE FIELD!!!! AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-//anyway thank you https://stackoverflow.com/questions//17964170/get-the-weekday-from-a-date-object-or-date-string-using-javascript
+//anyway thank you https://stackoverflow.com/questions/17964170/get-the-weekday-from-a-date-object-or-date-string-using-javascript
 //i'm just going to trust this and not verify thank you very much
 
 function getDayOfWeek(date)
@@ -50,6 +50,20 @@ function CreateExpectedDate(date)
 	return `${weekday}, ${day} ${monthname} ${year} 00:00:00 EST`;
 }
 
+//Make the array so we can flip it, cuz blog posts are in reverse chronological order...
+let index_details = [];
+for (let i = 0; i < 25; i++)
+{
+	if (item_details[i] == null)
+	{
+		break;
+	}
+	index_details.push(item_details[i]);
+}
+
+index_details = index_details.reverse();
+
+
 let output = ``;
 
 output += `
@@ -66,14 +80,9 @@ output += `
 		&lt;link&gt;https://ukagaka.zichqec.com/&lt;/link&gt;
 	&lt;/image&gt;`;
 
-for (let i = 0; i < 25; i++)
-{
-	if (item_details[i] == null)
-	{
-		break;
-	}
-	
-	let item = item_details[i];
+for (let i = 0; i < index_details.length; i++)
+{	
+	let item = index_details[i];
 	let postlink = `https://ukagaka.zichqec.com/` + item.page;
 	postlink = postlink.replace(".html","")
 	
