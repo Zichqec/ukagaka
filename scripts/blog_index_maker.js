@@ -111,9 +111,15 @@ function makePaginationNav()
 	}
 	let pagecount = TotalPages();
 	
+	let disabled = "";
+	if (pagination == false)
+	{
+		disabled = " disabled";
+	}
+	
 	output += ` Page `;
 	//output += `${currentpagedisplay}`;
-	output += `<input type="number" id="jumptopage" min="1" max="${pagecount}" value="${currentpagedisplay}" onchange="paginationChange('jump')">`;
+	output += `<input type="number" id="jumptopage" min="1" max="${pagecount}" value="${currentpagedisplay}" onchange="paginationChange('jump')"${disabled}>`;
 	output += ` <label for="jumptopage">of ${pagecount}</label> `;  //I don't know if this is the best label but I don't have a great way to do it, tbh... hmmm
 	
 	if ((currentpage < pagecount - 1) && pagination == true)
