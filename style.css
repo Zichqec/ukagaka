@@ -782,3 +782,14 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 {
 	text-decoration: line-through;
 }
+
+#jumptopage::-webkit-outer-spin-button, jumptopage::-webkit-inner-spin-button
+{
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+#jumptopage[type=number]
+{
+	-moz-appearance: textfield;
+}

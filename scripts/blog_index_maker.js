@@ -109,10 +109,14 @@ function makePaginationNav()
 	{
 		currentpagedisplay = 1;
 	}
+	let pagecount = TotalPages();
 	
-	output += ` Page ${currentpagedisplay} of ${TotalPages()} `;
+	output += ` Page `;
+	//output += `${currentpagedisplay}`;
+	output += `<input type="number" id="jumptopage" min="1" max="${pagecount}" value="${currentpagedisplay}" onchange="paginationChange('jump')">`;
+	output += ` <label for="jumptopage">of ${pagecount}</label> `;  //I don't know if this is the best label but I don't have a great way to do it, tbh... hmmm
 	
-	if ((currentpage < TotalPages() - 1) && pagination == true)
+	if ((currentpage < pagecount - 1) && pagination == true)
 	{
 		output += `<button class="paginationBtn" onclick="paginationChange('next')">Next ></button>`;
 		output += `<button class="paginationBtn" onclick="paginationChange('last')">Last >></button>`;
@@ -141,6 +145,8 @@ function paginationChange(change)
 {
 	console.log("button pressed!");
 	let totalpages = TotalPages() - 1; //Total COUNT of pages vs page NUMBER (0 indexed)
+	
+	let inputDisplay = document.getElementById("jumptopage");
 	
 	if (change == "first")
 	{
@@ -173,6 +179,18 @@ function paginationChange(change)
 	else if (change == "paginate")
 	{
 		pagination = true;
+	}
+	else if (change == "jump")
+	{
+		currentpage = inputDisplay.value - 1;
+		if (currentpage < 0)
+		{
+			currentpage = 0
+		}
+		else if (currentpage > totalpages)
+		{
+			currentpage = totalpages;
+		}
 	}
 	else //First page load or other case
 	{
