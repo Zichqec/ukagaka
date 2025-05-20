@@ -644,7 +644,7 @@ function filterSelection(tag, operation)
 }
 
 //————— Sort on index pages —————
-let SortType = "Alphabetical";
+let SortType = "alphabetical";
 let SortDirection = "ascending";
 
 //which: type or direction

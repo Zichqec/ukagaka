@@ -778,18 +778,58 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 	margin-left: auto;
 }
 
-.paginationDisable
-{
-	text-decoration: line-through;
-}
-
-#jumptopage::-webkit-outer-spin-button, jumptopage::-webkit-inner-spin-button
+#jumptopage_top::-webkit-outer-spin-button, jumptopage_top::-webkit-inner-spin-button, #jumptopage_bottom::-webkit-outer-spin-button, jumptopage_bottom::-webkit-inner-spin-button
 {
 	-webkit-appearance: none;
 	margin: 0;
+	font-size: 15px;
 }
 
-#jumptopage[type=number]
+#jumptopage_top[type=number], #jumptopage_bottom[type=number]
 {
 	-moz-appearance: textfield;
+	font-size: 15px;
+}
+
+.filtersortbtn.FilterAdd, .filtersortbtn.SortActive, .filtersortbtn.FilterSettingActive
+{
+	background-color: #b6b6b6;
+}
+
+.filtersortbtn.FilterRemove
+{
+	text-decoration: line-through;
+	color: #888888;
+}
+
+.paginationDisable
+{
+	opacity: 0.6;
+}
+
+.paginationBtn
+{
+	border: none;
+	outline: none;
+	padding: 5px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	background-color: #d1d1d1;
+	border-radius: 2px;
+}
+
+.paginationBtn:active
+{
+	background-color: #b6b6b6;
+}
+
+.paginationnav
+{
+	display: flex;
+	justify-content: center;
+}
+
+.paginationFixed
+{
+	width: 65px;
 }

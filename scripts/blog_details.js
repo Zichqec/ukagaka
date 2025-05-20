@@ -24,7 +24,7 @@ var item_details = [
 		// tags: [],
 	// },
 	{
-		name: "Advent Calendar 2024 - Summary of 2024 in the Ukagaka Dream Team",
+		name: "Summary of 2024 in the Ukagaka Dream Team (Advent Calendar 2024)",
 		release: "2024-12-23",
 		latest: null,
 		page: "2024-12-23_advent_calendar_summary_of_2024.html",
@@ -32,7 +32,7 @@ var item_details = [
 		tags: ["2024","December","Yearly summary","Advent calendar"],
 	},
 	{
-		name: "Advent Calendar 2024 - Spectre: What, Why, and How",
+		name: "Spectre: What, Why, and How (Advent Calendar 2024)",
 		release: "2024-12-22",
 		latest: null,
 		page: "2024-12-22_advent_calendar_spectre.html",
@@ -56,7 +56,7 @@ var item_details = [
 		tags: ["2024","October","Mirror"],
 	},
 	{
-		name: "Advent Calendar 2023 - Summary of 2023 in the Ukagaka Dream Team",
+		name: "Summary of 2023 in the Ukagaka Dream Team (Advent Calendar 2023)",
 		release: "2023-12-23",
 		latest: null,
 		page: "2023-12-23_advent_calendar_summary_of_2023.html",
@@ -64,7 +64,7 @@ var item_details = [
 		tags: ["2023","December","Yearly summary","Advent calendar"],
 	},
 	{
-		name: "Advent Calendar 2023 - Ukadoc English Translation Completed",
+		name: "Ukadoc English Translation Completed (Advent Calendar 2023)",
 		release: "2023-12-22",
 		latest: null,
 		page: "2023-12-22_advent_calendar_ukadoc_english_translation.html",
@@ -72,15 +72,15 @@ var item_details = [
 		tags: ["2023","December","Announcement","Advent calendar"],
 	},
 	{
-		name: "Advent Calendar 2022 - YAYA Fundamentals Guide Release",
+		name: "YAYA Fundamentals Guide Release (Advent Calendar 2022)",
 		release: "2022-12-24",
 		latest: null,
 		page: "2022-12-24_advent_calendar_yaya_fundamentals_release.html",
-		blurb: "A release of an extensive guide to YAYA in English, called YAYA Fundamentals.",
+		blurb: "The release of an extensive guide to YAYA in English, called YAYA Fundamentals.",
 		tags: ["2022","December","New release","Advent calendar"],
 	},
 	{
-		name: "Advent Calendar 2022 - Ukagaka Dream Team Wiki Release",
+		name: "Ukagaka Dream Team Wiki Release (Advent Calendar 2022)",
 		release: "2022-12-23",
 		latest: null,
 		page: "2022-12-23_advent_calendar_wiki_release.html",
@@ -88,7 +88,7 @@ var item_details = [
 		tags: ["2022","December","Announcement","Advent calendar"],
 	},
 	{
-		name: "Advent Calendar 2022 - How to Write a Needle",
+		name: "How to Write a Needle (Advent Calendar 2022)",
 		release: "2022-12-19",
 		latest: null,
 		page: "2022-12-19_advent_calendar_how_to_write_a_needle.html",
@@ -96,7 +96,7 @@ var item_details = [
 		tags: ["2022","December","Dev musings","Advent calendar"],
 	},
 	{
-		name: "Advent Calendar 2021 - I've Spent a Ridiculous Amount of Time Thinking About Probabilities: An Ukagaka Developer's Struggle for Probability Perfection",
+		name: "I've Spent a Ridiculous Amount of Time Thinking About Probabilities: An Ukagaka Developer's Struggle for Probability Perfection (Advent Calendar 2021)",
 		release: "2021-12-12",
 		latest: null,
 		page: "2021-12-12_advent_calendar_probabilities.html",
