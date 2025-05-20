@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<!-- What is this? Well, dear code crawler, I could not find a good way to generate an RSS feed for my static website that relies heavily on JavaScript objects. So! Instead we use this page to dump items needed in the feed's format, and copy and paste... tada :sparkles: if I ever find a way to make this completely automated I will be overjoyed, but for now this is good enough -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <!-- <link rel="stylesheet" href="../style.css" /> -->
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Zi's Ukagaka Space"/>
+    <meta property="og:description" content="Zi's hub for ukagaka"/>
+    <meta property="og:url" content="https://zichqec.github.io/ukagaka/"/>
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png"/>
+</head>
+
+<body><div id="rssgoeshere"></div></body>
+
+<script>var item_details = null</script>
+<script src="../scripts/blog_details.js"></script>
+
+<script>
+//25 items seems reasonable, can adjust later if desired... this would be 1 page of the blog tho, so. matchy matchy
+
+//oh my god i'm so mad i'm finally going to be forced to deal with js date times. DAMN YOU PUBDATE FIELD!!!! AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+//anyway thank you https://stackoverflow.com/questions//17964170/get-the-weekday-from-a-date-object-or-date-string-using-javascript
+//i'm just going to trust this and not verify thank you very much
+
+function getDayOfWeek(date)
+{
+	const dayOfWeek = new Date(date).getDay();
+	return isNaN(dayOfWeek) ? null : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][dayOfWeek]
+}
+
+function CreateExpectedDate(date)
+{
+	let weekday = getDayOfWeek(date);
+	date = date.split("-");
+	let year = date[0];
+	let month = Number(date[1]);
+	console.log(`month: ${month}`);
+	console.log(`date[1]: ${date[1]}`);
+	let day = date[2];
+	
+	//Would you believe me if I told you I wrote this list and forgot the month of May and it took me like 10 minutes to debug
+	let monthname = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][month - 1];
+	
+	//Timestamp fixed to midnight EST cuz hell nah I am NOT dealing with that
+	return `${weekday}, ${day} ${monthname} ${year} 00:00:00 EST`;
+}
+
+let output = ``;
+
+output += `
+<pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;rss version="2.0"&gt;
+&lt;channel&gt;
+	&lt;title&gt;Zi's Ukagaka Space&lt;/title&gt;
+	&lt;link&gt;https://ukagaka.zichqec.com/&lt;/link&gt;
+	&lt;description&gt;Zi's hub for ukagaka&lt;/description&gt;
+	&lt;language&gt;en-us&lt;/language&gt;
+	&lt;image&gt;
+		&lt;title&gt;Zi's Ukagaka Space&lt;/title&gt;
+		&lt;url&gt;https://ukagaka.zichqec.com/favicon.png&lt;/url&gt;
+		&lt;link&gt;https://ukagaka.zichqec.com/&lt;/link&gt;
+	&lt;/image&gt;`;
+
+for (let i = 0; i < 25; i++)
+{
+	if (item_details[i] == null)
+	{
+		break;
+	}
+	
+	let item = item_details[i];
+	let postlink = `https://ukagaka.zichqec.com/` + item.page;
+	postlink = postlink.replace(".html","")
+	
+	output += `
+	&lt;item&gt;
+		&lt;title&gt;${item.name}&lt;/title&gt;
+		&lt;link&gt;${postlink}&lt;/link&gt;
+		&lt;guid&gt;${postlink}&lt;/guid&gt;
+		&lt;pubDate&gt;${CreateExpectedDate(item.release)}&lt;/pubDate&gt;
+		&lt;description&gt;${item.blurb}&lt;/description&gt;
+	&lt;/item&gt;`;
+}
+
+output += `
+&lt;/channel&gt;</pre>`;
+
+document.getElementById('rssgoeshere').outerHTML = output;
+</script>
+
+</html>
