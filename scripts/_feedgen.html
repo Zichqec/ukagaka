@@ -29,7 +29,7 @@
 
 function getDayOfWeek(date)
 {
-	const dayOfWeek = new Date(date).getDay();
+	const dayOfWeek = new Date(date+"T00:00").getDay();
 	return isNaN(dayOfWeek) ? null : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][dayOfWeek]
 }
 
@@ -39,8 +39,6 @@ function CreateExpectedDate(date)
 	date = date.split("-");
 	let year = date[0];
 	let month = Number(date[1]);
-	console.log(`month: ${month}`);
-	console.log(`date[1]: ${date[1]}`);
 	let day = date[2];
 	
 	//Would you believe me if I told you I wrote this list and forgot the month of May and it took me like 10 minutes to debug
@@ -68,12 +66,13 @@ let output = ``;
 
 output += `
 <pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;rss version="2.0"&gt;
+&lt;rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"&gt;
 &lt;channel&gt;
 	&lt;title&gt;Zi's Ukagaka Space&lt;/title&gt;
 	&lt;link&gt;https://ukagaka.zichqec.com/&lt;/link&gt;
 	&lt;description&gt;Zi's hub for ukagaka&lt;/description&gt;
 	&lt;language&gt;en-us&lt;/language&gt;
+	&lt;atom:link href="https://ukagaka.zichqec.com/rss.xml" rel="self" type="application/rss+xml" /&gt;
 	&lt;image&gt;
 		&lt;title&gt;Zi's Ukagaka Space&lt;/title&gt;
 		&lt;url&gt;https://ukagaka.zichqec.com/favicon.png&lt;/url&gt;
@@ -83,7 +82,7 @@ output += `
 for (let i = 0; i < index_details.length; i++)
 {	
 	let item = index_details[i];
-	let postlink = `https://ukagaka.zichqec.com/` + item.page;
+	let postlink = `https://ukagaka.zichqec.com/blog/` + item.page;
 	postlink = postlink.replace(".html","")
 	
 	output += `
@@ -97,7 +96,8 @@ for (let i = 0; i < index_details.length; i++)
 }
 
 output += `
-&lt;/channel&gt;</pre>`;
+&lt;/channel&gt;
+&lt;/rss&gt;</pre>`;
 
 document.getElementById('rssgoeshere').outerHTML = output;
 </script>
