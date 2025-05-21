@@ -85,6 +85,7 @@ function makeTopNav()
 	
 	output += `
 		<article>
+			<div class="button_balancer"></div><div class="to_top"><a href="../feed.xml"><img src="../img/feed-icon-28x28.png" alt="RSS feed"></a></div>
 			<h1 class="blogheader">${page_details.name}</h1>
 			<p class="blogdate">${dateDisplay(page_details.release)}</p>
 			${taglist}

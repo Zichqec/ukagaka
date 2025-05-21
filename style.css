@@ -200,6 +200,17 @@ img.indeximg
 	font-size: 14px;
 }
 
+/* For the one RSS button on the blog that pushes stuff... lol */
+.button_balancer
+{
+	float: left;
+	font-size: 14px;
+	opacity: 0.0;
+	background-color: black;
+	width: 28px;
+	height: 32px;
+}
+
 article
 {
 	background: #ebebeb;
