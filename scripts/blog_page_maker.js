@@ -21,8 +21,6 @@ function makeTopNav()
 	
 	for (let i = 0; i < item_details.length; i++)
 	{
-		console.log(item_details[i].name.replace(".html",""));
-		console.log(pagename);
 		if (item_details[i].page.replace(".html","") == pagename)
 		{
 			page_details = item_details[i];
@@ -123,3 +121,15 @@ function makeBottomNav()
 
 document.getElementById('blognavtop').innerHTML = makeTopNav();
 document.getElementById('blognavbottom').innerHTML = makeBottomNav();
+
+//Word count... has to be manually added to the index tho
+//This seems to have trouble with counting words in lists... I'd probably be better off just hand copying in the count from the page after rendering it. But enh.. idk that I can be bothered? Maybe I'll consider it in the future after I try the blog out for a while... I do think it could be cool for longer posts, just maybe not so much for the little bitty update ones... I also wonder if adding tags for word count would be nice
+// let postcontent = document.getElementById("postcontent");
+// let paragraphs = postcontent.getElementsByTagName("p");
+// let wordcount = 0;
+// for (let i = 0; i < paragraphs.length; i++)
+// {
+	// wordcount += paragraphs[i].innerText.split(" ").length;
+// }
+
+// console.log(`word count (approximate): ${wordcount}`);
