@@ -4,7 +4,9 @@
 var item_tags = [
 	["2021","2022","2023","2024","2025"],
 	["January","February","March","April","May","June","July","August","September","October","November","December"],
-	["New release","Update","Announcement","Dev musings"],
+	["New release","Update","Announcement","Website update","Dev musings"],
+	//Announcement: things like the wiki opening, translation projects finishing, etc...
+	//Maybe should make event announcements a separate tag too...? or just an event tag? hm
 	["Yearly summary","Advent calendar"],
 	["Mirror"],
 	//I think it would be cool to have tags for like... "deconstructing my own work", but I'd need to come up with a more succinct tag, and also I should at least make one post like that before I add a tag lol
@@ -23,6 +25,14 @@ var item_details = [
 		// blurb: "",
 		// tags: [],
 	// },
+	{
+		name: "Blog Grand Opening",
+		release: "2025-05-XX",
+		latest: null,
+		page: "TEMP_blog_grand_opening.html",
+		blurb: "The grand opening of this blog in its full and proper form. Everything before this point was created as a blog post without a home.",
+		tags: ["2025","May","Announcement","Website update"],
+	},
 	{
 		name: "Summary of 2024 in the Ukagaka Dream Team (Advent Calendar 2024)",
 		release: "2024-12-23",
@@ -84,7 +94,7 @@ var item_details = [
 		release: "2022-12-23",
 		latest: null,
 		page: "2022-12-23_advent_calendar_wiki_release.html",
-		blurb: "A release announcement for the Ukagaka Dream Team Wiki, which is now publicly available and with almost all the pages up to this point filled in.",
+		blurb: "A release announcement for the Ukagaka Dream Team Wiki, which is now publicly available with almost all the pages up to this point filled in.",
 		tags: ["2022","December","Announcement","Advent calendar"],
 	},
 	{
