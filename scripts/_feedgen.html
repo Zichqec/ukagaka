@@ -15,9 +15,7 @@
     <meta property="og:url" content="https://zichqec.github.io/ukagaka/"/>
     <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png"/>
 </head>
-
 <body><div id="rssgoeshere"></div></body>
-
 <script>var item_details = null</script>
 <script src="../scripts/blog_details.js"></script>
 
@@ -30,6 +28,7 @@
 
 function getDayOfWeek(date)
 {
+	//I'm so mad I have to add a nonsense timestamp to my preferred date format to get the right time out of it. THE OTHER DATE FORMATS DO NOT REQUIRE THIS, ONLY YYYY-MM-DD
 	const dayOfWeek = new Date(date+"T00:00").getDay();
 	return isNaN(dayOfWeek) ? null : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][dayOfWeek]
 }
@@ -65,8 +64,7 @@ index_details = index_details.reverse();
 
 let output = ``;
 
-output += `
-<pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+output += `<pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"&gt;
 &lt;channel&gt;
 	&lt;title&gt;Zi's Ukagaka Space&lt;/title&gt;
@@ -102,5 +100,4 @@ output += `
 
 document.getElementById('rssgoeshere').outerHTML = output;
 </script>
-
 </html>

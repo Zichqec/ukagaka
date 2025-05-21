@@ -92,7 +92,7 @@ var item_details = [
 		release: "2022-12-19",
 		latest: null,
 		page: "2022-12-19_advent_calendar_how_to_write_a_needle.html",
-		blurb: "A recount of the process of writing <a href='../ghost/needle.html'>Needle</a> for Ghost Jam 2022, and how it changed the way I think about writing ghosts since then.",
+		blurb: "A recounting of the process of writing <a href='../ghost/needle.html'>Needle</a> for Ghost Jam 2022, and how it changed the way I think about writing ghosts since then.",
 		tags: ["2022","December","Dev musings","Advent calendar"],
 	},
 	{
@@ -104,16 +104,3 @@ var item_details = [
 		tags: ["2021","December","Dev musings","Advent calendar"],
 	},
 ]
-
-/*
-2024-12-23_advent_calendar_summary_of_2024.html
-2024-12-22_advent_calendar_spectre.html
-2024-11-11_needle_dog_mirror.html
-2024-10-13_flele_mirror.html
-2023-12-23_advent_calendar_summary_of_2023.html
-2023-12-22_advent_calendar_ukadoc_english_translation.html
-2022-12-24_advent_calendar_yaya_fundamentals_release.html
-2022-12-23_advent_calendar_wiki_release.html
-2022-12-19_advent_calendar_how_to_write_a_needle.html
-2021-12-12_advent_calendar_probabilities.html
-*/
