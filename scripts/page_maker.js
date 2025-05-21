@@ -454,6 +454,7 @@ function makeOtherShellIndex(shells)
 	return output;
 }
 
+//TODO i could probably use getElementByTag to grab all articles and then grab the h2s in them to create this... and then i could add any headings i want per page?
 function makePageIndex()
 {
 	output = ``;
@@ -509,11 +510,11 @@ function makeGallery(gallery_images)
 		fullview += `
 		<div class="gallery-full" id="${name}-full">
 			<img src="hoard_of_shinies/gallery/${path}" alt="${alt}">
+			<span class="gallery-caption">${alt}</span>
 		</div>
 		`;
 		if (gallery_images[i].spoiler != null)
 		{
-			//
 			thumbview += `
 			<span class="gallery-slot" id="${name}">
 				<span class="spoilerimg">
