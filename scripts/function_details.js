@@ -172,7 +172,7 @@ var item_details = [
 	},
 	{
 		name: "Interval Stacker",
-		release: "2020-11-04",
+		release: "2020-11-03",
 		latest: "2021-01-17",
 		version: "v2.0.5",
 		forevent: null,
