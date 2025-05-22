@@ -40,8 +40,8 @@ var item_details = [
 	{
 		name: "Undertale",
 		release: "2020-06-04",
-		latest: null,
-		version: "v1.0.0",
+		latest: "2021-07-31",
+		version: "v1.0.1",
 		forevent: null,
 		collaborators: null,
 		download: ["https://www.mediafire.com/file/qdjgsdmbu95ogmb/undertale_calendar_skin_v1.0.1.nar/file"],
