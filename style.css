@@ -860,3 +860,31 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 	margin-top: 0;
 	margin-bottom: 0;
 }
+
+/* Dev history blog post... maybe should be in that file but whatever lol */
+.devhistorydate
+{
+	/* color: ; */
+	font-weight: bold;
+}
+
+.devhistorytime
+{
+	color: #555555;
+}
+
+.devhistorytype
+{
+	/* color: #555555; */
+}
+
+.devhistoryreleaseupdate
+{
+	/* font-weight: bold; */
+	color: #555555;
+}
+
+.devhistoryname
+{
+	font-weight: bold;
+}

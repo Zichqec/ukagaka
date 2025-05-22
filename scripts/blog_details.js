@@ -27,11 +27,19 @@ var item_details = [
 	// },
 	{
 		name: "Blog Grand Opening",
-		release: "2025-05-XX",
+		release: "2025-05-22",
 		latest: null,
-		page: "TEMP_blog_grand_opening.html",
+		page: "2025-05-22_blog_grand_opening.html",
 		blurb: "The grand opening of this blog in its full and proper form. Everything before this point was created as a blog post without a home.",
 		tags: ["2025","May","Announcement","Website update"],
+	},
+	{
+		name: "My ghost development history",
+		release: "2025-05-22",
+		latest: null,
+		page: "2025-05-22_my_ghost_development_history.html",
+		blurb: "My history as a ghost developer, cataloguing as many releases and updates as I could find from before the launch of this blog.",
+		tags: ["2025","May","Dev musings"],
 	},
 	{
 		name: "Summary of 2024 in the Ukagaka Dream Team (Advent Calendar 2024)",

@@ -23,14 +23,14 @@
 		<link>https://ukagaka.zichqec.com/blog/2022-12-19_advent_calendar_how_to_write_a_needle</link>
 		<guid>https://ukagaka.zichqec.com/blog/2022-12-19_advent_calendar_how_to_write_a_needle</guid>
 		<pubDate>Mon, 19 Dec 2022 00:00:00 EST</pubDate>
-		<description>A recount of the process of writing Needle for Ghost Jam 2022, and how it changed the way I think about writing ghosts since then.</description>
+		<description>A recounting of the process of writing Needle for Ghost Jam 2022, and how it changed the way I think about writing ghosts since then.</description>
 	</item>
 	<item>
 		<title>Ukagaka Dream Team Wiki Release (Advent Calendar 2022)</title>
 		<link>https://ukagaka.zichqec.com/blog/2022-12-23_advent_calendar_wiki_release</link>
 		<guid>https://ukagaka.zichqec.com/blog/2022-12-23_advent_calendar_wiki_release</guid>
 		<pubDate>Fri, 23 Dec 2022 00:00:00 EST</pubDate>
-		<description>A release announcement for the Ukagaka Dream Team Wiki, which is now publicly available and with almost all the pages up to this point filled in.</description>
+		<description>A release announcement for the Ukagaka Dream Team Wiki, which is now publicly available with almost all the pages up to this point filled in.</description>
 	</item>
 	<item>
 		<title>YAYA Fundamentals Guide Release (Advent Calendar 2022)</title>
@@ -80,6 +80,20 @@
 		<guid>https://ukagaka.zichqec.com/blog/2024-12-23_advent_calendar_summary_of_2024</guid>
 		<pubDate>Mon, 23 Dec 2024 00:00:00 EST</pubDate>
 		<description>A summary of events and other important happenings in the Ukagaka Dream Team during 2024.</description>
+	</item>
+	<item>
+		<title>My ghost development history</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-05-22_my_ghost_development_history</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-05-22_my_ghost_development_history</guid>
+		<pubDate>Thu, 22 May 2025 00:00:00 EST</pubDate>
+		<description>My history as a ghost developer, cataloguing as many releases and updates as I could find from before the launch of this blog.</description>
+	</item>
+	<item>
+		<title>Blog Grand Opening</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-05-22_blog_grand_opening</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-05-22_blog_grand_opening</guid>
+		<pubDate>Thu, 22 May 2025 00:00:00 EST</pubDate>
+		<description>The grand opening of this blog in its full and proper form. Everything before this point was created as a blog post without a home.</description>
 	</item>
 </channel>
 </rss>
