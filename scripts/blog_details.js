@@ -34,7 +34,7 @@ var item_details = [
 		tags: ["2025","May","Announcement","Website update"],
 	},
 	{
-		name: "My ghost development history",
+		name: "My Ghost Development History",
 		release: "2025-05-22",
 		latest: null,
 		page: "2025-05-22_my_ghost_development_history.html",
