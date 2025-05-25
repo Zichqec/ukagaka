@@ -603,19 +603,20 @@ code
 	justify-content: center;
 	flex-direction: column;
 	position: absolute;
-	max-width: 1200px;
 	cursor: pointer;
-}
-
-.gallery-modal-content
-{
-	vertical-align: top;
-	text-align: center;	
+	/* overscroll-behavior: contain; */
+	/* overflow: scroll; */
+	text-align: center;
 }
 
 .gallery-full
 {
 	display: none;
+}
+
+.gallery-full img
+{
+	/* max-width: 1200px; */
 }
 
 .gallery-caption
