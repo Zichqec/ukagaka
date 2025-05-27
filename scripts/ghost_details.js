@@ -245,7 +245,7 @@ var item_details = [
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/hoard_of_shinies"},
 		],
-		blurb: "Hang out with your merfolk friend in your collection of everything that sparkles and shines!<br><br>A quick ghost made (mostly) in an afternoon! I was eager to try writing a new ghost in Aosora. Uses an edited version of the freeshell <a href='https://ako-kipali.tumblr.com/ghost-stuff'>Merfolk May</a> by Kipali!",
+		blurb: "Hang out with your merfolk friend in your collection of everything that sparkles and shines!<br><br>A ghost initially made in an afternoon! I was eager to try writing a new ghost in Aosora. I've since expanded her with a series of small updates! Uses an edited version of the freeshell <a href='https://ako-kipali.tumblr.com/ghost-stuff'>Merfolk May</a> by Kipali.",
 		tags: ["2025", "Aosora", "Uses freeshell", "Includes my writing", "Includes my code", "Idle chatter"]
 	},
 	{
