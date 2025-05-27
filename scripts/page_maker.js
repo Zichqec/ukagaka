@@ -544,15 +544,16 @@ function makeGallery(gallery_images)
 
 
 	<div class="gallery-backdrop" id="gallery-modal" onclick="closeGalleryImage()">
-	<div class="gallery-modal-content">
+	<div class="gallery-noscroll" id="gallery-scrollblock" onclick="closeGalleryImage()"></div>
+		<div class="gallery-modal-content">
 	`;
 	
 	output += fullview;
 	
 	output += `
+		</div>
 	</div>
-</div>
-<div id="gallery_display" class="gallery-row">
+	<div id="gallery_display" class="gallery-row">
 	`;
 	
 	output += thumbview;
@@ -606,12 +607,14 @@ if (gallerycontainer != null)
 function openGalleryImage(image)
 {
 	document.getElementById("gallery-modal").style.display = "block";
+	document.getElementById("gallery-scrollblock").style.display = "block";
 	document.getElementById(`${image}-full`).style.display = "inline-block";
 }
 
 function closeGalleryImage()
 {
 	document.getElementById("gallery-modal").style.display = "none";
+	document.getElementById("gallery-scrollblock").style.display = "none";
 	let GalleryImages = document.getElementsByClassName("gallery-full");
 	for (let i = 0; i < GalleryImages.length; i++)
 	{
