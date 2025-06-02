@@ -538,7 +538,7 @@ function makeGallery(gallery_images)
 			thumbview += `
 			<span class="gallery-slot" id="${name}">
 				<span class="spoilerimg">
-					<img src="${makeStandard(currentpage.name)}/gallery/${path}" onclick="openGalleryImage('${name}')"><span class="spoilerimgwarning">${gallery_images[i].spoiler}</span>
+					<img src="${makeStandard(currentpage.name)}/gallery/${path}" onclick="openGalleryImage('${name}')" alt="Spoiler: ${alt}"><span class="spoilerimgwarning">${gallery_images[i].spoiler}</span>
 				</span>
 				
 			</span>
@@ -548,7 +548,7 @@ function makeGallery(gallery_images)
 		{
 			thumbview += `
 			<span class="gallery-slot" id="${name}">
-				<img src="${makeStandard(currentpage.name)}/gallery/${path}" onclick="openGalleryImage('${name}')">
+				<img src="${makeStandard(currentpage.name)}/gallery/${path}" onclick="openGalleryImage('${name}')" alt="${alt}">
 			</span>
 			`;
 		}
