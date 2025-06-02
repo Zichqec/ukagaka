@@ -503,12 +503,6 @@ function makePageIndex()
 		output += `<a href="#${makeStandard(heading.innerText)}">${heading.innerText}</a>`;
 	}
 	
-	//Special case since this is made page-side... I could maybe clean this up though tbh? It'd require rearranging some stuff though
-	// if (version_history != null)
-	// {
-		// output += `<a href="#version_history">Version history</a>`;
-	// }
-	
 	if (output != ``)
 	{
 		output = `
