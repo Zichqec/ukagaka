@@ -500,7 +500,7 @@ function makePageIndex()
 		{
 			output += `<br>`;
 		}
-		output += `<a href="#${heading.innerText}">${heading.innerText}</a>`;
+		output += `<a href="#${makeStandard(heading.innerText)}">${heading.innerText}</a>`;
 	}
 	
 	//Special case since this is made page-side... I could maybe clean this up though tbh? It'd require rearranging some stuff though
@@ -595,7 +595,7 @@ if (typeof gallery_images !== 'undefined')
 {
 	if (gallery_images.length > 0)
 	{
-		document.getElementById('gallery').innerHTML = makeGallery(gallery_images);
+		document.getElementById('gallery').outerHTML = makeGallery(gallery_images);
 	}
 }
 
@@ -652,7 +652,7 @@ if (pagetype == "ghost")
 {
 	if (shells_by_others.length > 0)
 	{
-		document.getElementById('shells_by_others_index').innerHTML = makeOtherShellIndex(shells_by_others);
+		document.getElementById('shells_by_others_index').outerHTML = makeOtherShellIndex(shells_by_others);
 	}
 
 	function checkGhost(ghost)
@@ -673,7 +673,7 @@ if (pagetype == "ghost")
 
 	if (shell_list.length > 0)
 	{
-		document.getElementById('shells_by_me_index').innerHTML = makeMyShellIndex(shell_list);
+		document.getElementById('shells_by_me_index').outerHTML = makeMyShellIndex(shell_list);
 	}
 }
 
