@@ -525,11 +525,12 @@ function makeGallery(gallery_images)
 		let path = gallery_images[i].path
 		let name = path.split(".")[0]
 		let alt = gallery_images[i].alt
+		let caption = gallery_images[i].caption
 		
 		fullview += `
 		<div class="gallery-full" id="${name}-full">
-			<img src="hoard_of_shinies/gallery/${path}" alt="${alt}">
-			<span class="gallery-caption">${alt}</span>
+			<img src="${makeStandard(currentpage.name)}/gallery/${path}" alt="${alt}">
+			<span class="gallery-caption">${caption}</span>
 		</div>
 		`;
 		if (gallery_images[i].spoiler != null)
