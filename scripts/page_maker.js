@@ -455,34 +455,59 @@ function makeOtherShellIndex(shells)
 }
 
 //TODO i could probably use getElementByTag to grab all articles and then grab the h2s in them to create this... and then i could add any headings i want per page?
+//TODO working except a few things:
+//1: version history is made page-side and so doesn't show here? maybe? check the console. it looks like it's getting it, but...???
+//2: need to get rid of those divs and make the IDs be uniform on the articles - this might solve some other problems too
 function makePageIndex()
 {
 	output = ``;
 	
-	if (typeof gallery_images !== 'undefined')
+	// if (typeof gallery_images !== 'undefined')
+	// {
+		// if (gallery_images.length > 0)
+		// {
+			// output += `<a href="#gallery">Gallery</a><br>`;
+		// }
+	// }
+	
+	// if (pagetype == "ghost")
+	// {
+		// if (shell_list.length > 0)
+		// {
+			// output += `<a href="#shells_by_me">Shells by me</a><br>`;
+		// }
+		// if (shells_by_others.length > 0)
+		// {
+			// output += `<a href="#shells_by_others">Shells by others</a><br>`;
+		// }
+	// }
+	
+	// if (version_history != null)
+	// {
+		// output += `<a href="#version_history">Version history</a>`;
+	// }
+	
+	let articles = document.getElementsByTagName("article")
+	console.log(articles);
+	console.log(articles.length);	
+	for (let i = 1; i < articles.length; i++)
 	{
-		if (gallery_images.length > 0)
+		console.log(`i ${i}`);
+		let heading = articles[i].getElementsByTagName("h2")[0];
+		console.log(`heading: ${heading.innerText} ${heading.outerHTML}`);
+		console.log(heading);
+		if (output != "")
 		{
-			output += `<a href="#gallery">Gallery</a><br>`;
+			output += `<br>`;
 		}
+		output += `<a href="#${heading.innerText}">${heading.innerText}</a>`;
 	}
 	
-	if (pagetype == "ghost")
-	{
-		if (shell_list.length > 0)
-		{
-			output += `<a href="#shells_by_me">Shells by me</a><br>`;
-		}
-		if (shells_by_others.length > 0)
-		{
-			output += `<a href="#shells_by_others">Shells by others</a><br>`;
-		}
-	}
-	
-	if (version_history != null)
-	{
-		output += `<a href="#version_history">Version history</a>`;
-	}
+	//Special case since this is made page-side... I could maybe clean this up though tbh? It'd require rearranging some stuff though
+	// if (version_history != null)
+	// {
+		// output += `<a href="#version_history">Version history</a>`;
+	// }
 	
 	if (output != ``)
 	{
