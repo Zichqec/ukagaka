@@ -589,7 +589,7 @@ if (typeof gallery_images !== 'undefined')
 {
 	if (gallery_images.length > 0)
 	{
-		document.getElementById('gallery').outerHTML = makeGallery(gallery_images);
+		document.getElementById('gallery_placeholder').outerHTML = makeGallery(gallery_images);
 	}
 }
 
