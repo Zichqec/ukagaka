@@ -562,7 +562,8 @@ function makeGallery(gallery_images)
 	
 	let output = ``;
 	output += `
-<article>
+<article id="gallery">
+	<p class="to_top"><a href='#'>Back to top</a>
 
 	<h2>Gallery</h2>
 
