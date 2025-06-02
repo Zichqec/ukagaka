@@ -37,5 +37,5 @@ function makeHistory(hist)
 
 if (version_history != null)
 {
-	document.getElementById('history_list').innerHTML = makeHistory(version_history);
+	document.getElementById('history_list').outerHTML = makeHistory(version_history);
 }

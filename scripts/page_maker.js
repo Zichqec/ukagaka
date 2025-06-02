@@ -250,7 +250,7 @@ function makeMyShellIndex(shells)
 {
 	let output = ``;
 	output += `<article id="shells_by_me">`;
-	output += `<p class="to_top"><a href='#'>Back to top</a>`;
+	output += `<p class="to_top"><a href='#'>Back to top</a></p>`;
 	
 	output += `
 	<h2>Shells by me</h2>
@@ -363,7 +363,7 @@ function makeOtherShellIndex(shells)
 {
 	let output = ``;
 	output += `<article id="shells_by_others">`;
-	output += `<p class="to_top"><a href='#'>Back to top</a>`;
+	output += `<p class="to_top"><a href='#'>Back to top</a></p>`;
 	output += `
 	<h2>Shells by others</h2>
 	<p>These are external shells made by folks other than me. Check em out, and make sure you tell the creators of the shells if you enjoy them! You can also find shells listed on the <a href="https://ukagakadreamteam.com/wiki/ghost/${pagename}#shells">Ukagaka Dream Team Wiki</a>.</p>
@@ -557,7 +557,7 @@ function makeGallery(gallery_images)
 	let output = ``;
 	output += `
 <article id="gallery">
-	<p class="to_top"><a href='#'>Back to top</a>
+	<p class="to_top"><a href='#'>Back to top</a></p>
 
 	<h2>Gallery</h2>
 
@@ -673,4 +673,4 @@ if (pagetype == "ghost")
 
 document.getElementById('page_index').innerHTML = makePageIndex();
 
-document.getElementById('tempblurb').innerHTML = `<p>${currentpage.blurb}</p>`;
+document.getElementById('indexblurb').innerHTML = `<p>${currentpage.blurb}</p>`;
