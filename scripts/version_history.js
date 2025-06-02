@@ -5,8 +5,8 @@ function makeHistory(hist)
 	let output = ``;
 	output += `
 	<article id="version_history">
-	<p class="to_top"><a href='#'>Back to top</a>
-	</p><h2>Version history</h2>
+	<p class="to_top"><a href='#'>Back to top</a></p>
+	<h2>Version history</h2>
 `;
 
 	for (let ver of hist)
@@ -23,7 +23,7 @@ function makeHistory(hist)
 			{
 				
 				
-				output += `<li>${change}</li>`;
+				output += `<li><p>${change}</p></li>`;
 				
 				
 			}

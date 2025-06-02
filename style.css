@@ -28,6 +28,11 @@ p
 	font-size: 15px;
 }
 
+li > p
+{
+	margin: 0;
+}
+
 img
 {
 	max-width: 100%;
