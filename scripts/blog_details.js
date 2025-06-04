@@ -26,7 +26,7 @@ var item_details = [
 		// tags: [],
 	// },
 	{
-		name: "Blog Grand Opening",
+		name: "Blog grand opening",
 		release: "2025-05-22",
 		dupeindex: "01",
 		latest: null,
@@ -35,7 +35,7 @@ var item_details = [
 		tags: ["2025","May","Announcement","Website update"],
 	},
 	{
-		name: "My Ghost Development History",
+		name: "My ghost development history",
 		release: "2025-05-22",
 		dupeindex: "00",
 		latest: null,
@@ -44,7 +44,7 @@ var item_details = [
 		tags: ["2025","May","Dev musings"],
 	},
 	{
-		name: "Summary of 2024 in the Ukagaka Dream Team (Advent Calendar 2024)",
+		name: "Summary of 2024 in the Ukagaka Dream Team (Advent calendar 2024)",
 		release: "2024-12-23",
 		dupeindex: "00",
 		latest: null,
@@ -53,7 +53,7 @@ var item_details = [
 		tags: ["2024","December","Yearly summary","Advent calendar"],
 	},
 	{
-		name: "Spectre: What, Why, and How (Advent Calendar 2024)",
+		name: "Spectre: What, why, and how (Advent calendar 2024)",
 		release: "2024-12-22",
 		dupeindex: "00",
 		latest: null,
@@ -62,7 +62,7 @@ var item_details = [
 		tags: ["2024","December","Dev musings","Advent calendar"],
 	},
 	{
-		name: "Needle Dog Mirror",
+		name: "Needle Dog mirror",
 		release: "2024-11-11",
 		dupeindex: "00",
 		latest: null,
@@ -71,7 +71,7 @@ var item_details = [
 		tags: ["2024","November","Mirror"],
 	},
 	{
-		name: "FLELE Mirror",
+		name: "FLELE mirror",
 		release: "2024-10-13",
 		dupeindex: "00",
 		latest: null,
@@ -80,7 +80,7 @@ var item_details = [
 		tags: ["2024","October","Mirror"],
 	},
 	{
-		name: "Summary of 2023 in the Ukagaka Dream Team (Advent Calendar 2023)",
+		name: "Summary of 2023 in the Ukagaka Dream Team (Advent calendar 2023)",
 		release: "2023-12-23",
 		dupeindex: "00",
 		latest: null,
@@ -89,7 +89,7 @@ var item_details = [
 		tags: ["2023","December","Yearly summary","Advent calendar"],
 	},
 	{
-		name: "Ukadoc English Translation Completed (Advent Calendar 2023)",
+		name: "Ukadoc English translation completed (Advent calendar 2023)",
 		release: "2023-12-22",
 		dupeindex: "00",
 		latest: null,
@@ -98,7 +98,7 @@ var item_details = [
 		tags: ["2023","December","Announcement","Advent calendar"],
 	},
 	{
-		name: "YAYA Fundamentals Guide Release (Advent Calendar 2022)",
+		name: "YAYA Fundamentals guide release (Advent calendar 2022)",
 		release: "2022-12-24",
 		dupeindex: "00",
 		latest: null,
@@ -107,7 +107,7 @@ var item_details = [
 		tags: ["2022","December","New release","Advent calendar"],
 	},
 	{
-		name: "Ukagaka Dream Team Wiki Release (Advent Calendar 2022)",
+		name: "Ukagaka Dream Team Wiki release (Advent calendar 2022)",
 		release: "2022-12-23",
 		dupeindex: "00",
 		latest: null,
@@ -116,7 +116,7 @@ var item_details = [
 		tags: ["2022","December","Announcement","Advent calendar"],
 	},
 	{
-		name: "How to Write a Needle (Advent Calendar 2022)",
+		name: "How to write a Needle (Advent calendar 2022)",
 		release: "2022-12-19",
 		dupeindex: "00",
 		latest: null,
@@ -125,7 +125,7 @@ var item_details = [
 		tags: ["2022","December","Dev musings","Advent calendar"],
 	},
 	{
-		name: "I've Spent a Ridiculous Amount of Time Thinking About Probabilities: An Ukagaka Developer's Struggle for Probability Perfection (Advent Calendar 2021)",
+		name: "I've spent a ridiculous amount of time thinking about probabilities: An ukagaka developer's struggle for probability perfection (Advent calendar 2021)",
 		release: "2021-12-12",
 		dupeindex: "00",
 		latest: null,
