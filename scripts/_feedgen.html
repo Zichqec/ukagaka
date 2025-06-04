@@ -33,7 +33,7 @@ function getDayOfWeek(date)
 	return isNaN(dayOfWeek) ? null : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][dayOfWeek]
 }
 
-function CreateExpectedDate(date)
+function CreateExpectedDate(date,dupeindex)
 {
 	let weekday = getDayOfWeek(date);
 	date = date.split("-");
@@ -45,7 +45,11 @@ function CreateExpectedDate(date)
 	let monthname = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][month - 1];
 	
 	//Timestamp fixed to midnight EST cuz hell nah I am NOT dealing with that
-	return `${weekday}, ${day} ${monthname} ${year} 00:00:00 EST`;
+	//Ok, well, I decided to make the seconds be able to change so I can force the ordering to be chronological. Yes this makes my time stamps a lie, shush. Nobody cares about the seconds, I hope.
+	//This will work so long as I never publish more than 60 things in the same day!
+	//This is not a challenge, future Zi :knife:
+	if (dupeindex == null) dupeindex = "00";
+	return `${weekday}, ${day} ${monthname} ${year} 00:00:${dupeindex} EST`;
 }
 
 //Make the array so we can flip it, cuz blog posts are in reverse chronological order...
@@ -89,7 +93,7 @@ for (let i = 0; i < index_details.length; i++)
 		&lt;title&gt;${item.name}&lt;/title&gt;
 		&lt;link&gt;${postlink}&lt;/link&gt;
 		&lt;guid&gt;${postlink}&lt;/guid&gt;
-		&lt;pubDate&gt;${CreateExpectedDate(item.release)}&lt;/pubDate&gt;
+		&lt;pubDate&gt;${CreateExpectedDate(item.release,item.dupeindex)}&lt;/pubDate&gt;
 		&lt;description&gt;${item.blurb}&lt;/description&gt;
 	&lt;/item&gt;`;
 }

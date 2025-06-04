@@ -28,6 +28,7 @@ var item_details = [
 	{
 		name: "Blog Grand Opening",
 		release: "2025-05-22",
+		dupeindex: "01",
 		latest: null,
 		page: "2025-05-22_blog_grand_opening.html",
 		blurb: "The grand opening of this blog in its full and proper form. Everything before this point was created as a blog post without a home.",
@@ -36,6 +37,7 @@ var item_details = [
 	{
 		name: "My Ghost Development History",
 		release: "2025-05-22",
+		dupeindex: "00",
 		latest: null,
 		page: "2025-05-22_my_ghost_development_history.html",
 		blurb: "My history as a ghost developer, cataloguing as many releases and updates as I could find from before the launch of this blog.",
@@ -44,6 +46,7 @@ var item_details = [
 	{
 		name: "Summary of 2024 in the Ukagaka Dream Team (Advent Calendar 2024)",
 		release: "2024-12-23",
+		dupeindex: "00",
 		latest: null,
 		page: "2024-12-23_advent_calendar_summary_of_2024.html",
 		blurb: "A summary of events and other important happenings in the Ukagaka Dream Team during 2024.",
@@ -52,6 +55,7 @@ var item_details = [
 	{
 		name: "Spectre: What, Why, and How (Advent Calendar 2024)",
 		release: "2024-12-22",
+		dupeindex: "00",
 		latest: null,
 		page: "2024-12-22_advent_calendar_spectre.html",
 		blurb: "An article describing the plugin <a href='../plugin/spectre.html'>Spectre</a>, and also exploring the development process and various considerations we had after making it.",
@@ -60,6 +64,7 @@ var item_details = [
 	{
 		name: "Needle Dog Mirror",
 		release: "2024-11-11",
+		dupeindex: "00",
 		latest: null,
 		page: "2024-11-11_needle_dog_mirror.html",
 		blurb: "A mirror download of the shell Needle Dog, created with permission from its author since the original download went down.",
@@ -68,6 +73,7 @@ var item_details = [
 	{
 		name: "FLELE Mirror",
 		release: "2024-10-13",
+		dupeindex: "00",
 		latest: null,
 		page: "2024-10-13_flele_mirror.html",
 		blurb: "A mirror download of FLELE, created based on permissions given on FLELE's distribution site. It may be helpful for those who cannot access FLELE's page.",
@@ -76,6 +82,7 @@ var item_details = [
 	{
 		name: "Summary of 2023 in the Ukagaka Dream Team (Advent Calendar 2023)",
 		release: "2023-12-23",
+		dupeindex: "00",
 		latest: null,
 		page: "2023-12-23_advent_calendar_summary_of_2023.html",
 		blurb: "A summary of events and other important happenings in the Ukagaka Dream Team during 2023.",
@@ -84,6 +91,7 @@ var item_details = [
 	{
 		name: "Ukadoc English Translation Completed (Advent Calendar 2023)",
 		release: "2023-12-22",
+		dupeindex: "00",
 		latest: null,
 		page: "2023-12-22_advent_calendar_ukadoc_english_translation.html",
 		blurb: "An announcement of the completion of the Ukadoc English translation project.",
@@ -92,6 +100,7 @@ var item_details = [
 	{
 		name: "YAYA Fundamentals Guide Release (Advent Calendar 2022)",
 		release: "2022-12-24",
+		dupeindex: "00",
 		latest: null,
 		page: "2022-12-24_advent_calendar_yaya_fundamentals_release.html",
 		blurb: "The release of an extensive guide to YAYA in English, called YAYA Fundamentals.",
@@ -100,6 +109,7 @@ var item_details = [
 	{
 		name: "Ukagaka Dream Team Wiki Release (Advent Calendar 2022)",
 		release: "2022-12-23",
+		dupeindex: "00",
 		latest: null,
 		page: "2022-12-23_advent_calendar_wiki_release.html",
 		blurb: "A release announcement for the Ukagaka Dream Team Wiki, which is now publicly available with almost all the pages up to this point filled in.",
@@ -108,6 +118,7 @@ var item_details = [
 	{
 		name: "How to Write a Needle (Advent Calendar 2022)",
 		release: "2022-12-19",
+		dupeindex: "00",
 		latest: null,
 		page: "2022-12-19_advent_calendar_how_to_write_a_needle.html",
 		blurb: "A recounting of the process of writing <a href='../ghost/needle.html'>Needle</a> for Ghost Jam 2022, and how it changed the way I think about writing ghosts since then.",
@@ -116,6 +127,7 @@ var item_details = [
 	{
 		name: "I've Spent a Ridiculous Amount of Time Thinking About Probabilities: An Ukagaka Developer's Struggle for Probability Perfection (Advent Calendar 2021)",
 		release: "2021-12-12",
+		dupeindex: "00",
 		latest: null,
 		page: "2021-12-12_advent_calendar_probabilities.html",
 		blurb: "An exploration of probabilities in YAYA, and how I eventually managed to overcome various issues to attain a perfect result (with the help of developers who knew what they were doing much better than I did!)",
