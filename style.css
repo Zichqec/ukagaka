@@ -332,7 +332,7 @@ nav
 	font-weight: normal;
 }
 
-.navbar a:hover, .dropdown:hover
+.navbar a:hover, .dropdown:hover, .dropdown:focus-within
 {
 	background-color: #b6b6b6;
 }
@@ -369,7 +369,7 @@ nav
 }
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content
+.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content
 {
 	display: block;
 }
