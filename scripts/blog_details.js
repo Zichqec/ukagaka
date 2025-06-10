@@ -26,6 +26,14 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Weather Station v1.0.5",
+		release: "2025-06-10",
+		latest: null,
+		page: "2025-06-10_weather_station_v1.0.5.html",
+		blurb: "A small patch for Weather Station to fix some issues while offline.",
+		tags: ["2025","June","Update"],
+	},
+	{
 		name: "Blog grand opening",
 		release: "2025-05-22",
 		dupeindex: "01",
