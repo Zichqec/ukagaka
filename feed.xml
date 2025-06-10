@@ -95,6 +95,13 @@
 		<pubDate>Thu, 22 May 2025 00:00:01 EST</pubDate>
 		<description>The grand opening of this blog in its full and proper form. Everything before this point was created as a blog post without a home.</description>
 	</item>
+	<item>
+		<title>Weather Station v1.0.5</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-06-10_weather_station_v1.0.5</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-06-10_weather_station_v1.0.5</guid>
+		<pubDate>Tue, 10 Jun 2025 00:00:00 EST</pubDate>
+		<description>A small patch for Weather Station to fix some issues while offline.</description>
+	</item>
 </channel>
 </rss>
 

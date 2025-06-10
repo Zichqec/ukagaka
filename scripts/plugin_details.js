@@ -26,8 +26,8 @@ var item_details = [
 	{
 		name: "Weather Station",
 		release: "2022-02-01",
-		latest: "2024-10-15",
-		version: "v1.0.4",
+		latest: "2025-06-10",
+		version: "v1.0.5",
 		forevent: null,
 		collaborators: null,
 		content_warnings: null,
