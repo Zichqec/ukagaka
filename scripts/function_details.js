@@ -281,6 +281,17 @@ var item_details = [
 		tags: ["2024","YAYA"]
 	},
 	{
+		name: "NumSuffix",
+		release: "2022-05-05",
+		latest: "2025-06-12",
+		version: null,
+		forevent: null,
+		language: "YAYA",
+		download: "NumSuffix.txt",
+		blurb: "Adds the appropriate suffix to any number you pass in. So 2 becomes 2nd, 11 becomes 11th, and 123 becomes 123rd.",
+		tags: ["2022","YAYA","Pure function"]
+	},
+	{
 		name: "OnRandomDressup",
 		release: "2021-07-13",
 		latest: "2024-05-20",
