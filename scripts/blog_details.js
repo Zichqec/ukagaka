@@ -26,6 +26,14 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Weather Station v1.1.0",
+		release: "2025-06-18",
+		latest: null,
+		page: "2025-06-18_weather_station_v1.1.0.html",
+		blurb: "A major update for Weather Station to overhaul various parts of the code, deprecate some references for privacy concerns, add a thumbnail, and add some new options for formatting the date and time.",
+		tags: ["2025","June","Update"],
+	},
+	{
 		name: "Weather Station v1.0.5",
 		release: "2025-06-10",
 		latest: null,

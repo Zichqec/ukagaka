@@ -124,8 +124,29 @@ let version_history = [
 				"Documentation has been updated to note the possibility that the \"No API response\" error may indicate the user is offline.",
 				"Fixed a menu that would display with pauses when used with certain ghosts (those using \"AutoPause\")."
 			]
-		}
-	]
+		},
+	],
+},
+{
+	version: "1.1.0",
+	patches:
+	[
+		{
+			version: "v1.1.0",
+			released: "2025-06-18",
+			changelog:
+			[
+				"Deprecated references 38-41 of OnWeatherStation.Weather, which previously contained the user's location data if they allowed this in the settings. I have decided that there is no use of this good enough to outweigh the privacy concerns, so these references have been removed entirely.",
+				"Added a thumbnail.",
+				"Split the date and time formats from the metric/imperial setting. You can now control the date and time formats that are displayed in the plugin menu independently.",
+				"Added YYYY-MM-DD as a possible date format.",
+				"Fixed the location search menu having incorrect tags, causing an awkward display on some balloons.",
+				"Cleaned up a lot of old code and improved performance in some circumstances.",
+				"Reorganized code into multiple files and updated various informational comments, etc.",
+				"Updated YAYA to Tc571-11.",
+			]
+		},
+	],
 },
 
 ]

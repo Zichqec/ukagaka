@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Zi's Ukagaka Space"/>
+    <meta property="og:description" content="Zi's hub for ukagaka"/>
+    <meta property="og:url" content="https://zichqec.github.io/ukagaka/"/>
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png"/>
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p>A major update for <a href="../plugin/weather_station.html">Weather Station</a> to overhaul various parts of the code, deprecate some references for privacy concerns, add a thumbnail, and add some new options for formatting the date and time.</p>
+
+<p>Changelog:</p>
+<ul>
+	<li><p>Deprecated references 38-41 of OnWeatherStation.Weather, which previously contained the user's location data if they allowed this in the settings. I have decided that there is no use of this good enough to outweigh the privacy concerns, so these references have been removed entirely.</p></li>
+	<li><p>Added a thumbnail.</p></li>
+	<li><p>Split the date and time formats from the metric/imperial setting. You can now control the date and time formats that are displayed in the plugin menu independently.</p></li>
+	<li><p>Added YYYY-MM-DD as a possible date format.</p></li>
+	<li><p>Fixed the location search menu having incorrect tags, causing an awkward display on some balloons.</p></li>
+	<li><p>Cleaned up a lot of old code and improved performance in some circumstances.</p></li>
+	<li><p>Reorganized code into multiple files and updated various informational comments, etc.</p></li>
+	<li><p>Updated YAYA to Tc571-11.</p></li>
+</ul>
+
+<p>I told myself when I released v1.0.5 that I wasn't going to touch the old code, I was just going to fix the minor issue I'd found and move on... but then after I pushed that update, I finally sat down and drew the thumbnail I've always wanted.</p>
+
+<p>I didn't want to push another update <em>just</em> for the thumbnail, and I knew there were some things I wanted to fix in the code... so I started picking at it and tidying things up, and here we are with a new major version. There were more cobwebs in there than I expected, but it feels a lot cleaner now.</p>
+
+<p>There are still a few little things I want to fix/improve later if possible. (Most notably, the weather alerts are still awkwardly missing some spaces - but I know why this happens now!) I also noticed that weatherAPI has added some new data points. Most of these are not of interest to me, but there is one in particular marked as "coming soon" that I'll be keeping an eye out for... provided it's included as part of the free API, anyway.</p>
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>
