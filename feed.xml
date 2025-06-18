@@ -102,6 +102,13 @@
 		<pubDate>Tue, 10 Jun 2025 00:00:00 EST</pubDate>
 		<description>A small patch for Weather Station to fix some issues while offline.</description>
 	</item>
+	<item>
+		<title>Weather Station v1.1.0</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-06-18_weather_station_v1.1.0</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-06-18_weather_station_v1.1.0</guid>
+		<pubDate>Wed, 18 Jun 2025 00:00:00 EST</pubDate>
+		<description>A major update for Weather Station to overhaul various parts of the code, deprecate some references for privacy concerns, add a thumbnail, and add some new options for formatting the date and time.</description>
+	</item>
 </channel>
 </rss>
 

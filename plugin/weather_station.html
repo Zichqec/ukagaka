@@ -137,10 +137,13 @@ let version_history = [
 			changelog:
 			[
 				"Deprecated references 38-41 of OnWeatherStation.Weather, which previously contained the user's location data if they allowed this in the settings. I have decided that there is no use of this good enough to outweigh the privacy concerns, so these references have been removed entirely.",
+				"Fixed an issue where the average visibility in kilometers was no longer available since v1.0.3.",
 				"Added a thumbnail.",
 				"Split the date and time formats from the metric/imperial setting. You can now control the date and time formats that are displayed in the plugin menu independently.",
 				"Added YYYY-MM-DD as a possible date format.",
+				"Adjusted the time display on the main menu to match the time display in the forecast menu.",
 				"Fixed the location search menu having incorrect tags, causing an awkward display on some balloons.",
+				"Changed some menu options to word wrap on smaller balloons.",
 				"Cleaned up a lot of old code and improved performance in some circumstances.",
 				"Reorganized code into multiple files and updated various informational comments, etc.",
 				"Updated YAYA to Tc571-11.",
