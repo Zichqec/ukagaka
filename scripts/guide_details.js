@@ -34,7 +34,7 @@ var item_details = [
 	{
 		name: "Ghost Release Tips & Checklist",
 		release: "2023-06-18",
-		latest: "2025-02-19",
+		latest: "2025-06-19",
 		forevent: null,
 		guidefor: "Devs",
 		language: null,
