@@ -1,0 +1,38 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//Takes an integer or real number as an argument and outputs it as a string of numbers with commas as thousand separators.
+//Example: 1234567890 → 1,234,567,890
+//Currently does not support other separation formats. You can customize it to your needs, or I may consider updating this in the future to support multiple formats with another argument to pick which one you want.
+GroupDigits
+{
+	_str = TOSTR(_argv[0])
+	
+	_num = ""
+	_decimalpoint = ""
+	if "." _in_ _str
+	{
+		_decimalpoint = _str[1,"."]
+		_num = _str[0,"."]
+	}
+	else; _num = _str
+	
+	_len = STRLEN(_num)
+	
+	
+	_threes = _len / 3
+	_excess = _len % 3
+	
+	_output = ""
+	_i = 0
+	_output += SUBSTR(_num,0,_excess)
+	_i += _excess
+	while _i < _len
+	{
+		if _output != ""; _output += ","
+		_output += SUBSTR(_num,_i,3)
+		_i += 3
+	}
+	
+	if "." _in_ _str; _output += "." + _decimalpoint
+	
+	_output
+}

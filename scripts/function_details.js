@@ -149,6 +149,17 @@ var item_details = [
 		tags: ["2025","YAYA"]
 	},
 	{
+		name: "GroupDigits",
+		release: "2025-06-20",
+		latest: null,
+		version: null,
+		forevent: null,
+		language: "YAYA",
+		download: "GroupDigits.txt",
+		blurb: "A function to convert integers or real numbers to a string with commas as thousands separators. For example, 1234567890 becomes 1,234,567,890.<br><br>Only supports comma separators for now! You can customize it if you want a different format, or I may consider adding the option for more formats in the future.",
+		tags: ["2025","YAYA","Pure function"]
+	},
+	{
 		name: "Holding Obsidian",
 		release: "2020-11-04",
 		latest: "2020-11-06",

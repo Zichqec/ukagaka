@@ -109,6 +109,13 @@
 		<pubDate>Wed, 18 Jun 2025 00:00:00 EST</pubDate>
 		<description>A major update for Weather Station to overhaul various parts of the code, deprecate some references for privacy concerns, add a thumbnail, and add some new options for formatting the date and time.</description>
 	</item>
+	<item>
+		<title>GroupDigits function</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-06-20_groupdigits_function</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-06-20_groupdigits_function</guid>
+		<pubDate>Fri, 20 Jun 2025 00:00:00 EST</pubDate>
+		<description>Release of a new function: GroupDigits. This function takes an integer or real number and outputs it as a string with commas as thousands separators.</description>
+	</item>
 </channel>
 </rss>
 

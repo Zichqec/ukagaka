@@ -26,6 +26,14 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "GroupDigits function",
+		release: "2025-06-20",
+		latest: null,
+		page: "2025-06-20_groupdigits_function.html",
+		blurb: "Release of a new function: GroupDigits. This function takes an integer or real number and outputs it as a string with commas as thousands separators.",
+		tags: ["2025","June","New release"],
+	},
+	{
 		name: "Weather Station v1.1.0",
 		release: "2025-06-18",
 		latest: null,
