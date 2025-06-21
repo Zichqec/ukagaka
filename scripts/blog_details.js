@@ -26,6 +26,14 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Doodle Daydreams v1.0.0",
+		release: "2025-06-21",
+		latest: null,
+		page: "2025-06-21_doodle_daydreams_v1.0.0.html",
+		blurb: "Release of a new ghost: Doodle Daydreams. A poseable doll to dress up and daydream with. What worlds will your mind take you to...?",
+		tags: ["2025","June","New release"],
+	},
+	{
 		name: "GroupDigits function",
 		release: "2025-06-20",
 		latest: null,

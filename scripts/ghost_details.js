@@ -122,6 +122,27 @@ var item_details = [
 		tags: ["2021", "YAYA", "Includes my code", "For event", "Ghost Jam", "WIP"]
 	},
 	{
+		name: "Doodle Daydreams",
+		release: "2025-06-21",
+		latest: null,
+		version: "v1.0.0",
+		forevent: null,
+		collaborators:
+		[
+			{name: "Kipali", creditlink: "https://ako-kipali.tumblr.com/ghost-stuff"},
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+		],
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/doodle_daydreams/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/doodle_daydreams"},
+		],
+		blurb: "﻿A poseable doll to dress up and daydream with. What worlds will your mind take you to...?",
+		tags: ["2025","YAYA","Collab","Includes my writing","Includes my code","For event","Ghost Jam","Idle chatter"]
+	},
+	{
 		name: "Dusty and Obsidian",
 		release: "2020-08-01",
 		latest: "2020-11-17",
