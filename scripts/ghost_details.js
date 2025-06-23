@@ -233,7 +233,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/ghost_club"},
 		],
 		blurb: "Your friend has started a \"Ghost Club\" and has invited you to join. Will you go...?<br><br>A small entry I made for Ghost Masquerade 7, using a SHIORI that was new to me: Misaka! Also uses the freeshell <a href='https://github.com/SmokyCinnamon/indifferentsorrel/releases/tag/scfs'>\"Sheet Cat\"</a> by <a href='https://smokycinnamon.github.io/indifferentsorrel'>SmokyCinnamonRoll</a>.",
-		tags: ["2025", "Misaka", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter"]
+		tags: ["2025", "Misaka", "Uses freeshell", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter"]
 	},
 	{
 		name: "Ghost Guides",
@@ -584,7 +584,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/the_garden_of_lost_souls"},
 		],
 		blurb: "You find yourself in a strange place, with only this unknown girl as your guide. Walk with her, and perhaps you'll learn more...<br><br>Uses the freeshell <a href='https://littlerainy.net/b3/shell/001rim.html'>\"冷たくて、静かな\"</a> by <a href='https://littlerainy.net/b3/'>じる</a>.",
-		tags: ["2025", "YAYA", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter", "Story"]
+		tags: ["2025", "YAYA", "Uses freeshell", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter", "Story"]
 	},
 	{
 		name: "Ukatranslator",
