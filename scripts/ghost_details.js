@@ -766,6 +766,6 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/ゴースト闇鍋-おかわり"},
 		],
 		blurb: "A collaborative event ghost that I participated in! (Romanization: Ghost Yaminabe-okawari / Translation: Ghost Dark Pot-refill) There is dialogue in both Japanese and English. I collaborated with Galla again this year, and this time there are 50 dialogues from us to see. Our theme this year was \"Rules of Life\".<br><br>Note that the shell is a modified version of eVe.'s \"うにゅっとしたフリーシェル\".",
-		tags: ["2024", "Satori", "Collab", "Uses freeshell", "Includes my writing", "For event", "Ghost Yaminabe", "Idle chatter"],
+		tags: ["2025", "Satori", "Collab", "Uses freeshell", "Includes my writing", "For event", "Ghost Yaminabe", "Idle chatter"],
 	}
 ]
