@@ -57,7 +57,7 @@
 
 
 //Pommy
-{name: "Pommy", creditlink: "https://www.youtube.com/user/Pommy15642"}
+{name: "Pommy", creditlink: "https://www.youtube.com/@pommy_the_mimic"}
 
 
 //Digibillcipher

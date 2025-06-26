@@ -297,7 +297,7 @@ var item_details = [
 		forevent: "Ghost Jam 2020",
 		collaborators:
 		[
-			{name: "Pommy", creditlink: "https://www.youtube.com/user/Pommy15642"}
+			{name: "Pommy", creditlink: "https://www.youtube.com/@pommy_the_mimic"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -702,6 +702,27 @@ var item_details = [
 		],
 		blurb: "This is a port of my ghost <a href='../ghost/xanders_refuge.html'>Xander's Refuge</a> into the SHIORI <a href='https://github.com/kanadelab/aosora-shiori'>Aosora</a>. I created it as a way to test the SHIORI, and to have as a roughly 1:1 comparison of YAYA code and Aosora code. If you want to learn more about the ghost's premise, please check the page for Xander's Refuge.<br><br>Because this is a port of a YAYA ghost, it is coded in a very YAYA way, and doesn't make use of Aosora to its fullest extent. Please keep this in mind if you look at the code!",
 		tags: ["2025", "Aosora", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Story"]
+	},
+	{
+		name: "Ye Olde Cursed Tower",
+		release: "2025-06-26",
+		latest: null,
+		version: "v1.0.0",
+		forevent: null,
+		collaborators:
+		[
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+			{name: "Pommy", creditlink: "https://www.youtube.com/@pommy_the_mimic"},
+		],
+		translations: null,
+		content_warnings: "Dehumanization, user death",
+		download: "https://github.com/Zichqec/ye_olde_cursed_tower/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/ye_olde_cursed_tower"},
+		],
+		blurb: "An evil wizard sits atop a tower, collecting souls... for what purpose? Nobody is sure. What will happen to the people trapped within the tower's walls?<br><br>... Well, that's up to you, since you are that wizard! Have fun.",
+		tags: ["2025", "Aosora", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter"]
 	},
 	{
 		name: "Zana's Laws",

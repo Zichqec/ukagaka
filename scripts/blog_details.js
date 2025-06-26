@@ -26,6 +26,22 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Ye Olde Soul Spell v1.0.0",
+		release: "2025-06-26",
+		latest: null,
+		page: "2025-06-26_ye_olde_soul_spell_v1.0.0.html",
+		blurb: "Release of a new balloon: Ye Olde Soul Spell. A spell themed balloon with a variety of colors and a few patterns. It's also round!",
+		tags: ["2025","June","New release"],
+	},
+	{
+		name: "Ye Olde Cursed Tower v1.0.0",
+		release: "2025-06-26",
+		latest: null,
+		page: "2025-06-26_ye_olde_cursed_tower_v1.0.0.html",
+		blurb: "Release of a new ghost: Ye Olde Cursed Tower. An evil wizard sits atop a tower, collecting souls... for what purpose? Nobody is sure. What will happen to the people trapped within the tower's walls? ... Well, that's up to you, since you are that wizard! Have fun.",
+		tags: ["2025","June","New release"],
+	},
+	{
 		name: "Doodle Daydreams v1.0.0",
 		release: "2025-06-21",
 		latest: null,

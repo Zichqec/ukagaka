@@ -684,5 +684,21 @@ var item_details = [
 		],
 		blurb: "A pack of balloons with a triangle theming! There are 36 balloons total. There is a 12 color rainbow of options for the accent colors, and light, dark, and mid options for each! Pick and choose what suits you/your project the best! This set of balloons is also very easily customized, thanks to the simple pixel style they use.<br><br>Also check out the matching <a href='../calendar_skin/wedges_calendar_skin_pack.html'>calendar skin pack</a>!",
 		tags: ["2023","Collab","Includes my art","For event","Etc. Jam","Balloon pack","Pixel brush","Plain text area","Dark text on light background","Light text on dark background","Color alts","Extra sizes"]
-	}
+	},
+	{
+		name: "Ye Olde Soul Spell",
+		release: "2025-06-26",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Ghost Jam 2025",
+		goeswith: ["Ye Olde Cursed Tower"],
+		collaborators: null,
+		download: ["https://www.mediafire.com/file/n76f0o8znfs492j/ye_olde_soul_spell_v1.0.0.nar/file"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/ye_olde_soul_spell"},
+		],
+		blurb: "A spell themed balloon with a variety of colors and a few patterns. It's also round!",
+		tags: ["2025","Includes my art","For event","Ghost Jam","Pixel brush","Plain text area","Patterned text area","Dark text on light background","Light text on dark background","Color alts","Extra sizes"]
+	},
 ]
