@@ -124,8 +124,8 @@ var item_details = [
 	{
 		name: "Doodle Daydreams",
 		release: "2025-06-21",
-		latest: null,
-		version: "v1.0.0",
+		latest: "2025-06-30",
+		version: "v1.0.1",
 		forevent: null,
 		collaborators:
 		[

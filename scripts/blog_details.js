@@ -26,6 +26,14 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Doodle Daydreams v1.0.1",
+		release: "2025-06-30",
+		latest: null,
+		page: "2025-06-30_doodle_daydreams_v1.0.1.html",
+		blurb: "A small patch for Doodle Daydreams to iron out the jam jank.",
+		tags: ["2025","June","Update"],
+	},
+	{
 		name: "Ye Olde Soul Spell v1.0.0",
 		release: "2025-06-26",
 		latest: null,
