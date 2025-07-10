@@ -144,6 +144,13 @@
 		<pubDate>Mon, 30 Jun 2025 00:00:00 EST</pubDate>
 		<description>A small patch for Doodle Daydreams to iron out the jam jank.</description>
 	</item>
+	<item>
+		<title>Hoard of Shinies v1.0.6</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-07-10_hoard_of_shinies_v1.0.6</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-07-10_hoard_of_shinies_v1.0.6</guid>
+		<pubDate>Thu, 10 Jul 2025 00:00:00 EST</pubDate>
+		<description>A small update with some additional settings for Hoard of Shinies.</description>
+	</item>
 </channel>
 </rss>
 
