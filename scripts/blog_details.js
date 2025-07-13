@@ -26,6 +26,14 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Hoard of Shinies v1.0.6",
+		release: "2025-07-10",
+		latest: null,
+		page: "2025-07-10_hoard_of_shinies_v1.0.6.html",
+		blurb: "A small update with some additional settings for Hoard of Shinies.",
+		tags: ["2025","July","Update"],
+	},
+	{
 		name: "Doodle Daydreams v1.0.1",
 		release: "2025-06-30",
 		latest: null,
