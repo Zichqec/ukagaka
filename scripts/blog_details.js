@@ -26,6 +26,14 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Permissions page now available",
+		release: "2025-07-15",
+		latest: null,
+		page: "2025-07-15_permissions_page_now_available.html",
+		blurb: "A new page has been added to the website, detailing permissions for how my various different works should be handled.",
+		tags: ["2025","July","Website update"],
+	},
+	{
 		name: "Hoard of Shinies v1.0.6",
 		release: "2025-07-10",
 		latest: null,
