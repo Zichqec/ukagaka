@@ -29,8 +29,8 @@ let links = [
 	{title: 'Other', sublinks:[
 		{path: 'free_asset/index', title: "Free Assets"},
 		{path: 'misc/index', title: "Misc"},
-		{path: 'resources', title: "Resources"},
 		{path: 'permissions', title: "Permissions"},
+		{path: 'resources', title: "Resources"},
 	]},
 	{title: "Space Mode Toggle"}
 ];
