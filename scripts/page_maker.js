@@ -241,6 +241,17 @@ function ItemInfo()
 		}
 	}
 	
+	//Permissions link
+	output += `<br>`;
+	if (pagetype == "saori")
+	{
+		output += `<b><a href="../permissions.html#saori">Related permissions<a></b>`;
+	}
+	else
+	{
+		output += `<b><a href="../permissions.html#${pagetype}s">Related permissions<a></b>`;
+	}
+	
 	output += `</p>`;
 
 	return output;
