@@ -297,7 +297,7 @@ var item_details = [
 		forevent: "Ghost Jam 2020",
 		collaborators:
 		[
-			{name: "Pommy", creditlink: "https://www.youtube.com/@pommy_the_mimic"}
+			{name: "Pommy", creditlink: "https://www.woogagoog.net/"}
 		],
 		translations: null,
 		content_warnings: null,
@@ -712,7 +712,7 @@ var item_details = [
 		collaborators:
 		[
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
-			{name: "Pommy", creditlink: "https://www.youtube.com/@pommy_the_mimic"},
+			{name: "Pommy", creditlink: "https://www.woogagoog.net/"},
 		],
 		translations: null,
 		content_warnings: "Dehumanization, user death",
