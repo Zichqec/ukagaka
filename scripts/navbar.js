@@ -104,7 +104,7 @@ function linkHTML(link)
 		}
 		return `
 		<div class="space_mode_toggle">
-			<button onclick="toggleSpaceMode()" class="space_mode_button"><img src="${imgpath}" class="space_mode_img"></button>
+			<button onclick="toggleSpaceMode()" class="space_mode_button"><img src="${imgpath}" class="space_mode_img" alt="Two stars. Click to enable or disable a galaxy background image."></button>
 		</div>
 		`;
 	}
