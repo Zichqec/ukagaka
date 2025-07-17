@@ -28,7 +28,14 @@ function makeTopIndex(item)
 		}
 	}
 	
-	return `<div class="index_link TagFilterQuickIndex ${tagdiv}"><a href="#${lowername}">${item.name}</a></div>`;
+	let output = `<div class="index_link TagFilterQuickIndex ${tagdiv}"><a href="#${lowername}">${item.name}</a></div>`;
+	
+	if (lowername.includes("yaminabe")) //Messy solution for the two ghosts with japanese names on my list so far. Would love if I could come up with a better one...
+	{
+		output = `<div class="index_link TagFilterQuickIndex ${tagdiv}"><span lang="ja"><a href="#${lowername}">${item.name}</a></span></div>`;
+	}
+	
+	return output;
 }
 
 function makeFilterSortList()
@@ -129,15 +136,29 @@ function makeIndex(item)
 			<div class="container_text">`;
 	}
 	
+	if (lowername.includes("yaminabe"))
+	{
+		output += `<h2><span lang="ja">${item.name}</ja></h2>`;
+	}
+	else
+	{
+		output += `<h2>${item.name}</h2>`;
+	}
 	output += `
-		<h2>${item.name}</h2>
 		<p>
 		<b>Initial release:</b> ${dateDisplay(item.release)}`;
 	
 	//Additional display if it was for an event
 	if (item.forevent != null)
 	{
-		output += ` (for ${item.forevent})`;
+		if (item.forevent.includes("ゴ")) //Messy solution to handle japanese events...
+		{
+			output += ` (for <span lang="ja">${item.forevent}</span>)`;
+		}
+		else
+		{
+			output += ` (for ${item.forevent})`;
+		}
 	}
 	
 	output += `

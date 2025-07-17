@@ -63,8 +63,14 @@ function ItemInfo()
 
 	let lowername = makeStandard(currentpage.name);
 
-	output += `
-	<h1>${currentpage.name}</h1>`;
+	if (currentpage.name.includes("ゴ"))
+	{
+		output += `<h1><span lang="ja">${currentpage.name}</span></h1>`;
+	}
+	else
+	{
+		output += `<h1>${currentpage.name}</h1>`;
+	}
 	
 	if (pagename == "s_the_skeleton")
 	{
@@ -101,7 +107,14 @@ function ItemInfo()
 
 	if (currentpage.forevent != null)
 	{
-		output += ` (for ${currentpage.forevent})`;
+		if (currentpage.forevent.includes("ゴ"))
+		{
+			output += ` (for <span lang="ja">${currentpage.forevent}</span>)`;
+		}
+		else
+		{
+			output += ` (for ${currentpage.forevent})`;
+		}
 	}
 
 	output += `<br>
