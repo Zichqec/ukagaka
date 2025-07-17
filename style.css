@@ -28,6 +28,11 @@ p
 	font-size: 15px;
 }
 
+.centertxt
+{
+	text-align: center;
+}
+
 li > p
 {
 	margin: 0;
