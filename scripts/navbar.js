@@ -76,6 +76,11 @@ function linkHTML(link)
 	if (link.title == "Home")
 	{
 		let addindex = islocal == ".html" ? 'index' : '';
+		console.log(`link.title: ${link.title}`);
+		console.log(`path: ${path}`);
+		console.log(`islocal: ${islocal}`);
+		console.log(`addindex: ${addindex}`);
+
 
 		return `<a href="${path}${addindex}${islocal}">${link.title}</a>`;
 	}
