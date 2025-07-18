@@ -43,7 +43,7 @@ let deepness = 0;
 function findDeepness()
 {
 	let path = location.pathname;
-	console.log(`path ${path}`);
+	
 	if (ishomepage)
 	{
 		deepness = 0;
@@ -57,10 +57,8 @@ function findDeepness()
 		}
 		
 		path = path.split("/");
-		console.log(`path after / split ${path}`);
 		deepness = path.length - 1;
 	}
-	console.log(`deepness ${deepness}`);
 }
 
 function linkHTML(link)
@@ -76,10 +74,6 @@ function linkHTML(link)
 	if (link.title == "Home")
 	{
 		let addindex = islocal == ".html" ? 'index' : '';
-		console.log(`link.title: ${link.title}`);
-		console.log(`path: ${path}`);
-		console.log(`islocal: ${islocal}`);
-		console.log(`addindex: ${addindex}`);
 
 
 		return `<a href="${path}${addindex}${islocal}">${link.title}</a>`;
