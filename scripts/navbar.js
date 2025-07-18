@@ -43,6 +43,7 @@ let deepness = 0;
 function findDeepness()
 {
 	let path = location.pathname;
+	console.log(`path ${path}`);
 	if (ishomepage)
 	{
 		deepness = 0;
@@ -56,6 +57,7 @@ function findDeepness()
 		}
 		
 		path = path.split("/");
+		console.log(`path after / split ${path}`);
 		deepness = path.length - 1;
 	}
 	console.log(`deepness ${deepness}`);
