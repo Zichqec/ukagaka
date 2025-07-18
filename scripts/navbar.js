@@ -51,16 +51,14 @@ function findDeepness()
 	{
 		if (islocal)
 		{
-			path = path.split("ukagaka/"); //this is bad and i should fix this at some point
+			path = path.split("ukagaka/"); //this is bad and i should fix this at some point - update 2025-07-18 this is for the FOLDER NAME not the SITE URL
 			path = path[1];
 		}
-		else
-		{
-			
-		}
+		
 		path = path.split("/");
 		deepness = path.length - 1;
 	}
+	console.log(`deepness ${deepness}`);
 }
 
 function linkHTML(link)
