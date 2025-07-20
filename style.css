@@ -38,6 +38,21 @@ li > p
 	margin: 0;
 }
 
+table.aughost, table.aughost th, table.aughost td
+{
+	border: 1px solid;
+	padding: 3px;
+	text-align: center;
+	vertical-align: top;
+	min-width: 100px;
+}
+
+table.aughost hr
+{
+	border: 1px solid;
+	color: #b6b6b6;
+}
+
 img
 {
 	max-width: 100%;
