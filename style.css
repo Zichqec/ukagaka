@@ -53,6 +53,11 @@ table.aughost hr
 	color: #b6b6b6;
 }
 
+.aughost_dim
+{
+	background-color: #d1d1d1;
+}
+
 img
 {
 	max-width: 100%;
