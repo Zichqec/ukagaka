@@ -45,6 +45,7 @@ table.aughost, table.aughost th, table.aughost td
 	text-align: center;
 	vertical-align: top;
 	min-width: 100px;
+	border-collapse: collapse;
 }
 
 table.aughost hr
@@ -56,6 +57,12 @@ table.aughost hr
 .aughost_dim
 {
 	background-color: #d1d1d1;
+}
+
+.aughost_invis
+{
+	opacity: 0%;
+	cursor: default;
 }
 
 img
