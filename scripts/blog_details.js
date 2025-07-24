@@ -4,7 +4,7 @@
 var item_tags = [
 	["2021","2022","2023","2024","2025"],
 	["January","February","March","April","May","June","July","August","September","October","November","December"],
-	["New release","Update","Announcement","Website update","Dev musings"],
+	["New release","Update","Announcement","Event","Website update","Dev musings"],
 	//Announcement: things like the wiki opening, translation projects finishing, etc...
 	//Maybe should make event announcements a separate tag too...? or just an event tag? hm
 	["Yearly summary","Advent calendar"],
@@ -25,6 +25,14 @@ var item_details = [
 		// blurb: "",
 		// tags: [],
 	// },
+	{
+		name: "Aughost 2025 announcement",
+		release: "2025-07-24",
+		latest: null,
+		page: "2025-07-24_aughost_2025_announcement.html",
+		blurb: "Aughost 2025 will be happening soon! See the event's page for the guidelines.",
+		tags: ["2025","July","Announcement","Event"],
+	},
 	{
 		name: "Permissions page now available",
 		release: "2025-07-15",
