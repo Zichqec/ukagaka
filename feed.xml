@@ -165,6 +165,13 @@
 		<pubDate>Thu, 24 Jul 2025 00:00:00 EST</pubDate>
 		<description>Aughost 2025 will be happening soon! See the event's page for the guidelines.</description>
 	</item>
+	<item>
+		<title>Xander's Refuge v1.0.4</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-07-25_xanders_refuge_v1.0.4</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-07-25_xanders_refuge_v1.0.4</guid>
+		<pubDate>Fri, 25 Jul 2025 00:00:00 EST</pubDate>
+		<description>A small update to Xander's Refuge (both the original version and the Aosora port) with some minor changes and code cleanup.</description>
+	</item>
 </channel>
 </rss>
 

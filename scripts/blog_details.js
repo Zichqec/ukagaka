@@ -26,6 +26,14 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Xander's Refuge v1.0.4",
+		release: "2025-07-25",
+		latest: null,
+		page: "2025-07-25_xanders_refuge_v1.0.4.html",
+		blurb: "A small update to Xander's Refuge (both the original version and the Aosora port) with some minor changes and code cleanup.",
+		tags: ["2025","July","Update"],
+	},
+	{
 		name: "Aughost 2025 announcement",
 		release: "2025-07-24",
 		latest: null,

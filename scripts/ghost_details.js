@@ -672,8 +672,8 @@ var item_details = [
 	{
 		name: "Xander's Refuge",
 		release: "2023-08-31",
-		latest: "2025-03-25",
-		version: "v1.0.3",
+		latest: "2025-07-25",
+		version: "v1.0.4",
 		forevent: "Aughost",
 		collaborators: null,
 		translations: null,
@@ -689,8 +689,8 @@ var item_details = [
 	{
 		name: "Xander's Refuge (Aosora)",
 		release: "2025-03-25",
-		latest: null,
-		version: "v1.0.3-a01",
+		latest: "2025-07-25",
+		version: "v1.0.4-a01",
 		forevent: null,
 		collaborators: null,
 		translations: null,
