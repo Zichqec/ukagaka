@@ -3,7 +3,7 @@ var item_tags = [
 	["YAYA","Aosora","Satori","Misaka"],
 	["Collab","Translations available","Uses freeshell","Includes my writing","Includes my art","Includes my code"],
 	["For event","Ghost Jam","Ghost Masquerade","Ghost Yaminabe","Idea Adoption Jam"],
-	["Idle chatter","Story","Utility","Minigames"],
+	["Idle chatter","Story","Utility","Object","Minigames"],
 	["WIP"],
 ]
 
@@ -43,7 +43,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/atm_machine"},
 		],
 		blurb: "Become an ATM maintenance worker with this ATM Machine ghost! Earn UNYU* by whiling away at your boring ATM recalibration job, listening to bank advertisements all day long. It'll be great! Or perhaps... there is another way you could acquire funds?<br><br>*UNYU is a fake crypto currency made by the <a href='https://github.com/nikolat/wallet_of_unyu'>Wallet of Unyu</a> plugin, which this ghost requires. ATM Machine was originally made to assist with the website associated with the plugin, but has since been overhauled to add hundreds of dialogues, two minigames, and more.",
-		tags: ["2023", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Minigames"]
+		tags: ["2023", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Object", "Minigames"]
 	},
 	{
 		name: "Balloons",
@@ -64,7 +64,7 @@ var item_details = [
 			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/ghosts/balloons"},
 		],
 		blurb: "Balloons has a big focus on a popping mechanic, where each balloon may be popped by clicking it, and which balloons have been popped will affect their dialogues. It also has a focus on its satisfying aesthetics, with a fun popping animation complete with sound effects, and a bobbing animation while idle.",
-		tags: ["2022", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Jam", "WIP"]
+		tags: ["2022", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Jam", "Object", "WIP"]
 	},
 	{
 		name: "Call of the Sea",
@@ -81,7 +81,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/call_of_the_sea"},
 		],
 		blurb: "Call of the Sea is a ghost with a strong focus on storytelling. It isn't a desktop companion so much as a decoration that will play a series of stories. Just what's happening on the other side of the shell? That's for you to decide...",
-		tags: ["2023", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Masquerade", "Story"]
+		tags: ["2023", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Masquerade", "Story", "Object"]
 	},
 	{
 		name: "Countdown",
@@ -98,7 +98,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/countdown"},
 		],
 		blurb: "It's a countdown.<br><br>My contribution to the \"useless ghost\" genre! Comes with two shells because I couldn't decide on a style.",
-		tags: ["2024", "Satori", "Includes my art", "Includes my code"]
+		tags: ["2024", "Satori", "Includes my art", "Includes my code", "Object"]
 	},
 	{
 		name: "CT Epoch Jam",
@@ -140,7 +140,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/doodle_daydreams"},
 		],
 		blurb: "﻿A poseable doll to dress up and daydream with. What worlds will your mind take you to...?",
-		tags: ["2025","YAYA","Collab","Includes my writing","Includes my code","For event","Ghost Jam","Idle chatter"]
+		tags: ["2025", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "Object"]
 	},
 	{
 		name: "Dusty and Obsidian",
@@ -216,7 +216,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/gallery_512"},
 		],
 		blurb: "Do you like art? Do you like lil guys that have bad opinions? Then have we got the ghost for you! This painting can either be an aesthetic companion with an attitude, or you can open the gallery and bring in a crowd to admire/mock anything and everything on your desktop.",
-		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "WIP"]
+		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "Object", "WIP"]
 	},
 	{
 		name: "Ghost Club!!!",
@@ -287,7 +287,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/hydrate"},
 		],
 		blurb: "A simple water reminder ghost. It doesn't have anything to say besides reminding you to drink at a customizable interval. But, due to its simple nature, many people have made additional shells for it! Please check out the full page to see what kinds of creative \"drinking vessels\" people have come up with!",
-		tags: ["2020", "YAYA", "Collab", "Includes my writing", "Includes my code", "Utility"]
+		tags: ["2020", "YAYA", "Collab", "Includes my writing", "Includes my code", "Utility", "Object"]
 	},
 	{
 		name: "Iea",
@@ -348,7 +348,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/keep_frozen"},
 		],
 		blurb: "A simple ice cube, which will tell you about various things that are cold. Over time it will melt, and you can either freeze it to keep it alive, or you can let it melt and collect the items inside, and even display them on your desktop. Can you resist the urge to get the items inside? Not many do!",
-		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter", "Minigames"] //It's a game, not a minigame, but...
+		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter", "Object", "Minigames"] //It's a game, not a minigame, but...
 	},
 	{
 		name: "Literally just a mess why did you download this",
@@ -372,7 +372,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/literally_just_a_mess_why_did_you_download_this"},
 		],
 		blurb: "A chaotic ghost made in an afternoon! We all spontaneously got together on a collaborative coding site, and about 4 hours later we had this simple ghost with 600 dialogues and 10 shells.",
-		tags: ["2024", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter"]
+		tags: ["2024", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Object"]
 	},
 	{
 		name: "Lulo",
@@ -427,7 +427,7 @@ var item_details = [
 			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/ghosts/needle"},
 		],
 		blurb: "It's the ghost sensation that started a whole genre! The one, the only, the amazing Needle! Put it on your desktop and hope it says things to you! Learn your true name, or reject it and gain a thousand nicknames! Enjoy your new life companion!!",
-		tags: ["2022", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter"]
+		tags: ["2022", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "Object"]
 	},
 	{
 		name: "Noodle",
@@ -447,7 +447,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/noodle"},
 		],
 		blurb: "Looking for survival tips? Noodle's your pasta! Hang out with Noodle and hear all about the latest goings-on in the kitchen and beyond. A friend of Needle's, it may have additional comments if Needle is also open! Stay safe out there, don't get eaten!",
-		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter"]
+		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Object"]
 	},
 	{
 		name: "Paper",
@@ -469,7 +469,7 @@ var item_details = [
 			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/ghosts/paper"},
 		],
 		blurb: "If you like minigames, then Paper, the god of minigames, is the desktop companion for you! Set it on your desktop and enjoy being pestered with games to no end! Just remember, you brought it here for games, so refusing to play would be rather rude...",
-		tags: ["2022", "YAYA", "Collab", "Includes my code", "For event", "Ghost Jam", "Minigames"]
+		tags: ["2022", "YAYA", "Collab", "Includes my code", "For event", "Ghost Jam", "Object", "Minigames"]
 	},
 	{
 		name: "Please arrive 15 minutes before your scheduled interview time",
@@ -607,7 +607,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/ukatranslator"},
 		],
 		blurb: "A simple little function ghost, which helps you run other ghosts dialogue through machine translation! Machine translation is horrifically bad, but if you want to give it a go, this is better than having to copy text out of script log by hand!",
-		tags: ["2021", "YAYA", "Translations available", "Includes my art", "Includes my code", "Utility", "WIP"]
+		tags: ["2021", "YAYA", "Translations available", "Includes my art", "Includes my code", "Utility", "Object", "WIP"]
 	},
 	{
 		name: "Under the Stars",
@@ -722,7 +722,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/ye_olde_cursed_tower"},
 		],
 		blurb: "An evil wizard sits atop a tower, collecting souls... for what purpose? Nobody is sure. What will happen to the people trapped within the tower's walls?<br><br>... Well, that's up to you, since you are that wizard! Have fun.",
-		tags: ["2025", "Aosora", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter"]
+		tags: ["2025", "Aosora", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "Object"]
 	},
 	{
 		name: "Zana's Laws",
