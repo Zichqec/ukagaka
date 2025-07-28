@@ -2,12 +2,12 @@
 
 //Take a dialogue string and output it as chunks of X number of characters at a time. Gives the text a more robotic feel!
 //Note that this does not work well if there are tags in the dialogue. Plain strings only! If you need to use it in a dialogue with tags, consider combining it with my function SakuraScooper.
-//Note that if you're using AutoPause, *you should run AutoPause first*, and definitely use SakuraScooper to handle the tags. Otherwise, they will not play nice with each other. (RoboText can insert a pause right after a punctuation mark, therefore causing AutoPause to miss it, etc...) I made a setup for this in my ghost ATM Machine, which handles RoboText in OnTranslate. You may want to look at that for reference (but even there, it's a bit tricky.)
+//Note that if you're using AutoPause, *you should run AutoPause first*, and definitely use SakuraScooper to handle the tags. Otherwise, they will not play nice with each other. (ChunkText can insert a pause right after a punctuation mark, therefore causing AutoPause to miss it, etc...) I made a setup for this in my ghost ATM Machine, which handles ChunkText in OnTranslate. You may want to look at that for reference (but even there, it's a bit tricky.)
 
 //Arg 0 - The string to break up
 //Arg 1 - The pause (in ms) to add between each chunk of text. Optional, uses 75 if unspecified.
 //Arg 2 - The number of characters to use for each chunk of text. Optional, uses 3 if unspecified. If a non-integer or a number less than or equal to 0 is specified, it will force it to 3 to avoid an infinite loop.
-RoboText
+ChunkText
 {
 	_input = _argv[0]
 	

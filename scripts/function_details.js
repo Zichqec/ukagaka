@@ -72,6 +72,17 @@ var item_details = [
 		tags: ["2022","YAYA"]
 	},
 	{
+		name: "ChunkText",
+		release: "2025-07-28",
+		latest: null,
+		version: null,
+		forevent: null,
+		language: "YAYA",
+		download: "ChunkText.txt",
+		blurb: "A function I wrote for <a href='../ghost/atm_machine.html'>ATM Machine</a>, to give the ATM dialogues a more robotic feel. This breaks up dialogue strings into small chunks (by default 3 characters long) and displays each chunk instantly with a small pause between.<br><br>It's a bit fiddly, you have to work around SakuraScript tags (and take extra steps to make it play nice with AutoPause if you're using that), but it's a neat text effect if you can get it working!",
+		tags: ["2025","YAYA","Pure function"]
+	},
+	{
 		name: "CreepyText",
 		release: "2020-11-04",
 		latest: "2021-01-05",
@@ -356,17 +367,6 @@ var item_details = [
 		download: "RangeRand.txt",
 		blurb: "A little function I wrote for <a href='../ghost/if_i_cant_have_shrimp_no_one_can.html'>If I can't have shrimp no one can</a>, during Idea Adoption Jam! Gets a pseudo random number within the specified range, and can even handle negative numbers! So for example, if you want to get a random number between 5 and 10, this makes that easy!",
 		tags: ["2023","YAYA","AYA","Pure function"]
-	},
-	{
-		name: "RoboText",
-		release: "2025-07-28",
-		latest: null,
-		version: null,
-		forevent: null,
-		language: "YAYA",
-		download: "RoboText.txt",
-		blurb: "A function I wrote for <a href='../ghost/atm_machine.html'>ATM Machine</a>, to give the ATM dialogues a more robotic feel. This breaks up dialogue strings into small chunks (by default 3 characters long) and displays each chunk instantly with a small pause between.<br><br>It's a bit fiddly, you have to work around SakuraScript tags (and take extra steps to make it play nice with AutoPause if you're using that), but it's a neat text effect if you can get it working!",
-		tags: ["2025","YAYA","Pure function"]
 	},
 	{
 		name: "SakuraScooper",

@@ -27,12 +27,12 @@ var item_details = [
 		// tags: [],
 	// },
 	{
-		name: "Function RoboText",
+		name: "Function ChunkText",
 		release: "2025-07-28",
 		dupeindex: "02",
 		latest: null,
-		page: "2025-07-28_robotext_function.html",
-		blurb: "Release of a new function: <a href='../function/index.html#robotext'>RoboText</a>. This function takes a dialogue string and outputs it in chunks of 3 characters at a time, with various options to adjust it. It's intended to give text a more robotic feel.",
+		page: "2025-07-28_chunktext_function.html",
+		blurb: "Release of a new function: <a href='../function/index.html#chunktext'>ChunkText</a>. This function takes a dialogue string and outputs it in chunks of 3 characters at a time, with various options to adjust it. It's intended to give text a more robotic feel.",
 		tags: ["2025","July","New release"],
 	},
 	{
