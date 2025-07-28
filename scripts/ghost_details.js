@@ -126,7 +126,7 @@ var item_details = [
 		release: "2025-06-21",
 		latest: "2025-06-30",
 		version: "v1.0.1",
-		forevent: null,
+		forevent: "Ghost Jam 2025",
 		collaborators:
 		[
 			{name: "Kipali", creditlink: "https://ako-kipali.tumblr.com/ghost-stuff"},
@@ -706,9 +706,9 @@ var item_details = [
 	{
 		name: "Ye Olde Cursed Tower",
 		release: "2025-06-26",
-		latest: null,
-		version: "v1.0.0",
-		forevent: null,
+		latest: "2025-07-28",
+		version: "v1.0.1",
+		forevent: "Ghost Jam 2025",
 		collaborators:
 		[
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},

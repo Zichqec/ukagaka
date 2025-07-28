@@ -75,7 +75,32 @@ let version_history = [
 			released: "2025-06-26",
 			changelog:
 			[
-				"Initial release for Ghost Jam 2025."
+				"Initial release for Ghost Jam 2025.",
+			]
+		},
+		{
+			version: "1.0.1",
+			released: "2025-07-28",
+			changelog:
+			[
+				"Added several new dialogues (randomtalk, petting, booting, etc.).",
+				"Added additional frames to the toppled bottle idle animations.",
+				"Replaced the talk animation for the side gems.",
+				"Fixed balloon flicker in the spell choice menu.",
+				"Changed the cursor to a hand (grip) to indicate they are pettable, as well as make dragging them around more fun.",
+				"Fixed an issue where the item menu would jump when selecting items if using some small balloons.",
+				"When picking a random balloon color, it will now avoid picking the color that is already in use.",
+				"Added basic QOL responses to some events (installing things, error messages for checking emails, etc.)",
+				"Adjusted Firstboot sequence to avoid a flicker issue.",
+				"Fixed an issue where they would not recognize a state change if they were moved in the middle of a dialogue, and then immediately closed before the dialogue could complete.",
+				"Fixed the ghost menus being openable with right clicks.",
+				"Normalized all idle animations to have the same chance of playing.",
+				"Added an aigraph display to track the number of dialogues (functionality is limited unless debug mode is on).",
+				"Fixed surface10 to act as a preview image for 3rd party services.",
+				"Adjusted the shell settings to avoid interrupting animations when navigating the menus. (However, due to a bug in the current versions of SSP, this does not work yet. Keep an eye out for future SSP updates!)",
+				"Fixed typos and adjusted formatting of some text.",
+				"Cleaned up and simplified various parts of the code.",
+				"Updated to Aosora v0.1.13.",
 			]
 		}
 	]

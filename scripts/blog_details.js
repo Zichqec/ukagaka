@@ -26,6 +26,14 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Ye Olde Cursed Tower v1.0.1",
+		release: "2025-07-28",
+		latest: null,
+		page: "2025-07-28_ye_olde_cursed_tower_v1.0.1.html",
+		blurb: "An update to Ye Olde Cursed Tower to smooth out the jam jankiness and add more dialogue, as well as other minor features.",
+		tags: ["2025","July","Update"],
+	},
+	{
 		name: "Xander's Refuge v1.0.4",
 		release: "2025-07-25",
 		latest: null,

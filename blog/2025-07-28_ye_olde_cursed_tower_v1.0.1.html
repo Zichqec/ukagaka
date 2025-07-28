@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p><a href="../ghost/ye_olde_cursed_tower.html">Ye Olde Cursed Tower</a> has been updated to v1.0.1. This update smooths out various issues that were present in the initial release for Ghost Jam, and adds some other minor features.</p>
+
+<p>Changelog:</p>
+<ul>
+	<li><p>Added several new dialogues (randomtalk, petting, booting, etc.).</p></li>
+	<li><p>Added additional frames to the toppled bottle idle animations.</p></li>
+	<li><p>Replaced the talk animation for the side gems.</p></li>
+	<li><p>Fixed balloon flicker in the spell choice menu.</p></li>
+	<li><p>Changed the cursor to a hand (grip) to indicate they are pettable, as well as make dragging them around more fun.</p></li>
+	<li><p>Fixed an issue where the item menu would jump when selecting items if using some small balloons.</p></li>
+	<li><p>When picking a random balloon color, it will now avoid picking the color that is already in use.</p></li>
+	<li><p>Added basic QOL responses to some events (installing things, error messages for checking emails, etc.)</p></li>
+	<li><p>Adjusted Firstboot sequence to avoid a flicker issue.</p></li>
+	<li><p>Fixed an issue where they would not recognize a state change if they were moved in the middle of a dialogue, and then immediately closed before the dialogue could complete.</p></li>
+	<li><p>Fixed the ghost menus being openable with right clicks.</p></li>
+	<li><p>Normalized all idle animations to have the same chance of playing.</p></li>
+	<li><p>Added an aigraph display to track the number of dialogues (functionality is limited unless debug mode is on).</p></li>
+	<li><p>Fixed surface10 to act as a preview image for 3rd party services.</p></li>
+	<li><p>Adjusted the shell settings to avoid interrupting animations when navigating the menus. (However, due to a bug in the current versions of SSP, this does not work yet. Keep an eye out for future SSP updates!)</p></li>
+	<li><p>Fixed typos and adjusted formatting of some text.</p></li>
+	<li><p>Cleaned up and simplified various parts of the code.</p></li>
+	<li><p>Updated to Aosora v0.1.13.</p></li>
+</ul>
+
+<p>While it may not be something visible to users, I'm very happy with how much cleaner the code is after this update! I had a headache in the latter half of jam, and I knew that the code I was creating was messy and nowhere near my best. Now that it's cleaned up, I feel a lot more at ease.</p>
+
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>
