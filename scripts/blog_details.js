@@ -32,7 +32,7 @@ var item_details = [
 		dupeindex: "02",
 		latest: null,
 		page: "2025-07-28_robotext_function.html",
-		blurb: "Release of a new function: RoboText. This function takes a dialogue string and outputs it in chunks of 3 characters at a time, with various options to adjust it. It's intended to give text a more robotic feel.",
+		blurb: "Release of a new function: <a href='../function/index.html#robotext'>RoboText</a>. This function takes a dialogue string and outputs it in chunks of 3 characters at a time, with various options to adjust it. It's intended to give text a more robotic feel.",
 		tags: ["2025","July","New release"],
 	},
 	{
@@ -41,7 +41,7 @@ var item_details = [
 		dupeindex: "01",
 		latest: null,
 		page: "2025-07-28_atm_machine_v2.0.2.html",
-		blurb: "An update to ATM Machine that makes the normal ATM text have a more robotic feel, as well as various other minor changes.",
+		blurb: "An update to <a href='../ghost/atm_machine.html'>ATM Machine</a> that makes the normal ATM text have a more robotic feel, as well as various other minor changes.",
 		tags: ["2025","July","Update"],
 	},
 	{
@@ -50,7 +50,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2025-07-28_ye_olde_cursed_tower_v1.0.1.html",
-		blurb: "An update to Ye Olde Cursed Tower to smooth out the jam jankiness and add more dialogue, as well as other minor features.",
+		blurb: "An update to <a href='../ghost/ye_olde_cursed_tower.html'>Ye Olde Cursed Tower</a> to smooth out the jam jankiness and add more dialogue, as well as other minor features.",
 		tags: ["2025","July","Update"],
 	},
 	{
@@ -59,7 +59,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2025-07-25_xanders_refuge_v1.0.4.html",
-		blurb: "A small update to Xander's Refuge (both the original version and the Aosora port) with some minor changes and code cleanup.",
+		blurb: "A small update to <a href='../ghost/xanders_refuge.html'>Xander's Refuge</a> (both the original version and the <a href='../ghost/xanders_refuge_aosora.html'>Aosora port</a>) with some minor changes and code cleanup.",
 		tags: ["2025","July","Update"],
 	},
 	{
@@ -68,7 +68,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: "2025-07-28",
 		page: "2025-07-24_aughost_2025_announcement.html",
-		blurb: "Aughost 2025 will be happening soon! See the event's page for the guidelines.",
+		blurb: "<a href='../event/aughost_2025.html'>Aughost 2025</a> will be happening soon! See the event's page for the guidelines.",
 		tags: ["2025","July","Announcement","Event"],
 	},
 	{
@@ -86,7 +86,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2025-07-10_hoard_of_shinies_v1.0.6.html",
-		blurb: "A small update with some additional settings for Hoard of Shinies.",
+		blurb: "A small update with some additional settings for <a href='../ghost/hoard_of_shinies.html'>Hoard of Shinies</a>.",
 		tags: ["2025","July","Update"],
 	},
 	{
@@ -95,7 +95,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2025-06-30_doodle_daydreams_v1.0.1.html",
-		blurb: "A small patch for Doodle Daydreams to iron out the jam jank.",
+		blurb: "A small patch for <a href='../ghost/doodle_daydreams.html'>Doodle Daydreams</a> to iron out the jam jank.",
 		tags: ["2025","June","Update"],
 	},
 	{
@@ -104,7 +104,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2025-06-26_ye_olde_soul_spell_v1.0.0.html",
-		blurb: "Release of a new balloon: Ye Olde Soul Spell. A spell themed balloon with a variety of colors and a few patterns. It's also round!",
+		blurb: "Release of a new balloon: <a href='../balloon/ye_olde_soul_spell.html'>Ye Olde Soul Spell</a>. A spell themed balloon with a variety of colors and a few patterns. It's also round!",
 		tags: ["2025","June","New release"],
 	},
 	{
@@ -113,7 +113,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2025-06-26_ye_olde_cursed_tower_v1.0.0.html",
-		blurb: "Release of a new ghost: Ye Olde Cursed Tower. An evil wizard sits atop a tower, collecting souls... for what purpose? Nobody is sure. What will happen to the people trapped within the tower's walls? ... Well, that's up to you, since you are that wizard! Have fun.",
+		blurb: "Release of a new ghost: <a href='../ghost/ye_olde_cursed_tower.html'>Ye Olde Cursed Tower</a>. An evil wizard sits atop a tower, collecting souls... for what purpose? Nobody is sure. What will happen to the people trapped within the tower's walls? ... Well, that's up to you, since you are that wizard! Have fun.",
 		tags: ["2025","June","New release"],
 	},
 	{
@@ -122,7 +122,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2025-06-21_doodle_daydreams_v1.0.0.html",
-		blurb: "Release of a new ghost: Doodle Daydreams. A poseable doll to dress up and daydream with. What worlds will your mind take you to...?",
+		blurb: "Release of a new ghost: <a href='../ghost/doodle_daydreams.html'>Doodle Daydreams</a>. A poseable doll to dress up and daydream with. What worlds will your mind take you to...?",
 		tags: ["2025","June","New release"],
 	},
 	{
@@ -131,7 +131,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2025-06-20_groupdigits_function.html",
-		blurb: "Release of a new function: GroupDigits. This function takes an integer or real number and outputs it as a string with commas as thousands separators.",
+		blurb: "Release of a new function: <a href='../function/index.html#groupdigits'>GroupDigits</a>. This function takes an integer or real number and outputs it as a string with commas as thousands separators.",
 		tags: ["2025","June","New release"],
 	},
 	{
@@ -140,7 +140,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2025-06-18_weather_station_v1.1.0.html",
-		blurb: "A major update for Weather Station to overhaul various parts of the code, deprecate some references for privacy concerns, add a thumbnail, and add some new options for formatting the date and time.",
+		blurb: "A major update for <a href='../plugin/weather_station.html'>Weather Station</a> to overhaul various parts of the code, deprecate some references for privacy concerns, add a thumbnail, and add some new options for formatting the date and time.",
 		tags: ["2025","June","Update"],
 	},
 	{
@@ -149,7 +149,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2025-06-10_weather_station_v1.0.5.html",
-		blurb: "A small patch for Weather Station to fix some issues while offline.",
+		blurb: "A small patch for <a href='../plugin/weather_station.html'>Weather Station</a> to fix some issues while offline.",
 		tags: ["2025","June","Update"],
 	},
 	{
