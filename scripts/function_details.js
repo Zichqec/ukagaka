@@ -358,6 +358,17 @@ var item_details = [
 		tags: ["2023","YAYA","AYA","Pure function"]
 	},
 	{
+		name: "RoboText",
+		release: "2025-07-28",
+		latest: null,
+		version: null,
+		forevent: null,
+		language: "YAYA",
+		download: "RoboText.txt",
+		blurb: "A function I wrote for <a href='../ghost/atm_machine.html'>ATM Machine</a>, to give the ATM dialogues a more robotic feel. This breaks up dialogue strings into small chunks (by default 3 characters long) and displays each chunk instantly with a small pause between.<br><br>It's a bit fiddly, you have to work around SakuraScript tags (and take extra steps to make it play nice with AutoPause if you're using that), but it's a neat text effect if you can get it working!",
+		tags: ["2025","YAYA","Pure function"]
+	},
+	{
 		name: "SakuraScooper",
 		release: "2022-08-09",
 		latest: null,
