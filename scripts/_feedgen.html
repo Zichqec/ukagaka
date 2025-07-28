@@ -83,10 +83,14 @@ output += `<pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 	&lt;/image&gt;`;
 
 for (let i = 0; i < index_details.length; i++)
-{	
+{
 	let item = index_details[i];
 	let postlink = `https://ukagaka.zichqec.com/blog/` + item.page;
 	postlink = postlink.replace(".html","")
+	
+	let blurb = item.blurb;
+	blurb = blurb.replace(/</g,"&lt;");
+	blurb = blurb.replace(/>/g,"&gt;");
 	
 	output += `
 	&lt;item&gt;
@@ -94,7 +98,7 @@ for (let i = 0; i < index_details.length; i++)
 		&lt;link&gt;${postlink}&lt;/link&gt;
 		&lt;guid&gt;${postlink}&lt;/guid&gt;
 		&lt;pubDate&gt;${CreateExpectedDate(item.release,item.dupeindex)}&lt;/pubDate&gt;
-		&lt;description&gt;${item.blurb}&lt;/description&gt;
+		&lt;description&gt;${blurb}&lt;/description&gt;
 	&lt;/item&gt;`;
 }
 
