@@ -36,7 +36,7 @@ var item_details = [
 	{
 		name: "Aughost 2025 announcement",
 		release: "2025-07-24",
-		latest: null,
+		latest: "2025-07-28",
 		page: "2025-07-24_aughost_2025_announcement.html",
 		blurb: "Aughost 2025 will be happening soon! See the event's page for the guidelines.",
 		tags: ["2025","July","Announcement","Event"],
