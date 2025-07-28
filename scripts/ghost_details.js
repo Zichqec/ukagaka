@@ -31,8 +31,8 @@ var item_details = [
 	{
 		name: "ATM Machine",
 		release: "2023-04-09",
-		latest: "2024-11-03",
-		version: "v2.0.1",
+		latest: "2025-07-28",
+		version: "v2.0.2",
 		forevent: null,
 		collaborators: null,
 		translations: null,

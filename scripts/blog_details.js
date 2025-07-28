@@ -27,6 +27,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "ATM Machine v2.0.2",
+		release: "2025-07-28",
+		dupeindex: "01",
+		latest: null,
+		page: "2025-07-28_atm_machine_v2.0.2.html",
+		blurb: "An update to ATM Machine that makes the normal ATM text have a more robotic feel, as well as various other minor changes.",
+		tags: ["2025","July","Update"],
+	},
+	{
 		name: "Ye Olde Cursed Tower v1.0.1",
 		release: "2025-07-28",
 		dupeindex: "00",

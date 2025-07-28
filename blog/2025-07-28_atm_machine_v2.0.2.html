@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p><a href="../ghost/atm_machine.html">ATM Machine</a> has been updated to v2.0.2. This update was made primarily because I decided it would be nice to make the normal ATM dialogues not display instantly, but rather display a few characters at a time. There are some other minor adjustments as well.</p>
+
+<p>Changelog:</p>
+<ul>
+	<li><p>Regular dialogue is no longer displayed instantly in most cases. Instead, the dialogue is displayed in chunks of 3 characters at a time, for a robotic feel.</p></li>
+	<li><p>The "Repeat information" button in the menu is now visible but grayed out when no dialogue has been played yet.</p></li>
+	<li><p>Adjusted menu choices so that they will word wrap on smaller balloons, etc.</p></li>
+	<li><p>Various text tweaks and formatting adjustments.</p></li>
+	<li><p>Updated a function called br to improve the display of text in some specific circumstances.</p></li>
+	<li><p>Removed some unneeded code.</p></li>
+	<li><p>Updated to YAYA Tc571-11.</p></li>
+</ul>
+
+<p>As a fun aside, I originally tried implementing this function as whole words at a time. After taking a break and coming back to it, though, I found that it wasn't as satisfying as I wanted! So, I made a new function that would break it up by character count. This was a lot more tricky and potentially could have other side effects, so do let me know if anything displays strangely.</p>
+
+<p>I've released the function I used to do this, if you're interested in implementing it in your own projects. It's called <a href="../code/index.html#robotext">RoboText</a>.</p>
+
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>
