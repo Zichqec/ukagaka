@@ -20,6 +20,7 @@ var item_details = [
 	// {
 		// name: "",
 		// release: "",
+		// dupeindex: "00",
 		// latest: null,
 		// page: "",
 		// blurb: "",
@@ -28,6 +29,7 @@ var item_details = [
 	{
 		name: "Ye Olde Cursed Tower v1.0.1",
 		release: "2025-07-28",
+		dupeindex: "00",
 		latest: null,
 		page: "2025-07-28_ye_olde_cursed_tower_v1.0.1.html",
 		blurb: "An update to Ye Olde Cursed Tower to smooth out the jam jankiness and add more dialogue, as well as other minor features.",
@@ -36,6 +38,7 @@ var item_details = [
 	{
 		name: "Xander's Refuge v1.0.4",
 		release: "2025-07-25",
+		dupeindex: "00",
 		latest: null,
 		page: "2025-07-25_xanders_refuge_v1.0.4.html",
 		blurb: "A small update to Xander's Refuge (both the original version and the Aosora port) with some minor changes and code cleanup.",
@@ -44,6 +47,7 @@ var item_details = [
 	{
 		name: "Aughost 2025 announcement",
 		release: "2025-07-24",
+		dupeindex: "00",
 		latest: "2025-07-28",
 		page: "2025-07-24_aughost_2025_announcement.html",
 		blurb: "Aughost 2025 will be happening soon! See the event's page for the guidelines.",
@@ -52,6 +56,7 @@ var item_details = [
 	{
 		name: "Permissions page now available",
 		release: "2025-07-15",
+		dupeindex: "00",
 		latest: null,
 		page: "2025-07-15_permissions_page_now_available.html",
 		blurb: "A new page has been added to the website, detailing permissions for how my various different works should be handled.",
@@ -60,6 +65,7 @@ var item_details = [
 	{
 		name: "Hoard of Shinies v1.0.6",
 		release: "2025-07-10",
+		dupeindex: "00",
 		latest: null,
 		page: "2025-07-10_hoard_of_shinies_v1.0.6.html",
 		blurb: "A small update with some additional settings for Hoard of Shinies.",
@@ -68,6 +74,7 @@ var item_details = [
 	{
 		name: "Doodle Daydreams v1.0.1",
 		release: "2025-06-30",
+		dupeindex: "00",
 		latest: null,
 		page: "2025-06-30_doodle_daydreams_v1.0.1.html",
 		blurb: "A small patch for Doodle Daydreams to iron out the jam jank.",
@@ -76,6 +83,7 @@ var item_details = [
 	{
 		name: "Ye Olde Soul Spell v1.0.0",
 		release: "2025-06-26",
+		dupeindex: "00",
 		latest: null,
 		page: "2025-06-26_ye_olde_soul_spell_v1.0.0.html",
 		blurb: "Release of a new balloon: Ye Olde Soul Spell. A spell themed balloon with a variety of colors and a few patterns. It's also round!",
@@ -84,6 +92,7 @@ var item_details = [
 	{
 		name: "Ye Olde Cursed Tower v1.0.0",
 		release: "2025-06-26",
+		dupeindex: "00",
 		latest: null,
 		page: "2025-06-26_ye_olde_cursed_tower_v1.0.0.html",
 		blurb: "Release of a new ghost: Ye Olde Cursed Tower. An evil wizard sits atop a tower, collecting souls... for what purpose? Nobody is sure. What will happen to the people trapped within the tower's walls? ... Well, that's up to you, since you are that wizard! Have fun.",
@@ -92,6 +101,7 @@ var item_details = [
 	{
 		name: "Doodle Daydreams v1.0.0",
 		release: "2025-06-21",
+		dupeindex: "00",
 		latest: null,
 		page: "2025-06-21_doodle_daydreams_v1.0.0.html",
 		blurb: "Release of a new ghost: Doodle Daydreams. A poseable doll to dress up and daydream with. What worlds will your mind take you to...?",
@@ -100,6 +110,7 @@ var item_details = [
 	{
 		name: "GroupDigits function",
 		release: "2025-06-20",
+		dupeindex: "00",
 		latest: null,
 		page: "2025-06-20_groupdigits_function.html",
 		blurb: "Release of a new function: GroupDigits. This function takes an integer or real number and outputs it as a string with commas as thousands separators.",
@@ -108,6 +119,7 @@ var item_details = [
 	{
 		name: "Weather Station v1.1.0",
 		release: "2025-06-18",
+		dupeindex: "00",
 		latest: null,
 		page: "2025-06-18_weather_station_v1.1.0.html",
 		blurb: "A major update for Weather Station to overhaul various parts of the code, deprecate some references for privacy concerns, add a thumbnail, and add some new options for formatting the date and time.",
@@ -116,6 +128,7 @@ var item_details = [
 	{
 		name: "Weather Station v1.0.5",
 		release: "2025-06-10",
+		dupeindex: "00",
 		latest: null,
 		page: "2025-06-10_weather_station_v1.0.5.html",
 		blurb: "A small patch for Weather Station to fix some issues while offline.",
