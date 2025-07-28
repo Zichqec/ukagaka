@@ -180,11 +180,11 @@
 		<description>An update to <a href='../ghost/atm_machine.html'>ATM Machine</a> that makes the normal ATM text have a more robotic feel, as well as various other minor changes.</description>
 	</item>
 	<item>
-		<title>Function RoboText</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-07-28_robotext_function</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-07-28_robotext_function</guid>
+		<title>Function ChunkText</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-07-28_chunktext_function</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-07-28_chunktext_function</guid>
 		<pubDate>Mon, 28 Jul 2025 00:00:02 EST</pubDate>
-		<description>Release of a new function: <a href='../function/index.html#robotext'>RoboText</a>. This function takes a dialogue string and outputs it in chunks of 3 characters at a time, with various options to adjust it. It's intended to give text a more robotic feel.</description>
+		<description>Release of a new function: <a href='../function/index.html#chunktext'>ChunkText</a>. This function takes a dialogue string and outputs it in chunks of 3 characters at a time, with various options to adjust it. It's intended to give text a more robotic feel.</description>
 	</item>
 </channel>
 </rss>
