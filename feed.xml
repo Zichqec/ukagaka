@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>I've spent a ridiculous amount of time thinking about probabilities: An ukagaka developer's struggle for probability perfection (Advent calendar 2021)</title>
-		<link>https://ukagaka.zichqec.com/blog/2021-12-12_advent_calendar_probabilities</link>
-		<guid>https://ukagaka.zichqec.com/blog/2021-12-12_advent_calendar_probabilities</guid>
-		<pubDate>Sun, 12 Dec 2021 00:00:00 EST</pubDate>
-		<description>An exploration of probabilities in YAYA, and how I eventually managed to overcome various issues to attain a perfect result (with the help of developers who knew what they were doing much better than I did!)</description>
-	</item>
-	<item>
 		<title>How to write a Needle (Advent calendar 2022)</title>
 		<link>https://ukagaka.zichqec.com/blog/2022-12-19_advent_calendar_how_to_write_a_needle</link>
 		<guid>https://ukagaka.zichqec.com/blog/2022-12-19_advent_calendar_how_to_write_a_needle</guid>
@@ -171,6 +164,27 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-07-25_xanders_refuge_v1.0.4</guid>
 		<pubDate>Fri, 25 Jul 2025 00:00:00 EST</pubDate>
 		<description>A small update to Xander's Refuge (both the original version and the Aosora port) with some minor changes and code cleanup.</description>
+	</item>
+	<item>
+		<title>Ye Olde Cursed Tower v1.0.1</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-07-28_ye_olde_cursed_tower_v1.0.1</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-07-28_ye_olde_cursed_tower_v1.0.1</guid>
+		<pubDate>Mon, 28 Jul 2025 00:00:00 EST</pubDate>
+		<description>An update to Ye Olde Cursed Tower to smooth out the jam jankiness and add more dialogue, as well as other minor features.</description>
+	</item>
+	<item>
+		<title>ATM Machine v2.0.2</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-07-28_atm_machine_v2.0.2</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-07-28_atm_machine_v2.0.2</guid>
+		<pubDate>Mon, 28 Jul 2025 00:00:01 EST</pubDate>
+		<description>An update to ATM Machine that makes the normal ATM text have a more robotic feel, as well as various other minor changes.</description>
+	</item>
+	<item>
+		<title>Function RoboText</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-07-28_robotext_function</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-07-28_robotext_function</guid>
+		<pubDate>Mon, 28 Jul 2025 00:00:02 EST</pubDate>
+		<description>Release of a new function: RoboText. This function takes a dialogue string and outputs it in chunks of 3 characters at a time, with various options to adjust it. It's intended to give text a more robotic feel.</description>
 	</item>
 </channel>
 </rss>
