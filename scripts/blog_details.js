@@ -4,7 +4,8 @@
 var item_tags = [
 	["2021","2022","2023","2024","2025"],
 	["January","February","March","April","May","June","July","August","September","October","November","December"],
-	["New release","Update","Announcement","Event","Website update","Dev musings"],
+	["Ghost","Shell","Freeshell","Balloon","Template","Calendar skin","SAORI","Plugin","Tool","Guide","Function","Minigame","Free asset","Misc","Event"],
+	["New release","Update","Announcement","Website update","Dev musings"],
 	//Announcement: things like the wiki opening, translation projects finishing, etc...
 	//Maybe should make event announcements a separate tag too...? or just an event tag? hm
 	["Yearly summary","Advent calendar"],
@@ -33,7 +34,7 @@ var item_details = [
 		latest: null,
 		page: "2025-07-28_chunktext_function.html",
 		blurb: "Release of a new function: <a href='../function/index.html#chunktext'>ChunkText</a>. This function takes a dialogue string and outputs it in chunks of 3 characters at a time, with various options to adjust it. It's intended to give text a more robotic feel.",
-		tags: ["2025","July","New release"],
+		tags: ["2025","July","Function","New release"],
 	},
 	{
 		name: "ATM Machine v2.0.2",
@@ -42,7 +43,7 @@ var item_details = [
 		latest: null,
 		page: "2025-07-28_atm_machine_v2.0.2.html",
 		blurb: "An update to <a href='../ghost/atm_machine.html'>ATM Machine</a> that makes the normal ATM text have a more robotic feel, as well as various other minor changes.",
-		tags: ["2025","July","Update"],
+		tags: ["2025","July","Ghost","Update"],
 	},
 	{
 		name: "Ye Olde Cursed Tower v1.0.1",
@@ -51,7 +52,7 @@ var item_details = [
 		latest: null,
 		page: "2025-07-28_ye_olde_cursed_tower_v1.0.1.html",
 		blurb: "An update to <a href='../ghost/ye_olde_cursed_tower.html'>Ye Olde Cursed Tower</a> to smooth out the jam jankiness and add more dialogue, as well as other minor features.",
-		tags: ["2025","July","Update"],
+		tags: ["2025","July","Ghost","Update"],
 	},
 	{
 		name: "Xander's Refuge v1.0.4",
@@ -60,7 +61,7 @@ var item_details = [
 		latest: null,
 		page: "2025-07-25_xanders_refuge_v1.0.4.html",
 		blurb: "A small update to <a href='../ghost/xanders_refuge.html'>Xander's Refuge</a> (both the original version and the <a href='../ghost/xanders_refuge_aosora.html'>Aosora port</a>) with some minor changes and code cleanup.",
-		tags: ["2025","July","Update"],
+		tags: ["2025","July","Ghost","Update"],
 	},
 	{
 		name: "Aughost 2025 announcement",
@@ -69,7 +70,7 @@ var item_details = [
 		latest: "2025-07-28",
 		page: "2025-07-24_aughost_2025_announcement.html",
 		blurb: "<a href='../event/aughost_2025.html'>Aughost 2025</a> will be happening soon! See the event's page for the guidelines.",
-		tags: ["2025","July","Announcement","Event"],
+		tags: ["2025","July","Event"],
 	},
 	{
 		name: "Permissions page now available",
@@ -87,7 +88,7 @@ var item_details = [
 		latest: null,
 		page: "2025-07-10_hoard_of_shinies_v1.0.6.html",
 		blurb: "A small update with some additional settings for <a href='../ghost/hoard_of_shinies.html'>Hoard of Shinies</a>.",
-		tags: ["2025","July","Update"],
+		tags: ["2025","July","Ghost","Update"],
 	},
 	{
 		name: "Doodle Daydreams v1.0.1",
@@ -96,7 +97,7 @@ var item_details = [
 		latest: null,
 		page: "2025-06-30_doodle_daydreams_v1.0.1.html",
 		blurb: "A small patch for <a href='../ghost/doodle_daydreams.html'>Doodle Daydreams</a> to iron out the jam jank.",
-		tags: ["2025","June","Update"],
+		tags: ["2025","June","Ghost","Update"],
 	},
 	{
 		name: "Ye Olde Soul Spell v1.0.0",
@@ -105,7 +106,7 @@ var item_details = [
 		latest: null,
 		page: "2025-06-26_ye_olde_soul_spell_v1.0.0.html",
 		blurb: "Release of a new balloon: <a href='../balloon/ye_olde_soul_spell.html'>Ye Olde Soul Spell</a>. A spell themed balloon with a variety of colors and a few patterns. It's also round!",
-		tags: ["2025","June","New release"],
+		tags: ["2025","June","Balloon","New release"],
 	},
 	{
 		name: "Ye Olde Cursed Tower v1.0.0",
@@ -114,7 +115,7 @@ var item_details = [
 		latest: null,
 		page: "2025-06-26_ye_olde_cursed_tower_v1.0.0.html",
 		blurb: "Release of a new ghost: <a href='../ghost/ye_olde_cursed_tower.html'>Ye Olde Cursed Tower</a>. An evil wizard sits atop a tower, collecting souls... for what purpose? Nobody is sure. What will happen to the people trapped within the tower's walls? ... Well, that's up to you, since you are that wizard! Have fun.",
-		tags: ["2025","June","New release"],
+		tags: ["2025","June","Ghost","New release"],
 	},
 	{
 		name: "Doodle Daydreams v1.0.0",
@@ -123,7 +124,7 @@ var item_details = [
 		latest: null,
 		page: "2025-06-21_doodle_daydreams_v1.0.0.html",
 		blurb: "Release of a new ghost: <a href='../ghost/doodle_daydreams.html'>Doodle Daydreams</a>. A poseable doll to dress up and daydream with. What worlds will your mind take you to...?",
-		tags: ["2025","June","New release"],
+		tags: ["2025","June","Ghost","New release"],
 	},
 	{
 		name: "GroupDigits function",
@@ -132,7 +133,7 @@ var item_details = [
 		latest: null,
 		page: "2025-06-20_groupdigits_function.html",
 		blurb: "Release of a new function: <a href='../function/index.html#groupdigits'>GroupDigits</a>. This function takes an integer or real number and outputs it as a string with commas as thousands separators.",
-		tags: ["2025","June","New release"],
+		tags: ["2025","June","Function","New release"],
 	},
 	{
 		name: "Weather Station v1.1.0",
@@ -141,7 +142,7 @@ var item_details = [
 		latest: null,
 		page: "2025-06-18_weather_station_v1.1.0.html",
 		blurb: "A major update for <a href='../plugin/weather_station.html'>Weather Station</a> to overhaul various parts of the code, deprecate some references for privacy concerns, add a thumbnail, and add some new options for formatting the date and time.",
-		tags: ["2025","June","Update"],
+		tags: ["2025","June","Plugin","Update"],
 	},
 	{
 		name: "Weather Station v1.0.5",
@@ -150,7 +151,7 @@ var item_details = [
 		latest: null,
 		page: "2025-06-10_weather_station_v1.0.5.html",
 		blurb: "A small patch for <a href='../plugin/weather_station.html'>Weather Station</a> to fix some issues while offline.",
-		tags: ["2025","June","Update"],
+		tags: ["2025","June","Plugin","Update"],
 	},
 	{
 		name: "Blog grand opening",
