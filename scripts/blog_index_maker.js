@@ -252,8 +252,8 @@ function sortCompare(a, b)
 	
 	if (SortType == "release_date")
 	{
-		aVal = a.release;
-		bVal = b.release;
+		aVal = a.release + a.dupeindex;
+		bVal = b.release + b.dupeindex;
 	}
 	else if (SortType == "last_updated")
 	{
