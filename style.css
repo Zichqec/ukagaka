@@ -38,6 +38,11 @@ li > p
 	margin: 0;
 }
 
+.aughost_table
+{
+	overflow-x: auto;
+}
+
 table.aughost, table.aughost th, table.aughost td
 {
 	border: 1px solid;
@@ -48,13 +53,19 @@ table.aughost, table.aughost th, table.aughost td
 	border-collapse: collapse;
 }
 
+table.aughost td, table.aughost th
+{
+	background-color: #ebebeb;
+}
+
 table.aughost hr
 {
 	border: 1px solid;
 	color: #b6b6b6;
 }
 
-.aughost_dim
+/* Note to self: selector specificity https://stackoverflow.com/questions/20954715/how-to-override-the-properties-of-a-css-class-to-avoid-copying-and-renaming-styl */
+table.aughost .aughost_dim
 {
 	background-color: #d1d1d1;
 }
