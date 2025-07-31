@@ -214,6 +214,7 @@ var item_details = [
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/gallery_512"},
+			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/ghosts/gallery_512"},
 		],
 		blurb: "Do you like art? Do you like lil guys that have bad opinions? Then have we got the ghost for you! This painting can either be an aesthetic companion with an attitude, or you can open the gallery and bring in a crowd to admire/mock anything and everything on your desktop.",
 		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "Object", "WIP"]
@@ -326,6 +327,7 @@ var item_details = [
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/if_i_cant_have_shrimp_no_one_can"},
+			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/ghosts/if_i_cant_have_shrimp_no_one_can"},
 		],
 		blurb: "The idea for this ghost was \"a very mean flamingo\", and that's exactly what we made in just 24 hours! Mean and demanding, this flamingo wants you to pet it. Also, it has multiple different shells, with a variety of colors. What more could you want from a ghost?",
 		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Idea Adoption Jam", "Idle chatter"]
@@ -346,6 +348,7 @@ var item_details = [
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/keep_frozen"},
+			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/ghosts/keep_frozen"},
 		],
 		blurb: "A simple ice cube, which will tell you about various things that are cold. Over time it will melt, and you can either freeze it to keep it alive, or you can let it melt and collect the items inside, and even display them on your desktop. Can you resist the urge to get the items inside? Not many do!",
 		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter", "Object", "Minigames"] //It's a game, not a minigame, but...
@@ -370,6 +373,7 @@ var item_details = [
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/literally_just_a_mess_why_did_you_download_this"},
+			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/ghosts/literally_just_a_mess_why_did_you_download_this"},
 		],
 		blurb: "A chaotic ghost made in an afternoon! We all spontaneously got together on a collaborative coding site, and about 4 hours later we had this simple ghost with 600 dialogues and 10 shells.",
 		tags: ["2024", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Object"]
@@ -445,6 +449,7 @@ var item_details = [
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/noodle"},
+			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/ghosts/noodle"},
 		],
 		blurb: "Looking for survival tips? Noodle's your pasta! Hang out with Noodle and hear all about the latest goings-on in the kitchen and beyond. A friend of Needle's, it may have additional comments if Needle is also open! Stay safe out there, don't get eaten!",
 		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Object"]
@@ -488,6 +493,7 @@ var item_details = [
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/please_arrive_15_minutes_before_your_scheduled_interview_time"},
+			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/ghosts/please_arrive_15_minutes_before_your_scheduled_interview_time"},
 		],
 		blurb: "Do you like job interviews? How about wearing ties? If you answered yes to either of these, then this is the ghost for you! Interview continually for a new position doing hoard maintenance for a dragon. Answer questions, ask questions of your own, and learn all about your prospective job! Good luck!",
 		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "WIP"]
@@ -564,6 +570,7 @@ var item_details = [
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/ssp_angel"},
+			{label: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/ghosts/ssp_angel"},
 			{label: "haystack blog and oddities", url: "https://thatoddhaystack.neocities.org/ukagaka/ukagakaghosts#SSPAngel"},
 		],
 		blurb: "SSP Angel is here to teach you all about SSP! But fear not if you're already an experienced SSP user, SSP Angel is great for new and old users alike! They come with lots of tips and information, but you can also turn off their tips and be delighted by their 200 whimsical idle dialogues!",
