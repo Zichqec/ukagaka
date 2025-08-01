@@ -195,7 +195,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2024-11-11_needle_dog_mirror.html",
-		blurb: "A mirror download of the shell Needle Dog, created with permission from its author since the original download went down.",
+		blurb: "A mirror download of the shell <a href='https://ukagakadreamteam.com/wiki/shell/needle/needle_dog'>Needle Dog</a>, created with permission from its author since the original download went down.",
 		tags: ["2024","November","Mirror"],
 	},
 	{
@@ -204,7 +204,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2024-10-13_flele_mirror.html",
-		blurb: "A mirror download of FLELE, created based on permissions given on FLELE's distribution site. It may be helpful for those who cannot access FLELE's page.",
+		blurb: "A mirror download of FLELE, created based on permissions given on <a href='http://navy.nm.land.to/ukgk/flele/'>FLELE's distribution site</a>. It may be helpful for those who cannot access FLELE's page.",
 		tags: ["2024","October","Mirror"],
 	},
 	{
@@ -222,7 +222,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2023-12-22_advent_calendar_ukadoc_english_translation.html",
-		blurb: "An announcement of the completion of the Ukadoc English translation project.",
+		blurb: "An announcement of the completion of the <a href='https://ukagakadreamteam.github.io/ukadoc/manual/index.html'>Ukadoc English translation</a> project.",
 		tags: ["2023","December","Announcement","Advent calendar"],
 	},
 	{
@@ -231,7 +231,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2022-12-24_advent_calendar_yaya_fundamentals_release.html",
-		blurb: "The release of an extensive guide to YAYA in English, called YAYA Fundamentals.",
+		blurb: "The release of an extensive guide to YAYA in English, called <a href='https://zichqec.github.io/YAYA_Fundamentals/'>YAYA Fundamentals</a>.",
 		tags: ["2022","December","New release","Advent calendar"],
 	},
 	{
@@ -240,7 +240,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2022-12-23_advent_calendar_wiki_release.html",
-		blurb: "A release announcement for the Ukagaka Dream Team Wiki, which is now publicly available with almost all the pages up to this point filled in.",
+		blurb: "A release announcement for the <a href='https://ukagakadreamteam.com/wiki/home'>Ukagaka Dream Team Wiki</a>, which is now publicly available with almost all the pages up to this point filled in.",
 		tags: ["2022","December","Announcement","Advent calendar"],
 	},
 	{
