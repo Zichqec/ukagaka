@@ -33,7 +33,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2025-08-13_8_20_hydrate_shell_jam_2025_announcement.html",
-		blurb: "<a href='../event/8_20_hydrate_shell_jam_2025/rules.html'>Aughost 2025</a> will be happening soon! See the event's page for the rules and timeframe.",
+		blurb: "<a href='../event/8_20_hydrate_shell_jam_2025_rules.html'>8/20 Hydrate Shell Jam 2025</a> will be happening soon! See the event's page for the rules and timeframe.",
 		tags: ["2025","August","Event"],
 	},
 	{
