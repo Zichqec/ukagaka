@@ -60,6 +60,7 @@ function findDeepness()
 		path = path.split("/");
 		deepness = path.length - 1;
 	}
+	console.log(`deepness: ${deepness}`);
 }
 
 function linkHTML(link)
@@ -69,6 +70,7 @@ function linkHTML(link)
 	{
 		path += "../";
 	}
+	console.log(`path: ${path}`);
 	
 	
 	//Special option for the home tab since we want it not to place an index.html at the end
@@ -100,7 +102,8 @@ function linkHTML(link)
 		let imgpath = "favicon.png"
 		if (deepness > 0)
 		{
-			imgpath = "../favicon.png"
+			//Skeptical of this... if it's this easy why the heckity heck didn't I do it before
+			imgpath = `${path}favicon.png`;
 		}
 		return `
 		<div class="space_mode_toggle">

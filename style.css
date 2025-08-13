@@ -957,3 +957,8 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 {
 	font-weight: bold;
 }
+
+.eventbannershadow
+{
+	box-shadow:2px 2px 15px rgba(0, 0, 0, 0.10),-2px -2px 15px rgba(0, 0, 0, 0.10);
+}

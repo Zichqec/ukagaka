@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>How to write a Needle (Advent calendar 2022)</title>
-		<link>https://ukagaka.zichqec.com/blog/2022-12-19_advent_calendar_how_to_write_a_needle</link>
-		<guid>https://ukagaka.zichqec.com/blog/2022-12-19_advent_calendar_how_to_write_a_needle</guid>
-		<pubDate>Mon, 19 Dec 2022 00:00:00 EST</pubDate>
-		<description>A recounting of the process of writing <a href='../ghost/needle.html'>Needle</a> for Ghost Jam 2022, and how it changed the way I think about writing ghosts since then.</description>
-	</item>
-	<item>
 		<title>Ukagaka Dream Team Wiki release (Advent calendar 2022)</title>
 		<link>https://ukagaka.zichqec.com/blog/2022-12-23_advent_calendar_wiki_release</link>
 		<guid>https://ukagaka.zichqec.com/blog/2022-12-23_advent_calendar_wiki_release</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-07-28_chunktext_function</guid>
 		<pubDate>Mon, 28 Jul 2025 00:00:02 EST</pubDate>
 		<description>Release of a new function: <a href='../function/index.html#chunktext'>ChunkText</a>. This function takes a dialogue string and outputs it in chunks of 3 characters at a time, with various options to adjust it. It's intended to give text a more robotic feel.</description>
+	</item>
+	<item>
+		<title>8/20 Hydrate Shell Jam 2025 Announcement</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-08-13_8_20_hydrate_shell_jam_2025_announcement</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-08-13_8_20_hydrate_shell_jam_2025_announcement</guid>
+		<pubDate>Wed, 13 Aug 2025 00:00:00 EST</pubDate>
+		<description><a href='../event/8_20_hydrate_shell_jam_2025_rules.html'>8/20 Hydrate Shell Jam 2025</a> will be happening soon! See the event's page for the rules and timeframe.</description>
 	</item>
 </channel>
 </rss>
