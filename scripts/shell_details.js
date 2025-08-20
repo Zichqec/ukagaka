@@ -425,6 +425,23 @@ var shell_details = [
 		tags: ["2024","Hydrate","For event","8/20 Hydrate Shell Jam","Digital","Shaded","Pixel brush","Lined","Animations","Dressups","Additional pieces","Color alts"]
 	},
 	{
+		name: "Leaky pipe",
+		goeswith: [Hydrate],
+		release: "2025-08-20",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "8/20 Hydrate Shell Jam 2025",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/1hbab23cguck3ev/leaky_pipe_v1.0.0.nar/file",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/hydrate/leaky_pipe"},
+		],
+		blurb: "Oops, looks like you've sprung a leak! But hey, you're feeling kind of thirsty, so in a way it's convenient...<br><br>This shell comes with several color alts for the pipe and the liquid, as well as an option to adjust the frequency of the dripping!",
+		tags: ["2025","Hydrate","For event","8/20 Hydrate Shell Jam","Digital","Shaded","Pixel brush","Lined","Animations","Dressups","Additional pieces","Color alts"]
+	},
+	{
 		name: "Macaroni",
 		goeswith: [Noodle],
 		release: "2023-09-24",

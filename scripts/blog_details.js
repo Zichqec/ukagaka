@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Leaky Pipe v1.0.0",
+		release: "2025-08-20",
+		dupeindex: "01",
+		latest: null,
+		page: "2025-08-20_leaky_pipe_v1.0.0.html",
+		blurb: "Release of a new <a href='../ghost/hydrate.html'>Hydrate</a> shell, <a href='../shell/leaky_pipe.html'>Leaky Pipe</a>. A pipe that sticks to the top of the screen and drops down liquid occasionally!",
+		tags: ["2025","August","Shell","New release"],
+	},
+	{
 		name: "8/20 Hydrate Shell Jam 2025 has begun",
 		release: "2025-08-20",
 		dupeindex: "00",
