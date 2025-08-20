@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "8/20 Hydrate Shell Jam 2025 has begun",
+		release: "2025-08-20",
+		dupeindex: "00",
+		latest: null,
+		page: "2025-08-20_8_20_hydrate_shell_jam_2025_has_begun.html",
+		blurb: "<a href='../event/8_20_hydrate_shell_jam_2025_rules.html'>8/20 Hydrate Shell Jam 2025</a> has begun!",
+		tags: ["2025","August","Event"],
+	},
+	{
 		name: "8/20 Hydrate Shell Jam 2025 Announcement",
 		release: "2025-08-13",
 		dupeindex: "00",
