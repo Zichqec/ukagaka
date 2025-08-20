@@ -425,7 +425,7 @@ var shell_details = [
 		tags: ["2024","Hydrate","For event","8/20 Hydrate Shell Jam","Digital","Shaded","Pixel brush","Lined","Animations","Dressups","Additional pieces","Color alts"]
 	},
 	{
-		name: "Leaky pipe",
+		name: "Leaky Pipe",
 		goeswith: [Hydrate],
 		release: "2025-08-20",
 		latest: null,
@@ -661,6 +661,23 @@ var shell_details = [
 		],
 		blurb: "Do you love Starset? Me too! That's why I made this Starset Messenger shell, to delight you by playing space songs on his space bass. When playing songs that are recognized as Starset, he will display various symbols from the band on his visor! If it's a song that has a specific symbol, he'll display that one in particular! By the way, if you look closely, the stars on his visor twinkle.<br><br>Note: this shell has been deliberately designed to not resemble any particular member of the band. He's his own thing!",
 		tags: ["2021","FLUX/FLELE","Digital","Flat color","Soft brush","Lined","Animations"]
+	},
+	{
+		name: "Stratospheric Delivery",
+		goeswith: [Hydrate],
+		release: "2025-08-20",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "8/20 Hydrate Shell Jam 2025",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/99d9hl9tnjr2maz/stratospheric_delivery_v1.0.0.nar/file",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/hydrate/stratospheric_delivery"},
+		],
+		blurb: "A delivery straight from the heavens! Surely it is completely safe to drink. Hey, what's that weirdly colored cloud over there...?<br><br>This shell comes with an optional rain animation, and several color alts for both the cloud and the rain color!",
+		tags: ["2025","Hydrate","For event","8/20 Hydrate Shell Jam","Digital","Shaded","Pixel brush","Lineless","Animations","Dressups","Additional pieces","Color alts"]
 	},
 	{
 		name: "Syringe",
