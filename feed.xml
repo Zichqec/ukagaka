@@ -12,20 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Summary of 2023 in the Ukagaka Dream Team (Advent calendar 2023)</title>
-		<link>https://ukagaka.zichqec.com/blog/2023-12-23_advent_calendar_summary_of_2023</link>
-		<guid>https://ukagaka.zichqec.com/blog/2023-12-23_advent_calendar_summary_of_2023</guid>
-		<pubDate>Sat, 23 Dec 2023 00:00:00 EST</pubDate>
-		<description>A summary of events and other important happenings in the Ukagaka Dream Team during 2023.</description>
-	</item>
-	<item>
-		<title>FLELE mirror</title>
-		<link>https://ukagaka.zichqec.com/blog/2024-10-13_flele_mirror</link>
-		<guid>https://ukagaka.zichqec.com/blog/2024-10-13_flele_mirror</guid>
-		<pubDate>Sun, 13 Oct 2024 00:00:00 EST</pubDate>
-		<description>A mirror download of FLELE, created based on permissions given on <a href='http://navy.nm.land.to/ukgk/flele/'>FLELE's distribution site</a>. It may be helpful for those who cannot access FLELE's page.</description>
-	</item>
-	<item>
 		<title>Needle Dog mirror</title>
 		<link>https://ukagaka.zichqec.com/blog/2024-11-11_needle_dog_mirror</link>
 		<guid>https://ukagaka.zichqec.com/blog/2024-11-11_needle_dog_mirror</guid>
@@ -185,6 +171,20 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-20_stratospheric_delivery_v1.0.0</guid>
 		<pubDate>Wed, 20 Aug 2025 00:00:02 EST</pubDate>
 		<description>Release of a new <a href='../ghost/hydrate.html'>Hydrate</a> shell, <a href='../shell/stratospheric_delivery.html'>Stratospheric Delivery</a>. A free-floating cloud with dressups for rain in various colors, and different colors of cloud!</description>
+	</item>
+	<item>
+		<title>8/20 Hydrate Shell Jam 2025 has ended</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-08-21_8_20_hydrate_shell_jam_2025_has_ended</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-08-21_8_20_hydrate_shell_jam_2025_has_ended</guid>
+		<pubDate>Thu, 21 Aug 2025 00:00:00 EST</pubDate>
+		<description><a href='../event/8_20_hydrate_shell_jam_2025_rules.html'>8/20 Hydrate Shell Jam 2025</a> has ended! There is a 1 hour grace period to finish submissions before the form closes.</description>
+	</item>
+	<item>
+		<title>Stock Pot v1.0.0</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-08-21_stock_pot_v1.0.0</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-08-21_stock_pot_v1.0.0</guid>
+		<pubDate>Thu, 21 Aug 2025 00:00:01 EST</pubDate>
+		<description>Release of a new <a href='../ghost/hydrate.html'>Hydrate</a> shell, <a href='../shell/stock_pot.html'>Stock Pot</a>. A stock pot with dressups for a lid and steam!</description>
 	</item>
 </channel>
 </rss>

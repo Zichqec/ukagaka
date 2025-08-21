@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Stock Pot v1.0.0",
+		release: "2025-08-21",
+		dupeindex: "01",
+		latest: null,
+		page: "2025-08-21_stock_pot_v1.0.0.html",
+		blurb: "Release of a new <a href='../ghost/hydrate.html'>Hydrate</a> shell, <a href='../shell/stock_pot.html'>Stock Pot</a>. A stock pot with dressups for a lid and steam!",
+		tags: ["2025","August","Shell","New release"],
+	},
+	{
 		name: "8/20 Hydrate Shell Jam 2025 has ended",
 		release: "2025-08-21",
 		dupeindex: "00",

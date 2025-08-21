@@ -680,6 +680,23 @@ var shell_details = [
 		tags: ["2025","Hydrate","For event","8/20 Hydrate Shell Jam","Digital","Shaded","Pixel brush","Lineless","Animations","Dressups","Additional pieces","Color alts"]
 	},
 	{
+		name: "Stock Pot",
+		goeswith: [Hydrate],
+		release: "2025-08-21",
+		latest: null,
+		version: "v1.0.0",
+		forevent: null,
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/fjjrceozz1pq01m/stock_pot_v1.0.0.nar/file",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/hydrate/stock_pot"},
+		],
+		blurb: "Making dinner is hard work. Make sure you have a spoon on hand in case you get thirsty!<br><br>Comes with dressups for a lid and steam.",
+		tags: ["2025","Hydrate","Digital","Shaded","Pixel brush","Lineless","Animations","Dressups","Additional pieces"]
+	},
+	{
 		name: "Syringe",
 		goeswith: [Hydrate,Needle],
 		release: "2022-08-20",
