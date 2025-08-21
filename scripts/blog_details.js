@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "8/20 Hydrate Shell Jam 2025 has ended",
+		release: "2025-08-21",
+		dupeindex: "00",
+		latest: null,
+		page: "2025-08-21_8_20_hydrate_shell_jam_2025_has_ended.html",
+		blurb: "<a href='../event/8_20_hydrate_shell_jam_2025_rules.html'>8/20 Hydrate Shell Jam 2025</a> has ended! There is a 1 hour grace period to finish submissions before the form closes.",
+		tags: ["2025","August","Event"],
+	},
+	{
 		name: "Stratospheric Delivery v1.0.0",
 		release: "2025-08-20",
 		dupeindex: "02",
