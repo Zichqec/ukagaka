@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<article>
+<h1>8/20 Hydrate Shell Jam 2025</h1>
+<img src="8_20_hydrate_shell_jam_2025/banner_start.png" alt="August 20th. New look, same great taste!" class="centerimg eventbannershadow">
+
+<h2 id="submissions">Submissions</h2>
+<div id="entries"></div>
+
+</article>
+
+<script>
+let entries = [
+	{
+		name: "Leaky Pipe",
+		download: "https://ukagaka.zichqec.com/shell/leaky_pipe",
+		developers:
+		[
+			{name: "Zichqec", creditlink: "https://ukagaka.zichqec.com/"},
+		],
+	},
+	{
+		name: "Bloxxy_Sodas",
+		download: "https://github.com/Mercifulsoup/Bloxxy_Sodas-Hydrate-Shell/tree/main",
+		developers:
+		[
+			{name: "Merciful", creditlink: "https://www.tumblr.com/blog/merciful-soup"},
+		],
+	},
+	{
+		name: "Bloxiade",
+		download: "https://github.com/Mercifulsoup/Bloxiade-Hydrate-Shell/tree/main",
+		developers:
+		[
+			{name: "Merciful", creditlink: "https://www.tumblr.com/blog/merciful-soup"},
+		],
+	},
+	{
+		name: "Classy Teacup",
+		download: "https://ako-kipali.tumblr.com/post/792417079780360192/i-made-a-fancy-teacup-you-can-seperately-change",
+		developers:
+		[
+			{name: "Kipali", creditlink: "https://ako-kipali.tumblr.com/"},
+		],
+	},
+	{
+		name: "WATA",
+		download: "https://github.com/GallaTheGalla/wata/releases/latest",
+		developers:
+		[
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+		],
+	},
+	{
+		name: "Cristalline",
+		download: "https://www.deviantart.com/scratong/art/Cristalline-Hydrate-jam-2025-1232259732",
+		developers:
+		[
+			{name: "Scratong", creditlink: "https://www.deviantart.com/scratong"},
+		],
+	},
+	{
+		name: "Stratospheric Delivery",
+		download: "https://ukagaka.zichqec.com/shell/stratospheric_delivery",
+		developers:
+		[
+			{name: "Zichqec", creditlink: "https://ukagaka.zichqec.com/"},
+		],
+	},
+	{
+		name: "Ketchup Bottles",
+		download: "https://github.com/yuyudev-thatoddhaystack/ketchup_bottles_yy/releases/",
+		developers:
+		[
+			{name: "Vita", creditlink: "https://thatoddhaystack.neocities.org/ukagaka/"},
+		],
+	},
+	{
+		name: "Olive Oil",
+		download: "https://zdzisiu.github.io/Cemetery/work_index.html?type=shell#olive_oil",
+		developers:
+		[
+			{name: "Zdzisiu", creditlink: "https://zdzisiu.github.io/Cemetery/"},
+		],
+	},
+	{
+		name: "きつねのお茶 (Fox's Tea)",
+		download: "https://okuajub-netspace.neocities.org/kitsune_no_ocha",
+		developers:
+		[
+			{name: "okuajub", creditlink: "https://okuajub-netspace.neocities.org/"},
+		],
+	},
+	{
+		name: "Coconut Water",
+		download: "https://github.com/Digibillcipher/UkagakaTime?tab=readme-ov-file#coconut-water",
+		developers:
+		[
+			{name: "Digi_056", creditlink: "https://digi-056.tumblr.com"},
+		],
+	},
+	{
+		name: "Predynastic Egyptian Terracotta Bowl with Human Feet",
+		download: "https://github.com/singlefl4me/idk_ghosts/blob/main/releases/pdetbwhf_idk.nar",
+		developers:
+		[
+			{name: "idk", creditlink: "https://github.com/singlefl4me/"},
+		],
+	},
+]
+</script>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+<script>
+let output = ``;
+
+for (let i = 0; i < entries.length; i++)
+{
+	let entry = entries[i];
+	
+	authors = ``;
+	for (let ii = 0; ii < entry.developers.length; ii++)
+	{
+		let developer = entry.developers[ii];
+		if (authors != ``) authors += `, `;
+		authors += `<a href="${developer.creditlink}">${developer.name}</a>`;
+	}
+	let authorlabel = `Author`;
+	if (entry.developers.length > 1) authorlabel += "s";
+	
+	output += `
+	<h3 id="${makeStandard(entry.name)}">${entry.name}</h3>
+	<img src="8_20_hydrate_shell_jam_2025/entries/${makeStandard(entry.name)}.png" alt="${entry.name} thumbnail">
+	<p>${authorlabel}: ${authors}<br>
+	<a href="${entry.download}">Download</a></p>
+	`;
+}
+
+
+document.getElementById('submissions').outerHTML = output;
+</script>
+
+</body>
+</html>
