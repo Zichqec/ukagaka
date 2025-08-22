@@ -663,23 +663,6 @@ var shell_details = [
 		tags: ["2021","FLUX/FLELE","Digital","Flat color","Soft brush","Lined","Animations"]
 	},
 	{
-		name: "Stratospheric Delivery",
-		goeswith: [Hydrate],
-		release: "2025-08-20",
-		latest: null,
-		version: "v1.0.0",
-		forevent: "8/20 Hydrate Shell Jam 2025",
-		collaborators: null,
-		content_warnings: null,
-		download: "https://www.mediafire.com/file/99d9hl9tnjr2maz/stratospheric_delivery_v1.0.0.nar/file",
-		readmore:
-		[
-			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/hydrate/stratospheric_delivery"},
-		],
-		blurb: "A delivery straight from the heavens! Surely it is completely safe to drink. Hey, what's that weirdly colored cloud over there...?<br><br>This shell comes with an optional rain animation, and several color alts for both the cloud and the rain color!",
-		tags: ["2025","Hydrate","For event","8/20 Hydrate Shell Jam","Digital","Shaded","Pixel brush","Lineless","Animations","Dressups","Additional pieces","Color alts"]
-	},
-	{
 		name: "Stock Pot",
 		goeswith: [Hydrate],
 		release: "2025-08-21",
@@ -695,6 +678,23 @@ var shell_details = [
 		],
 		blurb: "Making dinner is hard work. Make sure you have a spoon on hand in case you get thirsty!<br><br>Comes with dressups for a lid and steam.",
 		tags: ["2025","Hydrate","Digital","Shaded","Pixel brush","Lineless","Animations","Dressups","Additional pieces"]
+	},
+	{
+		name: "Stratospheric Delivery",
+		goeswith: [Hydrate],
+		release: "2025-08-20",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "8/20 Hydrate Shell Jam 2025",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/99d9hl9tnjr2maz/stratospheric_delivery_v1.0.0.nar/file",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/hydrate/stratospheric_delivery"},
+		],
+		blurb: "A delivery straight from the heavens! Surely it is completely safe to drink. Hey, what's that weirdly colored cloud over there...?<br><br>This shell comes with an optional rain animation, and several color alts for both the cloud and the rain color!",
+		tags: ["2025","Hydrate","For event","8/20 Hydrate Shell Jam","Digital","Shaded","Pixel brush","Lineless","Animations","Dressups","Additional pieces","Color alts"]
 	},
 	{
 		name: "Syringe",
