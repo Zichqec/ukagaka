@@ -437,8 +437,8 @@ function makeOtherShellIndex(shells)
 			}
 		}
 		
-		output += `<br>
-		<b>Initial release:</b> ${dateDisplay(item.release)}`;
+		output += `</p>
+		<p><b>Initial release:</b> ${dateDisplay(item.release)}`;
 		
 		//Additional display if it was for an event
 		if (item.forevent != null)
@@ -448,15 +448,15 @@ function makeOtherShellIndex(shells)
 		
 		if (item.content_warnings != null)
 		{
-			output += `<br><br>
-			<b>Content warnings: </b> ${item.content_warnings}
-			<br>`;
+			output += `</p><br>
+			<p><b>Content warnings: </b> ${item.content_warnings}</p>`;
 		}
 		
 		output += `<p><a href="${item.download}">Download</a></p>`;
 		
+		//<p>${item.blurb}</p>
 		output += `
-		<p>${item.blurb}</p>
+		
 		
 		<p class="back_to_top"><a href='#shells_by_others'>Back to shells</a></p>
 		</div>`;
