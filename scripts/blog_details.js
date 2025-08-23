@@ -82,7 +82,7 @@ var item_details = [
 		tags: ["2025","August","Event"],
 	},
 	{
-		name: "8/20 Hydrate Shell Jam 2025 Announcement",
+		name: "8/20 Hydrate Shell Jam 2025 announcement",
 		release: "2025-08-13",
 		dupeindex: "00",
 		latest: null,
