@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Ukagaka Dream Team Wiki release (Advent calendar 2022)</title>
-		<link>https://ukagaka.zichqec.com/blog/2022-12-23_advent_calendar_wiki_release</link>
-		<guid>https://ukagaka.zichqec.com/blog/2022-12-23_advent_calendar_wiki_release</guid>
-		<pubDate>Fri, 23 Dec 2022 00:00:00 EST</pubDate>
-		<description>A release announcement for the <a href='https://ukagakadreamteam.com/wiki/home'>Ukagaka Dream Team Wiki</a>, which is now publicly available with almost all the pages up to this point filled in.</description>
-	</item>
-	<item>
 		<title>YAYA Fundamentals guide release (Advent calendar 2022)</title>
 		<link>https://ukagaka.zichqec.com/blog/2022-12-24_advent_calendar_yaya_fundamentals_release</link>
 		<guid>https://ukagaka.zichqec.com/blog/2022-12-24_advent_calendar_yaya_fundamentals_release</guid>
@@ -180,11 +173,18 @@
 		<description>Release of a new function: <a href='../function/index.html#chunktext'>ChunkText</a>. This function takes a dialogue string and outputs it in chunks of 3 characters at a time, with various options to adjust it. It's intended to give text a more robotic feel.</description>
 	</item>
 	<item>
-		<title>8/20 Hydrate Shell Jam 2025 Announcement</title>
+		<title>8/20 Hydrate Shell Jam 2025 announcement</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-08-13_8_20_hydrate_shell_jam_2025_announcement</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-13_8_20_hydrate_shell_jam_2025_announcement</guid>
 		<pubDate>Wed, 13 Aug 2025 00:00:00 EST</pubDate>
 		<description><a href='../event/8_20_hydrate_shell_jam_2025_rules.html'>8/20 Hydrate Shell Jam 2025</a> will be happening soon! See the event's page for the rules and timeframe.</description>
+	</item>
+	<item>
+		<title>8/20 Hydrate Shell Jam results and afterword</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-08-23_8_20_hydrate_shell_jam_results_and_afterword</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-08-23_8_20_hydrate_shell_jam_results_and_afterword</guid>
+		<pubDate>Sat, 23 Aug 2025 00:00:00 EST</pubDate>
+		<description>The <a href='../event/8_20_hydrate_shell_jam_2025_results.html'>results of 8/20 Hydrate Shell Jam 2025</a> are here! A few thoughts after tying up the event.</description>
 	</item>
 </channel>
 </rss>
