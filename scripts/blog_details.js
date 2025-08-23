@@ -28,11 +28,11 @@ var item_details = [
 		// tags: [],
 	// },
 	{
-		name: "8/20 Hydrate Shell Jam results and afterword",
+		name: "8/20 Hydrate Shell Jam afterword",
 		release: "2025-08-23",
 		dupeindex: "00",
 		latest: null,
-		page: "2025-08-23_8_20_hydrate_shell_jam_results_and_afterword.html",
+		page: "2025-08-23_8_20_hydrate_shell_jam_afterword.html",
 		blurb: "The <a href='../event/8_20_hydrate_shell_jam_2025_results.html'>results of 8/20 Hydrate Shell Jam 2025</a> are here! A few thoughts after tying up the event.",
 		tags: ["2025","August","Event"],
 	},
