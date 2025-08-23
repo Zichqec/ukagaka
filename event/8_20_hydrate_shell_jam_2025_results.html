@@ -21,7 +21,13 @@
 
 <article>
 <h1>8/20 Hydrate Shell Jam 2025</h1>
-<img src="8_20_hydrate_shell_jam_2025/banner_start.png" alt="August 20th. New look, same great taste!" class="centerimg eventbannershadow">
+<img src="8_20_hydrate_shell_jam_2025/banner_end.png" alt="All of the jam entries displayed together" class="centerimg eventbannershadow">
+
+<p>Below are the results of 8/20 Hydrate Shell Jam 2025! All in all, there were <strong>12 entries</strong> by <strong>10 participants</strong>.</p>
+
+<p>People made a lot of wonderful things! Many of these entries have dressups and/or animations, so do check them out and see what they have to offer!</p>
+
+<p>For posterity, here are the <a href="8_20_hydrate_shell_jam_2025_rules.html">original rules for this event</a>. I also wrote a <a href="../blog/2025-08-23_8_20_hydrate_shell_jam_results_and_afterword.html">short afterword</a> on my blog. Thank you to everyone who participated!</p>
 
 <h2 id="submissions">Submissions</h2>
 <div id="entries"></div>
@@ -153,16 +159,18 @@ for (let i = 0; i < entries.length; i++)
 	let authorlabel = `Author`;
 	if (entry.developers.length > 1) authorlabel += "s";
 	
+	if (output != ``) output += `<br>`;
+	
 	output += `
 	<h3 id="${makeStandard(entry.name)}">${entry.name}</h3>
 	<img src="8_20_hydrate_shell_jam_2025/entries/${makeStandard(entry.name)}.png" alt="${entry.name} thumbnail">
-	<p>${authorlabel}: ${authors}<br>
-	<a href="${entry.download}">Download</a></p>
+	<p>${authorlabel}: ${authors}</p>
+	<p><a href="${entry.download}">Download</a></p>
 	`;
 }
 
 
-document.getElementById('submissions').outerHTML = output;
+document.getElementById('entries').outerHTML = output;
 </script>
 
 </body>

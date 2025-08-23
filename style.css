@@ -962,3 +962,11 @@ It seems like maybe it happens because the gallery slot containers are lower tha
 {
 	box-shadow:2px 2px 15px rgba(0, 0, 0, 0.10),-2px -2px 15px rgba(0, 0, 0, 0.10);
 }
+
+.banner_notice
+{
+	padding: 15px;
+	border-radius: 3px;
+	background-color: #dedede;
+	font-weight: bold;
+}
