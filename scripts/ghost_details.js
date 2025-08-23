@@ -409,7 +409,7 @@ var item_details = [
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/may_i_have_a_book_please"},
 		],
-		blurb: "Your life's greatest work is nearly complete. All you need is to unlock one final secret, and your research will be finished. And the only place you can find the information you need is in a library that claims to hold lost and forbidden knowledge. Are you prepared to brave this strange library and its even stranger policies?<br><br>Uses the freeshell <a href='https://wikiwiki.jp/feeshell/%E3%82%AB%E3%83%95%E3%82%A7%E3%82%AA%E3%83%AC%E3%81%B3%E3%81%9F%E3%81%97%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3'><span lang='ja'>カフェオレびたしのオールドファッション</span></a> (Old Fashioned with Cafe Au Lait) by <a href='https://yusyuparo.net/index.html'><span lang='ja'>ゆゆぴか</span></a>!",
+		blurb: "Your life's greatest work is nearly complete. All you need is to unlock one final secret, and your research will be finished. And the only place you can find the information you need is in a library that claims to hold lost and forbidden knowledge. Are you prepared to brave this strange library and its even stranger policies?<br><br>Uses the freeshell <span lang='ja'><a href='https://wikiwiki.jp/feeshell/%E3%82%AB%E3%83%95%E3%82%A7%E3%82%AA%E3%83%AC%E3%81%B3%E3%81%9F%E3%81%97%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3'>カフェオレびたしのオールドファッション</a></span> (Old Fashioned with Cafe Au Lait) by <span lang='ja'><a href='https://yusyuparo.net/index.html'>ゆゆぴか</a></span>!",
 		tags: ["2024", "YAYA", "Uses freeshell", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter"]
 	},
 	{
@@ -590,7 +590,7 @@ var item_details = [
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/the_garden_of_lost_souls"},
 		],
-		blurb: "You find yourself in a strange place, with only this unknown girl as your guide. Walk with her, and perhaps you'll learn more...<br><br>Uses the freeshell <a href='https://littlerainy.net/b3/shell/001rim.html'>\"<span lang='ja'>冷たくて、静かな</span>\"</a> by <a href='https://littlerainy.net/b3/'><span lang='ja'>じる</span></a>.",
+		blurb: "You find yourself in a strange place, with only this unknown girl as your guide. Walk with her, and perhaps you'll learn more...<br><br>Uses the freeshell <span lang='ja'><a href='https://littlerainy.net/b3/shell/001rim.html'>\"冷たくて、静かな\"</a></span> by <span lang='ja'><a href='https://littlerainy.net/b3/'>じる</a></span>.",
 		tags: ["2025", "YAYA", "Uses freeshell", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter", "Story"]
 	},
 	{
