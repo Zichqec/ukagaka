@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Spectre: What, why, and how (Advent calendar 2024)</title>
-		<link>https://ukagaka.zichqec.com/blog/2024-12-22_advent_calendar_spectre</link>
-		<guid>https://ukagaka.zichqec.com/blog/2024-12-22_advent_calendar_spectre</guid>
-		<pubDate>Sun, 22 Dec 2024 00:00:00 EST</pubDate>
-		<description>An article describing the plugin <a href='../plugin/spectre.html'>Spectre</a>, and also exploring the development process and various considerations we had after making it.</description>
-	</item>
-	<item>
 		<title>Summary of 2024 in the Ukagaka Dream Team (Advent calendar 2024)</title>
 		<link>https://ukagaka.zichqec.com/blog/2024-12-23_advent_calendar_summary_of_2024</link>
 		<guid>https://ukagaka.zichqec.com/blog/2024-12-23_advent_calendar_summary_of_2024</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-23_8_20_hydrate_shell_jam_afterword</guid>
 		<pubDate>Sat, 23 Aug 2025 00:00:00 EST</pubDate>
 		<description>The <a href='../event/8_20_hydrate_shell_jam_2025_results.html'>results of 8/20 Hydrate Shell Jam 2025</a> are here! A few thoughts after tying up the event.</description>
+	</item>
+	<item>
+		<title>Aughost 2025 afterword</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-09-01_aughost_2025_afterword</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-09-01_aughost_2025_afterword</guid>
+		<pubDate>Mon, 01 Sep 2025 00:00:00 EST</pubDate>
+		<description><a href='../event/aughost_2025.html'>Aughost 2025</a> has ended! Some brief commentary at the end of the event.</description>
 	</item>
 </channel>
 </rss>
