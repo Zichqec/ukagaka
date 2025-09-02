@@ -448,7 +448,7 @@ function makeOtherShellIndex(shells)
 		
 		if (item.content_warnings != null)
 		{
-			output += `</p><br>
+			output += `</p>
 			<p><b>Content warnings: </b> ${item.content_warnings}</p>`;
 		}
 		
