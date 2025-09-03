@@ -351,7 +351,7 @@ function makeIndex(item)
 	{
 		if ((pagetype == "function" || pagetype == "minigame") && !item.download.startsWith("https://"))
 		{
-			output += `<a href="${item.download}" target="_blank">View code</a></p>`;
+			output += `<a href="${item.download}">View code</a></p>`;
 		}
 		else
 		{

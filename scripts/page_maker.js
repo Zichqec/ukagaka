@@ -242,7 +242,7 @@ function ItemInfo()
 	if (currentpage.readmore != null)
 	{
 		output += `<br>
-		<b>Read more at (external links):</b> `
+		<b>Read more at:</b> `
 		for (let i = 0; i < currentpage.readmore.length; i++)
 		{
 			if (i > 0)
@@ -250,7 +250,7 @@ function ItemInfo()
 				output += `, `;
 			}
 			
-			output += `<a href="${currentpage.readmore[i].url}" target="_blank">${currentpage.readmore[i].label}</a>`
+			output += `<a href="${currentpage.readmore[i].url}" rel="external noreferrer">${currentpage.readmore[i].label}</a>`;
 		}
 	}
 	
