@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Hydrate v2.0.0",
+		release: "2025-09-13",
+		dupeindex: "00",
+		latest: null,
+		page: "2025-09-13_hydrate_v2.0.0.html",
+		blurb: "A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, kicking off a long-overdue overhaul. <b>This update includes deprecation of some old functions.</b>",
+		tags: ["2025","September","Ghost","Update"],
+	},
+	{
 		name: "Aughost 2025 afterword",
 		release: "2025-09-01",
 		dupeindex: "00",

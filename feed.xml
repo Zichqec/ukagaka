@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Summary of 2024 in the Ukagaka Dream Team (Advent calendar 2024)</title>
-		<link>https://ukagaka.zichqec.com/blog/2024-12-23_advent_calendar_summary_of_2024</link>
-		<guid>https://ukagaka.zichqec.com/blog/2024-12-23_advent_calendar_summary_of_2024</guid>
-		<pubDate>Mon, 23 Dec 2024 00:00:00 EST</pubDate>
-		<description>A summary of events and other important happenings in the Ukagaka Dream Team during 2024.</description>
-	</item>
-	<item>
 		<title>My ghost development history</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-05-22_my_ghost_development_history</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-05-22_my_ghost_development_history</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-01_aughost_2025_afterword</guid>
 		<pubDate>Mon, 01 Sep 2025 00:00:00 EST</pubDate>
 		<description><a href='../event/aughost_2025.html'>Aughost 2025</a> has ended! Some brief commentary at the end of the event.</description>
+	</item>
+	<item>
+		<title>Hydrate v2.0.0</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-09-13_hydrate_v2.0.0</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-09-13_hydrate_v2.0.0</guid>
+		<pubDate>Sat, 13 Sep 2025 00:00:00 EST</pubDate>
+		<description>A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, kicking off a long-overdue overhaul. <b>This update includes deprecation of some old functions.</b></description>
 	</item>
 </channel>
 </rss>
