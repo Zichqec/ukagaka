@@ -278,7 +278,7 @@ var item_details = [
 		forevent: null,
 		collaborators:
 		[
-			{name: "Zdzisiu", creditlink: "https://zdzisiu.github.io/Ukagaka/index.html"}
+			{name: "Zdzisiu", creditlink: "https://zdzisiu.github.io/Cemetery/index.html"}
 		],
 		translations: null,
 		content_warnings: null,
