@@ -1308,6 +1308,27 @@ let version_history = [
 				"Updated to YAYA Tc571-12.",
 			]
 		},
+		{
+			version: "v2.0.1",
+			released: "2025-09-14",
+			blog_post: "../blog/2025-09-14_hydrate_v2.0.1.html",
+			changelog:
+			[
+				"<strong>The new stat sharing event has had some of the references change.</strong> I decided to change these quickly since the last update was yesterday and I hadn't completed the documentation yet. It's cleaner and hopefully easier to work with now! Sorry for any trouble.",
+				"<strong>Scaling has been removed from the new stat sharing event.</strong> I realized that this information can be wrong if the user changes shells and doesn't change the scaling! It may return in the future if I find a solution.",
+				"Hydrate can now deliver hydration reminders even while minimized! While minimized, drinks are not added to your stats and your streak is not affected. This is meant as a QOL feature for if you need to have fewer things on screen for a while but still want to get hydration reminders. This option is off by default so as not to be a nuisance. It can be toggled in the config menu.",
+				"Fixed an issue where the custom sound option would cause an error if no sound was set.",
+				"Hydrate now tracks your drink streak high score. This stat is also shared in the stat sharing event.",
+				"Dressups are now shared in the stat sharing event. They are delimited with the special characters 0x01 and 0xFDEF. (If you are using a SHIORI that is not able to parse this for whatever reason, please let me know and I will consider adding an extra event for compatibility!)",
+				"The stat sharing event now indicates if Hydrate is currently minimized.",
+				"Removed the \"commu wait\" system, where Hydrate would store communication messages to respond to them after the balloon closed. This caused some strange effects and is generally unneeded now that that function is deprecated. Hydrate will immediately respond to all communication messages unless it is unable to do so (because a drink reminder or menu page is open). If this breaks any existing behavior, please let me know!",
+				"Added back buttons to various menus, and unified the Done/Back/Cancel terms across all menus that use them.",
+				"Removed update progress bars for faster update speeds.",
+				"When picking a custom sound, if this action is closed on Hydrate's side it will now properly close the file picker window.",
+				"Miscellaneous formatting adjustments.",
+				"General code cleanup.",
+			]
+		},
 	]
 },
 

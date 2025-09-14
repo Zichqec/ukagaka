@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>My ghost development history</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-05-22_my_ghost_development_history</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-05-22_my_ghost_development_history</guid>
-		<pubDate>Thu, 22 May 2025 00:00:00 EST</pubDate>
-		<description>My history as a ghost developer, cataloguing as many releases and updates as I could find from before the launch of this blog.</description>
-	</item>
-	<item>
 		<title>Blog grand opening</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-05-22_blog_grand_opening</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-05-22_blog_grand_opening</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-13_hydrate_v2.0.0</guid>
 		<pubDate>Sat, 13 Sep 2025 00:00:00 EST</pubDate>
 		<description>A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, kicking off a long-overdue overhaul. <b>This update includes deprecation of some old functions.</b></description>
+	</item>
+	<item>
+		<title>Hydrate v2.0.1</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-09-14_hydrate_v2.0.1</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-09-14_hydrate_v2.0.1</guid>
+		<pubDate>Sun, 14 Sep 2025 00:00:00 EST</pubDate>
+		<description>A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, with some breaking changes to the stat share event that was introduced in the previous update, as well as new features and bug fixes.</description>
 	</item>
 </channel>
 </rss>

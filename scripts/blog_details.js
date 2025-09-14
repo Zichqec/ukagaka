@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Hydrate v2.0.1",
+		release: "2025-09-14",
+		dupeindex: "00",
+		latest: null,
+		page: "2025-09-14_hydrate_v2.0.1.html",
+		blurb: "A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, with some breaking changes to the stat share event that was introduced in the previous update, as well as new features and bug fixes.",
+		tags: ["2025","September","Ghost","Update"],
+	},
+	{
 		name: "Hydrate v2.0.0",
 		release: "2025-09-13",
 		dupeindex: "00",
