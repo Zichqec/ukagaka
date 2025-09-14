@@ -273,16 +273,16 @@ var item_details = [
 	{
 		name: "Hydrate",
 		release: "2020-08-20",
-		latest: "2022-08-26",
-		version: "v1.2.1",
+		latest: "2025-09-13",
+		version: "v2.0.0",
 		forevent: null,
 		collaborators:
 		[
-			{name: "Zdzisiu", creditlink: "https://zdzisiu.github.io/Ukagaka/index.html"}
+			{name: "Zdzisiu", creditlink: "https://zdzisiu.github.io/Cemetery/index.html"}
 		],
 		translations: null,
 		content_warnings: null,
-		download: "https://www.mediafire.com/file/u7r3e9ock4ewcld/hydrate_v1.2.1.nar/file",
+		download: "https://github.com/Zichqec/hydrate/releases/latest",
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/hydrate"},
