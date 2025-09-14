@@ -157,7 +157,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/dusty_and_obsidian"},
 		],
 		blurb: "Dusty and Obsidian is one of my first ghosts! They're written in the old meta style, and I would like to overhaul them at some point. But that aside, they do have a lot of functions related to wingdings, and can teach you how to read them! They have a variety of minigames and things to aid in this endeavor. Also, Dusty's cat can be picked up by certain other ghosts.",
-		tags: ["2020", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Utility"]
+		tags: ["2020", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Utility", "Minigames"]
 	},
 	{
 		name: "FLUX",
