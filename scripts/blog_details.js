@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Hydrate v2.0.2",
+		release: "2025-09-15",
+		dupeindex: "01",
+		latest: null,
+		page: "2025-09-15_hydrate_v2.0.2.html",
+		blurb: "A minor update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, bringing some new quality of life changes and cleaner code.",
+		tags: ["2025","September","Ghost","Update"],
+	},
+	{
 		name: "FormatLinks updated",
 		release: "2025-09-15",
 		dupeindex: "00",

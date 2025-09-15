@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p><a href="../ghost/hydrate.html">Hydrate</a> has been updated to version 2.0.2! This time, there are a few quality of life features, and a lot of cleanup under the hood.</p>
+
+<p>Ever since I made the shell <a href="../shell/spigot.html">Spigot</a> it's always annoyed me that when I switch to or from it, it makes the positioning strange. The reason is of course that Spigot is technically very tall, even though it feels like it should sit a lot lower, especially if the liquid part is turned off. This lead me to make 2 changes:</p>
+
+<ol>
+	<li><p>The feature where Hydrate attempts to maintain the current position on screen when switching shells is now optional, and is toggleable in the config menu.</p></li>
+	<li><p>Hydrate now bases the movement of the shell on where the developer has set the basepos.y setting.</p></li>
+</ol>
+
+<p>These changes put control into the hands of shell developers and users both, allowing developers to adjust their shells if needed to achieve a natural display, and giving users the option to turn the feature off entirely if something isn't working properly or they simply prefer not to have it.</p>
+
+<p>Besides this, there are a couple of quality of life features, one of which has been a long time coming. Finally, when you install a shell, Hydrate will ask if you want to change to it right away! Not having this has been irking me for years, and I finally did something about it.</p>
+
+<p>Work on the code overhaul continues. I made big strides today! The auto updates system has been overhauled and cleaned up, the talk rate display no longer relies on additional variables, tons of unneeded functions were removed, and more! It may not be flashy changes, but this work is paving the way for future updates to be quicker and easier.</p>
+
+<p>If all goes well, I'm hoping to work on an exciting new feature tomorrow!</p>
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>
