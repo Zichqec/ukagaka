@@ -1,17 +1,12 @@
 //Written by Zichqec https://ukagaka.zichqec.com/
 //Takes an array of alternating names and urls, and formats them for use with the right click menu
-FormatLinks
+FormatLinks : all
 {
-	_display = ""
-	for _i = 0; _i < ARRAYSIZE(_argv); _i++
+	//Loop jumps by 2 so that it works with pairs. Url can be grabbed by using _i + 1
+	for _i = 0; _i < ARRAYSIZE(_argv); _i += 2
 	{
-		_display += _argv[_i] //Add the link/title
-		
-		//Alternate between adding ASC(1) or ASC(2)
-		if _i % 2 == 1; _display += ASC(2)
-		else; _display += ASC(1)
+		"%(_argv[_i])%(CHR(1))%(_argv[_i + 1])%(CHR(2))"
 	}
-	_display
 }
 
 //When you write your links, you'll have to make a new array function to store them in. All you have to do is write separate strings for each title and link, title first. Here are some examples of ways you can format it:

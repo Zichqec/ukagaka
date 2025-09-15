@@ -140,7 +140,7 @@ var item_details = [
 	{
 		name: "FormatLinks",
 		release: "2021-11-20",
-		latest: null,
+		latest: "2025-09-15",
 		version: null,
 		forevent: null,
 		language: "YAYA",

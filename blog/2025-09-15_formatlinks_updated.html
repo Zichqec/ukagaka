@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p>The function <a href="../function/index.html#formatlinks">FormatLinks</a> has been updated! I overhauled it to clean up the code and remove most of the logic as it was unneeded.</p>
+
+<p>Note that this new version relies on the <code>all</code> modifier, so if you're on AYA or an old version of YAYA, you may need to adjust it to use a local variable. (Or, I would highly recommend <a href="../guide/convert_from_aya_to_yaya.html">converting to YAYA</a>/<a href="../guide/upgrade_old_versions_of_yaya.html">updating YAYA</a> instead!)</p>
+
+<p>I don't usually think about this function too much, I just plop it into a ghost and go. But this time I took a closer look because I recently realized that the <code>ASC</code> function is actually an old one from AYA, and that the compatible.dic file that comes with YAYA now redirects <code>ASC</code> to <code>CHR</code> instead in most cases! So, I figured it's better to update this function so that it doesn't require compatible.dic to run it. (Also, note for AYA users, that means if you want to use this function you'll need to convert the <code>CHR</code> function calls to <code>ASC</code> instead.)</p>
+
+<p>And, well... as is so often the case, once I start tinkering with something I quickly realize how many other things about it I'd like to change. I realized that the logic of the function is a bit overly complicated for what is ultimately a simple goal, and I thought it might be nice to refresh it.</p>
+
+<p>This is the original code:</p>
+<pre><code>
+FormatLinks
+{
+	_display = ""
+	for _i = 0; _i < ARRAYSIZE(_argv); _i++
+	{
+		_display += _argv[_i] //Add the link/title
+		
+		//Alternate between adding ASC(1) or ASC(2)
+		if _i % 2 == 1; _display += ASC(2)
+		else; _display += ASC(1)
+	}
+	_display
+}
+
+</code></pre>
+
+<p>First, I slimmed things down by adding the <code>all</code> modifier and removing the local variable from the equation entirely. That reduced visual clutter a lot.</p>
+
+<p>Second, I realized that I could handle each pair of title/url in one iteration of the loop rather than 2 if I made the loop jump up by 2 every time instead of 1. This removed the need to check if it is an even or odd iteration of the loop. With that change made, I realized it might read more intuitively if I put everything into a single line instead of splitting it up!</p>
+
+<p>Here is the code after the changes:</p>
+<pre><code>
+FormatLinks : all
+{
+	//Loop jumps by 2 so that it works with pairs. Url can be grabbed by using _i + 1
+	for _i = 0; _i < ARRAYSIZE(_argv); _i += 2
+	{
+		"%(_argv[_i])%(CHR(1))%(_argv[_i + 1])%(CHR(2))"
+	}
+}
+
+</code></pre>
+
+<p>So, now the loop is greatly simplified. The function still works with alternating strings of titles/urls, as I think that's still the easiest/cleanest way to write them, but now the function itself is slimmer and simpler. Hooray!</p>
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>

@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Blog grand opening</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-05-22_blog_grand_opening</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-05-22_blog_grand_opening</guid>
-		<pubDate>Thu, 22 May 2025 00:00:01 EST</pubDate>
-		<description>The grand opening of this blog in its full and proper form. Everything before this point was created as a blog post without a home.</description>
-	</item>
-	<item>
 		<title>Weather Station v1.0.5</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-06-10_weather_station_v1.0.5</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-06-10_weather_station_v1.0.5</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-14_hydrate_v2.0.1</guid>
 		<pubDate>Sun, 14 Sep 2025 00:00:00 EST</pubDate>
 		<description>A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, with some breaking changes to the stat share event that was introduced in the previous update, as well as new features and bug fixes.</description>
+	</item>
+	<item>
+		<title>FormatLinks updated</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-09-15_formatlinks_updated</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-09-15_formatlinks_updated</guid>
+		<pubDate>Mon, 15 Sep 2025 00:00:00 EST</pubDate>
+		<description>An update to the function <a href='../function/index.html#formatlinks'>FormatLinks</a>, cleaning up the code and making it not rely on compatible.dic.</description>
 	</item>
 </channel>
 </rss>

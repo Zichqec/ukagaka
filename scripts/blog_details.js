@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "FormatLinks updated",
+		release: "2025-09-15",
+		dupeindex: "00",
+		latest: null,
+		page: "2025-09-15_formatlinks_updated.html",
+		blurb: "An update to the function <a href='../function/index.html#formatlinks'>FormatLinks</a>, cleaning up the code and making it not rely on compatible.dic.",
+		tags: ["2025","September","Function","Update"],
+	},
+	{
 		name: "Hydrate v2.0.1",
 		release: "2025-09-14",
 		dupeindex: "00",
