@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p><a href="../ghost/hydrate.html">Hydrate</a> has been updated to version 2.0.3! This time, I've implemented some long-awaited features.</p>
+
+<p>The star of the show today is definitely the auto shell and dressup change options. At long last, you can have Hydrate mix its look up on its own! There are more than 100 shells these days, and many of them have dressups, so I hope this feature will help you to see more of your shell collection more often!</p>
+
+<p>Each of these settings can be configured separately, so you can mix and match them a bit to get things dialed in just right. However, there are some limitations.</p>
+
+<p>Currently, they can each be set to change when the ghost is booted, when a drink is taken, or after a specified number of hours. Additionally, the dressups in particular can be set to change any time the shell changes.</p>
+
+<p>The restriction is that when they are set to change at a specified number of hours, the countdown resets any time the ghost is loaded. In the case of the countdown for dressups, it resets any time the shell is changed. That means that it is meaningless to set an interval that is longer than the time you keep Hydrate open for, and it is meaningless to set the dressup change interval longer than the shell change interval.</p>
+
+<p>Other than that, there are several combinations that will work! For example, you can have the shell change each time you boot the ghost, and have the dressups change each time you take a drink. I think it will be fun!</p>
+
+<p>The other main feature in this update is the new countdown on the main menu, indicating how long until the next drink reminder comes! This is one I keep wanting personally, because I find myself being unsure how long it's been since my last reminder. So, I added a simple display for it. I hope it's helpful! Though I do wonder if it might be disruptive for anyone. If you find the timer annoying in some way, please let me know and I'll consider making it toggleable in the config menu!</p>
+
+<p>As far as the code overhaul goes, I'm starting to see the light at the end of the tunnel! I've rearranged all of the code into new files, and everything feels much more cohesively organized now. There are still some parts of the menu that I want to dig into and clean up, and maybe some other miscellaneous things I haven't gotten to yet, but it's becoming much easier to navigate for sure. I've also replaced most of the old variables with new ones that have more descriptive/readable names, which was a bit of a chore but definitely worth it!</p>
+
+<p>I don't have any solid plans for tomorrow yet, since the last couple of features I definitely want to implement are a bit larger in scope, but we'll see what happens!</p>
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>

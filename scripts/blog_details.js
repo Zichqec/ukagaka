@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Hydrate v2.0.3",
+		release: "2025-09-16",
+		dupeindex: "00",
+		latest: null,
+		page: "2025-09-16_hydrate_v2.0.3.html",
+		blurb: "A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, bringing options to let Hydrate randomly change shells/dressups for you at configurable intervals, and more.",
+		tags: ["2025","September","Ghost","Update"],
+	},
+	{
 		name: "Hydrate v2.0.2",
 		release: "2025-09-15",
 		dupeindex: "01",

@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Weather Station v1.1.0</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-06-18_weather_station_v1.1.0</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-06-18_weather_station_v1.1.0</guid>
-		<pubDate>Wed, 18 Jun 2025 00:00:00 EST</pubDate>
-		<description>A major update for <a href='../plugin/weather_station.html'>Weather Station</a> to overhaul various parts of the code, deprecate some references for privacy concerns, add a thumbnail, and add some new options for formatting the date and time.</description>
-	</item>
-	<item>
 		<title>GroupDigits function</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-06-20_groupdigits_function</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-06-20_groupdigits_function</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-15_hydrate_v2.0.2</guid>
 		<pubDate>Mon, 15 Sep 2025 00:00:01 EST</pubDate>
 		<description>A minor update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, bringing some new quality of life changes and cleaner code.</description>
+	</item>
+	<item>
+		<title>Hydrate v2.0.3</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-09-16_hydrate_v2.0.3</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-09-16_hydrate_v2.0.3</guid>
+		<pubDate>Tue, 16 Sep 2025 00:00:00 EST</pubDate>
+		<description>A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, bringing options to let Hydrate randomly change shells/dressups for you at configurable intervals, and more.</description>
 	</item>
 </channel>
 </rss>
