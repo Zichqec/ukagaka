@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p><a href="../ghost/hydrate.html">Hydrate</a> has been updated to version 2.0.4! There are breaking changes to the stat share event again, I'm very sorry. But this time, it was just to update the name so that it matches with the way the event functions now! Honestly, I should have made this change back when I did that, it just didn't cross my mind until I started prepping to put up the documentation.</p>
+
+<p>Speaking of documentation, you can now find <a href="https://ukagakadreamteam.github.io/ukadoc/manual/list_shiori_event_ex.html#OnHydrateStatsNotify">documentation for the stat share event on Ukadoc</a>!</p>
+
+<p>Other than that, there are 2 other main features of this update. I realized that I wanted finer control over the timing of the auto shell and dressup changes, so I changed them to use minutes instead of hours. Your currently set interval should update automatically when the update completes.</p>
+
+<p>The other big change is that I've finally cleaned up the legacy content I've been meaning to clean up! This is content that I either have disliked for ages (such as the way the right click menu text blocked out options and made the menu awkwardly wide) or is not feasible for me to keep maintaining (such as the unique shell change comments). These options are not fully gone however! If you prefer to have them, they are in a "Legacy content" submenu of the config menu. Toggle on the ones you'd like to keep!</p>
+
+<p>I finally finished updating all the variables, and I think I'm finally done overhauling the menu! There are one or two spots in the rest of the ghost that I still want to clean up a little, but I think the cleaning portion of this overhaul is almost entirely done! Huzzah!</p>
+
+<p>I still have another major feature I'd like to implement, but I might have to put a pause on it for a little while! Idea Adoption Jam 2025 is looming, and I've got some other matters to attend to before it starts... but, hopefully at some point soonish!</p>
+
+<p>I suspect that some bugs will have been introduced during this overhaul process, so I'm sure that Hydrate will still get another update or two to clean those up as they're found. If you find anything strange, please do let me know!</p>
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>

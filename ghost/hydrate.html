@@ -1359,6 +1359,25 @@ let version_history = [
 				"General code cleanup.",
 			]
 		},
+		{
+			version: "v2.0.4",
+			released: "2025-09-17",
+			blog_post: "../blog/2025-09-17_hydrate_v2.0.4.html",
+			changelog:
+			[
+				"<strong>The new stat share event has had a breaking change.</strong> The name of the event has changed from OnHydrateGhost.GetStats to OnHydrateStatsNotify. This change was made to better reflect how the event is intended to be used now, since the functionality change in a previous update. Sorry for any hassle! This should be the last change like this, since things are starting to settle into place.",
+				"Auto shell/dressup changes are now set in minutes instead of hours to allow finer control.",
+				"Some content is now considered legacy content and is no longer being maintained/added to. This content can still be toggled on in the \"Legacy content\" section of the config menu.",
+				"Changing dressups in the right click menu should no longer interfere with the balloon.",
+				"The auto update notification now goes directly to the menu if you choose \"Maybe later\". If you choose \"Turn off auto updates\", the confirmation message will instantly display, then go through to the menu.",
+				"Some menus are now quicker/smoother to navigate, such as changing the reminder rate.",
+				"Switched menu tags so that menu choices should be readable even on very slim balloons.",
+				"Fixed an issue where if both shells and dressups were set to change at a period interval, only shells would change.",
+				"Formatting adjustments.",
+				"General code cleanup.",
+				"Updated to YAYA Tc571-13.",
+			]
+		},
 	]
 },
 
