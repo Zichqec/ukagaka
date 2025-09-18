@@ -92,7 +92,7 @@ function makeTopNav()
 			
 			<div class="blognavbuttons">
 			<span class="blognavleft">${prev_button}</span>
-			<span class="blognavcenter"><a href="../blog/index.html">Blog home</a></span>
+			<span class="blognavcenter"><a href="../blog/index.html">Index</a></span>
 			<span class="blognavright">${next_button}</span>
 			</div>
 			
@@ -110,7 +110,7 @@ function makeBottomNav()
 		<article>
 			<div class="blognavbuttons">
 			<span class="blognavleft">${prev_button}</span>
-			<span class="blognavcenter"><a href="../blog/index.html">Blog home</a></span>
+			<span class="blognavcenter"><a href="../blog/index.html">Index</a></span>
 			<span class="blognavright">${next_button}</span>
 			</div>
 		</article>
