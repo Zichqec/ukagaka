@@ -1,0 +1,121 @@
+//Written by Zichqec https://ukagaka.zichqec.com/
+//A pair of functions (plus an array) for changing text to and from morse code!
+//I only included standard codes, plus ! which is nonstandard but I figure is common enough to want it. You can easily add more codes by following the given format in the MorseList array.
+//When encoding to morse, untranslatable characters are output as #
+
+//They each take one argument, which is the text you want to convert to/from morse.
+//Examples:
+//EncodeMorse("Hello, world!")
+//DecodeMorse(".... . .-.. .-.. --- --..-- / .-- --- .-. .-.. -.. -.-.--")
+
+EncodeMorse
+{
+	_cipherlist = MorseList
+	_letterlist = IARRAY
+	_codelist = IARRAY
+	foreach _cipherlist; _item
+	{
+		_item = SPLIT(_item,"|")
+		_letterlist ,= _item[0]
+		_codelist ,= _item[1]
+	}
+	
+	_words = SPLIT(_argv[0]," ")
+	_output = ""
+	foreach _words; _word
+	{
+		if _output != ""; _output += " /"
+		for _i = 0; _i < STRLEN(_word); _i++
+		{
+			if _output != ""; _output += " "
+			_letter = SUBSTR(_word,_i,1)
+			_index = ASEARCH(TOUPPER(_letter),_letterlist)
+			
+			if _index == -1; _output += "#"
+			else; _output += _codelist[_index]
+		}
+	}
+	_output
+}
+
+DecodeMorse
+{
+	_cipherlist = MorseList
+	_letterlist = IARRAY
+	_codelist = IARRAY
+	foreach _cipherlist; _item
+	{
+		_item = SPLIT(_item,"|")
+		_letterlist ,= _item[0]
+		_codelist ,= _item[1]
+	}
+	
+	_words = SPLIT(_argv[0],"/")
+	_output = ""
+	foreach _words; _word
+	{
+		if _output != ""; _output += " "
+		_letters = SPLIT(_word," ")
+		foreach _letters; _letter
+		{
+			_index = ASEARCH(_letter,_codelist)
+			_output += _letterlist[_index]
+		}
+	}
+	_output
+}
+
+MorseList : array
+{
+	//To add a new code, just duplicate one of these lines and change the items on either side!
+	"A|.-"
+	"B|-..."
+	"C|-.-."
+	"D|-.."
+	"E|."
+	"F|..-."
+	"G|--."
+	"H|...."
+	"I|.."
+	"J|.---"
+	"K|-.-"
+	"L|.-.."
+	"M|--"
+	"N|-."
+	"O|---"
+	"P|.--."
+	"Q|--.-"
+	"R|.-."
+	"S|..."
+	"T|-"
+	"U|..-"
+	"V|...-"
+	"W|.--"
+	"X|-..-"
+	"Y|-.--"
+	"Z|--.."
+	"0|-----"
+	"1|.----"
+	"2|..---"
+	"3|...--"
+	"4|....-"
+	"5|....."
+	"6|-...."
+	"7|--..."
+	"8|---.."
+	"9|----."
+	".|.-.-.-"
+	",|--..--"
+	"?|..--.."
+	"'|.----."
+	"/|-..-."
+	"(|-.--."
+	")|-.--.-"
+	":|---..."
+	"=|-...-"
+	"+|.-.-."
+	"-|-....-"
+	'"|.-..-.'
+	"@|.--.-."
+	"!|-.-.--" //Nonstandard, but probably common enough to want
+}

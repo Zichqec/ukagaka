@@ -127,6 +127,17 @@ var item_details = [
 		tags: ["2023","YAYA","Pure function"]
 	},
 	{
+		name: "EncodeMorse & DecodeMorse",
+		release: "2025-09-26",
+		latest: null,
+		version: null,
+		forevent: null,
+		language: "YAYA",
+		download: "EncodeMorse_DecodeMorse.txt",
+		blurb: "Change text to and from morse code with this handy pair of functions! I only included the standard codes and the nonstandard code for exclamation points, but you can easily add in any codes you like. (Maybe you could even adapt it for other types of code?)",
+		tags: ["2025","YAYA","Pure function"]
+	},
+	{
 		name: "ErrorLog",
 		release: "2022-06-04",
 		latest: null,

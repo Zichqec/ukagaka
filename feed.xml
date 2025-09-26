@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Doodle Daydreams v1.0.0</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-06-21_doodle_daydreams_v1.0.0</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-06-21_doodle_daydreams_v1.0.0</guid>
-		<pubDate>Sat, 21 Jun 2025 00:00:00 EST</pubDate>
-		<description>Release of a new ghost: <a href='../ghost/doodle_daydreams.html'>Doodle Daydreams</a>. A poseable doll to dress up and daydream with. What worlds will your mind take you to...?</description>
-	</item>
-	<item>
 		<title>Ye Olde Cursed Tower v1.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-06-26_ye_olde_cursed_tower_v1.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-06-26_ye_olde_cursed_tower_v1.0.0</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-17_hydrate_v2.0.4</guid>
 		<pubDate>Wed, 17 Sep 2025 00:00:00 EST</pubDate>
 		<description>A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, with a final breaking change to the stat share event, finer timing control of the auto shell/dressup changes, and legacy content now toggleable.</description>
+	</item>
+	<item>
+		<title>EncodeMorse & DecodeMorse</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-09-26_encodemorse_decodemorse_functions</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-09-26_encodemorse_decodemorse_functions</guid>
+		<pubDate>Fri, 26 Sep 2025 00:00:00 EST</pubDate>
+		<description>Release of a new set of functions: <a href='../function/index.html#encodemorse_decodemorse'>EncodeMorse & DecodeMorse</a>. These functions can change text to and from morse code, and may be customized to add new codes.</description>
 	</item>
 </channel>
 </rss>

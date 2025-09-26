@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "EncodeMorse & DecodeMorse",
+		release: "2025-09-26",
+		dupeindex: "00",
+		latest: null,
+		page: "2025-09-26_encodemorse_decodemorse_functions.html",
+		blurb: "Release of a new set of functions: <a href='../function/index.html#encodemorse_decodemorse'>EncodeMorse &amp; DecodeMorse</a>. These functions can change text to and from morse code, and may be customized to add new codes.",
+		tags: ["2025","September","Function","New release"],
+	},
+	{
 		name: "Hydrate v2.0.4",
 		release: "2025-09-17",
 		dupeindex: "00",
