@@ -62,7 +62,8 @@ function makeStandard(input)
 	output = output.replace(" & ","_");
 	output = output.replace(":","_");
 	output = output.replace(/ /g,"_");
-	output = output.replace("__","_");
+	output = output.replace(/,/g,"_"); //crying sobbing why are we like this
+	output = output.replace(/__/g,"_");
 	output = output.replace("%","");
 	output = output.replace("@","");
 	output = output.replace("?","");
@@ -72,7 +73,7 @@ function makeStandard(input)
 	output = output.replace("(","");
 	output = output.replace(")","");
 	output = output.replace("+","");
-	output = output.replace("+",""); //I'll um... fix this later, I'm in a rush
+	output = output.replace("+",""); //TODO I'll um... fix this later, I'm in a rush
 	output = output.replace("é","e"); //"Accented characters are fun", I said...
 	output = output.replace("ゴースト闇鍋-おかわり","ghost_yaminabe_okawari"); //Uh oh!!!
 	output = output.replace("ゴースト闇鍋","ghost_yaminabe"); //How many ghosts with names in jp could I possibly have!
