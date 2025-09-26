@@ -6,6 +6,7 @@ var item_tags = [
 	["Idle chatter","Story","Utility","Object","Minigames"],
 	["WIP"],
 ]
+//TODO: window count. Also, I wonder if a tag for active/passive play might be nice...
 
 var item_details = [
 	{
@@ -658,6 +659,27 @@ var item_details = [
 		],
 		blurb: "Sponsor snails, equip them with gear, and send them off to the races to set new records! Learn about snail culture, listen to the radio, enjoy poetry??? All this and more if you download Very Fast Snail today!!",
 		tags: ["2024", "YAYA", "Collab", "Includes my writing", "Includes my code", "For event", "Idea Adoption Jam", "WIP"]
+	},
+	{
+		name: "Wanted: Dead, Alive, or Other",
+		release: "2025-09-26",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Idea Adoption Jam 2025",
+		collaborators: 
+		[
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+			{name: "Miss", creditlink: "https://justmissart.carrd.co/"},
+		],
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/wanted_dead_alive_or_other/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/wanted_dead_alive_or_other"},
+		],
+		blurb: "Necromancy is tiring work, mostly because it takes so long to interview candidates and select the best ones. But it is a necessary process, otherwise research results will be chaotic and rather useless... Best get to it, then.",
+		tags: ["2025", "YAYA", "Collab", "Uses freeshell", "Includes my writing", "Includes my code", "For event", "Idea Adoption Jam", "Idle chatter"]
 	},
 	{
 		name: "Warrior Generator",

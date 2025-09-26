@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Wanted: Dead, Alive, or Other v1.0.0",
+		release: "2025-09-26",
+		dupeindex: "01",
+		latest: null,
+		page: "2025-09-26_wanted_dead_alive_or_other_v1.0.0.html",
+		blurb: "Release of a new ghost: <a href='../ghost/wanted_dead_alive_or_other.html'>Wanted: Dead, Alive, or Other</a>. Necromancy is tiring work, mostly because it takes so long to interview candidates and select the best ones. But it is a necessary process, otherwise research results will be chaotic and rather useless... Best get to it, then.",
+		tags: ["2025","September","Ghost","New release"],
+	},
+	{
 		name: "EncodeMorse & DecodeMorse",
 		release: "2025-09-26",
 		dupeindex: "00",
