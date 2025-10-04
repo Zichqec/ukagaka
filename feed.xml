@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Ye Olde Soul Spell v1.0.0</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-06-26_ye_olde_soul_spell_v1.0.0</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-06-26_ye_olde_soul_spell_v1.0.0</guid>
-		<pubDate>Thu, 26 Jun 2025 00:00:00 EST</pubDate>
-		<description>Release of a new balloon: <a href='../balloon/ye_olde_soul_spell.html'>Ye Olde Soul Spell</a>. A spell themed balloon with a variety of colors and a few patterns. It's also round!</description>
-	</item>
-	<item>
 		<title>Doodle Daydreams v1.0.1</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-06-30_doodle_daydreams_v1.0.1</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-06-30_doodle_daydreams_v1.0.1</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-26_wanted_dead_alive_or_other_v1.0.0</guid>
 		<pubDate>Fri, 26 Sep 2025 00:00:01 EST</pubDate>
 		<description>Release of a new ghost: <a href='../ghost/wanted_dead_alive_or_other.html'>Wanted: Dead, Alive, or Other</a>. Necromancy is tiring work, mostly because it takes so long to interview candidates and select the best ones. But it is a necessary process, otherwise research results will be chaotic and rather useless... Best get to it, then.</description>
+	</item>
+	<item>
+		<title>SSP Angel v1.1.3</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-10-04_ssp_angel_v1.1.3</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-10-04_ssp_angel_v1.1.3</guid>
+		<pubDate>Sat, 04 Oct 2025 00:00:00 EST</pubDate>
+		<description>A minor update to <a href='../ghost/ssp_angel.html'>SSP Angel</a> has been released, updating various terms to match the new SSP English translations, and clarifying or correcting other information. A small amount of new idle dialogue has been added as well.</description>
 	</item>
 </channel>
 </rss>
