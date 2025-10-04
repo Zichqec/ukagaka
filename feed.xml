@@ -68,7 +68,7 @@
 		<description>An update to <a href='../ghost/atm_machine.html'>ATM Machine</a> that makes the normal ATM text have a more robotic feel, as well as various other minor changes.</description>
 	</item>
 	<item>
-		<title>Function ChunkText</title>
+		<title>ChunkText function</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-07-28_chunktext_function</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-07-28_chunktext_function</guid>
 		<pubDate>Mon, 28 Jul 2025 00:00:02 EST</pubDate>
@@ -173,7 +173,7 @@
 		<description>A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, with a final breaking change to the stat share event, finer timing control of the auto shell/dressup changes, and legacy content now toggleable.</description>
 	</item>
 	<item>
-		<title>EncodeMorse & DecodeMorse</title>
+		<title>EncodeMorse & DecodeMorse functions</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-26_encodemorse_decodemorse_functions</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-26_encodemorse_decodemorse_functions</guid>
 		<pubDate>Fri, 26 Sep 2025 00:00:00 EST</pubDate>
