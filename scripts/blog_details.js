@@ -46,7 +46,7 @@ var item_details = [
 		tags: ["2025","September","Ghost","New release"],
 	},
 	{
-		name: "EncodeMorse & DecodeMorse functions",
+		name: "EncodeMorse &amp; DecodeMorse functions",
 		release: "2025-09-26",
 		dupeindex: "00",
 		latest: null,

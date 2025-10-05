@@ -16,14 +16,14 @@
 		<link>https://ukagaka.zichqec.com/blog/2025-06-30_doodle_daydreams_v1.0.1</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-06-30_doodle_daydreams_v1.0.1</guid>
 		<pubDate>Mon, 30 Jun 2025 00:00:00 EST</pubDate>
-		<description>A small patch for <a href='../ghost/doodle_daydreams.html'>Doodle Daydreams</a> to iron out the jam jank.</description>
+		<description>A small patch for &lt;a href='../ghost/doodle_daydreams.html'&gt;Doodle Daydreams&lt;/a&gt; to iron out the jam jank.</description>
 	</item>
 	<item>
 		<title>Hoard of Shinies v1.0.6</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-07-10_hoard_of_shinies_v1.0.6</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-07-10_hoard_of_shinies_v1.0.6</guid>
 		<pubDate>Thu, 10 Jul 2025 00:00:00 EST</pubDate>
-		<description>A small update with some additional settings for <a href='../ghost/hoard_of_shinies.html'>Hoard of Shinies</a>.</description>
+		<description>A small update with some additional settings for &lt;a href='../ghost/hoard_of_shinies.html'&gt;Hoard of Shinies&lt;/a&gt;.</description>
 	</item>
 	<item>
 		<title>Permissions page now available</title>
@@ -37,154 +37,154 @@
 		<link>https://ukagaka.zichqec.com/blog/2025-07-24_aughost_2025_announcement</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-07-24_aughost_2025_announcement</guid>
 		<pubDate>Thu, 24 Jul 2025 00:00:00 EST</pubDate>
-		<description><a href='../event/aughost_2025.html'>Aughost 2025</a> will be happening soon! See the event's page for the guidelines.</description>
+		<description>&lt;a href='../event/aughost_2025.html'&gt;Aughost 2025&lt;/a&gt; will be happening soon! See the event's page for the guidelines.</description>
 	</item>
 	<item>
 		<title>Xander's Refuge v1.0.4</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-07-25_xanders_refuge_v1.0.4</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-07-25_xanders_refuge_v1.0.4</guid>
 		<pubDate>Fri, 25 Jul 2025 00:00:00 EST</pubDate>
-		<description>A small update to <a href='../ghost/xanders_refuge.html'>Xander's Refuge</a> (both the original version and the <a href='../ghost/xanders_refuge_aosora.html'>Aosora port</a>) with some minor changes and code cleanup.</description>
+		<description>A small update to &lt;a href='../ghost/xanders_refuge.html'&gt;Xander's Refuge&lt;/a&gt; (both the original version and the &lt;a href='../ghost/xanders_refuge_aosora.html'&gt;Aosora port&lt;/a&gt;) with some minor changes and code cleanup.</description>
 	</item>
 	<item>
 		<title>Ye Olde Cursed Tower v1.0.1</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-07-28_ye_olde_cursed_tower_v1.0.1</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-07-28_ye_olde_cursed_tower_v1.0.1</guid>
 		<pubDate>Mon, 28 Jul 2025 00:00:00 EST</pubDate>
-		<description>An update to <a href='../ghost/ye_olde_cursed_tower.html'>Ye Olde Cursed Tower</a> to smooth out the jam jankiness and add more dialogue, as well as other minor features.</description>
+		<description>An update to &lt;a href='../ghost/ye_olde_cursed_tower.html'&gt;Ye Olde Cursed Tower&lt;/a&gt; to smooth out the jam jankiness and add more dialogue, as well as other minor features.</description>
 	</item>
 	<item>
 		<title>ATM Machine v2.0.2</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-07-28_atm_machine_v2.0.2</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-07-28_atm_machine_v2.0.2</guid>
 		<pubDate>Mon, 28 Jul 2025 00:00:01 EST</pubDate>
-		<description>An update to <a href='../ghost/atm_machine.html'>ATM Machine</a> that makes the normal ATM text have a more robotic feel, as well as various other minor changes.</description>
+		<description>An update to &lt;a href='../ghost/atm_machine.html'&gt;ATM Machine&lt;/a&gt; that makes the normal ATM text have a more robotic feel, as well as various other minor changes.</description>
 	</item>
 	<item>
 		<title>ChunkText function</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-07-28_chunktext_function</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-07-28_chunktext_function</guid>
 		<pubDate>Mon, 28 Jul 2025 00:00:02 EST</pubDate>
-		<description>Release of a new function: <a href='../function/index.html#chunktext'>ChunkText</a>. This function takes a dialogue string and outputs it in chunks of 3 characters at a time, with various options to adjust it. It's intended to give text a more robotic feel.</description>
+		<description>Release of a new function: &lt;a href='../function/index.html#chunktext'&gt;ChunkText&lt;/a&gt;. This function takes a dialogue string and outputs it in chunks of 3 characters at a time, with various options to adjust it. It's intended to give text a more robotic feel.</description>
 	</item>
 	<item>
 		<title>8/20 Hydrate Shell Jam 2025 announcement</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-08-13_8_20_hydrate_shell_jam_2025_announcement</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-13_8_20_hydrate_shell_jam_2025_announcement</guid>
 		<pubDate>Wed, 13 Aug 2025 00:00:00 EST</pubDate>
-		<description><a href='../event/8_20_hydrate_shell_jam_2025_rules.html'>8/20 Hydrate Shell Jam 2025</a> will be happening soon! See the event's page for the rules and timeframe.</description>
+		<description>&lt;a href='../event/8_20_hydrate_shell_jam_2025_rules.html'&gt;8/20 Hydrate Shell Jam 2025&lt;/a&gt; will be happening soon! See the event's page for the rules and timeframe.</description>
 	</item>
 	<item>
 		<title>8/20 Hydrate Shell Jam 2025 has begun</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-08-20_8_20_hydrate_shell_jam_2025_has_begun</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-20_8_20_hydrate_shell_jam_2025_has_begun</guid>
 		<pubDate>Wed, 20 Aug 2025 00:00:00 EST</pubDate>
-		<description><a href='../event/8_20_hydrate_shell_jam_2025_rules.html'>8/20 Hydrate Shell Jam 2025</a> has begun!</description>
+		<description>&lt;a href='../event/8_20_hydrate_shell_jam_2025_rules.html'&gt;8/20 Hydrate Shell Jam 2025&lt;/a&gt; has begun!</description>
 	</item>
 	<item>
 		<title>Leaky Pipe v1.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-08-20_leaky_pipe_v1.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-20_leaky_pipe_v1.0.0</guid>
 		<pubDate>Wed, 20 Aug 2025 00:00:01 EST</pubDate>
-		<description>Release of a new <a href='../ghost/hydrate.html'>Hydrate</a> shell, <a href='../shell/leaky_pipe.html'>Leaky Pipe</a>. A pipe that sticks to the top of the screen and drops down liquid occasionally!</description>
+		<description>Release of a new &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; shell, &lt;a href='../shell/leaky_pipe.html'&gt;Leaky Pipe&lt;/a&gt;. A pipe that sticks to the top of the screen and drops down liquid occasionally!</description>
 	</item>
 	<item>
 		<title>Stratospheric Delivery v1.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-08-20_stratospheric_delivery_v1.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-20_stratospheric_delivery_v1.0.0</guid>
 		<pubDate>Wed, 20 Aug 2025 00:00:02 EST</pubDate>
-		<description>Release of a new <a href='../ghost/hydrate.html'>Hydrate</a> shell, <a href='../shell/stratospheric_delivery.html'>Stratospheric Delivery</a>. A free-floating cloud with dressups for rain in various colors, and different colors of cloud!</description>
+		<description>Release of a new &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; shell, &lt;a href='../shell/stratospheric_delivery.html'&gt;Stratospheric Delivery&lt;/a&gt;. A free-floating cloud with dressups for rain in various colors, and different colors of cloud!</description>
 	</item>
 	<item>
 		<title>8/20 Hydrate Shell Jam 2025 has ended</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-08-21_8_20_hydrate_shell_jam_2025_has_ended</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-21_8_20_hydrate_shell_jam_2025_has_ended</guid>
 		<pubDate>Thu, 21 Aug 2025 00:00:00 EST</pubDate>
-		<description><a href='../event/8_20_hydrate_shell_jam_2025_rules.html'>8/20 Hydrate Shell Jam 2025</a> has ended! There is a 1 hour grace period to finish submissions before the form closes.</description>
+		<description>&lt;a href='../event/8_20_hydrate_shell_jam_2025_rules.html'&gt;8/20 Hydrate Shell Jam 2025&lt;/a&gt; has ended! There is a 1 hour grace period to finish submissions before the form closes.</description>
 	</item>
 	<item>
 		<title>Stock Pot v1.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-08-21_stock_pot_v1.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-21_stock_pot_v1.0.0</guid>
 		<pubDate>Thu, 21 Aug 2025 00:00:01 EST</pubDate>
-		<description>Release of a new <a href='../ghost/hydrate.html'>Hydrate</a> shell, <a href='../shell/stock_pot.html'>Stock Pot</a>. A stock pot with dressups for a lid and steam!</description>
+		<description>Release of a new &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; shell, &lt;a href='../shell/stock_pot.html'&gt;Stock Pot&lt;/a&gt;. A stock pot with dressups for a lid and steam!</description>
 	</item>
 	<item>
 		<title>8/20 Hydrate Shell Jam afterword</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-08-23_8_20_hydrate_shell_jam_afterword</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-23_8_20_hydrate_shell_jam_afterword</guid>
 		<pubDate>Sat, 23 Aug 2025 00:00:00 EST</pubDate>
-		<description>The <a href='../event/8_20_hydrate_shell_jam_2025_results.html'>results of 8/20 Hydrate Shell Jam 2025</a> are here! A few thoughts after tying up the event.</description>
+		<description>The &lt;a href='../event/8_20_hydrate_shell_jam_2025_results.html'&gt;results of 8/20 Hydrate Shell Jam 2025&lt;/a&gt; are here! A few thoughts after tying up the event.</description>
 	</item>
 	<item>
 		<title>Aughost 2025 afterword</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-01_aughost_2025_afterword</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-01_aughost_2025_afterword</guid>
 		<pubDate>Mon, 01 Sep 2025 00:00:00 EST</pubDate>
-		<description><a href='../event/aughost_2025.html'>Aughost 2025</a> has ended! Some brief commentary at the end of the event.</description>
+		<description>&lt;a href='../event/aughost_2025.html'&gt;Aughost 2025&lt;/a&gt; has ended! Some brief commentary at the end of the event.</description>
 	</item>
 	<item>
 		<title>Hydrate v2.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-13_hydrate_v2.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-13_hydrate_v2.0.0</guid>
 		<pubDate>Sat, 13 Sep 2025 00:00:00 EST</pubDate>
-		<description>A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, kicking off a long-overdue overhaul. <b>This update includes deprecation of some old functions.</b></description>
+		<description>A major update to &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; has been released, kicking off a long-overdue overhaul. &lt;b&gt;This update includes deprecation of some old functions.&lt;/b&gt;</description>
 	</item>
 	<item>
 		<title>Hydrate v2.0.1</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-14_hydrate_v2.0.1</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-14_hydrate_v2.0.1</guid>
 		<pubDate>Sun, 14 Sep 2025 00:00:00 EST</pubDate>
-		<description>A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, with some breaking changes to the stat share event that was introduced in the previous update, as well as new features and bug fixes.</description>
+		<description>A major update to &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; has been released, with some breaking changes to the stat share event that was introduced in the previous update, as well as new features and bug fixes.</description>
 	</item>
 	<item>
 		<title>FormatLinks updated</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-15_formatlinks_updated</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-15_formatlinks_updated</guid>
 		<pubDate>Mon, 15 Sep 2025 00:00:00 EST</pubDate>
-		<description>An update to the function <a href='../function/index.html#formatlinks'>FormatLinks</a>, cleaning up the code and making it not rely on compatible.dic.</description>
+		<description>An update to the function &lt;a href='../function/index.html#formatlinks'&gt;FormatLinks&lt;/a&gt;, cleaning up the code and making it not rely on compatible.dic.</description>
 	</item>
 	<item>
 		<title>Hydrate v2.0.2</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-15_hydrate_v2.0.2</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-15_hydrate_v2.0.2</guid>
 		<pubDate>Mon, 15 Sep 2025 00:00:01 EST</pubDate>
-		<description>A minor update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, bringing some new quality of life changes and cleaner code.</description>
+		<description>A minor update to &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; has been released, bringing some new quality of life changes and cleaner code.</description>
 	</item>
 	<item>
 		<title>Hydrate v2.0.3</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-16_hydrate_v2.0.3</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-16_hydrate_v2.0.3</guid>
 		<pubDate>Tue, 16 Sep 2025 00:00:00 EST</pubDate>
-		<description>A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, bringing options to let Hydrate randomly change shells/dressups for you at configurable intervals, and more.</description>
+		<description>A major update to &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; has been released, bringing options to let Hydrate randomly change shells/dressups for you at configurable intervals, and more.</description>
 	</item>
 	<item>
 		<title>Hydrate v2.0.4</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-17_hydrate_v2.0.4</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-17_hydrate_v2.0.4</guid>
 		<pubDate>Wed, 17 Sep 2025 00:00:00 EST</pubDate>
-		<description>A major update to <a href='../ghost/hydrate.html'>Hydrate</a> has been released, with a final breaking change to the stat share event, finer timing control of the auto shell/dressup changes, and legacy content now toggleable.</description>
+		<description>A major update to &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; has been released, with a final breaking change to the stat share event, finer timing control of the auto shell/dressup changes, and legacy content now toggleable.</description>
 	</item>
 	<item>
-		<title>EncodeMorse & DecodeMorse functions</title>
+		<title>EncodeMorse &amp; DecodeMorse functions</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-26_encodemorse_decodemorse_functions</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-26_encodemorse_decodemorse_functions</guid>
 		<pubDate>Fri, 26 Sep 2025 00:00:00 EST</pubDate>
-		<description>Release of a new set of functions: <a href='../function/index.html#encodemorse_decodemorse'>EncodeMorse & DecodeMorse</a>. These functions can change text to and from morse code, and may be customized to add new codes.</description>
+		<description>Release of a new set of functions: &lt;a href='../function/index.html#encodemorse_decodemorse'&gt;EncodeMorse &amp; DecodeMorse&lt;/a&gt;. These functions can change text to and from morse code, and may be customized to add new codes.</description>
 	</item>
 	<item>
 		<title>Wanted: Dead, Alive, or Other v1.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-26_wanted_dead_alive_or_other_v1.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-26_wanted_dead_alive_or_other_v1.0.0</guid>
 		<pubDate>Fri, 26 Sep 2025 00:00:01 EST</pubDate>
-		<description>Release of a new ghost: <a href='../ghost/wanted_dead_alive_or_other.html'>Wanted: Dead, Alive, or Other</a>. Necromancy is tiring work, mostly because it takes so long to interview candidates and select the best ones. But it is a necessary process, otherwise research results will be chaotic and rather useless... Best get to it, then.</description>
+		<description>Release of a new ghost: &lt;a href='../ghost/wanted_dead_alive_or_other.html'&gt;Wanted: Dead, Alive, or Other&lt;/a&gt;. Necromancy is tiring work, mostly because it takes so long to interview candidates and select the best ones. But it is a necessary process, otherwise research results will be chaotic and rather useless... Best get to it, then.</description>
 	</item>
 	<item>
 		<title>SSP Angel v1.1.3</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-10-05_ssp_angel_v1.1.3</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-10-05_ssp_angel_v1.1.3</guid>
 		<pubDate>Sun, 05 Oct 2025 00:00:00 EST</pubDate>
-		<description>A minor update to <a href='../ghost/ssp_angel.html'>SSP Angel</a> has been released, updating various terms to match the new SSP English translations, and clarifying or correcting other information. A small amount of new idle dialogue has been added as well.</description>
+		<description>A minor update to &lt;a href='../ghost/ssp_angel.html'&gt;SSP Angel&lt;/a&gt; has been released, updating various terms to match the new SSP English translations, and clarifying or correcting other information. A small amount of new idle dialogue has been added as well.</description>
 	</item>
 </channel>
 </rss>

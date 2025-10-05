@@ -91,10 +91,14 @@ for (let i = 0; i < index_details.length; i++)
 	let blurb = item.blurb;
 	blurb = blurb.replace(/</g,"&lt;");
 	blurb = blurb.replace(/>/g,"&gt;");
+	blurb = blurb.replace(/&/g,"&amp;");
+	
+	let name = item.name;
+	name = name.replace(/&/g,"&amp;");
 	
 	output += `
 	&lt;item&gt;
-		&lt;title&gt;${item.name}&lt;/title&gt;
+		&lt;title&gt;${name}&lt;/title&gt;
 		&lt;link&gt;${postlink}&lt;/link&gt;
 		&lt;guid&gt;${postlink}&lt;/guid&gt;
 		&lt;pubDate&gt;${CreateExpectedDate(item.release,item.dupeindex)}&lt;/pubDate&gt;
