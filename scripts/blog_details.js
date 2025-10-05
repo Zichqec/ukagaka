@@ -29,10 +29,10 @@ var item_details = [
 	// },
 	{
 		name: "SSP Angel v1.1.3",
-		release: "2025-10-04",
+		release: "2025-10-05",
 		dupeindex: "00",
 		latest: null,
-		page: "2025-10-04_ssp_angel_v1.1.3.html",
+		page: "2025-10-05_ssp_angel_v1.1.3.html",
 		blurb: "A minor update to <a href='../ghost/ssp_angel.html'>SSP Angel</a> has been released, updating various terms to match the new SSP English translations, and clarifying or correcting other information. A small amount of new idle dialogue has been added as well.",
 		tags: ["2025","October","Ghost","Update"],
 	},

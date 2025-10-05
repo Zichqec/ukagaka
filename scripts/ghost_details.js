@@ -556,7 +556,7 @@ var item_details = [
 	{
 		name: "SSP Angel",
 		release: "2023-03-23",
-		latest: "2025-10-04",
+		latest: "2025-10-05",
 		version: "v1.1.3",
 		forevent: null,
 		collaborators:
