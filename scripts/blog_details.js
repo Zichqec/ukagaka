@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Wanted: Dead, Alive, or Other v1.0.1",
+		release: "2025-10-29",
+		dupeindex: "00",
+		latest: null,
+		page: "2025-10-29_wanted_dead_alive_or_other_v1.0.1.html",
+		blurb: "An update to <a href='../ghost/wanted_dead_alive_or_other.html'>Wanted: Dead, Alive, or Other</a> has been released, smoothing out jam bugs and adding some new content.",
+		tags: ["2025","October","Ghost","Update"],
+	},
+	{
 		name: "SSP Angel v1.1.3",
 		release: "2025-10-05",
 		dupeindex: "00",
