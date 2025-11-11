@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Needle Day 2025",
+		release: "2025-11-11",
+		dupeindex: "00",
+		latest: null,
+		page: "2025-11-11_needle_day_2025.html",
+		blurb: "Needle Day 2025 has arrived, bringing with it <a href='../ghost/needle.html'>Needle</a> v1.1.5 and 11 new Needle shells.",
+		tags: ["2025","November","Ghost","Shell","Event","New release","Update"],
+	},
+	{
 		name: "Wanted: Dead, Alive, or Other v1.0.1",
 		release: "2025-10-29",
 		dupeindex: "00",

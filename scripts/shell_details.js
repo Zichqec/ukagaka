@@ -40,10 +40,31 @@ var shell_tags = [
 	["Digital","Traditional","Other"],
 	["Flat color","Shaded","Soft brush","Pixel brush","Lined","Lineless"],
 	["Animations","Dressups","Additional pieces","Color alts"],
+	//Maybe I should have "design alts" for ones like graphite and 3d printed...
 ]
 
 var shell_details = [
 
+	{
+		name: "3D Printed",
+		goeswith: [Needle],
+		release: "2025-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators:
+		[
+			{name: "Pommy", creditlink: "https://www.woogagoog.net/"}
+		],
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/f7hrl2ijgxyemdc/3d_printed_v1.0.0.nar/file",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/3d_printed"},
+		],
+		blurb: "Join the Needle Revolution by printing your very own Needle!!",
+		tags: ["2025","For event","Needle","Needle Day","Collab","Other","Dressups","Additional pieces"]
+	},
 	{
 		name: "A thousand thousand dots",
 		goeswith: [Needle],
@@ -252,6 +273,23 @@ var shell_details = [
 		tags: ["2023","Noodle","For event","Etc. Jam","Digital","Shaded","Pixel brush","Lineless","Dressups","Color alts"]
 	},
 	{
+		name: "Corkscrew",
+		goeswith: [Needle],
+		release: "2025-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/vd56j965byfftnx/corkscrew_v1.0.0.nar/file",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/corkscrew"},
+		],
+		blurb: "Twist twist rip rip tear tear the corks out of any and all bottles in your way!",
+		tags: ["2025","For event","Needle","Needle Day","Digital","Shaded","Pixel brush","Lineless","Dressups","Color alts"]
+	},
+	{
 		name: "Diamond Eye",
 		goeswith: [Needle],
 		release: "2022-05-26",
@@ -267,6 +305,40 @@ var shell_details = [
 		],
 		blurb: "An alternative shell made for Needle, with soft shading. It's very typical of my style at the time! This was the first Needle shell I made, not long after Needle was released.",
 		tags: ["2022","Shaded","Lined","Soft brush","Digital","Needle"]
+	},
+	{
+		name: "Embossed Needle",
+		goeswith: [Needle],
+		release: "2025-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/k2spfm4dgddsnv2/embossed_needle_v1.0.0.nar/file",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/embossed_needle"},
+		],
+		blurb: "Works best over textured backgrounds! Good for if you need Needle to be mostly out of the way.",
+		tags: ["2025","For event","Needle","Needle Day","Digital","Shaded","Pixel brush","Lineless"]
+	},
+	{
+		name: "Expansive Needle",
+		goeswith: [Needle],
+		release: "2025-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/a2yowqcld0pbar6/expansive_needle_v1.0.0.nar/file",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/expansive_needle"},
+		],
+		blurb: "A very wide and expansive Needle! Hm? This isn't what you were looking for? Oh, Expensive Needle is right over there!",
+		tags: ["2025","For event","Needle","Needle Day","Digital","Shaded","Soft brush","Lined"]
 	},
 	{
 		name: "Expensive Needle",
@@ -304,6 +376,23 @@ var shell_details = [
 		],
 		blurb: "Noodle in farfalle form! Made during Etc. Jam 2023, since I had more time than expected at the end. Comes in all the same colors as the original Noodle shell!",
 		tags: ["2023","Noodle","For event","Etc. Jam","Digital","Shaded","Pixel brush","Lineless","Dressups","Color alts"]
+	},
+	{
+		name: "Fashionable Needle",
+		goeswith: [Needle],
+		release: "2025-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/n00qt7t4547fgly/fashionable_needle_v1.0.0.nar/file",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/fashionable_needle"},
+		],
+		blurb: "Dress your Needle up all fancy! Combine outfits like never before!",
+		tags: ["2025","For event","Needle","Needle Day","Digital","Flat color","Pixel brush","Lined","Dressups","Additional pieces"]
 	},
 	{
 		name: "Fineliners",
@@ -442,6 +531,26 @@ var shell_details = [
 		tags: ["2025","Hydrate","For event","8/20 Hydrate Shell Jam","Digital","Shaded","Pixel brush","Lined","Animations","Dressups","Additional pieces","Color alts"]
 	},
 	{
+		name: "Left-Handed Needle",
+		goeswith: [Needle],
+		release: "2025-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators:
+		[
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
+		],
+		content_warnings: null,
+		download: "https://github.com/GallaTheGalla/left_handed_needle/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/left-handed_needle"},
+		],
+		blurb: "A special Needle for wielding in your left hand!",
+		tags: ["2025","For event","Needle","Needle Day","Collab","Digital","Flat color","Pixel brush","Lined","Dressups","Additional pieces"]
+	},
+	{
 		name: "Macaroni",
 		goeswith: [Noodle],
 		release: "2023-09-24",
@@ -525,6 +634,40 @@ var shell_details = [
 		],
 		blurb: "Needlebucks, for all your money needs! Not legal tender for any debts, public or private. Use dressups to un-scrunch.",
 		tags: ["2024","Needle","For event","Needle Day","Digital","Flat color","Pixel brush","Lineless","Dressups","Additional pieces"]
+	},
+	{
+		name: "Needle IRL",
+		goeswith: [Needle],
+		release: "2025-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/bmrmpobsn2ncd6e/needle_irl_v1.0.0.nar/file",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/needle_irl"},
+		],
+		blurb: "You too can own these very real needles for about a dollar or two at your local crafting or general goods store!",
+		tags: ["2025","For event","Needle","Needle Day","Other","Dressups","Additional pieces"]
+	},
+	{
+		name: "Needle of Needles",
+		goeswith: [Needle],
+		release: "2025-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/garw0qz903qbh3l/needle_of_needles_v1.0.0.nar/file",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/needle_of_needles"},
+		],
+		blurb: "Can't get enough Needle in your life? Try 58 of them at once!",
+		tags: ["2025","For event","Needle","Needle Day","Digital","Pixel brush","Lined","Dressups","Additional pieces"]
 	},
 	{
 		name: "Needkly",
@@ -797,6 +940,23 @@ var shell_details = [
 		],
 		blurb: "Did you know there are curved needles? You do now! Possibly one of the gnarliest needles in existence.",
 		tags: ["2024","Needle","For event","Needle Day","Digital","Shaded","Pixel brush","Lineless"]
+	},
+	{
+		name: "Wiggly Needle",
+		goeswith: [Needle],
+		release: "2025-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://www.mediafire.com/file/5fv6bobwe1ront7/wiggly_needle_v1.0.0.nar/file",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/wiggly_needle"},
+		],
+		blurb: "Thinking about getting a laptop with a drawable screen? Don't! It'll look like this! Get a regular laptop and a proper drawing tablet instead!!",
+		tags: ["2025","For event","Needle","Needle Day","Digital","Pixel brush","Lined"]
 	},
 	{
 		name: "Wobbly Mouse Art",

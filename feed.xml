@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Hoard of Shinies v1.0.6</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-07-10_hoard_of_shinies_v1.0.6</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-07-10_hoard_of_shinies_v1.0.6</guid>
-		<pubDate>Thu, 10 Jul 2025 00:00:00 EST</pubDate>
-		<description>A small update with some additional settings for &lt;a href='../ghost/hoard_of_shinies.html'&gt;Hoard of Shinies&lt;/a&gt;.</description>
-	</item>
-	<item>
 		<title>Permissions page now available</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-07-15_permissions_page_now_available</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-07-15_permissions_page_now_available</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-10-29_wanted_dead_alive_or_other_v1.0.1</guid>
 		<pubDate>Wed, 29 Oct 2025 00:00:00 EST</pubDate>
 		<description>An update to &lt;a href='../ghost/wanted_dead_alive_or_other.html'&gt;Wanted: Dead, Alive, or Other&lt;/a&gt; has been released, smoothing out jam bugs and adding some new content.</description>
+	</item>
+	<item>
+		<title>Needle Day 2025</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-11-11_needle_day_2025</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-11-11_needle_day_2025</guid>
+		<pubDate>Tue, 11 Nov 2025 00:00:00 EST</pubDate>
+		<description>Needle Day 2025 has arrived, bringing with it &lt;a href='../ghost/needle.html'&gt;Needle&lt;/a&gt; v1.1.5 and 11 new Needle shells.</description>
 	</item>
 </channel>
 </rss>
