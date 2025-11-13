@@ -349,6 +349,7 @@ function makeIndex()
 		`;
 	}
 	
+	fixLocalLinks();
 	return output;
 }
 
