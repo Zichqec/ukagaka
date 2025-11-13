@@ -664,7 +664,7 @@ var item_details = [
 		name: "Wanted: Dead, Alive, or Other",
 		release: "2025-09-26",
 		latest: null,
-		version: "v1.0.0",
+		version: "v1.0.1",
 		forevent: "Idea Adoption Jam 2025",
 		collaborators: 
 		[
