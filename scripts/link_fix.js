@@ -9,11 +9,11 @@ function fixLocalLinks()
 		console.log(a_links);
 		for (let a_link of a_links)
 		{
-			console.log(`Currently looking at {a_link}`);
+			console.log(`Currently looking at ${a_link}`);
 			if (a_link.href.startsWith("https://ukagaka.zichqec.com/"))
 			{
 				a_link.href = a_link.href.replace(".html","");
-				console.log(`peely peely now it's {a_link.href}`);
+				console.log(`peely peely now it's ${a_link.href}`);
 			}
 		}
 	}
