@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Needloon (readable) v1.0.1",
+		release: "2025-11-13",
+		dupeindex: "01",
+		latest: null,
+		page: "2025-11-13_needloon_readable_v1.0.1.html",
+		blurb: "An update to the shell <a href='../balloon/needloon_readable.html'>Needloon (readable)</a>, fixing a longstanding issue with visited anchors having the wrong shadow style.",
+		tags: ["2025","November","Balloon","Update"],
+	},
+	{
 		name: "Corkscrew v1.0.1",
 		release: "2025-11-13",
 		dupeindex: "00",

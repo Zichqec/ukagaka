@@ -19,74 +19,31 @@
 <body>
 <nav><div id="navbar" class="navbar"></div></nav>
 
-<article>
+<div id="blognavtop"></div>
 
-<div id="item_info"></div>
+<article id="postcontent">
+<p><a href="../balloon/needloon_readable.html">Needloon (readable)</a> has been updated to v1.0.1! A surprise update out of nowhere to fix a teeny tiny issue.</p>
 
-<h2>Blurb</h2>
-<div id="indexblurb"></div>
+<p>I wasn't planning to do this today. It's just been bothering me for a bit over a year now that the visited anchors were messed up, and I happened to remember it today while I wasn't busy with anything else, so... I fixed it! Yay!</p>
 
-<div id="page_index"></div>
+<p>Changelog:</p>
+<ul>
+	<li><p>Fixed visited anchor colors using the wrong shadow style, making them very difficult to read.</p></li>
+</ul>
+
 </article>
 
-<!-- <article id="about">
-	<p class="to_top"><a href='#'>Back to top</a></p>
-	<h2>About</h2>
-	<p></p>
-</article> -->
-
-<div id="gallery_placeholder"></div>
-
-<div id="history_list"></div>
-
+<div id="blognavbottom"></div>
 
 <footer><div id="footer" class="footer"></div></footer>
 
 <script src="../scripts/misc.js"></script>
 
-<script>
-let gallery_images = [
-	//{path: "image.png", spoiler: null, caption: "caption", alt: "alt"},
-]
-</script>
-
-<script>
-let version_history = [
-
-{
-	version: "1.0.0",
-	patches:
-	[
-		{
-			version: "v1.0.0",
-			released: "2024-11-11",
-			changelog:
-			[
-				"Initial release.",
-			]
-		},
-		{
-			version: "v1.0.1",
-			released: "2025-11-13",
-			blog_post: "../blog/2025-11-13_needloon_readable_v1.0.1.html",
-			changelog:
-			[
-				"Fixed visited anchor colors using the wrong shadow style, making them very difficult to read.",
-			]
-		}
-	]
-},
-
-]
-
-</script>
-
 <script src="../scripts/navbar.js"></script>
 <script src="../scripts/footer.js"></script>
-<script>var item_tags = null; var item_details = null</script>
-<script src="../scripts/balloon_details.js"></script>
-<script src="../scripts/version_history.js"></script>
-<script src="../scripts/page_maker.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
 <script src="../scripts/link_fix.js"></script>
 
 </body>

@@ -370,16 +370,16 @@ var item_details = [
 	},
 	{
 		name: "Needloon (readable)",
-		release: "2024-11-11",
+		release: "2025-11-13",
 		latest: null,
-		version: "v1.0.0",
+		version: "v1.0.1",
 		goeswith: ["Needle"],
 		forevent: null,
 		collaborators:
 		[
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
-		download: ["https://www.mediafire.com/file/teo2cwcq9x0t2ay/needloon_readable_v1.0.0.nar/file"],
+		download: ["https://www.mediafire.com/file/1odwo2gr7geu50j/needloon_readable_v1.0.1.nar/file"],
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/needloon_readable"},

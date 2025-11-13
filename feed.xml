@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Aughost 2025 announcement</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-07-24_aughost_2025_announcement</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-07-24_aughost_2025_announcement</guid>
-		<pubDate>Thu, 24 Jul 2025 00:00:00 EST</pubDate>
-		<description>&lt;a href='../event/aughost_2025.html'&gt;Aughost 2025&lt;/a&gt; will be happening soon! See the event's page for the guidelines.</description>
-	</item>
-	<item>
 		<title>Xander's Refuge v1.0.4</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-07-25_xanders_refuge_v1.0.4</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-07-25_xanders_refuge_v1.0.4</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-11-13_corkscrew_v1.0.1</guid>
 		<pubDate>Thu, 13 Nov 2025 00:00:00 EST</pubDate>
 		<description>An update to the shell &lt;a href='../shell/corkscrew.html'&gt;Corkscrew&lt;/a&gt;, adding several new colors and some other options for variation.</description>
+	</item>
+	<item>
+		<title>Needloon (readable) v1.0.1</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-11-13_needloon_readable_v1.0.1</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-11-13_needloon_readable_v1.0.1</guid>
+		<pubDate>Thu, 13 Nov 2025 00:00:01 EST</pubDate>
+		<description>An update to the shell &lt;a href='../balloon/needloon_readable.html'&gt;Needloon (readable)&lt;/a&gt;, fixing a longstanding issue with visited anchors having the wrong shadow style.</description>
 	</item>
 </channel>
 </rss>
