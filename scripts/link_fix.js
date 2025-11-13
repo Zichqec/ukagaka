@@ -2,18 +2,15 @@
 //Anyways, this just gets all the <a> tags, and if they're linking to another page on this site and it is NOT the local version, removes the .html from each one. Makes things a bit tidier.
 function fixLocalLinks()
 {
-	console.log("Fixing links!");
 	if (!islocal_2)
 	{
 		let a_links = document.getElementsByTagName("a");
 		console.log(a_links);
 		for (let a_link of a_links)
 		{
-			console.log(`Currently looking at ${a_link}`);
 			if (a_link.href.startsWith("https://ukagaka.zichqec.com/"))
 			{
 				a_link.href = a_link.href.replace(".html","");
-				console.log(`peely peely now it's ${a_link.href}`);
 			}
 		}
 	}

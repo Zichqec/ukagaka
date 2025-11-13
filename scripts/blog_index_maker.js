@@ -243,6 +243,7 @@ function sortIndex(which, adjustment)
 	//Regenerate the index
 	console.log(`makeIndex invoked by sortIndex`);
 	document.getElementById('full_index').innerHTML = makeIndex();
+	fixLocalLinks();
 }
 
 function sortCompare(a, b)
@@ -349,7 +350,6 @@ function makeIndex()
 		`;
 	}
 	
-	fixLocalLinks();
 	return output;
 }
 
@@ -550,6 +550,7 @@ function paginationChange(change, which)
 	console.log(`makeIndex invoked by paginationChange`);
 	document.getElementById('full_index').innerHTML = makeIndex();
 	makePaginationNav();
+	fixLocalLinks();
 }
 
 paginationChange()
