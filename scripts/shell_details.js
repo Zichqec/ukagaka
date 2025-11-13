@@ -281,7 +281,7 @@ var shell_details = [
 		forevent: "Needle Day (11/11)",
 		collaborators: null,
 		content_warnings: null,
-		download: "https://www.mediafire.com/file/vd56j965byfftnx/corkscrew_v1.0.0.nar/file",
+		download: "https://www.mediafire.com/file/k5flymzh2vxji2b/corkscrew_v1.0.1.nar/file",
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/corkscrew"},

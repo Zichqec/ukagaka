@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Permissions page now available</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-07-15_permissions_page_now_available</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-07-15_permissions_page_now_available</guid>
-		<pubDate>Tue, 15 Jul 2025 00:00:00 EST</pubDate>
-		<description>A new page has been added to the website, detailing permissions for how my various different works should be handled.</description>
-	</item>
-	<item>
 		<title>Aughost 2025 announcement</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-07-24_aughost_2025_announcement</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-07-24_aughost_2025_announcement</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-11-11_needle_day_2025</guid>
 		<pubDate>Tue, 11 Nov 2025 00:00:00 EST</pubDate>
 		<description>Needle Day 2025 has arrived, bringing with it &lt;a href='../ghost/needle.html'&gt;Needle&lt;/a&gt; v1.1.5 and 11 new Needle shells.</description>
+	</item>
+	<item>
+		<title>Corkscrew v1.0.1</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-11-13_corkscrew_v1.0.1</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-11-13_corkscrew_v1.0.1</guid>
+		<pubDate>Thu, 13 Nov 2025 00:00:00 EST</pubDate>
+		<description>An update to the shell &lt;a href='../shell/corkscrew.html'&gt;Corkscrew&lt;/a&gt;, adding several new colors and some other options for variation.</description>
 	</item>
 </channel>
 </rss>

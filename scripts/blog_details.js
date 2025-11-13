@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Corkscrew v1.0.1",
+		release: "2025-11-13",
+		dupeindex: "00",
+		latest: null,
+		page: "2025-11-13_corkscrew_v1.0.1.html",
+		blurb: "An update to the shell <a href='../shell/corkscrew.html'>Corkscrew</a>, adding several new colors and some other options for variation.",
+		tags: ["2025","November","Shell","Update"],
+	},
+	{
 		name: "Needle Day 2025",
 		release: "2025-11-11",
 		dupeindex: "00",
