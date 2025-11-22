@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Music player v2.0.4",
+		release: "2025-11-22",
+		dupeindex: "00",
+		latest: null,
+		page: "2025-11-22_music_player_v2.0.4.html",
+		blurb: "An update to my <a href='../function/index.html#music_player'>music player</a> code, fixing several bugs, as well as bringing some formatting cleanup and other small improvements.",
+		tags: ["2025","November","Function","Update"],
+	},
+	{
 		name: "Needloon (readable) v1.0.1",
 		release: "2025-11-13",
 		dupeindex: "01",

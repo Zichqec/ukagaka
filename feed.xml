@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Xander's Refuge v1.0.4</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-07-25_xanders_refuge_v1.0.4</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-07-25_xanders_refuge_v1.0.4</guid>
-		<pubDate>Fri, 25 Jul 2025 00:00:00 EST</pubDate>
-		<description>A small update to &lt;a href='../ghost/xanders_refuge.html'&gt;Xander's Refuge&lt;/a&gt; (both the original version and the &lt;a href='../ghost/xanders_refuge_aosora.html'&gt;Aosora port&lt;/a&gt;) with some minor changes and code cleanup.</description>
-	</item>
-	<item>
 		<title>Ye Olde Cursed Tower v1.0.1</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-07-28_ye_olde_cursed_tower_v1.0.1</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-07-28_ye_olde_cursed_tower_v1.0.1</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-11-13_needloon_readable_v1.0.1</guid>
 		<pubDate>Thu, 13 Nov 2025 00:00:01 EST</pubDate>
 		<description>An update to the shell &lt;a href='../balloon/needloon_readable.html'&gt;Needloon (readable)&lt;/a&gt;, fixing a longstanding issue with visited anchors having the wrong shadow style.</description>
+	</item>
+	<item>
+		<title>Music player v2.0.4</title>
+		<link>https://ukagaka.zichqec.com/blog/2025-11-22_music_player_v2.0.4</link>
+		<guid>https://ukagaka.zichqec.com/blog/2025-11-22_music_player_v2.0.4</guid>
+		<pubDate>Sat, 22 Nov 2025 00:00:00 EST</pubDate>
+		<description>An update to my &lt;a href='../function/index.html#music_player'&gt;music player&lt;/a&gt; code, fixing several bugs, as well as bringing some formatting cleanup and other small improvements.</description>
 	</item>
 </channel>
 </rss>

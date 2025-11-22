@@ -294,8 +294,8 @@ var item_details = [
 	{
 		name: "Music player",
 		release: "2022-04-29",
-		latest: "2025-04-22",
-		version: "v2.0.3",
+		latest: "2025-11-22",
+		version: "v2.0.4",
 		forevent: null,
 		language: "YAYA",
 		download: "https://github.com/Zichqec/music_player/releases/latest",

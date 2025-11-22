@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p>I've updated my <a href="../function/index.html#music_player">music player</a> code to v2.0.4! An update to a certain ghost is pending, and as a result, I ended up finding another round of bugs and such to fix...</p>
+
+<p>I figured this would be a really small patch, but it ended up having more fixes than I expected! Some of them are subtle things, and some less so, depending on how you use it. Also, a little bit of cleanup work. Go figure, I found a function I probably wrote years ago, and once I parsed what it was doing I physically recoiled in horror... I couldn't just leave it like that, so I rewrote it and made it better. And I left comments this time! Time well spent, even though the end result of it is exactly the same as before.</p>
+
+<p>Changelog:</p>
+<ul>
+	<li><p>Fixed an issue where pushing balance further left than -100 would cause it to snap to the center.</p></li>
+	<li><p>Fixed the "stop after current song" and "stop after playlist end" flags not being cleared if playback ended while the ghost was minimized.</p></li>
+	<li><p>Fixed an issue where changing the options (volume, balance, speed, etc.) while the music menu was open would cause it to stop updating that display.</p></li>
+	<li><p>Fixed an issue where if the currently playing song was removed from the playlist, the options (volume, balance, speed, etc.) could not be changed until another song played.</p></li>
+	<li><p>Fixed an issue where pressing the "previous" button to restart the current song would make playback stop if the song had been removed from the playlist.</p></li>
+	<li><p>Fixed an issue where if the currently playing song was removed from the playlist, it would not show up in the stat share notify event.</p></li>
+	<li><p>Adjusted the behavior around play order after removing songs. If the playlist is set to loop, the place in the playlist will be preserved and it will continue to the next song.</p></li>
+	<li><p>Fixed an issue where sometimes the shuffle queue would have an extra entry after new songs were added.</p></li>
+	<li><p>Fixed an issue where the shuffle queue would sometimes shuffle an additional time when removing songs from the playlist.</p></li>
+	<li><p>Overhauled the MusicPlayer.ShufflePlaylist function to make it clearer and simpler.</p></li>
+	<li><p>The buttons for loading / deciding not to load a playlist now have linebreaks between them for a nicer display and to avoid misclicks.</p></li>
+	<li><p>Added a plural check to the count of songs in the current playlist that is seen in the settings.</p></li>
+	<li><p>Added an extra linebreak before the Discord toggle and fixed a missing choice marker.</p></li>
+	<li><p>Fixed flicker issues in various menus.</p></li>
+	<li><p>Fixed incorrect balloon and scope calls in various places.</p></li>
+	<li><p>Adjusted some sakurascript formatting for clarity and to avoid bugs.</p></li>
+</ul>
+
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>
