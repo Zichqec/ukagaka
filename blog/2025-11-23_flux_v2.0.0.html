@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p><a href="../ghost/flux.html">FLUX</a> has updated to v2.0.0! After all these years...</p>
+
+<p>Some important notes:</p>
+<ul>
+	<li><p><strong>FLUX has changed what URL it uses for updates!</strong> Please be sure you update <strong>twice,</strong> once to update the URL, and then again to get the new content.</p></li>
+	<li><p><strong>Any playlists you have already saved are still accessible.</strong> FLUX now prompts you with the file dialog to select a playlist when saving and loading. This means you can save and load playlists from any folder you like. <strong>Your old playlists are saved in SSP/ghost/flux/playlists/</strong> (if using default SSP settings).</p></li>
+	<li><p><strong>Please take care when saving over playlists created by other music players.</strong> Some music players include additional data that FLUX cannot load, and <strong>FLUX will not preserve this data when it saves the playlist.</strong></p></li>
+	<li><p><strong>After the update is complete, custom functions will not be loaded.</strong> This is due to a change in how the system works. To load them in again, simply reload the ghost, or change shells, or turn custom functions off and then on again in the config menu.</p></li>
+</ul>
+
+<h2 id="index">Index</h2>
+<ol>
+	<li><p><a href="#overview">Overview</a></p></li>
+	<li><p><a href="#translations">Translations</a></p></li>
+	<li><p><a href="#shell_system">Shell system</a></p></li>
+	<li><p><a href="#music_player_changes">Music player changes</a></p></li>
+	<li><p><a href="#musings">Musings</a></p></li>
+	<li><p><a href="#changelog">Changelog</a></p></li>
+</ol>
+
+<h2 id="overview">Overview</h2>
+<p>First of all, a brief overview of the most important points. A full changelog will be listed at the end of this blog post.</p>
+<ul>
+	<li><p>The music player has received a major update, with lots of new functionality and improvements.</p></li>
+	<li><p>Much of the old shell customization system has been deprecated. Existing shells will continue to work, but I <strong>strongly recommend that if you want to make a shell with a lot of custom functionality, you make a simple ghost instead.</strong> I have provided a <a href="https://github.com/Zichqec/music_player/releases/latest">simple template with a music player integrated into it</a> for this purpose.</p></li>
+	<li><p>A Spanish translation has been added. Thank you to <a href="https://rosecelestereblog.tumblr.com/">Celeste</a> for translating!</p></li>
+	<li><p>The Polish and French translations have been disabled for now until they can be updated to support the new music player. If you use FLUX in one of these languages and cannot use it in English, you can still download and use <a href="https://github.com/Zichqec/FLUX/releases/tag/v1.2.2">the last version they were available in</a>!</p></li>
+	<li><p>FLUX's old stat share event has been deprecated and replaced with a new one, the same one used by my <a href="https://github.com/Zichqec/music_player">music player code</a>. (Documentation is still in progress, I will update this when it is prepared...)</p></li> <!-- You can now find the <a href="TODO LINK">documentation for the stat share event on Ukadoc</a> -->
+	<li><p>And many, many, many other improvements and bugfixes...</p></li>
+</ul>
+
+<p>So, that's the big stuff. I'm sure there are some questions, which I'd like to answer, and also give some general thoughts about this update.</p>
+
+
+<h2 id="translations">Translations</h2>
+<p>Firstly, a big thank you to the translators who worked on this for, quite frankly, putting up with the mess I made of it. I've been trying to get this update pulled together for a long time, there ended up being multiple revisions, I kept having big delays due to too many projects at once and/or life stuff going on, and I kept missing stuff that I just should not have missed. I think everything is settled now, but if there are any places where the translations are missing, I'll take responsibility for that. (Please do let us know if you find any issues so we can fix them!)</p>
+
+<p>As for why the Polish and French translations are currently disabled, it's just because the music player has changed so much that they would be displaying half of the text in English. If and when they're able to be updated, they'll be enabled again!</p>
+
+<p>I hope to never ever have to do an update this big again. I think the large size made the whole thing very difficult, and it would be better if I made changes in smaller increments. I also think in the future, provided the changes are smaller, that it will be ok if a few lines aren't immediately translated. Otherwise it creates pressure, which I don't want when people are volunteering their time and effort.</p>
+
+
+<h2 id="shell_system">Shell system</h2>
+<p>Language aside, let's talk about the shell system. I suspect there will be people confused or upset by this change. But, I hope that my reasoning and the tools that I provide will help you understand why this was necessary.</p>
+
+<p>First, for those unaware, FLUX has a shell customization system that allows shells to add in custom content such as dialogue responses to various events. I made this because people were distributing <a href="../blog/2024-10-13_flele_mirror">FLELE</a> shells with custom .dic files, and I thought that there must be an easier way, and also it was annoying that the various versions of those custom .dic files were not compatible with one another.</p>
+
+<p>So, I created a system where FLUX shells could add in a .dic file in their own files, and FLUX would read it as long as that shell was running. Neat, right? It solved the problem of having to patch .dic files, and there were no more file conflicts.</p>
+
+<p>There are just a few problems with that approach. Here are some of them.</p>
+
+<ol>
+	<li><p>It's <strong>extremely dangerous</strong> to let any shell execute custom code as a part of the ghost with NO separation between what is shell and what is ghost!! I should never ever have allowed this, and will likely take steps to reduce it further in the future.</p></li>
+	<li><p>File conflicts might be gone, but now all shells are using shared save data. This means they can accidentally overwrite each other's variables.</p></li>
+	<li><p>Shells have to be discouraged from adding in new SHIORI events, because if FLUX later adds them into the ghost's main code, then the shells will break.</p></li>
+	<li><p>Because of the above, that means if shell developers want a particular event, they have to wait for me to add in the option for it. Sometimes for years.</p></li>
+	<li><p>Shells can become very complex and developed! ... And then are stuck being just a FLUX shell unless they try to break away and become a fully fledged ghost, in which case it might be hard to get people to migrate to using the new version! What was intended to help developers ends up putting them in a bad position. Your creative works shouldn't be stuck under the shadow of my system.</p></li>
+</ol>
+
+<p>Basically, I ended up realizing that what I had done was make FLUX act like a baseware, when it has no business being any such thing. In my head at the time, I regarded making FLUX shells as a sort of "ghost-lite" that could be an easier way to get into ghost development, because you didn't have to fill in all the numerous events. But as it turns out, you just don't need to fill in those events at all! You can have a fully fledged ghost that is as simple as or simpler than a FLUX shell!</p>
+
+<p>For that reason, I ended up releasing my <a href="https://github.com/Zichqec/music_player">music player code</a> separately, so that anyone can use it in their ghosts. Additionally, I also set up a <a href="https://github.com/Zichqec/music_player/releases/latest">bundle that integrates the music player code with a simple template</a>. I <strong>strongly</strong> encourage anyone that wants to make a complicated FLUX shell to use this template instead. It's not any harder than making a FLUX shell is, in fact it might be easier! You don't have to learn my weird setup, you can just use all of the great documentation on <a href="https://ukagakadreamteam.github.io/ukadoc/manual/index.html">Ukadoc</a>, and learn foundational ghost making skills without any baggage! And best of all, the ghost you make is <em>completely yours</em>, and you can add new features and update stuff as you please without having to worry about whatever I'm doing or how long I might take to update.</p>
+
+<p>For any existing shells, don't worry. <strong>Any shells that were made before this update will continue to have their current content supported.</strong></p>
+
+<p>However, <strong>any <em>new</em> content that is added after this update may not be fully supported</strong>, and <strong>any new shells made beyond this update that add <em>deprecated functions</em> may not be fully supported in the future</strong>. I am hoping to remove some of the deprecated functionality for security reasons down the line. While I am committed to preserving what folks have made before this point, guaranteeing the same preservation for new work would make it difficult to reduce/remove those features. <strong>I cannot emphasize enough that if you want to have a shell that is more complex than adding a handful of dialogues, you should really make it a ghost instead!</strong></p>
+
+<p>So in summary: it was a very bad idea to allow the level of customization that I did, I am taking steps to reduce the customization that is allowed, content that existed before FLUX v2.0.0 will be preserved, and I have provided tools to migrate away from using FLUX like a baseware.</p>
+
+
+<h2 id="music_player_changes">Music player changes</h2>
+<p>Here's where it gets more fun! I've made SO many improvements to the music player. If you've used my music player code, you'll be familiar with the new setup. The new music player has been available for a long time, it's just taken this long to get FLUX up to speed!</p>
+
+<p>FLUX is actually now downstream of the music player. Instead of FLUX being the source of updates, any changes to the music player will take place in the music player's code, and then from there I will integrate the changes into FLUX. That means I can get updates out sooner for folks that use the music player in their own ghosts!</p>
+
+<p>The new features include all sorts of things. I'll describe a few that I'm really fond of here!</p>
+
+<p>The settings menu has now been split into 4 tabs, because there are now a lot of settings you can adjust to dial it in specifically to your tastes! For example, you can now choose whether you prefer for your music to be seamless even if it has to interrupt a dialogue, or if you would prefer for dialogue to be uninterrupted even at the expense of waiting a few extra seconds for the next song to play. Different folks will have different preferences, so now you can pick whichever you like!</p>
+
+<p>Another option is the new scroll wheel functionality. One of my favorite new things that I use all the time is that you can hover your mouse over the ghost and scroll up and down on the scroll wheel to adjust the volume. It's great for quickly adjusting the volume on the fly without needing to go into the menu! But I figured that some folks might find that annoying, or they might want to use it to control something other than volume. So, you can choose between letting the scroll wheel adjust volume, speed, balance, or disabling it entirely. It's pretty fun to play with, in my opinion! And it really shows how far things have come since the early days of FLUX, where adjustments to volume/speed/balance would only happen when the next song played. What a pain that was!</p>
+
+<p>By the way, after writing the above, I've come to realize that the last release of FLUX didn't even have the "quick change" buttons in the menu for the volume/speed/balance. You had to use the slider and input box each time. Ouch! I used that version for a few minutes to do some update testing, and it was so clunky to set the volume to a comfortable level. v2.0.0 greatly improves how the volume and such are adjusted!</p>
+
+<p>Another setting is for the behavior of the "previous song" button (and hotkey, hotspot, etc.). A lot of music players have it so that after a few seconds of playback, pressing "previous" will restart the current song. Some folks like that functionality, and some don't, so I've added it as a feature with the option to toggle it off!</p>
+
+<p>Here's one that's a big win for performance, especially in long playlists. It used to be that all playlists were displayed as one long list that you had to scroll through. The problem was that if you had a very long playlist, hundreds of songs long, it would cause the music menu to run super slowly. It was really annoying! But now, the playlist is split into pages of 10 songs each, which means you can load in thousands of songs and the menu won't get bogged down! Well, currently it has a little hiccup if you select a new song in the list, but otherwise it operates smoothly as you navigate with the next and previous buttons, etc. And of course, pagination can be turned off if you have no need of it. For example, if you use short playlists that are more than 10 songs but fewer than 100, then turning off pagination might be the better option for you.</p>
+
+<p>If there are any other areas that have a performance hit due to long playlists, do let me know, and I will try to improve it where I can! The one exception is the "move songs in playlist" option, which won't really work as a paginated menu, and so I moved it to the "advanced" tab and added a warning if you have a lot of songs. I don't think there's much I can do to improve it. If you have a very long playlist, I recommend using a text editor such as <a href="https://notepad-plus-plus.org/">NotePad++</a> to open the .m3u files and move items around.</p>
+
+<p>Speaking of playlists! There are a couple of huge changes here as well! Most notably, it now uses file explorer to open and save playlists! That means you can place playlists anywhere you want, and have a shared folder that any ghost using this music player can load and save playlists to, etc. It also now supports reading .m3u8 playlists, however, as it cannot make use of directives, <strong>some data is ignored, and will not be preserved if you save the playlist again from FLUX.</strong> If it isn't compatible with FLUX, FLUX cannot save it. Please keep this in mind before you overwrite any files made by other programs.</p>
+
+<p>There are some other changes I would like to make to playlist saving/loading now that they make sense, so there may be more development here in the future! For now, it's still much improved from what it was.</p>
+
+<p>Other fun stuff includes a total playtime display in the settings, a new "random" playmode, an option to stop playback at the end of the playlist, new hotkeys... the list goes on.</p>
+
+
+<h2 id="musings">Musings</h2>
+<p>I cannot believe that it's been nearly 4 years since the last FLUX update. This really has taken so long to pull together, and the overhaul isn't even really done. There's so much code that I would like to clean up, but I'm just going to let it be for the moment because I need to get this pushed and rip the bandage off.</p>
+
+<p>I'm very sorry that I've left it to collect dust all this time! I've wanted very badly to update it, but it's needed so much work to clean up the mistakes of the past, get all the new music player functionality added, etc., that it felt like this impossibly big task. It's taken multiple large pushes to finally get it to this point.</p>
+
+<p>Now that it's finally out in the world (which really doesn't feel real, even as I'm writing this) I hope that I can push updates more quickly without having a ton of contingencies to worry about. I'm fairly happy with where the music player is, although I already have a few ideas for things I'd like to add/improve... That and I would like to go through all the old code and get it up to my current standards so that FLUX is a project I can be reasonably proud of. It's been weighing on me a lot all this time, because it's one of my most popular projects, and yet... I knew it had so many problems.</p>
+
+<p><a href="../ghost/hydrate.html">Hydrate</a> had a similar problem and also went through an overhaul this year, and that ended up working out very well. I'm hoping that I have the chance to do that same sort of work on FLUX, although FLUX has always been more complicated.</p>
+
+<p>That being said, I have a lot of deadlines to meet before the end of the year, so don't expect further updates at the moment other than bugfixes! (And please let me know if you find bugs, this is a really scary update to put out there because it changes so much, and FLUX is so large and complicated.)</p>
+
+<p>If you've bothered to read this far, then thank you. I know this was a lot, and believe you me, the upcoming changelog is enormous. But a lot has happened, and I wanted to make sure I expressed all of my thoughts and feelings on this update and what it means to me.</p>
+
+<h2 id="changelog">Changelog</h2>
+<p>So, without further ado... here is the full changelog in all its glory. Bring a walking stick if you go wading through here, you'll need it. Good luck.</p>
+
+<ul>
+	<li><p>FLUX now directly uses the <a href="https://github.com/Zichqec/music_player">music player code</a> for YAYA that I have published. Many changes and additions were made as a result of this, which are listed towards the bottom.</p></li>
+	<li><p>Added Spanish translation by Celeste.</p></li>
+	<li><p>Disabled the French and Polish translations for now.</p></li>
+	<li><p>Deprecated several of the shell customization options. They may be removed in future versions. If what you want to make is a shell with a ton of custom functionality/dialogue, you should just make a simple ghost instead! I have provided <a href="https://github.com/Zichqec/music_player/releases/latest">a template with the music player built in</a> for this purpose.</p></li>
+	<li><p>The shell loading system for custom functions has been overhauled and is much more solid.</p></li>
+	<li><p>Updated old urls.</p></li>
+	<li><p>Moved to a new homeurl. FLUX is now available in its own repository, where you can download any version.</p></li>
+	<li><p>General code cleanup and formatting fixes.</p></li>
+	<li><p>Improved the balloon color picker; color choice now affects input boxes and should also apply even when repeating a previous dialogue.</p></li>
+	<li><p>Removed the update bar when performing a network update, to greatly improve update speed.</p></li>
+	<li><p>FLUX's old stat share event has been deprecated and replaced with the stat share event from the music player code, called "OnMusicPlayer.SongInfo". The old event may be removed at some point in the future, if you currently make use of it please switch to the new one when you can!</p></li>
+	<li><p>Removed the stat sharing in the OnCommunicate event. Please use the new notify event "OnMusicPlayer.SongInfo" instead.</p></li>
+	<li><p>Removed the old "commu non-interrupt" system, responses to communication are no longer delayed.</p></li>
+	<li><p>Removed passivemode tag during firstboot, to avoid getting stuck in this mode.</p></li>
+	<li><p>Overhauled the random dressup function to be cleaner and work better.</p></li>
+	<li><p>Adjusted some menus to prevent flickering.</p></li>
+	<li><p>Updated the right click menu links.</p></li>
+	<li><p>The tooltip toggle has been moved to the music menu's settings.</p></li>
+	<li><p>Discord plugin info has been moved to the music menu's settings.</p></li>
+	<li><p>Offscreen dialogue has been removed.</p></li>
+	<li><p>The wallpaper setting option has been removed.</p></li>
+	<li><p>The low battery warning has been removed.</p></li>
+	<li><p>The hemisphere setting has been removed.</p></li>
+	<li><p>The option to set a birthday has been removed. That being said, some shells made use of the ability to comment when you set your birthday on the day of your birthday. This has been retained, but is now done by changing your birthday in the SSP preferences.</p></li>
+	<li><p>Simplified the name configuration option.</p></li>
+	<li><p>Talk rate switcher has been changed to a quick talk rate switcher.</p></li>
+	<li><p>FLUX's shell creation and translation guides have been updated.</p></li>
+	<li><p>Improved FLUX's ability to change shells while changing songs at the same time. This should only happen rarely.</p></li>
+	<li><p>Fixed an issue where the bug report dialogue didn't properly link to the author of the current shell.</p></li>
+	<li><p>The "open changelog" option now opens to the changelog on my website, rather than opening a file.</p></li>
+	<li><p>When creating a nar file, the link to open to the file location now highlights the specific file that was created.</p></li>
+	<li><p>Fix an issue where shells wouldn't start using their singing surfaces when changing in the middle of playback.</p></li>
+	<li><p>Reorganized the settings menu, there are now tabs for the various kinds of settings.</p></li>
+	<li><p>The music menu is now paginated, and by default will display 10 songs per page. This greatly increases performance, and allows playlists of very long lengths (thousands of songs) to be used. This is toggleable in the settings menu.</p></li>
+	<li><p>The above change DOES NOT APPLY to the move songs menu, and that menu will run very slowly for longer playlists. The button to access this menu has been moved to the "advanced" page of the settings menu, and a warning note has been added if there are a lot of songs in the playlist when that option is clicked.</p></li>
+	<li><p>The help topics have been moved to their own dedicated "Help" menu.</p></li>
+	<li><p>Added a song announcement option. If toggled on, the ghost can now announce the name of the song when a new song starts playing.</p></li>
+	<li><p>It is now possible to drag and drop multiple folders at once and have songs loaded from all of them.</p></li>
+	<li><p>Added the ability to use the scroll wheel to control volume, speed, and balance. Which it controls is changed in the settings, and it can be turned off entirely.</p></li>
+	<li><p>Saving and loading of playlists is now handled via File Explorer. This enables playlists to be saved anywhere, allows for the possibility of subfolders for playlists, and makes it possible to create a shared folder of playlists for all ghosts with this music player.</p></li>
+	<li><p>Dragging and dropping a .m3u file on the ghost will now offer to load it, instead of copying the playlist into the ghost's files.</p></li>
+	<li><p>Clicking "previous" (or the respective hotspot or hotkey) will now jump to the start of the current song if it's been playing for more than a few seconds. This behavior can be toggled in the settings menu.</p></li>
+	<li><p>Added a "stop after playlist" button. This works with both loop playlist mode, and shuffle and loop mode.</p></li>
+	<li><p>There is a "Prioritize" option for preferring seamless music or dialogue. With the seamless music option, if the song changes while a dialogue is playing, the dialogue will be interrupted in favor of starting the next song. If you prefer the previous behavior of waiting until the dialogue completed to play the next song, choose the "dialogue" option for this setting.</p></li>
+	<li><p>Fixed bugs related to the menu opening when hotkeys/hotspots were pressed, etc.</p></li>
+	<li><p>Fixed an issue where when changing hotkeys, if a new song played or a hotspot or hotkey was used, it would no longer be possible to input a new hotkey without backing out of the menu and starting again.</p></li>
+	<li><p>Changed various options to use anchor tags instead of choices colored like anchors, to make the display nicer in certain balloons.</p></li>
+	<li><p>Playlist loading improved: Incompatible file types, urls, and extended m3u directives are all discarded to avoid errors. If some songs are discarded in the loading process, it will notify the user of how many could not be loaded.</p></li>
+	<li><p>.m3u playlists saved with a relative path format are now supported.</p></li>
+	<li><p>.m3u8 playlists are now supported.</p></li>
+	<li><p><strong>Despite the above changes, all playlists are still saved as .m3u with absolute filepaths. Any incompatible songs, directives, etc., will not be included when saving.</strong> Do not save over any playlists made by other programs unless you are willing to lose this information.</p></li>
+	<li><p>Clicking on the title of the song listed as "now playing" will open the folder with the specific song highlighted, rather than just opening the folder that contains it.</p></li>
+	<li><p>A live playtime display is now available in the settings menu, showing the total amount of time you've spent listening to music with FLUX.</p></li>
+	<li><p>Updated to YAYA Tc571-13.</p></li>
+	<li><p>And many, many, many bugs were fixed...</p></li>
+</ul>
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>

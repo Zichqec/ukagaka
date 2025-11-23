@@ -34,9 +34,11 @@
 
 <h2>About</h2>
 
+<p><strong>Note: the Polish and French translations are unavailable in the latest version.</strong> They are available in <a href="https://github.com/Zichqec/FLUX/releases/tag/v1.2.2">v1.2.2</a> if needed, but mind that there are large differences between v1.2.2 and releases from v2.0.0 and onward.</p>
+
 <div class="tab">
 	<button class="tablinks" onclick="pickTab(event, 'English')" id="defaultOpen">English</button>
-	<button class="tablinks" onclick="pickTab(event, 'Polski')">Polski</button>
+	<!-- <button class="tablinks" onclick="pickTab(event, 'Polski')">Polski</button> -->
 	<!--<button class="tablinks" onclick="pickTab(event, 'Français')">Français</button>-->
 	<button class="tablinks" onclick="pickTab(event, 'Русский')">Русский</button>
 	<button class="tablinks" onclick="pickTab(event, 'Deutsch')">Deutsch</button>
@@ -384,6 +386,75 @@ let version_history = [
 				"Changing the volume, playback speed, and balance from the music settings menu will now immediately take effect.",
 				"Made several menus, including the music menu, move songs menu, and dressup menu, less flickery.",
 				"Fixed a small issue where FLUX may not have recognized that it was in the settings menu when changing songs unless the language was set as English."
+			]
+		}
+	]
+},
+{
+	version: "2.0.0",
+	patches:
+	[
+		{
+			version: "v2.0.0",
+			released: "2025-11-23",
+			blog_post: "../blog/2025-11-23_flux_v2.0.0.html",
+			changelog:
+			[
+				"FLUX now directly uses the <a href='https://github.com/Zichqec/music_player'>music player code</a> for YAYA that I have published. Many changes and additions were made as a result of this, which are listed towards the bottom.",
+				"Added Spanish translation by Celeste.",
+				"Disabled the French and Polish translations for now.",
+				"Deprecated several of the shell customization options. They may be removed in future versions. If what you want to make is a shell with a ton of custom functionality/dialogue, you should just make a simple ghost instead! I have provided <a href='https://github.com/Zichqec/music_player/releases/latest'>a template with the music player built in</a> for this purpose.",
+				"The shell loading system for custom functions has been overhauled and is much more solid.",
+				"Updated old urls.",
+				"Moved to a new homeurl. FLUX is now available in its own repository, where you can download any version.",
+				"General code cleanup and formatting fixes.",
+				"Improved the balloon color picker; color choice now affects input boxes and should also apply even when repeating a previous dialogue.",
+				"Removed the update bar when performing a network update, to greatly improve update speed.",
+				"FLUX's old stat share event has been deprecated and replaced with the stat share event from the music player code, called \"OnMusicPlayer.SongInfo\". The old event may be removed at some point in the future, if you currently make use of it please switch to the new one when you can!",
+				"Removed the stat sharing in the OnCommunicate event. Please use the new notify event \"OnMusicPlayer.SongInfo\" instead.",
+				"Removed the old \"commu non-interrupt\" system, responses to communication are no longer delayed.",
+				"Removed passivemode tag during firstboot, to avoid getting stuck in this mode.",
+				"Overhauled the random dressup function to be cleaner and work better.",
+				"Adjusted some menus to prevent flickering.",
+				"Updated the right click menu links.",
+				"The tooltip toggle has been moved to the music menu's settings.",
+				"Discord plugin info has been moved to the music menu's settings.",
+				"Offscreen dialogue has been removed.",
+				"The wallpaper setting option has been removed.",
+				"The low battery warning has been removed.",
+				"The hemisphere setting has been removed.",
+				"The option to set a birthday has been removed. That being said, some shells made use of the ability to comment when you set your birthday on the day of your birthday. This has been retained, but is now done by changing your birthday in the SSP preferences.",
+				"Simplified the name configuration option.",
+				"Talk rate switcher has been changed to a quick talk rate switcher.",
+				"FLUX's shell creation and translation guides have been updated.",
+				"Improved FLUX's ability to change shells while changing songs at the same time. This should only happen rarely.",
+				"Fixed an issue where the bug report dialogue didn't properly link to the author of the current shell.",
+				"The \"open changelog\" option now opens to the changelog on my website, rather than opening a file.",
+				"When creating a nar file, the link to open to the file location now highlights the specific file that was created.",
+				"Fix an issue where shells wouldn't start using their singing surfaces when changing in the middle of playback.",
+				"Reorganized the settings menu, there are now tabs for the various kinds of settings.",
+				"The music menu is now paginated, and by default will display 10 songs per page. This greatly increases performance, and allows playlists of very long lengths (thousands of songs) to be used. This is toggleable in the settings menu.",
+				"The above change DOES NOT APPLY to the move songs menu, and that menu will run very slowly for longer playlists. The button to access this menu has been moved to the \"advanced\" page of the settings menu, and a warning note has been added if there are a lot of songs in the playlist when that option is clicked.",
+				"The help topics have been moved to their own dedicated \"Help\" menu.",
+				"Added a song announcement option. If toggled on, the ghost can now announce the name of the song when a new song starts playing.",
+				"It is now possible to drag and drop multiple folders at once and have songs loaded from all of them.",
+				"Added the ability to use the scroll wheel to control volume, speed, and balance. Which it controls is changed in the settings, and it can be turned off entirely.",
+				"Saving and loading of playlists is now handled via File Explorer. This enables playlists to be saved anywhere, allows for the possibility of subfolders for playlists, and makes it possible to create a shared folder of playlists for all ghosts with this music player.",
+				"Dragging and dropping a .m3u file on the ghost will now offer to load it, instead of copying the playlist into the ghost's files.",
+				"Clicking \"previous\" (or the respective hotspot or hotkey) will now jump to the start of the current song if it's been playing for more than a few seconds. This behavior can be toggled in the settings menu.",
+				"Added a \"stop after playlist\" button. This works with both loop playlist mode, and shuffle and loop mode.",
+				"There is a \"Prioritize\" option for preferring seamless music or dialogue. With the seamless music option, if the song changes while a dialogue is playing, the dialogue will be interrupted in favor of starting the next song. If you prefer the previous behavior of waiting until the dialogue completed to play the next song, choose the \"dialogue\" option for this setting.",
+				"Fixed bugs related to the menu opening when hotkeys/hotspots were pressed, etc.",
+				"Fixed an issue where when changing hotkeys, if a new song played or a hotspot or hotkey was used, it would no longer be possible to input a new hotkey without backing out of the menu and starting again.",
+				"Changed various options to use anchor tags instead of choices colored like anchors, to make the display nicer in certain balloons.",
+				"Playlist loading improved: Incompatible file types, urls, and extended m3u directives are all discarded to avoid errors. If some songs are discarded in the loading process, it will notify the user of how many could not be loaded.",
+				".m3u playlists saved with a relative path format are now supported.",
+				".m3u8 playlists are now supported.",
+				"<strong>Despite the above changes, all playlists are still saved as .m3u with absolute filepaths. Any incompatible songs, directives, etc., will not be included when saving.</strong> Do not save over any playlists made by other programs unless you are willing to lose this information.",
+				"Clicking on the title of the song listed as \"now playing\" will open the folder with the specific song highlighted, rather than just opening the folder that contains it.",
+				"A live playtime display is now available in the settings menu, showing the total amount of time you've spent listening to music with FLUX.",
+				"Updated to YAYA Tc571-13.",
+				"And many, many, many bugs were fixed...",
 			]
 		}
 	]

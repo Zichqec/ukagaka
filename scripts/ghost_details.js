@@ -163,8 +163,8 @@ var item_details = [
 	{
 		name: "FLUX",
 		release: "2021-05-12",
-		latest: "2022-01-31",
-		version: "v1.2.2",
+		latest: "2025-11-23",
+		version: "v2.0.0",
 		forevent: null,
 		collaborators: null,
 		translations: [
@@ -187,15 +187,20 @@ var item_details = [
 				spoken_language: "Русский",
 				translator: {name: "SmokyCinnamonRoll", creditlink: "https://smokycinnamon.github.io/indifferentsorrel/"},
 				download: null
+			},
+			{
+				spoken_language: "Español",
+				translator: {name: "Celeste", creditlink: "https://rosecelestereblog.tumblr.com/"},
+				download: null
 			}
 		],
 		content_warnings: null,
-		download: "https://www.mediafire.com/file/6kxhs0s8ga3cov3/flux_v1.2.2.nar/file",
+		download: "https://github.com/Zichqec/FLUX/releases/latest",
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/flux"},
 		],
-		blurb: "FLUX is a music player ghost I made as a spiritual successor to <a href='https://ukagakadreamteam.com/wiki/ghost/flele'>FLELE</a>. It features a robust music player, and is compatible with most (if not all) FLELE shells. It also has some special custom shell functionality, although these days I think my implementation was misguided.<br><br>Thanks to the hard work of translators, it is also available in several languages! You can switch languages within the ghost's menu.",
+		blurb: "FLUX is a music player ghost I made as a spiritual successor to <a href='https://ukagakadreamteam.com/wiki/ghost/flele'>FLELE</a>. It features a robust music player, and is compatible with most (if not all) FLELE shells. It also has some special custom shell functionality, although most of the implementation has been deprecated because it was a bad idea.<br><br>Thanks to the hard work of translators, it is also available in several languages! You can switch languages within the ghost's menu.",
 		tags: ["2021", "YAYA", "Translations available", "Includes my art", "Includes my code", "Utility"] //I can't call this "my writing" when it's utility text...
 	},
 	{
