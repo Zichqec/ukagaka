@@ -33,7 +33,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2025-11-23_flux_v2.0.0.html",
-		blurb: "A major overhaul for <a href='../ghost/flux.html'>FLUX</a> code, bringing many new features to the music player, adding a Spanish translation, and deprecating several old functions.",
+		blurb: "A major overhaul for <a href='../ghost/flux.html'>FLUX</a>, bringing many new features to the music player, adding a Spanish translation, and deprecating several old functions.",
 		tags: ["2025","November","Ghost","Update"],
 	},
 	{
