@@ -36,126 +36,33 @@
 
 <p><strong>Note: the Polish and French translations are unavailable in the latest version.</strong> They are available in <a href="https://github.com/Zichqec/FLUX/releases/tag/v1.2.2">v1.2.2</a> if needed, but mind that there are large differences between v1.2.2 and releases from v2.0.0 and onward.</p>
 
-<div class="tab">
-	<button class="tablinks" onclick="pickTab(event, 'English')" id="defaultOpen">English</button>
-	<!-- <button class="tablinks" onclick="pickTab(event, 'Polski')">Polski</button> -->
-	<!--<button class="tablinks" onclick="pickTab(event, 'Français')">Français</button>-->
-	<button class="tablinks" onclick="pickTab(event, 'Русский')">Русский</button>
-	<button class="tablinks" onclick="pickTab(event, 'Deutsch')">Deutsch</button>
-</div>
+<p>FLUX is a spiritual successor to an old Japanese ghost called <a href="http://navy.nm.land.to/ukgk/flele/beginner.html">FLELE</a> (<a href="../blog/2024-10-13_flele_mirror.html">mirror</a>). FLELE is a music player which many people have created unique shells for! There are various <a href="https://www.deviantart.com/zichqec/favourites/87935078/flele-shells">collections of FLELE shells</a> spread across the internet. The one I have linked is only a small collection.</p>
 
+<p>I created FLUX because I wanted to expand on the music player concept, and I wanted to solve certain issues that we were having with FLELE. Over the years it's grown from a messy project held together with duct tape and misguided dreams, and now has a polished music interface with many capabilities.</p>
 
+<p>Main points to consider:</p>
+<ul>
+	<li><p>Polished music player interface with smooth navigation, hotkeys and hotspots for quick adjustments, multiple play modes, and various quality of life features.</p></li>
+	<li><p>Supports multiple languages.</p></li>
+	<li><p>Automatic network update checks, including for shells.</p></li>
+	<li><p>Compatibility with FLELE shells.</p></li>
+	<li><p>Supports many filetypes if using <a href="https://github.com/Nevcairiel/LAVFilters/releases">LAV Filters</a>.</p></li>
+	<li><p>Can load and save .m3u playlists, the same format FLELE uses. Can also read .m3u8 playlists.</p></li>
+	<li><p>Adjustable volume, speed, and left/right balance.</p></li>
+	<li><p>Default balloon 'Notes' comes in both dark and light mode.</p></li>
+	<li><p>Options to stop playback after the current song completes, or after the current playlist completes.</p></li>
+	<li><p>If a song gives an error, it will attempt to play the next song instead of stopping.</p></li>
+	<li><p>Notifies other running ghosts of information such as what song is currently playing, etc.</p></li>
+	<li><p>Current song and shell information can be displayed in your Discord status if the <a href="http://ssp.shillest.net/plugin/discord.nar">Discord Rich Presence</a> plugin is installed.</p></li>
+</ul>
 
-<div id="English" class="tabcontent">
+<p>... And much more! I've poured a lot of time into making this a competent player that feels satisfying to use.</p>
 
-	<p>FLUX is a spiritual successor to an old Japanese ghost called <a href="http://navy.nm.land.to/ukgk/flele/beginner.html">FLELE</a>. FLELE is a simple music player which many people have created unique shells for! <a href="https://www.deviantart.com/zichqec/favourites/87935078/flele-shells">Here's</a> a collection of FLELE shells, though there are many more besides this. You can also find an English patch of FLELE by Zarla on <a href="http://www.ashido.com/huntersmoker/flele.html">this page</a>.</p>
-	<p>So why FLUX? FLUX offers many improvements, including:</p>
-	<ul>
-		<li>Multiple language support.</li>
-		<li>Offers network updates for shells, and even checks for updates automatically.</li>
-		<li>Makes it very easy to add in custom dialogue, without users ever needing to change the ghost's files.</li>
-		<li>Uses a different system for the music player, allowing you to change volume, speed, and balance.</li>
-		<li>Supports more file types than FLELE does, if using LAV Filters!</li>
-		<li>The singing animation is no longer restricted to surface25, so more complex animations are possible.</li>
-		<li>Default balloon 'Notes' has both dark and light mode.</li>
-		<li>'Stop after current song' option.</li>
-		<li>Dynamic shell and dressup menus within the ghost, including the option to pick shells and dressups at random.</li>
-		<li>Uses m3u playlists like FLELE does, so your existing playlists should still work.</li>
-		<li>Backwards compatible with most existing FLELE shells.</li>
-		<li>If a song gives an error, FLUX will attempt to play the next song instead of just stopping.</li>
-		<li>Can display your current shell and song in your Discord status if you have the <a href="http://ssp.shillest.net/plugin/discord.nar">Discord Rich Presence</a> plugin!</li>
-		<li>And many more small tweaks!</li>
-	</ul>
-	<p>There are some differences from FLELE, some of which might feel odd if you've used FLELE a lot. FLUX does not have the same right click menu that FLELE does, because I haven't used the SAORI that creates it. There also is no song bar, for the same reason. Instead, if you double click the hotspot that would normally open the song bar, it will open the music menu. It's also possible that some FLELE shells will behave oddly; if you find any like this please let me know!</p>
-	<p>If you're interested in making a shell for FLUX, there is documentation included in the files. If you're interested in translating FLUX to another language, there is also documentation for that. If you publicly release anything for FLUX, do let me know and I'd be glad to link your work on this page!</p>
-	<p>One final note, sometimes SSP won't play some songs even though they're the correct type. If that happens, I recommend installing this open source program called <a href="https://github.com/Nevcairiel/LAVFilters/releases">LAVFilters</a>. The creator of SSP sent me this when I asked him about the errors, and I've had no issues so far using it! It will also allow FLUX to play many more file types, including .flacs, .oggs, and .m4as. If you don't trust that, you can try manually converting the affected songs to another compatible file type with a converter <a href="https://www.onlineconverter.com/">like this one</a>, or you can import them into an audio editing program and export them again.</p>
+<p>If you are interested in creating a shell, there is a template included within the files, which details some of the special features that FLUX has for shells. However, I discourage making shells with very complex functionality for FLUX. If it has a ton of content beyond just being a skin for the music player, then you should make a simple ghost instead! I have provided <a href="https://github.com/Zichqec/music_player/releases/latest">a template expressly for this purpose</a>, which has the same music player integrated. (<a href="../blog/2025-11-23_flux_v2.0.0.html#shell_system">Why you should not make complex shells</a>.)</p>
 
-</div>
+<p>If you're interested in having your ghost react to details from FLUX's music player, such as the currently playing song, you can find <a href="https://ukagakadreamteam.github.io/ukadoc/manual/list_shiori_event_ex.html#OnMusicPlayer.SongInfo">documentation for the stat share event on Ukadoc</a>.</p>
 
-
-<div id="Polski" class="tabcontent">
-
-	<p>FLUX jest duchowym następcą starego japońskiego ducha o nazwie <a href="http://navy.nm.land.to/ukgk/flele/beginner.html">FLELE</a>. FLELE to prosty odtwarzacz muzyczny, dla którego wiele osób stworzyło unikalne skorupy! <a href="https://www.deviantart.com/zichqec/favourites/87935078/flele-shells">Tu znajdziesz</a> kolekcję skorup FLELE, choć oprócz tego jest jeszcze wiele innych. Można też znaleźć angielską łatkę FLELE autorstwa Zarli <a href="http://www.ashido.com/huntersmoker/flele.html">na tej stronie</a>.</p>
-	<p>Dlaczego więc FLUX? FLUX oferuje wiele ulepszeń, w tym:</p>
-	<ul>
-		<li>Wsparcie dla wielu języków.</li>
-		<li>Oferuje aktualizacje sieciowe dla skorup, a nawet sprawdza aktualizacje automatycznie.</li>
-		<li>Ułatwia dodawanie niestandardowych dialogów, bez konieczności zmiany plików ducha.</li>
-		<li>Używa innego systemu dla odtwarzacza muzycznego, pozwalając na zmianę głośności, prędkości i balansu.</li>
-		<li>Obsługuje więcej typów plików niż FLELE, jeśli używasz filtrów LAV!</li>
-		<li>Animacja śpiewu nie jest już ograniczona do surface25, więc bardziej złożone animacje są możliwe.</li>
-		<li>Domyślny dymek 'Notes' ma zarówno tryb ciemny jak i jasny.</li>
-		<li>Opcja 'Zatrzymaj po bieżącej piosence'.</li>
-		<li>Dynamiczne menu dla skorup i strojów w duchu, w tym możliwość losowego wyboru skorup i strojów.</li>
-		<li>Używa list odtwarzania m3u jak FLELE, więc twoje istniejące listy odtwarzania powinny nadal działać.</li>
-		<li>Kompatybilny wstecz z większością istniejących muszli FLELE.</li>
-		<li>Jeśli w utworze wystąpi błąd, FLUX podejmie próbę odtworzenia następnego utworu, zamiast zatrzymywania odtwarzania.</li>
-		<li>Może wyświetlać bieżącą skorupę i piosenkę w statusie Discorda, jeśli masz wtyczkę <a href="http://ssp.shillest.net/plugin/discord.nar">Discord Rich Presence</a>!</li>
-		<li>I wiele więcej małych poprawek! </li>
-	</ul>
-	<p>Istnieją pewne różnice w stosunku do FLELE, niektóre z nich mogą wydawać się dziwne, jeśli używałeś FLELE dużo. FLUX nie posiada takiego samego menu prawego przycisku myszy jak FLELE, ponieważ nie używałam SAORI, które je tworzy. Nie ma też paska piosenek, z tego samego powodu. Zamiast tego, jeśli dwukrotnie klikniesz na hotspot, który normalnie otworzyłby pasek piosenek, otworzy się menu muzyczne. Jest również możliwe, że niektóre skorupy FLELE będą się dziwnie zachowywać; jeśli znajdziesz takie, proszę daj mi znać!
-	<p>Jeżeli jesteś zainteresowany stworzeniem skorupy dla FLUXa, dokumentacja jest dołączona do plików. Jeśli jesteś zainteresowany tłumaczeniem FLUXa na inny język, jest tam również dokumentacja do tego. Jeśli stworzysz coś dla FLUXa, daj mi znać, a z przyjemnością umieszczę link do twojej pracy na tej stronie!</p>
-	<p>Ostatnia uwaga: czasami SSP nie odtwarza niektórych utworów, nawet jeśli są one poprawnego typu. Jeśli tak się stanie, polecam zainstalowanie tego programu open source o nazwie <a href="https://github.com/Nevcairiel/LAVFilters/releases">LAVFilters</a>. Twórca SSP wysłał mi to, gdy zapytałam go o błędy, i jak dotąd nie miałam żadnych problemów z jego używaniem! Pozwoli to również FLUX-owi na odtwarzanie wielu innych typów plików, w tym .flacs, .oggs i .m4as. Jeśli nie masz do tego zaufania, możesz spróbować ręcznie przekonwertować dotknięte błędami utwory na inny kompatybilny typ pliku za pomocą konwertera <a href="https://www.onlineconverter.com/">jak ten</a>, lub możesz zaimportować je do programu do edycji audio i wyeksportować ponownie.</p>
-	<p>Ta strona i odtwarzacz FLUX zostały przetłumaczone na Polski przez <a href="https://zdzisiu.github.io/Cemetery/">Zdzicha</a></p>
-
-</div>
-
-<div id="Русский" class="tabcontent">
-
-	<p>FLUX -- духовный наследник к старой Японской привидение по имени <a href="http://navy.nm.land.to/ukgk/flele/beginner.html">FLELE</a>. FLELE -- простой плеер музыкы, для который многие люди создали разные внеших видов! <a href="https://www.deviantart.com/zichqec/favourites/87935078/flele-shells">Вот здесь</a> -- коллекция внешних видов для FLELE, но есть очень много еще в других местах. Также можешь найти патч на Английском языке от Zarla на <a href="http://www.ashido.com/huntersmoker/flele.html">этой страницей</a>.</p>
-	<p>Вот, зачем FLUX? FLUX предлагает многие улучшенный, например:</p>
-	<ul>
-		<li>Содержание многих языков.</li>
-		<li>Обновление по Сети для внеших видов, и даже автоматический проверяет их.</li>
-		<li>С него гораздо легче добавить пользовательский разговоры, без необходимость изменить файлов привидении.</li>
-		<li>Использует другая система для плеер музыка, поволяет тебя изменить громкость, скорость, и баланс.</li>
-		<li>Соддержит больше типа файлов чем FLELE, если использует LAV Filters!</li>
-		<li>Анимация для пение больше не только на surface25, поэтому возможно делать более непростие анимации.</li>
-		<li>Поле с Текстом по умолчанию, 'Notes', есть и темний, и светлый режим.</li>
-		<li>Настроек 'Остановить после этой песне'.</li>
-		<li>Динамичный меню внеших видов и одежду внутри привидение, например настроек случайно выбирать их.</li>
-		<li>Использует плейлисти m3u, так как FLELE, поэтому твоими плейлисти, который уже существуют должен работать как норм.</li>
-		<li>Есть обратной совместимостью с большинство внешние вид у FLELE.</li>
-		<li>Если песня даёт ощибку, FLUX попытается играть следущую песню, вместо перестание.</li>
-		<li>Может показать свой текущий песня и внешний вид в статус Дискорд, если у тебя есть модуль <a href="http://ssp.shillest.net/plugin/discord.nar">Discord Rich Presence</a>!</li>
-		<li>И много еще!</li>
-	</ul>
-	<p>Есть немного различие, и некоторые из них наверное будет чуть-чуть странный, если много использовал_а FLELE. У FLUX нет один и тот же меню правой кнопки мышей у FLELE, потому что я не использовала SAORI, который создать его. Также нет панель песен, и причин -- один и то же. Вместо этого, если ты выполнить двойной щелчок на очагов, который обычно открывет его, он будет открыть меню музыки. А еще возможно, что некоторые внешие види FLELE не работает как норм; если бы найдешь какие-нибудь, пожалуйста, сообщите меня!</p>
-	<p>Если тебе интересуешся создать внешний вид для FLUX, есть документация в его файли. Если тебе интересуешся переводить FLUX в другой языка, тоже есть документация. Если ты публичнл выпускать что-либо для FLUX, сообщите меня -- я была бы ража свяхвть свою работу на этой страницей!</p>
-	<p>Есть ещё важная штука: Несмотря на то, что они правильный тип, иногда SSP песни не играет. В таком случае, я рекомендую тебе установить эта программа с открытымкодом, <a href="https://github.com/Nevcairiel/LAVFilters/releases">LAVFilters</a>. Когда я спросила обо ошибке, создатель SSP отправил она к мне, и до сих пор все работает норм! Это дозвляет Flux играть гораздо больше типа файлов, например .flacs, .oggs, и .m4as. Но, если этого не доверяешь, ты можешь попробовать импортировать этих песен с другого типа с помощью конвертер <a href="https://www.onlineconverter.com/"> так как этого</a>, или можешь импортировать песни в программа для изменение аудио, так как <a href="https://www.audacityteam.org/">Audacity</a> и вновь их экспортировать.</p>
-	
-</div>
-
-<div id="Deutsch" class="tabcontent">
-
-	<p>FLUX ist ein geistiger Nachfolger zu einem älteren japanischen Ghost namens <a href ="http://navy.nm.land.to/ukgk/flele/beginner.html">FLELE</a>. FLELE ist ein simpler Musik-Player für welchen viele Leute einzigartige Shells kreiert haben! <a href="https://www.deviantart.com/zichqec/favourites/87935078/flele-shells">Hier</a> ist eine Sammlung an FLELE Shells, jedoch gibt es noch viele weitere außer diesen. Du kannst einen englischen Patch für FLELE von Zarla auf <a href="http://www.ashido.com/huntersmoker/flele.html">dieser Webseite</a> finden.</p>
-
-	<p>Also warum dann FLUX? FLUX bietet viele Verbesserungen wie zum Beispiel:</p>
-	<ul>
-		<li>Unterstützt mehrere Sprachen.</li>
-		<li>Bietet Network-Updates für Shells und sucht sogar automatisch nach Updates.</li>
-		<li>Macht es sehr einfach Shell-Spezifischen Dialog einzubauen, ohne dass Benutzer die Dateien des Ghosts jemals verändern müssen.</li>
-		<li>Verwendet ein anderes System für den Musik-Player, der es möglich macht die Lautstärke, Geschwindigkeit und Balance zu verändern.</li>
-		<li>Unterstützt mehr Dateitypen als FLELE, wenn LAV Filters verwendet wird!</li>
-		<li>Die Gesangsanimation ist nicht länger auf surface25 beschränkt. Auf diese Weise sind komplexere Animationen möglich.</li>
-		<li>Der standart Balloon 'Notes' hat sowohl einen dunklen als auch einen hellen Modus.</li>
-		<li>'Wiedergabe nach derzeitigem Lied anhalten' Option.</li>
-		<li>Dynamische Shell und Dressup Menüs innherhalb des Ghosts, darunter die Option Shells und Dressups zufällig auszuwählen.</li>
-		<li>Benutzt m3u Playlisten so wie FLELE, sodass deine existierenden Playlisten noch funktionieren sollten.</li>
-		<li>Rückwärtskompatibel mit den meisten FLELE Shells.</li>
-		<li>Falls ein Lied einen Fehler erzeugt wird FLUX versuchen das nächste Lied abzuspielen anstatt ganz aufzuhören.</li>
-		<li>Kann das derzeitige Lied und die derzeitige Shell in deinem Discord-Status anzeigen, wenn das <a href="http://ssp.shillest.net/plugin/discord.nar">Discord Rich Presence</a> Plugin installiert ist!</li>
-		<li>Und viele andere kleinere Änderungen!</li>
-	</ul>
-	<p>Es gibt ein paar Unterschiede zu FLELE, welche dir merkwürdig vorkommen könnten wenn du FLELE vorher viel benutzt hast. FLUX hat nicht das selbe Rechts-Klick-Menü das FLELE hat weil ich nicht dieselbe SAORI benutzt habe, die dieses erzeugt. Aus dem gleichen Grund gibt es auch keine Anzeigeleiste. Stattdessen öffnet sich das Musik-Menü wenn du auf den Bereich klickst der normalerweise die Anzeigeleiste öffnen würde. Es kann auch vorkommen dass einige FLELE Shells sich komisch verhalten; wenn du solche findest, lass es mich bitte wissen!</p>
-	
-	<p>Falls du interessiert daran sein solltest deine eigene Shell für FLUX zu kreieren gibt es Unterlagen dazu in FLUX's Dateien. Falls du daran interessiert sein solltest FLUX in eine andere Sprache zu übersetzen gibt es dazu auch Unterlagen. Auch wenn du irgendetwas anderes für FLUX machst, lass mich bitte davon wissen und ich werde deine Arbeit auf dieser Seite gerne verlinken!</p>
-
-	<p>Eines noch, manchmal spielt SSP Lieder nicht ab obwohl sie dem richtigen Dateityp angehören. Wenn das passiert, schlage ich vor das Open-Source Programm <a href="https://github.com/Nevcairiel/LAVFilters/releases">LAVFilters</a> zu installieren. Der Entwickler von SSP hat es mir geschickt als ich ihn nach den Fehler gefragt habe und ich hatte noch keine Probleme dabei es zu verwenden! Außerdem erlaubt es FLUX viele Dateitypen mehr abzuspielen, so wie .flacs, .oggs, und .m4as. Wenn du dem nicht vertraust kannst du auch versuchen die betroffenen Lieder manuell mit einem Konverter, <a href="https://www.onlineconverter.com">wie diesem hier</a>, zu einem anderen Dateityp zu konvertieren oder du kannst sie auch in ein Audiobearbeitungsprogramm importieren und wieder exportieren.</p>
-
-	<p>Die deutsche Übersetzung von FLUX wurde von <a href ="https://koguri3108.tumblr.com">Koguri3108</a> erstellt.</p>
-
-</div>
+<p>If you are interested in translating FLUX to another language, please get in contact! There is some documentation for this in FLUX's files, as well.</p>
 
 </article>
 
