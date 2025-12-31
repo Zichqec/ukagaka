@@ -32,7 +32,7 @@ var item_details = [
 		release: "2025-12-31",
 		dupeindex: "00",
 		latest: null,
-		page: "2025-12-31_2025_development_retrospective.html",
+		page: "2025-12-31_development_retrospective.html",
 		blurb: "A retrospective on my development activities in 2025, including things I released, things I updated, things I learned, etc.",
 		tags: ["2025","December","Dev musings","Yearly summary"],
 	},
