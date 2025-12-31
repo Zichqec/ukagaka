@@ -370,8 +370,8 @@ var item_details = [
 	},
 	{
 		name: "Needloon (readable)",
-		release: "2025-11-13",
-		latest: null,
+		release: "2024-11-11",
+		latest: "2025-11-13",
 		version: "v1.0.1",
 		goeswith: ["Needle"],
 		forevent: null,
