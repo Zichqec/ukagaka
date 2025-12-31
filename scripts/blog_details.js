@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "2025 development retrospective",
+		release: "2025-12-31",
+		dupeindex: "00",
+		latest: null,
+		page: "2025-12-31_2025_development_retrospective.html",
+		blurb: "A retrospective on my development activities in 2025, including things I released, things I updated, things I learned, etc.",
+		tags: ["2025","December","Dev musings","Yearly summary"],
+	},
+	{
 		name: "FLUX v2.0.0",
 		release: "2025-11-23",
 		dupeindex: "00",
