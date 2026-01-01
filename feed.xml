@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>ChunkText function</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-07-28_chunktext_function</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-07-28_chunktext_function</guid>
-		<pubDate>Mon, 28 Jul 2025 00:00:02 EST</pubDate>
-		<description>Release of a new function: &lt;a href='../function/index.html#chunktext'&gt;ChunkText&lt;/a&gt;. This function takes a dialogue string and outputs it in chunks of 3 characters at a time, with various options to adjust it. It's intended to give text a more robotic feel.</description>
-	</item>
-	<item>
 		<title>8/20 Hydrate Shell Jam 2025 announcement</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-08-13_8_20_hydrate_shell_jam_2025_announcement</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-13_8_20_hydrate_shell_jam_2025_announcement</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2025-12-31_development_retrospective</guid>
 		<pubDate>Wed, 31 Dec 2025 00:00:00 EST</pubDate>
 		<description>A retrospective on my development activities in 2025, including things I released, things I updated, things I learned, etc.</description>
+	</item>
+	<item>
+		<title>Tuxeedle v1.0.2</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-01-01_tuxeedle_v1.0.2</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-01-01_tuxeedle_v1.0.2</guid>
+		<pubDate>Thu, 01 Jan 2026 00:00:00 EST</pubDate>
+		<description>A small update to Tuxeedle, adding a new ring color and dressup menu organization.</description>
 	</item>
 </channel>
 </rss>

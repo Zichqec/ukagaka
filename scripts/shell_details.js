@@ -894,12 +894,12 @@ var shell_details = [
 		name: "Tuxeedle",
 		goeswith: [Needle],
 		release: "2024-01-01",
-		latest: "2025-01-01",
-		version: "v1.0.1",
+		latest: "2026-01-01",
+		version: "v1.0.2",
 		forevent: "mine and Galla's dev-wedding",
 		collaborators: null,
 		content_warnings: null,
-		download: "https://www.mediafire.com/file/unx34sk9lxvu7iz/tuxeedle_v1.0.1.nar/file",
+		download: "https://www.mediafire.com/file/c7udls285lmcpdb/tuxeedle_v1.0.2.nar/file",
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/tuxeedle"},

@@ -2,7 +2,7 @@
 //Reason being that I think it will be easier over time to just keep adding entries to the top...
 
 var item_tags = [
-	["2021","2022","2023","2024","2025"],
+	["2021","2022","2023","2024","2025","2026"],
 	["January","February","March","April","May","June","July","August","September","October","November","December"],
 	["Ghost","Shell","Freeshell","Balloon","Template","Calendar skin","SAORI","Plugin","Tool","Guide","Function","Minigame","Free asset","Misc","Event"],
 	["New release","Update","Announcement","Website update","Dev musings"],
@@ -27,6 +27,15 @@ var item_details = [
 		// blurb: "",
 		// tags: [],
 	// },
+	{
+		name: "Tuxeedle v1.0.2",
+		release: "2026-01-01",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-01-01_tuxeedle_v1.0.2.html",
+		blurb: "A small update to Tuxeedle, adding a new ring color and dressup menu organization.",
+		tags: ["2026","January","Shell","Update"],
+	},
 	{
 		name: "2025 development retrospective",
 		release: "2025-12-31",
