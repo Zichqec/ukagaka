@@ -756,7 +756,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/ye_olde_cursed_tower"},
 		],
 		blurb: "An evil wizard sits atop a tower, collecting souls... for what purpose? Nobody is sure. What will happen to the people trapped within the tower's walls?<br><br>... Well, that's up to you, since you are that wizard! Have fun.",
-		tags: ["2025", "Aosora", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "Object"]
+		tags: ["2025", "Aosora", "Collab", "Includes my writing", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "Object"]
 	},
 	{
 		name: "Zana's Laws",
