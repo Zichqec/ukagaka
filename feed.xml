@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>8/20 Hydrate Shell Jam 2025 announcement</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-08-13_8_20_hydrate_shell_jam_2025_announcement</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-08-13_8_20_hydrate_shell_jam_2025_announcement</guid>
-		<pubDate>Wed, 13 Aug 2025 00:00:00 EST</pubDate>
-		<description>&lt;a href='../event/8_20_hydrate_shell_jam_2025_rules.html'&gt;8/20 Hydrate Shell Jam 2025&lt;/a&gt; will be happening soon! See the event's page for the rules and timeframe.</description>
-	</item>
-	<item>
 		<title>8/20 Hydrate Shell Jam 2025 has begun</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-08-20_8_20_hydrate_shell_jam_2025_has_begun</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-20_8_20_hydrate_shell_jam_2025_has_begun</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-01-01_tuxeedle_v1.0.2</guid>
 		<pubDate>Thu, 01 Jan 2026 00:00:00 EST</pubDate>
 		<description>A small update to Tuxeedle, adding a new ring color and dressup menu organization.</description>
+	</item>
+	<item>
+		<title>Birthday Needle v1.0.2</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-01-07_birthday_needle_v1.0.2</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-01-07_birthday_needle_v1.0.2</guid>
+		<pubDate>Wed, 07 Jan 2026 00:00:00 EST</pubDate>
+		<description>A small update to Birthday Needle, adding a new candle and some other minor adjustments.</description>
 	</item>
 </channel>
 </rss>

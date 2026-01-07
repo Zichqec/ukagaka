@@ -171,15 +171,15 @@ var shell_details = [
 		name: "Birthday Needle",
 		goeswith: [Needle],
 		release: "2024-01-07",
-		latest: "2025-01-07",
-		version: "v1.0.1",
+		latest: "2026-01-07",
+		version: "v1.0.2",
 		forevent: "Perseverence Day",
 		collaborators:
 		[
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
 		],
 		content_warnings: null,
-		download: "https://www.mediafire.com/file/u4blnjezisq6kji/birthday_needle_v1.0.1.nar/file",
+		download: "https://www.mediafire.com/file/qpqyuvht02zeeim/birthday_needle_v1.0.2.nar/file",
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/birthday_needle"},

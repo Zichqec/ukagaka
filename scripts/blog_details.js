@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Birthday Needle v1.0.2",
+		release: "2026-01-07",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-01-07_birthday_needle_v1.0.2.html",
+		blurb: "A small update to Birthday Needle, adding a new candle and some other minor adjustments.",
+		tags: ["2026","January","Shell","Update"],
+	},
+	{
 		name: "Tuxeedle v1.0.2",
 		release: "2026-01-01",
 		dupeindex: "00",
