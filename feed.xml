@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>8/20 Hydrate Shell Jam 2025 has begun</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-08-20_8_20_hydrate_shell_jam_2025_has_begun</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-08-20_8_20_hydrate_shell_jam_2025_has_begun</guid>
-		<pubDate>Wed, 20 Aug 2025 00:00:00 EST</pubDate>
-		<description>&lt;a href='../event/8_20_hydrate_shell_jam_2025_rules.html'&gt;8/20 Hydrate Shell Jam 2025&lt;/a&gt; has begun!</description>
-	</item>
-	<item>
 		<title>Leaky Pipe v1.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-08-20_leaky_pipe_v1.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-20_leaky_pipe_v1.0.0</guid>
@@ -177,14 +170,21 @@
 		<link>https://ukagaka.zichqec.com/blog/2026-01-01_tuxeedle_v1.0.2</link>
 		<guid>https://ukagaka.zichqec.com/blog/2026-01-01_tuxeedle_v1.0.2</guid>
 		<pubDate>Thu, 01 Jan 2026 00:00:00 EST</pubDate>
-		<description>A small update to Tuxeedle, adding a new ring color and dressup menu organization.</description>
+		<description>A small update to &lt;a href='../shell/tuxeedle.html'&gt;Tuxeedle&lt;/a&gt;, adding a new ring color and dressup menu organization.</description>
 	</item>
 	<item>
 		<title>Birthday Needle v1.0.2</title>
 		<link>https://ukagaka.zichqec.com/blog/2026-01-07_birthday_needle_v1.0.2</link>
 		<guid>https://ukagaka.zichqec.com/blog/2026-01-07_birthday_needle_v1.0.2</guid>
 		<pubDate>Wed, 07 Jan 2026 00:00:00 EST</pubDate>
-		<description>A small update to Birthday Needle, adding a new candle and some other minor adjustments.</description>
+		<description>A small update to &lt;a href='../shell/birthday_needle.html'&gt;Birthday Needle&lt;/a&gt;, adding a new candle and some other minor adjustments.</description>
+	</item>
+	<item>
+		<title>Hydrate v2.0.5</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-01-08_hydrate_v2.0.5</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-01-08_hydrate_v2.0.5</guid>
+		<pubDate>Thu, 08 Jan 2026 00:00:00 EST</pubDate>
+		<description>A patch for &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; which fixes a few bugs and updates the readme information.</description>
 	</item>
 </channel>
 </rss>

@@ -28,12 +28,21 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Hydrate v2.0.5",
+		release: "2026-01-08",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-01-08_hydrate_v2.0.5.html",
+		blurb: "A patch for <a href='../ghost/hydrate.html'>Hydrate</a> which fixes a few bugs and updates the readme information.",
+		tags: ["2026","January","Ghost","Update"],
+	},
+	{
 		name: "Birthday Needle v1.0.2",
 		release: "2026-01-07",
 		dupeindex: "00",
 		latest: null,
 		page: "2026-01-07_birthday_needle_v1.0.2.html",
-		blurb: "A small update to Birthday Needle, adding a new candle and some other minor adjustments.",
+		blurb: "A small update to <a href='../shell/birthday_needle.html'>Birthday Needle</a>, adding a new candle and some other minor adjustments.",
 		tags: ["2026","January","Shell","Update"],
 	},
 	{
@@ -42,7 +51,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2026-01-01_tuxeedle_v1.0.2.html",
-		blurb: "A small update to Tuxeedle, adding a new ring color and dressup menu organization.",
+		blurb: "A small update to <a href='../shell/tuxeedle.html'>Tuxeedle</a>, adding a new ring color and dressup menu organization.",
 		tags: ["2026","January","Shell","Update"],
 	},
 	{

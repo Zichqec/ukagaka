@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p><a href="../ghost/hydrate.html">Hydrate</a> has been updated to v2.0.5! Just a minor update to patch a few bugs I found, and update the readme since I realized it was out of date.</p>
+
+<p>Changelog:</p>
+<ul>
+	<li><p>Fixed an issue where Hydrate would change dressups when booting, regardless of your settings.</p></li>
+	<li><p>Timed drink reminders can no longer be interrupted by other events such as double clicking, opening an RSS feed, etc. Currently it is still possible for Spectre to interrupt drink reminders, this is a known issue and I'm trying to find a solution.</p></li>
+	<li><p>Updated the readme to add more information and clearer crediting.</p></li>
+</ul>
+
+<p>Honestly, I'm not sure how I managed to not notice that Hydrate was changing dressups without permission. I thought I had tested pretty thoroughly! Oops.</p>
+
+<p>As far as the issue with Spectre goes, for the time being it is best to set Spectre and Hydrate to different intervals, even if they're only a little bit apart. Or, if you run more than one ghost, adjust Spectre's exclusion list so that it doesn't display dialogue through Hydrate at all.</p>
+
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>
