@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<article>
+<div id="item_info"></div>
+
+
+<h2>Blurb</h2>
+<div id="indexblurb"></div>
+
+<div id="page_index"></div>
+</article>
+
+<!-- <article id="about">
+	<p class="to_top"><a href='#'>Back to top</a></p>
+	<h2>About</h2>
+	<p></p>
+</article> -->
+
+<div id="gallery_placeholder"></div>
+
+<div id="shells_by_me_index"></div>
+
+<div id="shells_by_others_index"></div>
+
+<div id="history_list"></div>
+
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script>
+let gallery_images = [
+	//{path: "image.png", spoiler: null, caption: "caption", alt: "alt"},
+]
+</script>
+
+<script>
+let shells_by_others = [
+
+]
+</script>
+
+<script>
+let version_history = [
+
+{
+	version: "1.0.0",
+	patches:
+	[
+		{
+			version: "1.0.0",
+			released: "2026-01-01",
+			blog_post: "https://sites.google.com/view/ghost-luckybag2026",
+			changelog:
+			[
+				"Initial release.",
+			]
+		},
+	]
+},
+{
+	version: "1.1.0",
+	patches:
+	[
+		{
+			version: "1.1.0",
+			released: "2026-02-14",
+			blog_post: "../blog/2026-02-14_left_unattended_v1.1.0.html",
+			changelog:
+			[
+				"Added 29 new random dialogues, bringing the total to 50.",
+				"Added 2 new items.",
+				"Added responses to being poked by Needle.",
+				"Added special responses when poked by Needle in the Birthday Needle shell.",
+				"Added many new item interaction dialogues.",
+				"Added new guest personalities.",
+				"Added a general response to OnCommunicate.",
+				"Added Spectre calibration and responses.",
+				"Added a response for LOBO's howling.",
+				"Added responses for OnPhantaEepy.",
+				"Added responses for OnCanToss.",
+				"Changed behavior of OnCloseAll and OnGhostChanging, now instead of assuming a defeat it will first check if all items have been closed, and if so play the appropriate closing dialogue.",
+				"Changed spawning cooldown time, it is now half of what it was. This makes guests despawn more quickly when the requirements to have them are not met.",
+				"Many guests now leave silently, to avoid having a constant stream of goodbye messages tying up the ghost.",
+				"Fixed an issue where the screen boundaries were improperly detected, causing some items to appear partially off the right side (or rarely the bottom) of the screen.",
+				"Fixed an issue where the balloon was always detected to be open when spawning decorations or guests.",
+				"Fixed an off by one issue where the number of other ghosts installed was counted improperly.",
+				"Fixed an issue where her face would reset early if a decoration or guest spawned immediately after a dialogue finished.",
+				"Under the hood cleanup, making it faster and easier to add new content in the future if we want to.",
+				"Misc other tweaks and fixes.",
+			]
+		},
+	]
+},
+
+]
+</script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_tags = null; var item_details = null</script>
+<script src="../scripts/ghost_details.js"></script>
+<script>var shell_tags = null; var shell_details = null</script>
+<script src="../scripts/shell_details.js"></script>
+<script src="../scripts/version_history.js"></script>
+<script src="../scripts/page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>

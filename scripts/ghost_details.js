@@ -1,8 +1,8 @@
 var item_tags = [
-	["2020","2021","2022","2023","2024","2025"],
+	["2020","2021","2022","2023","2024","2025","2026"],
 	["YAYA","Aosora","Satori","Misaka"],
 	["Collab","Translations available","Uses freeshell","Includes my writing","Includes my art","Includes my code"],
-	["For event","Ghost Jam","Ghost Masquerade","Ghost Yaminabe","Idea Adoption Jam"],
+	["For event","Ghost Jam","Ghost Masquerade","Ghost Yaminabe","Idea Adoption Jam", "Ghost Luckybag"],
 	["Idle chatter","Story","Utility","Object","Minigames"],
 	["WIP"],
 ]
@@ -358,6 +358,26 @@ var item_details = [
 		],
 		blurb: "A simple ice cube, which will tell you about various things that are cold. Over time it will melt, and you can either freeze it to keep it alive, or you can let it melt and collect the items inside, and even display them on your desktop. Can you resist the urge to get the items inside? Not many do!",
 		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter", "Object", "Minigames"] //It's a game, not a minigame, but...
+	},
+	{
+		name: "Left Unattended",
+		release: "2026-01-01",
+		latest: "2026-02-14",
+		version: "v1.1.0",
+		forevent: "嫌ゴ福袋2026",
+		collaborators:
+		[
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+		],
+		translations: null,
+		content_warnings: "This was made for an event where ghosts are created that are annoying, unpleasant, miserable, and so on. As such, this ghost is an intentionally unpleasant experience. Please use it with that expectation in mind. In particular, please mind that it may become visually overwhelming after a little while.",
+		download: "https://github.com/Zichqec/left_unattended/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/left_unattended"},
+		],
+		blurb: "Bring the party to your desktop with the absolute worst party girl who will not stop until she gets what she wants! Talk to guests, eat cake, splash your hands in the punch, and be the worst roommate in return!",
+		tags: ["2026", "Aosora", "Collab", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Luckybag", "Idle chatter"]
 	},
 	{
 		name: "Literally just a mess why did you download this",

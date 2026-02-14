@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p>The ghost <a href="../ghost/left_unattended.html">Left Unattended</a> is now available as a standalone ghost! It was previously released as part of the <a href="https://sites.google.com/view/ghost-luckybag2026">Ghost Luckybag 2026 bundle</a>.</p>
+
+<p>We were originally planning to just tidy it up a little bit for the separate release, but then we kept adding things and it turned into a major content update! Oopsie. So, now it is version 1.1.0.</p>
+
+<p>The release page says it, but it bears repeating: this is an intentionally annoying ghost. The event it was made for is one where ghosts are released that are unpleasant or miserable, or user unfriendly in some fashion. It makes a nice outlet for those kinds of things! So, this ghost was not made with user comfort in mind, and will do some things you might not expect, as well as generally be a nuisance.</p>
+
+<p>That being said, I've come to really like this ghost a lot after working on it. Despite that fact that she's objectively <em>such</em> a pest, writing this was really fun for me! The narrator in particular ended up going a direction I didn't expect, and it ended up being this odd angle that I wouldn't have had the chance to write otherwise.</p>
+
+<p>This ghost was also my first proper foray into working with classes in object oriented programming. I've known some of the theory behind it for years, but it's the sort of thing I knew I wouldn't really understand on a deep level until I had a project where I needed to play with it. And this was that project! Aosora recently had class functionality added, so I decided to give it a spin. It made this style of ghost much easier to create, I can certainly appreciate object oriented coding much better now than I did before! I think this experience will help me a lot with future coding endeavors.</p>
+
+<p>I'm surprised with how much content we managed to put into what was supposed to be a little joke ghost, and I'm really thrilled with how it came together. But I also think you probably shouldn't play with it. It depends what you like, really!</p>
+
+<p>Changelog:</p>
+<ul>
+	<li><p>Added 29 new random dialogues, bringing the total to 50.</p></li>
+	<li><p>Added 2 new items.</p></li>
+	<li><p>Added responses to being poked by Needle.</p></li>
+	<li><p>Added special responses when poked by Needle in the Birthday Needle shell.</p></li>
+	<li><p>Added many new item interaction dialogues.</p></li>
+	<li><p>Added new guest personalities.</p></li>
+	<li><p>Added a general response to OnCommunicate.</p></li>
+	<li><p>Added Spectre calibration and responses.</p></li>
+	<li><p>Added a response for LOBO's howling.</p></li>
+	<li><p>Added responses for OnPhantaEepy.</p></li>
+	<li><p>Added responses for OnCanToss.</p></li>
+	<li><p>Changed behavior of OnCloseAll and OnGhostChanging, now instead of assuming a defeat it will first check if all items have been closed, and if so play the appropriate closing dialogue.</p></li>
+	<li><p>Changed spawning cooldown time, it is now half of what it was. This makes guests despawn more quickly when the requirements to have them are not met.</p></li>
+	<li><p>Many guests now leave silently, to avoid having a constant stream of goodbye messages tying up the ghost.</p></li>
+	<li><p>Fixed an issue where the screen boundaries were improperly detected, causing some items to appear partially off the right side (or rarely the bottom) of the screen.</p></li>
+	<li><p>Fixed an issue where the balloon was always detected to be open when spawning decorations or guests.</p></li>
+	<li><p>Fixed an off by one issue where the number of other ghosts installed was counted improperly.</p></li>
+	<li><p>Fixed an issue where her face would reset early if a decoration or guest spawned immediately after a dialogue finished.</p></li>
+	<li><p>Under the hood cleanup, making it faster and easier to add new content in the future if we want to.</p></li>
+	<li><p>Misc other tweaks and fixes.</p></li>
+</ul>
+
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>

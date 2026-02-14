@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Left Unattended v1.1.0",
+		release: "2026-02-14",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-02-14_left_unattended_v1.1.0.html",
+		blurb: "The first separate release for <a href='../ghost/left_unattended.html'>Left Unattended</a>, and a major update adding a lot of new content.",
+		tags: ["2026","February","Ghost","Update"],
+	},
+	{
 		name: "Hydrate v2.0.5",
 		release: "2026-01-08",
 		dupeindex: "00",

@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Leaky Pipe v1.0.0</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-08-20_leaky_pipe_v1.0.0</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-08-20_leaky_pipe_v1.0.0</guid>
-		<pubDate>Wed, 20 Aug 2025 00:00:01 EST</pubDate>
-		<description>Release of a new &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; shell, &lt;a href='../shell/leaky_pipe.html'&gt;Leaky Pipe&lt;/a&gt;. A pipe that sticks to the top of the screen and drops down liquid occasionally!</description>
-	</item>
-	<item>
 		<title>Stratospheric Delivery v1.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-08-20_stratospheric_delivery_v1.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-20_stratospheric_delivery_v1.0.0</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-01-08_hydrate_v2.0.5</guid>
 		<pubDate>Thu, 08 Jan 2026 00:00:00 EST</pubDate>
 		<description>A patch for &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; which fixes a few bugs and updates the readme information.</description>
+	</item>
+	<item>
+		<title>Left Unattended v1.1.0</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-02-14_left_unattended_v1.1.0</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-02-14_left_unattended_v1.1.0</guid>
+		<pubDate>Sat, 14 Feb 2026 00:00:00 EST</pubDate>
+		<description>The first separate release for &lt;a href='../ghost/left_unattended.html'&gt;Left Unattended&lt;/a&gt;, and a major update adding a lot of new content.</description>
 	</item>
 </channel>
 </rss>
