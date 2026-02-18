@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Writing word groups guide",
+		release: "2026-02-18",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-02-18_writing_word_groups_guide.html",
+		blurb: "The guide <a href='../guide/writing_word_groups.html'>Writing word groups</a> has been published. It is a guide about effective strategies for writing word groups, as well as various technical tips and tricks.",
+		tags: ["2026","February","Guide","New release"],
+	},
+	{
 		name: "Left Unattended v1.1.0",
 		release: "2026-02-14",
 		dupeindex: "00",

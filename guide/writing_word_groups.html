@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<article>
+
+
+<div id="item_info"></div>
+</article>
+<article>
+<h2>Intro</h2>
+<p>Word groups are one of my favorite parts of the writing process when making a ghost, and I've learned a lot over the last several years about how to write them in a fun and engaging way. I've also come up with several tricks that I think are interesting, and which you may not have even noticed if I've done them well!</p>
+
+<p>This guide will be a deep dive on how and why I write word groups the way I do. I hope you find something interesting in here to play with!</p>
+
+<p>As a note, this is a concept that applies to many SHIORI, and examples will be expressed with multiple SHIORI throughout.</p>
+
+<p>Additionally, to keep things simple, I have stripped out everything from the examples that is not necessary for understanding the concepts being discussed. For example, most SakuraScript tags have been removed, many example word groups have been shortened, and some things have been rearranged or adjusted from how they appear in the ghosts they originate from. Many examples also show a RandomTalk pool with only a single dialogue, which is not the case in the actual ghosts, but it is presented this way to make the structure simple to understand.</p>
+
+<ol>
+	<li><a href="#what_are_word_groups">What are word groups?</a>
+		<ul>
+			<li><a href="#the_name_envelopes">The name "envelopes"</a></li>
+			<li><a href="#common_misconceptions">Common misconceptions</a>
+			<ul>
+				<li><a href="#the_idea_that_word_groups_must_be_in_a_certain_file">The idea that word groups must be in a certain file</a></li>
+				<li><a href="#the_idea_that_word_groups_are_different_from_other_functions">The idea that word groups are different from other functions</a></li>
+			</ul>
+		</li>
+		</ul>
+	</li>
+	<li><a href="#writing_word_groups_backwards">Writing word groups backwards</a>
+		<ul>
+			<li><a href="#reusing_word_groups_across_ghosts">Reusing word groups across ghosts</a></li>
+		</ul>
+	</li>
+	<li><a href="#writing_word_groups_forwards">Writing word groups forwards</a>
+		<ul>
+			<li><a href="#forward_word_group_examples">Forward word group examples</a></li>
+			<li><a href="#forward_writing_process">Forward writing process</a></li>
+		</ul>
+	</li>
+	<li><a href="#tips_and_tricks">Tips and tricks</a>
+		<ul>
+			<li><a href="#making_the_grammar_work">Making the grammar work</a>
+				<ul>
+					<li><a href="#word_group_reuse">Word group reuse</a></li>
+					<li><a href="#handling_singular_vs_plural_entries_and_a_an">Handling singular vs plural entries and a/an</a></li>
+				</ul>
+			</li>
+		<li><a href="#using_the_same_output_in_more_than_one_place">Using the same output in more than one place</a></li>
+		<li><a href="#word_groups_with_multiple_parts">Word groups with multiple parts (aka "double envelopes")</a></li>
+		<li><a href="#capitalization">Capitalization</a></li>
+		<li><a href="#guaranteeing_two_different_outputs_from_one_word_group">Guaranteeing two different outputs from one word group</a></li>
+		<li><a href="#adding_logic_to_word_groups">Adding logic to word groups</a></li>
+		<li><a href="#picking_a_specific_entry_for_an_entire_session">Picking a specific entry for an entire session</a></li>
+		<li><a href="#word_groups_in_word_groups">Word groups in word groups</a></li>
+		<li><a href="#multiple_word_groups_in_the_same_dialogue">Multiple word groups in the same dialogue</a></li>
+		<li><a href="#c_char_1">\c[char,1]</a></li>
+		</ul>
+	</li>
+	<li><a href="#dialogue_density">Dialogue density</a></li>
+	<li><a href="#shiori_specific_behavior">SHIORI-specific behavior</a></li>
+	<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+
+<h2 id="what_are_word_groups">What are word groups?</h2>
+<p>Before we start, let's lay out our terms and make sure we're all on the same page. A "word group" is a list of words that may be inserted in a section of a ghost's dialogue. For example, consider the following dialogue.</p>
+
+<code>
+<pre>
+
+I'm thinking of the color red.
+
+</pre>
+</code>
+
+<p>If we wanted to make this dialogue a little more varied, we could make it so that each time this dialogue is played, a random color is chosen.</p>
+
+<code>
+<pre>
+
+I'm thinking of the color [red].
+
+[Words it can choose:]
+red
+green
+blue
+
+</pre>
+</code>
+
+<p>Hopefully the basic concept here is easy to grasp. When this dialogue is played, it will randomly select a color from the list to place where it says <code>[red]</code>, so the output might be "I'm thinking of the color green". or "I'm thinking of the color blue.", etc.</p>
+
+<p>This concept is generally SHIORI-agnostic and will work no matter what SHIORI you use. There might be some outliers, but this is a commonly desired function in ghosts, so every SHIORI I have used has had this in some form. For example, here is the above dialogue expressed in YAYA.</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	"I'm thinking of the color %(red)."
+}
+
+red
+{
+	"red"
+	"green"
+	"blue"
+}
+
+</pre>
+</code>
+
+<p>Here it is in Aosora:</p>
+
+<code>
+<pre>
+
+talk RandomTalk
+{
+	I'm thinking of the color {red}.
+}
+
+function red
+{
+	return Random.Select([
+		"red",
+		"green",
+		"blue",
+	]);
+}
+
+</pre>
+</code>
+
+<p>Here it is in Kawari: (Technically, I believe they're called "entries" here...)</p>
+
+<code>
+<pre>
+
+sentence : "I'm thinking of the color "${red}"."
+
+red : red, green, blue
+
+</pre>
+</code>
+
+<p>Here it is in Satori:</p>
+
+<code>
+<pre>
+
+＊
+：I'm thinking of the color （red）.
+
+＠red
+red
+green
+blue
+
+</pre>
+</code>
+
+<p>Here it is in Misaka:</p>
+
+<code>
+<pre>
+
+$RandomTalk;
+I'm thinking of the color {$red}.
+
+$red;
+red
+green
+blue
+
+</pre>
+</code>
+
+<p>And so on and so forth.</p>
+
+
+<h3 id="the_name_envelopes">The name "envelopes"</h3>
+<p>A brief aside here for folks that are familiar with this concept by the name "envelopes". Envelopes is a term that as far as I know was coined by the English community, but it has a major problem. The term "envelopes" is actually applied to two concepts that are <em>completely distinct</em>. Consider the following examples in YAYA.</p>
+
+<code>
+<pre>
+
+red
+{
+	"red"
+	"green"
+	"blue"
+}
+
+</pre>
+</code>
+
+<p>This, as before, is what some people would call an envelope. However, some would also say the below dialogue contains an envelope!</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	"Hi, %(username)!"
+}
+
+</pre>
+</code>
+
+<p>The <code>%()</code> syntax also became known as "envelopes", even though in this case it is being used to display the output of a <em>variable</em>, and <em>not</em> to randomly select a word. It can cause confusion!</p>
+
+<p>I am of the opinion that it is better not to confuse the two concepts. I spent a considerable amount of time detangling various coding concepts in YAYA for the English community when I started developing ghosts, and I think it is much better to learn with accurate terms than to have to unlink concepts in your mind later.</p>
+
+<p>Therefore, I refer to lists of randomly selected words as "word groups", and I refer to the <code>%()</code> syntax as either "embedded elements" or "string interpolation". (AYAYA uses the term 埋め込み要素 for it, which translates as "embedded elements". "String interpolation" is the term in English for this concept in programming more generally.)</p>
+
+<p>I chose the term "word groups" because I have seen the term 単語群 used in some Japanese ghosts. It literally means "word group", and that makes sense in English too, so I figured it would be simple to adopt and also help with understanding documents through machine translation, etc.</p>
+
+
+<h3 id="common_misconceptions">Common misconceptions</h3>
+<p>A few other common misconceptions to clear up quickly before we get into it.</p>
+
+<h4 id="the_idea_that_word_groups_must_be_in_a_certain_file">The idea that word groups must be in a certain file</h4>
+<p>There is no need to place word groups in a specific file for them to work. This is a misconception that I've run into several times, because new developers sometimes assume that the different files that are a part of the template they're working with have special properties. They don't! You can put anything in any dictionary file.</p>
+
+<p>Of course, it needs to be a file you've told the SHIORI to read; you can't put YAYA code in the .txt settings files. But if it's a file that YAYA code goes in, then you can put <em>any</em> YAYA code there. You can mix your word groups in with your menu code or your mouse code if you want.<p>
+
+<p>Splitting up different types of functions into different files is done purely for the purposes of organization. I do generally recommend that you keep word groups off in their own file, but that's because it makes them <em>easy to find</em>, not for any functional reason.</p>
+
+
+<h4 id="the_idea_that_word_groups_are_different_from_other_functions">The idea that word groups are different from other functions</h4>
+<p>Word groups are usually not a special type of function. Most SHIORI I've used do not have special settings for them, they are simply functions which return a random string from a list of options.</p>
+
+<p>There are a few exceptions: If you are working in Satori, then yes, word groups have their own special syntax you have to use. This is because Satori doesn't enclose strings, and linebreaks in a dialogue are used as linebreaks in the text rather than being a delimiter. Therefore, without special syntax, you couldn't write word groups.</p>
+
+<p>I'm not completely certain about how Kawari handles word groups (yet), but my understanding is that random dialogue and word groups are both handled in the same way, so writing word groups is not different from writing normal dialogue (although it is probably different from writing custom functions).</p>
+
+<p>The reason I list this as a misconception is that it's usually something I see people say about YAYA. In YAYA, word groups are absolutely just normal functions which make use of YAYA's random return mechanism. Let's look at an example in YAYA again.</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	"Random dialogue"
+	"Hi, %(username)!"
+	"I'm thinking of the color %(red)."
+}
+
+red
+{
+	"red"
+	"green"
+	"blue"
+}
+
+</pre>
+</code>
+
+<p>Notice anything? The word group "red" and the RandomTalk function are doing the same thing! The only difference is that RandomTalk contains sentences, and the "red" group contains single words. However, there's nothing stopping you from expanding the single words in the "red" group into longer phrases, or even adding special logic to it! We'll explore this more later, but for now here's a quick example.</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	"Random dialogue"
+	"Hi, %(username)!"
+	"I'm thinking of the color %(red)."
+}
+
+red
+{
+	"red... specifically a deep, saturated red"
+	"green, like a forest green"
+	"light blue"
+}
+
+</pre>
+</code>
+
+<p>Theoretically, you could also say that RandomTalk in YAYA is just one big word group. But I think it's more correct and helpful to say they are both just functions.</p>
+
+<p>Okay! With all that preamble out of the way, let's move on!</p>
+
+
+<h2 id="writing_word_groups_backwards">Writing word groups backwards</h2>
+<p>When I first started writing ghosts (in 2020, but even in my early forays into ghosts in 2016), I approached the word.dic file in the template I was using as something to fill in and then make use of later. It felt like another thing to tick off the list.</p>
+
+<p>For example, one of my first ghosts is of a character that likes cooking, and so I thought it would make sense to give him a couple of word groups based around that. I thought I could write one with all of the ingredients I could think of, and one with all the baked goods I could think of, and one with all the fruits and vegetables I could think of, and then I could later use those to spruce up dialogues and make it feel more varied. And it feels like that makes sense, right?</p>
+
+<p>Well... honestly, in hindsight, I think that's not a good way to write them at all! Let me explain why and give some examples. (For context, I'm writing this in 2026, and have now written for dozens of ghosts!)</p>
+
+<code>
+<pre>
+
+ingredients
+{
+	"cilantro"
+	"basil"
+	"lemon pepper"
+	"cloves"
+	"chives"
+	"butter"
+	"salt"
+	"paprika"
+}
+
+</pre>
+</code>
+
+<p>Here's a (shortened) version of one of these word groups. I wrote this list on its own in the absctract, and then I later came up with dialogues like these to add it to.</p>
+
+<code>
+<pre>
+
+"* (The scent of %(ingredients) drifts through your desktop.)  Oh, hey there %(username). I was just making lunch, have you had lunch yet?"
+
+"Uh... %(username)? I hope you don't mind, but I was wandering around your %(usersfolder) and found some %(ingredients)... You mind if I keep this..?"
+
+</pre>
+</code>
+
+<p>(%(usersfolder) is another word group, most of the entries in it came standard with the template this ghost was built on.)</p>
+
+<p>These... are not good, honestly they're hard for me to look at. But I'm having trouble finding other examples that I can really share, because it seems like I couldn't find many places to slot these word groups. Most of the other places I put it are places where the character is not talking to the user directly, such as when he's mumbling in his sleep, or muttering to himself under his breath. I apparently found it very difficult to use!</p>
+
+<p>That's not surprising, because, in my opinion, this method is <em>backwards</em>. Writing word groups before you have dialogues to slot them into makes it much more of a chore to find ways to use them.</p>
+
+<p>One reason for this is you might discover, like the word group above, that you just don't have ideas for dialogues where the character would say this <em>to the user</em>. You might only be able to use it when they are not directly speaking to the user, which can then be awkward.</p>
+
+<p>Another very important reason is that <em>reusing word groups is difficult because grammar can be tricky</em>. If you write a word group first with no context to immediately slot it into, you can create a grammar nightmare for yourself.</p>
+
+<p>Something else I didn't expect when I started out is that rather than spicing up the ghost's dialogue and making it feel fresh and interesting, a word group written this way actually makes it feel rather dull to me. Others might have a different opinion to me on this one, that's fair, but hear me out.</p>
+
+<p>I'm very particular about randomness in ghosts, I always have been. I don't like things that are random for the sake of being random, I want the randomness to have <em>meaning</em> and <em>intent</em>. The word groups I showed at the start, where the character just states what color they're thinking about at that moment? Those are <em>so</em> boring to me because they don't <em>mean</em> anything. What's the point of having a word group where the words it can pick don't say anything about the character? (Of course, I wrote it that way here because it was a super basic example for demonstration.)</p>
+
+<p>This is why I'm not super fond of randomness where the character's wording is adjusted only slightly (i.e., a random choice between saying "That's pretty neat, I like that" and "That's pretty neat, I kinda like that"). If the variation doesn't add anything, why not go for the one that suits the character the best? If you're going to vary it on that sort of level, are you doing so to try and <em>communicate</em> something to the user, or are you just adding fluff to try to make the ghost appear larger than it really is?</p>
+
+<p>With my ingredients word group above, whenever I saw it in use in my ghost, I always felt like it didn't mean anything. It didn't matter whether he picked cilantro or basil, it was just a random word. My brain learned that I could ignore it. It didn't change anything. Didn't add anything. I knew it was just a random word I could skim over, no deeper thought required. Everywhere it appeared across the ghost, it was the same, uninteresting variation that added no meaning. Rather than giving more life to the ghost, it made all the dialogues that contained it feel samey to me.</p>
+
+
+<h3 id="reusing_word_groups_across_ghosts">Reusing word groups across ghosts</h3>
+<p>Continuing that thought, a brief aside about the above. What this sort of approach <em>can</em> lead to unfortunately is an approach where the feeling is "but someone wrote a word group for X already, what could I possibly add?" For example, say someone wrote a big word group of colors for their ghost, covering a ton of different basic color names. Some developers may think "well, if I want a word group of colors, I guess I should use that one. Any word group I make will just be a less full version of that one anyway, I can't think of anything else to add to it."</p>
+
+<p>This is <em>exactly the wrong thing to think</em>. The way in which you build your word groups says <em>so</em> much about the character you're writing! If a word group is so generic that you can reuse it in another ghost, then what is it actually adding besides meaningless filler?</p>
+
+<p>A word group of colors can reflect what colors that particular character favors, or the way that they think about and categorize colors. A word group of drink choices can reveal that they're into warm cozy drinks or that they like to drink fun alcoholic cocktails. By contrast, a word group that is simply a list of every single drink you can think of doesn't have anything to say about the character, and only shows off that you could think of (or looked up) a lot of different drinks.</p>
+
+<p>Here's the real kicker too: if you write word groups in a fun and interesting way, you can end up with <em>multiple word groups on the same topic</em>. For example, you might have two word groups for office supplies. One for small consumable office items that the character often loses and comments about searching for or needing more of, and the other for large items (such as printers or fax machines) which aren't likely to be lost. These two word groups could be used in very different dialogues, and probably wouldn't make sense in the same dialogues. <em>Word groups are not a simple list of every word related to a topic that can be reused in any context</em>. The context <em>matters</em> and is how you make your word groups <em>say</em> something and add meaningfully to your ghost.</p>
+
+<p>This is why <a href="../template/simplicity_template.html">Simplicity Template</a> does not come with any standard word groups. It provides a sample word group that is ridiculous and too specific to easily reuse, because you should <em>always</em> write custom word groups. Having the same word groups as a bunch of other ghosts made on the same template only serves to tell people that you used that template! You really shoot yourself in the foot by inserting the exact same text that dozens of other people have used into your creation, because it makes it feel the same as what everyone else makes rather than being unique. Would you write a book that copied specific and memorable phrasing from another book?</p>
+
+
+<h2 id="writing_word_groups_forwards">Writing word groups forwards</h2>
+<p>Alright, so those are my thoughts on how to <em>not</em> write word groups. How can I confidently say all that? What's my approach now that I think is better? Let's have a look with some real examples from ghosts I've released.</p>
+
+<p>Many of my ghosts are collaborative works, so each ghost I link to will have co-writers credited. Also, many thanks to <a href="https://gallathegalla.github.io/gtg-ghosts/">Galla</a>, who is an excellent writer and who I have learned a lot from just by observing their work.</p>
+
+<h3 id="forward_word_group_examples">Forward word group examples</h3>
+
+<p>The following example is from <a href="../ghost/doodle_daydreams.html">Doodle Daydreams</a>, cowritten with Galla and <a href="https://ako-kipali.tumblr.com/ghost-stuff">Kipali</a>. Specifically, this is in the "demure" mode, where the context is a ladylike character in a medieval setting.</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	"I think time spent %(inthewoods) is never wasted."
+}
+
+inthewoods
+{
+	"in the woods"
+	"in the castle courtyard"
+	"in the fields outside the castle walls"
+	"in the dungeons looking at the prisoners"
+	"in the ball room"
+	"on the beach"
+	"on the balcony"
+	"in your rival's bedroom closet to spy on them"
+	"on the roof at sunset as you wait for your suitor's return"
+}
+
+</pre>
+</code>
+
+<p>It's quite a different feeling, isn't it! The base dialogue is fairly mundane on its own, but with the word group there's some variety to it, and a couple of those entries make it <em>very</em> different indeed! (I should probably say, Galla and I tend to write very silly ghosts, so we often use word groups for comedy like this. That's of course not the only way they can be used, it's just what we most commonly write.)</p>
+
+<p>Here's another example from the same ghost, but in the "adventurer" mode, where the context is that the character is a knight in a high fantasy setting.</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	"A good way to trick your enemies into letting their guard down is to %(pretendyoureafraid)!"
+}
+
+pretendyoureafraid
+{
+	"pretend you're afraid"
+	"act like you're running away, then turn around when they've almost caught you"
+	"do a silly dance"
+	"throw your weapon on the ground.\n\n Of course, once they take the bait and approach, then you must brandish the other weapon you have hidden under your cloak and strike"
+	"offer them a bribe"
+	"act like they're an old friend you haven't seen in a while"
+	"act like you're not fully awake"
+	"let out a shrill scream"
+	"swear allegiance to their side—with your fingers crossed behind your back, of course"
+	"invite them to tea"
+}
+
+</pre>
+</code>
+
+<p>This one really shows off how you can fit whole phrases and even additional sentences into a word group. This also definitely could not be reused anywhere else. Some word groups are reusable in other parts of the ghost if you're careful, but ones like this are so context-specific they definitely can only be used in this one instance.</p>
+
+<p>Here's a simpler one from the ghost <a href="../ghost/ye_olde_cursed_tower.html">Ye Olde Cursed Tower</a>, cowritten with Galla. The context here is that the two characters are cursed and trapped inside objects, and they aren't entirely sure of what the wizard who trapped them is doing at any given time.</p>
+
+<code>
+<pre>
+
+talk RandomTalk
+{
+	1:I hear something nearby. Do you hear that?
+	0:It sounds like some kind of muttering or chanting.
+	1:Could it be {ashowontv}...?
+	0:It's too indistinct to tell.
+	1:Yeah... Too bad!
+}
+
+function ashowontv
+{
+	return Random.Select([
+		"a show on TV",
+		"a new friend",
+		"the wizard up to something",
+		"the radio",
+		"the wizard reading aloud",
+		"some kind of spell being cast",
+	]);
+}
+
+</pre>
+</code>
+
+<p>This is an example of one not used for comedy like the previous ones were. In this case, it's a more mundane list, but it helps to build up the world a little by giving the user more information about the type of sounds the characters might be hearing. It's nice variety, and it's also variety that serves a purpose.</p>
+
+<p>Here's a final example from the ghost <a href="../ghost/under_the_stars.html">Under the Stars</a>, cowritten with Galla. The context here is that the character is a deep sea merfolk who has come up from the deep and is seeing the stars for the first time, and is wondering what they are.</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	"I wonder if they're %(eyes)...?"
+}
+
+eyes
+{
+	"eyes"
+	"glowing shrimp"
+	"sparkly stones"
+	"lumejellies"
+	"glowing bubbles"
+	"other seafolk"
+}
+
+</pre>
+</code>
+
+<p>Again, this one isn't really used for comedy, but instead to illustrate what sorts of things the character is thinking about. Additionally, we hear about lumejellies, which are something we're left to imagine and fill in the context for!</p>
+
+<p>So, how were all these word groups written? The key is that <em>the dialogues were written first,</em> and then the word groups were written <em>after</em> to fill them out and add variety.</p>
+
+<p>Let's see that in action!</p>
+
+
+<h3 id="forward_writing_process">Forward writing process</h3>
+<p>When writing dialogues, I start by first writing them with no variation. This example comes from the ghost <a href="../ghost/left_unattended.html">Left Unattended</a>, cowritten with Galla. For context, the ghost involves the main character hosting a party, but also spending her time on her phone buying new party supplies and having them delivered.</p>
+
+<code>
+<pre>
+
+talk RandomTalk
+{
+	Eyes on the prize, don't get distracted by... Ooh, okay, maybe get distracted a little. These tiny sugar cookies with chocolate faces are cute~
+}
+
+</pre>
+</code>
+
+<p>Upon writing something like this, I'll often notice parts where I could add in variety. In this case, I could replace "tiny sugar cookies with chocolate faces" with other cute party items. So, I start a new word group, using that original snip of text as the first entry.</p>
+
+<code>
+<pre>
+
+talk RandomTalk
+{
+	Eyes on the prize, don't get distracted by... Ooh, okay, maybe get distracted a little. These {tinysugarcookies} are cute~
+}
+
+function tinysugarcookies
+{
+	return Random.Select([
+		"tiny sugar cookies with chocolate faces",
+	]);
+}
+
+</pre>
+</code>
+
+<p>Now where to go with it? Well, this is the part where I start playing word association with myself. For me it's a matter of bouncing words around in my head, thinking about things related to the theme of the ghost which will slot into that part of the sentence grammatically. If it's a silly ghost I'll try to think of at least a few really silly things to slip in there, and if it's a more serious ghost I might think about if there's anything that would be particularly sad, or might add interesting context.</p>
+
+<p>This is extra fun if you have a friend or two to bounce off of! Galla and I often will write a word group with a few starting entries on our own, then share it with each other and take turns throwing out ideas to expand it. We build off each other's energy, and it makes writing these usually easy and fun. (Some word groups are more challenging than others, though!)</p>
+
+<p>Here's how the above word group ended up after a little effort.</p>
+
+<code>
+<pre>
+
+talk RandomTalk
+{
+	Eyes on the prize, don't get distracted by... Ooh, okay, maybe get distracted a little. These {tinysugarcookies} are cute~
+}
+
+function tinysugarcookies
+{
+	return Random.Select([
+		"tiny sugar cookies with chocolate faces",
+		"tiny fruit sticks",
+		"tiny fruit-shaped candies",
+		"cat-shaped cookies",
+		"teeny little party hats",
+		"sparkly balloon stickers",
+		"cake-shaped birthday candles",
+		"fruit-shaped balloons",
+		"little tarts with animal faces on them",
+		"teeny tiny cinnamon rolls",
+	]);
+}
+
+</pre>
+</code>
+
+<p>Nothing super special here (although comments about cake in this ghost are always placed intentionally), but again, it communicates what kind of things she thinks are cute and are appropriate for her party. This is specific enough that it's conveying information.</p>
+
+<p>I usually aim for about 10 entries in a word group like this if I can. That feels like a good basic amount to me. If I'm having fun writing for it then I might add more, but a solid 10 feels like good variety and usually doesn't take too long. But of course, you should adjust based on what you're comfortable writing and the specific context of your ghost.</p>
+
+<p>That's the basic gist of how it works! I hope you can see the difference between these lists and the very generic ones I showed before, and understand why I think these more specific lists add flavor and meaning.</p>
+
+<p>Of course, if you genuinely like the way that other types of word groups feel, then more power to you! Do what makes you happy. I just want you to <em>decide</em> how you want to write them, rather than writing something you end up unhappy with because you were following what felt like the expected thing to do, or that it was something to check off the checklist.</p>
+
+
+<h2 id="tips_and_tricks">Tips and tricks</h2>
+<p>Now on to some really fun stuff! Some of these are common problems I've run into and found ways to fix, and others are just things I've done that I think are clever and might be of use to other folks.</p>
+
+<p>Some of the tricks here are more SHIORI specific, or would need to be implemented differently in other SHIORI. I'll cover the ones I know, but if you're using something other than what I use, you might have to do some extra work to achieve the same result (if it's possible at all).</p>
+
+
+<h3 id="making_the_grammar_work">Making the grammar work</h3>
+<p>Dealing with grammar is one of the most annoying things when writing word groups, at least in English. The complexity of this will vary based on what language you're writing in, and as I write in English, this section will be focused on English-specific tips. Some of it may be applicable to other languages or get you started on coming up with solutions for other languages you write in, but I really couldn't say for sure.</p>
+
+<h4 id="word_group_reuse">Word group reuse</h4>
+<p>I mentioned earlier that reusing word groups is generally difficult and sometimes ill-advised, but I do think it's fine to reuse the same word group within the same ghost. For example, consider the following dialogues that share a word group.</p>
+
+<p>This dialogue is from the ghost Left Unattended. For context, the RandomTalk blocks are the main character (the party host) speaking, and the one labeled <code>Guest@Merchant@Talk</code> is a specific guest personality. That guest personality is a merchant who has snuck into the party and is attempting to sell party supplies on the sly.</p>
+
+<code>
+<pre>
+
+talk RandomTalk
+{
+	Unbelievable. Outrageous shipping costs on these {plushsushi}.
+	
+	Then again, they \f[italic,1]are\f[italic,default] really cute...
+	
+	Maybe just this once~
+}
+
+talk RandomTalk
+{
+	I can't believe that every place I look for {plushsushi} is sold out. What's with the huge rush on them, it's not like they're an endangered species.
+}
+
+talk Guest@Merchant@Talk
+{
+	%{ local pick = plushsushi(); }
+	Wow, this party is awesome! Where are the {pick}? 
+	
+	... Oh? There aren't any? Well, that won't do! Every party needs {pick}! I actually have some out in my car, I could part with them for a reasonable price if the need is urgent, which it seems like it is...
+}
+
+function plushsushi
+{
+	return Random.Select([
+		"plush sushi",
+		"miniature party hats",
+		"glowstick necklaces",
+		"sticker packs",
+		"bubble bottles",
+		"pinwheels",
+		"glitter pens",
+		"pencil toppers",
+		"themed erasers",
+		"miniature jars",
+	]);
+}
+
+</pre>
+</code>
+
+<p>I really like this particular reuse of the plushsushi word group because if you pay attention, this sets up a funny thought: <em>the reason the party host is having trouble finding the items in the plushsushi group is because these shifty merchants have bought them all and are selling them at an increased price.</em> They're scalpers! It's not stated directly, but folks who look close and read between the lines a bit can draw that conclusion and hopefully find it amusing.</p>
+
+<p>There are two pitfalls to be aware of:</p>
+
+<ol>
+	<li><p>Writing word groups in a more generic way to make them suitable for more dialogues.</p></li>
+	<li><p>Not noticing that when you reuse the word group, the new dialogue it appears in doesn't have <em>quite</em> the same grammatical requirements as what you originally wrote it for, so one or two entries end up reading strangely later.</p></li>
+</ol>
+
+<p>Obviously, making your word groups more generic so that you can slot them into more places is a bad tradeoff. You lose the good parts while not gaining much. It would be better to write a second interesting word group with the same theme than to genericize a word group and spread it twice as far.</p>
+
+<p>As for the grammatical requirements, that's much more tricky! Always be aware of the grammar when you're reusing a word group, and if you can, try to run through every possible combination in your head to see if any come up weird. Be on the lookout for any entries that are different from the others, such as singular entries in a list that is mostly plurals, or the one entry in a group that starts with "an" instead of "a".</p>
+
+<p>It's probably a good idea not to try to reuse word groups that are very large, because then it is harder to ensure the grammar requirements are met for every entry.</p>
+
+<p>Now, I did say before that when I reused a word group across a whole ghost, I felt that it degraded the dialogues it appeared in. So how is it that I'm alright with it in this case? Simply put, I think in a case like this it's hard to reuse it across the <em>entire</em> ghost. I can usually find maybe 2-3 other places in the ghost that I can reuse a word group like this before I find that I will have to write dialogues with extremely similar phrasing to make the word group work for them. So, because reusing the same phrasing across dialogues feels bad, I naturally stop using the word group unless I come up with a very clever way to insert it. It has a sort of natural cutoff point that way.</p>
+
+<p>I think it also helps that when the word groups are more specific, reuses of them can be a way of actually communicating something, like in the example above! Thoughtful and careful reuse that doesn't span a large swathe of the ghost is a good thing, it's just that that isn't what was happening in my first few ghosts.</p>
+
+
+<h4 id="handling_singular_vs_plural_entries_and_a_an">Handling singular vs plural entries and a/an</h4>
+<p>In English there is no way to automate changing words to their plural form that is completely effective and suits all words. We make plurals in multiple different ways, and if you want to have access to both the singular and plural form, you'll have to write both by hand, or write special logic that handles a predefined list that you pay very close attention to.</p>
+
+<p>That being said, there are some tricks to avoid such issues! Here's another example from Left Unattended.</p>
+
+<code>
+<pre>
+
+talk RandomTalk
+{
+	... Score, that little {discoball} is mine, hehe~
+}
+
+function discoball
+{
+	return Random.Select([
+		"disco ball",
+		"candy bowl",
+		"shrimp decoration",
+		"hotdog plush",
+		"airhorn",
+		"throw rug",
+		"fog machine",
+		"box of ribbons",
+		"tray of cupcakes",
+		"set of party poppers",
+		"jar of sprinkles",
+	]);
+}
+
+</pre>
+</code>
+
+<p>For clarity, I've rearranged this list from the order it's found in the ghost. Do you see the trick in here?</p>
+
+<p>The dialogue expects a singular, it uses both "that" and "is". For example, an output might look like this: <code>"... Score, that little candy bowl is mine, hehe~"</code></p>
+
+<p>That works fine, but what if we wanted to add "cupcakes" to the list? If we put that into the slot... <code>"... Score, that little cupcakes is mine, hehe~"</code></p>
+
+<p>That doesn't work at all. Sure, I could change it to just "cupcake", and then it would work grammatically... but that would be weird to say in this context. Remember, the setting here a party. It would be odd for her to order one singular cupcake! So, what to do?</p>
+
+<p>One possible solution is unitizing. Instead of talking about "cupcakes", which is plural, we can talk about a "tray of cupcakes". Yes, there are multiple cupcakes on that tray... but in English, because we've used "tray of", we're considering the whole tray as a singular item no matter what is on it. Therefore, it gets singular grammar! <code>"... Score, that little tray of cupcakes is mine, hehe~"</code></p>
+
+<p>Now that I point it out, you might see it a lot in my ghosts. You can see it several times in the above word group; I clumped them all together to make it more obvious. Rather than talking about "ribbons" it is a "<em>box of</em> ribbons". Rather than talking about "party poppers" it is a "<em>set of</em> party poppers". It can still sound awkward and unnatural in some contexts, so don't just use it everywhere, but with careful application it can help expand your options a lot.</p>
+
+<p>An alternate solution I could have used is to include part of the phrase in the word group itself. Lets try that with the same word group.</p>
+
+<code>
+<pre>
+
+talk RandomTalk
+{
+	... Score, {thatlittlediscoballis} mine, hehe~
+}
+
+function thatlittlediscoballis
+{
+	return Random.Select([
+		"that little disco ball is",
+		"that little candy bowl is",
+		"that little shrimp decoration is",
+		"that little hotdog plush is",
+		"that little airhorn is",
+		"that little throw rug is",
+		"that little fog machine is",
+		"those little ribbons are",
+		"those little cupcakes are",
+		"those little party poppers are",
+		"those little sprinkles are",
+	]);
+}
+
+</pre>
+</code>
+
+<p>(I think this version is slightly awkward because the word group was written with the other solution in mind, but you can imagine that if you were starting fresh you could write it with this style in mind and then it would sound more natural.)</p>
+
+<p>This works by including all the words that need to change when the chosen item is plural. How well this works depends on the dialogue. If the words that needed to change were much further away in the phrase then I don't think this would be a good solution, since you would have to have a lot of duplicate text, which becomes hard to edit. Still, for little phrases like this, it can be effective.</p>
+
+<p>This solution is also helpful for dialogues where you need "a" or "an" before a word. Because which you need changes based on the <em>sound</em> of the next word, there isn't a good way to automate it with a function.</p>
+
+<p>I once tried to write a function that would automate whether "a" or "an" should be picked based on the letter of the next word, but the problem is that it doesn't deal well with initialisms or letters like U which sometimes sounds like Y... For example, I would end up with outputs like "an UFO" or "an uniform", but if I flipped the behavior to use "a" before "u" then I would get "a understanding" or "a unknown". There's also cases like H sometimes being silent, such as in "hour"; my function would output "a hour", which is definitely wrong. It's very frustrating! But there's not really a way to determine what <em>sound</em> any given letter is going to make, and the sound determines whether it gets "a" or "an".</p>
+
+<p>So, to deal with this, we can use the previous solution. The following is from the ghost <a href="../ghost/hoard_of_shinies.html">Hoard of Shinies</a>. The context for this ghost is that she is a mermaid and a friend of the user, and they're both hanging out in a cave full of treasures together.</p>
+
+<code>
+<pre>
+
+talk RandomTalk
+{
+	I saw {ashark} earlier while I was exploring around the kelp forest.
+	
+	I kept my distance though, I didn't really want to say hello.
+}
+
+function ashark
+{
+	return Random.Select([
+		"a shark",
+		"a school of fish",
+		"a lobster",
+		"a crab",
+		"a whale",
+		"another merfolk",
+		"a ray",
+		"a seahorse",
+		"a turtle",
+		"an octopus",
+		"a squid",
+		"a manatee",
+		"a seal",
+	]);
+}
+
+</pre>
+</code>
+
+<p>As you can see, lumping the "a" into the word group allowed me to add "an octopus" without any fuss, and in fact I was even able to slot in "another merfolk" and still have it work! It's very useful to include more than singular words in word groups.</p>
+
+<p>There is one more solution that I think is worth considering! It's the very dialogue that gave me the urge to write this guide, in fact. I was writing the following dialogue for Left Unattended. (This is the merchant guest again, for context.)</p>
+
+<code>
+<pre>
+
+talk Guest@Merchant@Talk
+{
+	Oh my, is this store brand punch? You know, I could hook you up with a supplier that will get you name brand punch at store brand prices!
+}
+
+</pre>
+</code>
+
+<p>I wrote this simple dialogue first, and then I decided it would be fun to slot in other types of products besides punch. So I made punch into a word group. (Don't mind that it's used twice in this text, I'll go over the specifics of that in the next section.)</p>
+
+<code>
+<pre>
+
+talk Guest@Merchant@Talk
+{
+	%{ local pick = punch(); }
+	Oh my, is this store brand {pick}? You know, I could hook you up with a supplier that will get you name brand {pick} at store brand prices!
+}
+
+function punch
+{
+	return Random.Select([
+		"punch",
+		"jello",
+		"pudding",
+		"cake",
+		"ice cream",
+		"bread",
+	]);
+}
+
+</pre>
+</code>
+
+<p>I liked this, but then I wanted to add "cupcakes" to the list. The problem is, "is this store brand cupcakes" is incorrect grammatically. I couldn't bring the extra words into the word group since <code>{punch}</code> is used twice in this dialogue and the extra words wouldn't make sense later in the text. I couldn't even change it to something like "box of cupcakes", because "is this store brand box of cupcakes" isn't any better (it would need to be "is this <em>a</em> store brand box of cupcakes"). This was a tricky one!</p>
+
+<p>I had to take a minute to think about this one and decide what to do with it, and eventually I landed on the perfect solution for this situation. I adjusted the wording to <em>completely eliminate</em> the words that would need to change grammatically.</p>
+
+<code>
+<pre>
+
+talk Guest@Merchant@Talk
+{
+	%{ local pick = punch(); }
+	Oh my, am I seeing store brand {pick}? You know, I could hook you up with a supplier that will get you name brand {pick} at store brand prices!
+}
+
+function punch
+{
+	return Random.Select([
+		"punch",
+		"jello",
+		"pudding",
+		"cake",
+		"ice cream",
+		"bread",
+		"cupcakes",
+		"napkins",
+		"cups",
+	]);
+}
+
+</pre>
+</code>
+
+<p>Changing "is this" to "am I seeing" makes the number of items in the chosen entry completely irrelevant, and it also delightfully cranks up this character's obnoxiousness level! It makes the sentence a little more pompous instead of plain, and I think that works really well for this specific character, so it was a win-win and I got to add in a few plural entries.</p>
+
+
+<h3 id="using_the_same_output_in_more_than_one_place">Using the same output in more than one place</h3>
+<p>Continuing on from the above, I mentioned that the word group in that dialogue was used in the same place twice. Here's how that actually works!</p>
+
+<p>You see, if you write a dialogue like this...</p>
+
+<code>
+<pre>
+
+talk Guest@Merchant@Talk
+{
+	Oh my, am I seeing store brand {punch}? You know, I could hook you up with a supplier that will get you name brand {punch} at store brand prices!
+}
+
+</pre>
+</code>
+
+<p>The <code>{punch}</code> word group will output a different entry each time it is called in the dialogue, which will be nonsensical. You would end up with a dialogue like <code>"Oh my, am I seeing store brand punch? You know, I could hook you up with a supplier that will get you name brand napkins at store brand prices."</code> It isn't the intended output at all.</p>
+
+<p>There are multiple approaches to solving this, and I won't attempt to cover all of them because it would take a lot of time. The simple solution I've found that works in YAYA and Aosora is to simply create a local variable and save one output from the word group to that. Then you can display the contents of that local variable as many times as you want in the dialogue!</p>
+
+<code>
+<pre>
+
+talk Guest@Merchant@Talk
+{
+	%{ local pick = punch(); }
+	Oh my, am I seeing store brand {pick}? You know, I could hook you up with a supplier that will get you name brand {pick} at store brand prices!
+}
+
+</pre>
+</code>
+
+<p>The above is how the code actually looks in the ghost. The <code>punch()</code> word group is called once, and the output is saved to the <code>pick</code> variable, which is then used in the dialogue. The following is how it would look converted to YAYA.</p>
+
+<code>
+<pre>
+
+Guest.Merchant.Talk
+{
+	_pick = punch
+	"Oh my, am I seeing store brand %(_pick)? You know, I could hook you up with a supplier that will get you name brand %(_pick) at store brand prices!"
+}
+
+</pre>
+</code>
+
+<p>As an aside, YAYA does have a special syntax for repeating the output of word groups later in a dialogue <a href="https://ukagakadreamteam.github.io/ayaya/manual/syntax/6_expansion_of_embedded_elements_in_strings#u078e2e3">(it uses <code>%[]</code> if you want to look into it)</a>. However, I've run into bugs when using it, so I don't recommend it at this time and won't bother to document it here.</p>
+
+<p>I'm not sure how to do this in other SHIORI! There might be other approaches, and if I learn them then I'll add them here. I think this principle is basic enough to work in most cases, though.</p>
+
+
+<h3 id="word_groups_with_multiple_parts">Word groups with multiple parts (aka "double envelopes")</h3>
+<p>Some ghosts use word groups that have multiple parts to them. These can get really complex and cool! The English community became familiar with them through a dialogue which would display a word in Korean, and then also provide its meaning later on in the dialogue. That's where the "double" in "double envelope" comes from, it was a word group where each entry had two parts.</p>
+
+<p>The implementation of this can vary a lot based on your chosen SHIORI. Let's have a look at a basic example in YAYA first. This example comes from <a href="../ghost/ssp_angel.html">SSP Angel</a>, cowritten with Galla and <a href="https://github.com/Ayakamtka">Ayakamtka</a></p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	_nonsense = nonsenseword
+	_nonsenseword = _nonsense[0]
+	_nonsensedef = _nonsense[1]
+	
+	//I've split this onto multiple lines to make it easier to parse
+	{
+		"\0%(_nonsenseword).\n\n"
+		--
+		"\1Pardon?\n\n"
+		--
+		"\0%(_nonsenseword)!\n\n"
+		--
+		"\1What, pray tell, is ""%(_nonsenseword)""?\n\n"
+		--
+		"\0It's a brand new word I just came up with. There wasn't a singular word that suited my needs.\n\n"
+		--
+		"\1I... see. So you are just inventing words now.\n\n"
+		--
+		"\0It means ""%(_nonsensedef)""~!"
+		--
+		"\1I'm... aghast. Only you, Angel."
+	}
+}
+
+nonsenseword
+{
+	"belismands,untidy knots in fancy shoes"
+	"proswally,the state of being a blue brick"
+	"custorier,a person who carries hand cream with them everywhere they go"
+	"deptides,drips down the side of a cup of iced coffee"
+}
+
+</pre>
+</code>
+
+<p>In this word group, the part before the comma is used in the parts that call <code>_nonsenseword</code>, while the longer explanation after is used at the part that calls <code>_nonsensedef</code>.</p>
+
+<p>This is easier to understand if you know how to work with arrays. But if not, don't worry! It's nothing terribly complicated. First, you can see at the top that we save a single output from the <code>nonsenseword</code> group to a local variable, as we showed in the previous section.</p>
+
+<code>
+<pre>
+
+_nonsense = nonsenseword
+
+</pre>
+</code>
+
+<p>Now <code>_nonsense</code> contains one entry, let's say it picked <code>"belismands,untidy knots in fancy shoes"</code>.</p>
+
+<p>After this, what we want to do is split the entry into its constituent parts so we can make use of them! That's what the next two lines do. Lets look at one of them.</p>
+
+<code>
+<pre>
+
+_nonsenseword = _nonsense[0]
+
+</pre>
+</code>
+
+<p>The <code>[0]</code> after <code>_nonsense</code> tells it to treat this string like it is an array (in this case a <a href="https://zichqec.github.io/YAYA_Fundamentals/module_02_arrays/02_simple_arrays.html">simple array</a>) and grab the first element. In programming we count starting from 0, so element 0 is the first element.</p>
+
+<p>In YAYA, strings can be treated as arrays, and commas are assumed to be the delimiters. This is a uniquely YAYA thing, you won't see this in other languages. The end result though is that now <code>_nonsenseword</code> contains <em>just</em> the string <code>"belismands"</code> and not the rest of it. If we do the same thing to grab the definition...</p>
+
+<code>
+<pre>
+
+_nonsensedef = _nonsense[1]
+
+</pre>
+</code>
+
+<p>The <code>[1]</code> gets the second part of the text, because we count up starting from 0. Now <code>_nonsensedef</code> contains just the string <code>"untidy knots in fancy shoes"</code>. Using this, we now have two local variables that we can use in the dialogue as we please!</p>
+
+<p>Basically, we have used the technique I described earlier for using the same entry multiple times in a dialogue, but in this case the entry was a string with multiple parts that we could split up and use in various parts of the dialogue.</p>
+
+<p>As a note, many ghosts in YAYA that use these kind of word groups separate the parts with commas. However, this can cause a problem, because you might want to use a comma as part of the dialogue within the word group. In this case, I typically use the <code>|</code> pipe character instead. Here's an example with the same dialogue; note the comma in the last word group entry.</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	_nonsense = nonsenseword
+	_nonsenseword = _nonsense[0,'|']
+	_nonsensedef = _nonsense[1,'|']
+	
+	//I've split this onto multiple lines to make it easier to parse
+	{
+		"\0%(_nonsenseword).\n\n"
+		--
+		"\1Pardon?\n\n"
+		--
+		"\0%(_nonsenseword)!\n\n"
+		--
+		"\1What, pray tell, is ""%(_nonsenseword)""?\n\n"
+		--
+		"\0It's a brand new word I just came up with. There wasn't a singular word that suited my needs.\n\n"
+		--
+		"\1I... see. So you are just inventing words now.\n\n"
+		--
+		"\0It means ""%(_nonsensedef)""~!"
+		--
+		"\1I'm... aghast. Only you, Angel."
+	}
+}
+
+nonsenseword
+{
+	"belismands|untidy knots in fancy shoes"
+	"proswally|the state of being a blue brick"
+	"custorier|a person who carries hand cream with them everywhere they go"
+	"deptides|drips down the side of a cup of iced coffee"
+	"blastried|having laughed so hard that you ran out of breath, and were given no time to recover before your friends continued saying funny things"
+}
+
+</pre>
+</code>
+
+<p>This time, if you look at where the entry is broken down into individual variables, you'll see this: <code>_nonsense[0,'|']</code></p>
+
+<p>In YAYA, when you write an element specification with a comma and then a string, that tells it to use that character (or string of characters) as the delimiter instead. So this is saying, treat the <code>|</code> character as the place where the string should split (rather than a comma), and grab the first element of the array.</p>
+
+<p>Now, lets have a look at how this sort of thing can be implemented in Aosora, because it's actually really simple there. This example comes from the ghost <a href="https://github.com/GallaTheGalla/what_it_takes_to_get_published/releases/latest">What It Takes To Get Published</a>, a ghost written by Galla. The context here is that the character is an author writing a book (or possibly several).</p>
+
+<code>
+<pre>
+
+talk RandomTalk
+{
+	%{ local word = synonyms(); }
+	{word.simple}... or {word.fancy}...
+	
+	{word.simple}... or {word.fancy}...
+}
+
+function synonyms
+{
+	//List shortened
+	return Random.Select([
+		{simple: "cat", fancy: "feline"},
+		{simple: "dog", fancy: "canine"},
+		{simple: "loud", fancy: "cacophonous"},
+		{simple: "dark", fancy: "abyssal"},
+		{simple: "warm", fancy: "sweltering"},
+		{simple: "cold", fancy: "glacial"},
+		{simple: "bright", fancy: "radiant"},
+		{simple: "ruse", fancy: "contrivance"},
+		{simple: "good", fancy: "auspicious"},
+		{simple: "custom", fancy: "bespoke"},
+	]);
+}
+
+</pre>
+</code>
+
+<p>Aosora is really great for this because it has associative arrays. Rather than returning a string and breaking it down like an array, you can just return an associative array itself, and then call each member with dot notation.</p>
+
+<p>It's really nice to read in the word group because you can have text labels describing what each part of the entry is, and then when you go to write it, all you need to do is save a single output to a local variable as we have been doing, then use dot notation to call each part where you need it! It makes it very easy to read, in my opinion.</p>
+
+<p>One more important word on these: you don't have to limit yourself to just two parts! That's why I don't call them "double word groups", because you can get much more detailed if you like. Is that actually worth the time investment? Maybe, it depends on what you're doing. The more parts you add, the more tricky it can become. But it can also be very fun! Here's an (unreleased) example from the ghost <a href="../ghost/very_fast_snail.html">Very Fast Snail</a>, cowritten with Galla. The setting here is a world in which everyone is obsessed with snail racing, and the particular snail you're talking to is a superfan that has concerningly in-depth knowledge about all the famous snails.</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	_reputationfor = reputationfor
+	_name = _reputationfor[0,'|']
+	_known = _reputationfor[1,'|']
+	_deeper = _reputationfor[2,'|']
+	"%(_name)'s got a reputation for %(_known), we all know that. But did you know it actually goes deeper? %(_deeper)"
+}
+
+reputationfor
+{
+	//List shortened
+	"Crunching Calcium|being a nutrient fiend|It carefully calculates the precise amount of nutrients in everything it eats, to achieve an optimal balance and improve its performance on the racetrack.\n\n Getting an edge on its competitors through a rigorous diet, it's honestly impressive."
+	
+	"Exceptional Escapee|making a beeline for the first door it sees|It must be claustrophobic because no matter where its sponsor takes it, it tries to get out. Never manages to get far, though."
+	
+	"Grandmaster Gastropod|being the quiet, intimidating type|Word is that Grandmaster Gastropod may or may not be orchestrating... something. Anyone who digs into it seems to get sick or go mysteriously missing, unsure why. Kinda annoying if you ask me."
+	
+	"Impressive Idol|being out of touch|It was raised largely outside of snail society and can't relate to farm-raised snails or the experience of snail school, so it feels like an alien."
+	
+	"Loser Lemon|slacking off|Loser Lemon NEVER practices for races, it wins through raw talent alone.\n\n Shocking, right? Maybe a little disheartening for some snails, too. To think that no matter how hard you work, Loser Lemon can beat you and hardly have to lift a tentacle to do it."
+	
+	"Super Snail|being super generous and giving to charity|It donates to local community projects, gives talks at snail schools, takes free snailfies with its fans, and so much more."
+}
+
+</pre>
+</code>
+
+<p>This word group has 3 parts to each entry, a name, a surface level bit of knowledge that everyone apparently knows, and a more in-depth piece of information. This is a bit hard to parse, so I'll give an example of what two different possible outputs would look like all put together.</p>
+
+<code>
+<pre>
+
+"Super Snail's got a reputation for being super generous and giving to charity, we all know that. But did you know it actually goes deeper? It donates to local community projects, gives talks at snail schools, takes free snailfies with its fans, and so much more."
+
+"Loser Lemon's got a reputation for slacking off, we all know that. But did you know it actually goes deeper? Loser Lemon NEVER practices for races, it wins through raw talent alone.\n\n Shocking, right? Maybe a little disheartening for some snails, too. To think that no matter how hard you work, Loser Lemon can beat you and hardly have to lift a tentacle to do it."
+
+</pre>
+</code>
+
+<p>You could of course keep adding more and more parts to your word group, just mind that this will soak up much more time! Each part you add is more to write, and more grammatical bits and bobs to keep in mind as you do it. Consider carefully whether the time and effort you are going to sink in will be worth it, or whether your time would be better spent on something else.</p>
+
+
+<h3 id="capitalization">Capitalization</h3>
+<p>Something you may run into is that if you use a word group at the start of a dialogue, it won't have a capital letter and will look wrong. If you then change the word group to have capital letters at the start, then you can't use it anywhere <em>but</em> the start of a sentence! It's awkward and annoying.</p>
+
+<p>Thankfully, most SHIORI will allow you to write a function that capitalizes the first letter of a word. For example, I commonly use a function like this for YAYA.</p>
+
+<code>
+<pre>
+
+Capitalize
+{
+	_first = SUBSTR(_argv[0],0,1)
+	_rest = ERASE(_argv[0],0,1) //Erase the first character and store everything else in _rest
+	
+	TOUPPER(_first) + _rest
+}
+
+</pre>
+</code>
+
+<p>And here's a function for the same purpose in Aosora.</p>
+
+<code>
+<pre>
+
+function Capitalize(word)
+{
+	word = word(); //Argument comes in as a function (unless you deliberately send it as a string), so this picks one output and assigns it
+	local firstlet = word.Substring(0,1);
+	local rest = word.Substring(1);
+	
+	return firstlet.ToUpper() + rest;
+}
+
+</pre>
+</code>
+
+<p>This way, I can call word groups like <code>%(Capitalize(colors))</code> or <code>{Capitalize(colors)}</code> wherever I need the version with a capital, and call them normally elsewhere.</p>
+
+<p>It's worth noting you could also theoretically write your word groups capitalized and use a function that changes them to lowercase when they're not at the start, but I don't recommend this because then you might end up accidentally making proper nouns or initialims and acronyms lowercase without meaning to. Also, I think it's probably more common to call word groups later in a sentence than at the start.</p>
+
+<p>You can of course adjust based on the needs of your particular ghost. I do think there's something to be said for writing in a consistent manner, though.</p>
+
+<p>Anyway, lets look at one of the previous examples of a word group with multiple parts again, with this new knowledge.</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	_nonsense = nonsenseword
+	_nonsenseword = _nonsense[0,'|']
+	_nonsensedef = _nonsense[1,'|']
+	
+	//I've split this onto multiple lines to make it easier to parse
+	{
+		"\0%(Capitalize(_nonsenseword))."
+		--
+		"\1Pardon?"
+		--
+		"\0%(Capitalize(_nonsenseword))!"
+		--
+		"\1What, pray tell, is ""%(_nonsenseword)""?"
+		--
+		"\0It's a brand new word I just came up with. There wasn't a singular word that suited my needs."
+		--
+		"\1I... see. So you are just inventing words now."
+		--
+		"\0It means ""%(_nonsensedef)""~!"
+		--
+		"\1I'm... aghast. Only you, Angel."
+	}
+}
+
+</pre>
+</code>
+
+<p>As you can see here, this allows us to capitalize <code>_nonsenseword</code> when Angel uses it at the start of sentences, and also have it lowercase when Pilot uses it as a later part of a sentence.</p>
+
+<p>As a note, I'm not going to cover it in full here because it's more general SHIORI knowledge, but if you are able to implement a capitalization function in the SHIORI you're using then you can also force the output of a word group to be all lowercase or all uppercase. For example, if the character is shouting, you might want to change the word group output to be all uppercase to match the rest of the text.</p>
+
+<p>You'll have to look for how your SHIORI in particular does this. As you can see in the above capitalization functions, <a href="https://ukagakadreamteam.github.io/ayaya/manual/function/TOUPPER">TOUPPER</a> and <a href="https://github.com/kanadelab/aosora-shiori/wiki/07_01_Basic_data_type_functions#string-type">ToUpper()</a> are used for this in YAYA and Aosora respectively. They have lowercase equivalents as well. Keep in mind that these functions will also change the case of any SakuraScript tags that are in your word group entries, and those are case sensitive! Be careful how you apply this.</p>
+
+
+<h3 id="guaranteeing_two_different_outputs_from_one_word_group">Guaranteeing two different outputs from one word group</h3>
+<p>Sometimes I write a dialogue where I want to call the same word group twice and have a different output each time. I want to avoid drawing the same entry twice, and I also don't want to write a second word group. What to do?</p>
+
+<p>In SHIORI that have nonoverlap options, you might consider using that. It can help, however, there is a problem with it. Nonoverlap only guarantees that all choices will be picked at least once before any duplicates are seen, it does <em>not</em> guarantee that you will never see the same choice twice in a row.</p>
+
+<p>For example, if you have a word group with the entries "red", "green", and "blue" in it, then it might draw them in the order "green", "red", "blue". So far no problem. But now it's out of entries, so it resets and starts again... and this time it happens to start on "blue". Now you've seen "blue" twice in a row because it was at the end of the sequence the first time, and the beginning of the sequence the second time.</p>
+
+<p>If your word groups have a lot of entries, then you probably have nothing to worry about. But I like to be sure, because it would be very awkward if it did actually happen.</p>
+
+<p>My best solution for this so far has been a simple while loop. The following example is from Left Unattended.</p>
+
+<code>
+<pre>
+
+talk RandomTalk
+{
+	%{
+		local text1 = partytext();
+		local text2 = partytext();
+		while (text1 == text2) {text2 = partytext();}
+	}
+	Come party... at my place... {text1} {text2} 
+	
+	And sent! That ought to bring in a few new faces.
+}
+
+function partytext
+{
+	//List shortened
+	return Random.Select([
+		"don't mind... my roommate...",
+		"we have snacks... and games...",
+		"there is cake... and more on the way...",
+		"free drinks... and cups...",
+		"stay all night... no noise limit...",
+	]);
+}
+
+</pre>
+</code>
+
+<p>First, I pick an entry for <code>text1</code> and <code>text2</code>. Then, to ensure that they do not match each other, I have a simple while loop that checks if they match, and if so, picks another random entry for <code>text2</code>. Most of the time, this loop will probably never run. But if they happen to pick the same thing, then it will pick a new entry, multiple times if it has to.</p>
+
+<p>Of course, you have to be careful with this. If there was only one entry in the word group, this would be an infinite loop because there is no break condition. So do be mindful with while loops. But unless you're doing something strange or not paying attention, that shouldn't happen.</p>
+
+<p>You can also do this with more than two items, but each item you add means more checks (since you would need to check that a hypothetical <code>text3</code> matches neither <code>text1</code> nor <code>text2</code>). It gets a bit tedious after a while. I've never found the need to write dialogues that complicated though, so I think this is a reasonable solution in most cases.</p>
+
+<p>You can of course do this in YAYA as well. Here's the same code above expressed in YAYA.</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	_text1 = partytext
+	_text2 = partytext
+	while _text1 == _text2; {_text2 = partytext}
+	
+	"Come party... at my place... %(_text1) %(_text2)\n\nAnd sent! That ought to bring in a few new faces."
+}
+
+partytext
+{
+	//List shortened
+	"don't mind... my roommate..."
+	"we have snacks... and games..."
+	"there is cake... and more on the way..."
+	"free drinks... and cups..."
+	"stay all night... no noise limit..."
+}
+
+</pre>
+</code>
+
+
+<h3 id="adding_logic_to_word_groups">Adding logic to word groups</h3>
+<p>A great thing in SHIORI such as YAYA and Aosora is the fact that word groups are just functions, which means you can add special logic to them if you want. The sky is the limit! Want different entries based on the ghost's current stats? No problem. Want to add a random number and symbol to the end of whatever entry is chosen? Easy. Want to exclude certain entries if a specific argument is sent? Sure!</p>
+
+<p>Now, of course, depending on how far you go with this, it might start looking more like just a function that generates something than a word group... the line can get pretty blurry! But here's an example from Left Unattended that's used to generate a silly "wifi password".</p>
+
+<code>
+<pre>
+
+//This is not password advice lol
+function password
+{
+	local output = Random.Select([
+		"C4keC4keC4ke",
+		"c4keT1me",
+		"Frosting4dayz",
+		"Sug4ryG00dness",
+		"Lord0fC4ke",
+		"icing2meetU",
+		"Fr3shB4ked",
+		"NoFakeC4kesAllowed",
+		"SuperC4ke",
+		"EveryDay1sSomeonesB1rthday",
+		"H0ldMySl1ce",
+	]);
+	
+	output += Random.GetIndex(0,10);
+	output += Random.Select([
+		"!",
+		"@",
+		"#",
+		"$",
+		"%",
+		"&",
+		"*",
+		"+",
+	]);
+	
+	return output;
+}
+
+</pre>
+</code>
+
+<p>In this case a random "base" password is chosen from the word group list. (I thought about also having it randomly decide which letters to convert to numbers in here, but to do it in a way that seemed realistic was too much effort for how infrequently this output will be seen.) After that, a random number and symbol are added onto the end. Nothing too fancy, but it has a little more variety than a simple list of entries!</p>
+
+<p>(I would argue also that this is meaningful variation even though it's pretty random, because the subtext here is that the narrator keeps having to change their wifi password because the character that is hosting the party keeps giving it out publicly. Also, again, every mention of cake in this ghost is deliberate.)</p>
+
+<p>This is why I was particular earlier about saying that there's not (usually) anything fancy about how word groups are written. You don't have to stick rigidly to a format, you can get creative with it and mold it however you like!</p>
+
+
+<h3 id="picking_a_specific_entry_for_an_entire_session">Picking a specific entry for an entire session</h3>
+<p>Okay, back to something a bit simpler! This is a trick that I've used once or twice to avoid awkward situations when dialogues start repeating. Particularly, if your ghost says something that sounds like it should be true for the entire session, it's awkward if they then say something else completely different later.</p>
+
+<p>I'll use my ghost <a href="../ghost/ghost_club.html">Ghost Club!!!</a> for this. For context, this ghost's setting is that the character and the user are in a 2-person club together, dressed as ghosts.</p>
+
+<code>
+<pre>
+
+$RandomTalk;
+Oh, um... We might have to reschedule the next meeting. I...  I scheduled {$thenexttime} on the same day by mistake, so.......... I won't have time to prepare everything we need.\n\n[half]\f[color,disable]S-sorry for giving you such short notice................\f[color,default]
+
+$thenexttime;
+a doctor's appointment
+a haircut
+some maintenance work
+my rest time
+
+</pre>
+</code>
+
+<p>With a dialogue like the above, it would be awkward if the character says that they accidentally scheduled a haircut on the same day as the next meeting, and then 20 minutes later says that they scheduled some maintenance work on the same day as the next meeting. That sort of thing would really prod at my suspension of disbelief in an unpleasant way! So, how to fix it?</p>
+
+<p>Very simply, we just create a variable that is set when the ghost boots, and stores one entry from the word group. Then we can use that entry at any time without having to worry about it changing. In Misaka, that looks like this.</p>
+
+<code>
+<pre>
+
+//This is a function unique to Misaka that is used to set variables each time the ghost boots
+$_Constant
+{
+	{$nexttime={$thenexttime}}
+}
+
+$RandomTalk;
+Oh, um... We might have to reschedule the next meeting. I...  I scheduled {$nexttime} on the same day by mistake, so.......... I won't have time to prepare everything we need.\n\n[half]\f[color,disable]S-sorry for giving you such short notice................\f[color,default]
+
+$thenexttime;
+a doctor's appointment
+a haircut
+some maintenance work
+my rest time
+
+</pre>
+</code>
+
+<p>Now the output will be the same for the entire session! Here is the same concept converted to YAYA, since Misaka isn't commonly used in English ghosts.</p>
+
+<code>
+<pre>
+
+OnInitialize
+{
+	nexttime = thenexttime
+}
+
+RandomTalk
+{
+	"Oh, um... We might have to reschedule the next meeting. I...  I scheduled %(nexttime) on the same day by mistake, so.......... I won't have time to prepare everything we need.\n\n[half]\f[color,disable]S-sorry for giving you such short notice................\f[color,default]"
+}
+
+thenexttime
+{
+	"a doctor's appointment"
+	"a haircut"
+	"some maintenance work"
+	"my rest time"
+}
+
+</pre>
+</code>
+
+<p>This could be used in more than one dialogue as well, if you like. For example, if you had a ghost talking about an upcoming event it's planning to go to, it would make sense for it to have a few dialogues about that, and it would make sense for them to all reference the same saved output from a word group.</p>
+
+<p>You can use this approach for more than just word groups too, but I will leave that as an exercise for the reader.</p>
+
+
+<h3 id="word_groups_in_word_groups">Word groups in word groups</h3>
+<p>You can, of course, nest word groups in word groups. It can be quite fun! Here's an example from Doodle Daydreams, in the "demure" mode again.</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	"I was kidnapped by a dragon once.\n\n %(wegotmarried)"
+}
+
+wegotmarried
+{
+	//List shortened
+	"We ended up falling in love and getting married, so it technically isn't kidnapping anymore."
+	"I negotiated my release by promising it all of my future earnings. I declined to tell it I have no intention of getting a job."
+	"At least, I think it was a dragon... It might have been %(afish), actually... "
+}
+
+afish
+{
+	"a fish"
+	"a big lizard"
+	"a snake with legs"
+	"an armored knight"
+	"a tree"
+	"myself from the future"
+	"a bear"
+	"a hallucination"
+	"some wizard prank"
+	"a figment of my imagination"
+	"something I made up at the soirée last week"
+	"my rival in a homemade costume"
+}
+
+</pre>
+</code>
+
+<p>If your word group entries are themselves sentences, it makes sense that sometimes, you want to add a little variation on the variation! I've found that this can lead to situations where you've gotten used to what a ghost typically says, and then it surprises you by popping out something hilarious that you forgot was buried deep in there. It's a great way to make some stuff rarer. Just, mind of course that it works best when the variation is meaningful, as described before! If it were just picking a random color dragon in the example above, then it wouldn't really make a difference to the dialogue and wouldn't have the same effect of being a rare and fun sighting.</p>
+
+<p>A word of caution here. You <em>can</em> go as deep with nesting as you want... but you probably shouldn't do more than 3 or so layers. Each layer down you go means that the stuff in it will be seen more and more rarely, and you might end up putting in a ton of work for something nobody ever sees. It's usually better to spend your time on other things!</p>
+
+<p>Whenever I'm writing a word group in a word group, I'm more mindful of not adding too many entries. 10-15 is fine. Anything more than that and I'm probably wasting my time. If I get to 3 layers deep, then I usually write around 3-5 entries. More than that feels like my time could be better spent on something else.</p>
+
+<p>Of course, it's up to you how much time you want to sink in and what is worth the tradeoff to you. But in my experience, those numbers are enough to make it feel lively and varied!</p>
+
+
+<h3 id="multiple_word_groups_in_the_same_dialogue">Multiple word groups in the same dialogue</h3>
+<p>You can, of course, put as many word groups as you want in one dialogue. Here's another example from Hoard of Shinies.</p>
+
+<code>
+<pre>
+
+talk RandomTalk
+{
+	I'm trying to find a good spot for this {fork}... It doesn't quite fit in with these other {plainmetal} items, does it? Hmm...
+}
+
+function fork
+{
+	return Random.Select([
+		"fork",
+		"key",
+		"hinge",
+		"thingy",
+		"spoon",
+		"butter knife",
+		"teapot",
+		"cup",
+		"clasp",
+		"scrap",
+	]);
+}
+
+function plainmetal
+{
+	return Random.Select([
+		"iron",
+		"stainless steel",
+		"copper",
+		"brass",
+		"nickel",
+		"pewter",
+	]);
+}
+
+</pre>
+</code>
+
+<p>The setting for this ghost involves the character collecting and sorting many sparkly treasures and other odds and ends. Having two word groups combined together like this creates many different combinations, and in this case gives the impression that the hoard is very large and varied. In these particular word groups, the items discussed are unusual ones of seemingly not much value, which helps to paint an image of the character and the things she likes!</p>
+
+<p>Here's a more complex example from Doodle Daydreams, again in the "demure" mode.</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	"At the last ball I attended, there was quite the spectacle.\n\n Someone %(felldownthestairs) and %(brokeavase). But that's not all! It turns out, this someone was the %(king), and all of their %(cousins) saw it happen. Imagine!"
+}
+
+felldownthestairs
+{
+	"fell down the stairs"
+	"tried to climb onto a chandelier, but slipped when they burnt themselves on a candle"
+	"danced too enthusiastically, to the point that a shoe flung off their foot"
+	"got really, really sleepy"
+	"talked to rowdy peer-pressuring teens"
+	"tried to sneak their way into parts of the building they weren't supposed to be in, but got lost"
+	"brought all of their pets, which was entirely too many animals for a party,"
+	"pretended to get amnesia in order to get out of some small talk that was going for entirely too long"
+	"cheated on their fiancée on the balcony"
+	"called their partner a fat goat"
+}
+
+brokeavase
+{
+	"broke a vase"
+	"spilled tea"
+	"ripped their dress"
+	"startled the orchestra"
+	"attracted a dragon"
+	"started a fire"
+	"broke a window"
+	"scared all of the maids and butlers out of the building"
+	"completely ruined the hors d'oeuvres"
+	"knocked over the fondue fountain"
+	"turned into a bird"
+	"fell asleep"
+	"didn't even say sorry"
+}
+
+king
+{
+	"king"
+	"queen"
+	"monarch"
+	"prince"
+	"princess"
+	"emperor"
+	"empress"
+	"president"
+	"baron"
+	"count"
+	"countess"
+	"duke"
+	"duchess"
+	"mayor"
+	"governor"
+	"marquess"
+	"commander"
+	"captain"
+	"chief"
+	"regional manager"
+}
+
+cousins
+{
+	"cousins"
+	"siblings"
+	"parents"
+	"friends"
+	"pets"
+	"sponsors"
+	"coworkers"
+	"servants"
+	"knights"
+	"suitors"
+	"enemies"
+}
+
+</pre>
+</code>
+
+<p>Something like this is a lot of work for one dialogue, but the dialogue has a wonderful amount of variation and spins up amazing combinations. Here are a few I generated just by running this script a few times.</p>
+
+<code>
+<pre>
+
+At the last ball I attended, there was quite the spectacle.\n\n Someone talked to rowdy peer-pressuring teens and started a fire. But that's not all! It turns out, this someone was the chief, and all of their enemies saw it happen. Imagine!
+
+At the last ball I attended, there was quite the spectacle.\n\n Someone got really, really sleepy and completely ruined the hors d'oeuvres. But that's not all! It turns out, this someone was the monarch, and all of their siblings saw it happen. Imagine!
+
+At the last ball I attended, there was quite the spectacle.\n\n Someone tried to sneak their way into parts of the building they weren't supposed to be in, but got lost and broke a vase. But that's not all! It turns out, this someone was the mayor, and all of their enemies saw it happen. Imagine!
+
+At the last ball I attended, there was quite the spectacle.\n\n Someone danced too enthusiastically, to the point that a shoe flung off their foot and started a fire. But that's not all! It turns out, this someone was the emperor, and all of their cousins saw it happen. Imagine!
+
+</pre>
+</code>
+
+<p>I love putting more than one word group in the same dialogue, it's really fun to make mix and match dialogues that will surprise even you as the writer. However, they do have challenges! For one thing, you need to pay extra close attention to the grammar in these, as it's easy to create a bunch of combinations that don't slot together at all. You also need to be vigilant about word repetition. If you treat each word group as being isolated, you might end up with outputs that say the same words over and over in a way that feels unnatural. It's worth taking extra time to think through anything new you want to add to each group.</p>
+
+<p>Second, perhaps more importantly, if you make too many elements random you can run into trouble. Either you end up making everything more generic to make it slot together, or you end up with something that is <em>so</em> varied that it doesn't feel cohesive anymore, because none of what it outputs sounds like a believable sequence of things. There's a balance somewhere in the middle, and it takes a skilled writer to find it. (I didn't write dialogue/word groups in the last example, Galla did! They have an excellent sense for balancing these things.)</p>
+
+<p>(Of course, if you're writing something intentionally absurd, then that last point is probably a benefit rather than something to avoid. It all depends on context!)</p>
+
+
+<h3 id="c_char_1">\c[char,1]</h3>
+<p>This one is for really niche instances, but I think it's a good trick to have up your sleeve when the occasion calls for it. Usually, when you place word groups (in English), if they are in any position other than the start of a sentence they will have a space before the word. This usually works well, but once in a while, you might find yourself wishing that you could remove that space to put some punctuation there instead. The good news is, you can!</p>
+
+<p>I think this will be easiest to explain if you see it in context, so here is an example from the ghost <a href="../ghost/xanders_refuge.html">Xander's Refuge</a>.</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	"One of my priests had a close shave with death recently. He %(closeshave). Not even my doing; sometimes all the luck in the world doesn't mean you'll have a good outcome. It's a shame, he's been one of my favorites, but it looks like he'll be out for a little while."
+}
+
+closeshave
+{
+	//List shortened
+	"slipped on an invisible patch of ice and broke every bone in his back"
+	"tripped on a rock and tumbled into the river"
+	"had an unexpected bear encounter"
+}
+
+</pre>
+</code>
+
+<p>Just a basic word group here. But what I really wanted to add is an option where, rather than just stating what happened, he hesitates and then declines to describe it. Having that option in this dialogue lets the user fill in something terrible, which is a lot more enticing than just plain descriptions. What could be so awful that he, an ancient deity, is unwilling to put words to it? Perhaps it also says something about him (and how he sees the user) that there are in fact some things that he'll be more delicate with.</p>
+
+<p>Ideally I would want him to trail off and say "He...". But of course, there's already a space in the script after the word "He"! What to do? Sure, I could get rid of the space between "He" and the word group, and put the space into the word group's entries itself, but that feels messy and bad. I suppose I could also put the whole word "He" into the word group, but since I'm not planning to vary that word (and would have to rework the whole sentence if I did), it feels annoying to have to do so.</p>
+
+<p>Enter <a href="https://ukagakadreamteam.github.io/ukadoc/manual/list_sakura_script.html#_c_char,value_">\c[char]</a>. Using this tag, you can erase a specified number of characters in the current script. Specify just 1 character, and you can get rid of that space on the spot!</p>
+
+<code>
+<pre>
+
+RandomTalk
+{
+	"One of my priests had a close shave with death recently. He %(closeshave). Not even my doing; sometimes all the luck in the world doesn't mean you'll have a good outcome. It's a shame, he's been one of my favorites, but it looks like he'll be out for a little while."
+}
+
+closeshave
+{
+	//List shortened
+	"slipped on an invisible patch of ice and broke every bone in his back"
+	"tripped on a rock and tumbled into the river"
+	"had an unexpected bear encounter"
+	"\c[char,1]... Well. I won't go into detail"
+}
+
+</pre>
+</code>
+
+<p>This word group still works the normal way, but when it picks that last option, the text will appear in the balloon as "He... Well. I won't go into detail." This solution works because the user won't <em>see</em> the space when it's typed, letting you delete it without it being noticed! There might be a tiny bit of a pause because the space still takes time to type out before it is erased, but it's so small that even when I set SSP to the slowest text speed possible, I didn't really notice it.</p>
+
+<p>You could use some other punctuation instead, such as if you wanted the character to be cut off in the middle of speaking, or something else depending on the specifics of your dialogue.</p>
+
+<p>This trick is usually a very context-specific one and I think it almost certainly makes the word group impossible to reuse elsewhere. Honestly, I don't use it much! But now and then, it's nice and adds some really interesting variety.</p>
+
+
+<h2 id="dialogue_density">Dialogue density</h2>
+<p>I've mentioned it in various sections, but I do think this concept deserves its own dedicated space. "Dialogue density" is a concept I think about while writing, and use to determine what is the best use of my time. Let's consider two pools of dialogue:</p>
+
+<code>
+<pre>
+
+PoolOne : nonoverlap
+{
+	"Dialogue 1"
+	"Dialogue 2"
+	"Dialogue 3"
+}
+
+PoolTwo : nonoverlap
+{
+	"Dialogue A"
+	"Dialogue B"
+	"Dialogue %(red)"
+}
+
+red
+{
+	"red"
+	"green"
+	"blue"
+}
+
+</pre>
+</code>
+
+<p>In the above example, <code>PoolOne</code> has 3 dialogues, and <code>PoolTwo</code> has 3 dialogues, one of which has a word group that has 3 options. Therefore, <code>PoolTwo</code> has more varied dialogue, right? For now, yes. But let's say I continue developing these pools of dialogue...</p>
+
+<code>
+<pre>
+
+PoolOne : nonoverlap
+{
+	"Dialogue 1"
+	"Dialogue 2"
+	"Dialogue 3"
+	"Dialogue 4"
+	"Dialogue 5"
+	"Dialogue 6"
+}
+
+PoolTwo : nonoverlap
+{
+	"Dialogue A"
+	"Dialogue B"
+	"Dialogue %(red)"
+}
+
+red
+{
+	"red"
+	"green"
+	"blue"
+	"cyan"
+	"magenta"
+	"yellow"
+	"black"
+}
+
+</pre>
+</code>
+
+<p>Now something interesting is happening. In  <code>PoolOne</code>, there are 6 dialogues. In <code>PoolTwo</code>, if you count up all the possible outputs from that word group, there are technically 9 (7 in the word group and then the 2 others). So, <code>PoolTwo</code> has more variety than <code>PoolOne</code>, right? Well... does it, though?</p>
+
+<p>Think about it like this. If the user is using a ghost with a dialogue pool like <code>PoolOne</code>, they will see 6 dialogues before they see any repeats. They will also see all of the dialogues at an equal rate. Contrast this with <code>PoolTwo</code>. If a user was using a ghost with a dialogue pool like this, there is technically more variety, but for every time they see the dialogue with the word group they will also see the other two dialogues at least once. They will see "Dialogue A" and "Dialogue B" very commonly. So much so that it may become repetitive.</p>
+
+<p>If you kept adding to these pools in the same manner, the difference would become more stark. If you had 20 dialogues in <code>PoolOne</code>, that is an hour's worth of dialogue at a 3 minute talk rate. If you had 20 entries in the <code>red</code> word group, <code>PoolTwo</code> would still only have 3 dialogues, it's just that one of them would have a lot more variety than the others. Assuming a 3 minute talk rate, the user would only see that variety once every 9 minutes!</p>
+
+<p>This is what I am terming "dialogue density". When you have a dialogue with a ton of variation, you have to keep in mind that the amount of time you're putting into it may be wasted if the user is not likely to see most of what you have written. If you let it keep you from writing other dialogues, then your ghost may not feel like it has much variety to it at all, despite one of the dialogues having a ton of variation.</p>
+
+<p>It may be helpful to think of this with a city metaphor. Each dialogue is a building, and each entry in a word group adds another story to that building. Ideally, in a city, you want a lot of buildings. You want several of them to be moderately sized with several stories, and perhaps you want a few very large and impressive skyscrapers.</p>
+
+<p>If you pour all of your time and effort into one very tall skyscraper, then visitors to your city will only see a few buildings, and probably think it is very strange! It's not really a city at that point, is it? It's a hamlet with a very tall building.</p>
+
+<p>What you really want for a city is to spread out as far and as wide as you can. You want as many buildings as you can get, because those are what visitors will perceive as lively and engaging.</p>
+
+<p>Of course, it's great if cities also have some variety and aren't just single story buildings! There's nothing wrong with it being all single story buildings, but variety is generally desireable. You want to spread out as far and wide as possible with as many buildings as possible, and you also want to build up some of those buildings a moderate amount.</p>
+
+<p>So, in practice, that means that you should <em>usually</em> avoid getting too deep into any particular word group. Word groups that are hundreds of items long, word groups within word groups that go several layers deep, word groups that have many different parts in each entry... these can all be massive time sinks! It's not that you should <em>never</em> write them, just don't let them get you stuck. Writing new, plain dialogue will almost always contribute more to the ghost feeling full than a super dense word group will.</p>
+
+<p><strong>In particular, I think new and inexperienced writers (or just writers not experienced with ghosts yet) should avoid this kind of density.</strong> Release at least one ghost first! Then if you want to dive into this sort of thing, explore it in an update or with a new ghost project.</p>
+
+<p>Sidenote, this concept is why I don't usually write much conditional dialogue anymore. For example, if you write a ghost that has a pool of dialogue for each season, that means you need to write <em>four times as much dialogue</em> to have the same impact as writing without a seasonal condition. That's also dialogue density! And that's just with seasons, it's much more dense if you try to write for each month. How much more dialogue could you write for your ghost if you weren't having to put in 4x or 12x as much effort to make progress? Conditional dialogues can be fun if done well, just don't let them make your project an insurmountable mountain. (If you find that you don't know what to write without conditionals like this, that's a sign you might need to pin your setting better!)</p>
+
+
+<h2 id="shiori_specific_behavior">SHIORI-specific behavior</h2>
+<p>I don't have much to say here at the moment, as most of my work has been in YAYA or Aosora currently. I hope to foray into Kawari at some point, but I haven't done so yet. I know that Kawari allows for some special behavior with word groups, and if I ever learn how to work it I'll probably write more about it here. But for now, I'll direct you to that page of <a href="https://okuajub-netspace.neocities.org/knk_code_basics">Kawari no Kawari</a>, <a href="https://okuajub-netspace.neocities.org/">Okuajub</a>'s guide.</p>
+
+<p>I'm sure that Satori must also have more complex ways to handle word groups, but I haven't learned Satori's coding beyond the basics of writing dialogue since it's very different from the syntax of SHIORI like YAYA and Aosora. If I ever learn more I'll write some details here.</p>
+
+
+<h2 id="conclusion">Conclusion</h2>
+<p>That's all the tips and tricks I have for now! I may update this guide over time if I come up with anything new, or learn the particulars of other SHIORI.</p>
+
+<p>I hope that you found something interesting in here, whether you're completely new to writing word groups, or already have a lot of experience with them. As I said at the start, they're one of my favorite parts of writing ghosts; I think a well written word group adds a lot!</p>
+
+<p>I think they're also something almost uniquely ukagaka. There might be exceptions out there, but I can't think of other media I've seen that have this sort of concept. It's impossible in books and movies, and any video game with voiced lines can't do it because the variations would require entirely new recordings be made for every possible option. And even with video games that are text only... dialogue with this kind of variety doesn't fit into a lot of scenarios/genres. But for an idle desktop toy, this kind of approach really shines and can add a lot of depth!</p>
+
+</article>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_tags = null; var item_details = null</script>
+<script src="../scripts/guide_details.js"></script>
+<script src="../scripts/guide_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>

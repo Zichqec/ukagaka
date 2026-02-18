@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Stratospheric Delivery v1.0.0</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-08-20_stratospheric_delivery_v1.0.0</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-08-20_stratospheric_delivery_v1.0.0</guid>
-		<pubDate>Wed, 20 Aug 2025 00:00:02 EST</pubDate>
-		<description>Release of a new &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; shell, &lt;a href='../shell/stratospheric_delivery.html'&gt;Stratospheric Delivery&lt;/a&gt;. A free-floating cloud with dressups for rain in various colors, and different colors of cloud!</description>
-	</item>
-	<item>
 		<title>8/20 Hydrate Shell Jam 2025 has ended</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-08-21_8_20_hydrate_shell_jam_2025_has_ended</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-08-21_8_20_hydrate_shell_jam_2025_has_ended</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-02-14_left_unattended_v1.1.0</guid>
 		<pubDate>Sat, 14 Feb 2026 00:00:00 EST</pubDate>
 		<description>The first separate release for &lt;a href='../ghost/left_unattended.html'&gt;Left Unattended&lt;/a&gt;, and a major update adding a lot of new content.</description>
+	</item>
+	<item>
+		<title>Writing word groups guide</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-02-18_writing_word_groups_guide</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-02-18_writing_word_groups_guide</guid>
+		<pubDate>Wed, 18 Feb 2026 00:00:00 EST</pubDate>
+		<description>The guide &lt;a href='../guide/writing_word_groups.html'&gt;Writing word groups&lt;/a&gt; has been published. It is a guide about effective strategies for writing word groups, as well as various technical tips and tricks.</description>
 	</item>
 </channel>
 </rss>

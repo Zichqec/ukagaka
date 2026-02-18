@@ -1,5 +1,5 @@
 var item_tags = [
-	["2020","2021","2022","2023","2024","2025"],
+	["2020","2021","2022","2023","2024","2025","2026"],
 	["For event","Etc. Jam"],
 	["For devs","For users"],
 	["YAYA","AYA","Surfaces.txt","Other"],
@@ -162,6 +162,18 @@ var item_details = [
 		externallink: null,
 		blurb: "A guide explaining YAYA's AUTO_DATA_CONVERT option, what it does, and why you should (almost always) turn it off. Please note that when I first wrote this guide, I had thought the option would cause a much more severe compatibility issue, but this turned out to be untrue and I have since corrected it.<br><br>Note that I originally wrote this guide on the Ukagaka Dream Team wiki, and have since moved it here.",
 		tags: ["2023","For devs","YAYA"]
+	},
+	{
+		name: "Writing word groups",
+		release: "2026-02-18",
+		latest: null,
+		forevent: null,
+		guidefor: "Devs",
+		language: "Other",
+		collaborators: null,
+		externallink: null,
+		blurb: "A writing-focused guide exploring how to write word groups effectively, as well as various tips and tricks to fine tune them for different situations. Mostly SHIORI-agnostic, although there are a few tricks for specific SHIORI.",
+		tags: ["2026","For devs","Other"]
 	},
 	{
 		name: "YAYA Fundamentals",
