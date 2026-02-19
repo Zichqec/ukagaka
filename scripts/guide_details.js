@@ -166,7 +166,7 @@ var item_details = [
 	{
 		name: "Writing word groups",
 		release: "2026-02-18",
-		latest: null,
+		latest: "2026-02-19",
 		forevent: null,
 		guidefor: "Devs",
 		language: "Other",
