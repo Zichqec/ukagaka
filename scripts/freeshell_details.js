@@ -19,8 +19,8 @@ var item_details = [
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/freeshell/ancient_gem"},
 		],
-		blurb: "Holy gemstones! You've found the gem queen! What happens next...? Well, that's all up to you, isn't it?<br><br>A person made of rock and gems, with a poseable head, and dressups for different eye colors. I'm intending to update this with some additional pieces after jam that I didn't have time for. If it's been out more than two weeks and I haven't done it yet, give me a poke!<br><br>Check out the matching <a href='../balloon/ancient_gem_balloon.html'>balloon</a> and <a href='../calendar_skin/ancient_gem_calendar.html'>calendar skin</a>, as well as the <a href='https://github.com/GallaTheGalla/forged_metal/releases/latest'>Forged Metal</a> set by Galla which is made to pair with this!",
-		tags: ["2025","For event","Etc. Jam","Shaded","Pixel style","Lineless","Dressups"]
+		blurb: "Holy gemstones! You've found the gem queen! What happens next...? Well, that's all up to you, isn't it?<br><br>A person made of rock and gems, with a poseable head, individually poseable arms, and dressups for different eye colors.<br><br>Check out the matching <a href='../balloon/ancient_gem_balloon.html'>balloon</a> and <a href='../calendar_skin/ancient_gem_calendar.html'>calendar skin</a>, as well as the <a href='https://github.com/GallaTheGalla/forged_metal/releases/latest'>Forged Metal</a> set by Galla which is made to pair with this!",
+		tags: ["2025","For event","Etc. Jam","Shaded","Pixel style","Lineless","Dressups","Additional pieces",".psd included","Surface palette ready"]
 	},
 	{
 		name: "Lollipop Tanktop",
