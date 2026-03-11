@@ -57,6 +57,7 @@
 
 <script>
 let gallery_images = [
+	{path: "expression_chart.png", spoiler: null, caption: "The various arm and head poses available, and the various colors of the gem eye. All can be combined.", alt: "A chart showing all of the different pieces of the freeshell and what tags can be used to create poses. Surface tags 0-9 are used for the various head poses, and \i tags are used for the arms. Gem colors are chosen via dressups."},
 	{path: "poses.gif", spoiler: null, caption: "Different head poses and arm poses can be combined", alt: "All of the head poses and arm poses in the shell are iterated through, one piece changing a time, showing how they can be posed individually."},
 	//{path: "image.png", spoiler: null, caption: "caption", alt: "alt"},
 ]
@@ -75,6 +76,22 @@ let version_history = [
 			changelog:
 			[
 				"Initial release for Etc. Jam 2025.",
+			]
+		},
+		{
+			version: "v1.0.1",
+			released: "2026-03-11",
+			blog_post: "../blog/2026-03-11_ancient_gem_set_v1.0.1.html",
+			changelog:
+			[
+				"Added arm poses, 7 on each side.",
+				"Added eye shine animations (the equivalent of a \"blink\" for this shell).",
+				"Added various collisions to the head.",
+				"Added Satolist settings.",
+				"Normalized one color on the default arms since it did not appear anywhere else in the shell and was barely different. There are now only 5 colors.",
+				"Added an expression chart and layer PSD to the files.",
+				"Minor art fixes.",
+				"Other small tweaks.",
 			]
 		}
 	]

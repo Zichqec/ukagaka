@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Ancient Gem set v1.0.1",
+		release: "2026-03-11",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-03-11_ancient_gem_set_v1.0.1.html",
+		blurb: "An update to <a href='../freeshell/ancient_gem.html'>Ancient Gem</a>, <a href='../balloon/ancient_gem_balloon.html'>Ancient Gem Balloon</a>, and <a href='../calendar_skin/ancient_gem_calendar.html'>Ancient Gem Calendar</a>, completing all of the originally planned content and also fixing some minor issues.",
+		tags: ["2026","March","Freeshell","Balloon","Calendar skin","Update"],
+	},
+	{
 		name: "Writing word groups guide",
 		release: "2026-02-18",
 		dupeindex: "00",
