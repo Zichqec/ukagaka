@@ -10,8 +10,8 @@ var item_details = [
 	{
 		name: "Ancient Gem",
 		release: "2025-03-19",
-		latest: null,
-		version: "v1.0.0",
+		latest: "2026-03-11",
+		version: "v1.0.1",
 		forevent: "Etc. Jam 2025",
 		collaborators: null,
 		download: "https://github.com/Zichqec/ancient_gem/releases/latest",

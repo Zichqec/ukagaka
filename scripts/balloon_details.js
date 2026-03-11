@@ -12,8 +12,8 @@ var item_details = [
 	{
 		name: "Ancient Gem Balloon",
 		release: "2025-03-15",
-		latest: null,
-		version: "v1.0.0",
+		latest: "2026-03-11",
+		version: "v1.0.1",
 		forevent: "Etc. Jam 2025",
 		goeswith: null,
 		collaborators: null,
@@ -23,7 +23,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/ancient_gem_balloon"},
 		],
 		blurb: "A gem themed balloon made for Etc. Jam 2025. Perhaps you'll find some treasures deep within this cave.",
-		tags: ["2025","Includes my art","For event","Etc. Jam","Pixel brush","Plain text area","Light text on dark background","Extra sizes"]
+		tags: ["2025","Includes my art","For event","Etc. Jam","Pixel brush","Plain text area","Light text on dark background","Color alts","Extra sizes"]
 	},
 	{
 		name: "Angelbox",
