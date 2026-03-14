@@ -116,6 +116,22 @@ var item_details = [
 		tags: ["2022","Includes my art","Soft brush","Patterned text area","Dark text on light background","Extra sizes"]
 	},
 	{
+		name: "Celestial Emblem",
+		release: "2026-03-14",
+		latest: null,
+		version: "v1.0.0",
+		forevent: null,
+		goeswith: null,
+		collaborators: null,
+		download: ["https://github.com/Zichqec/celestial_emblem/releases/latest"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/celestial_emblem"},
+		],
+		blurb: "A celestial balloon with 3 different corner decorations! Comes in 4 sizes.",
+		tags: ["2026","Includes my art","For event","Etc. Jam","Pixel brush","Plain text area","Dark text on light background","Extra sizes"]
+	},
+	{
 		name: "Chrono Trigger",
 		release: "2021-04-24",
 		latest: null,

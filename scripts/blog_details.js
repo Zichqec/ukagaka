@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Celestial Emblem",
+		release: "2026-03-14",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-03-14_celestial_emblem_v1.0.0.html",
+		blurb: "Release of a new balloon, <a href='../balloon/celestial_emblem.html'>Celestial Emblem</a>, for <a href='https://ukagakadreamteam.com/wiki/event/etc._jam_2026'>Etc. Jam 2026</a>.",
+		tags: ["2026","March","Balloon","New release"],
+	},
+	{
 		name: "Ancient Gem set v1.0.1",
 		release: "2026-03-11",
 		dupeindex: "00",
