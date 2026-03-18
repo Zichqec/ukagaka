@@ -29,7 +29,7 @@ var item_details = [
 	// },
 	{
 		name: "Solar Runes v1.0.0",
-		release: "2026-03-14",
+		release: "2026-03-18",
 		dupeindex: "00",
 		latest: null,
 		page: "2026-03-18_solar_runes_v1.0.0.html",
