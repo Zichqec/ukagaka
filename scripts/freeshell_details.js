@@ -1,5 +1,5 @@
 var item_tags = [
-	["2022","2024","2025"],
+	["2022","2024","2025","2026"],
 	["For event","Etc. Jam"],
 	["Flat color","Shaded","Pixel style","Soft brush","Lined","Lineless"],
 	["Animations","Dressups","Standard expressions","Additional pieces"],
@@ -66,5 +66,20 @@ var item_details = [
 		],
 		blurb: "My first freeshell! This shell doesn't follow the recommended expressions, instead having its own more limited set that typically look grumpy or angry. It has 3 base surfaces, one with a 3/4 view, one facing straight forward, and one in profile looking to the left. Each comes with multiple expressions and arm poses that can be controlled with \\i[] tags. It also has the ability to be quickly recolored, by simply bucket filling some color files with your desired colors, allowing for some amount of customizability!",
 		tags: ["2022","Flat color","Soft brush","Lined","Additional pieces"]
-	}
+	},
+	{
+		name: "Solar Runes",
+		release: "2026-03-18",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Etc. Jam 2026",
+		collaborators: null,
+		download: "https://github.com/Zichqec/solar_runes/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/freeshell/solar_runes"},
+		],
+		blurb: "A celestial mage who is studying <i>very</i> hard. Comes with many expression combinations, several dressups to change colors and add small accessories, a foot kicking animation, and animated spells! Also, he floats up and down, because he's a mage and that's fun.",
+		tags: ["2026","Shaded","Pixel style","Lined","Animations","Dressups","Standard expressions","Additional pieces","Surface palette ready"]
+	},
 ]

@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>8/20 Hydrate Shell Jam afterword</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-08-23_8_20_hydrate_shell_jam_afterword</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-08-23_8_20_hydrate_shell_jam_afterword</guid>
-		<pubDate>Sat, 23 Aug 2025 00:00:00 EST</pubDate>
-		<description>The &lt;a href='../event/8_20_hydrate_shell_jam_2025_results.html'&gt;results of 8/20 Hydrate Shell Jam 2025&lt;/a&gt; are here! A few thoughts after tying up the event.</description>
-	</item>
-	<item>
 		<title>Aughost 2025 afterword</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-01_aughost_2025_afterword</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-01_aughost_2025_afterword</guid>
@@ -180,11 +173,18 @@
 		<description>An update to &lt;a href='../freeshell/ancient_gem.html'&gt;Ancient Gem&lt;/a&gt;, &lt;a href='../balloon/ancient_gem_balloon.html'&gt;Ancient Gem Balloon&lt;/a&gt;, and &lt;a href='../calendar_skin/ancient_gem_calendar.html'&gt;Ancient Gem Calendar&lt;/a&gt;, completing all of the originally planned content and also fixing some minor issues.</description>
 	</item>
 	<item>
-		<title>Celestial Emblem</title>
+		<title>Celestial Emblem v1.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2026-03-14_celestial_emblem_v1.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2026-03-14_celestial_emblem_v1.0.0</guid>
 		<pubDate>Sat, 14 Mar 2026 00:00:00 EST</pubDate>
 		<description>Release of a new balloon, &lt;a href='../balloon/celestial_emblem.html'&gt;Celestial Emblem&lt;/a&gt;, for &lt;a href='https://ukagakadreamteam.com/wiki/event/etc._jam_2026'&gt;Etc. Jam 2026&lt;/a&gt;.</description>
+	</item>
+	<item>
+		<title>Solar Runes v1.0.0</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-03-18_solar_runes_v1.0.0</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-03-18_solar_runes_v1.0.0</guid>
+		<pubDate>Sat, 14 Mar 2026 00:00:00 EST</pubDate>
+		<description>Release of a new freeshell, &lt;a href='../freeshell/solar_runes.html'&gt;Solar Runes&lt;/a&gt;, for &lt;a href='https://ukagakadreamteam.com/wiki/event/etc._jam_2026'&gt;Etc. Jam 2026&lt;/a&gt;.</description>
 	</item>
 </channel>
 </rss>

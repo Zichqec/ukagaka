@@ -28,7 +28,16 @@ var item_details = [
 		// tags: [],
 	// },
 	{
-		name: "Celestial Emblem",
+		name: "Solar Runes v1.0.0",
+		release: "2026-03-14",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-03-18_solar_runes_v1.0.0.html",
+		blurb: "Release of a new freeshell, <a href='../freeshell/solar_runes.html'>Solar Runes</a>, for <a href='https://ukagakadreamteam.com/wiki/event/etc._jam_2026'>Etc. Jam 2026</a>.",
+		tags: ["2026","March","Freeshell","New release"],
+	},
+	{
+		name: "Celestial Emblem v1.0.0",
 		release: "2026-03-14",
 		dupeindex: "00",
 		latest: null,
