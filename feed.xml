@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Hydrate v2.0.0</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-09-13_hydrate_v2.0.0</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-09-13_hydrate_v2.0.0</guid>
-		<pubDate>Sat, 13 Sep 2025 00:00:00 EST</pubDate>
-		<description>A major update to &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; has been released, kicking off a long-overdue overhaul. &lt;b&gt;This update includes deprecation of some old functions.&lt;/b&gt;</description>
-	</item>
-	<item>
 		<title>Hydrate v2.0.1</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-14_hydrate_v2.0.1</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-14_hydrate_v2.0.1</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-03-27_upgrade_old_versions_of_yaya_guide_update</guid>
 		<pubDate>Fri, 27 Mar 2026 00:00:00 EST</pubDate>
 		<description>A formatting update to the guide &lt;a href='../guide/upgrade_old_versions_of_yaya.html'&gt;Upgrade Old Versions of YAYA&lt;/a&gt;, and a discussion of why that's important as well as a notice about an old YAYA bug that may persist in various ghosts.</description>
+	</item>
+	<item>
+		<title>Hoard of Shinies v1.0.7</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-03-27_hoard_of_shinies_v1.0.7</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-03-27_hoard_of_shinies_v1.0.7</guid>
+		<pubDate>Fri, 27 Mar 2026 00:00:01 EST</pubDate>
+		<description>A minor update to &lt;a href='../ghost/hoard_of_shinies.html'&gt;Hoard of Shinies&lt;/a&gt; for its birthday, which adds a small amount of new content.</description>
 	</item>
 </channel>
 </rss>

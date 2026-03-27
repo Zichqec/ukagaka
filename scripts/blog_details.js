@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Hoard of Shinies v1.0.7",
+		release: "2026-03-27",
+		dupeindex: "01",
+		latest: null,
+		page: "2026-03-27_hoard_of_shinies_v1.0.7.html",
+		blurb: "A minor update to <a href='../ghost/hoard_of_shinies.html'>Hoard of Shinies</a> for its birthday, which adds a small amount of new content.",
+		tags: ["2026","March","Ghost","Update"],
+	},
+	{
 		name: "Upgrade Old Versions of YAYA guide update",
 		release: "2026-03-27",
 		dupeindex: "00",
