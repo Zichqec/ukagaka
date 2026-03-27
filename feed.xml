@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Aughost 2025 afterword</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-09-01_aughost_2025_afterword</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-09-01_aughost_2025_afterword</guid>
-		<pubDate>Mon, 01 Sep 2025 00:00:00 EST</pubDate>
-		<description>&lt;a href='../event/aughost_2025.html'&gt;Aughost 2025&lt;/a&gt; has ended! Some brief commentary at the end of the event.</description>
-	</item>
-	<item>
 		<title>Hydrate v2.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-13_hydrate_v2.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-13_hydrate_v2.0.0</guid>
@@ -183,8 +176,15 @@
 		<title>Solar Runes v1.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2026-03-18_solar_runes_v1.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2026-03-18_solar_runes_v1.0.0</guid>
-		<pubDate>Sat, 14 Mar 2026 00:00:00 EST</pubDate>
+		<pubDate>Wed, 18 Mar 2026 00:00:00 EST</pubDate>
 		<description>Release of a new freeshell, &lt;a href='../freeshell/solar_runes.html'&gt;Solar Runes&lt;/a&gt;, for &lt;a href='https://ukagakadreamteam.com/wiki/event/etc._jam_2026'&gt;Etc. Jam 2026&lt;/a&gt;.</description>
+	</item>
+	<item>
+		<title>Upgrade Old Versions of YAYA guide update</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-03-27_upgrade_old_versions_of_yaya_guide_update</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-03-27_upgrade_old_versions_of_yaya_guide_update</guid>
+		<pubDate>Fri, 27 Mar 2026 00:00:00 EST</pubDate>
+		<description>A formatting update to the guide &lt;a href='../guide/upgrade_old_versions_of_yaya.html'&gt;Upgrade Old Versions of YAYA&lt;/a&gt;, and a discussion of why that's important as well as a notice about an old YAYA bug that may persist in various ghosts.</description>
 	</item>
 </channel>
 </rss>

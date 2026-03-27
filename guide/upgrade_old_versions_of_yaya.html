@@ -32,17 +32,22 @@
 	<p>When upgrading from old versions of YAYA, there are a few possible versions you might have. You may be able to skip some of these steps. If you have any questions, please do ask.</p>
 	
 	<ol>
-		<li>If you have a folder called <b>system</b> in your <b>ghost/master/</b> folder, delete it</li>
-		<li>If you have a folder called <b>messagetxt</b> in your <b>ghost/master/</b> folder, delete it</li>
-		<li>If you have a file called <b>system_config.txt</b> in your <b>ghost/master/</b>  folder, cut and paste anything in it (except the bits that call dic files) into yaya.txt, and then delete system_config.txt</li>
-		<li>If you have a file called <b>yaya_config.txt</b> in your <b>ghost/master/</b>  folder, open it and check the contents. If you've made any changes in this file before, you will want to make note of them so that you can apply them in the new config file you'll be adding later. In particular, check what value is set for AUTO_DATA_CONVERT. Then, delete the yaya_config.txt file.</li>
-		<li>Download the system dictionary files <a href="https://github.com/ponapalt/yaya-dic">here</a> (you can click Code>Download Zip), extract them, and copy the <b>yaya_base</b> folder into your <b>ghost/master/</b> folder. Not the contents of it, the whole folder. <u>You do not need the other files that you downloaded and can ignore them</u></li>
-		<li>In yaya_base/config.dic, make sure your settings are as they were before. Note that they may have been rearranged. AUTO_DATA_CONVERT and REF_ACCEL in particular are important. If you want to learn more about AUTO_DATA_CONVERT and whether you do or do not need it, you can read about it <a href="https://ukagakadreamteam.com/wiki/guide/aya_yaya/what_is_auto_data_convert_zichqec">here</a>.</li>
-		<li>In yaya.txt, delete <b>include, system_config.txt</b> and replace it with <b>dicdir, yaya_base</b></li>
-		<li>In yaya.txt, run a search for <b>messagetxt</b>. If you find this option, replace the whole line with just <b>msglang,english</b> (or your preferred supported language). If you have neither of these, add <b>msglang,english</b> (or your preferred supported language)</li>
-		<li>Replace your yaya.dll with the latest version of yaya.dll (yaya.dll download <a href="https://github.com/ponapalt/yaya-shiori/releases">here</a> - download the regular yaya.zip of the latest version)</li>
-		<li>In your aitalk.dic, run a search for a function called <b>AiTalk</b>. If it is named <b>AiTalk</b>, rename it to <b>OnAiTalk</b></li>
-		<li>Run a search in your ghost's files for a function called <b>OnChoiceSelect</b>. If it does not exist, add this function into a .dic file somewhere:
+		<li><p>If you have a folder called <code>system</code> in your <code>ghost/master/</code> folder, delete it.</p></li>
+		<li><p>If you have a folder called <code>messagetxt</code> in your <code>ghost/master/</code> folder, delete it.</p></li>
+		<li><p>If you have a file called <code>system_config.txt</code> in your <code>ghost/master/</code> folder, cut and paste anything in it (except the bits that call dic files) into yaya.txt, and then delete system_config.txt.</p></li>
+		<li><p>If you have a file called <code>yaya_config.txt</code> in your <code>ghost/master/</code>  folder, open it and check the contents. If you've made any changes in this file before, you will want to make note of them so that you can apply them in the new config file you'll be adding later. In particular, check what value is set for AUTO_DATA_CONVERT. Then, delete the yaya_config.txt file.</p></li>
+		<li><p><a href="https://github.com/ponapalt/yaya-dic">Download the system dictionary files</a> (you can click Code>Download Zip), extract them, and copy the <code>yaya_base</code> folder into your <code>ghost/master/</code> folder. Not the contents of it, the whole folder. <strong>You do not need the other files that you downloaded and can ignore them</strong>.</p></li>
+		<li><p>In yaya_base/config.dic, make sure your settings are as they were before. Note that they may have been rearranged. AUTO_DATA_CONVERT and REF_ACCEL in particular are important.</p>
+			<ul>
+				<li><p>If you aren't sure whether you were using REF_ACCEL before, leave it off.</p></li>
+				<li><p>If you aren't sure whether you need AUTO_DATA_CONVERT, I wrote a guide explaining <a href="../guide/what_is_auto_data_convert.html">what AUTO_DATA_CONVERT is</a>.</p></li>
+			</ul>
+		</li>
+		<li><p>In yaya.txt, delete <code>include, system_config.txt</code> and replace it with <code>dicdir, yaya_base</code>.</p></li>
+		<li><p>In yaya.txt, run a search for <code>messagetxt</code>. If you find this option, replace the whole line with just <code>msglang,english</code> (or your preferred supported language). If you have neither of these, add <code>msglang,english</code> (or your preferred supported language).</p></li>
+		<li><p>Replace your yaya.dll with the latest version of yaya.dll (<a href="https://github.com/ponapalt/yaya-shiori/releases">yaya.dll download</a> - download the regular yaya.zip of the latest version).</p></li>
+		<li><p>In your aitalk.dic, run a search for a function called <code>AiTalk</code>. If it is named <code>AiTalk</code>, rename it to <code>OnAITalk</code>.</p></li>
+		<li><p>Run a search in your ghost's files for a function called <code>OnChoiceSelect</code>. If it does not exist, add this function into a .dic file somewhere:
 <pre>
 //This bit of code is what makes menu options that don't start with On direct to Select.options instead. Remove or comment it if you prefer!
 OnChoiceSelect
@@ -50,14 +55,14 @@ OnChoiceSelect
     EVAL("Select.%(reference0)")
 }
 </pre>
-		</li>
+		</p></li>
 	</ol>
 	
-	<p>To check and see if the update worked, you can use <b>%(LICENSE[0])</b> to check the version number of your current installation of YAYA.</p>
+	<p>To check and see if the update worked, you can use <code>%(LICENSE[0])</code> to check the version number of your current installation of YAYA.</p>
 	
-	<p>If you are not able to run %(LICENSE[0]) directly through script input and would like to, there's a guide for that <a href="https://ukagaka.zichqec.com/guide/run_envelopes_through_script_input.html">here</a>.</p>
+	<p>If you are not able to run <code>%(LICENSE[0])</code> directly through script input and would like to, there's a guide explaining <a href="../guide/run_envelopes_through_script_input.html">how to run embedded elements through script input</a>.</p>
 	
-	<p>NOTE: If you're planning to set up network updates with GitHub, or you already use GitHub for your network updates, be very careful. If you're using a github.io homeurl, it will give a 404 error because of the file _loading_order.txt. It does not like file names that start with underscores. Your options are to use the raw.githubusercontent url instead, or, you can copy the contents of _loading_order.txt into yaya.txt and delete _loading_order.txt. See <a href="https://ukagaka.zichqec.com/guide/network_updates_with_github.html">my guide on using GitHub for network updates</a> for more info.</p>
+	<p>NOTE: If you're planning to set up network updates with GitHub, or you already use GitHub for your network updates, be very careful. If you're using a github.io homeurl, it will give a 404 error because of the file <code>_loading_order.txt</code>. It does not like file names that start with underscores. Your options are to use the raw.githubusercontent url instead, or, you can copy the contents of _loading_order.txt into yaya.txt and delete _loading_order.txt. See my guide on <a href="../guide/network_updates_with_github.html">using GitHub for network updates</a> for more info.</p>
 
 </article>
 

@@ -142,7 +142,7 @@ var item_details = [
 	{
 		name: "Upgrade Old Versions of YAYA",
 		release: "2022-08-03",
-		latest: "2023-05-16",
+		latest: "2026-03-27",
 		forevent: null,
 		guidefor: "Devs",
 		language: "YAYA",

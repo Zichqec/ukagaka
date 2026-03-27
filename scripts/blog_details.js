@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Upgrade Old Versions of YAYA guide update",
+		release: "2026-03-27",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-03-27_upgrade_old_versions_of_yaya_guide_update.html",
+		blurb: "A formatting update to the guide <a href='../guide/upgrade_old_versions_of_yaya.html'>Upgrade Old Versions of YAYA</a>, and a discussion of why that's important as well as a notice about an old YAYA bug that may persist in various ghosts.",
+		tags: ["2026","March","Guide","Update"],
+	},
+	{
 		name: "Solar Runes v1.0.0",
 		release: "2026-03-18",
 		dupeindex: "00",

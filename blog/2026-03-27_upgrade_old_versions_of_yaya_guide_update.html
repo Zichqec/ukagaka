@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p>I've updated the formatting on the guide <a href="../guide/upgrade_old_versions_of_yaya.html">Upgrade Old Versions of YAYA</a>. That, on its own, isn't really worth writing a blog post about. Tweaks to a guide which don't substantially change its content aren't worth making a big fuss over, otherwise I'll be put off from actually making small but important updates.</p>
+
+<p>However, there are two things that made me decide to write this post today. One a general notice, and the other and important change that I've been making for the last year or so.</p>
+
+<p>The first point is simple: it seems there were versions of the <a href="https://ukagakadreamteam.com/wiki/ghost/gt_ghost_template">GT Ghost Template</a> and <a href="../template/x_template.html">X. Template</a> available for a while that came with YAYA version Tc567-1. This version unfortunately has a bug where <code>nonoverlap_pool</code> does not work properly. If you are planning to use either of these templates, be sure to get the latest version to work from. If you've already started a ghost using them, follow my guide linked at the start of this post to upgrade YAYA. If you aren't sure what version of YAYA your ghost has, open script input (you can use Ctrl + S or the dev palette for this), and run <code>%(LICENSE[0])</code>.</p>
+
+<p>I think the bug was probably fixed a few years ago, although I don't remember the specific details by this point. It's subtle unless you set up your ghost in specific ways, so it may go undetected, and then rear its head later unexpectedly. So this is both awareness for anyone who may be using these templates, and also awareness for those of us who help others to debug issues. This is an issue to watch for! (And, it's also a good reminder of why updating is important.)</p>
+
+<p>The second point is a bit of housekeeping. As a part of helping someone with this issue, I referred them to the guide this blog post is about. And when I looked at it... well, it was certainly crusty around the edges. Partially because my formatting preferences drift somewhat over time, but mostly because in the last year or so, I've been learning more about web accessibility.</p>
+
+<p>Accessibility is important, and while I think past me can be forgiven for not understanding the ins and outs of it when I first started, it is important that as I grow aware of the issues surrounding it that I take steps to improve the things I publish online and ensure they are as accessible as I can reasonably make them. (I say "reasonably make them" because you don't know what you don't know, and there are likely still a lot of things I could improve that I just don't know about yet...)</p>
+
+<p>Some examples of tweaks that I made are:</p>
+
+<ul>
+	<li><p>Ending list items with a period. This helps avoid a problem where screen readers can blow straight through the end of one item and onto the next in a way that is confusing. I've long struggled with whether or not I should do this, because on some lists it looks awkward and on others it doesn't, but if a list contains sentences (as this one definitely did) then I include periods.</p></li>
+	<li><p>Including <code>&lt;p&gt;</code> tags in list items. I would previously just write <code>&lt;li&gt;</code> tags and thought that that was enough, but I later learned that <code>&lt;li&gt;</code> can contain all kinds of items, so it is correct to write <code>&lt;p&gt;</code> tags inside of it if what you're going to write is text. Additionally, adding these tags to my lists helps reader mode recognize that they are text content which should be displayed.</p></li>
+	<li><p>Using <code>&lt;code&gt;</code> for snippets that I want to mark out as being... well, code. Although, I do also use it for filepaths, but I think that's probably okay...? I'm not currently aware of a more semantically-correct tag for this. I was previously using bold tags, which are eye-catching, but don't convey anything other than style information. This way is better for semantics, and also makes it more clear that "this is text to be taken literally, letter for letter". There are some places where I didn't add the tags, and maybe I should, but I'm a bit worried that it will become overly cluttered and hard to parse.</p></li>
+	<li><p>Rather than using an underline tag for one important section I wanted to mark out, I changed it to a <code>&lt;strong&gt;</code> tag. Better semantics, and now that the other bold tags have been replaced, this stands out just as well.</p></li>
+	<li><p>A big one, and a personal bugbear of mine lately... any links where the link text was just [here] have been updated. All links should describe what they link to. Saying "Check out the guide [here]" is unhelpful if the user pulls up a list of links on the page (which is an option in screenreaders!), because the context of what the link <em>is actually for</em> is completely lost. It's generally simple to reframe it like "Check out the [guide to X]", which contains all of the context needed to understand it. I used to do the first link style all the time without thinking because it's what I grew up reading, but now I'm stamping it out everywhere I find it.</p></li>
+</ul>
+
+<p>Many updates of this type have been quietly happening around various parts of the site, and I'm sure I'll be making them continually as I review my old works here and there and find things that I know how to do better now. They're often small refinements, and things that most people wouldn't even notice, but they do matter. It's good to keep tightening things up and not let them fall into disrepair too much.</p>
+
+<p>Also, a few changes I made that aren't particularly accessibility related:</p>
+
+<ul>
+	<li><p>Contained in this guide is a link to one of my other guides... except, that guide used to be hosted on the <a href="https://ukagakadreamteam.com/wiki/home">Ukagaka Dream Team Wiki</a>. For various reasons, that guide has since been moved to my website, so... this guide was linking to the wiki page, and the wiki page was linking to the new location of the other guide. Whoops. That's been fixed now.</p></li>
+	<li><p>I took one of the list items and gave it a sub-list to make it a little easier to parse. I updated the content slightly to make it clear that it isn't necessary to worry too much about <code>REF_ACCEL</code>, and tweaked the wording around <code>AUTO_DATA_CONVERT</code>.</p></li>
+	<li><p>For some reason, there were absolute links to a couple of other guides on this site...? I changed them to relative links.</p></li>
+	<li><p>I tweaked the part that recommended renaming <code>AiTalk</code> to <code>OnAiTalk</code>. It now specifies to change it to <code>OnAITalk</code>, with a capital I. Why is that? A really subtle thing, but I do consider it important: <a href="https://ukagakadreamteam.github.io/ukadoc/manual/list_shiori_event.html#OnAITalk">OnAITalk</a> with a capital I is the proper name of the event. YAYA as SHIORI has some code that makes OnAiTalk with a lowercase i work as well, but the problem with this is that if you copy this to other SHIORI, you miss out on some small benefits. For example, the <a href="https://ukagakadreamteam.github.io/ukadoc/manual/list_sakura_script.html#_a">\a tag</a> can be used to call OnAITalk, but it doesn't work if the i is lowercase. There may also be some other things that expect a capital I. It's a really subtle thing, and in most cases it wont matter, but it's slightly more technically correct and that makes me happy. I mean, uh, it may benefit someone else somewhere who could be confused by those details. On the off chance they're like me and sometimes use \a to call dialogues. Technically, it could happen!</p></li>
+</ul>
+
+<p>Anyway, those are all my thoughts on it for now. I mostly was pushed to do this right away due to that wiki link that was just a redirect, otherwise it might have sat for a bit. I imagine the sister guide to this, <a href="../guide/convert_from_aya_to_yaya.html">Convert from AYA to YAYA</a>, probably needs the same treatment since I think they were written at the same time... but I'm refusing to look at that right at the moment! ... I'll try to get it done soon.</p>
+
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>
