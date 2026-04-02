@@ -508,7 +508,7 @@ var item_details = [
 		name: "FLELE mirror",
 		release: "2024-10-13",
 		dupeindex: "00",
-		latest: null,
+		latest: "2026-04-02",
 		page: "2024-10-13_flele_mirror.html",
 		blurb: "A mirror download of FLELE, created based on permissions given on <a href='http://navy.nm.land.to/ukgk/flele/'>FLELE's distribution site</a>. It may be helpful for those who cannot access FLELE's page.",
 		tags: ["2024","October","Mirror"],
