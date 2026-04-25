@@ -80,6 +80,6 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/freeshell/solar_runes"},
 		],
 		blurb: "A celestial mage who is studying <i>very</i> hard. Comes with many expression combinations, several dressups to change colors and add small accessories, a foot kicking animation, and animated spells! Also, he floats up and down, because he's a mage and that's fun.",
-		tags: ["2026","Shaded","Pixel style","Lined","Animations","Dressups","Standard expressions","Additional pieces","Surface palette ready"]
+		tags: ["2026","For event","Shaded","Pixel style","Lined","Animations","Dressups","Standard expressions","Additional pieces","Surface palette ready"]
 	},
 ]
