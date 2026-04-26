@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Hydrate v2.0.1</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-09-14_hydrate_v2.0.1</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-09-14_hydrate_v2.0.1</guid>
-		<pubDate>Sun, 14 Sep 2025 00:00:00 EST</pubDate>
-		<description>A major update to &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; has been released, with some breaking changes to the stat share event that was introduced in the previous update, as well as new features and bug fixes.</description>
-	</item>
-	<item>
 		<title>FormatLinks updated</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-15_formatlinks_updated</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-15_formatlinks_updated</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-03-27_hoard_of_shinies_v1.0.7</guid>
 		<pubDate>Fri, 27 Mar 2026 00:00:01 EST</pubDate>
 		<description>A minor update to &lt;a href='../ghost/hoard_of_shinies.html'&gt;Hoard of Shinies&lt;/a&gt; for its birthday, which adds a small amount of new content.</description>
+	</item>
+	<item>
+		<title>Notepad++ tips to improve your ghost dev experience update</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-04-26_notepad_tips_to_improve_your_ghost_dev_experience_update</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-04-26_notepad_tips_to_improve_your_ghost_dev_experience_update</guid>
+		<pubDate>Sun, 26 Apr 2026 00:00:00 EST</pubDate>
+		<description>A small update to the guide &lt;a href='2026-04-26_notepad_tips_to_improve_your_ghost_dev_experience_update.html'&gt;Notepad++ tips to improve your ghost dev experience update&lt;/a&gt;, adjusting the description of column editing and adding more details about multi-editing.</description>
 	</item>
 </channel>
 </rss>

@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Notepad++ tips to improve your ghost dev experience update",
+		release: "2026-04-26",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-04-26_notepad_tips_to_improve_your_ghost_dev_experience_update.html",
+		blurb: "A small update to the guide <a href='2026-04-26_notepad_tips_to_improve_your_ghost_dev_experience_update.html'>Notepad++ tips to improve your ghost dev experience update</a>, adjusting the description of column editing and adding more details about multi-editing.",
+		tags: ["2026","April","Guide","Update"],
+	},
+	{
 		name: "Hoard of Shinies v1.0.7",
 		release: "2026-03-27",
 		dupeindex: "01",

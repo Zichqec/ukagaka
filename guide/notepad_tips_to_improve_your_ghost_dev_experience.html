@@ -250,7 +250,7 @@
 
 <p>As you can see here, I actually forgot to put a number after the word animation, but thanks to column editing I was able to correct that very quickly and painlessly!</p>
 
-<p>A quick note: this can get a little finicky with word wrap. If you're working on something with long lines, you may need to turn word wrap off temporarily, if you're using it.</p>
+<p>Note that this can get a little finicky with word wrap. Usually this is an issue when pressing home or end, because it takes you to the place where the text wraps rather than the true start or end of the line. You can force it to go all the way to the start or end of the line as needed by pressing home/end twice. You can also temporarily disable word wrap, if you prefer.</p>
 
 <p>It's a little annoying to type all those numbers by yourself though, isn't it? What if you need to quickly increment the numbers? Is there anything you can do to make it easier? Indeed there is.</p>
 
@@ -258,13 +258,13 @@
 
 <img src="notepad_tips_to_improve_your_ghost_dev_experience/018-4_column_editing_window.png">
 
-<p>Make sure that you've set the mode to "Number to Insert". Then you need to set what number to start from, and what to increase the number by for each line. When you click "OK", it'll fill in as many sequential numbers as it can! You'll probably want to make sure that you've made a column selection before you do this, otherwise it'll just add numbers all through your file.</p>
+<p>Make sure that you've set the mode to "Number to Insert". Then you need to set what number to start from, and what to increase the number by for each line. When you click "OK", it'll fill in as many sequential numbers as it can! You'll probably want to make sure that you've made a column selection before you do this, otherwise it'll just add numbers through the rest of your file.</p>
 
 <img src="notepad_tips_to_improve_your_ghost_dev_experience/018-5_column_editing_sequential_numbers.gif">
 
-<p>Note that if the number of digits increases, it seems to add spaces to fill the gaps and keep everything a consistent width. But that's nothing a little column editing can't solve!</p>
+<p>Note that when you're creating number sequences with multiple digits, you can choose whether you want it to add in some sort of padding on the left side to keep the columns consistent or not. You can choose spaces, leading 0s, or set it to none.</p>
 
-<p>That's it! Column editing is really simple and easy, and <i>really</i> effective for surfaces.txt code. It is fantastic for quickly creating long animations, changing animation numbers, and the like.</p>
+<p>And those are the basics! Column editing is really simple and easy, and <i>really</i> effective for surfaces.txt code. It is fantastic for quickly creating long animations, changing animation numbers, and the like. There's a whole lot more you can do with this window if you experiment with all the options, but I'll leave the details of that for another time.</p>
 
 <p><a href="#intro">Back to top</a></p>
 
@@ -283,6 +283,20 @@
 <img src="notepad_tips_to_improve_your_ghost_dev_experience/018-3_multi_caret.gif">
 
 <p>Handy, right? Just remember to leave this mode once you're done with it! At any time, you can return to a normal single caret by clicking anywhere in a file (without holding down Ctrl), or by pressing Escape.</p>
+
+<p>It's also useful to know that if you select an area that you don't want to have selected, you can press and hold Ctrl and click it again to remove that caret.</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/018-4_multi_caret_deselect.gif" alt="A caret is placed in 4 different areas by clicking with the mouse while Ctrl is held down. One of the carets is removed by clicking it again.">
+
+<p>Finally, keep in mind that multi-editing works with the column editing window that inserts numbers, too. Here's an example where I renumber some surfaces super quickly.</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/018-5_multi_caret_surfaces.gif">
+
+<p>Or, look how fast I can create a new series of animations.</p>
+
+<img src="notepad_tips_to_improve_your_ghost_dev_experience/018-6_multi_caret_animations.gif">
+
+<p>I can't say it enough, learning to use column/multi-editing really pays off when working with surfaces.txt! It makes simple shells a breeze to throw together, and shells with many more pieces a reasonable possibility.</p>
 
 <p><a href="#intro">Back to top</a></p>
 
@@ -796,6 +810,13 @@ Capitalize
 <p><a href="#intro">Back to top</a></p>
 
 <h2 id="update_notes">Update notes</h2>
+
+<h3><a href="../blog/2026-04-26_notepad_tips_to_improve_your_ghost_dev_experience_update.html">2026-04-26</a></h3>
+<ul>
+	<li>Updated the information in the column editing section to be more accurate/complete.</li>
+	<li>Added a note about how multi-selection carets can be removed without starting over.</li>
+	<li>Added additional gifs to the multi-selection section, demonstrating how it can be used with the column editing window to insert numbers.</li>
+</ul>
 
 <h3>2024-05-02</h3>
 <ul>
