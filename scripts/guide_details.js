@@ -82,7 +82,7 @@ var item_details = [
 	{
 		name: "Notepad++ tips to improve your ghost dev experience",
 		release: "2023-10-08",
-		latest: "2024-05-02",
+		latest: "2026-04-26",
 		forevent: "Etc. Jam 2023",
 		guidefor: "Devs",
 		language: null,
