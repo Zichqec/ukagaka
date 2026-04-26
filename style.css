@@ -28,6 +28,12 @@ p
 	font-size: 15px;
 }
 
+hr
+{
+	color: #d1d1d1;
+	max-width: 97%;
+}
+
 .centertxt
 {
 	text-align: center;
