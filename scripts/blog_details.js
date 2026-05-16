@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Sweet Dreams v1.0.0",
+		release: "2026-05-16",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-05-16_sweet_dreams_v1.0.0.html",
+		blurb: "Release of a new ghost: <a href='../ghost/sweet_dreams.html'>Sweet Dreams</a>. An entry for Ghost Masquerade 8, this ghost explores themes of protection and safety, while also offering non-judgemental sleep advice.",
+		tags: ["2026","May","Ghost","New release"],
+	},
+	{
 		name: "Update to Notepad++ tips to improve your ghost dev experience",
 		release: "2026-04-26",
 		dupeindex: "00",

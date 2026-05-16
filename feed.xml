@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>FormatLinks updated</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-09-15_formatlinks_updated</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-09-15_formatlinks_updated</guid>
-		<pubDate>Mon, 15 Sep 2025 00:00:00 EST</pubDate>
-		<description>An update to the function &lt;a href='../function/index.html#formatlinks'&gt;FormatLinks&lt;/a&gt;, cleaning up the code and making it not rely on compatible.dic.</description>
-	</item>
-	<item>
 		<title>Hydrate v2.0.2</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-15_hydrate_v2.0.2</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-15_hydrate_v2.0.2</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-04-26_update_to_notepad_tips_to_improve_your_ghost_dev_experience</guid>
 		<pubDate>Sun, 26 Apr 2026 00:00:00 EST</pubDate>
 		<description>A small update to the guide &lt;a href='../guide/notepad_tips_to_improve_your_ghost_dev_experience.html'&gt;Notepad++ tips to improve your ghost dev experience&lt;/a&gt;, adjusting the description of column editing and adding more details about multi-editing.</description>
+	</item>
+	<item>
+		<title>Sweet Dreams v1.0.0</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-05-16_sweet_dreams_v1.0.0</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-05-16_sweet_dreams_v1.0.0</guid>
+		<pubDate>Sat, 16 May 2026 00:00:00 EST</pubDate>
+		<description>Release of a new ghost: &lt;a href='../ghost/sweet_dreams.html'&gt;Sweet Dreams&lt;/a&gt;. An entry for Ghost Masquerade 8, this ghost explores themes of protection and safety, while also offering non-judgemental sleep advice.</description>
 	</item>
 </channel>
 </rss>
