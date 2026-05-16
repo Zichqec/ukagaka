@@ -625,7 +625,7 @@ var item_details = [
 	{
 		name: "Sweet Dreams",
 		release: "2026-05-02",
-		latest: null,
+		latest: "2026-05-16",
 		version: "v1.0.0",
 		forevent: "ゴーストマスカレード8",
 		collaborators: null,
@@ -636,7 +636,7 @@ var item_details = [
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/sweet_dreams"},
 		],
-		blurb: "﻿&quot;My sleep has been disturbed by demons for as long as I can remember. However, a gently shining light gives me hope.&quot;<br><br>This ghost features an angel who offers soothing, non-judgemental sleep advice. She's here to help, even if that means simply keeping you company through the night!",
+		blurb: "﻿&quot;My sleep has been disturbed by demons for as long as I can remember. However, a gently shining light gives me hope.&quot;<br><br>This ghost features an angel who offers soothing, non-judgemental sleep advice. She's here to help, even if that means simply keeping you company through the night! She uses the freeshell <span lang='ja'><a href='https://littlerainy.net/b3/shell/007llf.html'>\"ちいさなはね\"</a></span> by <span lang='ja'><a href='https://littlerainy.net/b3/'>じる</a></span>",
 		tags: ["2026", "Satori", "Uses freeshell", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter"]
 	},
 	{
