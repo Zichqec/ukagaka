@@ -603,6 +603,23 @@ var item_details = [
 		tags: ["2023", "YAYA", "Collab", "Includes my writing", "Includes my code", "Idle chatter", "Utility"]
 	},
 	{
+		name: "Sweet Dreams",
+		release: "2026-05-02",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "ゴーストマスカレード8",
+		collaborators: null,
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/sweet_dreams/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/sweet_dreams"},
+		],
+		blurb: "﻿&quot;My sleep has been disturbed by demons for as long as I can remember. However, a gently shining light gives me hope.&quot;<br><br>This ghost features an angel who offers soothing, non-judgemental sleep advice. She's here to help, even if that means simply keeping you company through the night!",
+		tags: ["2026", "Satori", "Uses freeshell", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter"]
+	},
+	{
 		name: "The Garden of Lost Souls",
 		release: "2025-05-02",
 		latest: null,
