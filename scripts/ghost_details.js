@@ -123,6 +123,26 @@ var item_details = [
 		tags: ["2021", "YAYA", "Includes my code", "For event", "Ghost Jam", "WIP"]
 	},
 	{
+		name: "Don't Hold Your Breath",
+		release: "2026-05-02",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "ゴーストマスカレード8",
+		collaborators:
+		[
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+		],
+		translations: null,
+		content_warnings: "Horror, injury, user death. (All content is text description only.)",
+		download: "https://github.com/Zichqec/dont_hold_your_breath/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/dont_hold_your_breath"},
+		],
+		blurb: "﻿Have you ever met a mermaid?<br><br>A short horror ghost for Ghost Masquerade! It comes with multiple stories, and a new one is chosen each time you boot it.",
+		tags: ["2026", "YAYA", "Collab", "Uses freeshell", "Includes my code", "For event", "Ghost Masquerade", "Story"]
+	},
+	{
 		name: "Doodle Daydreams",
 		release: "2025-06-21",
 		latest: "2025-06-30",
