@@ -133,11 +133,12 @@ var item_details = [
 			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
 		],
 		translations: null,
-		content_warnings: "Horror, injury, user death. (All content is text description only.)",
+		content_warnings: "Horror, injury, user death, suicide. (All content is text description only.)",
 		download: "https://github.com/Zichqec/dont_hold_your_breath/releases/latest",
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/dont_hold_your_breath"},
+			{label: "Afterword", url: "https://earlduant.blog.fc2.com/blog-entry-951.html"},
 		],
 		blurb: "﻿Have you ever met a mermaid?<br><br>A short horror ghost for Ghost Masquerade! It comes with multiple stories, and a new one is chosen each time you boot it.",
 		tags: ["2026", "YAYA", "Collab", "Uses freeshell", "Includes my code", "For event", "Ghost Masquerade", "Story"]
@@ -635,6 +636,7 @@ var item_details = [
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/sweet_dreams"},
+			{label: "Afterword", url: "https://earlduant.blog.fc2.com/blog-entry-951.html"},
 		],
 		blurb: "﻿&quot;My sleep has been disturbed by demons for as long as I can remember. However, a gently shining light gives me hope.&quot;<br><br>This ghost features an angel who offers soothing, non-judgemental sleep advice. She's here to help, even if that means simply keeping you company through the night! She uses the freeshell <span lang='ja'><a href='https://littlerainy.net/b3/shell/007llf.html'>\"ちいさなはね\"</a></span> by <span lang='ja'><a href='https://littlerainy.net/b3/'>じる</a></span>",
 		tags: ["2026", "Satori", "Uses freeshell", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter"]
