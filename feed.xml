@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Hydrate v2.0.2</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-09-15_hydrate_v2.0.2</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-09-15_hydrate_v2.0.2</guid>
-		<pubDate>Mon, 15 Sep 2025 00:00:01 EST</pubDate>
-		<description>A minor update to &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; has been released, bringing some new quality of life changes and cleaner code.</description>
-	</item>
-	<item>
 		<title>Hydrate v2.0.3</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-16_hydrate_v2.0.3</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-16_hydrate_v2.0.3</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-05-16_sweet_dreams_v1.0.0</guid>
 		<pubDate>Sat, 16 May 2026 00:00:00 EST</pubDate>
 		<description>Release of a new ghost: &lt;a href='../ghost/sweet_dreams.html'&gt;Sweet Dreams&lt;/a&gt;. An entry for Ghost Masquerade 8, this ghost explores themes of protection and safety, while also offering non-judgemental sleep advice.</description>
+	</item>
+	<item>
+		<title>How to get X and Y coordinates quickly without changing programs</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-05-24_how_to_get_x_and_y_coordinates_quickly_without_changing_programs_guide</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-05-24_how_to_get_x_and_y_coordinates_quickly_without_changing_programs_guide</guid>
+		<pubDate>Sun, 24 May 2026 00:00:00 EST</pubDate>
+		<description>A new guide, &lt;a href='https://forum.ukagakadreamteam.com/d/133-how-to-get-x-and-y-coordinates-quickly-without-changing-programs'&gt;How to get X and Y coordinates quickly without changing programs&lt;/a&gt;, has been released on the &lt;a href='https://forum.ukagakadreamteam.com/'&gt;Ukagaka Dream Team Forum&lt;/a&gt;. The guide is made for balloon and shell developers who don't have a coordinates display in their drawing program of choice.</description>
 	</item>
 </channel>
 </rss>

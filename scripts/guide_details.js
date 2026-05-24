@@ -44,6 +44,22 @@ var item_details = [
 		tags: ["2023","For devs","Other"]
 	},
 	{
+		name: "How to get X and Y coordinates quickly without changing programs",
+		release: "2026-05-24",
+		latest: null,
+		forevent: null,
+		guidefor: "Devs",
+		language: null,
+		collaborators: null,
+		externallink:
+		{
+			hostedby: "Ukagaka Dream Team Forum",
+			link: "https://forum.ukagakadreamteam.com/d/133-how-to-get-x-and-y-coordinates-quickly-without-changing-programs",
+		},
+		blurb: "A technique for balloon and shell developers to measure coordinates in their drawing program, even if that program doesn't offer a coordinate display.",
+		tags: ["2026","For devs","Other"]
+	},
+	{
 		name: "Loops and Arrays",
 		release: "2021-03-26",
 		latest: "2023-07-15",
