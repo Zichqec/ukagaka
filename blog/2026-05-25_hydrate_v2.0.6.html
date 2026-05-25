@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p><a href="../ghost/hydrate.html">Hydrate</a> has updated to v2.0.6! This is just a small update to finally add back in the scaling information to OnHydrateStatsNotify.</p>
+
+<p>Hydrate used to send its current scaling values as Reference2 and Reference3 (for the X and Y values respectively), which was intended to let you detect if Hydrate was larger or smaller than normal and have your ghost react in whatever way you wanted. However, when I released <a href="../blog/2025-09-14_hydrate_v2.0.1.html">Hydrate v2.0.1</a>, I realized that there was a problem with this.</p>
+
+<p>While I could set a variable when <a href="https://ukagakadreamteam.github.io/ukadoc/manual/list_shiori_event.html#OnShellScaling">OnShellScaling</a> runs and save the current scaling values, scaling is a <em>per-shell</em> setting. So if you had Hydrate in Shell A and changed the shell scaling to 50%, then changed to Shell B, Shell B would display at 100% scaling, but the variable I set would still report that Hydrate was at 50% scaling. Then say you set Shell B to 150% scaling and switched back to Shell A, now Shell A would display at the 50% you had set it at previously, but the variable would still be reporting 150% because OnShellScaling doesn't run until the user sets a new scaling value.</p>
+
+<p>At the time, there wasn't a good way around this. However, as of SSP 2.7.89, there is! There's a new property command, <a href="https://ssp.shillest.net/ukadoc/manual/list_propertysystem.html#currentghost.scope(ID).scaling">currentghost.scope(ID).scaling</a>, which can be used to detect the current scaling value at any time. With this, I'm able to check the scaling each time you change shells, and update the value appropriately. For good measure, I also check it when the ghost boots, that way it should still be accurate even if something unexpected happens (like SSP crashing).</p>
+
+<p>Since I can now get accurate scaling values, I've re-implemented this value in the stat sharing event! Use it for silly shenanigans, or whatever else your heart desires.</p>
+
+<p>Changelog:</p>
+<ul>
+	<li><p>Added Hydrate's current scaling values to the OnHydrateStatsNotify event. These are sent via the previously reserved Reference2 and Reference3. Note that this relies on a change made in SSP 2.7.89, so please make sure your SSP is up to date.</p></li>
+</ul>
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>
