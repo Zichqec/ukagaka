@@ -78,11 +78,19 @@ let version_history = [
 		},
 		{
 			version: "v1.0.0",
-			released: "2026-05-24",
-			blog_post: "../blog/2026-05-24_dont_hold_your_breath_v1.0.0.html",
+			released: "2026-05-25",
+			blog_post: "../blog/2026-05-25_dont_hold_your_breath_v1.0.0.html",
 			changelog:
 			[
-				"TODO.",
+				"Fixed the boot dialogue being possible to interrupt by double clicking the ghost.",
+				"Fixed a few missing pause tags (by switching to autopause).",
+				"The first scenario that ever plays is no longer fixed to a specific one. This was a measure we took specifically for Ghost Masquerade, so we've now removed it.",
+				"Improved scenario selection mechanic, scenarios are randomized properly as they were intended to be. (There is a nonoverlap effect so that the same scenario does not play twice in a row.)",
+				"Added links in the right click menu.",
+				"Added support for network updates.",
+				"Rearranged readme file and added content warnings (these were previously covered by the tags in the Masquerade guide ghost).",
+				"Removed collisions from the shell.",
+				"Improved various parts of the underlying code (no change in functionality, but it will be easier to add new content if we ever decide to do that).",
 			]
 		},
 	]

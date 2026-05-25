@@ -28,6 +28,24 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Don't Hold Your Breath v1.0.0",
+		release: "2026-05-25",
+		dupeindex: "01",
+		latest: null,
+		page: "2026-05-25_dont_hold_your_breath_v1.0.0.html",
+		blurb: "Release of a new ghost: <a href='../ghost/dont_hold_your_breath.html'>Don't Hold Your Breath</a>, a short horror ghost made for <a href='https://earlduant.blog.fc2.com/blog-entry-948.html'>Ghost Masquerade 8</a>.",
+		tags: ["2026","May","Ghost","Release"],
+	},
+	{
+		name: "Hydrate v2.0.6",
+		release: "2026-05-25",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-05-25_hydrate_v2.0.6.html",
+		blurb: "A minor update to <a href='../ghost/hydrate.html'>Hydrate</a>, readding the shell scaling values to the OnHydrateStatsNotify event now that it's possible to track them more closely.",
+		tags: ["2026","May","Ghost","Update"],
+	},
+	{
 		name: "How to get X and Y coordinates quickly without changing programs",
 		release: "2026-05-24",
 		dupeindex: "00",
@@ -42,7 +60,7 @@ var item_details = [
 		dupeindex: "00",
 		latest: null,
 		page: "2026-05-16_sweet_dreams_v1.0.0.html",
-		blurb: "Release of a new ghost: <a href='../ghost/sweet_dreams.html'>Sweet Dreams</a>. An entry for Ghost Masquerade 8, this ghost explores themes of protection and safety, while also offering non-judgemental sleep advice.",
+		blurb: "Release of a new ghost: <a href='../ghost/sweet_dreams.html'>Sweet Dreams</a>. An entry for <a href='https://earlduant.blog.fc2.com/blog-entry-948.html'>Ghost Masquerade 8</a>, this ghost explores themes of protection and safety, while also offering non-judgemental sleep advice.",
 		tags: ["2026","May","Ghost","New release"],
 	},
 	{
