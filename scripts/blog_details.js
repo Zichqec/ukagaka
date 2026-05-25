@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "How to get X and Y coordinates quickly without changing programs",
+		release: "2026-05-24",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-05-24_how_to_get_x_and_y_coordinates_quickly_without_changing_programs_guide.html",
+		blurb: "A new guide, <a href='https://forum.ukagakadreamteam.com/d/133-how-to-get-x-and-y-coordinates-quickly-without-changing-programs'>How to get X and Y coordinates quickly without changing programs</a>, has been released on the <a href='https://forum.ukagakadreamteam.com/'>Ukagaka Dream Team Forum</a>. The guide is made for balloon and shell developers who don't have a coordinates display in their drawing program of choice.",
+		tags: ["2026","May","Guide","Release"],
+	},
+	{
 		name: "Sweet Dreams v1.0.0",
 		release: "2026-05-16",
 		dupeindex: "00",
