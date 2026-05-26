@@ -74,6 +74,7 @@
 		<li><a href="#word_groups_in_word_groups">Word groups in word groups</a></li>
 		<li><a href="#multiple_word_groups_in_the_same_dialogue">Multiple word groups in the same dialogue</a></li>
 		<li><a href="#c_char_1">\c[char,1]</a></li>
+		<li><a href="#e">\e</a></li>
 		</ul>
 	</li>
 	<li><a href="#dialogue_density">Dialogue density</a></li>
@@ -1646,6 +1647,73 @@ closeshave
 <p>You could use some other punctuation instead, such as if you wanted the character to be cut off in the middle of speaking, or something else depending on the specifics of your dialogue.</p>
 
 <p>This trick is usually a very context-specific one and I think it almost certainly makes the word group impossible to reuse elsewhere. Honestly, I don't use it much! But now and then, it's nice and adds some really interesting variety.</p>
+
+
+<h3 id="e">\e</h3>
+<p>A similar sort of trick to the above, we can use the <a href="TODO">\e tag</a> to cut off a dialogue early if a specific word group entry is chosen. <code>\e</code> was traditionally used at the end of dialogues, but it isn't technically necessary to use it anymore. It can also be placed anywhere in a dialogue, not just at the end.</p>
+
+<p>What it actually does is make the baseware not render any text or execute any SakuraScript tags beyond that point. This is a useful trick for coding certain things, but we can also use it for writing purposes!</p>
+
+<p>This example comes from <a href="../ghost/needle.html">Needle</a>, cowritten with Galla. The context here is Needle responding to <a href="../plugin/spectre.html">Spectre</a> after being possessed.</p>
+
+<code>
+<pre>
+
+SpectrePool
+{
+	//List shortened
+	"how can you be lonely you've got all %(thatmud) to keep you company"
+}
+
+thatmud
+{
+	//List shortened
+	"that mud"
+	"those sticks"
+	"four hundred of us"
+	"the ants in the world"
+	"the bog music"
+	"those fish, okay maybe it's just 1 fish but still, all those fish"
+	"this time to construct yourself some friends out of mud and leaves"
+	"these cool possession powers that let you force people"
+	"these memories"
+	"of us— nah i'm just kidding\e"
+}
+
+</pre>
+</code>
+
+<p>Most of this list is the same sort of deal as what I've shown so far, but the last one changes the structure of the sentence. Consider these outputs:</p>
+
+<code>
+<pre>
+
+how can you be lonely you've got all that mud to keep you company
+
+how can you be lonely you've got all the ants in the world to keep you company
+
+how can you be lonely you've got all these cool possession powers that let you force people to keep you company
+
+how can you be lonely you've got all of us- nah i'm just kidding
+
+</pre>
+</code>
+
+<p>The individual word group entries (especially the third example there) play with the nuance a bit, but the last one completely breaks the mold by throwing out the expected structure of the ending part. If you've seen this dialogue a fair bit and gotten used to it, I imagine such a change would be surprising, and hopefully funny to read!</p>
+
+<p>That being said, I would encourage very careful use of this. Once you've put <code>\e</code>, there's no way to get the baseware to display the rest of the script after that point. If, for example, you've placed it in something like a menu, it can cut your menu short. Only use it in places where cutting off the rest of the script doesn't matter.</p>
+
+<p>If you take a look in SSP's script log, this is how the script would actually appear:</p>
+
+<code>
+<pre>
+
+how can you be lonely you've got all of us- nah i'm just kidding\e to keep you company
+
+</pre>
+</code>
+
+<p>It's a handy little trick, and I think it's a great accent for a word group now and then. I'd suggest using it sparingly, for maximum impact when it does come up!</p>
 
 
 <h2 id="dialogue_density">Dialogue density</h2>
