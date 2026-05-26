@@ -46,7 +46,7 @@ var item_details = [
 		tags: ["2026","May","Ghost","Update"],
 	},
 	{
-		name: "How to get X and Y coordinates quickly without changing programs",
+		name: "Guide: How to get X and Y coordinates quickly without changing programs",
 		release: "2026-05-24",
 		dupeindex: "00",
 		latest: null,
