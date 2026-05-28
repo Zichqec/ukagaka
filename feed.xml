@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>EncodeMorse &amp; DecodeMorse functions</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-09-26_encodemorse_decodemorse_functions</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-09-26_encodemorse_decodemorse_functions</guid>
-		<pubDate>Fri, 26 Sep 2025 00:00:00 EST</pubDate>
-		<description>Release of a new set of functions: &lt;a href='../function/index.html#encodemorse_decodemorse'&gt;EncodeMorse &amp; DecodeMorse&lt;/a&gt;. These functions can change text to and from morse code, and may be customized to add new codes.</description>
-	</item>
-	<item>
 		<title>Wanted: Dead, Alive, or Other v1.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-09-26_wanted_dead_alive_or_other_v1.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-09-26_wanted_dead_alive_or_other_v1.0.0</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-05-25_dont_hold_your_breath_v1.0.0</guid>
 		<pubDate>Mon, 25 May 2026 00:00:01 EST</pubDate>
 		<description>Release of a new ghost: &lt;a href='../ghost/dont_hold_your_breath.html'&gt;Don't Hold Your Breath&lt;/a&gt;, a short horror ghost made for &lt;a href='https://earlduant.blog.fc2.com/blog-entry-948.html'&gt;Ghost Masquerade 8&lt;/a&gt;.</description>
+	</item>
+	<item>
+		<title>Hoard of Shinies v1.0.8</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-05-28_hoard_of_shinies_v1.0.8</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-05-28_hoard_of_shinies_v1.0.8</guid>
+		<pubDate>Thu, 28 May 2026 00:00:00 EST</pubDate>
+		<description>The ghost &lt;a href='../ghost/hoard_of_shinies.html'&gt;Hoard of Shinies&lt;/a&gt; has been updated to v1.0.8! This update adds new dialogues.</description>
 	</item>
 </channel>
 </rss>
