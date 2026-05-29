@@ -211,7 +211,7 @@ var item_details = [
 		forevent: null,
 		language: "YAYA",
 		download: "https://www.mediafire.com/file/pv3n99i7v8ervov/IntervalStacker_v2.0.5.zip/file",
-		blurb: "This is a tool I made that helps with shell setups that use a lot of animations called by \\i[] tags! Note that in this tool, such animations are referred to as \"intervals\" even though that's not actually the right term. Currently this is distributed as a .dic file that you can add to your ghosts individually. It uses a SERIKO parser by <a href='https://levidre.github.io/'>Levidre</a>, though at the moment it only supports the old definition of SERIKO.",
+		blurb: "NOTE: THIS CODE IS OBSOLETE. You can now select multiple animations in SSP's surface test window, and even <a href='https://ssp.shillest.net/ukadoc/manual/descript_shell_surfaces.html#animation*.name,定義名'>add names to them</a>. I strongly recommend using that instead, as making your shell work with this code will limit what you're able to do.<br><br>This is a tool I made that helps with shell setups that use a lot of animations called by \\i[] tags! Note that in this tool, such animations are referred to as \"intervals\" even though that's not actually the right term. Currently this is distributed as a .dic file that you can add to your ghosts individually. It uses a SERIKO parser by <a href='https://levidre.github.io/'>Levidre</a>, though at the moment it only supports the old definition of SERIKO.",
 		tags: ["2020","YAYA"]
 	},
 	{
