@@ -140,7 +140,7 @@ var item_details = [
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/dont_hold_your_breath"},
 			{label: "Afterword", url: "https://earlduant.blog.fc2.com/blog-entry-951.html"},
 		],
-		blurb: "﻿Have you ever met a mermaid?<br><br>A short horror ghost for Ghost Masquerade! It comes with multiple stories, and a new one is chosen each time you boot it.",
+		blurb: "﻿Have you ever met a mermaid?<br><br>A short horror ghost for Ghost Masquerade! It comes with multiple stories, and a new one is chosen each time you boot it. Uses the freeshell <a href='https://yaseiuka.weebly.com/10012281452802339770.html'>深海魚</a> by ３号生.",
 		tags: ["2026", "YAYA", "Collab", "Uses freeshell", "Includes my code", "For event", "Ghost Masquerade", "Story"]
 	},
 	{
@@ -283,8 +283,8 @@ var item_details = [
 	{
 		name: "Hoard of Shinies",
 		release: "2025-03-27",
-		latest: "2026-03-27",
-		version: "v1.0.7",
+		latest: "2026-05-28",
+		version: "v1.0.8",
 		forevent: null,
 		collaborators: null,
 		translations: null,

@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Hoard of Shinies v1.0.8",
+		release: "2026-05-28",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-05-28_hoard_of_shinies_v1.0.8.html",
+		blurb: "The ghost <a href='../ghost/hoard_of_shinies.html'>Hoard of Shinies</a> has been updated to v1.0.8! This update adds new dialogues.",
+		tags: ["2026","May","Ghost","Update"],
+	},
+	{
 		name: "Don't Hold Your Breath v1.0.0",
 		release: "2026-05-25",
 		dupeindex: "01",
