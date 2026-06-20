@@ -31,12 +31,16 @@ let Skrunkly = {
 	name: "Skrunkly", download_link: "https://ukagakadreamteam.com/wiki/ghost/skrunkly"
 }
 
+let Flakes_of_Fancy = {
+	name: "Flakes of Fancy", download_link: "mine"
+}
+
 
 var shell_tags = [
-	["2020","2021","2022","2023","2024","2025"],
-	["Needle","Noodle","Hydrate","FLUX/FLELE","If I Can't Have Shrimp No One Can","Skrunkly","Presentable Can"],
+	["2020","2021","2022","2023","2024","2025","2026"],
+	["Needle","Noodle","Hydrate","FLUX/FLELE","If I Can't Have Shrimp No One Can","Skrunkly","Presentable Can","Flakes of Fancy"],
 	["Collab"],
-	["For event","8/20 Hydrate Shell Jam","Etc. Jam","Needle Day"],
+	["For event","8/20 Hydrate Shell Jam","Etc. Jam","Needle Day","Ghost Jam"],
 	["Digital","Traditional","Other"],
 	["Flat color","Shaded","Soft brush","Pixel brush","Lined","Lineless"],
 	["Animations","Dressups","Additional pieces","Color alts"],
@@ -736,6 +740,23 @@ var shell_details = [
 		],
 		blurb: "Noodle in penne form! Made during Etc. Jam 2023, since I had more time than expected at the end. Comes in all the same colors as the original Noodle shell!",
 		tags: ["2023","Noodle","For event","Etc. Jam","Digital","Shaded","Pixel brush","Lineless","Dressups","Color alts"]
+	},
+	{
+		name: "Pixel flakes",
+		goeswith: [Flakes_of_Fancy],
+		release: "2026-06-20",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Ghost Jam 2026",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/pixel_flakes/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/flakes_of_fancy/pixel_flakes"},
+		],
+		blurb: "Pixel snowflakes for your pixel winter needs!",
+		tags: ["2026","For event","Flakes of Fnacy","Ghost Jam","Digital","Shaded","Pixel brush","Lineless","Animations","Dressups"]
 	},
 	{
 		name: "Rotini",

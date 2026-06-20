@@ -12,20 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Wanted: Dead, Alive, or Other v1.0.0</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-09-26_wanted_dead_alive_or_other_v1.0.0</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-09-26_wanted_dead_alive_or_other_v1.0.0</guid>
-		<pubDate>Fri, 26 Sep 2025 00:00:01 EST</pubDate>
-		<description>Release of a new ghost: &lt;a href='../ghost/wanted_dead_alive_or_other.html'&gt;Wanted: Dead, Alive, or Other&lt;/a&gt;. Necromancy is tiring work, mostly because it takes so long to interview candidates and select the best ones. But it is a necessary process, otherwise research results will be chaotic and rather useless... Best get to it, then.</description>
-	</item>
-	<item>
-		<title>SSP Angel v1.1.3</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-10-05_ssp_angel_v1.1.3</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-10-05_ssp_angel_v1.1.3</guid>
-		<pubDate>Sun, 05 Oct 2025 00:00:00 EST</pubDate>
-		<description>A minor update to &lt;a href='../ghost/ssp_angel.html'&gt;SSP Angel&lt;/a&gt; has been released, updating various terms to match the new SSP English translations, and clarifying or correcting other information. A small amount of new idle dialogue has been added as well.</description>
-	</item>
-	<item>
 		<title>Wanted: Dead, Alive, or Other v1.0.1</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-10-29_wanted_dead_alive_or_other_v1.0.1</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-10-29_wanted_dead_alive_or_other_v1.0.1</guid>
@@ -185,6 +171,20 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-05-28_hoard_of_shinies_v1.0.8</guid>
 		<pubDate>Thu, 28 May 2026 00:00:00 EST</pubDate>
 		<description>The ghost &lt;a href='../ghost/hoard_of_shinies.html'&gt;Hoard of Shinies&lt;/a&gt; has been updated to v1.0.8! This update adds new dialogues.</description>
+	</item>
+	<item>
+		<title>Flakes of Fancy v1.0.0</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-06-20_flakes_of_fancy_v1.0.0</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-06-20_flakes_of_fancy_v1.0.0</guid>
+		<pubDate>Sat, 20 Jun 2026 00:00:00 EST</pubDate>
+		<description>The ghost &lt;a href='../ghost/flakes_of_fancy.html'&gt;Flakes of Fancy&lt;/a&gt; has been released! Bring winter to your desktop in the middle of summer!</description>
+	</item>
+	<item>
+		<title>Pixel Flakes v1.0.0</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-06-20_pixel_flakes_v1.0.0</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-06-20_pixel_flakes_v1.0.0</guid>
+		<pubDate>Sat, 20 Jun 2026 00:00:01 EST</pubDate>
+		<description>The shell &lt;a href='../shell/pixel_flakes.html'&gt;Pixel flakes&lt;/a&gt; has been released, to make your desktop winter a little crunchier!</description>
 	</item>
 </channel>
 </rss>

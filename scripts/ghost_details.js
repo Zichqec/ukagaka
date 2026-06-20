@@ -182,6 +182,27 @@ var item_details = [
 		tags: ["2020", "YAYA", "Includes my writing", "Includes my art", "Includes my code", "Idle chatter", "Utility", "Minigames"]
 	},
 	{
+		name: "Flakes of Fancy",
+		release: "2026-06-20",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Ghost Jam 2026",
+		collaborators:
+		[
+			{name: "Blue", creditlink: "https://www.tumblr.com/bluetheanimator"},
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+		],
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/flakes_of_fancy/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/flakes_of_fancy"},
+		],
+		blurb: "Bring winter to your desktop! Watch the snow fall, see it build up on your taskbar, and scuplt it into snowballs!",
+		tags: ["2026", "Aosora", "Collab", "Includes my art", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "Object"]
+	},
+	{
 		name: "FLUX",
 		release: "2021-05-12",
 		latest: "2025-11-23",
