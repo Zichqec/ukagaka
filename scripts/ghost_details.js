@@ -680,6 +680,28 @@ var item_details = [
 		tags: ["2025", "YAYA", "Uses freeshell", "Includes my writing", "Includes my code", "For event", "Ghost Masquerade", "Idle chatter", "Story"]
 	},
 	{
+		name: "Thoughtful Replies",
+		release: "2026-06-25",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Ghost Jam 2026",
+		collaborators:
+		[
+			{name: "Blue", creditlink: "https://www.tumblr.com/bluetheanimator"},
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+			{name: "vita", creditlink: "https://thatoddhaystack.neocities.org/ukagaka/"},
+		],
+		translations: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/thoughtful_replies/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/thoughtful_replies"},
+		],
+		blurb: "In the quietest hours of the night, a certain homebody writes heartfelt notes by candlelight.<br><br>Each time you play you might see slightly different content!",
+		tags: ["2026", "Aosora", "Collab", "Includes my code", "Includes my writing", "For event", "Ghost Jam", "Idle chatter"]
+	},
+	{
 		name: "Ukatranslator",
 		release: "2021-10-04",
 		latest: null,

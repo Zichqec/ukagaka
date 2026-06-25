@@ -12,20 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Wanted: Dead, Alive, or Other v1.0.1</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-10-29_wanted_dead_alive_or_other_v1.0.1</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-10-29_wanted_dead_alive_or_other_v1.0.1</guid>
-		<pubDate>Wed, 29 Oct 2025 00:00:00 EST</pubDate>
-		<description>An update to &lt;a href='../ghost/wanted_dead_alive_or_other.html'&gt;Wanted: Dead, Alive, or Other&lt;/a&gt; has been released, smoothing out jam bugs and adding some new content.</description>
-	</item>
-	<item>
-		<title>Needle Day 2025</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-11-11_needle_day_2025</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-11-11_needle_day_2025</guid>
-		<pubDate>Tue, 11 Nov 2025 00:00:00 EST</pubDate>
-		<description>Needle Day 2025 has arrived, bringing with it &lt;a href='../ghost/needle.html'&gt;Needle&lt;/a&gt; v1.1.5 and 11 new Needle shells.</description>
-	</item>
-	<item>
 		<title>Corkscrew v1.0.1</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-11-13_corkscrew_v1.0.1</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-11-13_corkscrew_v1.0.1</guid>
@@ -185,6 +171,20 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-06-20_pixel_flakes_v1.0.0</guid>
 		<pubDate>Sat, 20 Jun 2026 00:00:01 EST</pubDate>
 		<description>The shell &lt;a href='../shell/pixel_flakes.html'&gt;Pixel flakes&lt;/a&gt; has been released, to make your desktop winter a little crunchier!</description>
+	</item>
+	<item>
+		<title>Thoughtful Replies v1.0.0</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-06-25_thoughtful_replies_v1.0.0</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-06-25_thoughtful_replies_v1.0.0</guid>
+		<pubDate>Thu, 25 Jun 2026 00:00:00 EST</pubDate>
+		<description>The ghost &lt;a href='../ghost/thoughtful_replies.html'&gt;Thoughtful Replies&lt;/a&gt; has been released! In the quietest hours of the night, a certain homebody writes heartfelt notes by candlelight.</description>
+	</item>
+	<item>
+		<title>Chicken Scratch v1.0.0</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-06-25_chicken_scratch_v1.0.0</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-06-25_chicken_scratch_v1.0.0</guid>
+		<pubDate>Thu, 25 Jun 2026 00:00:01 EST</pubDate>
+		<description>The balloon &lt;a href='../balloon/chicken_scratch.html'&gt;Chicken Scratch&lt;/a&gt; has been released, for all your chicken-and-stationery needs!</description>
 	</item>
 </channel>
 </rss>

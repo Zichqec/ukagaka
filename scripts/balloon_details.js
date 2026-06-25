@@ -132,6 +132,22 @@ var item_details = [
 		tags: ["2026","Includes my art","For event","Etc. Jam","Pixel brush","Plain text area","Dark text on light background","Extra sizes"]
 	},
 	{
+		name: "Chicken Scratch",
+		release: "2026-06-25",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Ghost Jam 2026",
+		goeswith: ["Thoughtful Replies"],
+		collaborators: null,
+		download: ["https://github.com/Zichqec/chicken_scratch/releases/latest"],
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/balloon/h2o"},
+		],
+		blurb: "A stationery-and-chicken themed balloon! It's pretty strongly keyed to the ghost <a href='../ghost/thoughtful_replies.html'>Thoughtful Replies</a>, it only has one balloon size and has some balloon surfaces that aren't meant for text, but you might find it fun and interesting anyway.",
+		tags: ["2026","Includes my art","Made for a ghost","Soft brush","Plain text area","Dark text on light background","Color alts"]
+	},
+	{
 		name: "Chrono Trigger",
 		release: "2021-04-24",
 		latest: null,
