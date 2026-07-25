@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Corkscrew v1.0.1</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-11-13_corkscrew_v1.0.1</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-11-13_corkscrew_v1.0.1</guid>
-		<pubDate>Thu, 13 Nov 2025 00:00:00 EST</pubDate>
-		<description>An update to the shell &lt;a href='../shell/corkscrew.html'&gt;Corkscrew&lt;/a&gt;, adding several new colors and some other options for variation.</description>
-	</item>
-	<item>
 		<title>Needloon (readable) v1.0.1</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-11-13_needloon_readable_v1.0.1</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-11-13_needloon_readable_v1.0.1</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-06-25_chicken_scratch_v1.0.0</guid>
 		<pubDate>Thu, 25 Jun 2026 00:00:01 EST</pubDate>
 		<description>The balloon &lt;a href='../balloon/chicken_scratch.html'&gt;Chicken Scratch&lt;/a&gt; has been released, for all your chicken-and-stationery needs!</description>
+	</item>
+	<item>
+		<title>Aughost 2026 announcement</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-07-25_aughost_2026_announcement</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-07-25_aughost_2026_announcement</guid>
+		<pubDate>Sat, 25 Jul 2026 00:00:00 EST</pubDate>
+		<description>&lt;a href='../event/aughost_2026.html'&gt;Aughost 2026&lt;/a&gt; will be starting soon! See the event's page for the guidelines.</description>
 	</item>
 </channel>
 </rss>

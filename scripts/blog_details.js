@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Aughost 2026 announcement",
+		release: "2026-07-25",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-07-25_aughost_2026_announcement.html",
+		blurb: "<a href='../event/aughost_2026.html'>Aughost 2026</a> will be starting soon! See the event's page for the guidelines.",
+		tags: ["2026","July","Event"],
+	},
+	{
 		name: "Chicken Scratch v1.0.0",
 		release: "2026-06-25",
 		dupeindex: "01",
