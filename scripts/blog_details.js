@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "ATM Machine v2.0.3",
+		release: "2026-07-31",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-07-31_atm_machine_v2.0.3.html",
+		blurb: "A minor update to <a href='../ghost/atm_machine.html'>ATM Machine</a> has been released, bringing some tidying and a bugfix.",
+		tags: ["2026","July","Ghost","Update"],
+	},
+	{
 		name: "Aughost 2026 announcement",
 		release: "2026-07-25",
 		dupeindex: "00",

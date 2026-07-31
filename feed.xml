@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Needloon (readable) v1.0.1</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-11-13_needloon_readable_v1.0.1</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-11-13_needloon_readable_v1.0.1</guid>
-		<pubDate>Thu, 13 Nov 2025 00:00:01 EST</pubDate>
-		<description>An update to the shell &lt;a href='../balloon/needloon_readable.html'&gt;Needloon (readable)&lt;/a&gt;, fixing a longstanding issue with visited anchors having the wrong shadow style.</description>
-	</item>
-	<item>
 		<title>Music player v2.0.4</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-11-22_music_player_v2.0.4</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-11-22_music_player_v2.0.4</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-07-25_aughost_2026_announcement</guid>
 		<pubDate>Sat, 25 Jul 2026 00:00:00 EST</pubDate>
 		<description>&lt;a href='../event/aughost_2026.html'&gt;Aughost 2026&lt;/a&gt; will be starting soon! See the event's page for the guidelines.</description>
+	</item>
+	<item>
+		<title>ATM Machine v2.0.3</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-07-31_atm_machine_v2.0.3</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-07-31_atm_machine_v2.0.3</guid>
+		<pubDate>Fri, 31 Jul 2026 00:00:00 EST</pubDate>
+		<description>A minor update to &lt;a href='../ghost/atm_machine.html'&gt;ATM Machine&lt;/a&gt; has been released, bringing some tidying and a bugfix.</description>
 	</item>
 </channel>
 </rss>
