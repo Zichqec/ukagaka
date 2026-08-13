@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "8/20 Hydrate Shell Jam 2026",
+		release: "2026-08-13",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-08-13_8_20_hydrate_shell_jam_2026_announcement.html",
+		blurb: "<a href='../event/8_20_hydrate_shell_jam_2026_rules.html'>8/20 Hydrate Shell Jam 2026</a> will be happening soon. See the event's page for the rules and timeframe!",
+		tags: ["2026","August","Event"],
+	},
+	{
 		name: "ATM Machine v2.0.3",
 		release: "2026-07-31",
 		dupeindex: "00",
