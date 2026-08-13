@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Music player v2.0.4</title>
-		<link>https://ukagaka.zichqec.com/blog/2025-11-22_music_player_v2.0.4</link>
-		<guid>https://ukagaka.zichqec.com/blog/2025-11-22_music_player_v2.0.4</guid>
-		<pubDate>Sat, 22 Nov 2025 00:00:00 EST</pubDate>
-		<description>An update to my &lt;a href='../function/index.html#music_player'&gt;music player&lt;/a&gt; code, fixing several bugs, as well as bringing some formatting cleanup and other small improvements.</description>
-	</item>
-	<item>
 		<title>FLUX v2.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2025-11-23_flux_v2.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2025-11-23_flux_v2.0.0</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-07-31_atm_machine_v2.0.3</guid>
 		<pubDate>Fri, 31 Jul 2026 00:00:00 EST</pubDate>
 		<description>A minor update to &lt;a href='../ghost/atm_machine.html'&gt;ATM Machine&lt;/a&gt; has been released, bringing some tidying and a bugfix.</description>
+	</item>
+	<item>
+		<title>8/20 Hydrate Shell Jam 2026 announcement</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-08-13_8_20_hydrate_shell_jam_2026_announcement</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-08-13_8_20_hydrate_shell_jam_2026_announcement</guid>
+		<pubDate>Thu, 13 Aug 2026 00:00:00 EST</pubDate>
+		<description>&lt;a href='../event/8_20_hydrate_shell_jam_2026_rules.html'&gt;8/20 Hydrate Shell Jam 2026&lt;/a&gt; will be happening soon. See the event's page for the rules and timeframe!</description>
 	</item>
 </channel>
 </rss>
