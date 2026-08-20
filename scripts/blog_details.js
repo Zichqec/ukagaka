@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Touch Grass v1.0.0",
+		release: "2026-08-20",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-08-20_touch_grass_v1.0.0.html",
+		blurb: "The <a href='../ghost/hydrate.html'>Hydrate</a> shell <a href='../shell/touch_grass.html'>Touch Grass</a> has been released. Touch grass anywhere, anytime, while you hydrate!",
+		tags: ["2026","August","Shell","Release"],
+	},
+	{
 		name: "8/20 Hydrate Shell Jam 2026 has begun",
 		release: "2026-08-20",
 		dupeindex: "00",

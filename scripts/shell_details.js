@@ -912,6 +912,23 @@ var shell_details = [
 		tags: ["2022","Needle","For event","Needle Day","Digital","Shaded","Pixel brush","Lined"]
 	},
 	{
+		name: "Touch Grass",
+		goeswith: [Hydrate],
+		release: "2026-08-20",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "8/20 Hydrate Shell Jam 2026",
+		collaborators: null,
+		content_warnings: null,
+		download: "https://github.com/Zichqec/touch_grass/releases/latest",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/hydrate/touch_grass"},
+		],
+		blurb: "Touch grass anytime, anywhere, while staying hydrated!",
+		tags: ["2026","Hydrate","For event","8/20 Hydrate Shell Jam","Digital","Shaded","Pixel brush","Lineless","Dressups"]
+	},
+	{
 		name: "Tuxeedle",
 		goeswith: [Needle],
 		release: "2024-01-01",
