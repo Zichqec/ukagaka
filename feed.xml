@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Tuxeedle v1.0.2</title>
-		<link>https://ukagaka.zichqec.com/blog/2026-01-01_tuxeedle_v1.0.2</link>
-		<guid>https://ukagaka.zichqec.com/blog/2026-01-01_tuxeedle_v1.0.2</guid>
-		<pubDate>Thu, 01 Jan 2026 00:00:00 EST</pubDate>
-		<description>A small update to &lt;a href='../shell/tuxeedle.html'&gt;Tuxeedle&lt;/a&gt;, adding a new ring color and dressup menu organization.</description>
-	</item>
-	<item>
 		<title>Birthday Needle v1.0.2</title>
 		<link>https://ukagaka.zichqec.com/blog/2026-01-07_birthday_needle_v1.0.2</link>
 		<guid>https://ukagaka.zichqec.com/blog/2026-01-07_birthday_needle_v1.0.2</guid>
@@ -183,8 +176,15 @@
 		<title>Touch Grass v1.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2026-08-20_touch_grass_v1.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2026-08-20_touch_grass_v1.0.0</guid>
-		<pubDate>Thu, 20 Aug 2026 00:00:00 EST</pubDate>
+		<pubDate>Thu, 20 Aug 2026 00:00:01 EST</pubDate>
 		<description>The &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; shell &lt;a href='../shell/touch_grass.html'&gt;Touch Grass&lt;/a&gt; has been released. Touch grass anywhere, anytime, while you hydrate!</description>
+	</item>
+	<item>
+		<title>8/20 Hydrate Shell Jam 2026 has ended</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-08-21_8_20_hydrate_shell_jam_2026_has_ended</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-08-21_8_20_hydrate_shell_jam_2026_has_ended</guid>
+		<pubDate>Fri, 21 Aug 2026 00:00:00 EST</pubDate>
+		<description>&lt;a href='../event/8_20_hydrate_shell_jam_2026_rules.html'&gt;8/20 Hydrate Shell Jam 2026&lt;/a&gt; has ended! There is a 1 hour grace period to finish submissions before the form closes.</description>
 	</item>
 </channel>
 </rss>
