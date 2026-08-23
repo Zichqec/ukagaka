@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<article>
+<h1>8/20 Hydrate Shell Jam 2026 results</h1>
+<img src="8_20_hydrate_shell_jam_2026/banner_end.png" alt="All of the jam entries together. A soda bottle, a patch of grass with dew, a 3D object mug, a stoneware bowl with a face, and a water spout." class="centerimg eventbannershadow">
+
+<p>Here are the results of 8/20 Hydrate Shell Jam 2026! In total there were <strong>5 entries</strong> by <strong>5 participants</strong>.</p>
+
+<p>Per the usual, a static image doesn't do each entry justice, so be sure to download them and see what they have to offer!</p>
+
+<p>For posterity, the <a href="8_20_hydrate_shell_jam_2026_rules.html">original rules for the event</a> will remain available to view. I also wrote a <a href="../blog/2026-08-23_8_20_hydrate_shell_jam_2026_afterword.html">short afterword</a> on my blog. Thank you to everyone who participated!</p>
+
+<h2 id="submissions">Submissions</h2>
+<div id="entries"></div>
+
+</article>
+
+<script>
+let entries = [
+	{
+		name: "Touch Grass",
+		download: "https://ukagaka.zichqec.com/shell/touch_grass",
+		content_warnings: null,
+		developers:
+		[
+			{name: "Zichqec", creditlink: "https://ukagaka.zichqec.com/"},
+		],
+	},
+	{
+		name: "Mississippian Bowl with Face",
+		download: "https://github.com/singlefl4me/idk_ghosts/blob/main/releases/bwf_idk.nar",
+		content_warnings: null,
+		developers:
+		[
+			{name: "idk", creditlink: "https://github.com/singlefl4me"},
+		],
+	},
+	{
+		name: "Water Spout",
+		download: "https://github.com/D-elete-d/Water-spout-Hydrate-Shell-",
+		content_warnings: ["A tiny spider, possible arachnophobia maybe?"],
+		developers:
+		[
+			{name: "Cherrie", creditlink: "https://github.com/D-elete-d"},
+		],
+	},
+	{
+		name: "mug.obj",
+		download: "https://okuajub-netspace.neocities.org/mug_ukgk",
+		content_warnings: null,
+		developers:
+		[
+			{name: "okuajub", creditlink: "https://okuajub-netspace.neocities.org"},
+		],
+	},
+	{
+		name: "Flowery Soda",
+		download: "https://github.com/yuyudev-thatoddhaystack/flowerysoda_yy/releases",
+		content_warnings: null,
+		developers:
+		[
+			{name: "vita", creditlink: "https://thatoddhaystack.neocities.org/ukagaka/"},
+		],
+	},
+]
+</script>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+<script>
+let output = ``;
+
+for (let i = 0; i < entries.length; i++)
+{
+	let entry = entries[i];
+	
+	let authors = ``;
+	for (let ii = 0; ii < entry.developers.length; ii++)
+	{
+		let developer = entry.developers[ii];
+		if (authors != ``) authors += `, `;
+		authors += `<a href="${developer.creditlink}">${developer.name}</a>`;
+	}
+	let authorlabel = `Author`;
+	if (entry.developers.length > 1) authorlabel += "s";
+	
+	let contentwarnings = ``;
+	if (entry.content_warnings != null)
+	{
+		for (let ii = 0; ii < entry.content_warnings.length; ii++)
+		{
+			if (contentwarnings != ``) contentwarnings += `, `;
+			contentwarnings += `${entry.content_warnings[ii]}`;
+		}
+	}
+	if (contentwarnings != ``) contentwarnings = `<p>Content warnings: ` + contentwarnings + `</p>`
+	
+	if (output != ``) output += `<br>`;
+	
+	output += `
+	<h3 id="${makeStandard(entry.name)}">${entry.name}</h3>
+	<img src="8_20_hydrate_shell_jam_2026/entries/${makeStandard(entry.name)}.png" alt="${entry.name} thumbnail">
+	<p>${authorlabel}: ${authors}</p>
+	${contentwarnings}
+	<p><a href="${entry.download}">Download</a></p>
+	`;
+}
+
+
+document.getElementById('entries').outerHTML = output;
+</script>
+
+</body>
+</html>

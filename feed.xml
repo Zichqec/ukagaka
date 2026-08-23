@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Birthday Needle v1.0.2</title>
-		<link>https://ukagaka.zichqec.com/blog/2026-01-07_birthday_needle_v1.0.2</link>
-		<guid>https://ukagaka.zichqec.com/blog/2026-01-07_birthday_needle_v1.0.2</guid>
-		<pubDate>Wed, 07 Jan 2026 00:00:00 EST</pubDate>
-		<description>A small update to &lt;a href='../shell/birthday_needle.html'&gt;Birthday Needle&lt;/a&gt;, adding a new candle and some other minor adjustments.</description>
-	</item>
-	<item>
 		<title>Hydrate v2.0.5</title>
 		<link>https://ukagaka.zichqec.com/blog/2026-01-08_hydrate_v2.0.5</link>
 		<guid>https://ukagaka.zichqec.com/blog/2026-01-08_hydrate_v2.0.5</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-08-21_8_20_hydrate_shell_jam_2026_has_ended</guid>
 		<pubDate>Fri, 21 Aug 2026 00:00:00 EST</pubDate>
 		<description>&lt;a href='../event/8_20_hydrate_shell_jam_2026_rules.html'&gt;8/20 Hydrate Shell Jam 2026&lt;/a&gt; has ended! There is a 1 hour grace period to finish submissions before the form closes.</description>
+	</item>
+	<item>
+		<title>8/20 Hydrate Shell Jam 2026 afterword</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-08-23_8_20_hydrate_shell_jam_2026_afterword</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-08-23_8_20_hydrate_shell_jam_2026_afterword</guid>
+		<pubDate>Sun, 23 Aug 2026 00:00:00 EST</pubDate>
+		<description>The results of &lt;a href='../event/8_20_hydrate_shell_jam_2026_results.html'&gt;8/20 Hydrate Shell Jam 2026&lt;/a&gt; are now available. Many thanks to everyone who participated!</description>
 	</item>
 </channel>
 </rss>
