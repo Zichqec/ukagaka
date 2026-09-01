@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Aughost 2026 afterword",
+		release: "2026-09-01",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-09-01_aughost_2026_afterword.html",
+		blurb: "<a href='../event/aughost_2026.html'>Aughost 2026</a> has now ended, and the event restrictions are lifted. Sharing what you made is encouraged!",
+		tags: ["2026","September","Event"],
+	},
+	{
 		name: "8/20 Hydrate Shell Jam 2026 afterword",
 		release: "2026-08-23",
 		dupeindex: "00",

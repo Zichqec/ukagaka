@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Hydrate v2.0.5</title>
-		<link>https://ukagaka.zichqec.com/blog/2026-01-08_hydrate_v2.0.5</link>
-		<guid>https://ukagaka.zichqec.com/blog/2026-01-08_hydrate_v2.0.5</guid>
-		<pubDate>Thu, 08 Jan 2026 00:00:00 EST</pubDate>
-		<description>A patch for &lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; which fixes a few bugs and updates the readme information.</description>
-	</item>
-	<item>
 		<title>Left Unattended v1.1.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2026-02-14_left_unattended_v1.1.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2026-02-14_left_unattended_v1.1.0</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-08-23_8_20_hydrate_shell_jam_2026_afterword</guid>
 		<pubDate>Sun, 23 Aug 2026 00:00:00 EST</pubDate>
 		<description>The results of &lt;a href='../event/8_20_hydrate_shell_jam_2026_results.html'&gt;8/20 Hydrate Shell Jam 2026&lt;/a&gt; are now available. Many thanks to everyone who participated!</description>
+	</item>
+	<item>
+		<title>Aughost 2026 afterword</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-09-01_aughost_2026_afterword</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-09-01_aughost_2026_afterword</guid>
+		<pubDate>Tue, 01 Sep 2026 00:00:00 EST</pubDate>
+		<description>&lt;a href='../event/aughost_2026.html'&gt;Aughost 2026&lt;/a&gt; has now ended, and the event restrictions are lifted. Sharing what you made is encouraged!</description>
 	</item>
 </channel>
 </rss>
