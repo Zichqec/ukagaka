@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Thoughtful Replies v1.0.1",
+		release: "2026-09-30",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-09-30_thoughtful_replies_v1.0.1.html",
+		blurb: "The ghost <a href='../ghost/thoughtful_replies.html'>Thoughtful Replies</a> has been updated to v1.0.1. <a href='https://okuajub-netspace.neocities.org/'>okuajub</a> has joined the development team, the Ghost Jam jank has been cleaned up, and a lot of new content has been added.",
+		tags: ["2026","September","Ghost","Update"],
+	},
+	{
 		name: "Aughost 2026 afterword",
 		release: "2026-09-01",
 		dupeindex: "00",

@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Left Unattended v1.1.0</title>
-		<link>https://ukagaka.zichqec.com/blog/2026-02-14_left_unattended_v1.1.0</link>
-		<guid>https://ukagaka.zichqec.com/blog/2026-02-14_left_unattended_v1.1.0</guid>
-		<pubDate>Sat, 14 Feb 2026 00:00:00 EST</pubDate>
-		<description>The first separate release for &lt;a href='../ghost/left_unattended.html'&gt;Left Unattended&lt;/a&gt;, and a major update adding a lot of new content.</description>
-	</item>
-	<item>
 		<title>Writing word groups guide</title>
 		<link>https://ukagaka.zichqec.com/blog/2026-02-18_writing_word_groups_guide</link>
 		<guid>https://ukagaka.zichqec.com/blog/2026-02-18_writing_word_groups_guide</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-09-01_aughost_2026_afterword</guid>
 		<pubDate>Tue, 01 Sep 2026 00:00:00 EST</pubDate>
 		<description>&lt;a href='../event/aughost_2026.html'&gt;Aughost 2026&lt;/a&gt; has now ended, and the event restrictions are lifted. Sharing what you made is encouraged!</description>
+	</item>
+	<item>
+		<title>Thoughtful Replies v1.0.1</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-09-30_thoughtful_replies_v1.0.1</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-09-30_thoughtful_replies_v1.0.1</guid>
+		<pubDate>Wed, 30 Sep 2026 00:00:00 EST</pubDate>
+		<description>The ghost &lt;a href='../ghost/thoughtful_replies.html'&gt;Thoughtful Replies&lt;/a&gt; has been updated to v1.0.1. &lt;a href='https://okuajub-netspace.neocities.org/'&gt;okuajub&lt;/a&gt; has joined the development team, the Ghost Jam jank has been cleaned up, and a lot of new content has been added.</description>
 	</item>
 </channel>
 </rss>
