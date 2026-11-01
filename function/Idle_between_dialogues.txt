@@ -1,29 +1,34 @@
 //Written by Zichqec https://ukagaka.zichqec.com/
-//This code can be used to easily make your ghost change poses randomly between dialogues. This works even if dialogues are turned off entirely.
-//OnSurfaceRestore only happens once after each dialogue, so most ghosts will be static between their dialogues, and stand completely still if you turn dialogues off. This code seeks to alleviate that.
+//This code is used to make your ghost change poses randomly between dialogues. This works even if dialogues are turned off entirely.
+//OnSurfaceRestore only happens once after each dialogue, so most ghosts will be static between their dialogues, and stand completely still if you turn dialogues off. With this code, you can change that behavior.
 
 //This works by calling OnSurfaceRestore, so you can simply add whatever random poses you want to OnSurfaceRestore. If that won't work for your setup, you could make a separate function with a pool of poses for it to call.
-//By default, this has a chance to make the ghost run OnSurfaceRestore every 15 seconds, so long as 15 seconds have passed since the last dialogue (and the balloon is not currently open). You can adjust this timing, and adjust the chance to change poses, if you like. I made it not change every time because I think it feels more organic that way.
+//By default this code is set up to allow you to specify a minimum time and maximum time between surface changes, and will select a random number of seconds between the two. You can customize the values, or even put in your own logic for determining times if you prefer (such as if you wanted it to always be an increment of 10 seconds, or make the times shorter/longer based on certain conditions).
 
-//If you already have OnSecondChange, you will have to incorporate this into your existing OnSecondChange, since you can't have two of the same event.
-//If you have my BalloonIsOpen function, you can substitute that in here. Just change the !_balloonisopen in the if check to !BalloonIsOpen, and remove the line that sets _balloonisopen in this function. It's not necessary to do so, though.
+//If you already have the events OnSecondChange and OnInitialize, you will need to incorporate this code into them.
+//If you have my BalloonIsOpen function, you could add a check for it if you wanted, to ensure that random changes never interrupt the balloon. I don't think it's necessary though, if you keep the minimum value at 30 or higher.
+
+//Every time the ghost boots or is reloaded, the time until the next random change needs to be reset.
+OnInitialize
+{
+	SetSurfaceRestoreRand
+}
+
+//Sets the time until the next random surface change. The first number is the minimum number of seconds you want, and the number in the RAND (minus 1) is the range of seconds it can pick. So by default it will always be at least 30, and then a number from 0-60 (inclusive) will be added, meaning it will pick a number from 30 to 90.
+SetSurfaceRestoreRand
+{
+	SurfaceRestoreRand = 30 + RAND(61) //30-90 seconds
+}
 
 OnSecondChange
 {
 	//This gets the time since the last dialogue ended, in seconds. SHIORI3FW.TalkEndTime is a variable that comes with YAYA as SHIORI
 	_since = GETSECCOUNT - SHIORI3FW.TalkEndTime
 	
-	//status is an inbuilt YAYA variable that has information on if the balloon is open, etc.
-	_balloonisopen = "balloon" _in_ status
-	
-	if _since % 15 == 0 && !_balloonisopen
-	{
-		//If you want to adjust how likely it is to change poses, change the number in the RAND. Higher numbers mean a lower chance for the pose to change.
-		if RAND(4) == 0; OnSurfaceRestore
-	}
+	if _since >= SurfaceRestoreRand; OnSurfaceRestore
 }
 
-//This is just an example, since your ghost very likely has OnSurfaceRestore already
+//This is just an example, since your ghost very likely has OnSurfaceRestore already.
 OnSurfaceRestore : nonoverlap
 {
 	"\1\s[-1]\0\s[0]"

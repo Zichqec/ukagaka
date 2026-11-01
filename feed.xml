@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Writing word groups guide</title>
-		<link>https://ukagaka.zichqec.com/blog/2026-02-18_writing_word_groups_guide</link>
-		<guid>https://ukagaka.zichqec.com/blog/2026-02-18_writing_word_groups_guide</guid>
-		<pubDate>Wed, 18 Feb 2026 00:00:00 EST</pubDate>
-		<description>The guide &lt;a href='../guide/writing_word_groups.html'&gt;Writing word groups&lt;/a&gt; has been published. It is a guide about effective strategies for writing word groups, as well as various technical tips and tricks.</description>
-	</item>
-	<item>
 		<title>Ancient Gem set v1.0.1</title>
 		<link>https://ukagaka.zichqec.com/blog/2026-03-11_ancient_gem_set_v1.0.1</link>
 		<guid>https://ukagaka.zichqec.com/blog/2026-03-11_ancient_gem_set_v1.0.1</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-09-30_thoughtful_replies_v1.0.1</guid>
 		<pubDate>Wed, 30 Sep 2026 00:00:00 EST</pubDate>
 		<description>The ghost &lt;a href='../ghost/thoughtful_replies.html'&gt;Thoughtful Replies&lt;/a&gt; has been updated to v1.0.1. &lt;a href='https://okuajub-netspace.neocities.org/'&gt;okuajub&lt;/a&gt; has joined the development team, the Ghost Jam jank has been cleaned up, and a lot of new content has been added.</description>
+	</item>
+	<item>
+		<title>Idle between dialogues updated</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-10-31_idle_between_dialogues_updated</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-10-31_idle_between_dialogues_updated</guid>
+		<pubDate>Sat, 31 Oct 2026 00:00:00 EST</pubDate>
+		<description>My code for &lt;a href='../function/index.html#idle_between_dialogues'&gt;idling between dialogues&lt;/a&gt; has been updated. The original version is preserved here, as well as an Aosora version of the new code.</description>
 	</item>
 </channel>
 </rss>

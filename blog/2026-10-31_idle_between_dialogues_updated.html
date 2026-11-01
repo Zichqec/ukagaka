@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p>My code for <a href="../function/index.html#idle_between_dialogues">idling between dialogues</a> has been updated! This is code that makes your ghost change surfaces at random intervals even when not talking, and even if talking is turned completely off.</p>
+
+<p>I initially wrote this code for <a href="../ghost/xanders_refuge.html">Xander's Refuge</a> because I wanted him to have a lively feel, and it felt particularly fitting to have him be smoking even while not doing anything else. However, I was never entirely happy with my implementation.</p>
+
+<p>This is the original implementation of the code:</p>
+
+<code><pre>
+OnSecondChange
+{
+	//This gets the time since the last dialogue ended, in seconds. SHIORI3FW.TalkEndTime is a variable that comes with YAYA as SHIORI
+	_since = GETSECCOUNT - SHIORI3FW.TalkEndTime
+	
+	//status is an inbuilt YAYA variable that has information on if the balloon is open, etc.
+	_balloonisopen = "balloon" _in_ status
+	
+	if _since % 15 == 0 && !_balloonisopen
+	{
+		if RAND(4) == 0; OnSurfaceRestore
+	}
+}
+
+OnSurfaceRestore : nonoverlap
+{
+	"\1\s[-1]\0\s[0]"
+	"\1\s[-1]\0\s[1]"
+	"\1\s[-1]\0\s[2]"
+	"\1\s[-1]\0\s[3]"
+	"\1\s[-1]\0\s[4]"
+}
+</pre></code>
+
+<p>It's a pretty simple setup. Track how long it's been since the last dialogue occurred, and every 15 seconds, as long as the balloon is not open, try to do a random surface change. To avoid changing the surface every 15 seconds exactly, which would feel robotic, I made it only have a 1/4 chance to actually do the change.</p>
+
+<p>This works, and is an overall simple and light implementation. However, two things have always irked me about it. First, even though I avoided having the surface always change every 15 seconds, the changes would still always happen at multiples of 15 seconds. You won't really notice this, but it's not as granular as I'd like. It bugs me. Second, if you get terrible RNG, the ghost can theoretically stay on the same pose for a really long time, longer than I'd want. There isn't a way to control the maximum length.</p>
+
+<p>Of course, these are overall minor issues, and I think the code still serves its purpose well. In real usage you wouldn't really notice these things.</p>
+
+<p>However, last Ghost Jam, I had the opportunity to write this anew. We made the ghost <a href="../ghost/thoughtful_replies.html">Thoughtful Replies</a>, and we really wanted the character to move around and change expressions between dialogues since builds up the atmosphere of a character taking their time and pondering what to write in their letter. And since we were making the ghost with only new assets, I would need to write the idle code from scratch... which gave me a great chance to rethink it from the ground up and see if I could find a better approach.</p>
+
+<p>I'm pleased to report that I did! Thoughtful Replies has an all new system that is still very light, but provides me with the control I wanted. This ghost was made in Aosora, so this Aosora version was written first.</p>
+
+<code><pre>
+function OnAosoraLoad
+{
+	TimeSinceLastTalk = Time.GetNowUnixEpoch();
+	SetSurfaceRestoreRand();
+}
+
+function SetSurfaceRestoreRand
+{
+	SurfaceRestoreRand = Random.GetIndex(30,61); //30-90 seconds
+}
+
+function OnSecondChange
+{
+	//If the ghost is unable to respond, update the timestamp of when the ghost last talked
+	if (Shiori.Reference[3] == 0) TimeSinceLastTalk = Time.GetNowUnixEpoch();
+	
+	local since = Time.GetNowUnixEpoch() - TimeSinceLastTalk;
+	
+	if (since >= SurfaceRestoreRand) return OnSurfaceRestore;
+}
+
+function OnSurfaceRestore
+{
+	TimeSinceLastTalk = Time.GetNowUnixEpoch();
+	
+	return Random.Select([
+		"\1\s[-1]\s[0]",
+		"\1\s[-1]\s[1]",
+		"\1\s[-1]\s[2]",
+		"\1\s[-1]\s[3]",
+		"\1\s[-1]\s[4]",
+	]);
+}
+</pre></code>
+
+<p>Since I was writing this in Aosora, I had an additional hurdle, which is that Aosora doesn't have YAYA's built in <code>SHIORI3FW.TalkEndTime</code> variable. So, part of the code here is replicating the function of that. That's what the TimeSinceLastTalk variable is for. Thankfully, it's easy to recreate this with <code>OnSecondChange</code> since Reference3 in that event tells you if the ghost is currently able to send a script or not.</p>
+
+<p>After that, the basic idea is that any time the ghost loads or says a dialogue, we pick a number of seconds to wait before a random surface change should happen. Then, once the ghost has stopped talking for that amount of time, we run <code>OnSurfaceRestore</code> to make the pose change. By doing it this way, we can set a minimum and maximum on the amount of time between surface changes, and the exact number of seconds can be anything in-between! It's much more granular that way. You could also add special logic if you wanted, such as adjusting how often the surface is changed based on the ghost's current mode.</p>
+
+<p>This implementation uses epoch, since that's generally a much easier way of working with time. However, if you wanted to convert this to a SHIORI that does not have epoch, I think you could do it by just creating a seconds counter in <code>OnSecondChange</code>.</p>
+
+<p>Note that I left out checking for whether the balloon is open in this setup. I don't think it's usually necessary to check for with this setup, but if you find that this function is interrupting balloons, then you could easily add in a check for whether the balloon is open before it runs OnSurfaceRestore.</p>
+
+<p>I have also converted this code to YAYA! The <a href="../function/index.html#idle_between_dialogues">version listed on my functions page</a> is written in YAYA, since I haven't yet decided if/how I want to share snips of code from other SHIORI yet. You'll find it's overall the same, except it uses <code>SHIORI3FW.TalkEndTime</code>, and it uses <code>OnInitialize</code> instead of the Aosora-specific <code>OnAosoraLoad</code>.</p>
+
+<p>You can of course use the old code if you prefer it or find that it suits your needs better. The functionality is slightly different, which is one of the reasons it's taken me this long to decide how to release the new version. After mulling it over a while I think it is enough of an improvement to replace the old one, rather than listing both on my function index, but I'll keep a link to this blog post so that both are available (as well as the Aosora version).</p>
+
+<p>So, there you have it! One more wheel reinvented. Even though it's an overall simple function to add to a ghost, there are many different ways you could approach it, and I'm happy with the one I've settled on now.</p>
+
+<p>As an aside for anyone who's gotten this far (hello if you actually exist?), you might have noticed that I haven't posted much in a while. I've had a lot going on IRL and have been unwell, but once things are under control I anticipate becoming more active in ukagaka development again. For the moment though, I am trying to get some much needed rest!</p>
+
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>

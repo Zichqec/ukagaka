@@ -1,6 +1,6 @@
 var item_tags = [
 	["2020","2021","2022","2023","2024","2025"],
-	["YAYA","AYA"],
+	["YAYA","AYA","Aosora"],
 	["Pure function"],
 ]
 
@@ -195,13 +195,13 @@ var item_details = [
 	{
 		name: "Idle between dialogues",
 		release: "2023-09-13",
-		latest: "2024-03-09",
+		latest: "2026-10-31",
 		version: null,
 		forevent: null,
-		language: "YAYA",
+		language: "YAYA / Aosora",
 		download: "Idle_between_dialogues.txt",
-		blurb: "Have you ever noticed that most ghosts don't move between their dialogues, other than resetting to a default pose? For a lot of ghosts that's fine, but if you'd like yours to be a little more lively, this code will let them switch poses between dialogues! It even works if dialogues are completely turned off. I originally wrote this for <a href='../ghost/xanders_refuge.html'>Xander's Refuge</a>, and I think it does a lot to make him feel more organic.",
-		tags: ["2023","YAYA"]
+		blurb: "Have you ever noticed that most ghosts don't move between their dialogues, other than resetting to a default pose? For a lot of ghosts that's fine, but if you'd like yours to be a little more lively, this code will let them switch poses between dialogues! It even works if dialogues are completely turned off.<br><br>This code was overhauled in 2026 and now uses a different approach. The old version and an Aosora version are available on the <a href='../blog/2026-10-31_idle_between_dialogues_updated.html'>blog post about the overhaul</a>.",
+		tags: ["2023","YAYA","Aosora"]
 	},
 	{
 		name: "Interval Stacker",

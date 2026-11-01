@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Idle between dialogues updated",
+		release: "2026-10-31",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-10-31_idle_between_dialogues_updated.html",
+		blurb: "My code for <a href='../function/index.html#idle_between_dialogues'>idling between dialogues</a> has been updated. The original version is preserved here, as well as an Aosora version of the new code.",
+		tags: ["2026","October","Function","Update"],
+	},
+	{
 		name: "Thoughtful Replies v1.0.1",
 		release: "2026-09-30",
 		dupeindex: "00",
