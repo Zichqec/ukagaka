@@ -199,7 +199,7 @@ var item_details = [
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/flakes_of_fancy"},
 		],
-		blurb: "Bring winter to your desktop! Watch the snow fall, see it build up on your taskbar, and scuplt it into snowballs!",
+		blurb: "Bring winter to your desktop! Watch the snow fall, see it build up on your taskbar, and sculpt it into snowballs!",
 		tags: ["2026", "Aosora", "Collab", "Includes my art", "Includes my code", "For event", "Ghost Jam", "Idle chatter", "Object"]
 	},
 	{
