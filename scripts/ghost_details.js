@@ -484,7 +484,7 @@ var item_details = [
 		name: "Needle",
 		release: "2022-05-11",
 		latest: "2025-11-11",
-		version: "v1.1.5",
+		version: "v1.1.6",
 		forevent: "Ghost Jam 2022",
 		collaborators:
 		[

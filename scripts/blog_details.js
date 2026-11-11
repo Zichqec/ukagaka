@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Needle Day 2026",
+		release: "2026-11-11",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-11-11_needle_day_2026.html",
+		blurb: "Needle Day 2026 has arrived, bringing with it <a href='../ghost/needle.html'>Needle</a> v1.1.6 and 11 new Needle shells.",
+		tags: ["2026","November","Ghost","Shell","Event","New release","Update"],
+	},
+	{
 		name: "Idle between dialogues updated",
 		release: "2026-10-31",
 		dupeindex: "00",

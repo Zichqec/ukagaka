@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p>Needle Day is upon us! This year I have holiday time off of work. Wow, Needle Day really is a true holiday now! (Ignore other holidays that may be listed on your calendar, I am sure the reason I am off is to celebrate my dearest Needle.)</p>
+
+<p>This has been a difficult year for various reasons, but these past couple of months we've been hard at work on preparations, and we hope you'll enjoy what we've cooked up for Needle Day in 2026!</p>
+
+<h2>Needle v1.1.6</h2>
+<p><a href="../ghost/needle.html">Needle</a> has been updated to v1.1.6! Last year we added a relatively small amount of dialogue so that we could hit the number 1111. This year, to make up for that smaller update, we made an extra large one. This year, Needle has reached 1500 dialogues!</p>
+
+<p>In addition to this, Needle's poking feature got an overhaul under the hood and has cleaner code. It also gained a bit of new functionality, and a second version of the event exists for ghosts which need more detailed control.</p>
+
+<p>Changelog:</p>
+<ul>
+	<li><p>Added 389 dialogues, bringing the total to 1500.</p></li>
+	<li><p>OnNeedlePoke event now sends the list of dressups Needle is currently using as reference2. These are delimited with the unicode non-character 0xFDEF between dressups, and 0x01 between each dressup's category name and part name.</p></li>
+	<li><p>Added OnNeedlePokeEx event. This runs before OnNeedlePoke and contains the same information, but sends a list of all scopes currently being poked rather than one scope per event. Most ghosts will not need this, but it may be useful for ghosts with many scopes on screen.</p></li>
+	<li><p>Needle will now ignore snowflakes from the ghost <a href="../ghost/flakes_of_fancy.html">Flakes of Fancy</a> and will not send the poking events when touching them. Other objects in the ghost may still be poked.</p></li>
+	<li><p>Grammar and formatting fixes.</p></li>
+</ul>
+
+<h2>New shells</h2>
+<p>Per the usual, <a href="https://gallathegalla.github.io/gtg-ghosts/">Galla</a> and I have released 11 new shells to mark the occasion! Other developers have been releasing shells too, so I recommend keeping an eye on the <a href="https://ukagakadreamteam.com/wiki/event/needle_day">Needle Day page on the Ukagaka Dream Team Wiki</a>.</p>
+
+<h3><a href="https://github.com/GallaTheGalla/baneedle_peel/releases/latest">Baneedle Peel</a></h3>
+<p>Shell by <a href="https://gallathegalla.github.io/gtg-ghosts/">Galla</a>! For all your banana needs.</p>
+
+<h3><a href="../shell/connect_the_needle.html">Connect the Needle</a></h3>
+<p>A fun game of connect the dots! What picture could they possibly make?</p>
+
+<h3><a href="https://github.com/GallaTheGalla/convergence_of_11_timelines/releases/latest">Convergence Of 11 Timelines</a></h3>
+<p>Shell by <a href="https://gallathegalla.github.io/gtg-ghosts/">Galla</a>! This is what happens when you violently shove 11 Needles into the same time and space. Neat!</p>
+
+<h3><a href="../shell/dipped_needle.html">Dipped Needle</a></h3>
+<p>In which Needle visits an ice cream shop!</p>
+
+<h3><a href="../shell/foot-drawn_needle.html">Foot-drawn Needle</a></h3>
+<p>Have you ever tried drawing Needle with your foot? I have! And I recorded it so you can <a href="https://www.youtube.com/watch?v=_W7y4elpTRU">watch the drawing process</a>.</p>
+
+<h3><a href="../shell/needlepile.html">Needlepile</a></h3>
+<p>Have you ever wondered what it would look like if you used a vacuum cleaner to pick up a bunch of tiny plastic needles out of the rug, then dumped those needles out into one scraggly pile? I imagine it would look like this!</p>
+
+<h3><a href="../shell/negative_needle.html">Negative Needle</a></h3>
+<p>Fill the Needle-shaped hole in your life!</p>
+
+<h3><a href="../shell/radial_needle.html">Radial Needle</a></h3>
+<p>Pokes in all 11 directions!</p>
+
+<h3><a href="../shell/sticky_needle.html">Sticky Needle</a></h3>
+<p>Take Needle with you anywhere and stick stick it to various things!</p>
+
+<h3><a href="https://github.com/GallaTheGalla/teef/releases/latest">Teef</a></h3>
+<p>Shell by <a href="https://gallathegalla.github.io/gtg-ghosts/">Galla</a>! Teef.</p>
+
+<h3><a href="https://github.com/GallaTheGalla/thread-it-yourself_sewing_machine_needle/releases/latest">Thread-It-Yourself Sewing Machine Needle</a></h3>
+<p>Shell by <a href="https://gallathegalla.github.io/gtg-ghosts/">Galla</a>! For when you don't want to use a self-threading Needle.</p>
+
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>

@@ -59,6 +59,18 @@ let gallery_images = [
 let shells_by_others = [
 
 {
+	name: "Baneedle Peel",
+	release: "2026-11-11",
+	forevent: "Needle Day (11/11)",
+	developers:
+	[
+		{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
+	],
+	content_warnings: null,
+	download: "https://github.com/GallaTheGalla/baneedle_peel/releases/latest",
+	blurb: null,
+},
+{
 	name: "Blushie",
 	release: "2024-11-11",
 	forevent: "Needle Day (11/11)",
@@ -71,6 +83,18 @@ let shells_by_others = [
 	blurb: "uwu"
 },
 {
+	name: "Bow & Needle",
+	release: "2026-11-11",
+	forevent: "Needle Day (11/11)",
+	developers:
+	[
+		{name: "Cherrie", creditlink: "https://github.com/D-elete-d/"}
+	],
+	content_warnings: null,
+	download: "https://github.com/D-elete-d/sspbow_and_Needle/releases/latest",
+	blurb: null,
+},
+{
 	name: "Carved",
 	release: "2023-11-11",
 	forevent: "Needle Day (11/11)",
@@ -81,6 +105,18 @@ let shells_by_others = [
 	content_warnings: null,
 	download: "https://www.mediafire.com/file/tlqxyqqkh9hp6kh/carved_v1.0.0.nar/file",
 	blurb: "A bone needle with an optional blood dressup! It may be small, but it's deadly!"
+},
+{
+	name: "Convergence Of 11 Timelines",
+	release: "2026-11-11",
+	forevent: "Needle Day (11/11)",
+	developers:
+	[
+		{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
+	],
+	content_warnings: null,
+	download: "https://github.com/GallaTheGalla/convergence_of_11_timelines/releases/latest",
+	blurb: null,
 },
 {
 	name: "Correctly Drawn Needle",
@@ -177,6 +213,18 @@ let shells_by_others = [
 	content_warnings: null,
 	download: "https://github.com/Digibillcipher/UkagakaTime?tab=readme-ov-file#injector",
 	blurb: null
+},
+{
+	name: "Lego brick",
+	release: "2026-11-11",
+	forevent: "Needle Day (11/11)",
+	developers:
+	[
+		{name: "Cherrie", creditlink: "https://github.com/D-elete-d/"}
+	],
+	content_warnings: null,
+	download: "https://github.com/D-elete-d/Lego4NeedleDay/releases/latest",
+	blurb: null,
 },
 {
 	name: "Needle Dog",
@@ -285,6 +333,30 @@ let shells_by_others = [
 	content_warnings: null,
 	download: "https://github.com/DragonMoth28/Ukagaka/blob/main/spear.nar",
 	blurb: "A set of spears with some optional accessories! Based upon spears from Rain World."
+},
+{
+	name: "Teef",
+	release: "2026-11-11",
+	forevent: "Needle Day (11/11)",
+	developers:
+	[
+		{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
+	],
+	content_warnings: null,
+	download: "https://github.com/GallaTheGalla/teef/releases/latest",
+	blurb: null,
+},
+{
+	name: "Thread-It-Yourself Sewing Machine Needle",
+	release: "2026-11-11",
+	forevent: "Needle Day (11/11)",
+	developers:
+	[
+		{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"}
+	],
+	content_warnings: null,
+	download: "https://github.com/GallaTheGalla/thread-it-yourself_sewing_machine_needle/releases/latest",
+	blurb: null,
 },
 {
 	name: "WATA",
@@ -446,7 +518,20 @@ let version_history = [
 				"General formatting/typo fixes.",
 				"Updated to YAYA Tc571-13.",
 			]
-		}
+		},
+		{
+			version: "v1.1.6",
+			released: "2026-11-11",
+			blog_post: "../blog/2026-11-11_needle_day_2026.html",
+			changelog:
+			[
+				"Added 389 dialogues, bringing the total to 1500.",
+				"OnNeedlePoke event now sends the list of dressups Needle is currently using as reference2. These are delimited with the unicode non-character 0xFDEF between dressups, and 0x01 between each dressup's category name and part name.",
+				"Added OnNeedlePokeEx event. This runs before OnNeedlePoke and contains the same information, but sends a list of all scopes currently being poked rather than one scope per event. Most ghosts will not need this, but it may be useful for ghosts with many scopes on screen.",
+				"Needle will now ignore snowflakes from the ghost <a href='../ghost/flakes_of_fancy.html'>Flakes of Fancy</a> and will not send the poking events when touching them. Other objects in the ghost may still be poked.",
+				"Grammar and formatting fixes.",
+			]
+		},
 	]
 }
 

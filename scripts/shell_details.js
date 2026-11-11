@@ -277,6 +277,23 @@ var shell_details = [
 		tags: ["2023","Noodle","For event","Etc. Jam","Digital","Shaded","Pixel brush","Lineless","Dressups","Color alts"]
 	},
 	{
+		name: "Connect the Needle",
+		goeswith: [Needle],
+		release: "2026-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "TODO",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/connect_the_needle"},
+		],
+		blurb: "I was playing with <a href='https://kidpix.app/'>Kid Pix</a> and it sparked the idea for this connect the dots style Needle. Fill in the Needle yourself! (Or use the provided dressup.)",
+		tags: ["2026","For event","Needle","Needle Day","Digital","Flat color","Pixel brush","Dressups","Additional pieces"] //Technically it's lined, but like.............
+	},
+	{
 		name: "Corkscrew",
 		goeswith: [Needle],
 		release: "2025-11-11",
@@ -309,6 +326,23 @@ var shell_details = [
 		],
 		blurb: "An alternative shell made for Needle, with soft shading. It's very typical of my style at the time! This was the first Needle shell I made, not long after Needle was released.",
 		tags: ["2022","Shaded","Lined","Soft brush","Digital","Needle"]
+	},
+	{
+		name: "Dipped Needle",
+		goeswith: [Needle],
+		release: "2026-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "TODO",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/dipped_needle"},
+		],
+		blurb: "In which Needle visits an ice cream shop and tries all the different flavors.",
+		tags: ["2026","For event","Needle","Needle Day","Digital","Flat color","Pixel brush","Lined","Lineless","Dressups","Additional pieces","Color alts"]
 	},
 	{
 		name: "Embossed Needle",
@@ -431,6 +465,23 @@ var shell_details = [
 		],
 		blurb: "A standalone version of the FLUX master shell! FLUX the character is actually separate from FLUX the music player system. This release exists so that you can use this shell with FLELE, if you prefer! This shell comes bundled with FLUX, and has custom dialogue, though it's all simply music notes. When playing music, he'll bob his head and use holographic synthesizers.",
 		tags: ["2021","FLUX/FLELE","Digital","Flat color","Soft brush","Lined","Animations","Dressups","Color alts"]
+	},
+	{
+		name: "Foot-drawn Needle",
+		goeswith: [Needle],
+		release: "2026-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "TODO",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/foot-drawn_needle"},
+		],
+		blurb: "Have you ever tried drawing Needle with your foot? <a href='https://www.youtube.com/watch?v=_W7y4elpTRU'>I have.</a> This is the result.",
+		tags: ["2026","For event","Needle","Needle Day","Digital","Flat color","Pixel brush","Lined"]
 	},
 	{
 		name: "Glitchy Needle",
@@ -674,6 +725,23 @@ var shell_details = [
 		tags: ["2025","For event","Needle","Needle Day","Digital","Pixel brush","Lined","Dressups","Additional pieces"]
 	},
 	{
+		name: "Needlepile",
+		goeswith: [Needle],
+		release: "2026-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "TODO",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/needlepile"},
+		],
+		blurb: "Imagine if you used a vacuum cleaner to suck up a bunch of plastic needles out of the rug and then poured that conglomeration out into a pile. This shell is what I imagine that would look like.",
+		tags: ["2026","For event","Needle","Needle Day","Digital","Flat color","Soft brush","Lineless"]
+	},
+	{
 		name: "Needkly",
 		goeswith: [Skrunkly],
 		release: "2024-11-11",
@@ -706,6 +774,23 @@ var shell_details = [
 		],
 		blurb: "FEAR NOT MORTAL. It's just a handmade gift that exists in the real world, brought into the digital realm so we can all benefit. Enjoy :)",
 		tags: ["2024","Needle","For event","Needle Day","Other"]
+	},
+	{
+		name: "Negative Needle",
+		goeswith: [Needle],
+		release: "2026-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "TODO",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/negative_needle"},
+		],
+		blurb: "Fill the Needle-shaped hole in your life!",
+		tags: ["2026","For event","Needle","Needle Day","Digital"]
 	},
 	{
 		name: "Old Beans",
@@ -757,6 +842,23 @@ var shell_details = [
 		],
 		blurb: "Pixel snowflakes for your pixel winter needs!",
 		tags: ["2026","For event","Flakes of Fnacy","Ghost Jam","Digital","Shaded","Pixel brush","Lineless","Animations","Dressups"]
+	},
+	{
+		name: "Radial Needle",
+		goeswith: [Needle],
+		release: "2026-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "TODO",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/radial_needle"},
+		],
+		blurb: "A Needle for every direction of the compass!",
+		tags: ["2026","For event","Needle","Needle Day","Digital","Flat color","Pixel brush","Lined","Dressups"]
 	},
 	{
 		name: "Rotini",
@@ -825,6 +927,23 @@ var shell_details = [
 		],
 		blurb: "Do you love Starset? Me too! That's why I made this Starset Messenger shell, to delight you by playing space songs on his space bass. When playing songs that are recognized as Starset, he will display various symbols from the band on his visor! If it's a song that has a specific symbol, he'll display that one in particular! By the way, if you look closely, the stars on his visor twinkle.<br><br>Note: this shell has been deliberately designed to not resemble any particular member of the band. He's his own thing!",
 		tags: ["2021","FLUX/FLELE","Digital","Flat color","Soft brush","Lined","Animations"]
+	},
+	{
+		name: "Sticky Needle",
+		goeswith: [Needle],
+		release: "2026-11-11",
+		latest: null,
+		version: "v1.0.0",
+		forevent: "Needle Day (11/11)",
+		collaborators: null,
+		content_warnings: null,
+		download: "TODO",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/shell/needle/sticky_needle"},
+		],
+		blurb: "A portable Needle that you can stick stick anywhere.",
+		tags: ["2026","For event","Needle","Needle Day","Traditional","Lined"]
 	},
 	{
 		name: "Stock Pot",
