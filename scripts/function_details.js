@@ -459,7 +459,7 @@ var item_details = [
 	{
 		name: "Wobble",
 		release: "2021-01-05",
-		latest: null,
+		latest: "2026-11-23",
 		version: null,
 		forevent: null,
 		language: "YAYA",

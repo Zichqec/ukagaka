@@ -57,7 +57,7 @@ Wobble
 		{
 			if RAND(2) == 1; _Sz = "+" + _Sz; else; _Sz = "-" + _Sz 
 		}
-		_word += "\_l[@%(_X),%(_Y)]\f[height,%(_Sz)]" + _let //Add to the display
+		_word += "\_l[@%(_X),@%(_Y)]\f[height,%(_Sz)]" + _let + "\_l[,@%(_Y * -1)]" //Add to the display
 	}
 	_word
 }
