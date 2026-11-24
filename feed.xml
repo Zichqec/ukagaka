@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Celestial Emblem v1.0.0</title>
-		<link>https://ukagaka.zichqec.com/blog/2026-03-14_celestial_emblem_v1.0.0</link>
-		<guid>https://ukagaka.zichqec.com/blog/2026-03-14_celestial_emblem_v1.0.0</guid>
-		<pubDate>Sat, 14 Mar 2026 00:00:00 EST</pubDate>
-		<description>Release of a new balloon, &lt;a href='../balloon/celestial_emblem.html'&gt;Celestial Emblem&lt;/a&gt;, for &lt;a href='https://ukagakadreamteam.com/wiki/event/etc._jam_2026'&gt;Etc. Jam 2026&lt;/a&gt;.</description>
-	</item>
-	<item>
 		<title>Solar Runes v1.0.0</title>
 		<link>https://ukagaka.zichqec.com/blog/2026-03-18_solar_runes_v1.0.0</link>
 		<guid>https://ukagaka.zichqec.com/blog/2026-03-18_solar_runes_v1.0.0</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-11-11_needle_day_2026</guid>
 		<pubDate>Wed, 11 Nov 2026 00:00:00 EST</pubDate>
 		<description>Needle Day 2026 has arrived, bringing with it &lt;a href='../ghost/needle.html'&gt;Needle&lt;/a&gt; v1.1.6 and 11 new Needle shells.</description>
+	</item>
+	<item>
+		<title>Hydrate v2.0.7</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-11-23_hydrate_v2.0.7</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-11-23_hydrate_v2.0.7</guid>
+		<pubDate>Mon, 23 Nov 2026 00:00:00 EST</pubDate>
+		<description>&lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; has been updated to v2.0.7, bringing some bug fixes, code improvement, and a new feature. The function &lt;a href='../function/index.html#wobble'&gt;Wobble&lt;/a&gt; received a bug fix also.</description>
 	</item>
 </channel>
 </rss>

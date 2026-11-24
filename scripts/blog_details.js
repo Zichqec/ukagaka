@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Hydrate v2.0.7",
+		release: "2026-11-23",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-11-23_hydrate_v2.0.7.html",
+		blurb: "<a href='../ghost/hydrate.html'>Hydrate</a> has been updated to v2.0.7, bringing some bug fixes, code improvement, and a new feature. The function <a href='../function/index.html#wobble'>Wobble</a> received a bug fix also.",
+		tags: ["2026","November","Ghost","Function","Update"],
+	},
+	{
 		name: "Needle Day 2026",
 		release: "2026-11-11",
 		dupeindex: "00",

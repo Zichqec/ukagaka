@@ -1398,6 +1398,19 @@ let version_history = [
 				"Added Hydrate's current scaling values to the OnHydrateStatsNotify event. These are sent via the previously reserved Reference2 and Reference3. Note that this relies on a change made in SSP 2.7.89, so please make sure your SSP is up to date.",
 			]
 		},
+		{
+			version: "v2.0.7",
+			released: "2026-11-23",
+			blog_post: "../blog/2026-11-23_hydrate_v2.0.7.html",
+			changelog:
+			[
+				"Added a scaling modifier config option, which is ghost-side scaling that is kept consistent across shell changes.",
+				"Updated the commentary when changing shell scaling in the right click menu. It will now indicate if the X and Y scaling do not match, and also note the scaling modifier if you have one set.",
+				"Increased the responsiveness of the dressup menu slightly.",
+				"Fixed the easter egg for the Alkohol shell.",
+				"Fixed sanitization throughout the ghost, and added it in a few places that did not have it.",
+			]
+		},
 	]
 },
 

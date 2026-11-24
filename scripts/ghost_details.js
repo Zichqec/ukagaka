@@ -321,8 +321,8 @@ var item_details = [
 	{
 		name: "Hydrate",
 		release: "2020-08-20",
-		latest: "2026-01-08",
-		version: "v2.0.5",
+		latest: "2026-11-23",
+		version: "v2.0.7",
 		forevent: null,
 		collaborators:
 		[

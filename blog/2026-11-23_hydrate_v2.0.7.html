@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zi's Ukagaka Space</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="Zi's Ukagaka Space RSS Feed" href="https://ukagaka.zichqec.com/rss.xml">
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zi's Ukagaka Space">
+    <meta property="og:description" content="Zi's hub for ukagaka">
+    <meta property="og:url" content="https://ukagaka.zichqec.com/">
+    <meta property="og:image" content="https://ukagaka.zichqec.com/banner.png">
+</head>
+
+<body>
+<nav><div id="navbar" class="navbar"></div></nav>
+
+<div id="blognavtop"></div>
+
+<article id="postcontent">
+<p><a href="../ghost/hydrate.html">Hydrate</a> has been updated to v2.0.7! This update brings some minor fixes, and a new feature which I've been wanting for a while.</p>
+
+<p>I started this update when I realized that the easter egg for the <a href="https://zdzisiu.github.io/Cemetery/work_index.html?type=shell#alkohol">Alkohol shell by Zdzisiu</a> was broken. For some reason, instead of the drink reminder text word wrapping or running off the side of the balloon, it was all getting jumbled up on the same line. I think there might have been some kind of tweak to how SSP handles displaying text in certain circumstances, because I remember this working correctly before.</p>
+
+<p>Thankfully, there was a very simple fix. I applied it both to Hydrate, and to my free <a href="../function/index.html#wobble">Wobble code</a> that produces this text effect. The change is pretty small, I just made the Y coordinate do a relative change instead of an absolute one. To keep the original effect and not have it jump all over the balloon, I made it also apply the change in Y in the reverse direction afterwards. See <a href="https://github.com/Zichqec/ukagaka/commit/7c66e89e906f7b76dde373f79b498187b4a0acfc#diff-9cc2e9781a1f3ee333699d881aa3327b94fd2a4883fc820f9636626938626898">the change on GitHub</a> if you want the specifics.</p>
+
+<p>Since I now had an update to push, I wondered if I might have the energy to work on another feature I've been thinking of: ghost-side scaling. Something that's been bugging me for a while is that I like to have the auto shell changes on, but sometimes I want to keep Hydrate at a smaller size, like 50%. But since I'm not staying on one shell, I'd have to change it for each shell individually... and when I later want them back at full size, I'd have to change them all back one by one. Not exactly something I want to spend time doing.</p>
+
+<p>However, it's also possible to change the scaling on the ghost side separately from the scaling in the right click menu. If I gave Hydrate a custom menu for changing the scaling, then I could make the ghost do all the work of keeping the scaling consistent for you between shells!</p>
+
+<p>And so the scaling modifier was born. I decided to call it that instead of "ghost-side scaling" because I think it makes it a little clearer how they relate to each other. If you have both the ghost-side scaling set and scaling applied via the right click menu, the result will be a combination of both!</p>
+
+<p>It took a lot of fiddling to get this working right with Hydrate's communication event, but I think I finally got it all smoothed out. (Let me know if there are any issues, of course.) I'm pretty pleased with how it came out, at long last I can make Hydrate small and then not need to worry about it. I even went to the effort of making Hydrate now indicate if you have the scaling modifier active when you change its scaling via the right click menu, to avoid potential confusion.</p>
+
+<p>And then of course, before I could wrap things up... I found some more things to fix. I found that I was using an old method for updating the dressup menu display, and that my sanitization of sakurascript tags was lacking and in some places completely absent. So, I went ahead and tightened up some stuff behind the scenes too. (I also found out I hadn't implemented emergency mode up to this point...? I have no idea how I missed that in my previous overhaul efforts, I find it frustrating to work without it these days!)</p>
+
+<p>But at last, here we are! A bug has been fixed, some internal parts have been tightened up, and there's a handy new feature to take for a spin. I hope someone out there will find it as useful as I do!</p>
+
+<p>Changelog:</p>
+<ul>
+	<li><p>Added a scaling modifier config option, which is ghost-side scaling that is kept consistent across shell changes.</p></li>
+	<li><p>Updated the commentary when changing shell scaling in the right click menu. It will now indicate if the X and Y scaling do not match, and also note the scaling modifier if you have one set.</p></li>
+	<li><p>Increased the responsiveness of the dressup menu slightly.</p></li>
+	<li><p>Fixed the easter egg for the Alkohol shell.</p></li>
+	<li><p>Fixed sanitization throughout the ghost, and added it in a few places that did not have it.</p></li>
+</ul>
+</article>
+
+<div id="blognavbottom"></div>
+
+<footer><div id="footer" class="footer"></div></footer>
+
+<script src="../scripts/misc.js"></script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/footer.js"></script>
+<script>var item_details = null;</script>
+<script src="../scripts/blog_details.js"></script>
+<script src="../scripts/blog_page_maker.js"></script>
+<script src="../scripts/link_fix.js"></script>
+
+</body>
+</html>
