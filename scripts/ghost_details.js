@@ -422,6 +422,30 @@ var item_details = [
 		tags: ["2026", "Aosora", "Collab", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Luckybag", "Idle chatter"]
 	},
 	{
+		name: "Let's play telephone!",
+		release: "2026-08-15",
+		latest: null,
+		version: null,
+		forevent: null,
+		collaborators:
+		[
+			{name: "Cherrie", creditlink: "https://github.com/D-elete-d"},
+			{name: "Galla", creditlink: "https://gallathegalla.github.io/gtg-ghosts/"},
+			{name: "KFC", creditlink: "https://characteroulette.tumblr.com/"},
+			{name: "Vita", creditlink: "https://thatoddhaystack.neocities.org/ukagaka/"},
+			{name: "whataphantasia", creditlink: "https://whataphantasia.github.io/projects/ukagaka/"},
+		],
+		translations: null,
+		content_warnings: null,
+		download: "https://ako-kipali.tumblr.com/post/825726930124980224/this-august-i-organised-a-game-of-telephone-for",
+		readmore:
+		[
+			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/lets_play_telephone"},
+		],
+		blurb: "A game of telephone organized by <a href='https://ako-kipali.tumblr.com/ghost-stuff'>Kipali</a>. Each author was given a chain to write a continuation for, only knowing what was written immediately before them, not knowing the context of the entire chain. This was a fun project to work on with results that are fascinatingly silly!",
+		tags: ["2026", "YAYA", "Collab", "Includes my writing", "Idle chatter"]
+	},
+	{
 		name: "Literally just a mess why did you download this",
 		release: "2024-03-24",
 		latest: null,
