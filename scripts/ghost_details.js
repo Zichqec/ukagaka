@@ -422,7 +422,7 @@ var item_details = [
 		tags: ["2026", "Aosora", "Collab", "Includes my writing", "Includes my art", "Includes my code", "For event", "Ghost Luckybag", "Idle chatter"]
 	},
 	{
-		name: "Let's play telephone!",
+		name: "Let's play Telephone!",
 		release: "2026-08-15",
 		latest: null,
 		version: null,
