@@ -441,6 +441,7 @@ var item_details = [
 		readmore:
 		[
 			{label: "Ukagaka Dream Team Wiki", url: "https://ukagakadreamteam.com/wiki/ghost/lets_play_telephone"},
+			{label: "My retrospective", url: "../blog/2026-11-26_lets_play_telephone_retrospective.html"},
 		],
 		blurb: "A game of telephone organized by <a href='https://ako-kipali.tumblr.com/ghost-stuff'>Kipali</a>. Each author was given a chain to write a continuation for, only knowing what was written immediately before them, not knowing the context of the entire chain. This was a fun project to work on with results that are fascinatingly silly!",
 		tags: ["2026", "YAYA", "Collab", "Includes my writing", "Idle chatter"]
