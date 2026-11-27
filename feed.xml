@@ -12,13 +12,6 @@
 		<link>https://ukagaka.zichqec.com/</link>
 	</image>
 	<item>
-		<title>Solar Runes v1.0.0</title>
-		<link>https://ukagaka.zichqec.com/blog/2026-03-18_solar_runes_v1.0.0</link>
-		<guid>https://ukagaka.zichqec.com/blog/2026-03-18_solar_runes_v1.0.0</guid>
-		<pubDate>Wed, 18 Mar 2026 00:00:00 EST</pubDate>
-		<description>Release of a new freeshell, &lt;a href='../freeshell/solar_runes.html'&gt;Solar Runes&lt;/a&gt;, for &lt;a href='https://ukagakadreamteam.com/wiki/event/etc._jam_2026'&gt;Etc. Jam 2026&lt;/a&gt;.</description>
-	</item>
-	<item>
 		<title>Upgrade Old Versions of YAYA guide update</title>
 		<link>https://ukagaka.zichqec.com/blog/2026-03-27_upgrade_old_versions_of_yaya_guide_update</link>
 		<guid>https://ukagaka.zichqec.com/blog/2026-03-27_upgrade_old_versions_of_yaya_guide_update</guid>
@@ -185,6 +178,13 @@
 		<guid>https://ukagaka.zichqec.com/blog/2026-11-23_hydrate_v2.0.7</guid>
 		<pubDate>Mon, 23 Nov 2026 00:00:00 EST</pubDate>
 		<description>&lt;a href='../ghost/hydrate.html'&gt;Hydrate&lt;/a&gt; has been updated to v2.0.7, bringing some bug fixes, code improvement, and a new feature. The function &lt;a href='../function/index.html#wobble'&gt;Wobble&lt;/a&gt; received a bug fix also.</description>
+	</item>
+	<item>
+		<title>Let's play Telephone! retrospective</title>
+		<link>https://ukagaka.zichqec.com/blog/2026-11-26_lets_play_telephone_retrospective</link>
+		<guid>https://ukagaka.zichqec.com/blog/2026-11-26_lets_play_telephone_retrospective</guid>
+		<pubDate>Thu, 26 Nov 2026 00:00:00 EST</pubDate>
+		<description>A retrospective on &lt;a href='../ghost/lets_play_telephone.html'&gt;Let's play Telephone!&lt;/a&gt;, a ghost which I participated in making back in August.</description>
 	</item>
 </channel>
 </rss>

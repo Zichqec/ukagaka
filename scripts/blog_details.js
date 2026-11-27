@@ -28,6 +28,15 @@ var item_details = [
 		// tags: [],
 	// },
 	{
+		name: "Let's play Telephone! retrospective",
+		release: "2026-11-26",
+		dupeindex: "00",
+		latest: null,
+		page: "2026-11-26_lets_play_telephone_retrospective.html",
+		blurb: "A retrospective on <a href='../ghost/lets_play_telephone.html'>Let's play Telephone!</a>, a ghost which I participated in making back in August.",
+		tags: ["2026","November","Ghost","Dev musings"],
+	},
+	{
 		name: "Hydrate v2.0.7",
 		release: "2026-11-23",
 		dupeindex: "00",
